@@ -1,25 +1,163 @@
 [
 	{
 		"Id" : 1,
-		"Nome" : "",
-		"Descricao" : "",
+		"Nome" : "Arroz, Feijão e Farinha",
+		"Descricao" : "Prato de arroz, feijão com farinha de mandioca",
 		"Ingredientes" : [
 			{
 				"IdIngrediente" : 1,
+				"VariacaoIngrediente": 1,
+				"Quantidade" : 1
+			},
+			{
+				"IdIngrediente" : 2,
+				"VariacaoIngrediente": 1,
+				"Quantidade" : 1
+			},
+			{
+				"IdIngrediente" : 3,
+				"VariacaoIngrediente": 1,
 				"Quantidade" : 1
 			}
 		],
 		"Passos" : [
 			{
 				"Ordem" : 1,
-				"Descricao" : "",
-				"Alvo" : "",
-				"Acao" : "",
-				"Ingredientes" : [1],
-				"Tempo" : 10 ,
-				"ItemResultado" : 2
+				"Descricao" : "Cozinhar o feijão",
+				"Alvo" : "fogao",
+				"Acao" : "cozer",
+				"Ingredientes" : [
+					{
+						"IdIngrediente" : 2,
+						"VariacaoIngrediente": 1,
+						"Quantidade" : 1
+					}
+				]
+			},
+			{
+				"Ordem" : 2,
+				"Descricao" : "Cozinhar o arroz",
+				"Alvo" : "fogao",
+				"Acao" : "cozer",
+				"Ingredientes" : [
+					{
+						"IdIngrediente" : 1,
+						"VariacaoIngrediente": 1,
+						"Quantidade" : 1
+					}
+				]
+			},
+			{
+				"Ordem" : 3,
+				"Descricao" : "Montar o prato",
+				"Alvo" : "bancada",
+				"Acao" : "montagem",
+				"Ingredientes" : [
+					{
+						"IdIngrediente" : 1,
+						"VariacaoIngrediente": 2,
+						"Quantidade" : 1
+					},
+					{
+						"IdIngrediente" : 2,
+						"VariacaoIngrediente": 2,
+						"Quantidade" : 1
+					},
+					{
+						"IdIngrediente" : 3,
+						"VariacaoIngrediente": 1,
+						"Quantidade" : 1
+					}
+				]
 			}
 		],
 		"Resultado" : 1
+	},
+	{
+		"Id" : 2,
+		"Nome" : "Arroz, Feijão com ovo frito",
+		"Descricao" : "Prato de arroz, feijão com ovo frito",
+		"Ingredientes" : [
+			{
+				"IdIngrediente" : 1,
+				"VariacaoIngrediente": 1,
+				"Quantidade" : 1
+			},
+			{
+				"IdIngrediente" : 2,
+				"VariacaoIngrediente": 1,
+				"Quantidade" : 1
+			},
+			{
+				"IdIngrediente" : 4,
+				"VariacaoIngrediente": 1,
+				"Quantidade" : 1
+			}
+		],
+		"Passos" : [
+			{
+				"Ordem" : 1,
+				"Descricao" : "Cozinhar o feijão",
+				"Alvo" : "fogao",
+				"Acao" : "cozer",
+				"Ingredientes" : [
+					{
+						"IdIngrediente" : 2,
+						"VariacaoIngrediente": 1,
+						"Quantidade" : 1
+					}
+				]
+			},
+			{
+				"Ordem" : 2,
+				"Descricao" : "Cozinhar o arroz",
+				"Alvo" : "fogao",
+				"Acao" : "cozer",
+				"Ingredientes" : [
+					{
+						"IdIngrediente" : 1,
+						"VariacaoIngrediente": 1,
+						"Quantidade" : 1
+					}
+				]
+			},
+			{
+				"Ordem" : 3,
+				"Descricao" : "Fritar o ovo",
+				"Alvo" : "fogao",
+				"Acao" : "fritar",
+				"Ingredientes" : [
+					{
+						"IdIngrediente" : 4,
+						"VariacaoIngrediente": 1,
+						"Quantidade" : 1
+					}
+				]
+			},
+			{
+				"Ordem" : 3,
+				"Descricao" : "Montar o prato",
+				"Alvo" : "bancada",
+				"Acao" : "montagem",
+				"Ingredientes" : [
+					{
+						"IdIngrediente" : 1,
+						"VariacaoIngrediente": 2,
+						"Quantidade" : 1
+					},
+					{
+						"IdIngrediente" : 2,
+						"VariacaoIngrediente": 2,
+						"Quantidade" : 1
+					},
+					{
+						"IdIngrediente" : 4,
+						"VariacaoIngrediente": 2,
+						"Quantidade" : 1
+					}
+				]
+			}
+		],
+		"Resultado" : 2
 	}
 ]

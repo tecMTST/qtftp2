@@ -1,11 +1,144 @@
 [
 	{
 		"Id" : 1,
-		"Nome" : "",
-		"Descricao" : "",
+		"Variacao": 1,
+		"Nome" : "Arroz",
+		"Descricao" : "Arroz branco",
 		"Preco" : 1,
-		"Unidade" : "",
+		"Unidade" : "Gramas",
 		"Imagem" : "",
-		"Acoes" : []
+		"Acoes" : [
+			{
+				"Alvo" : "fogao",
+				"Acao" : "cozer",
+				"Tempo" : 10,
+				"VariacaoResultado" : 2
+			}
+		]
+	},
+	{
+		"Id" : 1,
+		"Variacao": 2,
+		"Nome" : "Arroz Branco Cozido",
+		"Descricao" : "Arroz branco cozido",
+		"Preco" : 1,
+		"Unidade" : "Gramas",
+		"Imagem" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "bancada",
+				"Acao" : "montar",
+				"Tempo" : 1,
+				"VariacaoResultado" : 0
+			}
+		]
+	},
+	{
+		"Id" : 2,
+		"Variacao": 1,
+		"Nome" : "Feijão Carioca",
+		"Descricao" : "Feijão carioca.",
+		"Preco" : 1,
+		"Unidade" : "Gramas",
+		"Imagem" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "fogao",
+				"Acao" : "cozer",
+				"Tempo" : 20,
+				"VariacaoResultado" : 2
+			}
+		]
+	},
+	{
+		"Id" : 2,
+		"Variacao": 2,
+		"Nome" : "Feijão Carioca Cozido",
+		"Descricao" : "Feijão carioca cozido.",
+		"Preco" : 1,
+		"Unidade" : "Gramas",
+		"Imagem" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "bancada",
+				"Acao" : "misturar",
+				"Tempo" : 1,
+				"VariacaoResultado" : 0
+			}
+		]
+	},
+	{
+		"Id" : 3,
+		"Variacao": 1,
+		"Nome" : "Farinha de mandioca",
+		"Descricao" : "Farinha de mandioca",
+		"Preco" : 1,
+		"Unidade" : "Gramas",
+		"Imagem" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "bancada",
+				"Acao" : "misturar",
+				"Tempo" : 1,
+				"VariacaoResultado" : 0
+			}
+		]
+	},
+	{
+		"Id" : 4,
+		"Variacao": 1,
+		"Nome" : "Ovo branco",
+		"Descricao" : "Ovo branco",
+		"Preco" : 2,
+		"Unidade" : "Unidade",
+		"Imagem" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "fogao",
+				"Acao" : "fritat",
+				"Tempo" : 3,
+				"VariacaoResultado" : 2
+			},
+			{
+				"Alvo" : "fogao",
+				"Acao" : "cozer",
+				"Tempo" : 6,
+				"VariacaoResultado" : 3
+			}
+		]
+	},
+	{
+		"Id" : 4,
+		"Variacao": 2,
+		"Nome" : "Ovo branco Frito",
+		"Descricao" : "Ovo branco frito",
+		"Preco" : 0,
+		"Unidade" : "Unidade",
+		"Imagem" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "bancada",
+				"Acao" : "misturar",
+				"Tempo" : 1,
+				"VariacaoResultado" : 0
+			}
+		]
+	},
+	{
+		"Id" : 4,
+		"Variacao": 3,
+		"Nome" : "Ovo branco Cozido",
+		"Descricao" : "Ovo branco cozido",
+		"Preco" : 0,
+		"Unidade" : "Unidade",
+		"Imagem" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "bancada",
+				"Acao" : "misturar",
+				"Tempo" : 1,
+				"VariacaoResultado" : 0
+			}
+		]
 	}
 ]

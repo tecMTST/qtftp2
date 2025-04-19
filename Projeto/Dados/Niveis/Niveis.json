@@ -1,16 +1,32 @@
 [
 	{
 		"Id" : 1,
-		"Nome" : "",
-		"Descricao" : "",
+		"Nome" : "Dia 1",
+		"Descricao" : "Cozinhando para familia",
 		"Textos" : [],
 		"Imagem" : "",
-		"Local" : "",
+		"Local" : "casa",
 		"IdRdeceita" : 0,
+		"QuantidadePratosReal" : 3,
+		"QuantidadePratosExibido" : 3,
+		"ValorNutricionalMinimo" : 5,
+		"ValorSaborMinimo" : 2,
+		"PontosRecompensa" : 3,
+		"ReceitaRecompensa" : 0
+	},
+	{
+		"Id" : 2,
+		"Nome" : "Dia 2",
+		"Descricao" : "Cozinha solidária",
+		"Textos" : [],
+		"Imagem" : "",
+		"Local" : "cozinha_solidaria",
+		"IdRdeceita" : 2,
 		"QuantidadePratosReal" : 10,
 		"QuantidadePratosExibido" : 10,
-		"ValorNutricionalMinimo" : 30,
-		"ValorSaborMinimo" : 30,
-		"PontosRecompensa" : 10
+		"ValorNutricionalMinimo" : 7,
+		"ValorSaborMinimo" : 4,
+		"PontosRecompensa" : 5,
+		"ReceitaRecompensa" : 2
 	}
 ]

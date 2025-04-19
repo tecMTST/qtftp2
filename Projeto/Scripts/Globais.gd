@@ -30,4 +30,3 @@ func CarregarDados():
 	Aprimoramentos = []
 	for item in jsonAprimoramentos:
 		Aprimoramentos.append(JsonClassConverter.json_to_class(Aprimoramento, item))
-	

@@ -1,9 +1,16 @@
 [
 	{
 		"Id" : 1,
-		"Nome" : "String",
-		"Imagem" : "String",
+		"Nome" : "Arroz, Feijao e Farinha",
+		"Imagem" : "",
+		"ValorNutricional" : 5,
+		"ValorSabor" : 2
+	},
+	{
+		"Id" : 2,
+		"Nome": "Arroz, Feijao e Ovo Frito",
+		"Imagem" : "",
 		"ValorNutricional" : 10,
-		"ValorSabor" : 10
+		"ValorSabor" : 4
 	}
 ]

@@ -1,12 +1,74 @@
 [
 	{
 		"Id" : 1,
-		"Nome" : "",
-		"Descricao" : "",
+		"Nome" : "Fogão 4 Bocas",
+		"Descricao" : "Fogão com as 4 bocas fucionando",
+		"Imagem" : "",
+		"Preco" : 5,
+		"Alvo" : "fogao",
+		"Acao" : "*",
+		"Propriedade" : "tempo",
+		"Valor" : 2,
+		"Codigo" : ""
+	},
+	{
+		"Id" : 2,
+		"Nome" : "Panela de pressão",
+		"Descricao" : "Cozimentos mais rápidos",
+		"Imagem" : "",
+		"Preco" : 7,
+		"Alvo" : "fogao",
+		"Acao" : "cozer",
+		"Propriedade" : "tempo",
+		"Valor" : 3,
+		"Codigo" : ""
+	},
+	{
+		"Id" : 3,
+		"Nome" : "Bancada Média",
+		"Descricao" : "Preparos mais rápidos na bancada",
+		"Imagem" : "",
+		"Preco" : 7,
+		"Alvo" : "bancada",
+		"Acao" : "*",
+		"Propriedade" : "tempo",
+		"Valor" : 2,
+		"Codigo" : ""
+	},
+	{
+		"Id" : 4,
+		"Nome" : "Geladeira Média",
+		"Descricao" : "Mais espaço para ingredientes",
+		"Imagem" : "",
+		"Preco" : 15,
+		"Alvo" : "geladeira",
+		"Acao" : "guardar",
+		"Propriedade" : "espaco",
+		"Valor" : 10,
+		"Codigo" : ""
+	},
+	{
+		"Id" : 5,
+		"Nome" : "Forno funcionando",
+		"Descricao" : "Agora pode usar o forno para assar",
+		"Imagem" : "",
 		"Preco" : 10,
-		"Alvo" : "",
-		"Propriedade" : "",
-		"Valor" : "",
+		"Alvo" : "fogao",
+		"Acao" : "forno",
+		"Propriedade" : "ativar",
+		"Valor" : 1,
+		"Codigo" : ""
+	},
+	{
+		"Id" : 5,
+		"Nome" : "Fogão 6 Bocas",
+		"Descricao" : "Fogão com 6 bocas funcionando",
+		"Imagem" : "",
+		"Preco" : 17,
+		"Alvo" : "fogao",
+		"Acao" : "*",
+		"Propriedade" : "tempo",
+		"Valor" : 4,
 		"Codigo" : ""
 	}
 ]

@@ -12,3 +12,4 @@ var QuantidadePratosExibido : int
 var ValorNutricionalMinimo : int
 var ValorSaborMinimo : int
 var PontosRecompensa : int
+var ReceitaRecompensa : int
