@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="qtftp2"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SaveService="*res://addons/saveEngine/scripts/SaveService.gd"
+EstadoDeJogo="*res://Scripts/EstadoDeJogo.gd"
+Globais="*res://Scripts/Globais.gd"
+Constantes="*res://Scripts/Constantes.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/2d_controls_toolkit/plugin.cfg", "res://addons/saveEngine/plugin.cfg", "res://addons/uiJuicer/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Cenas/": "orange",
+"res://Componentes/": "yellow",
+"res://Dados/": "green",
+"res://Recursos/": "teal",
+"res://Scripts/": "blue",
+"res://UI/": "purple",
+"res://addons/": "red"
+}

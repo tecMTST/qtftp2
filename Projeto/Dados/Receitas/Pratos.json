@@ -1,0 +1,9 @@
+[
+	{
+		"Id" : 1,
+		"Nome" : "String",
+		"Imagem" : "String",
+		"ValorNutricional" : 10,
+		"ValorSabor" : 10
+	}
+]

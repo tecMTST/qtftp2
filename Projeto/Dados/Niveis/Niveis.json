@@ -1,0 +1,16 @@
+[
+	{
+		"Id" : 1,
+		"Nome" : "",
+		"Descricao" : "",
+		"Textos" : [],
+		"Imagem" : "",
+		"Local" : "",
+		"IdRdeceita" : 0,
+		"QuantidadePratosReal" : 10,
+		"QuantidadePratosExibido" : 10,
+		"ValorNutricionalMinimo" : 30,
+		"ValorSaborMinimo" : 30,
+		"PontosRecompensa" : 10
+	}
+]

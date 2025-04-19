@@ -1,0 +1,11 @@
+[
+	{
+		"Id" : 1,
+		"Nome" : "",
+		"Descricao" : "",
+		"Preco" : 1,
+		"Unidade" : "",
+		"Imagem" : "",
+		"Acoes" : []
+	}
+]

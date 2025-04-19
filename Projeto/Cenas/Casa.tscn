@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gkvdwj2c5ern"]
+
+[ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
+
+[node name="Casa" type="Node2D"]
+script = ExtResource("1_6yvxp")

@@ -1,0 +1,25 @@
+[
+	{
+		"Id" : 1,
+		"Nome" : "",
+		"Descricao" : "",
+		"Ingredientes" : [
+			{
+				"IdIngrediente" : 1,
+				"Quantidade" : 1
+			}
+		],
+		"Passos" : [
+			{
+				"Ordem" : 1,
+				"Descricao" : "",
+				"Alvo" : "",
+				"Acao" : "",
+				"Ingredientes" : [1],
+				"Tempo" : 10 ,
+				"ItemResultado" : 2
+			}
+		],
+		"Resultado" : 1
+	}
+]

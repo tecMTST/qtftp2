@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm48pr3pgy16l"]
+
+[ext_resource type="Script" uid="uid://cmqrsx6830d5q" path="res://Cenas/cozinha_solidaria.gd" id="1_irqgt"]
+
+[node name="CozinhaSolidaria" type="Node2D"]
+script = ExtResource("1_irqgt")
