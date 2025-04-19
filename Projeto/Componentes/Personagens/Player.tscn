@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy4r4c8l5fuxr"]
+
+[ext_resource type="Texture2D" uid="uid://d4bau2ktj50t4" path="res://Recursos/Graficos/Personagens/PlayerStakeholder.svg" id="1_au5jl"]
+[ext_resource type="Script" uid="uid://cv0ya3xdt4bn" path="res://Componentes/Personagens/player.gd" id="1_c2vf6"]
+[ext_resource type="Script" uid="uid://cjm7t170vvwf" path="res://addons/2d_controls_toolkit/TopDownControler2D.gd" id="2_fo1re"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8hhpa"]
+radius = 51.0392
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c2vf6"]
+radius = 25.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_c2vf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8hhpa")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(3, 0)
+rotation = 1.5708
+scale = Vector2(0.584999, 0.584999)
+texture = ExtResource("1_au5jl")
+
+[node name="AreaAcao" type="Area2D" parent="."]
+position = Vector2(94, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAcao"]
+position = Vector2(-15, -1)
+shape = SubResource("CircleShape2D_c2vf6")
+
+[node name="TopDownControler2D" type="Node2D" parent="."]
+script = ExtResource("2_fo1re")
+Handle_Camera = false
+Input_Sprint = ""
+Input_Jump = ""
+Air_Control = false
+metadata/_custom_type_script = "uid://cjm7t170vvwf"
+
+[connection signal="area_entered" from="AreaAcao" to="." method="_on_area_acao_area_entered"]
+[connection signal="area_exited" from="AreaAcao" to="." method="_on_area_acao_area_exited"]

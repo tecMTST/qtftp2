@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=3 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
+[ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="2_kc3ot"]
 
 [node name="Casa" type="Node2D"]
 script = ExtResource("1_6yvxp")
+
+[node name="Player" parent="." instance=ExtResource("2_kc3ot")]
+position = Vector2(376, 676)
+rotation = -1.63185
