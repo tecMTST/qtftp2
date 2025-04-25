@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ch38f6kai3t"]
+
+[ext_resource type="Script" uid="uid://78y5jrqf3oo4" path="res://Componentes/Base/Interagiveis/bancada.gd" id="1_awsmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xld1x"]
+size = Vector2(190, 132)
+
+[node name="Bancada" type="StaticBody2D" groups=["bancada", "interagivel"]]
+script = ExtResource("1_awsmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bancada", "interagivel"]]
+shape = SubResource("RectangleShape2D_xld1x")

@@ -1,11 +1,120 @@
-[gd_scene load_steps=3 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=19 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="2_kc3ot"]
+[ext_resource type="Texture2D" uid="uid://fv5rm76n70vu" path="res://Recursos/Graficos/Cenas/CasaBack.png" id="2_vci7v"]
+[ext_resource type="Script" uid="uid://dku77viqwklks" path="res://addons/analog_touch_control/scripts/TouchAnalog.gd" id="3_x64wv"]
+[ext_resource type="Texture2D" uid="uid://c0xd5s2csunn7" path="res://Recursos/Graficos/Cenas/CasaFront.png" id="4_6u8iv"]
+[ext_resource type="PackedScene" uid="uid://c6ch38f6kai3t" path="res://Componentes/Casa/Interagiveis/Bancada.tscn" id="6_mcihg"]
+[ext_resource type="PackedScene" uid="uid://b636g7sui3m6c" path="res://Componentes/Casa/Interagiveis/Fogao.tscn" id="6_xq1v8"]
+[ext_resource type="PackedScene" uid="uid://c6n7piqbsbwoq" path="res://Componentes/Casa/Interagiveis/Pia.tscn" id="7_gm3vv"]
+[ext_resource type="PackedScene" uid="uid://dpkfr6t86l4j" path="res://Componentes/Casa/Interagiveis/Geladeira.tscn" id="7_nikh1"]
+[ext_resource type="PackedScene" uid="uid://cjqpfs867y0in" path="res://Componentes/Casa/Interagiveis/Berco.tscn" id="8_p822v"]
+[ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="9_4bf15"]
+[ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="12_7lwul"]
+[ext_resource type="Texture2D" uid="uid://bfhn7o5c0ni87" path="res://Recursos/Graficos/UI/botao_acao_pressed.svg" id="13_ksqrt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
+size = Vector2(259, 1546)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bf15"]
+size = Vector2(273, 1546)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwul"]
+size = Vector2(276, 1161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm3vv"]
+size = Vector2(341, 1164)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ksqrt"]
+radius = 91.11
 
 [node name="Casa" type="Node2D"]
 script = ExtResource("1_6yvxp")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(359.5, 651.5)
+scale = Vector2(1.38867, 1.27246)
+texture = ExtResource("2_vci7v")
+
 [node name="Player" parent="." instance=ExtResource("2_kc3ot")]
 position = Vector2(376, 676)
 rotation = -1.63185
+
+[node name="Cozinha" type="Node2D" parent="."]
+
+[node name="Fogao" parent="Cozinha" instance=ExtResource("6_xq1v8")]
+position = Vector2(111, 137)
+
+[node name="Pia" parent="Cozinha" instance=ExtResource("7_gm3vv")]
+position = Vector2(248, 152)
+
+[node name="Bancada" parent="Cozinha" instance=ExtResource("6_mcihg")]
+position = Vector2(413, 152)
+
+[node name="Geladeira" parent="Cozinha" instance=ExtResource("7_nikh1")]
+position = Vector2(601, 153)
+
+[node name="Distracoes" type="Node2D" parent="."]
+
+[node name="Berco" parent="Distracoes" instance=ExtResource("8_p822v")]
+position = Vector2(120, 560)
+
+[node name="MesaFilha" parent="Distracoes" instance=ExtResource("9_4bf15")]
+position = Vector2(552, 545)
+
+[node name="CasaFront" type="Sprite2D" parent="."]
+position = Vector2(358.5, 1155)
+scale = Vector2(1.38477, 1.44853)
+texture = ExtResource("4_6u8iv")
+
+[node name="Limites" type="Node2D" parent="."]
+
+[node name="Limite1" type="StaticBody2D" parent="Limites"]
+position = Vector2(-110, 556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite1"]
+position = Vector2(18.5, 0)
+shape = SubResource("RectangleShape2D_p822v")
+
+[node name="Limite2" type="StaticBody2D" parent="Limites"]
+position = Vector2(832, 556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite2"]
+position = Vector2(-25.5, 0)
+shape = SubResource("RectangleShape2D_4bf15")
+
+[node name="Limite3" type="StaticBody2D" parent="Limites"]
+position = Vector2(318, -110)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite3"]
+position = Vector2(27.0001, -41.4999)
+shape = SubResource("RectangleShape2D_7lwul")
+
+[node name="Limite4" type="StaticBody2D" parent="Limites"]
+position = Vector2(404, 1391)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite4"]
+position = Vector2(-231.5, 45.9985)
+shape = SubResource("RectangleShape2D_gm3vv")
+
+[node name="TouchAnalog" type="Node2D" parent="."]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_x64wv")
+PositionType = 1
+metadata/_custom_type_script = "uid://dku77viqwklks"
+
+[node name="BotaoAcao" type="TouchScreenButton" parent="."]
+visible = false
+top_level = true
+position = Vector2(258, 1055)
+scale = Vector2(1.02692, 1.02692)
+texture_normal = ExtResource("12_7lwul")
+texture_pressed = ExtResource("13_ksqrt")
+shape = SubResource("CircleShape2D_ksqrt")
+action = "action"
+
+[connection signal="AcaoAtivada" from="Player" to="." method="_on_player_acao_ativada"]
+[connection signal="AcaoDesativada" from="Player" to="." method="_on_player_acao_desativada"]

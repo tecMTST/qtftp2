@@ -1,6 +1,59 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm48pr3pgy16l"]
+[gd_scene load_steps=7 format=3 uid="uid://bm48pr3pgy16l"]
 
 [ext_resource type="Script" uid="uid://cmqrsx6830d5q" path="res://Cenas/cozinha_solidaria.gd" id="1_irqgt"]
+[ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="2_3kmma"]
+[ext_resource type="Script" uid="uid://dku77viqwklks" path="res://addons/analog_touch_control/scripts/TouchAnalog.gd" id="3_tkkxi"]
+
+[sub_resource type="Gradient" id="Gradient_kc3ot"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lskyy"]
+gradient = SubResource("Gradient_kc3ot")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdjjj"]
+size = Vector2(222, 1546)
 
 [node name="CozinhaSolidaria" type="Node2D"]
 script = ExtResource("1_irqgt")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(359.5, 642.5)
+scale = Vector2(2.92578, 1305)
+texture = SubResource("GradientTexture1D_lskyy")
+
+[node name="Player" parent="." instance=ExtResource("2_3kmma")]
+position = Vector2(376, 676)
+rotation = -1.63185
+
+[node name="TouchAnalog" type="Node2D" parent="."]
+script = ExtResource("3_tkkxi")
+PositionType = 1
+metadata/_custom_type_script = "uid://dku77viqwklks"
+
+[node name="Limites" type="Node2D" parent="."]
+
+[node name="Limite1" type="StaticBody2D" parent="Limites"]
+position = Vector2(-110, 556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite1"]
+shape = SubResource("RectangleShape2D_kdjjj")
+
+[node name="Limite2" type="StaticBody2D" parent="Limites"]
+position = Vector2(832, 556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite2"]
+shape = SubResource("RectangleShape2D_kdjjj")
+
+[node name="Limite3" type="StaticBody2D" parent="Limites"]
+position = Vector2(318, -110)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite3"]
+shape = SubResource("RectangleShape2D_kdjjj")
+
+[node name="Limite4" type="StaticBody2D" parent="Limites"]
+position = Vector2(404, 1391)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite4"]
+shape = SubResource("RectangleShape2D_kdjjj")

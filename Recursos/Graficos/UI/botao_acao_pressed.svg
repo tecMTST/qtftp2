@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="42.458748mm"
+   height="42.458755mm"
+   viewBox="0 0 42.458748 42.458755"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="botao_acao_pressed.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0242632"
+     inkscape:cx="57.114225"
+     inkscape:cy="202.58465"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-51.83335,-64.984484)">
+    <path
+       id="path1"
+       style="fill:#0000d9;fill-opacity:1;stroke:none;stroke-width:0.867386;stroke-linecap:round;stroke-linejoin:round"
+       d="M 73.062725,64.984484 A 21.229347,21.229347 0 0 0 51.83335,86.213859 21.229347,21.229347 0 0 0 73.062725,107.44324 21.229347,21.229347 0 0 0 94.292097,86.213859 21.229347,21.229347 0 0 0 73.062725,64.984484 Z m -6.534426,4.794878 h 13.068849 c -0.783121,3.314286 -1.587377,7.096977 -2.412454,11.348213 -0.405544,1.929837 -0.811246,3.866534 -1.216792,5.810355 -0.447498,2.16757 -0.670683,3.642491 -0.670683,4.425613 0,0.223748 0.01313,0.406268 0.04115,0.54611 -0.06993,0.01399 -0.818106,0.09754 -2.244507,0.251368 -0.797105,0.09789 -1.650287,0.224333 -2.55927,0.378162 -0.33562,-2.279445 -0.922731,-6.014322 -1.761789,-11.202509 -0.489453,-2.363349 -1.237634,-6.215299 -2.244507,-11.557312 z m 6.103987,25.087743 c 1.244606,0 2.322083,0.356778 3.231064,1.069979 0.93695,0.755153 1.404764,1.699038 1.404764,2.831767 0,1.090783 -0.467814,2.013219 -1.404764,2.768369 -0.922964,0.74117 -2.000442,1.11225 -3.231064,1.11225 -1.314525,0 -2.446967,-0.37108 -3.397901,-1.11225 -0.93695,-0.75515 -1.404761,-1.691883 -1.404761,-2.810632 0,-1.132731 0.453515,-2.05517 1.362496,-2.768372 0.922965,-0.727186 2.069702,-1.091111 3.440166,-1.091111 z" />
+  </g>
+</svg>

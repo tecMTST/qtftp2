@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b636g7sui3m6c"]
+
+[ext_resource type="Script" uid="uid://c2o0stv3doic" path="res://Componentes/Base/Interagiveis/fogao.gd" id="1_bbe22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvsi0"]
+size = Vector2(134, 162)
+
+[node name="Fogao" type="StaticBody2D" groups=["fogao", "interagivel"]]
+script = ExtResource("1_bbe22")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cvsi0")

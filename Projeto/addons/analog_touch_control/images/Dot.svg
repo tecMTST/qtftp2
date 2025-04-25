@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="96"
+   height="96"
+   viewBox="0 0 25.4 25.4"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="Dot.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="4.1978415"
+     inkscape:cx="43.117397"
+     inkscape:cy="63.485008"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g8" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-22.143377,-22.143377)">
+    <g
+       id="g8"
+       transform="matrix(1.0833139,0,0,1.0833139,-1.8448521,-1.8448521)">
+      <path
+         id="path2"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.331;stroke-linecap:round"
+         d="M 33.866665 22.143378 A 11.723287 11.723287 0 0 0 22.143378 33.866665 A 11.723287 11.723287 0 0 0 33.866665 45.589952 A 11.723287 11.723287 0 0 0 45.589952 33.866665 A 11.723287 11.723287 0 0 0 33.866665 22.143378 z M 33.866665 22.551232 L 36.406329 26.950326 L 31.327001 26.950326 L 33.866665 22.551232 z M 26.950326 31.327001 L 26.950326 36.406329 L 22.551232 33.866665 L 26.950326 31.327001 z M 40.783004 31.327001 L 45.182099 33.866665 L 40.783004 36.406329 L 40.783004 31.327001 z M 31.327001 40.783004 L 36.406329 40.783004 L 33.866665 45.182099 L 31.327001 40.783004 z " />
+      <g
+         id="g7"
+         transform="translate(0.20948695,-0.10565605)">
+        <g
+           id="g4" />
+        <g
+           id="g6"
+           transform="rotate(-90,33.657178,33.972321)" />
+      </g>
+    </g>
+  </g>
+</svg>

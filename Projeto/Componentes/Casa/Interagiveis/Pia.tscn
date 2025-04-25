@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6n7piqbsbwoq"]
+
+[ext_resource type="Script" uid="uid://c54ra8i7yu3lf" path="res://Componentes/Base/Interagiveis/pia.gd" id="1_aya1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tpct"]
+size = Vector2(130, 132)
+
+[node name="Pia" type="StaticBody2D" groups=["interagivel", "pia"]]
+script = ExtResource("1_aya1q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2tpct")
