@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://ddvbl64i00b36"]
+
+[resource]
+default_font_size = 16
+HeaderLarge/font_sizes/font_size = 32
+HeaderMedium/font_sizes/font_size = 24
+HeaderSmall/font_sizes/font_size = 20
+ModalContainer/base_type = &"MarginContainer"
+ModalContainer/constants/margin_bottom = 224
+ModalContainer/constants/margin_left = 64
+ModalContainer/constants/margin_right = 64
+ModalContainer/constants/margin_top = 224
+ModalTitle/base_type = &"Label"
+ModalTitle/colors/font_color = Color(0, 0, 0, 1)
+ModalTitle/font_sizes/font_size = 28
+TitleButton/base_type = &"Button"
+TitleButton/font_sizes/font_size = 36
+TitleLabel/base_type = &"Label"
+TitleLabel/font_sizes/font_size = 60

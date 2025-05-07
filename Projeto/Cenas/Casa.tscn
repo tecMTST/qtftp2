@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=20 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="2_kc3ot"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="9_4bf15"]
 [ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="12_7lwul"]
 [ext_resource type="Texture2D" uid="uid://bfhn7o5c0ni87" path="res://Recursos/Graficos/UI/botao_acao_pressed.svg" id="13_ksqrt"]
+[ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="14_d2j33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
 size = Vector2(259, 1546)
@@ -115,6 +116,9 @@ texture_normal = ExtResource("12_7lwul")
 texture_pressed = ExtResource("13_ksqrt")
 shape = SubResource("CircleShape2D_ksqrt")
 action = "action"
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("14_d2j33")
 
 [connection signal="AcaoAtivada" from="Player" to="." method="_on_player_acao_ativada"]
 [connection signal="AcaoDesativada" from="Player" to="." method="_on_player_acao_desativada"]

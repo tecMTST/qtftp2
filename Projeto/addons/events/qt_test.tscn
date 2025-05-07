@@ -1,0 +1,172 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7636jmaktog8"]
+
+[ext_resource type="Texture2D" uid="uid://kxqvi3jw7gs5" path="res://addons/events/progress_bg.png" id="1_5cccr"]
+[ext_resource type="Texture2D" uid="uid://b70wvh81uhxr6" path="res://addons/events/progress_fg.png" id="2_djckh"]
+[ext_resource type="Script" uid="uid://b0tgsnmsppesf" path="res://addons/events/quick_timer_progress_bar.gd" id="3_xt0u5"]
+[ext_resource type="Script" uid="uid://l8q74os0pqyu" path="res://addons/events/behavior/press_button.gd" id="4_vw0bp"]
+[ext_resource type="Texture2D" uid="uid://b7mylggi43eo5" path="res://addons/events/progress_border.png" id="5_p3djh"]
+[ext_resource type="Texture2D" uid="uid://c7c6piffcvffm" path="res://addons/events/progress_line.png" id="6_icx75"]
+[ext_resource type="Script" uid="uid://44oftg34g52d" path="res://addons/events/behavior/smash_button.gd" id="7_l2ob8"]
+
+[sub_resource type="GDScript" id="GDScript_1sruk"]
+script/source = "extends Control
+
+@onready var press_progress_bar: QuickTimerProgressBar = $HBoxContainer/VBoxContainer/QuickTimerProgressBar
+@onready var smash_progress_bar: QuickTimerProgressBar = $HBoxContainer/VBoxContainer2/QuickTimerProgressBar
+
+func _on_press_button_down() -> void:
+	if press_progress_bar.running: return
+	press_progress_bar.start()
+
+
+func _on_button_pressed() -> void:
+	if smash_progress_bar.running: return
+	smash_progress_bar.start()
+"
+
+[sub_resource type="GDScript" id="GDScript_rwhuf"]
+script/source = "extends OptionButton
+
+enum FillMode{
+	FILL_LEFT_TO_RIGHT = 0,
+	FILL_RIGHT_TO_LEFT = 1,
+	FILL_TOP_TO_BOTTOM = 2,
+	FILL_BOTTOM_TO_TOP = 3,
+	FILL_CLOCKWISE = 4,
+	FILL_COUNTER_CLOCKWISE = 5,
+	FILL_BILINEAR_LEFT_AND_RIGHT = 6,
+	FILL_BILINEAR_TOP_AND_BOTTOM = 7,
+	FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE = 8,
+}
+
+func _ready() -> void:
+	connect('item_selected', _selected)
+	for mode in FillMode:
+		add_item(mode, FillMode[mode])
+
+func _selected(item) -> void:
+	$\"../QuickTimerProgressBar\".fill_mode = item
+"
+
+[sub_resource type="GDScript" id="GDScript_il4uj"]
+script/source = "extends Label
+
+@onready var timer: Timer = $\"../QuickTimerProgressBar/Timer\"
+
+func _process(_delta: float) -> void:
+	text = str(snapped(timer.time_left, 0.001)) + 's'
+"
+
+[node name="QTTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_1sruk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hold button"
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+script = SubResource("GDScript_rwhuf")
+
+[node name="QuickTimerProgressBar" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer" node_paths=PackedStringArray("event_timer", "behavior")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+step = 10.0
+texture_under = ExtResource("1_5cccr")
+texture_progress = ExtResource("2_djckh")
+script = ExtResource("3_xt0u5")
+event_timer = NodePath("Timer")
+behavior = NodePath("PressButton")
+
+[node name="Timer" type="Timer" parent="HBoxContainer/VBoxContainer/QuickTimerProgressBar"]
+wait_time = 10.0
+one_shot = true
+
+[node name="PressButton" type="Node" parent="HBoxContainer/VBoxContainer/QuickTimerProgressBar"]
+script = ExtResource("4_vw0bp")
+step_time = 0.3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "0.00 s"
+horizontal_alignment = 1
+script = SubResource("GDScript_il4uj")
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Press"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Smash Button"
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+script = SubResource("GDScript_rwhuf")
+
+[node name="QuickTimerProgressBar" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer2" node_paths=PackedStringArray("event_timer", "behavior")]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+step = 10.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = ExtResource("5_p3djh")
+texture_progress = ExtResource("6_icx75")
+script = ExtResource("3_xt0u5")
+event_timer = NodePath("Timer")
+behavior = NodePath("SmashButton")
+
+[node name="Timer" type="Timer" parent="HBoxContainer/VBoxContainer2/QuickTimerProgressBar"]
+wait_time = 10.0
+one_shot = true
+
+[node name="SmashButton" type="Node" parent="HBoxContainer/VBoxContainer2/QuickTimerProgressBar"]
+script = ExtResource("7_l2ob8")
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "0.00 s"
+horizontal_alignment = 1
+script = SubResource("GDScript_il4uj")
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Press"
+
+[connection signal="button_down" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_press_button_down"]
+[connection signal="button_down" from="HBoxContainer/VBoxContainer/Button" to="HBoxContainer/VBoxContainer/QuickTimerProgressBar/PressButton" method="press"]
+[connection signal="button_up" from="HBoxContainer/VBoxContainer/Button" to="HBoxContainer/VBoxContainer/QuickTimerProgressBar/PressButton" method="release"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button" to="HBoxContainer/VBoxContainer2/QuickTimerProgressBar/SmashButton" method="press"]

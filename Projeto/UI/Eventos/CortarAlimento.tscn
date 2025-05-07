@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6o4dd3tu2g00"]
+
+[ext_resource type="PackedScene" uid="uid://dsnts70s2x6ks" path="res://UI/Interfaces/Modal.tscn" id="1_s7xxv"]
+[ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="2_bsy65"]
+[ext_resource type="Texture2D" uid="uid://bmnbok0gn2itx" path="res://icon.svg" id="2_imsks"]
+[ext_resource type="Script" uid="uid://b0tgsnmsppesf" path="res://addons/events/quick_timer_progress_bar.gd" id="3_imsks"]
+[ext_resource type="Script" uid="uid://44oftg34g52d" path="res://addons/events/behavior/smash_button.gd" id="4_w4mwm"]
+
+[node name="CortarAlimento" instance=ExtResource("1_s7xxv")]
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="1"]
+layout_mode = 2
+theme_type_variation = &"ModalTitle"
+text = "Pressione o botão para cortar o alimento"
+horizontal_alignment = 1
+
+[node name="LabelTempo" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="2"]
+layout_mode = 2
+theme_type_variation = &"ModalTitle"
+horizontal_alignment = 1
+
+[node name="ImagemEvento" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer" index="3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_imsks")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ProgressoEvento" type="TextureProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer" index="4" node_paths=PackedStringArray("event_timer", "behavior")]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+step = 20.0
+fill_mode = 4
+texture_under = ExtResource("2_bsy65")
+texture_progress = ExtResource("2_bsy65")
+tint_under = Color(0, 1, 1, 0.647059)
+tint_progress = Color(0.384314, 0.960784, 0, 0.698039)
+script = ExtResource("3_imsks")
+event_timer = NodePath("Timer")
+behavior = NodePath("SmashButton")
+metadata/_custom_type_script = "uid://b0tgsnmsppesf"
+
+[node name="Timer" type="Timer" parent="MarginContainer/PanelContainer/VBoxContainer/ProgressoEvento" index="0"]
+wait_time = 10.0
+one_shot = true
+
+[node name="SmashButton" type="Node" parent="MarginContainer/PanelContainer/VBoxContainer/ProgressoEvento" index="1"]
+script = ExtResource("4_w4mwm")
+miss_time = 0.3
+metadata/_custom_type_script = "uid://44oftg34g52d"
+
+[node name="BotaoAcao" type="TextureButton" parent="MarginContainer/PanelContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("2_bsy65")
+stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/BotaoAcao" to="MarginContainer/PanelContainer/VBoxContainer/ProgressoEvento/SmashButton" method="press"]

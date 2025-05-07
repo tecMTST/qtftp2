@@ -21,6 +21,8 @@ SaveService="*res://addons/saveEngine/scripts/SaveService.gd"
 EstadoDeJogo="*res://Scripts/EstadoDeJogo.gd"
 Globais="*res://Scripts/Globais.gd"
 Constantes="*res://Scripts/Constantes.gd"
+Eventos="*res://Scripts/Eventos.gd"
+GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 
 [display]
 
@@ -28,10 +30,11 @@ window/size/viewport_width=720
 window/size/viewport_height=1280
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/2d_controls_toolkit/plugin.cfg", "res://addons/analog_touch_control/plugin.cfg", "res://addons/saveEngine/plugin.cfg", "res://addons/uiJuicer/plugin.cfg")
+enabled=PackedStringArray("res://addons/2d_controls_toolkit/plugin.cfg", "res://addons/analog_touch_control/plugin.cfg", "res://addons/saveEngine/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg", "res://addons/uiJuicer/plugin.cfg")
 
 [file_customization]
 
@@ -54,6 +57,22 @@ bancada=""
 berco=""
 filha=""
 geladeira=""
+
+[gui]
+
+theme/custom="uid://ddvbl64i00b36"
+
+[gui_transitions]
+
+config/default/auto_start=true
+config/default/fade_layout=true
+config/default/center_pivot=true
+config/default/duration=0.5
+config/default/delay=0.5
+config/default/transition_type="QUAD"
+config/default/ease_type="IN_OUT"
+config/default/animation_enter=4
+config/default/animation_leave=4
 
 [input]
 
