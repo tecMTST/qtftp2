@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c10u4vp7mngm7"]
+
+[ext_resource type="Texture2D" uid="uid://b0bk8mi33olrk" path="res://Recursos/Graficos/Personagens/FilhaStakeholder.svg" id="1_wk0xs"]
+[ext_resource type="Script" uid="uid://dnibm5siaj76a" path="res://Componentes/Personagens/filha.gd" id="2_suqhv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1xpb"]
+radius = 48.0104
+
+[node name="Filha" type="CharacterBody2D"]
+script = ExtResource("2_suqhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CircleShape2D_s1xpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 0)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_wk0xs")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
