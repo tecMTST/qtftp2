@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxisooqckxyia"]
+
+[ext_resource type="Texture2D" uid="uid://cnva0fw1epbgd" path="res://Recursos/Graficos/Bagunça/Bagunca.svg" id="1_kvyup"]
+
+[node name="BaguncaCena" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_kvyup")
