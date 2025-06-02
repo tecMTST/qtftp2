@@ -57,6 +57,8 @@ bancada=""
 berco=""
 filha=""
 geladeira=""
+player=""
+agarravel=""
 
 [gui]
 
