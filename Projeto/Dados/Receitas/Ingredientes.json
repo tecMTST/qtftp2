@@ -95,7 +95,7 @@
 		"Acoes" : [
 			{
 				"Alvo" : "fogao",
-				"Acao" : "fritat",
+				"Acao" : "fritar",
 				"Tempo" : 3,
 				"VariacaoResultado" : 2
 			},
