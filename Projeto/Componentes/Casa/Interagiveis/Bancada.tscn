@@ -10,3 +10,10 @@ script = ExtResource("1_awsmu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bancada", "interagivel"]]
 shape = SubResource("RectangleShape2D_xld1x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -92.0
+offset_top = -65.0
+offset_right = 93.0
+offset_bottom = 64.0
+color = Color(1, 0.54902, 0, 0.333333)

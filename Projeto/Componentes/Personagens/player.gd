@@ -7,9 +7,10 @@ signal AcaoDesativada
 @onready var PosicaoObjeto = $PosicaoObjeto
 @onready var AreaAcao = $AreaAcao
 
+var itemAtivo : IngredienteBase
 var interagivelAtivo : Node2D
 var acaoExecutando : bool = false
-var objetoAgarrado : Node2D
+var objetoAgarrado : ObjetoAgarravel
 var acaoAgarrar : bool = false
 
 func _input(event: InputEvent) -> void:
@@ -29,8 +30,27 @@ func _input(event: InputEvent) -> void:
 func _ExecutarAcao():
 	if interagivelAtivo:
 		print_debug("Acao executada: " + interagivelAtivo.Nome)
-		# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?
-		Eventos.EventoIniciado.emit('cortar-alimento')
+		# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?		
+		if interagivelAtivo is Geladeira:			
+			if not itemAtivo:
+				var ingredienteAtual = Globais.GetIngrediente(
+					ControleDeFase.PassoAtual.Ingredientes[0].IdIngrediente, 
+					ControleDeFase.PassoAtual.Ingredientes[0].VariacaoIngrediente)
+				itemAtivo = load(ingredienteAtual.Cena).instantiate()
+				add_sibling(itemAtivo)
+				objetoAgarrado = itemAtivo
+				agarrar()
+			else:
+				itemAtivo.queue_free()
+			
+			
+			
+		elif interagivelAtivo is Bancada:
+			pass
+		elif interagivelAtivo is Pia:
+			pass
+		elif interagivelAtivo is Fogao:
+			pass
 
 func _on_area_acao_body_entered(body: Node2D) -> void:
 	if body.is_in_group("agarravel") and not acaoAgarrar:
