@@ -17,9 +17,7 @@ var jogador_no_alcance: Player:
 			_interagiveis_no_alcance.erase(self)
 		
 		_interagiveis_no_alcance.sort_custom(func (a: BaseInteragivel, b: BaseInteragivel):
-			if a.prioridade_de_interacao >= b.prioridade_de_interacao:
-				return true
-			return false
+			return a.prioridade_de_interacao >= b.prioridade_de_interacao
 		)
 
 var pode_interagir := true:
@@ -55,7 +53,7 @@ var esta_contornado := false:
 @export var nome: String = ""
 @export var descricao : String = ""
 
-@export_subgroup("Contorno ao entrar na área")
+@export_subgroup("Interação")
 @export var area_de_interacao: CollisionObject2D
 @export var prioridade_de_interacao := 0
 
