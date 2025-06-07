@@ -12,7 +12,7 @@ config_version=5
 
 config/name="qtftp2"
 run/main_scene="uid://gkvdwj2c5ern"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -44,6 +44,7 @@ folder_colors={
 "res://Dados/": "green",
 "res://Recursos/": "teal",
 "res://Scripts/": "blue",
+"res://Shaders/": "gray",
 "res://UI/": "purple",
 "res://addons/": "red"
 }
@@ -117,4 +118,6 @@ jolt_physics_3d/simulation/areas_detect_static_bodies=true
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
