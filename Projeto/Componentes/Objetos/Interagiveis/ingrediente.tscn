@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://ck8wg57jy340e"]
+
+[ext_resource type="Script" uid="uid://cd2jogo7kya5n" path="res://ingrediente.gd" id="1_hkx6c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkx6c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_by3sd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1g2w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u8o3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gue6v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0jxps"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urfun"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5gvv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bte0b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2rbu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s6w4g"]
+
+[node name="Ingrediente" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_hkx6c")
+
+[node name="Sprite" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -85.5
+offset_right = 85.5
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -85.5
+offset_right = 85.5
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hkx6c")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_by3sd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_e1g2w")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u8o3y")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gue6v")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_0jxps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_urfun")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_r5gvv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bte0b")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j2rbu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s6w4g")
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

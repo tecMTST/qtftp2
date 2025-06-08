@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccxw6f3bwr8tt"]
+
+[ext_resource type="Script" uid="uid://bkoohyyxjha2h" path="res://UI/Eventos/geladeira.gd" id="1_b7hqd"]
+[ext_resource type="Script" uid="uid://b3ykmcnj6hjhq" path="res://addons/simple-gui-transitions/transition.gd" id="1_uiwjp"]
+[ext_resource type="Script" uid="uid://cpesqq3ctb78o" path="res://addons/uiJuicer/Fader.gd" id="2_egkq2"]
+[ext_resource type="Texture2D" uid="uid://sdkw0iqugey6" path="res://Recursos/Graficos/UI/geladeira_placeholder.png" id="3_egkq2"]
+[ext_resource type="PackedScene" uid="uid://cywx8j6su6jp2" path="res://Componentes/Objetos/Interagiveis/Prateleira.tscn" id="5_d75bn"]
+
+[node name="Geladeira" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b7hqd")
+caminho_ingredientes = "res://Dados/Niveis/Geladeira_Teste.json"
+
+[node name="GuiTransition" type="Node" parent="."]
+script = ExtResource("1_uiwjp")
+fade_layout = 0
+animation_enter = 3
+animation_leave = 2
+duration = 1.5
+transition_type = "ELASTIC"
+ease_type = "IN_OUT"
+layout = NodePath("..")
+layout_id = "Geladeira"
+metadata/_custom_type_script = "uid://b3ykmcnj6hjhq"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"ModalBackground"
+color = Color(0, 0, 0, 0.133333)
+
+[node name="Fader" type="Node" parent="ColorRect"]
+script = ExtResource("2_egkq2")
+metadata/_custom_type_script = "uid://cpesqq3ctb78o"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.5
+offset_top = -557.0
+offset_right = 357.5
+offset_bottom = 557.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_egkq2")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -490.5
+offset_right = 310.0
+offset_bottom = 490.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Prateleira" parent="VBoxContainer" instance=ExtResource("5_d75bn")]
+layout_mode = 2
+
+[node name="Prateleira2" parent="VBoxContainer" instance=ExtResource("5_d75bn")]
+layout_mode = 2
+
+[node name="Prateleira3" parent="VBoxContainer" instance=ExtResource("5_d75bn")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.94
+anchor_top = 0.082
+anchor_right = 0.94
+anchor_bottom = 0.082
+offset_left = -12.8
+offset_top = -11.96
+offset_right = 12.2
+offset_bottom = 13.04
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -11.5
+offset_right = 5.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

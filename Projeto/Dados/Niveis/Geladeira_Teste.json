@@ -1,0 +1,26 @@
+[
+	{
+		"Nome" : "",
+		"Descricao" : "",
+		"CaminhoSprite" : "res://Recursos/Graficos/UI/botao_acao.svg",
+		"CaminhoObjeto" : "res://Componentes/Objetos/Interagiveis/caixa.tscn"
+	},
+	{
+		"Nome" : "",
+		"Descricao" : "",
+		"CaminhoSprite" : "res://Recursos/Graficos/UI/botao_acao.svg",
+		"CaminhoObjeto" : "res://Componentes/Objetos/Interagiveis/caixa.tscn"
+	},
+	{
+		"Nome" : "",
+		"Descricao" : "",
+		"CaminhoSprite" : "res://Recursos/Graficos/UI/botao_acao.svg",
+		"CaminhoObjeto" : "res://Componentes/Objetos/Interagiveis/caixa.tscn"
+	},
+	{
+		"Nome" : "",
+		"Descricao" : "",
+		"CaminhoSprite" : "res://Recursos/Graficos/UI/botao_acao.svg",
+		"CaminhoObjeto" : "res://Componentes/Objetos/Interagiveis/caixa.tscn"
+	}
+]
