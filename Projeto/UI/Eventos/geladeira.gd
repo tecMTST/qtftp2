@@ -9,8 +9,10 @@ extends Control
 @onready var instancia_ingrediente = preload("res://Componentes/Objetos/Interagiveis/ingrediente.tscn")
 
 var conteudo_json
+var acaoExecutada = false
 
 func _ready() -> void:
+	acaoExecutada = false
 	read_json()
 	preencher_Geladeira()
 
@@ -59,11 +61,10 @@ func ingrediente_escolhido(caminho: String) -> void:
 	var objeto = caminho_objeto.instantiate()
 	var player = get_tree().get_nodes_in_group("player")
 	
-	if player:
-		objeto.get_node("CollisionShape2D").disabled = true
-		objeto.global_position = player[0].PosicaoObjeto.global_position
-		objeto.global_rotation = player[0].PosicaoObjeto.global_rotation
-		player[0].objetoAgarrado = objeto
-		player[0].acaoAgarrar = true
+	if player and not acaoExecutada:
+		acaoExecutada = true
 		player[0].PosicaoObjeto.add_child(objeto)
+		player[0].objetoAgarrado = player[0].PosicaoObjeto.get_children()[0]
+		player[0].objetoAgarrado.get_node("CollisionShape2D").disabled = true
+		player[0].acaoAgarrar = true
 		close()
