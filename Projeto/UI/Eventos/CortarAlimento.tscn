@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://44oftg34g52d" path="res://addons/events/behavior/smash_button.gd" id="4_w4mwm"]
 
 [node name="CortarAlimento" instance=ExtResource("1_s7xxv")]
+process_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="1"]
 layout_mode = 2
