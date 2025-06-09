@@ -13,6 +13,19 @@
 		"Passos" : [
 			{
 				"Ordem" : 1,
+				"Descricao" : "Hidratar o cuscuz",
+				"Alvo" : "pia",
+				"Acao" : "molhar",
+				"Ingredientes" : [
+					{
+						"IdIngrediente" : 5,
+						"VariacaoIngrediente": 1,
+						"Quantidade" : 1
+					}
+				]
+			},
+			{
+				"Ordem" : 2,
 				"Descricao" : "Cozinhar o cuscuz",
 				"Alvo" : "fogao",
 				"Acao" : "cozer",
@@ -25,7 +38,7 @@
 				]
 			},
 			{
-				"Ordem" : 2,
+				"Ordem" : 3,
 				"Descricao" : "Montar o prato",
 				"Alvo" : "bancada",
 				"Acao" : "montagem",
