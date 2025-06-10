@@ -6,7 +6,7 @@
 		"Descricao" : "Arroz branco",
 		"Preco" : 1,
 		"Unidade" : "Gramas",
-		"Imagem" : "",
+		"Cena" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "fogao",
@@ -23,7 +23,7 @@
 		"Descricao" : "Arroz branco cozido",
 		"Preco" : 1,
 		"Unidade" : "Gramas",
-		"Imagem" : "",
+		"Cena" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -40,7 +40,7 @@
 		"Descricao" : "Feijão carioca.",
 		"Preco" : 1,
 		"Unidade" : "Gramas",
-		"Imagem" : "",
+		"Cena" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "fogao",
@@ -57,7 +57,7 @@
 		"Descricao" : "Feijão carioca cozido.",
 		"Preco" : 1,
 		"Unidade" : "Gramas",
-		"Imagem" : "",
+		"Cena" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -74,7 +74,7 @@
 		"Descricao" : "Farinha de mandioca",
 		"Preco" : 1,
 		"Unidade" : "Gramas",
-		"Imagem" : "",
+		"Cena" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -91,11 +91,11 @@
 		"Descricao" : "Ovo branco",
 		"Preco" : 2,
 		"Unidade" : "Unidade",
-		"Imagem" : "",
+		"Cena" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "fogao",
-				"Acao" : "fritat",
+				"Acao" : "fritar",
 				"Tempo" : 3,
 				"VariacaoResultado" : 2
 			},
@@ -114,7 +114,7 @@
 		"Descricao" : "Ovo branco frito",
 		"Preco" : 0,
 		"Unidade" : "Unidade",
-		"Imagem" : "",
+		"Cena" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -131,7 +131,7 @@
 		"Descricao" : "Ovo branco cozido",
 		"Preco" : 0,
 		"Unidade" : "Unidade",
-		"Imagem" : "",
+		"Cena" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -140,5 +140,90 @@
 				"VariacaoResultado" : 0
 			}
 		]
-	}
+	},
+	{
+		"Id" : 5,
+		"Variacao": 1,
+		"Nome" : "Cuscuz Cru",
+		"Descricao" : "Cuscuz Cru",
+		"Preco" : 1,
+		"Unidade" : "Gramas",
+		"Cena" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "bancada",
+				"Acao" : "hidratar",
+				"Tempo" : 10,
+				"VariacaoResultado" : 2
+			}
+		]
+	},
+	{
+		"Id" : 5,
+		"Variacao": 2,
+		"Nome" : "Cuscuz Hidratado",
+		"Descricao" : "Cuscuz Hidratado",
+		"Preco" : 1,
+		"Unidade" : "Gramas",
+		"Cena" : "res://Componentes/Ingredientes/CuscuzHidratado.tscn",
+		"Acoes" : [
+			{
+				"Alvo" : "fogao",
+				"Acao" : "cozer",
+				"Tempo" : 10,
+				"VariacaoResultado" : 3
+			}
+		]
+	},
+	{
+		"Id" : 5,
+		"Variacao": 3,
+		"Nome" : "Cuscuz cozido",
+		"Descricao" : "Cuscuz cozido a vapor",
+		"Preco" : 1,
+		"Unidade" : "Gramas",
+		"Cena" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "bancada",
+				"Acao" : "misturar",
+				"Tempo" : 1,
+				"VariacaoResultado" : 0
+			}
+		]
+	},
+	{
+		"Id" : 6,
+		"Variacao": 1,
+		"Nome" : "Pó de Café",
+		"Descricao" : "Pó de Café",
+		"Preco" : 1,
+		"Unidade" : "Gramas",
+		"Cena" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "Fogão",
+				"Acao" : "cozer",
+				"Tempo" : 5,
+				"VariacaoResultado" : 2
+			}
+		]
+	},
+	{
+		"Id" : 6,
+		"Variacao": 2,
+		"Nome" : "Café Coado",
+		"Descricao" : "Café Coado",
+		"Preco" : 1,
+		"Unidade" : "Gramas",
+		"Cena" : "",
+		"Acoes" : [
+			{
+				"Alvo" : "Bancada",
+				"Acao" : "misturar",
+				"Tempo" : 1,
+				"VariacaoResultado" : 0
+			}
+		]
+	},
 ]

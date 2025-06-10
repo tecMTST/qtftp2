@@ -10,3 +10,10 @@ script = ExtResource("1_aya1q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2tpct")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -63.0
+offset_top = -64.0
+offset_right = 62.0
+offset_bottom = 64.0
+color = Color(1, 1, 0, 0.376471)
