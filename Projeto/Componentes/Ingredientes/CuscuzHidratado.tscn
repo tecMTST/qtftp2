@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxh3fegmcf0w4"]
+[gd_scene load_steps=5 format=3 uid="uid://cxh3fegmcf0w4"]
 
 [ext_resource type="Script" uid="uid://bgq3jihvo6332" path="res://Componentes/Ingredientes/cuscuz_hidratado.gd" id="1_l42kw"]
 [ext_resource type="Texture2D" uid="uid://dimyl5n7bgfw" path="res://Recursos/Graficos/Ingredientes/CuscuzHidratado.svg" id="2_i8al1"]
+[ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="3_eg7e5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l42kw"]
 size = Vector2(50, 32)
@@ -16,3 +17,13 @@ shape = SubResource("RectangleShape2D_l42kw")
 position = Vector2(4.76837e-07, 2.38419e-07)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_i8al1")
+
+[node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
+position = Vector2(20, -20)
+script = ExtResource("3_eg7e5")
+temporizador = NodePath("../Timer")
+metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

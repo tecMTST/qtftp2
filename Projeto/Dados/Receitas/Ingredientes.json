@@ -148,7 +148,7 @@
 		"Descricao" : "Cuscuz Cru",
 		"Preco" : 1,
 		"Unidade" : "Gramas",
-		"Cena" : "",
+		"Cena" : "uid://dorynrmsas25r",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
