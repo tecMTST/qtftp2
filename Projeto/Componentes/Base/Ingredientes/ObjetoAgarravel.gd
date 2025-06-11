@@ -18,5 +18,8 @@ func combinar() -> bool:
 func transformar(novo_objeto: ObjetoAgarravel):
 	get_parent().add_child(novo_objeto)
 	novo_objeto.global_position = global_position
-	ControleDeFase.jogador.objetoAgarrado = novo_objeto
+	
+	if ControleDeFase.jogador.objetoAgarrado == self:
+		ControleDeFase.jogador.objetoAgarrado = novo_objeto
+	
 	queue_free()
