@@ -1,0 +1,50 @@
+name: Validação do Branch de Arte
+
+on:
+  push:
+    branches:
+      - arte
+
+jobs:
+  valida:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Acessa Repositório
+        uses: actions/checkout@v4
+
+      - name: Valida Assets de Arte
+        run: |
+          CAMINHOS_VALIDOS=("Recursos/Graficos/" "Projeto/Recursos/Graficos")
+          TIPOS_VALIDOS=("\.png" "\.svg" "\.import")
+
+          ARQUIVOS_ALTERADOS=$(git diff --cached --name-only)
+
+          for ARQUIVO in $ARQUIVOS_ALTERADOS; do
+            # verifica pasta:
+            ACHOU_DIR=false
+            for DIR in "${CAMINHOS_VALIDOS[@]}"; do
+              if [[ "$ARQUIVO" == $DIR* ]]; then
+                ACHOU_DIR=true
+                break
+              fi
+            done
+            if ! $ACHOU_DIR; then
+              echo "❌ Arquivo '$ARQUIVO' não está num caminho válido (precisa ser em ${CAMINHOS_VALIDOS[*]})"
+              exit 1
+            fi
+
+            # verifica tipo:
+            ACHOU_TIPO=false
+            for TIPO in "${TIPOS_VALIDOS[@]}"; do
+              if [[ "$ARQUIVO" =~ $TIPO ]]; then
+                ACHOU_TIPO=true
+                break
+              fi
+            done
+            if ! ACHOU_TIPO; then
+              echo "❌ Arquivo '$FILE' não tem extensão válida (precisa ser em ${TIPOS_VALIDOS[*]})"
+              exit 1
+            fi
+          done
+
+          echo "✅ mudanças validadas!"

@@ -1,0 +1,27 @@
+name: Main no Branch de Arte
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtendo repositório de arte
+        uses: actions/checkout@v4
+        with:
+          ref: arte
+
+      - name: Lendo última versão da main
+        run: |
+          git fetch origin main
+
+      - name: Inserindo Main dentro de Arte
+        run: |
+          git merge origin/main -s recursive -X patience
+
+      - name: Atualizando repositório de arte
+        run: |
+          git push origin arte
