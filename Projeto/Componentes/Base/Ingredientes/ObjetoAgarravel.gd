@@ -1,5 +1,7 @@
 class_name ObjetoAgarravel extends StaticBody2D
 
+signal ao_transformar(novo_objeto: ObjetoAgarravel)
+
 var Nome : String = ""
 var Descricao : String = ""
 
@@ -18,8 +20,5 @@ func combinar() -> bool:
 func transformar(novo_objeto: ObjetoAgarravel):
 	get_parent().add_child(novo_objeto)
 	novo_objeto.global_position = global_position
-	
-	if ControleDeFase.jogador.objetoAgarrado == self:
-		ControleDeFase.jogador.objetoAgarrado = novo_objeto
-	
+	ao_transformar.emit(novo_objeto)
 	queue_free()

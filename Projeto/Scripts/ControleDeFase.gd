@@ -6,11 +6,10 @@ extends Node
 @export var IngredientesDisponiveis : Array[Ingrediente] = []
 @export var PassoAtual : PassoReceita
 
-var jogador : Player
 var __indexReceitaAtual : int = 0
 var __indexPassoAtual : int = 0
 
-func CarregarNivel(idNivel : int, _jogador: Player):
+func CarregarNivel(idNivel : int):
 	var niveis = Globais.Niveis.filter(func(item : Nivel) : return item.Id == idNivel)
 	if len(niveis) > 0:
 		NivelAtual = niveis[0]
@@ -19,8 +18,6 @@ func CarregarNivel(idNivel : int, _jogador: Player):
 				func(id : int): return id == item.Id))	
 		__indexReceitaAtual = 0
 		SelecionarReceita(__indexReceitaAtual)
-	
-	jogador = _jogador
 
 func SelecionarReceita(indexReceita) -> bool:
 	if not NivelAtual:
