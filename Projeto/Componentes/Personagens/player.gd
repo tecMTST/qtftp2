@@ -34,7 +34,7 @@ func _ExecutarAcao():
 		elif interagivelAtivo.is_in_group("geladeira"):
 			print_debug("Acao executada: " + interagivelAtivo.Nome)
 			# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?
-			Eventos.EventoIniciado.emit('pegar_ingrediente')
+			Eventos.EventoIniciado.emit('pegar-ingrediente')
 
 func _on_area_acao_body_entered(body: Node2D) -> void:
 	if body.is_in_group("agarravel") and not acaoAgarrar:
