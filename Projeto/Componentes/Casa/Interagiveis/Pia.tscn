@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6n7piqbsbwoq"]
+[gd_scene load_steps=4 format=3 uid="uid://c6n7piqbsbwoq"]
 
 [ext_resource type="Script" uid="uid://c54ra8i7yu3lf" path="res://Componentes/Base/Interagiveis/pia.gd" id="1_aya1q"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_2tpct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tpct"]
-size = Vector2(130, 132)
+size = Vector2(130, 142)
 
 [node name="Pia" type="StaticBody2D" groups=["interagivel", "pia"]]
 script = ExtResource("1_aya1q")
@@ -17,3 +18,19 @@ offset_top = -64.0
 offset_right = 62.0
 offset_bottom = 64.0
 color = Color(1, 1, 0, 0.376471)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_2tpct")
+
+[node name="ComponenteInteragivel" type="Node2D" parent="." node_paths=PackedStringArray("area_de_interacao")]
+script = ExtResource("2_2tpct")
+nome = "Pia"
+descricao = "Uma pia"
+area_de_interacao = NodePath("../Area2D")
+possui_contorno = false
+metadata/_custom_type_script = "uid://ddwsslb5nraqq"
+
+[connection signal="interagir" from="ComponenteInteragivel" to="." method="_on_componente_interagivel_interagir"]

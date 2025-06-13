@@ -10,8 +10,20 @@ signal AcaoDesativada
 var itemAtivo : IngredienteBase
 var interagivelAtivo : Node2D
 var acaoExecutando : bool = false
-var objetoAgarrado : ObjetoAgarravel
 var acaoAgarrar : bool = false
+var objetoAgarrado : ObjetoAgarravel:
+	set(valor):
+		if valor != null:
+			valor.ao_transformar.connect(ao_transformar_objeto_agarrado)
+		elif valor == null\
+			and objetoAgarrado != null\
+			and objetoAgarrado.ao_transformar.is_connected(ao_transformar_objeto_agarrado):
+			objetoAgarrado.ao_transformar.disconnect(ao_transformar_objeto_agarrado)
+		
+		objetoAgarrado = valor
+
+func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
+	objetoAgarrado = novo_objeto
 
 func _input(event: InputEvent) -> void:
 	if objetoAgarrado and Input.is_action_just_pressed("action") and not acaoAgarrar:
