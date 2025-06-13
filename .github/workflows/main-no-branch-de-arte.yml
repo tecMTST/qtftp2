@@ -13,14 +13,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: arte
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Lendo última versão da main
         run: |
-          git fetch origin main
+          git fetch origin main --depth=1000 # garante que acha ancestral comum entre main e arte
 
       - name: Inserindo Main dentro de Arte
         run: |
-          git merge origin/main -s recursive -X patience
+          git config user.name "Bot Sincronizador da Main"
+          git config user.email "bot@github.com"
+          # só crie o commit de merge se necessário:
+          git merge origin/main --ff-only || git merge origin/main --no-ff -m "Atualizando Arte com a Main"
 
       - name: Atualizando repositório de arte
         run: |
