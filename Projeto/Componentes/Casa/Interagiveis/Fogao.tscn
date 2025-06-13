@@ -12,6 +12,7 @@ script = ExtResource("1_bbe22")
 shape = SubResource("RectangleShape2D_cvsi0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -65.0
 offset_top = -78.0
 offset_right = 65.0

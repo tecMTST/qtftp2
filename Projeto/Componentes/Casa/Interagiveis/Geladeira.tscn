@@ -12,6 +12,7 @@ script = ExtResource("1_pleqy")
 shape = SubResource("RectangleShape2D_w3mkr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -83.0
 offset_top = -64.0
 offset_right = 83.0
