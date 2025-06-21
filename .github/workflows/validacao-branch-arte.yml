@@ -1,0 +1,65 @@
+name: Validação do Branch de Arte
+
+on:
+  push:
+    branches:
+      - arte
+
+jobs:
+  valida:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Acessa Repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Obtém origin/main
+        run: git fetch origin main
+
+      - name: Valida Assets de Arte
+        run: |
+          CAMINHOS_VALIDOS=("Recursos/Graficos/" "Projeto/Recursos/Graficos")
+          TIPOS_VALIDOS=("png" "svg" "import")
+
+          ARQUIVOS_ALTERADOS=$(git diff --name-only origin/main..arte)
+
+          # olha arquivos diferentes entre main e arte
+          for ARQUIVO in $ARQUIVOS_ALTERADOS; do
+
+            # ignora se mudança está na main
+            if git show origin/main:"$ARQUIVO" &>/dev/null; then
+              continue
+            fi
+
+            # verifica pasta:
+            ACHOU_DIR=false
+            for DIR in "${CAMINHOS_VALIDOS[@]}"; do
+              if [[ "$ARQUIVO" == "$DIR"* ]]; then
+                ACHOU_DIR=true
+                break
+              fi
+            done
+
+            if ! $ACHOU_DIR; then
+            echo "::error:: Arquivo '$ARQUIVO' não está num caminho válido (precisa ser em ${CAMINHOS_VALIDOS[*]})"
+              exit 1
+            fi
+
+            # verifica tipo:
+            EXTENSAO="${ARQUIVO##*.}"
+            ACHOU_TIPO=false
+            for TIPO in "${TIPOS_VALIDOS[@]}"; do
+              if [[ "$EXTENSAO" == "$TIPO" ]]; then
+                ACHOU_TIPO=true
+                break
+              fi
+            done
+
+            if ! $ACHOU_TIPO; then
+            echo "::error:: Arquivo '$ARQUIVO' não tem extensão válida (precisa ser em ${TIPOS_VALIDOS[*]})"
+              exit 1
+            fi
+          done
+
+          echo "✅ mudanças validadas!"

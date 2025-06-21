@@ -6,5 +6,5 @@ var Nome : String
 var Descricao : String
 var Preco : int
 var Unidade : String
-var Imagem : String
+var Cena : String
 var Acoes : Array[IngredienteAcao]

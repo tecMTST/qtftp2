@@ -23,6 +23,7 @@ Globais="*res://Scripts/Globais.gd"
 Constantes="*res://Scripts/Constantes.gd"
 Eventos="*res://Scripts/Eventos.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
+ControleDeFase="*res://Scripts/ControleDeFase.gd"
 
 [display]
 
