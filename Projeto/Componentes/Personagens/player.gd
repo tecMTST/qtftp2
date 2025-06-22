@@ -28,10 +28,8 @@ func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
 func _input(event: InputEvent) -> void:
 	if(!interagivelAtivo):
 		if objetoAgarrado and Input.is_action_just_pressed("action") and not acaoAgarrar:
-			acaoAgarrar = true
 			agarrar()
 		elif objetoAgarrado and Input.is_action_just_pressed("action") and acaoAgarrar:
-			acaoAgarrar = false
 			soltar()
 
 	if Input.is_action_just_pressed("action") and not acaoExecutando:
@@ -42,7 +40,7 @@ func _input(event: InputEvent) -> void:
 
 func _ExecutarAcao():
 	if interagivelAtivo:
-		print_debug("Acao executada: " + interagivelAtivo.Nome)
+		#print_debug("Acao executada: " + interagivelAtivo.Nome)
 		# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?		
 		if interagivelAtivo is Geladeira:			
 			if not itemAtivo:
@@ -80,15 +78,17 @@ func _on_area_acao_body_exited(body: Node2D) -> void:
 		AcaoDesativada.emit()
 
 func agarrar():
-	print_debug("Agarrando objeto: " + objetoAgarrado.Nome)
+	#print_debug("Agarrando objeto: " + objetoAgarrado.Nome)
 	objetoAgarrado.get_node("CollisionShape2D").disabled = true
 	objetoAgarrado.reparent(PosicaoObjeto)
 	objetoAgarrado.global_position = PosicaoObjeto.global_position
 	objetoAgarrado.global_rotation = PosicaoObjeto.global_rotation
+	acaoAgarrar = true
 
 func soltar():
-	print_debug("Soltando objeto: " + objetoAgarrado.Nome)
+	#print_debug("Soltando objeto: " + objetoAgarrado.Nome)
 	objetoAgarrado.reparent(get_parent())
-	objetoAgarrado.global_position = PosicaoObjeto.global_position
+	#objetoAgarrado.global_position = PosicaoObjeto.global_position
 	objetoAgarrado.get_node("CollisionShape2D").disabled = false
 	objetoAgarrado = null
+	acaoAgarrar = false
