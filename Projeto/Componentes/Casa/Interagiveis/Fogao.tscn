@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c3iyhekfm06dt" path="res://Recursos/Graficos/Cenas/Fire+Sparks-Sheet.png" id="3_at0gs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvsi0"]
-size = Vector2(134, 129)
+size = Vector2(134, 113)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_at0gs"]
 size = Vector2(90, 97)
@@ -155,7 +155,7 @@ animations = [{
 script = ExtResource("1_bbe22")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6.5)
+position = Vector2(0, -14.5)
 shape = SubResource("RectangleShape2D_cvsi0")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
@@ -191,7 +191,7 @@ scale = Vector2(0.366896, 0.366896)
 sprite_frames = SubResource("SpriteFrames_kcmap")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.976426
+frame_progress = 0.0854628
 
 [node name="AnimatedFire2" type="AnimatedSprite2D" parent="AnimatedFire"]
 z_index = 1
@@ -199,7 +199,7 @@ position = Vector2(25, 7.94728e-06)
 sprite_frames = SubResource("SpriteFrames_kcmap")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.830923
+frame_progress = 0.939957
 
 [node name="AnimatedFire3" type="AnimatedSprite2D" parent="AnimatedFire/AnimatedFire2"]
 z_index = 1
@@ -207,6 +207,6 @@ position = Vector2(-47.2222, -1.05964e-05)
 sprite_frames = SubResource("SpriteFrames_kcmap")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.295866
+frame_progress = 0.404909
 
 [connection signal="interagir" from="ComponenteInteragivel" to="." method="_interagir"]
