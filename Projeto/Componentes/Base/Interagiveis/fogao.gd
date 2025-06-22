@@ -1,10 +1,9 @@
 class_name Fogao extends BaseInteragivel
 
-@export var pivotObjeto : Node2D
+@onready var pivotObjeto : Node2D = $Pivot
+@onready var fogoAnimado : AnimatedSprite2D = $AnimatedFire
 var objetoAtual : ObjetoAgarravel = null
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Nome = "Fogão"
 func _process(delta: float) -> void:
@@ -24,24 +23,19 @@ func _interagir(jogador: Player):
 		
 func _recorlherObjeto() -> void:
 	objetoAtual.ao_transformar.disconnect(ao_transformar_objeto_cozinhando)
-	_positionarObjetoNoFogao(false)
 	objetoAtual.cozinhar()
 	objetoAtual = null
+	fogoAnimado.hide()
 
 func _cozinharObjeto(objeto : ObjetoAgarravel) -> void:
 	objetoAtual = objeto
 	objetoAtual.ao_transformar.connect(ao_transformar_objeto_cozinhando)
-	_positionarObjetoNoFogao(true)
+	_positionarObjetoNoFogao()
+	fogoAnimado.show()
 
-func _positionarObjetoNoFogao(posicionar : bool) -> void:
-	if(posicionar):
-		objetoAtual.reparent(pivotObjeto)
-		objetoAtual.global_position = pivotObjeto.global_position
-		print("posicionando no pivot")
-	else:
-		#objetoAtual.reparent(get_parent())
-		#objetoAtual.global_position = pivotObjeto.global_position
-		pass
+func _positionarObjetoNoFogao() -> void:
+	objetoAtual.reparent(pivotObjeto)
+	objetoAtual.global_position = pivotObjeto.global_position
 
 func ao_transformar_objeto_cozinhando(novo_objeto: ObjetoAgarravel):
 	objetoAtual = novo_objeto
