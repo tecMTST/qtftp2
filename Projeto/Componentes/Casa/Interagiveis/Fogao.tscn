@@ -1,20 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://b636g7sui3m6c"]
+[gd_scene load_steps=5 format=3 uid="uid://b636g7sui3m6c"]
 
 [ext_resource type="Script" uid="uid://c2o0stv3doic" path="res://Componentes/Base/Interagiveis/fogao.gd" id="1_bbe22"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_sb6mk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvsi0"]
-size = Vector2(134, 162)
+size = Vector2(134, 129)
 
-[node name="Fogao" type="StaticBody2D" groups=["fogao", "interagivel"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at0gs"]
+size = Vector2(90, 97)
+
+[node name="Fogao" type="StaticBody2D" node_paths=PackedStringArray("pivotObjeto") groups=["fogao", "interagivel"]]
 script = ExtResource("1_bbe22")
+pivotObjeto = NodePath("Pivot")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_cvsi0")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
 visible = false
 offset_left = -65.0
 offset_top = -78.0
 offset_right = 65.0
 offset_bottom = 80.0
 color = Color(1, 0, 0, 0.490196)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 56.5)
+shape = SubResource("RectangleShape2D_at0gs")
+
+[node name="ComponenteInteragivel" type="Node2D" parent="." node_paths=PackedStringArray("area_de_interacao")]
+script = ExtResource("2_sb6mk")
+nome = "Fogão"
+descricao = "Uma fogão"
+area_de_interacao = NodePath("../Area2D")
+possui_contorno = false
+metadata/_custom_type_script = "uid://ddwsslb5nraqq"
+
+[node name="Pivot" type="Node2D" parent="."]
+position = Vector2(26, -38)
+
+[connection signal="interagir" from="ComponenteInteragivel" to="." method="_interagir"]
