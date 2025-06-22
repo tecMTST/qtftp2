@@ -26,12 +26,13 @@ func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
 	objetoAgarrado = novo_objeto
 
 func _input(event: InputEvent) -> void:
-	if objetoAgarrado and Input.is_action_just_pressed("action") and not acaoAgarrar:
-		acaoAgarrar = true
-		agarrar()
-	elif objetoAgarrado and Input.is_action_just_pressed("action") and acaoAgarrar:
-		acaoAgarrar = false
-		soltar()
+	if(!interagivelAtivo):
+		if objetoAgarrado and Input.is_action_just_pressed("action") and not acaoAgarrar:
+			acaoAgarrar = true
+			agarrar()
+		elif objetoAgarrado and Input.is_action_just_pressed("action") and acaoAgarrar:
+			acaoAgarrar = false
+			soltar()
 
 	if Input.is_action_just_pressed("action") and not acaoExecutando:
 		acaoExecutando = true
