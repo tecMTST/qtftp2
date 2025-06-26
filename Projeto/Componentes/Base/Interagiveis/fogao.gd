@@ -13,15 +13,15 @@ func _interagir(jogador: Player):
 	if(objetoAtual):
 		if(jogador.objetoAgarrado): return
 		jogador.objetoAgarrado = objetoAtual
-		_recorlherObjeto()
+		_recolherObjeto()
 		jogador.agarrar()
 	else:
 		if(!jogador.objetoAgarrado): return
 		if(jogador.objetoAgarrado.cozinhar()):
 			_cozinharObjeto(jogador.objetoAgarrado)
 			jogador.soltar()
-		
-func _recorlherObjeto() -> void:
+
+func _recolherObjeto() -> void:
 	objetoAtual.ao_transformar.disconnect(ao_transformar_objeto_cozinhando)
 	objetoAtual.cozinhar()
 	objetoAtual = null
@@ -30,10 +30,10 @@ func _recorlherObjeto() -> void:
 func _cozinharObjeto(objeto : ObjetoAgarravel) -> void:
 	objetoAtual = objeto
 	objetoAtual.ao_transformar.connect(ao_transformar_objeto_cozinhando)
-	_positionarObjetoNoFogao()
+	_posicionarObjetoNoFogao()
 	fogoAnimado.show()
 
-func _positionarObjetoNoFogao() -> void:
+func _posicionarObjetoNoFogao() -> void:
 	objetoAtual.reparent(pivotObjeto)
 	objetoAtual.global_position = pivotObjeto.global_position
 
