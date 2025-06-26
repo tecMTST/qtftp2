@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djhpni7u8a77p"]
+
+[ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="1_kyy7l"]
+
+[node name="VisualizadorTemporal" type="Node2D"]
+script = ExtResource("1_kyy7l")

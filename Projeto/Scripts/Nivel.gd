@@ -6,7 +6,8 @@ var Descricao : String
 var Textos : Array[String]
 var Imagem : String
 var Local : String
-var IdReceita : int
+var Tempo : int
+var IdReceitas : Array[int] = []
 var QuantidadePratosReal : int
 var QuantidadePratosExibido : int
 var ValorNutricionalMinimo : int

@@ -30,3 +30,10 @@ func CarregarDados():
 	Aprimoramentos = []
 	for item in jsonAprimoramentos:
 		Aprimoramentos.append(JsonClassConverter.json_to_class(Aprimoramento, item))
+
+func GetIngrediente(id : int, variacao : int) -> Ingrediente:
+	var ingredientes = Ingredientes.filter(
+		func(item :Ingrediente): return item.Id == id and item.Variacao == variacao)
+	if len(ingredientes) > 0:
+		return ingredientes[0]
+	return null

@@ -12,5 +12,20 @@
 		"Imagem" : "",
 		"ValorNutricional" : 10,
 		"ValorSabor" : 4
+	},
+	{
+		"Id" : 3,
+		"Nome": "Cuscuz com manteiga",
+		"Imagem" : "",
+		"ValorNutricional" : 10,
+		"ValorSabor" : 5
+	},
+	{
+		"Id" : 4,
+		"Nome": "Café coado",
+		"Imagem" : "",
+		"ValorNutricional" : 2,
+		"ValorSabor" : 4
 	}
+	
 ]
