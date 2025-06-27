@@ -4,6 +4,7 @@ class_name Casa extends Node2D
 
 func _ready() -> void:
 	ControleDeFase.CarregarNivel(1)
+	ControleDeFase.IniciarNivel()
 
 func _on_player_acao_ativada() -> void:
 	botao_acao.visible = true

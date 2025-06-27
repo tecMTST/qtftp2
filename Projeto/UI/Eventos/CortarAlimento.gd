@@ -5,7 +5,6 @@ func _ready() -> void:
 	%ProgressoEvento.failed.connect(_on_failed)
 	%ProgressoEvento.completed.connect(_on_completed)
 	%ProgressoEvento.start()
-	get_tree().paused = true
 	
 func close() -> void:
 	GuiTransitions.hide("Modal")
