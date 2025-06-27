@@ -40,6 +40,16 @@ func _input(event: InputEvent) -> void:
 
 func _ExecutarAcao():
 	if interagivelAtivo:
+<<<<<<< 4-mec-geladeira-ui
+		if interagivelAtivo.is_in_group("bancada"):
+			print_debug("Acao executada: " + interagivelAtivo.Nome)
+			# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?
+			Eventos.EventoIniciado.emit('cortar-alimento')
+		elif interagivelAtivo.is_in_group("geladeira"):
+			print_debug("Acao executada: " + interagivelAtivo.Nome)
+			# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?
+			Eventos.EventoIniciado.emit('pegar-ingrediente')
+=======
 		#print_debug("Acao executada: " + interagivelAtivo.Nome)
 		# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?		
 		if interagivelAtivo is Geladeira:			
@@ -62,6 +72,7 @@ func _ExecutarAcao():
 			pass
 		elif interagivelAtivo is Fogao:
 			pass
+>>>>>>> main
 
 func _on_area_acao_body_entered(body: Node2D) -> void:
 	if body.is_in_group("agarravel") and not acaoAgarrar:

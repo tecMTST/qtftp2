@@ -49,7 +49,7 @@ texture = ExtResource("2_4xt8v")
 [node name="Player" parent="." instance=ExtResource("2_kc3ot")]
 z_index = 10
 position = Vector2(376, 676)
-rotation = -1.63185
+rotation = -1.5708
 
 [node name="Cozinha" type="Node2D" parent="."]
 
