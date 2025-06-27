@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="12_7lwul"]
 [ext_resource type="Texture2D" uid="uid://bfhn7o5c0ni87" path="res://Recursos/Graficos/UI/botao_acao_pressed.svg" id="13_ksqrt"]
 [ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="14_d2j33"]
-[ext_resource type="PackedScene" path="res://Componentes/Personagens/Filha.tscn" id="15_gklaa"]
+[ext_resource type="PackedScene" uid="uid://c10u4vp7mngm7" path="res://Componentes/Personagens/Filha.tscn" id="15_gklaa"]
 [ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="16_utqv5"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunça/BaguncaCena.tscn" id="17_utqv5"]
 
@@ -64,7 +64,7 @@ position = Vector2(430, 311)
 position = Vector2(304, 318)
 
 [node name="Geladeira" parent="Cozinha" instance=ExtResource("7_nikh1")]
-position = Vector2(602, 338)
+position = Vector2(602, 323)
 
 [node name="Distracoes" type="Node2D" parent="."]
 
