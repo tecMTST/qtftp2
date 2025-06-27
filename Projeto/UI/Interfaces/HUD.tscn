@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://objc5v4kvd50"]
+[gd_scene load_steps=5 format=3 uid="uid://objc5v4kvd50"]
 
 [ext_resource type="Script" uid="uid://bl8fuivc5ww82" path="res://UI/Interfaces/hud.gd" id="1_p5xxs"]
 
@@ -13,6 +13,9 @@ border_color = Color(0.241156, 0.241156, 0.241156, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_tehyh"]
 font_size = 32
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p5xxs"]
+font_color = Color(0.346886, 0.191276, 0.351415, 1)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -47,10 +50,40 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="Tempo/MarginContainer"]
+[node name="TempoLabel" type="Label" parent="Tempo/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
 text = "00:00"
 label_settings = SubResource("LabelSettings_tehyh")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MostradorBagunca" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0472222
+anchor_top = 1.0375
+anchor_right = 1.32361
+anchor_bottom = 1.04062
+offset_left = 64.0
+offset_top = -265.0
+offset_right = -518.0
+offset_bottom = -242.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MostradorBagunca"]
+layout_mode = 2
+text = "Nivel de bagunça"
+label_settings = SubResource("LabelSettings_p5xxs")
+
+[node name="BaguncaProgressBar" type="ProgressBar" parent="MostradorBagunca"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
