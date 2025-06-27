@@ -51,6 +51,7 @@ func ProximoPasso() -> bool:
 	return true
 
 func _ready() -> void:
+	get_tree().paused = false
 	_tempo_checagem = Timer.new()
 	_tempo_checagem.wait_time = 0.1
 	_tempo_checagem.autostart = false
@@ -65,6 +66,7 @@ func _ready() -> void:
 	add_child(_tempo_checagem)
 
 func IniciarNivel():
+	get_tree().paused = false
 	assert(NivelAtual is Nivel, "NivelAtual precisa ser carregado")
 	_reset_timers() # Verifica e para os timers caso em andamento
 	TempoJogo.wait_time = NivelAtual.Tempo

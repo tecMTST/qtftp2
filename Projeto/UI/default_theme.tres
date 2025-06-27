@@ -2,9 +2,14 @@
 
 [resource]
 default_font_size = 16
+HeaderLarge/colors/font_color = Color(0, 0, 0, 1)
 HeaderLarge/font_sizes/font_size = 32
+HeaderMedium/colors/font_color = Color(0, 0, 0, 1)
 HeaderMedium/font_sizes/font_size = 24
+HeaderSmall/colors/font_color = Color(0, 0, 0, 1)
 HeaderSmall/font_sizes/font_size = 20
+ModalButton/base_type = &"Button"
+ModalButton/font_sizes/font_size = 26
 ModalContainer/base_type = &"MarginContainer"
 ModalContainer/constants/margin_bottom = 224
 ModalContainer/constants/margin_left = 64
@@ -16,4 +21,5 @@ ModalTitle/font_sizes/font_size = 28
 TitleButton/base_type = &"Button"
 TitleButton/font_sizes/font_size = 36
 TitleLabel/base_type = &"Label"
+TitleLabel/colors/font_color = Color(0, 0, 0, 1)
 TitleLabel/font_sizes/font_size = 60

@@ -18,7 +18,15 @@ func _init(nivel : Nivel):
 	ReceitasNivel = len(nivel.IdReceitas)
 	PratosNecessarios = nivel.QuantidadePratosReal
 	LimiteBagunca = nivel.LimiteBagunca
+
+func motivo() -> String:
+	if completo():
+		return "Nível concluído!"
+	if baguncado():
+		return "Tudo bagunçado."
+	return "Tempo encerrado!"
 	
+
 func entregarPrato(prato) -> void:
 	PratosEntregues.append(prato)
 
