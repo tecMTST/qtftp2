@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo6m3gqwpe31u"]
+
+[ext_resource type="PackedScene" uid="uid://dsnts70s2x6ks" path="res://UI/Interfaces/Modal.tscn" id="1_bb4aq"]
+[ext_resource type="Script" uid="uid://bvc6h1xvet0me" path="res://UI/Interfaces/fim_nivel.gd" id="2_68evo"]
+[ext_resource type="Theme" uid="uid://ddvbl64i00b36" path="res://UI/default_theme.tres" id="2_lx2ks"]
+
+[node name="Modal" instance=ExtResource("1_bb4aq")]
+process_mode = 2
+script = ExtResource("2_68evo")
+
+[node name="CloseButton" parent="MarginContainer/PanelContainer/VBoxContainer" index="0"]
+visible = false
+
+[node name="ModalTitleLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_lx2ks")
+theme_type_variation = &"TitleLabel"
+text = "O tempo acabou!"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer" index="2"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="PratosLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer/GridContainer" index="0"]
+layout_mode = 2
+theme = ExtResource("2_lx2ks")
+theme_type_variation = &"HeaderMedium"
+text = "Pratos Entregues:"
+
+[node name="PratosValue" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer/GridContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_lx2ks")
+theme_type_variation = &"HeaderMedium"
+text = "1"
+
+[node name="BaguncaLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer/GridContainer" index="2"]
+layout_mode = 2
+theme = ExtResource("2_lx2ks")
+theme_type_variation = &"HeaderMedium"
+text = "Bagunça:"
+
+[node name="BaguncaValue" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer/GridContainer" index="3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_lx2ks")
+theme_type_variation = &"HeaderMedium"
+text = "0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" index="3"]
+layout_mode = 2
+alignment = 1
+
+[node name="BotaoJogar" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_lx2ks")
+theme_type_variation = &"ModalButton"
+text = "Jogar novamente"
+
+[node name="BotaoMenu" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_lx2ks")
+theme_type_variation = &"ModalButton"
+text = "Voltar"
+
+[connection signal="button_down" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/BotaoJogar" to="." method="_on_botao_jogar_button_down"]

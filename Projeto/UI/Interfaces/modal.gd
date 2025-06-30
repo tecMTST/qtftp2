@@ -1,3 +1,4 @@
+class_name Modal
 extends Control
 
 func _on_close_button_button_down() -> void:
