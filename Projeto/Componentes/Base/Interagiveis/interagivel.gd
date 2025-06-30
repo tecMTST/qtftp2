@@ -109,6 +109,7 @@ func _ao_entrar_na_area(entidade):
 	
 	jogador_no_alcance = entidade
 	entrar_no_alcance.emit(entidade)
+	entidade._on_area_acao_body_entered(get_parent())
 	
 	if not pode_interagir:
 		return
@@ -122,6 +123,7 @@ func _ao_sair_da_area(entidade):
 	
 	jogador_no_alcance = null
 	sair_do_alcance.emit(entidade)
+	entidade._on_area_acao_body_exited(get_parent())
 	
 	if not pode_interagir:
 		return
