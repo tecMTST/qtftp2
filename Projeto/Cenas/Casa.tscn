@@ -55,7 +55,7 @@ rotation = -1.63185
 [node name="Cozinha" type="Node2D" parent="."]
 
 [node name="Fogao" parent="Cozinha" instance=ExtResource("6_xq1v8")]
-position = Vector2(103, 330)
+position = Vector2(103, 340)
 
 [node name="Pia" parent="Cozinha" instance=ExtResource("7_gm3vv")]
 position = Vector2(430, 311)
@@ -64,7 +64,7 @@ position = Vector2(430, 311)
 position = Vector2(304, 318)
 
 [node name="Geladeira" parent="Cozinha" instance=ExtResource("7_nikh1")]
-position = Vector2(602, 323)
+position = Vector2(602, 320)
 
 [node name="Distracoes" type="Node2D" parent="."]
 
