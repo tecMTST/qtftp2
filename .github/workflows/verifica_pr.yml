@@ -1,0 +1,9 @@
+name: Verifica Pull Requests
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  analise-estatica:
+    uses: ./.github/workflows/analisa-e-testa.yml
