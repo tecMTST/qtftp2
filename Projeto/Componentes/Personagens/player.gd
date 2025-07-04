@@ -1,5 +1,5 @@
 class_name Player
-extends CharacterBody2D
+extends Personagem
 
 signal AcaoAtivada
 signal AcaoDesativada

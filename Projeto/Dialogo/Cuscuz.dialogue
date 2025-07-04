@@ -1,0 +1,8 @@
+~ cuscuz_descansar
+% Mae: Agora bora botar esse cuscuz pra\n[wait=0.5][wave amp=25 freq=5]DESCANSAR[/wave]
+% Mae: Hmmm, [wait=0.5][wave amp=25 freq=5]cuscuz[/wave]...
+=> END
+
+~ cuscuz_pronto
+Mae: [shake rate=20 level=10]MEU POVO[/shake], o cuscuz tá pronto 🗣️
+=> END

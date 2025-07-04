@@ -1,6 +1,7 @@
 extends Node
 
 @export var NivelAtual : Nivel
+@export var Jogador : Player
 @export var ReceitasDisponiveis : Array[Receita] = []
 @export var ReceitaSelecionada : Receita
 @export var IngredientesDisponiveis : Array[Ingrediente] = []
@@ -18,16 +19,19 @@ func CarregarNivel(idNivel : int):
 				func(id : int): return id == item.Id))	
 		__indexReceitaAtual = 0
 		SelecionarReceita(__indexReceitaAtual)
+	
+	Jogador = NodeExtension.find_first_child(get_tree().current_scene,
+		func(child): return child is Player)
 
 func SelecionarReceita(indexReceita) -> bool:
 	if not NivelAtual:
-		return	false
+		return false
 	if indexReceita > len(ReceitasDisponiveis) - 1 or indexReceita < 0:
 		return false
 	ReceitaSelecionada = ReceitasDisponiveis[indexReceita]
 	IngredientesDisponiveis = Globais.Ingredientes.filter(
 		func(item : Ingrediente): return ReceitaSelecionada.Ingredientes.any(
-			func(id : int) : return item.Id == id))
+			func(o) : return item.Id == o.IdIngrediente))
 	__indexPassoAtual = 0
 	PassoAtual = ReceitaSelecionada.Passos[__indexPassoAtual]
 	return true
