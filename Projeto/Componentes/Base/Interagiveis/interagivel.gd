@@ -16,7 +16,7 @@ var jogador_no_alcance: Player:
 		else:
 			_interagiveis_no_alcance.erase(self)
 		
-		_interagiveis_no_alcance.sort_custom(func (a: BaseInteragivel, b: BaseInteragivel):
+		_interagiveis_no_alcance.sort_custom(func (a: Interagivel, b: Interagivel):
 			return a.prioridade_de_interacao >= b.prioridade_de_interacao
 		)
 
