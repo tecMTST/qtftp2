@@ -27,10 +27,13 @@ on:
   workflow_call:
     inputs:
       nome_na_itch:
+        type: string
         required: true
       usuario_na_itch:
+        type: string
         required: true
       branch:
+        type: string
         required: true
 
 env:
