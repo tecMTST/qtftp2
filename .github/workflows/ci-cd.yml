@@ -1,9 +1,8 @@
-name: Main no Branch de Arte
+name: Integração e Distribuição Contínua
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
 
 jobs:
   merge:
@@ -30,3 +29,11 @@ jobs:
       - name: Atualizando repositório de arte
         run: |
           git push origin arte
+
+  publica:
+    needs: merge
+    uses: ./.github/workflows/publica-na-itch.yml
+    with:
+      nome_na_itch: qtftp2teste
+      usuario_na_itch: ntmtst
+      branch: arte
