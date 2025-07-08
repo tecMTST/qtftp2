@@ -1,25 +1,49 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm48pr3pgy16l"]
+[gd_scene load_steps=11 format=3 uid="uid://bm48pr3pgy16l"]
 
 [ext_resource type="Script" uid="uid://cmqrsx6830d5q" path="res://Cenas/cozinha_solidaria.gd" id="1_irqgt"]
 [ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="2_3kmma"]
+[ext_resource type="Texture2D" uid="uid://dw8mlmpulyrdy" path="res://Recursos/Graficos/Cenas/CozinhaSolidariaPlaceHolder.png" id="2_jlnmc"]
 [ext_resource type="Script" uid="uid://dku77viqwklks" path="res://addons/analog_touch_control/scripts/TouchAnalog.gd" id="3_tkkxi"]
-
-[sub_resource type="Gradient" id="Gradient_kc3ot"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_lskyy"]
-gradient = SubResource("Gradient_kc3ot")
+[ext_resource type="PackedScene" uid="uid://b636g7sui3m6c" path="res://Componentes/Casa/Interagiveis/Fogao.tscn" id="5_djqwe"]
+[ext_resource type="PackedScene" uid="uid://c6n7piqbsbwoq" path="res://Componentes/Casa/Interagiveis/Pia.tscn" id="6_hqfdc"]
+[ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="7_djqwe"]
+[ext_resource type="PackedScene" uid="uid://c6ch38f6kai3t" path="res://Componentes/Casa/Interagiveis/Bancada.tscn" id="7_t71rn"]
+[ext_resource type="PackedScene" uid="uid://dpkfr6t86l4j" path="res://Componentes/Casa/Interagiveis/Geladeira.tscn" id="8_tsa1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdjjj"]
-size = Vector2(222, 1546)
+size = Vector2(247, 1546)
 
 [node name="CozinhaSolidaria" type="Node2D"]
 script = ExtResource("1_irqgt")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(359.5, 642.5)
-scale = Vector2(2.92578, 1305)
-texture = SubResource("GradientTexture1D_lskyy")
+position = Vector2(418, 511)
+scale = Vector2(1.92556, 1.7285)
+texture = ExtResource("2_jlnmc")
+
+[node name="Cozinha" type="Node2D" parent="."]
+
+[node name="Fogao" parent="Cozinha" instance=ExtResource("5_djqwe")]
+position = Vector2(120, 102)
+scale = Vector2(1.6, 1.2)
+
+[node name="Pia" parent="Cozinha" instance=ExtResource("6_hqfdc")]
+position = Vector2(296, 93)
+
+[node name="Bancada" parent="Cozinha" instance=ExtResource("7_t71rn")]
+position = Vector2(411, 93)
+
+[node name="MesaCentral" parent="Cozinha" instance=ExtResource("7_t71rn")]
+position = Vector2(309, 365)
+scale = Vector2(2.8, 1.3)
+
+[node name="Geladeira" parent="Cozinha" instance=ExtResource("8_tsa1l")]
+position = Vector2(548, 88)
+scale = Vector2(1, 1.2)
+
+[node name="BalcaoEntrega" parent="Cozinha" instance=ExtResource("7_djqwe")]
+position = Vector2(286, 751)
+scale = Vector2(2.5, 0.6)
 
 [node name="Player" parent="." instance=ExtResource("2_3kmma")]
 position = Vector2(376, 676)
@@ -56,4 +80,5 @@ position = Vector2(404, 1391)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite4"]
+position = Vector2(-519, 29.9967)
 shape = SubResource("RectangleShape2D_kdjjj")
