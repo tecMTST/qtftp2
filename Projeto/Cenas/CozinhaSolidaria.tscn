@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bm48pr3pgy16l"]
+[gd_scene load_steps=22 format=3 uid="uid://by4070jgxjh5f"]
 
-[ext_resource type="Script" uid="uid://cmqrsx6830d5q" path="res://Cenas/cozinha_solidaria.gd" id="1_irqgt"]
+[ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_xgflc"]
 [ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="2_3kmma"]
 [ext_resource type="Texture2D" uid="uid://dw8mlmpulyrdy" path="res://Recursos/Graficos/Cenas/CozinhaSolidariaPlaceHolder.png" id="2_jlnmc"]
 [ext_resource type="Script" uid="uid://dku77viqwklks" path="res://addons/analog_touch_control/scripts/TouchAnalog.gd" id="3_tkkxi"]
@@ -9,50 +9,78 @@
 [ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="7_djqwe"]
 [ext_resource type="PackedScene" uid="uid://c6ch38f6kai3t" path="res://Componentes/Casa/Interagiveis/Bancada.tscn" id="7_t71rn"]
 [ext_resource type="PackedScene" uid="uid://dpkfr6t86l4j" path="res://Componentes/Casa/Interagiveis/Geladeira.tscn" id="8_tsa1l"]
+[ext_resource type="Texture2D" uid="uid://c0xd5s2csunn7" path="res://Recursos/Graficos/Cenas/CasaFront.png" id="11_v348i"]
+[ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="13_cn2kd"]
+[ext_resource type="Texture2D" uid="uid://bfhn7o5c0ni87" path="res://Recursos/Graficos/UI/botao_acao_pressed.svg" id="14_82luj"]
+[ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="15_0mka2"]
+[ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="16_bwbnn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdjjj"]
-size = Vector2(247, 1546)
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5etm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
+size = Vector2(259, 1546)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bf15"]
+size = Vector2(273, 1546)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwul"]
+size = Vector2(276, 1161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm3vv"]
+size = Vector2(378, 1164)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ksqrt"]
+radius = 91.11
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
+vertices = PackedVector2Array(678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 185.742, 525, 50.8984, 525, 551.242, 503.078, 678.563, 502.07, 682.406, 569.117, 434.781, 572.117, 191.742, 753.031, 438.773, 753.961)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2, 6), PackedInt32Array(6, 7, 8, 9, 4), PackedInt32Array(10, 4, 9, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 445, 582, 449, 764, 182, 763, 176, 535, 41, 535)])
 
 [node name="CozinhaSolidaria" type="Node2D"]
-script = ExtResource("1_irqgt")
+script = ExtResource("1_xgflc")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(418, 511)
-scale = Vector2(1.92556, 1.7285)
+position = Vector2(464, 595)
+scale = Vector2(2, 2.3)
 texture = ExtResource("2_jlnmc")
+
+[node name="Player" parent="." instance=ExtResource("2_3kmma")]
+z_index = 10
+position = Vector2(376, 676)
+rotation = -1.63185
+scale = Vector2(0.5, 0.5)
 
 [node name="Cozinha" type="Node2D" parent="."]
 
 [node name="Fogao" parent="Cozinha" instance=ExtResource("5_djqwe")]
-position = Vector2(120, 102)
-scale = Vector2(1.6, 1.2)
+position = Vector2(153, 124)
 
 [node name="Pia" parent="Cozinha" instance=ExtResource("6_hqfdc")]
-position = Vector2(296, 93)
+position = Vector2(350, 108)
 
 [node name="Bancada" parent="Cozinha" instance=ExtResource("7_t71rn")]
-position = Vector2(411, 93)
+position = Vector2(453, 121)
 
-[node name="MesaCentral" parent="Cozinha" instance=ExtResource("7_t71rn")]
-position = Vector2(309, 365)
-scale = Vector2(2.8, 1.3)
+[node name="BancadaCentral" parent="Cozinha" instance=ExtResource("7_t71rn")]
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_5etm2")
+position = Vector2(356, 416)
+scale = Vector2(2.7, 2)
 
 [node name="Geladeira" parent="Cozinha" instance=ExtResource("8_tsa1l")]
-position = Vector2(548, 88)
-scale = Vector2(1, 1.2)
+position = Vector2(597, 121)
 
-[node name="BalcaoEntrega" parent="Cozinha" instance=ExtResource("7_djqwe")]
-position = Vector2(286, 751)
-scale = Vector2(2.5, 0.6)
+[node name="Distracoes" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("2_3kmma")]
-position = Vector2(376, 676)
-rotation = -1.63185
+[node name="BancadaEntrega" parent="Distracoes" instance=ExtResource("7_djqwe")]
+position = Vector2(322, 866)
+scale = Vector2(2.3, 0.5)
 
-[node name="TouchAnalog" type="Node2D" parent="."]
-script = ExtResource("3_tkkxi")
-PositionType = 1
-metadata/_custom_type_script = "uid://dku77viqwklks"
+[node name="CasaFront" type="Sprite2D" parent="."]
+position = Vector2(358.5, 1155)
+scale = Vector2(1.38477, 1.44853)
+texture = ExtResource("11_v348i")
 
 [node name="Limites" type="Node2D" parent="."]
 
@@ -60,25 +88,57 @@ metadata/_custom_type_script = "uid://dku77viqwklks"
 position = Vector2(-110, 556)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite1"]
-shape = SubResource("RectangleShape2D_kdjjj")
+position = Vector2(18.5, 0)
+shape = SubResource("RectangleShape2D_p822v")
 
 [node name="Limite2" type="StaticBody2D" parent="Limites"]
 position = Vector2(832, 556)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite2"]
-shape = SubResource("RectangleShape2D_kdjjj")
+position = Vector2(-25.5, 0)
+shape = SubResource("RectangleShape2D_4bf15")
 
 [node name="Limite3" type="StaticBody2D" parent="Limites"]
 position = Vector2(318, -110)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite3"]
-shape = SubResource("RectangleShape2D_kdjjj")
+position = Vector2(27.0001, -41.4999)
+shape = SubResource("RectangleShape2D_7lwul")
 
 [node name="Limite4" type="StaticBody2D" parent="Limites"]
 position = Vector2(404, 1391)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite4"]
-position = Vector2(-519, 29.9967)
-shape = SubResource("RectangleShape2D_kdjjj")
+position = Vector2(-250, 45.9985)
+shape = SubResource("RectangleShape2D_gm3vv")
+
+[node name="TouchAnalog" type="Node2D" parent="."]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_tkkxi")
+PositionType = 1
+metadata/_custom_type_script = "uid://dku77viqwklks"
+
+[node name="BotaoAcao" type="TouchScreenButton" parent="."]
+top_level = true
+position = Vector2(258, 1055)
+scale = Vector2(1.02692, 1.02692)
+texture_normal = ExtResource("13_cn2kd")
+texture_pressed = ExtResource("14_82luj")
+shape = SubResource("CircleShape2D_ksqrt")
+action = "action"
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("15_0mka2")
+
+[node name="Hud" parent="UI" instance=ExtResource("16_bwbnn")]
+visible = false
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+position = Vector2(-3, 173)
+navigation_polygon = SubResource("NavigationPolygon_4xt8v")
+
+[connection signal="AcaoAtivada" from="Player" to="." method="_on_player_acao_ativada"]
+[connection signal="AcaoDesativada" from="Player" to="." method="_on_player_acao_desativada"]

@@ -1,20 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6ch38f6kai3t"]
+[gd_scene load_steps=3 format=3 uid="uid://c7f3ewfwcktbh"]
 
-[ext_resource type="Script" uid="uid://78y5jrqf3oo4" path="res://Componentes/Base/Interagiveis/bancada.gd" id="1_awsmu"]
+[ext_resource type="Script" uid="uid://78y5jrqf3oo4" path="res://Componentes/Base/Interagiveis/bancada.gd" id="1_omsg3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xld1x"]
 size = Vector2(124, 132)
 
 [node name="Bancada" type="StaticBody2D" groups=["bancada", "interagivel"]]
-script = ExtResource("1_awsmu")
+script = ExtResource("1_omsg3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bancada", "interagivel"]]
 shape = SubResource("RectangleShape2D_xld1x")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -60.0
 offset_top = -65.0
 offset_right = 125.0
 offset_bottom = 64.0
 scale = Vector2(0.6431, 1.00586)
-color = Color(1, 0, 0, 0.333333)
+color = Color(1, 0.54902, 0, 0.333333)
