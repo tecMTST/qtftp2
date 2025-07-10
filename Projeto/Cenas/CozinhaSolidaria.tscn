@@ -68,6 +68,13 @@ material = SubResource("CanvasItemMaterial_5etm2")
 position = Vector2(356, 416)
 scale = Vector2(2.7, 2)
 
+[node name="ColorRect2" type="ColorRect" parent="Cozinha/BancadaCentral"]
+offset_left = -62.963
+offset_top = -63.5
+offset_right = 61.037
+offset_bottom = 68.5
+color = Color(1, 0, 0, 0.47451)
+
 [node name="Geladeira" parent="Cozinha" instance=ExtResource("8_tsa1l")]
 position = Vector2(597, 121)
 
@@ -76,6 +83,13 @@ position = Vector2(597, 121)
 [node name="BancadaEntrega" parent="Distracoes" instance=ExtResource("7_djqwe")]
 position = Vector2(322, 866)
 scale = Vector2(2.3, 0.5)
+
+[node name="ColorRect" type="ColorRect" parent="Distracoes/BancadaEntrega"]
+offset_left = -120.0
+offset_top = -114.0
+offset_right = 120.0
+offset_bottom = 112.0
+color = Color(1, 0, 0.486275, 0.392157)
 
 [node name="CasaFront" type="Sprite2D" parent="."]
 position = Vector2(358.5, 1155)
