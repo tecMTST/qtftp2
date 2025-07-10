@@ -6,6 +6,7 @@ var objetoAtual : ObjetoAgarravel = null
 
 func _ready() -> void:
 	Nome = "Fogão"
+
 func _process(delta: float) -> void:
 	pass
 
@@ -32,6 +33,7 @@ func _cozinharObjeto(objeto : ObjetoAgarravel) -> void:
 	objetoAtual.ao_transformar.connect(ao_transformar_objeto_cozinhando)
 	_posicionarObjetoNoFogao()
 	fogoAnimado.show()
+	ControleDeAudio.toca_efeito("fogao")
 
 func _posicionarObjetoNoFogao() -> void:
 	objetoAtual.reparent(pivotObjeto)
