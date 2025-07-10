@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsnts70s2x6ks"]
 
-[ext_resource type="Script" uid="uid://dfrvqfogmjhje" path="res://UI/Eventos/CortarAlimento.gd" id="1_ra54o"]
+[ext_resource type="Script" uid="uid://ceg4uv7kfbj2" path="res://UI/Interfaces/modal.gd" id="1_ra54o"]
 [ext_resource type="Script" uid="uid://cpesqq3ctb78o" path="res://addons/uiJuicer/Fader.gd" id="2_ra54o"]
 [ext_resource type="Script" uid="uid://b3ykmcnj6hjhq" path="res://addons/simple-gui-transitions/transition.gd" id="3_ra54o"]
 

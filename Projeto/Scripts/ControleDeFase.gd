@@ -1,13 +1,21 @@
 extends Node
 
+signal NivelIniciado(nivel, estado_nivel)
+signal NivelConcluido(nivel, estado_nivel)
+
 @export var NivelAtual : Nivel
 @export var ReceitasDisponiveis : Array[Receita] = []
 @export var ReceitaSelecionada : Receita
 @export var IngredientesDisponiveis : Array[Ingrediente] = []
 @export var PassoAtual : PassoReceita
 
+var _tempo_checagem: Timer
 var __indexReceitaAtual : int = 0
 var __indexPassoAtual : int = 0
+
+var TempoJogo: Timer
+var EstadoJogo: EstadoDeJogo
+var EstadoNivel: EstadoDoNivel
 
 func CarregarNivel(idNivel : int):
 	var niveis = Globais.Niveis.filter(func(item : Nivel) : return item.Id == idNivel)
@@ -41,7 +49,59 @@ func ProximoPasso() -> bool:
 		return SelecionarReceita(__indexReceitaAtual)
 	PassoAtual = ReceitaSelecionada.Passos[__indexPassoAtual]
 	return true
-	
 
- 
- 
+func _ready() -> void:
+	get_tree().paused = false
+	_tempo_checagem = Timer.new()
+	_tempo_checagem.wait_time = 0.1
+	_tempo_checagem.autostart = false
+	_tempo_checagem.one_shot = false
+	_tempo_checagem.connect("timeout", _verificar_condicoes)
+	TempoJogo = Timer.new()
+	TempoJogo.wait_time = 1
+	TempoJogo.autostart = false
+	TempoJogo.one_shot = true
+	TempoJogo.connect("timeout", _verificar_condicoes)
+	add_child(TempoJogo)
+	add_child(_tempo_checagem)
+
+func IniciarNivel():
+	get_tree().paused = false
+	assert(NivelAtual is Nivel, "NivelAtual precisa ser carregado")
+	_reset_timers() # Verifica e para os timers caso em andamento
+	TempoJogo.wait_time = NivelAtual.Tempo
+	EstadoNivel = EstadoDoNivel.new(NivelAtual)
+	TempoJogo.start()
+	_tempo_checagem.start()
+	NivelIniciado.emit(NivelAtual, EstadoNivel)
+	print_debug("Nível iniciado")
+	
+func _atualizar_bagunca() -> void:
+	EstadoNivel.Bagunca = get_tree().get_node_count_in_group('bagunca')
+
+func _verificar_condicoes():
+	EstadoNivel.TempoRestante = TempoJogo.time_left
+	_atualizar_bagunca()
+	if EstadoNivel.baguncado():
+		NivelConcluido.emit(NivelAtual, EstadoNivel)
+		_encerrar_nivel()
+		print_debug("Nível falhou")
+	elif TempoJogo.is_stopped():
+		if EstadoNivel.completo():
+			NivelConcluido.emit(NivelAtual, EstadoNivel)
+			_encerrar_nivel()
+			print_debug("Nível concluído")
+			return
+		NivelConcluido.emit(NivelAtual, EstadoNivel)
+		_encerrar_nivel()
+		print_debug("Nível falhou")
+
+func _encerrar_nivel():
+	_reset_timers()
+	get_tree().paused = true
+
+func _reset_timers() -> void:
+	if not TempoJogo.is_stopped():
+		TempoJogo.stop()
+	if not _tempo_checagem.is_stopped():
+		_tempo_checagem.stop()
