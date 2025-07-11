@@ -25,7 +25,6 @@ func motivo() -> String:
 	if baguncado():
 		return "Tudo bagunçado."
 	return "Tempo encerrado!"
-	
 
 func entregarPrato(prato) -> void:
 	PratosEntregues.append(prato)

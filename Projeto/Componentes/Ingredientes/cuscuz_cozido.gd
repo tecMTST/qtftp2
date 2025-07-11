@@ -36,3 +36,9 @@ func desenformar() -> void:
 		esta_desenformando = true
 	else:
 		timer.paused = !timer.paused
+
+func entregar():
+	# Inserir animações e efeitos
+	await get_tree().create_timer(1).timeout
+	ControleDeFase.entregarPrato(Ingrediente)
+	queue_free()
