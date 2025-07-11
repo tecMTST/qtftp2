@@ -62,6 +62,9 @@ geladeira=""
 player=""
 agarravel=""
 bagunca=""
+prato_pronto=""
+prato_entregue=""
+ponto_entrega=""
 
 [gui]
 
