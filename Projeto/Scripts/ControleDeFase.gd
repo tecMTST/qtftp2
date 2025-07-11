@@ -1,5 +1,7 @@
 extends Node
 
+signal PratoEntregue(prato)
+
 signal NivelIniciado(nivel, estado_nivel)
 signal NivelConcluido(nivel, estado_nivel)
 
@@ -87,14 +89,17 @@ func _verificar_condicoes():
 		_encerrar_nivel()
 		print_debug("Nível falhou")
 	elif TempoJogo.is_stopped():
-		if EstadoNivel.completo():
-			NivelConcluido.emit(NivelAtual, EstadoNivel)
-			_encerrar_nivel()
-			print_debug("Nível concluído")
-			return
 		NivelConcluido.emit(NivelAtual, EstadoNivel)
 		_encerrar_nivel()
 		print_debug("Nível falhou")
+	elif EstadoNivel.completo():
+		NivelConcluido.emit(NivelAtual, EstadoNivel)
+		_encerrar_nivel()
+		print_debug("Nível concluído")
+
+func entregarPrato(prato: Ingrediente) -> void:
+	EstadoNivel.entregarPrato(prato)
+	PratoEntregue.emit(prato)
 
 func _encerrar_nivel():
 	_reset_timers()
