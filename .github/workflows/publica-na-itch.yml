@@ -1,0 +1,70 @@
+name: Publica na Itch
+# Esse fluxo não roda sozinho, precisa ser chamado a partir de outro
+# com os parâmetros específicos do projeto. Por exemplo:
+#
+# jobs:
+#   publica:
+#     name: Publica na Itch
+#     needs: dependencia-anterior-opcional
+#     uses: ./.github/workflows/publica-na-itch.yml
+#     with:
+#       nome_na_itch: qtftp2teste
+#       usuario_na_itch: ntmtst
+#       branch: arte
+#
+# Ele assume a seguinte estrutura de pastas no repositório:
+#
+#   .
+#   ├── Projeto/   <-- código fonte do jogo em Godot
+#   └── Release/   <-- destino do jogo montado
+#       └── Web    <-- destino do jogo versão web
+#
+# Também assume que o jogo é em Godot 4 usando GDScript e não C#.
+# Finalmente, para a publicação funcionar, você precisa ter a chave
+# da Itch dentro dos segredos do Github, em ITCH_IO_KEY.
+
+on:
+  workflow_call:
+    inputs:
+      nome_na_itch:
+        type: string
+        required: true
+      usuario_na_itch:
+        type: string
+        required: true
+      branch:
+        type: string
+        required: true
+
+env:
+  GODOT_VERSAO: '4.4'
+
+jobs:
+  exporta-pra-itch:
+    name: Exporta pra Itch
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.4  # não aceita interpolação de ${{ GODOT_VERSAO }}
+    steps:
+      - name: Obtendo repositório
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+      - name: Configurando
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv -v /root/.local/share/godot/export_templates/${GODOT_VERSAO}.stable ~/.local/share/godot/export_templates/${GODOT_VERSAO}.stable
+      - name: Montando para Web
+        working-directory: ./Projeto
+        run: |
+          godot -v --headless --export-release Web ../Release/Web/index.html
+      - name: Publicando na Itch
+        uses: yeslayla/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_KEY }}
+          CHANNEL: web
+          ITCH_GAME: ${{ inputs.nome_na_itch }}
+          ITCH_USER: ${{ inputs.usuario_na_itch }}
+          PACKAGE: ./Release/Web

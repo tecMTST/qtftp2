@@ -11,6 +11,9 @@ func enxaguar():
 func cozinhar():
 	pass
 
+func desenformar():
+	pass
+
 func cortar():
 	pass
 

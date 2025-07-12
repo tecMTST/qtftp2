@@ -24,6 +24,7 @@ Constantes="*res://Scripts/Constantes.gd"
 Eventos="*res://Scripts/Eventos.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 ControleDeFase="*res://Scripts/ControleDeFase.gd"
+ControleDeAudio="*res://Scripts/ControleDeAudio.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
@@ -66,6 +67,10 @@ filha=""
 geladeira=""
 player=""
 agarravel=""
+bagunca=""
+prato_pronto=""
+prato_entregue=""
+ponto_entrega=""
 
 [gui]
 

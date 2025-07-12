@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://jvc15grkq4fr"]
+
+[ext_resource type="Script" uid="uid://c666jldcf8en4" path="res://Componentes/Ingredientes/cuscuz_cozido.gd" id="1_qnklu"]
+[ext_resource type="Texture2D" uid="uid://cj6iqeubmy4vk" path="res://Recursos/Graficos/Ingredientes/Cuscuz_coziddo.png" id="2_qnklu"]
+[ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="3_mrets"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l42kw"]
+size = Vector2(50, 32)
+
+[node name="CuscuzCozido" type="StaticBody2D" groups=["agarravel", "prato_pronto"]]
+script = ExtResource("1_qnklu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.48, 1.48)
+shape = SubResource("RectangleShape2D_l42kw")
+
+[node name="CuscuzCozido" type="Sprite2D" parent="."]
+position = Vector2(-8.52651e-14, -3)
+scale = Vector2(0.047, 0.047)
+texture = ExtResource("2_qnklu")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
+position = Vector2(20, -20)
+script = ExtResource("3_mrets")
+temporizador = NodePath("../Timer")
+cor = Color(0.909804, 0.211765, 0.215686, 1)
+metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

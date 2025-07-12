@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c10u4vp7mngm7"]
+[gd_scene load_steps=4 format=3 uid="uid://d2fdciig7einf"]
 
 [ext_resource type="Texture2D" uid="uid://b0bk8mi33olrk" path="res://Recursos/Graficos/Personagens/FilhaStakeholder.svg" id="1_wk0xs"]
 [ext_resource type="Script" uid="uid://dnibm5siaj76a" path="res://Componentes/Personagens/filha.gd" id="2_suqhv"]

@@ -1,0 +1,52 @@
+name: Analisa e Testa
+# Esse fluxo não roda sozinho, precisa ser chamado a partir de outro.
+# Por exemplo:
+#
+# jobs:
+#   analisa-e-testa:
+#     name: Analisa e Testa código
+#     uses: ./.github/workflows/analisa-e-testa.yml
+#
+# Ele assume a seguinte estrutura de pastas no repositório:
+#
+#   .
+#   └── Projeto/    <-- código fonte do jogo em Godot
+#       └── addons/ <-- addons externos (ignorados na análise)
+#
+# Também assume que o jogo é em Godot 4 usando GDScript e não C#.
+
+on:
+  workflow_call: {}
+
+jobs:
+  analise-estatica:
+    name: Análise Estática
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtendo repositório
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Garantindo que main está acessível para comparação
+        run: git fetch origin main:main
+
+      - name: Instalando GDScript Toolkit
+        uses: Scony/godot-gdscript-toolkit@master
+
+      - name: Obtendo lista de arquivos alterados
+        id: arquivos-alterados
+        run: |
+          ARQUIVOS_ALTERADOS=$(git diff --name-only main...${GITHUB_SHA} -- Projeto/ | grep -v '^Projeto/addons/' | grep -E '\.gd$|\.tscn$' | tr '\n' ' ')
+          echo "arquivos_alterados=${ARQUIVOS_ALTERADOS}" >> $GITHUB_OUTPUT
+
+      - name: Analisando código estaticamente
+        run: |
+          if [ -n "${{ steps.arquivos-alterados.outputs.arquivos_alterados }}" ]; then
+            echo "Analisando: ${{ steps.arquivos-alterados.outputs.arquivos_alterados }}"
+            gdlint ${{ steps.arquivos-alterados.outputs.arquivos_alterados }}
+          else
+            echo "Nenhum arquivo .gd ou .tscn alterado."
+            exit 0
+          fi

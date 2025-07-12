@@ -7,6 +7,7 @@ var Textos : Array[String]
 var Imagem : String
 var Local : String
 var Tempo : int
+var LimiteBagunca : int
 var IdReceitas : Array[int] = []
 var QuantidadePratosReal : int
 var QuantidadePratosExibido : int
