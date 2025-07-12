@@ -12,7 +12,7 @@ func encerrar_dialogo():
 
 func iniciar_dialogo(dialogo: DialogueResource, titulo: String, duracao := -1.0):
 	esta_dialogando = true
-	var balao: DialogueBalloon = preload("uid://2nh1i0xeu1tt").instantiate()
+	var balao: DialogueBalloon = preload("res://Dialogo/balloon.tscn").instantiate()
 	get_tree().current_scene.add_child(balao)
 	balao.start(dialogo, titulo)
 	balao.tree_exited.connect(encerrar_dialogo)
