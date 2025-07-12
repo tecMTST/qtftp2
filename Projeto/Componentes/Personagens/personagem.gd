@@ -19,4 +19,6 @@ func iniciar_dialogo(dialogo: DialogueResource, titulo: String, duracao := -1.0)
 	
 	if duracao > 0:
 		await get_tree().create_timer(duracao).timeout
-		balao.remove()
+		
+		if balao != null and is_instance_valid(balao):
+			balao.remove()
