@@ -72,7 +72,7 @@ func toca_efeito(nome_do_efeito: String, variacao_de_tom: float = 0.0) -> void:
 	# encontra tocador disponível dentro do grupo...
 	for tocador in toca_efeitos:
 		if !tocador.playing:
-			tocador.stream = stream
+			tocador.stream =  stream
 			tocador.pitch_scale = 1.0 + randf_range(-variacao_de_tom, variacao_de_tom)
 			tocador.play()
 			return
