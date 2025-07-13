@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://brr34b4ohi5k6"]
+
+[ext_resource type="Script" uid="uid://dmwlcyn6n8l7t" path="res://Componentes/Ingredientes/cuscuz_pronto.gd" id="1_5s83k"]
+[ext_resource type="Texture2D" uid="uid://cymfei0epqnd7" path="res://Recursos/Graficos/Ingredientes/Cuscuz.svg" id="2_j6kf1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dc67"]
+size = Vector2(50, 32)
+
+[node name="CuscuzPronto" type="StaticBody2D"]
+script = ExtResource("1_5s83k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3dc67")
+
+[node name="Cuscuz" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 4.76837e-07)
+scale = Vector2(0.0578512, 0.0621126)
+texture = ExtResource("2_j6kf1")
