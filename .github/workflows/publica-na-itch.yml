@@ -11,6 +11,8 @@ name: Publica na Itch
 #       nome_na_itch: qtftp2teste
 #       usuario_na_itch: ntmtst
 #       branch: arte
+#     secrets:
+#       itch_io_key: ${{ secrets.ITCH_IO_KEY }}
 #
 # Ele assume a seguinte estrutura de pastas no repositório:
 #
@@ -33,6 +35,10 @@ on:
         type: string
         required: true
       branch:
+        type: string
+        required: true
+    secrets:
+      itch_io_key:
         type: string
         required: true
 
@@ -63,7 +69,7 @@ jobs:
       - name: Publicando na Itch
         uses: yeslayla/butler-publish-itchio-action@master
         env:
-          BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_KEY }}
+          BUTLER_CREDENTIALS: ${{ secrets.itch_io_key }}
           CHANNEL: web
           ITCH_GAME: ${{ inputs.nome_na_itch }}
           ITCH_USER: ${{ inputs.usuario_na_itch }}
