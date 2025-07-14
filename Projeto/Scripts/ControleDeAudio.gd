@@ -7,6 +7,14 @@ var biblioteca_de_audio := {
 	},
 	"efeitos": {
 		"fogao": preload("res://Recursos/Audio/Efeitos/fogao.wav"),
+		"passos": [
+			preload("res://Recursos/Audio/Efeitos/passo1.wav"),
+			preload("res://Recursos/Audio/Efeitos/passo2.wav"),
+			preload("res://Recursos/Audio/Efeitos/passo3.wav"),
+			preload("res://Recursos/Audio/Efeitos/passo4.wav"),
+			preload("res://Recursos/Audio/Efeitos/passo5.wav"),
+			preload("res://Recursos/Audio/Efeitos/passo6.wav"),
+		]
 	}
 }
 
@@ -65,27 +73,32 @@ func para_musica() -> void:
 	toca_musica_ciclo.stop()
 
 
-func toca_efeito(nome_do_efeito: String, variacao_de_tom: float = 0.0) -> void:
-	var stream = biblioteca_de_audio["efeitos"].get(nome_do_efeito)
-	if !stream: return
+func toca_efeito(nome_do_efeito: String) -> void:
+	var origem = biblioteca_de_audio["efeitos"].get(nome_do_efeito)
+	if !origem:
+		push_error("efeito '{nome}' não encontrado".format({"nome": nome_do_efeito}))
+		return
+
+	var stream: AudioStream
+	if origem is Array:
+		stream = origem[randi() % origem.size()]
+	else:
+		stream = origem;
 	
-	# encontra tocador disponível dentro do grupo...
+	var tocador = _encontra_tocador_disponivel()
+	if !tocador: return
+
+	tocador.stream = stream
+	tocador.pitch_scale = 1.0
+	tocador.play()
+
+func _encontra_tocador_disponivel() -> AudioStreamPlayer:
 	for tocador in toca_efeitos:
 		if !tocador.playing:
-			tocador.stream =  stream
-			tocador.pitch_scale = 1.0 + randf_range(-variacao_de_tom, variacao_de_tom)
-			tocador.play()
-			return
-
-	# ...ou cria um temporário se não houver tocador disponível.
-	var tocador_temp = AudioStreamPlayer.new()
-	tocador_temp.bus = "Efeitos"
-	add_child(tocador_temp)
-	tocador_temp.stream = stream
-	tocador_temp.pitch_scale = 1.0 + randf_range(-variacao_de_tom, variacao_de_tom)
-	tocador_temp.play()
-	await tocador_temp.finished
-	remove_child(tocador_temp)
+			return tocador
+	# cria tocador temporário se não houver um disponível:
+	push_warning("Impossível tocar efeito. Grupo pequeno demais.")
+	return null
 
 func volume_da_musica(volume: float) -> void:
 	ajusta_volume_do_barramento("Musica", volume)

@@ -7,6 +7,8 @@ signal AcaoDesativada
 @onready var PosicaoObjeto = $PosicaoObjeto
 @onready var AreaAcao = $AreaAcao
 
+var sfx_intervalo_passada: float = 0.35
+var sfx_timer: float = 0.0
 var itemAtivo : IngredienteBase
 var interagivelAtivo : Node2D
 var acaoExecutando : bool = false
@@ -24,6 +26,16 @@ var objetoAgarrado : ObjetoAgarravel:
 
 func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
 	objetoAgarrado = novo_objeto
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+		sfx_timer -= delta
+		if sfx_timer <= 0.0:
+			ControleDeAudio.toca_efeito("passos")
+			sfx_timer = sfx_intervalo_passada
+	else:
+		sfx_timer = 0.0
+
 
 func _input(event: InputEvent) -> void:
 	if(!interagivelAtivo):
