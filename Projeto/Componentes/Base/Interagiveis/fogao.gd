@@ -12,14 +12,14 @@ func _process(delta: float) -> void:
 
 func _interagir(jogador: Player):	
 	if(objetoAtual):
-		if(jogador.objetoAgarrado): return
-		jogador.objetoAgarrado = objetoAtual
+		if(jogador.objeto_agarrado): return
+		jogador.objeto_agarrado = objetoAtual
 		_recolherObjeto()
 		jogador.agarrar()
 	else:
-		if(!jogador.objetoAgarrado): return
-		if(jogador.objetoAgarrado.cozinhar()):
-			_cozinharObjeto(jogador.objetoAgarrado)
+		if(!jogador.objeto_agarrado): return
+		if(jogador.objeto_agarrado.cozinhar()):
+			_cozinharObjeto(jogador.objeto_agarrado)
 			jogador.soltar()
 
 func _recolherObjeto() -> void:
