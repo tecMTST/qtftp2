@@ -1,5 +1,8 @@
 extends Node
 
+const TAMANHO_DO_GRUPO_DE_EFEITOS := 5
+var toca_efeitos := []
+
 var biblioteca_de_audio := {
 	"musica": {
 		"casa_intro": preload("res://Recursos/Audio/Musica/casa_intro.ogg"),
@@ -20,8 +23,6 @@ var biblioteca_de_audio := {
 
 var toca_musica_intro: AudioStreamPlayer
 var toca_musica_ciclo: AudioStreamPlayer
-var toca_efeitos := []
-const TAMANHO_DO_GRUPO_DE_EFEITOS := 5
 
 func _ready() -> void:
 	toca_musica_intro = AudioStreamPlayer.new()
@@ -84,7 +85,7 @@ func toca_efeito(nome_do_efeito: String) -> void:
 		stream = origem[randi() % origem.size()]
 	else:
 		stream = origem;
-	
+
 	var tocador = _encontra_tocador_disponivel()
 	if !tocador: return
 

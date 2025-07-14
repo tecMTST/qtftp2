@@ -59,7 +59,7 @@ func _ExecutarAcao():
 		if interagivelAtivo is Geladeira:
 			if not itemAtivo:
 				var ingredienteAtual = Globais.GetIngrediente(
-					ControleDeFase.PassoAtual.Ingredientes[0].IdIngrediente, 
+					ControleDeFase.PassoAtual.Ingredientes[0].IdIngrediente,
 					ControleDeFase.PassoAtual.Ingredientes[0].VariacaoIngrediente)
 				itemAtivo = load(ingredienteAtual.Cena).instantiate()
 				add_sibling(itemAtivo)
