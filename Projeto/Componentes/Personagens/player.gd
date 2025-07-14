@@ -21,14 +21,16 @@ var objetoAgarrado : ObjetoAgarravel:
 			and objetoAgarrado != null\
 			and objetoAgarrado.ao_transformar.is_connected(ao_transformar_objeto_agarrado):
 			objetoAgarrado.ao_transformar.disconnect(ao_transformar_objeto_agarrado)
-		
 		objetoAgarrado = valor
 
 func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
 	objetoAgarrado = novo_objeto
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("up") or Input.is_action_pressed("down") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+	if (Input.is_action_pressed("up")   or
+		Input.is_action_pressed("down") or
+		Input.is_action_pressed("left") or
+		Input.is_action_pressed("right")):
 		sfx_timer -= delta
 		if sfx_timer <= 0.0:
 			ControleDeAudio.toca_efeito("passos")
@@ -37,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		sfx_timer = 0.0
 
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if(!interagivelAtivo):
 		if objetoAgarrado and Input.is_action_just_pressed("action") and not acaoAgarrar:
 			agarrar()
@@ -53,8 +55,8 @@ func _input(event: InputEvent) -> void:
 func _ExecutarAcao():
 	if interagivelAtivo:
 		#print_debug("Acao executada: " + interagivelAtivo.Nome)
-		# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?		
-		if interagivelAtivo is Geladeira:			
+		# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?
+		if interagivelAtivo is Geladeira:
 			if not itemAtivo:
 				var ingredienteAtual = Globais.GetIngrediente(
 					ControleDeFase.PassoAtual.Ingredientes[0].IdIngrediente, 
@@ -65,9 +67,6 @@ func _ExecutarAcao():
 				agarrar()
 			else:
 				itemAtivo.queue_free()
-			
-			
-			
 		elif interagivelAtivo is Bancada:
 			pass
 		elif interagivelAtivo is Pia:
