@@ -39,7 +39,6 @@ on:
         required: true
     secrets:
       itch_io_key:
-        type: string
         required: true
 
 env:
