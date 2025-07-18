@@ -512,7 +512,7 @@ visible = false
 modification_stack = SubResource("SkeletonModificationStack2D_2r065")
 
 [node name="Quadril" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D"]
-position = Vector2(38, 149.176)
+position = Vector2(38, 149.592)
 rest = Transform2D(0.998701, -0.0509536, 0.0509536, 0.998701, 39, 151)
 
 [node name="PernaEsq_0" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
