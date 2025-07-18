@@ -6,6 +6,8 @@ signal AcaoDesativada
 
 @onready var PosicaoObjeto = $PosicaoObjeto
 @onready var AreaAcao = $AreaAcao
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var gambiarra_centralizar: Sprite2D = $GambiarraCentralizar
 
 var itemAtivo : IngredienteBase
 var interagivelAtivo : Node2D
@@ -86,9 +88,20 @@ func agarrar():
 	acaoAgarrar = true
 
 func soltar():
+	
 	#print_debug("Soltando objeto: " + objetoAgarrado.Nome)
 	objetoAgarrado.reparent(get_parent())
 	#objetoAgarrado.global_position = PosicaoObjeto.global_position
 	objetoAgarrado.get_node("CollisionShape2D").disabled = false
 	objetoAgarrado = null
 	acaoAgarrar = false
+func _process(delta: float) -> void:
+		var velocidade = velocity.x
+		var velocidadeAnimacao = remap(abs(velocidade),0.0, 600.0, 0.0, 1.0)
+		animation_tree.set("parameters/Velocidade/blend_position", velocidadeAnimacao)
+		
+		if velocidade > 0:
+			
+			gambiarra_centralizar.scale.x = abs(gambiarra_centralizar.scale.x)
+		elif velocidade < 0:
+			gambiarra_centralizar.scale.x = -abs(gambiarra_centralizar.scale.x)
