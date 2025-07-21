@@ -37,3 +37,5 @@ jobs:
       nome_na_itch: qtftp2teste
       usuario_na_itch: ntmtst
       branch: arte
+    secrets:
+      itch_io_key: ${{ secrets.ITCH_IO_KEY }}
