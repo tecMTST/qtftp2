@@ -177,5 +177,5 @@ position = Vector2(507, 716)
 [node name="Waypoint7" type="Marker2D" parent="Waypoints"]
 position = Vector2(314, 809)
 
-[connection signal="AcaoAtivada" from="Player" to="." method="_on_player_acao_ativada"]
-[connection signal="AcaoDesativada" from="Player" to="." method="_on_player_acao_desativada"]
+[connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
+[connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]
