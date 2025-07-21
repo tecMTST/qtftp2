@@ -52,6 +52,7 @@ func _executar_acao():
 			else:
 				item_ativo.queue_free()
 		elif interagivel_ativo is Bancada:
+
 			pass
 		elif interagivel_ativo is Pia:
 			pass
