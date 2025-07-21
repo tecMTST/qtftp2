@@ -10,3 +10,4 @@ func _ready() -> void:
 
 func enxaguar():
 	transformar(load("uid://cxh3fegmcf0w4").instantiate())
+	ControleDeFase.Jogador.iniciar_dialogo(load("res://Dialogo/Cuscuz.dialogue"), "cuscuz_descansar", 3.0)
