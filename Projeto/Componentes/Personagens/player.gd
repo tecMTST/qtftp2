@@ -4,6 +4,11 @@ extends CharacterBody2D
 signal acao_ativada
 signal acao_desativada
 
+@onready var PosicaoObjeto = $PosicaoObjeto
+@onready var AreaAcao = $AreaAcao
+
+var sfx_intervalo_passada: float = 0.35
+var sfx_timer: float = 0.0
 var item_ativo: IngredienteBase
 var interagivel_ativo: Node2D
 var acao_executando: bool = false
@@ -23,6 +28,18 @@ var objeto_agarrado: ObjetoAgarravel:
 
 func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
 	objeto_agarrado = novo_objeto
+
+func _physics_process(delta: float) -> void:
+	if (Input.is_action_pressed("up")   or
+		Input.is_action_pressed("down") or
+		Input.is_action_pressed("left") or
+		Input.is_action_pressed("right")):
+		sfx_timer -= delta
+		if sfx_timer <= 0.0:
+			ControleDeAudio.toca_efeito("passos")
+			sfx_timer = sfx_intervalo_passada
+	else:
+		sfx_timer = 0.0
 
 func _input(_event: InputEvent) -> void:
 	if(!interagivel_ativo):
@@ -52,7 +69,6 @@ func _executar_acao():
 			else:
 				item_ativo.queue_free()
 		elif interagivel_ativo is Bancada:
-
 			pass
 		elif interagivel_ativo is Pia:
 			pass
