@@ -53,18 +53,16 @@ func _ExecutarAcao():
 		#print_debug("Acao executada: " + interagivelAtivo.Nome)
 		# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?		
 		if interagivelAtivo is Geladeira:			
-			if not itemAtivo:
+			if not objetoAgarrado:
 				var ingredienteAtual = Globais.GetIngrediente(
 					ControleDeFase.PassoAtual.Ingredientes[0].IdIngrediente, 
 					ControleDeFase.PassoAtual.Ingredientes[0].VariacaoIngrediente)
-				itemAtivo = load(ingredienteAtual.Cena).instantiate()
-				add_sibling(itemAtivo)
-				objetoAgarrado = itemAtivo
+				objetoAgarrado = load(ingredienteAtual.Cena).instantiate()
+				add_sibling(objetoAgarrado)
 				agarrar()
 			else:
-				itemAtivo.queue_free()
-			
-			
+				objetoAgarrado.queue_free()
+				soltar()
 			
 		elif interagivelAtivo is Bancada:
 			pass

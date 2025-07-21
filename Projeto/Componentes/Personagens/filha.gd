@@ -14,6 +14,7 @@ var moving_forward := true
 
 func _ready():
 	select_new_waypoint()
+	ControleDeFase.PratoEntregue.connect(_ir_comer)
 
 func _process(delta):
 	if target and global_position.distance_to(target.global_position) < agent.target_desired_distance:
@@ -62,3 +63,6 @@ func spawn_bagunca():
 		var bagunca = bagunca_scene.instantiate()
 		bagunca.global_position = target.global_position
 		get_tree().current_scene.add_child(bagunca)
+
+func _ir_comer(prato) -> void:
+	print_debug('Ir comer')

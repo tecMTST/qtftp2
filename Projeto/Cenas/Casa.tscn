@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=26 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -11,13 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://dpkfr6t86l4j" path="res://Componentes/Casa/Interagiveis/Geladeira.tscn" id="7_nikh1"]
 [ext_resource type="PackedScene" uid="uid://cjqpfs867y0in" path="res://Componentes/Casa/Interagiveis/Berco.tscn" id="8_p822v"]
 [ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="9_4bf15"]
-[ext_resource type="PackedScene" uid="uid://cjdso8f820o6i" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="10_cpm0k"]
+[ext_resource type="PackedScene" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="10_cpm0k"]
 [ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="12_7lwul"]
 [ext_resource type="Texture2D" uid="uid://bfhn7o5c0ni87" path="res://Recursos/Graficos/UI/botao_acao_pressed.svg" id="13_ksqrt"]
 [ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="14_d2j33"]
-[ext_resource type="PackedScene" uid="uid://c10u4vp7mngm7" path="res://Componentes/Personagens/Filha.tscn" id="15_gklaa"]
+[ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="15_gklaa"]
 [ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="16_utqv5"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunça/BaguncaCena.tscn" id="17_utqv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utqv5"]
+size = Vector2(82, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
 size = Vector2(259, 1546)
@@ -55,7 +58,7 @@ rotation = -1.5708
 [node name="Cozinha" type="Node2D" parent="."]
 
 [node name="Fogao" parent="Cozinha" instance=ExtResource("6_xq1v8")]
-position = Vector2(103, 330)
+position = Vector2(103, 340)
 
 [node name="Pia" parent="Cozinha" instance=ExtResource("7_gm3vv")]
 position = Vector2(430, 311)
@@ -64,7 +67,13 @@ position = Vector2(430, 311)
 position = Vector2(304, 318)
 
 [node name="Geladeira" parent="Cozinha" instance=ExtResource("7_nikh1")]
-position = Vector2(602, 323)
+position = Vector2(602, 320)
+
+[node name="BujãoGás" type="StaticBody2D" parent="Cozinha"]
+position = Vector2(212, 336)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cozinha/BujãoGás"]
+shape = SubResource("RectangleShape2D_utqv5")
 
 [node name="Distracoes" type="Node2D" parent="."]
 
