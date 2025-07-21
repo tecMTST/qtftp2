@@ -38,7 +38,7 @@ jobs:
       - name: Obtendo lista de arquivos alterados
         id: arquivos-alterados
         run: |
-          ARQUIVOS_ALTERADOS=$(git diff --name-only main...${GITHUB_SHA} -- Projeto/ | grep -v '^Projeto/addons/' | grep -E '\.gd$|\.tscn$' | tr '\n' ' ')
+          ARQUIVOS_ALTERADOS=$(git diff --name-only main...${GITHUB_SHA} -- Projeto/ | grep -v '^Projeto/addons/' | grep -E '\.gd$' | tr '\n' ' ')
           echo "arquivos_alterados=${ARQUIVOS_ALTERADOS}" >> $GITHUB_OUTPUT
 
       - name: Analisando código estaticamente
@@ -47,6 +47,6 @@ jobs:
             echo "Analisando: ${{ steps.arquivos-alterados.outputs.arquivos_alterados }}"
             gdlint ${{ steps.arquivos-alterados.outputs.arquivos_alterados }}
           else
-            echo "Nenhum arquivo .gd ou .tscn alterado."
+            echo "Nenhum arquivo .gd alterado."
             exit 0
           fi
