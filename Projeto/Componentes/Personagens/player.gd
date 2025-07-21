@@ -58,7 +58,6 @@ func _executar_acao():
 			pass
 		elif interagivel_ativo is Fogao:
 			pass
->>>>>>> main
 
 func _on_area_acao_body_entered(body: Node2D) -> void:
 	if body.is_in_group("agarravel") and not acao_agarrar:

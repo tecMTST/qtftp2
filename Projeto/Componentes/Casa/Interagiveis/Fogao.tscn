@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://b636g7sui3m6c"]
 
 [ext_resource type="Script" uid="uid://c2o0stv3doic" path="res://Componentes/Base/Interagiveis/fogao.gd" id="1_bbe22"]
-[ext_resource type="Script" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_sb6mk"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_sb6mk"]
 [ext_resource type="Texture2D" uid="uid://c3iyhekfm06dt" path="res://Recursos/Graficos/Cenas/Fire+Sparks-Sheet.png" id="3_at0gs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvsi0"]
@@ -176,8 +176,8 @@ shape = SubResource("RectangleShape2D_at0gs")
 script = ExtResource("2_sb6mk")
 nome = "Fogão"
 descricao = "Uma fogão"
-area_de_interacao = NodePath("../Area2D")
 possui_contorno = false
+area_de_interacao = NodePath("../Area2D")
 
 [node name="Pivot" type="Node2D" parent="."]
 position = Vector2(26, -38)
@@ -207,5 +207,3 @@ sprite_frames = SubResource("SpriteFrames_kcmap")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.404909
-
-[connection signal="interagir" from="ComponenteInteragivel" to="." method="_interagir"]

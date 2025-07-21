@@ -30,8 +30,6 @@ shape = SubResource("RectangleShape2D_2tpct")
 script = ExtResource("2_2tpct")
 nome = "Pia"
 descricao = "Uma pia"
-area_de_interacao = NodePath("../Area2D")
 possui_contorno = false
+area_de_interacao = NodePath("../Area2D")
 metadata/_custom_type_script = "uid://ddwsslb5nraqq"
-
-[connection signal="interagir" from="ComponenteInteragivel" to="." method="_on_componente_interagivel_interagir"]
