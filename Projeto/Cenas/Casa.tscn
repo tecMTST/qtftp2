@@ -190,7 +190,11 @@ position = Vector2(314, 809)
 process_mode = 2
 visible = false
 
-[node name="BotaoContinuar" type="TouchScreenButton" parent="MenuPausa"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPausa"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BotaoContinuar" type="TouchScreenButton" parent="MenuPausa/VBoxContainer"]
 z_index = 11
 position = Vector2(71, 424)
 texture_normal = ExtResource("20_hybjd")
@@ -227,8 +231,55 @@ offset_bottom = 902.0
 max_value = 1.0
 step = 0.001
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pausar" type="Control" parent="CanvasLayer"]
+process_mode = 3
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/pausar"]
+z_index = 12
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -61.5
+offset_right = 87.0
+offset_bottom = 61.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/pausar/MarginContainer"]
+z_index = 14
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="continuar" type="Button" parent="CanvasLayer/pausar/MarginContainer/VBoxContainer"]
+z_index = 20
+layout_mode = 2
+text = "Continuar"
+
+[node name="retornar à tela inicial" type="Button" parent="CanvasLayer/pausar/MarginContainer/VBoxContainer"]
+z_index = 16
+layout_mode = 2
+text = "Retornar à tela inicial"
+
+[node name="sair" type="Button" parent="CanvasLayer/pausar/MarginContainer/VBoxContainer"]
+z_index = 16
+layout_mode = 2
+text = "Sair do jogo"
+
 [connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
 [connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
-[connection signal="pressed" from="MenuPausa/BotaoContinuar" to="." method="_on_botao_pausa_pressed"]
+[connection signal="pressed" from="MenuPausa/VBoxContainer/BotaoContinuar" to="." method="_on_botao_pausa_pressed"]
 [connection signal="value_changed" from="MenuPausa/SliderVolume" to="." method="_on_slider_volume_value_changed"]
+[connection signal="pressed" from="CanvasLayer/pausar/MarginContainer/VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="CanvasLayer/pausar/MarginContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]
