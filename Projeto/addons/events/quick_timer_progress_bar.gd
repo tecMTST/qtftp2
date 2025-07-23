@@ -45,7 +45,7 @@ func do_miss() -> void:
 	miss.emit()
 
 func _on_value_changed(_value: float) -> void:
-	if value >= 100:
+	if value >= max_value:
 		event_timer.paused = true
 		running = false
 		completed.emit()

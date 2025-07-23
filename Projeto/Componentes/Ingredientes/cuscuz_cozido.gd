@@ -34,6 +34,7 @@ func desenformar() -> void:
 	if(!esta_desenformando):
 		timer.paused = false
 		esta_desenformando = true
+		transformar(load("uid://brr34b4ohi5k6").instantiate())
 	else:
 		timer.paused = !timer.paused
 

@@ -27,7 +27,9 @@ var objeto_agarrado: ObjetoAgarravel:
 @onready var posicao_objeto = $PosicaoObjeto
 
 func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
+	soltar()
 	objeto_agarrado = novo_objeto
+	agarrar()
 
 func _physics_process(delta: float) -> void:
 	if (Input.is_action_pressed("up")   or

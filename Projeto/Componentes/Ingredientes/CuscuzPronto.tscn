@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://brr34b4ohi5k6"]
 
-[ext_resource type="Script" uid="uid://dmwlcyn6n8l7t" path="res://Componentes/Ingredientes/cuscuz_pronto.gd" id="1_5s83k"]
+[ext_resource type="Script" path="res://Componentes/Ingredientes/cuscuz_pronto.gd" id="1_5s83k"]
 [ext_resource type="Texture2D" uid="uid://cymfei0epqnd7" path="res://Recursos/Graficos/Ingredientes/Cuscuz.svg" id="2_j6kf1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dc67"]

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dpkfr6t86l4j" path="res://Componentes/Casa/Interagiveis/Geladeira.tscn" id="7_nikh1"]
 [ext_resource type="PackedScene" uid="uid://cjqpfs867y0in" path="res://Componentes/Casa/Interagiveis/Berco.tscn" id="8_p822v"]
 [ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="9_4bf15"]
-[ext_resource type="PackedScene" uid="uid://cjdso8f820o6i" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="10_cpm0k"]
+[ext_resource type="PackedScene" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="10_cpm0k"]
 [ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="12_7lwul"]
 [ext_resource type="Texture2D" uid="uid://bfhn7o5c0ni87" path="res://Recursos/Graficos/UI/botao_acao_pressed.svg" id="13_ksqrt"]
 [ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="14_d2j33"]

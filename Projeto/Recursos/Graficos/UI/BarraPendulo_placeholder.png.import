@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj6iqeubmy4vk"
-path="res://.godot/imported/Cuscuz_coziddo.png-d2cb9c677f98ae0871d35bc5a6726f44.ctex"
+uid="uid://cw5dlm5tsa2cj"
+path="res://.godot/imported/BarraPendulo_placeholder.png-6442a60bedbbe21cf632421c4bd7132d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Ingredientes/Cuscuz_coziddo.png"
-dest_files=["res://.godot/imported/Cuscuz_coziddo.png-d2cb9c677f98ae0871d35bc5a6726f44.ctex"]
+source_file="res://Recursos/Graficos/UI/BarraPendulo_placeholder.png"
+dest_files=["res://.godot/imported/BarraPendulo_placeholder.png-6442a60bedbbe21cf632421c4bd7132d.ctex"]
 
 [params]
 

@@ -23,7 +23,6 @@ func _interagir(jogador: Player):
 			jogador.soltar()
 
 func _recolherObjeto() -> void:
-	objetoAtual.ao_transformar.disconnect(ao_transformar_objeto_cozinhando)
 	objetoAtual.cozinhar()
 	objetoAtual = null
 	fogoAnimado.hide()

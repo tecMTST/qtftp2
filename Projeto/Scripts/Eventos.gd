@@ -7,5 +7,6 @@ signal EventoFinalizado(evento)
 
 const Cenas := {
 	"cortar-alimento": preload("res://UI/Eventos/CortarAlimento.tscn"),
-	"finalizar-fase": preload("res://UI/Menus/MenuFimDeJogo.tscn")
+	"finalizar-fase": preload("res://UI/Menus/MenuFimDeJogo.tscn"),
+	"desenformar-cuscuz": preload("res://UI/Eventos/DesenformarCuscuz.tscn")
 }
