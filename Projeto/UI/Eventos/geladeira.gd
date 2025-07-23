@@ -46,10 +46,11 @@ func preencher_Geladeira():
 			break  # Se tiver mais itens do que o total possível, para aqui
 
 		container.add_child(ingrediente)
-
+		
 func close() -> void:
 	GuiTransitions.hide("Geladeira")
 	await GuiTransitions.hide_completed
+	visible = false
 	queue_free()
 
 func _on_button_button_up() -> void:
@@ -63,8 +64,8 @@ func ingrediente_escolhido(caminho: String) -> void:
 	
 	if player and not acaoExecutada:
 		acaoExecutada = true
-		player[0].PosicaoObjeto.add_child(objeto)
-		player[0].objetoAgarrado = player[0].PosicaoObjeto.get_children()[0]
-		player[0].objetoAgarrado.get_node("CollisionShape2D").disabled = true
-		player[0].acaoAgarrar = true
 		close()
+		player[0].PosicaoObjeto.add_sibling(objeto)
+		player[0].agarrar_de_menu(objeto)
+	
+		

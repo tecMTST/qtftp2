@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=31 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
 [ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="2_kc3ot"]
 [ext_resource type="Script" uid="uid://dku77viqwklks" path="res://addons/analog_touch_control/scripts/TouchAnalog.gd" id="3_x64wv"]
 [ext_resource type="Texture2D" uid="uid://c0xd5s2csunn7" path="res://Recursos/Graficos/Cenas/CasaFront.png" id="4_6u8iv"]
+[ext_resource type="PackedScene" uid="uid://ccxw6f3bwr8tt" path="res://UI/Eventos/Geladeira.tscn" id="4_i0q67"]
 [ext_resource type="PackedScene" uid="uid://c6ch38f6kai3t" path="res://Componentes/Casa/Interagiveis/Bancada.tscn" id="6_mcihg"]
 [ext_resource type="PackedScene" uid="uid://b636g7sui3m6c" path="res://Componentes/Casa/Interagiveis/Fogao.tscn" id="6_xq1v8"]
 [ext_resource type="PackedScene" uid="uid://c6n7piqbsbwoq" path="res://Componentes/Casa/Interagiveis/Pia.tscn" id="7_gm3vv"]
@@ -153,6 +154,7 @@ texture_normal = ExtResource("19_0gd5h")
 script = ExtResource("14_d2j33")
 
 [node name="Hud" parent="UI" instance=ExtResource("16_utqv5")]
+mouse_filter = 2
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(5, 181)
@@ -227,8 +229,11 @@ offset_bottom = 902.0
 max_value = 1.0
 step = 0.001
 
-[connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
-[connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]
+[node name="MenuGeladeira" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Geladeira" parent="MenuGeladeira" instance=ExtResource("4_i0q67")]
+
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
 [connection signal="pressed" from="MenuPausa/BotaoContinuar" to="." method="_on_botao_pausa_pressed"]
 [connection signal="value_changed" from="MenuPausa/SliderVolume" to="." method="_on_slider_volume_value_changed"]

@@ -1,24 +1,12 @@
 [
 	{
-		"Nome" : "",
+		"Nome" : "Cuscuz Cru",
 		"Descricao" : "",
-		"CaminhoSprite" : "res://Recursos/Graficos/UI/botao_acao.svg",
-		"CaminhoObjeto" : "res://Componentes/Objetos/Interagiveis/caixa.tscn"
+		"CaminhoSprite" : "uid://bs0521w7m1qtv",
+		"CaminhoObjeto" : "res://Componentes/Ingredientes/CuscuzCru.tscn"
 	},
 	{
-		"Nome" : "",
-		"Descricao" : "",
-		"CaminhoSprite" : "res://Recursos/Graficos/UI/botao_acao.svg",
-		"CaminhoObjeto" : "res://Componentes/Objetos/Interagiveis/caixa.tscn"
-	},
-	{
-		"Nome" : "",
-		"Descricao" : "",
-		"CaminhoSprite" : "res://Recursos/Graficos/UI/botao_acao.svg",
-		"CaminhoObjeto" : "res://Componentes/Objetos/Interagiveis/caixa.tscn"
-	},
-	{
-		"Nome" : "",
+		"Nome" : "Pó de Café",
 		"Descricao" : "",
 		"CaminhoSprite" : "res://Recursos/Graficos/UI/botao_acao.svg",
 		"CaminhoObjeto" : "res://Componentes/Objetos/Interagiveis/caixa.tscn"
