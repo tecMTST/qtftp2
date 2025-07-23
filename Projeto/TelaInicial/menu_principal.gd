@@ -6,12 +6,11 @@ func _on_jogar_pressed() -> void:
 
 #ao clicar vai para a tela de opções do jogo
 func _on_opcoes_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://TelaInicial/tela_opcoes.tscn")
 
 #ao clicar vai para a tela com a imagem da cartilha e informações para baixá-la
 func _on_cartilha_pressed() -> void:
 	get_tree().change_scene_to_file("res://TelaInicial/tela_cartilha_aaas.tscn")
-
 
 func _on_sair_pressed() -> void:
 	get_tree().quit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=27 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -19,9 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="16_utqv5"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunça/BaguncaCena.tscn" id="17_utqv5"]
 [ext_resource type="Texture2D" uid="uid://hkter5n7clor" path="res://Recursos/Graficos/UI/pause.svg" id="19_0gd5h"]
-[ext_resource type="Texture2D" uid="uid://bfome0afr5jqs" path="res://Recursos/Graficos/UI/continuar.png" id="20_hybjd"]
-[ext_resource type="Texture2D" uid="uid://cgqot134nxvvu" path="res://Recursos/Graficos/UI/retornar.png" id="21_i0q67"]
-[ext_resource type="Texture2D" uid="uid://b5ffva58e4rps" path="res://Recursos/Graficos/UI/Volume.png" id="22_l87sh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utqv5"]
 size = Vector2(82, 96)
@@ -186,51 +183,6 @@ position = Vector2(507, 716)
 [node name="Waypoint7" type="Marker2D" parent="Waypoints"]
 position = Vector2(314, 809)
 
-[node name="MenuPausa" type="Node2D" parent="."]
-process_mode = 2
-visible = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuPausa"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BotaoContinuar" type="TouchScreenButton" parent="MenuPausa/VBoxContainer"]
-z_index = 11
-position = Vector2(71, 424)
-texture_normal = ExtResource("20_hybjd")
-
-[node name="BotaoMenuPrincipal" type="TouchScreenButton" parent="MenuPausa"]
-z_index = 11
-position = Vector2(92, 526)
-scale = Vector2(0.798825, 0.929825)
-texture_normal = ExtResource("21_i0q67")
-
-[node name="TextureRect" type="TextureRect" parent="MenuPausa"]
-z_index = 11
-y_sort_enabled = true
-offset_left = 97.0
-offset_top = 694.0
-offset_right = 460.0
-offset_bottom = 838.0
-texture = ExtResource("22_l87sh")
-
-[node name="Cor" type="ColorRect" parent="MenuPausa"]
-z_index = 10
-offset_left = 84.0
-offset_top = 276.0
-offset_right = 632.0
-offset_bottom = 1020.0
-color = Color(0.91, 0.437407, 0.2184, 0.886275)
-
-[node name="SliderVolume" type="HSlider" parent="MenuPausa"]
-z_index = 11
-offset_left = 120.0
-offset_top = 806.0
-offset_right = 588.0
-offset_bottom = 902.0
-max_value = 1.0
-step = 0.001
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="pausar" type="Control" parent="CanvasLayer"]
@@ -249,10 +201,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -87.0
-offset_top = -61.5
-offset_right = 87.0
-offset_bottom = 61.5
+offset_left = -132.5
+offset_top = -88.5
+offset_right = 132.5
+offset_bottom = 70.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -264,22 +216,24 @@ theme_override_constants/separation = 15
 [node name="continuar" type="Button" parent="CanvasLayer/pausar/MarginContainer/VBoxContainer"]
 z_index = 20
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "Continuar"
 
 [node name="retornar à tela inicial" type="Button" parent="CanvasLayer/pausar/MarginContainer/VBoxContainer"]
 z_index = 16
 layout_mode = 2
-text = "Retornar à tela inicial"
+theme_override_font_sizes/font_size = 25
+text = "Voltar à tela inicial"
 
 [node name="sair" type="Button" parent="CanvasLayer/pausar/MarginContainer/VBoxContainer"]
 z_index = 16
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "Sair do jogo"
 
 [connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
 [connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
-[connection signal="pressed" from="MenuPausa/VBoxContainer/BotaoContinuar" to="." method="_on_botao_pausa_pressed"]
-[connection signal="value_changed" from="MenuPausa/SliderVolume" to="." method="_on_slider_volume_value_changed"]
 [connection signal="pressed" from="CanvasLayer/pausar/MarginContainer/VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="CanvasLayer/pausar/MarginContainer/VBoxContainer/retornar à tela inicial" to="." method="_on_retornar_à_tela_inicial_pressed"]
 [connection signal="pressed" from="CanvasLayer/pausar/MarginContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]
