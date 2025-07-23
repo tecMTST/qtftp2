@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=42 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -31,6 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://bqbbdsv41kc8l" path="res://Recursos/Graficos/Interagiveis/Cadeira lateral.svg" id="19_tqe3g"]
 [ext_resource type="Texture2D" uid="uid://cwi34cgi7lhqc" path="res://Recursos/Graficos/Interagiveis/Rack.svg" id="21_dfuu3"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="23_tqe3g"]
+[ext_resource type="Texture2D" uid="uid://dh3bybsw2a4kn" path="res://Recursos/Graficos/UI/image(1).png" id="32_y8kni"]
+[ext_resource type="Texture2D" uid="uid://bs0521w7m1qtv" path="res://Recursos/Graficos/Ingredientes/vitamilho.png" id="33_7k32u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
 size = Vector2(259, 1546)
@@ -51,6 +53,16 @@ radius = 91.11
 vertices = PackedVector2Array(678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 185.742, 525, 50.8984, 525, 551.242, 503.078, 678.563, 502.07, 682.406, 569.117, 434.781, 572.117, 191.742, 753.031, 438.773, 753.961)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2, 6), PackedInt32Array(6, 7, 8, 9, 4), PackedInt32Array(10, 4, 9, 11)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 445, 582, 449, 764, 182, 763, 176, 535, 41, 535)])
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2tmn8"]
+texture = ExtResource("32_y8kni")
+texture_margin_left = 101.333
+texture_margin_top = 116.923
+texture_margin_right = 99.3846
+region_rect = Rect2(0, 0, 430, 583.026)
+
+[sub_resource type="Theme" id="Theme_rmuin"]
+Panel/styles/panel = SubResource("StyleBoxTexture_2tmn8")
 
 [node name="Casa" type="Node2D"]
 script = ExtResource("1_6yvxp")
@@ -203,7 +215,6 @@ action = "action"
 script = ExtResource("14_d2j33")
 
 [node name="Hud" parent="UI" instance=ExtResource("16_utqv5")]
-visible = false
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(5, 181)
@@ -237,6 +248,105 @@ position = Vector2(507, 716)
 
 [node name="Waypoint7" type="Marker2D" parent="Waypoints"]
 position = Vector2(314, 809)
+
+[node name="Briefing" type="CanvasLayer" parent="."]
+
+[node name="FundoBrief" type="Panel" parent="Briefing"]
+offset_right = 700.0
+offset_bottom = 990.0
+
+[node name="Panel" type="Panel" parent="Briefing/FundoBrief"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 62.0
+offset_right = 677.0
+offset_bottom = 933.0
+theme = SubResource("Theme_rmuin")
+
+[node name="Geladeira" type="Sprite2D" parent="Briefing/FundoBrief"]
+position = Vector2(576, 317)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("12_tjjme")
+
+[node name="Cuscuz" type="Sprite2D" parent="Briefing/FundoBrief"]
+position = Vector2(499, 320)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("33_7k32u")
+
+[node name="Bancada" type="Sprite2D" parent="Briefing/FundoBrief"]
+position = Vector2(574, 455)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_xhdpr")
+
+[node name="Fogão" type="Sprite2D" parent="Briefing/FundoBrief"]
+position = Vector2(571, 565)
+scale = Vector2(0.634884, 0.674497)
+texture = ExtResource("6_00w81")
+
+[node name="Label" type="Label" parent="Briefing/FundoBrief"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_top = 93.0
+offset_right = 705.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 45
+text = "É hora de preparar o café!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Briefing/FundoBrief"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 80.0
+offset_top = 246.0
+offset_right = 511.0
+offset_bottom = 395.0
+theme_override_font_sizes/font_size = 25
+text = "1. Todos os ingredientes 
+que precisa para preparar a 
+receita do momento estão 
+DENTRO DA GELADEIRA."
+
+[node name="Label3" type="Label" parent="Briefing/FundoBrief"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 68.0
+offset_top = 431.0
+offset_right = 499.0
+offset_bottom = 494.0
+theme_override_font_sizes/font_size = 25
+text = "2. Leve o café para a bancada."
+
+[node name="Label4" type="Label" parent="Briefing/FundoBrief"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 58.0
+offset_top = 537.0
+offset_right = 509.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 25
+text = "3. Pegue água na Pia e Leve 
+ao Fogão."
+
+[node name="Label5" type="Label" parent="Briefing/FundoBrief"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 56.0
+offset_top = 627.0
+offset_right = 670.0
+offset_bottom = 690.0
+theme_override_font_sizes/font_size = 25
+text = "4. Com a água fervida passe
+ o café e sirva na Mesa."
+
+[node name="Mesa" type="Sprite2D" parent="Briefing/FundoBrief"]
+position = Vector2(570, 692)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("18_dfuu3")
+
+[node name="Sprite2D" type="TouchScreenButton" parent="Briefing/FundoBrief"]
+position = Vector2(387, 793)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("12_7lwul")
 
 [connection signal="AcaoAtivada" from="Player" to="." method="_on_player_acao_ativada"]
 [connection signal="AcaoDesativada" from="Player" to="." method="_on_player_acao_desativada"]
