@@ -4,16 +4,20 @@ extends CharacterBody2D
 signal AcaoAtivada
 signal AcaoDesativada
 
-@onready var PosicaoObjeto = $PosicaoObjeto
+@onready var PosicaoObjeto = $GambiarraCentralizar/PosicaoObjeto
 @onready var AreaAcao = $AreaAcao
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var gambiarra_centralizar: Sprite2D = $GambiarraCentralizar
+@onready var top_down_controler_2d: TopDownControler2D = $TopDownControler2D
+@onready var pivo_acao: Node2D = $PivoAcao
 
+
+var velocidade_rotacao : float = 0.2
 var itemAtivo : IngredienteBase
 var interagivelAtivo : Node2D
 var acaoExecutando : bool = false
 var acaoAgarrar : bool = false
-var objetoAgarrado : ObjetoAgarravel:
+var objetoAgarrado : ObjetoAgarravel:	
 	set(valor):
 		if valor != null:
 			valor.ao_transformar.connect(ao_transformar_objeto_agarrado)
@@ -23,7 +27,7 @@ var objetoAgarrado : ObjetoAgarravel:
 			objetoAgarrado.ao_transformar.disconnect(ao_transformar_objeto_agarrado)
 		
 		objetoAgarrado = valor
-
+		
 func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
 	objetoAgarrado = novo_objeto
 
@@ -95,13 +99,18 @@ func soltar():
 	objetoAgarrado.get_node("CollisionShape2D").disabled = false
 	objetoAgarrado = null
 	acaoAgarrar = false
+	
+func rotacao(delta : float):	
+	var rotacao_atual = pivo_acao.rotation
+	pivo_acao.look_at(pivo_acao.global_position + top_down_controler_2d.last_direction)
+	
 func _process(delta: float) -> void:
-		var velocidade = velocity.x
-		var velocidadeAnimacao = remap(abs(velocidade),0.0, 600.0, 0.0, 1.0)
+		var velocidadeAnimacao = remap(abs(velocity.length()),0.0, 600.0, 0.0, 1.0)
 		animation_tree.set("parameters/Velocidade/blend_position", velocidadeAnimacao)
 		
-		if velocidade > 0:
-			
+		var velocidade = velocity.x
+		rotacao(delta)
+		if velocidade > 0:			
 			gambiarra_centralizar.scale.x = abs(gambiarra_centralizar.scale.x)
 		elif velocidade < 0:
 			gambiarra_centralizar.scale.x = -abs(gambiarra_centralizar.scale.x)
