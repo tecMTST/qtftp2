@@ -25,6 +25,11 @@ Eventos="*res://Scripts/Eventos.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 ControleDeFase="*res://Scripts/ControleDeFase.gd"
 ControleDeAudio="*res://Scripts/ControleDeAudio.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="uid://cxus7xsj4lhv3"
 
 [display]
 
@@ -36,7 +41,7 @@ window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/2d_controls_toolkit/plugin.cfg", "res://addons/analog_touch_control/plugin.cfg", "res://addons/saveEngine/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg", "res://addons/uiJuicer/plugin.cfg")
+enabled=PackedStringArray("res://addons/2d_controls_toolkit/plugin.cfg", "res://addons/analog_touch_control/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/saveEngine/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg", "res://addons/uiJuicer/plugin.cfg")
 
 [file_customization]
 
@@ -119,6 +124,10 @@ action={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogo/Cuscuz.dialogue")
 
 [physics]
 

@@ -9,9 +9,9 @@ func _ready() -> void:
 	Nome = "Mesa"
 
 func _interagir(jogador: Player) -> void:
-	if(objetoAtual == null and jogador.objetoAgarrado is IngredienteBase):
-		if (jogador.objetoAgarrado.pode_entregar()):
-			objetoAtual = jogador.objetoAgarrado
+	if(objetoAtual == null and jogador.objeto_agarrado is IngredienteBase):
+		if (jogador.objeto_agarrado.pode_entregar()):
+			objetoAtual = jogador.objeto_agarrado
 			jogador.soltar()
 			_posicionarObjeto()
 			objetoAtual.entregar()
