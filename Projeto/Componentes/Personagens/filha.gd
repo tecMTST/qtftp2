@@ -13,10 +13,14 @@ var waypoint_index := 0
 var moving_forward := true
 
 func _ready():
+	if not ControleDeFase.NivelAtual or not ControleDeFase.NivelAtual.Bagunca:
+		return
 	select_new_waypoint()
 	ControleDeFase.PratoEntregue.connect(_ir_comer)
 
 func _process(delta):
+	if not ControleDeFase.NivelAtual or not ControleDeFase.NivelAtual.Bagunca:
+		return
 	if target and global_position.distance_to(target.global_position) < agent.target_desired_distance:
 		spawn_bagunca()
 		target = null

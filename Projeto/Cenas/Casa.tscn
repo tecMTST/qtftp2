@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=40 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -21,9 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c0dgemoh5s4a0" path="res://Recursos/Graficos/Interagiveis/Geladeira.svg" id="12_tjjme"]
 [ext_resource type="Texture2D" uid="uid://bfhn7o5c0ni87" path="res://Recursos/Graficos/UI/botao_acao_pressed.svg" id="13_ksqrt"]
 [ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="14_d2j33"]
-[ext_resource type="Texture2D" uid="uid://687eow50aj7w" path="res://Recursos/Graficos/Interagiveis/Berço.svg" id="14_xhdpr"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="15_gklaa"]
-[ext_resource type="Texture2D" uid="uid://dwhconcu8ehsu" path="res://Recursos/Graficos/Interagiveis/Mobile.svg" id="16_tjjme"]
 [ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="16_utqv5"]
 [ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="17_5esrr"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunça/BaguncaCena.tscn" id="17_utqv5"]
@@ -112,16 +110,8 @@ position = Vector2(-16, 40)
 
 [node name="Distracoes" type="Node2D" parent="."]
 
-[node name="BercoArte" type="Sprite2D" parent="Distracoes"]
-position = Vector2(103, 838)
-texture = ExtResource("14_xhdpr")
-
-[node name="Berco" parent="Distracoes/BercoArte" instance=ExtResource("8_p822v")]
-position = Vector2(6, 12)
-
-[node name="MobileArte" type="Sprite2D" parent="Distracoes/BercoArte"]
-position = Vector2(-8, -118)
-texture = ExtResource("16_tjjme")
+[node name="Berco" parent="Distracoes" instance=ExtResource("8_p822v")]
+position = Vector2(109, 850)
 
 [node name="CadeiraFrente" type="Sprite2D" parent="Distracoes"]
 position = Vector2(605, 843)
@@ -220,7 +210,7 @@ navigation_polygon = SubResource("NavigationPolygon_4xt8v")
 
 [node name="Filha" parent="." instance=ExtResource("15_gklaa")]
 z_index = 10
-position = Vector2(128, 576)
+position = Vector2(497, 905)
 bagunca_scene = ExtResource("17_utqv5")
 
 [node name="Waypoints" type="Node2D" parent="."]
