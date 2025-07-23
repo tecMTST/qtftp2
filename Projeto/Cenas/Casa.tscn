@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=44 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -33,6 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="23_tqe3g"]
 [ext_resource type="Texture2D" uid="uid://dh3bybsw2a4kn" path="res://Recursos/Graficos/UI/image(1).png" id="32_y8kni"]
 [ext_resource type="Texture2D" uid="uid://bs0521w7m1qtv" path="res://Recursos/Graficos/Ingredientes/vitamilho.png" id="33_7k32u"]
+[ext_resource type="Texture2D" uid="uid://dimyl5n7bgfw" path="res://Recursos/Graficos/Ingredientes/CuscuzHidratado.svg" id="34_2tmn8"]
+[ext_resource type="Texture2D" uid="uid://cj6iqeubmy4vk" path="res://Recursos/Graficos/Ingredientes/Cuscuz_coziddo.png" id="35_rmuin"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
 size = Vector2(259, 1546)
@@ -255,7 +257,12 @@ position = Vector2(314, 809)
 offset_right = 700.0
 offset_bottom = 990.0
 
-[node name="Panel" type="Panel" parent="Briefing/FundoBrief"]
+[node name="BriefingP1" type="Panel" parent="Briefing/FundoBrief"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Briefing/FundoBrief/BriefingP1"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 62.0
@@ -263,27 +270,27 @@ offset_right = 677.0
 offset_bottom = 933.0
 theme = SubResource("Theme_rmuin")
 
-[node name="Geladeira" type="Sprite2D" parent="Briefing/FundoBrief"]
+[node name="Geladeira" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP1"]
 position = Vector2(576, 317)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("12_tjjme")
 
-[node name="Cuscuz" type="Sprite2D" parent="Briefing/FundoBrief"]
+[node name="Cuscuz" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP1"]
 position = Vector2(499, 320)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("33_7k32u")
 
-[node name="Bancada" type="Sprite2D" parent="Briefing/FundoBrief"]
+[node name="Bancada" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP1"]
 position = Vector2(574, 455)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("9_xhdpr")
 
-[node name="Fogão" type="Sprite2D" parent="Briefing/FundoBrief"]
+[node name="Fogão" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP1"]
 position = Vector2(571, 565)
 scale = Vector2(0.634884, 0.674497)
 texture = ExtResource("6_00w81")
 
-[node name="Label" type="Label" parent="Briefing/FundoBrief"]
+[node name="Label" type="Label" parent="Briefing/FundoBrief/BriefingP1"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_top = 93.0
@@ -293,20 +300,20 @@ theme_override_font_sizes/font_size = 45
 text = "É hora de preparar o café!"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Briefing/FundoBrief"]
+[node name="Label2" type="Label" parent="Briefing/FundoBrief/BriefingP1"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-offset_left = 80.0
-offset_top = 246.0
-offset_right = 511.0
-offset_bottom = 395.0
+offset_left = 68.0
+offset_top = 244.0
+offset_right = 499.0
+offset_bottom = 393.0
 theme_override_font_sizes/font_size = 25
 text = "1. Todos os ingredientes 
 que precisa para preparar a 
 receita do momento estão 
 DENTRO DA GELADEIRA."
 
-[node name="Label3" type="Label" parent="Briefing/FundoBrief"]
+[node name="Label3" type="Label" parent="Briefing/FundoBrief/BriefingP1"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 offset_left = 68.0
@@ -316,34 +323,206 @@ offset_bottom = 494.0
 theme_override_font_sizes/font_size = 25
 text = "2. Leve o café para a bancada."
 
-[node name="Label4" type="Label" parent="Briefing/FundoBrief"]
+[node name="Label4" type="Label" parent="Briefing/FundoBrief/BriefingP1"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-offset_left = 58.0
-offset_top = 537.0
-offset_right = 509.0
-offset_bottom = 600.0
+offset_left = 68.0
+offset_top = 533.0
+offset_right = 519.0
+offset_bottom = 606.0
 theme_override_font_sizes/font_size = 25
 text = "3. Pegue água na Pia e Leve 
 ao Fogão."
 
-[node name="Label5" type="Label" parent="Briefing/FundoBrief"]
+[node name="Label5" type="Label" parent="Briefing/FundoBrief/BriefingP1"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-offset_left = 56.0
-offset_top = 627.0
-offset_right = 670.0
-offset_bottom = 690.0
+offset_left = 68.0
+offset_top = 644.0
+offset_right = 682.0
+offset_bottom = 717.0
 theme_override_font_sizes/font_size = 25
 text = "4. Com a água fervida passe
  o café e sirva na Mesa."
 
-[node name="Mesa" type="Sprite2D" parent="Briefing/FundoBrief"]
+[node name="Mesa" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP1"]
 position = Vector2(570, 692)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("18_dfuu3")
 
-[node name="Sprite2D" type="TouchScreenButton" parent="Briefing/FundoBrief"]
+[node name="Sprite2D" type="TouchScreenButton" parent="Briefing/FundoBrief/BriefingP1"]
+position = Vector2(387, 793)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("12_7lwul")
+
+[node name="BriefingP2" type="Panel" parent="Briefing/FundoBrief"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Briefing/FundoBrief/BriefingP2"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 62.0
+offset_right = 677.0
+offset_bottom = 933.0
+theme = SubResource("Theme_rmuin")
+
+[node name="Cuscuz" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP2"]
+position = Vector2(528, 252)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("33_7k32u")
+
+[node name="Bancada" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP2"]
+position = Vector2(567, 323)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_xhdpr")
+
+[node name="Fogão" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP2"]
+position = Vector2(580, 467)
+scale = Vector2(0.634884, 0.674497)
+texture = ExtResource("6_00w81")
+
+[node name="Label" type="Label" parent="Briefing/FundoBrief/BriefingP2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_top = 93.0
+offset_right = 705.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 45
+text = "É hora de preparar o café!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Briefing/FundoBrief/BriefingP2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 67.0
+offset_top = 250.0
+offset_right = 425.0
+offset_bottom = 309.0
+theme_override_font_sizes/font_size = 25
+text = "5. Hidrate a FARINHA na PIA."
+
+[node name="Label3" type="Label" parent="Briefing/FundoBrief/BriefingP2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 71.0
+offset_top = 407.0
+offset_right = 502.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 25
+text = "6. Leve a farinha hidratada 
+para o FOGÃO."
+
+[node name="Label4" type="Label" parent="Briefing/FundoBrief/BriefingP2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 77.0
+offset_top = 606.0
+offset_right = 528.0
+offset_bottom = 717.0
+theme_override_font_sizes/font_size = 25
+text = "7. Pegue o Cuscuz Cozido e
+ desenforme ele e 
+entregue na MESA."
+
+[node name="Mesa" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP2"]
+position = Vector2(570, 692)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("18_dfuu3")
+
+[node name="Sprite2D" type="TouchScreenButton" parent="Briefing/FundoBrief/BriefingP2"]
+position = Vector2(387, 793)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("12_7lwul")
+
+[node name="CuscuzHidratado" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP2"]
+position = Vector2(484, 453)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("34_2tmn8")
+
+[node name="CuscuzCozido" type="Sprite2D" parent="Briefing/FundoBrief/BriefingP2"]
+position = Vector2(480, 637)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("35_rmuin")
+
+[node name="BriefingP3" type="Panel" parent="Briefing/FundoBrief"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Briefing/FundoBrief/BriefingP3"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 62.0
+offset_right = 677.0
+offset_bottom = 933.0
+theme = SubResource("Theme_rmuin")
+
+[node name="Label" type="Label" parent="Briefing/FundoBrief/BriefingP3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_top = 93.0
+offset_right = 705.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 45
+text = "É hora de preparar o café!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Briefing/FundoBrief/BriefingP3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 157.0
+offset_top = 257.0
+offset_right = 515.0
+offset_bottom = 316.0
+theme_override_font_sizes/font_size = 50
+text = "PRATOS A SERVIR"
+
+[node name="Label5" type="Label" parent="Briefing/FundoBrief/BriefingP3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 140.0
+offset_top = 479.0
+offset_right = 556.0
+offset_bottom = 548.0
+theme_override_font_sizes/font_size = 50
+text = "TEMPO:"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Briefing/FundoBrief/BriefingP3"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+offset_left = 148.0
+offset_top = 346.0
+offset_right = 579.0
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 80
+text = "03"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Briefing/FundoBrief/BriefingP3"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+offset_left = 145.0
+offset_top = 579.0
+offset_right = 576.0
+offset_bottom = 689.0
+theme_override_font_sizes/font_size = 80
+text = "03:00"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Briefing/FundoBrief/BriefingP3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+offset_left = 195.0
+offset_top = 794.0
+offset_right = 646.0
+offset_bottom = 905.0
+theme_override_font_sizes/font_size = 40
+text = "Começar!"
+
+[node name="Sprite2D" type="TouchScreenButton" parent="Briefing/FundoBrief/BriefingP3"]
 position = Vector2(387, 793)
 scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("12_7lwul")
