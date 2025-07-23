@@ -170,13 +170,14 @@ func next(next_id: String) -> void:
 func _adjust_balloon_position_according_to_current_character():
 	visible = true
 	var collision = current_character_collision
-	var height = collision.shape.radius if collision.shape is CircleShape2D\
-		else (collision.shape as RectangleShape2D).size.y
+	if collision:
+		var height = collision.shape.radius if collision.shape is CircleShape2D\
+			else (collision.shape as RectangleShape2D).size.y
 	
-	global_position = Vector2(
-		collision.global_position.x,
-		collision.global_position.y + height
-	)
+		global_position = Vector2(
+			collision.global_position.x,
+			collision.global_position.y + height
+		)
 	
 	if global_position.x > screen_half_size.x:
 		arrow_position = DialogueBalloon.ARROW_POSITION.RIGHT

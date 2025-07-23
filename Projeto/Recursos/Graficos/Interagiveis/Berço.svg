@@ -1,0 +1,76 @@
+<svg width="96" height="210" viewBox="0 0 96 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_107_21274)">
+<g style="mix-blend-mode:multiply" opacity="0.4">
+<rect y="68" width="92" height="142" rx="4" fill="black"/>
+</g>
+<path d="M91 196H85V203C85 204.657 86.3431 206 88 206V206C89.6569 206 91 204.657 91 203V196Z" fill="#94767B" stroke="black" stroke-width="2"/>
+<path d="M15 196H9L9 203C9 204.657 10.3431 206 12 206V206C13.6569 206 15 204.657 15 203L15 196Z" fill="#94767B" stroke="black" stroke-width="2"/>
+<rect x="5" y="38" width="90" height="158" rx="4" fill="#D09BA4" stroke="black" stroke-width="2"/>
+<rect x="5" y="38" width="90" height="140" rx="4" fill="#FBB9C4" stroke="black" stroke-width="2"/>
+<rect x="9" y="42" width="82" height="132" rx="1" fill="#E3DAC3" stroke="black" stroke-width="2"/>
+<path d="M15.0001 47.9995C24.5 45.4995 52.1084 46.099 87.0001 47.9995C88.4231 64.5515 88.2788 72.4387 87.0001 84.9995C58.8863 87.5353 43.1134 87.4304 15.0001 84.9995C13.2963 67.8664 14 58.4997 15.0001 47.9995Z" fill="#E3DAC3" stroke="black" stroke-width="2"/>
+<g style="mix-blend-mode:soft-light">
+<path d="M76 56.5C75.6667 59.3333 45.5 73.5 26 72.5" stroke="black" stroke-width="2" stroke-linecap="round"/>
+</g>
+<g style="mix-blend-mode:soft-light">
+<path d="M42.5 105C42.1667 107.833 35.5 141 64.0002 146.5" stroke="black" stroke-width="2" stroke-linecap="round"/>
+</g>
+<path d="M14 151H8L8 173C8 174.657 9.34315 176 11 176V176C12.6569 176 14 174.657 14 173L14 151Z" fill="#74AFCD" stroke="black"/>
+<path d="M29.5 151H23.5L23.5 173C23.5 174.657 24.8431 176 26.5 176V176C28.1569 176 29.5 174.657 29.5 173L29.5 151Z" fill="#74AFCD" stroke="black"/>
+<path d="M45 151H39L39 173C39 174.657 40.3431 176 42 176V176C43.6569 176 45 174.657 45 173L45 151Z" fill="#74AFCD" stroke="black"/>
+<path d="M60.5 151H54.5L54.5 173C54.5 174.657 55.8431 176 57.5 176V176C59.1569 176 60.5 174.657 60.5 173L60.5 151Z" fill="#74AFCD" stroke="black"/>
+<path d="M76 151H70V173C70 174.657 71.3431 176 73 176V176C74.6569 176 76 174.657 76 173V151Z" fill="#74AFCD" stroke="black"/>
+<path d="M91.5 151H85.5V173C85.5 174.657 86.8431 176 88.5 176V176C90.1569 176 91.5 174.657 91.5 173V151Z" fill="#74AFCD" stroke="black"/>
+<path d="M15 15H9L9 37C9 38.6569 10.3431 40 12 40V40C13.6569 40 15 38.6569 15 37L15 15Z" fill="#74AFCD" stroke="black"/>
+<path d="M30 15H24L24 37C24 38.6569 25.3431 40 27 40V40C28.6569 40 30 38.6569 30 37L30 15Z" fill="#74AFCD" stroke="black"/>
+<path d="M45 15H39L39 37C39 38.6569 40.3431 40 42 40V40C43.6569 40 45 38.6569 45 37L45 15Z" fill="#74AFCD" stroke="black"/>
+<path d="M60 15H54L54 37C54 38.6569 55.3431 40 57 40V40C58.6569 40 60 38.6569 60 37L60 15Z" fill="#74AFCD" stroke="black"/>
+<path d="M75 15H69V37C69 38.6569 70.3431 40 72 40V40C73.6569 40 75 38.6569 75 37V15Z" fill="#74AFCD" stroke="black"/>
+<path d="M90 15H84V37C84 38.6569 85.3431 40 87 40V40C88.6569 40 90 38.6569 90 37V15Z" fill="#74AFCD" stroke="black"/>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M89 152H91V174C91 175.105 90.1046 176 89 176V176V152Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M73.5 152H75.5V174C75.5 175.105 74.6046 176 73.5 176V176V152Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M58 152H60V174C60 175.105 59.1046 176 58 176V176V152Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M42.5 152H44.5V174C44.5 175.105 43.6046 176 42.5 176V176V152Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M27 152H29V174C29 175.105 28.1046 176 27 176V176V152Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M11.5 152H13.5V174C13.5 175.105 12.6046 176 11.5 176V176V152Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M87.5 16H89.5V38C89.5 39.1046 88.6046 40 87.5 40V40V16Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M72.5 16H74.5V38C74.5 39.1046 73.6046 40 72.5 40V40V16Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M57.5 16H59.5V38C59.5 39.1046 58.6046 40 57.5 40V40V16Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M42.5 16H44.5V38C44.5 39.1046 43.6046 40 42.5 40V40V16Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M27.5 16H29.5V38C29.5 39.1046 28.6046 40 27.5 40V40V16Z" fill="#D9D9D9"/>
+</g>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<path d="M12.5 16H14.5V38C14.5 39.1046 13.6046 40 12.5 40V40V16Z" fill="#D9D9D9"/>
+</g>
+<path d="M5 137H95V147C95 149.209 93.2091 151 91 151H9C6.79086 151 5 149.209 5 147V137Z" fill="#D09BA4" stroke="black" stroke-width="2"/>
+<path d="M5 5C5 2.79086 6.79086 1 9 1H91C93.2091 1 95 2.79086 95 5V15H5V5Z" fill="#D09BA4" stroke="black" stroke-width="2"/>
+<path d="M91 1C93.2091 1 95 2.79086 95 5V137C95 139.209 93.2091 141 91 141H9C6.79086 141 5 139.209 5 137V5C5 2.79086 6.79086 1 9 1H91ZM10 5C9.44772 5 9 5.44772 9 6V136C9 136.552 9.44772 137 10 137H90C90.5523 137 91 136.552 91 136V6C91 5.44772 90.5523 5 90 5H10Z" fill="#FBB9C4"/>
+<path d="M95 5L96 5L95 5ZM91 141L91 142H91L91 141ZM5 137L4 137L5 137ZM9 1L9 0L9 0L9 1ZM9 136L8 136V136L9 136ZM91 6L92 6V6L91 6ZM91 1V2C92.6569 2 94 3.34315 94 5L95 5L96 5C96 2.23858 93.7614 0 91 0V1ZM95 5H94V137H95H96V5H95ZM95 137H94C94 138.657 92.6569 140 91 140L91 141L91 142C93.7614 142 96 139.761 96 137H95ZM91 141V140H9V141V142H91V141ZM9 141V140C7.34315 140 6 138.657 6 137L5 137L4 137C4 139.761 6.23858 142 9 142V141ZM5 137H6V5H5H4V137H5ZM5 5H6C6 3.34315 7.34315 2 9 2L9 1L9 0C6.23858 6.54323e-08 4 2.23858 4 5H5ZM9 1V2H91V1V0H9V1ZM10 5V4C8.89543 4 8 4.89543 8 6H9H10V5ZM9 6H8V136H9H10V6H9ZM9 136L8 136C8 137.105 8.89543 138 10 138V137V136V136L9 136ZM10 137V138H90V137V136H10V137ZM90 137V138C91.1046 138 92 137.105 92 136H91H90V137ZM91 136H92V6H91H90V136H91ZM91 6L92 6C92 4.89543 91.1046 4 90 4V5V6V6L91 6ZM90 5V4H10V5V6H90V5Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_107_21274">
+<rect width="96" height="210" fill="white"/>
+</clipPath>
+</defs>
+</svg>
