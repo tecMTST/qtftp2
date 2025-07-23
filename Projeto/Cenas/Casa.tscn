@@ -1,30 +1,40 @@
-[gd_scene load_steps=30 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=42 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
 [ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="2_kc3ot"]
+[ext_resource type="Texture2D" uid="uid://b0wevbyj2yhx2" path="res://Recursos/Graficos/Cenas/Parede traseira.svg" id="3_0gd5h"]
+[ext_resource type="Texture2D" uid="uid://cxb6qp0b7h80t" path="res://Recursos/Graficos/Cenas/Piso.svg" id="3_l87sh"]
 [ext_resource type="Script" uid="uid://dku77viqwklks" path="res://addons/analog_touch_control/scripts/TouchAnalog.gd" id="3_x64wv"]
-[ext_resource type="Texture2D" uid="uid://c0xd5s2csunn7" path="res://Recursos/Graficos/Cenas/CasaFront.png" id="4_6u8iv"]
+[ext_resource type="Texture2D" uid="uid://c7crxt6cjssfn" path="res://Recursos/Graficos/Cenas/Parede lateral.svg" id="5_d1xgi"]
+[ext_resource type="Texture2D" uid="uid://b81lliwa063g" path="res://Recursos/Graficos/Interagiveis/Fogão.svg" id="6_00w81"]
 [ext_resource type="PackedScene" uid="uid://c6ch38f6kai3t" path="res://Componentes/Casa/Interagiveis/Bancada.tscn" id="6_mcihg"]
 [ext_resource type="PackedScene" uid="uid://b636g7sui3m6c" path="res://Componentes/Casa/Interagiveis/Fogao.tscn" id="6_xq1v8"]
 [ext_resource type="PackedScene" uid="uid://c6n7piqbsbwoq" path="res://Componentes/Casa/Interagiveis/Pia.tscn" id="7_gm3vv"]
 [ext_resource type="PackedScene" uid="uid://dpkfr6t86l4j" path="res://Componentes/Casa/Interagiveis/Geladeira.tscn" id="7_nikh1"]
 [ext_resource type="PackedScene" uid="uid://cjqpfs867y0in" path="res://Componentes/Casa/Interagiveis/Berco.tscn" id="8_p822v"]
 [ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="9_4bf15"]
+[ext_resource type="Texture2D" uid="uid://cc2dcwpo1ky2s" path="res://Recursos/Graficos/Interagiveis/Bancada.svg" id="9_xhdpr"]
 [ext_resource type="PackedScene" uid="uid://cjdso8f820o6i" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="10_cpm0k"]
+[ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="11_utqv5"]
 [ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="12_7lwul"]
+[ext_resource type="Texture2D" uid="uid://c0dgemoh5s4a0" path="res://Recursos/Graficos/Interagiveis/Geladeira.svg" id="12_tjjme"]
 [ext_resource type="Texture2D" uid="uid://bfhn7o5c0ni87" path="res://Recursos/Graficos/UI/botao_acao_pressed.svg" id="13_ksqrt"]
 [ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="14_d2j33"]
+[ext_resource type="Texture2D" uid="uid://687eow50aj7w" path="res://Recursos/Graficos/Interagiveis/Berço.svg" id="14_xhdpr"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="15_gklaa"]
+[ext_resource type="Texture2D" uid="uid://dwhconcu8ehsu" path="res://Recursos/Graficos/Interagiveis/Mobile.svg" id="16_tjjme"]
 [ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="16_utqv5"]
+[ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="17_5esrr"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunça/BaguncaCena.tscn" id="17_utqv5"]
+[ext_resource type="Texture2D" uid="uid://351ntpmnbl0a" path="res://Recursos/Graficos/Interagiveis/Mesa.svg" id="18_dfuu3"]
 [ext_resource type="Texture2D" uid="uid://hkter5n7clor" path="res://Recursos/Graficos/UI/pause.svg" id="19_0gd5h"]
+[ext_resource type="Texture2D" uid="uid://bqbbdsv41kc8l" path="res://Recursos/Graficos/Interagiveis/Cadeira lateral.svg" id="19_tqe3g"]
 [ext_resource type="Texture2D" uid="uid://bfome0afr5jqs" path="res://Recursos/Graficos/UI/continuar.png" id="20_hybjd"]
+[ext_resource type="Texture2D" uid="uid://cwi34cgi7lhqc" path="res://Recursos/Graficos/Interagiveis/Rack.svg" id="21_dfuu3"]
 [ext_resource type="Texture2D" uid="uid://cgqot134nxvvu" path="res://Recursos/Graficos/UI/retornar.png" id="21_i0q67"]
 [ext_resource type="Texture2D" uid="uid://b5ffva58e4rps" path="res://Recursos/Graficos/UI/Volume.png" id="22_l87sh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_utqv5"]
-size = Vector2(82, 96)
+[ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="23_tqe3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
 size = Vector2(259, 1546)
@@ -54,46 +64,95 @@ position = Vector2(358.789, 637.563)
 scale = Vector2(0.997807, 1.00068)
 texture = ExtResource("2_4xt8v")
 
+[node name="Piso" type="Sprite2D" parent="."]
+texture = ExtResource("3_l87sh")
+offset = Vector2(360, 670)
+
+[node name="ParedeTraseira" type="Sprite2D" parent="."]
+position = Vector2(360, 168)
+texture = ExtResource("3_0gd5h")
+
+[node name="ParedeEsquerda" type="Sprite2D" parent="."]
+position = Vector2(13, 672)
+texture = ExtResource("5_d1xgi")
+
+[node name="ParedeDireita" type="Sprite2D" parent="."]
+position = Vector2(708, 672)
+texture = ExtResource("5_d1xgi")
+
 [node name="Player" parent="." instance=ExtResource("2_kc3ot")]
 z_index = 10
-position = Vector2(376, 676)
-rotation = -1.63185
+position = Vector2(378, 676)
 
 [node name="Cozinha" type="Node2D" parent="."]
 
-[node name="Fogao" parent="Cozinha" instance=ExtResource("6_xq1v8")]
-position = Vector2(103, 340)
+[node name="FogaoArte" type="Sprite2D" parent="Cozinha"]
+position = Vector2(141, 335)
+texture = ExtResource("6_00w81")
 
-[node name="Pia" parent="Cozinha" instance=ExtResource("7_gm3vv")]
-position = Vector2(430, 311)
+[node name="Fogao" parent="Cozinha/FogaoArte" instance=ExtResource("6_xq1v8")]
+position = Vector2(-38, -5)
 
-[node name="Bancada" parent="Cozinha" instance=ExtResource("6_mcihg")]
-position = Vector2(304, 318)
+[node name="Pia+BancadaArte" type="Sprite2D" parent="Cozinha"]
+position = Vector2(405, 331)
+texture = ExtResource("9_xhdpr")
 
-[node name="Geladeira" parent="Cozinha" instance=ExtResource("7_nikh1")]
-position = Vector2(602, 320)
+[node name="Bancada" parent="Cozinha/Pia+BancadaArte" instance=ExtResource("6_mcihg")]
+position = Vector2(-101, -13)
 
-[node name="BujãoGás" type="StaticBody2D" parent="Cozinha"]
-position = Vector2(212, 336)
+[node name="Pia" parent="Cozinha/Pia+BancadaArte" instance=ExtResource("7_gm3vv")]
+position = Vector2(25, -20)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cozinha/BujãoGás"]
-shape = SubResource("RectangleShape2D_utqv5")
+[node name="GeladeiraArte" type="Sprite2D" parent="Cozinha"]
+position = Vector2(618, 283)
+texture = ExtResource("12_tjjme")
+
+[node name="Geladeira" parent="Cozinha/GeladeiraArte" instance=ExtResource("7_nikh1")]
+position = Vector2(-16, 40)
 
 [node name="Distracoes" type="Node2D" parent="."]
 
-[node name="Berco" parent="Distracoes" instance=ExtResource("8_p822v")]
-position = Vector2(109, 850)
+[node name="BercoArte" type="Sprite2D" parent="Distracoes"]
+position = Vector2(103, 838)
+texture = ExtResource("14_xhdpr")
 
-[node name="MesaFilha" parent="Distracoes" instance=ExtResource("9_4bf15")]
-position = Vector2(573, 880)
+[node name="Berco" parent="Distracoes/BercoArte" instance=ExtResource("8_p822v")]
+position = Vector2(6, 12)
 
-[node name="Tv" parent="Distracoes" instance=ExtResource("10_cpm0k")]
-position = Vector2(627, 613)
+[node name="MobileArte" type="Sprite2D" parent="Distracoes/BercoArte"]
+position = Vector2(-8, -118)
+texture = ExtResource("16_tjjme")
+
+[node name="CadeiraFrente" type="Sprite2D" parent="Distracoes"]
+position = Vector2(605, 843)
+texture = ExtResource("17_5esrr")
+
+[node name="MesaFilhaArte" type="Sprite2D" parent="Distracoes"]
+position = Vector2(616, 927)
+texture = ExtResource("18_dfuu3")
+
+[node name="CadeiraLateral" type="Sprite2D" parent="Distracoes/MesaFilhaArte"]
+position = Vector2(-122, -39)
+texture = ExtResource("19_tqe3g")
+
+[node name="MesaFilha" parent="Distracoes/MesaFilhaArte" instance=ExtResource("9_4bf15")]
+position = Vector2(-43, -47)
+
+[node name="TVarte" type="Sprite2D" parent="Distracoes"]
+position = Vector2(628, 615)
+texture = ExtResource("21_dfuu3")
+
+[node name="Tv" parent="Distracoes/TVarte" instance=ExtResource("10_cpm0k")]
+position = Vector2(-1, -2)
+
+[node name="Cama" type="Sprite2D" parent="."]
+position = Vector2(184, 950)
+texture = ExtResource("23_tqe3g")
 
 [node name="CasaFront" type="Sprite2D" parent="."]
-position = Vector2(358.5, 1155)
-scale = Vector2(1.38477, 1.44853)
-texture = ExtResource("4_6u8iv")
+position = Vector2(357.5, 1144.5)
+scale = Vector2(1.007, 1.1)
+texture = ExtResource("11_utqv5")
 
 [node name="Limites" type="Node2D" parent="."]
 
@@ -153,6 +212,7 @@ texture_normal = ExtResource("19_0gd5h")
 script = ExtResource("14_d2j33")
 
 [node name="Hud" parent="UI" instance=ExtResource("16_utqv5")]
+visible = false
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(5, 181)
@@ -164,6 +224,7 @@ position = Vector2(128, 576)
 bagunca_scene = ExtResource("17_utqv5")
 
 [node name="Waypoints" type="Node2D" parent="."]
+visible = false
 
 [node name="Waypoint1" type="Marker2D" parent="Waypoints"]
 position = Vector2(467, 592)
