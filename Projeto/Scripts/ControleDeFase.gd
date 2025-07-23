@@ -96,6 +96,10 @@ func _verificar_condicoes():
 		NivelConcluido.emit(NivelAtual, EstadoNivel)
 		_encerrar_nivel()
 		print_debug("Nível falhou")
+	elif EstadoNivel.ChoroLimite():
+		NivelConcluido.emit(NivelAtual, EstadoNivel)
+		_encerrar_nivel()
+		print_debug("Nível falhou")
 	elif EstadoNivel.completo():
 		NivelConcluido.emit(NivelAtual, EstadoNivel)
 		_encerrar_nivel()

@@ -4,8 +4,11 @@ extends Personagem
 signal acao_ativada
 signal acao_desativada
 
-@onready var PosicaoObjeto = $PosicaoObjeto
-@onready var AreaAcao = $AreaAcao
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var gambiarra_centralizar: Sprite2D = $GambiarraCentralizar
+@onready var top_down_controler_2d: TopDownControler2D = $TopDownControler2D
+@onready var pivo_acao: Node2D = $PivoAcao
+@onready var posicao_objeto = $PosicaoObjeto
 
 var sfx_intervalo_passada: float = 0.35
 var sfx_timer: float = 0.0
@@ -24,7 +27,6 @@ var objeto_agarrado: ObjetoAgarravel:
 
 		objeto_agarrado = valor
 
-@onready var posicao_objeto = $PosicaoObjeto
 
 func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
 	soltar()
@@ -43,6 +45,19 @@ func _physics_process(delta: float) -> void:
 	else:
 		sfx_timer = 0.0
 
+	var velocidadeAnimacao = remap(abs(velocity.length()),0.0, 600.0, 0.0, 1.0)
+	animation_tree.set("parameters/Velocidade/blend_position", velocidadeAnimacao)
+	
+	var velocidade = velocity.x
+	rotacao(delta)
+	if velocidade > 0:			
+		gambiarra_centralizar.flip_h = true
+		posicao_objeto.position.x = abs(posicao_objeto.position.x)
+	elif velocidade < 0:
+		gambiarra_centralizar.flip_h = false
+		posicao_objeto.position.x = -abs(posicao_objeto.position.x)
+		
+		
 func _input(_event: InputEvent) -> void:
 	if(!interagivel_ativo):
 		if objeto_agarrado and Input.is_action_just_pressed("action") and not acao_agarrar:
@@ -94,10 +109,14 @@ func _on_area_acao_body_exited(body: Node2D) -> void:
 func agarrar():
 	objeto_agarrado.get_node("CollisionShape2D").disabled = true
 	objeto_agarrado.reparent(posicao_objeto)
-	objeto_agarrado.global_position = posicao_objeto.global_position
-	objeto_agarrado.global_rotation = posicao_objeto.global_rotation
+	objeto_agarrado.global_position = posicao_objeto.global_position	
 	acao_agarrar = true
-
+	
+func rotacao(delta : float):	
+	var rotacao_atual = pivo_acao.rotation
+	pivo_acao.look_at(pivo_acao.global_position + top_down_controler_2d.last_direction)
+			
+			
 func soltar():
 	objeto_agarrado.reparent(get_parent())
 	objeto_agarrado.get_node("CollisionShape2D").disabled = false
