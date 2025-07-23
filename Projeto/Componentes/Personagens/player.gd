@@ -8,7 +8,7 @@ signal acao_desativada
 @onready var gambiarra_centralizar: Sprite2D = $GambiarraCentralizar
 @onready var top_down_controler_2d: TopDownControler2D = $TopDownControler2D
 @onready var pivo_acao: Node2D = $PivoAcao
-@onready var posicao_objeto = $GambiarraCentralizar/PosicaoObjeto
+@onready var posicao_objeto = $PosicaoObjeto
 
 var sfx_intervalo_passada: float = 0.35
 var sfx_timer: float = 0.0
@@ -49,9 +49,11 @@ func _physics_process(delta: float) -> void:
 	var velocidade = velocity.x
 	rotacao(delta)
 	if velocidade > 0:			
-		gambiarra_centralizar.scale.x = abs(gambiarra_centralizar.scale.x)
+		gambiarra_centralizar.flip_h = true
+		posicao_objeto.position.x = abs(posicao_objeto.position.x)
 	elif velocidade < 0:
-		gambiarra_centralizar.scale.x = -abs(gambiarra_centralizar.scale.x)
+		gambiarra_centralizar.flip_h = false
+		posicao_objeto.position.x = -abs(posicao_objeto.position.x)
 		
 		
 func _input(_event: InputEvent) -> void:
@@ -105,8 +107,7 @@ func _on_area_acao_body_exited(body: Node2D) -> void:
 func agarrar():
 	objeto_agarrado.get_node("CollisionShape2D").disabled = true
 	objeto_agarrado.reparent(posicao_objeto)
-	objeto_agarrado.global_position = posicao_objeto.global_position
-	objeto_agarrado.global_rotation = posicao_objeto.global_rotation
+	objeto_agarrado.global_position = posicao_objeto.global_position	
 	acao_agarrar = true
 	
 func rotacao(delta : float):	

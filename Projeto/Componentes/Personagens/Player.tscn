@@ -8,7 +8,7 @@
 viewport_path = NodePath("GambiarraCamera")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c2vf6"]
-radius = 25.0
+radius = 46.0109
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ucjf"]
 radius = 29.0
@@ -347,8 +347,8 @@ position = Vector2(0, -5)
 texture = SubResource("ViewportTexture_c2vf6")
 flip_h = true
 
-[node name="PosicaoObjeto" type="Marker2D" parent="GambiarraCentralizar"]
-position = Vector2(78, 10)
+[node name="PosicaoObjeto" type="Marker2D" parent="."]
+position = Vector2(78, 5)
 
 [node name="PivoAcao" type="Node2D" parent="."]
 
@@ -516,7 +516,7 @@ visible = false
 modification_stack = SubResource("SkeletonModificationStack2D_2r065")
 
 [node name="Quadril" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D"]
-position = Vector2(38, 151)
+position = Vector2(38, 149)
 rest = Transform2D(0.998701, -0.0509536, 0.0509536, 0.998701, 39, 151)
 
 [node name="PernaEsq_0" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
@@ -538,7 +538,7 @@ position = Vector2(-8, 19)
 rest = Transform2D(1, 0, 0, 1, -8, 19)
 
 [node name="Peito" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
-position = Vector2(-4, -31)
+position = Vector2(-4.71777, -31.7178)
 rest = Transform2D(1, 0, 0, 1, -4, -35)
 metadata/_local_pose_override_enabled_ = true
 
