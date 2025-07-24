@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8endvbq4ua0s"
-path="res://.godot/imported/Xicara Cafe.png-902d4849f73cdc87da2c4133c92472aa.ctex"
+uid="uid://jf3217p5ruai"
+path="res://.godot/imported/Agua Fervendo.svg-2f252c94bec9767c24971b1f0efc8c4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Ingredientes/Xicara Cafe.png"
-dest_files=["res://.godot/imported/Xicara Cafe.png-902d4849f73cdc87da2c4133c92472aa.ctex"]
+source_file="res://Recursos/Graficos/Ingredientes/Agua Fervendo.svg"
+dest_files=["res://.godot/imported/Agua Fervendo.svg-2f252c94bec9767c24971b1f0efc8c4e.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

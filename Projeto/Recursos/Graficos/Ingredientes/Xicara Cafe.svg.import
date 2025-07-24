@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhskf0tjjxrr1"
-path="res://.godot/imported/Po Cafe.png-3d3b7ea80e93c22dd96c018c8423bc2d.ctex"
+uid="uid://c2801jx6g3m1s"
+path="res://.godot/imported/Xicara Cafe.svg-ecefd912180ec8f199f746f7d6fa87a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Ingredientes/Po Cafe.png"
-dest_files=["res://.godot/imported/Po Cafe.png-3d3b7ea80e93c22dd96c018c8423bc2d.ctex"]
+source_file="res://Recursos/Graficos/Ingredientes/Xicara Cafe.svg"
+dest_files=["res://.godot/imported/Xicara Cafe.svg-ecefd912180ec8f199f746f7d6fa87a7.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

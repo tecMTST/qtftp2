@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fx1a6xw3xbkb"
-path="res://.godot/imported/Farinha Cuscuz.png-a62225055e3df9446a7aa8c4ac7bd56e.ctex"
+uid="uid://clsd7mxqrqkdh"
+path="res://.godot/imported/Po Cafe.svg-25206c4755e285efb7ba725dd8b79b58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Ingredientes/Farinha Cuscuz.png"
-dest_files=["res://.godot/imported/Farinha Cuscuz.png-a62225055e3df9446a7aa8c4ac7bd56e.ctex"]
+source_file="res://Recursos/Graficos/Ingredientes/Po Cafe.svg"
+dest_files=["res://.godot/imported/Po Cafe.svg-25206c4755e285efb7ba725dd8b79b58.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch73owqyddybq"
-path="res://.godot/imported/Cuscuz Enformado.png-41ed95f22d91f083b67fd8c765c998bd.ctex"
+uid="uid://dfblgl1y5egct"
+path="res://.godot/imported/Jarra Cuscuz.svg-5fe7da4a30e3f9ced2d93d28fa0fa867.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Ingredientes/Cuscuz Enformado.png"
-dest_files=["res://.godot/imported/Cuscuz Enformado.png-41ed95f22d91f083b67fd8c765c998bd.ctex"]
+source_file="res://Recursos/Graficos/Ingredientes/Jarra Cuscuz.svg"
+dest_files=["res://.godot/imported/Jarra Cuscuz.svg-5fe7da4a30e3f9ced2d93d28fa0fa867.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
