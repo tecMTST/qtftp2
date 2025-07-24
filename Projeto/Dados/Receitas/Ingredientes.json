@@ -151,7 +151,7 @@
 		"Cena" : "uid://dorynrmsas25r",
 		"Acoes" : [
 			{
-				"Alvo" : "bancada",
+				"Alvo" : "pia",
 				"Acao" : "hidratar",
 				"Tempo" : 10,
 				"VariacaoResultado" : 2

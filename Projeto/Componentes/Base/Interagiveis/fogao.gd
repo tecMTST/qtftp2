@@ -18,9 +18,11 @@ func _interagir(jogador: Player):
 		jogador.agarrar()
 	else:
 		if(!jogador.objeto_agarrado): return
-		if(jogador.objeto_agarrado.cozinhar()):
-			_cozinharObjeto(jogador.objeto_agarrado)
-			jogador.soltar()
+		var objetoIngrediente = jogador.objeto_agarrado
+		if objetoIngrediente.Ingrediente.Acoes[0].Alvo == "fogao":
+			if(jogador.objeto_agarrado.cozinhar()):
+				_cozinharObjeto(jogador.objeto_agarrado)
+				jogador.soltar()
 
 func _recolherObjeto() -> void:
 	objetoAtual.cozinhar()

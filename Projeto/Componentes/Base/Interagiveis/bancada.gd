@@ -10,8 +10,10 @@ func _ready() -> void:
 	
 func _on_componente_interagivel_interagir(jogador: Player):
 	if jogador.objeto_agarrado != null:
-		_jogador = jogador
-		Eventos.EventoIniciado.emit("desenformar-cuscuz")
+		var objetoIngrediente = jogador.objeto_agarrado
+		if objetoIngrediente.Ingrediente.Acoes[0].Alvo == "bancada":
+			_jogador = jogador
+			Eventos.EventoIniciado.emit("desenformar-cuscuz")
 
 func _on_desenformar_realizado():
 	if(_jogador):

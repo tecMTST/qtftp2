@@ -5,4 +5,6 @@ func _ready() -> void:
 
 func _on_componente_interagivel_interagir(jogador: Player):
 	if jogador.objeto_agarrado != null:
-		jogador.objeto_agarrado.enxaguar()
+		var objetoIngrediente = jogador.objeto_agarrado
+		if objetoIngrediente.Ingrediente.Acoes[0].Alvo == "pia":
+			jogador.objeto_agarrado.enxaguar()
