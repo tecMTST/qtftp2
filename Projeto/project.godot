@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="qtftp2"
-run/main_scene="uid://gkvdwj2c5ern"
+run/main_scene="uid://bsi1hrb4is74n"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

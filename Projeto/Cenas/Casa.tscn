@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=38 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -28,11 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://351ntpmnbl0a" path="res://Recursos/Graficos/Interagiveis/Mesa.svg" id="18_dfuu3"]
 [ext_resource type="Texture2D" uid="uid://hkter5n7clor" path="res://Recursos/Graficos/UI/pause.svg" id="19_0gd5h"]
 [ext_resource type="Texture2D" uid="uid://bqbbdsv41kc8l" path="res://Recursos/Graficos/Interagiveis/Cadeira lateral.svg" id="19_tqe3g"]
-[ext_resource type="Texture2D" uid="uid://bfome0afr5jqs" path="res://Recursos/Graficos/UI/continuar.png" id="20_hybjd"]
 [ext_resource type="Texture2D" uid="uid://cwi34cgi7lhqc" path="res://Recursos/Graficos/Interagiveis/Rack.svg" id="21_dfuu3"]
-[ext_resource type="Texture2D" uid="uid://cgqot134nxvvu" path="res://Recursos/Graficos/UI/retornar.png" id="21_i0q67"]
-[ext_resource type="Texture2D" uid="uid://b5ffva58e4rps" path="res://Recursos/Graficos/UI/Volume.png" id="22_l87sh"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="23_tqe3g"]
+[ext_resource type="PackedScene" uid="uid://cr74l6j0jbkx5" path="res://UI/Menus/MenuPausa.tscn" id="31_tqe3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
 size = Vector2(259, 1546)
@@ -202,7 +200,6 @@ texture_normal = ExtResource("19_0gd5h")
 script = ExtResource("14_d2j33")
 
 [node name="Hud" parent="UI" instance=ExtResource("16_utqv5")]
-visible = false
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(5, 181)
@@ -237,49 +234,11 @@ position = Vector2(507, 716)
 [node name="Waypoint7" type="Marker2D" parent="Waypoints"]
 position = Vector2(314, 809)
 
-[node name="MenuPausa" type="Node2D" parent="."]
-process_mode = 2
-visible = false
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="BotaoContinuar" type="TouchScreenButton" parent="MenuPausa"]
-z_index = 11
-position = Vector2(71, 424)
-texture_normal = ExtResource("20_hybjd")
-
-[node name="BotaoMenuPrincipal" type="TouchScreenButton" parent="MenuPausa"]
-z_index = 11
-position = Vector2(92, 526)
-scale = Vector2(0.798825, 0.929825)
-texture_normal = ExtResource("21_i0q67")
-
-[node name="TextureRect" type="TextureRect" parent="MenuPausa"]
-z_index = 11
-y_sort_enabled = true
-offset_left = 97.0
-offset_top = 694.0
-offset_right = 460.0
-offset_bottom = 838.0
-texture = ExtResource("22_l87sh")
-
-[node name="Cor" type="ColorRect" parent="MenuPausa"]
-z_index = 10
-offset_left = 84.0
-offset_top = 276.0
-offset_right = 632.0
-offset_bottom = 1020.0
-color = Color(0.91, 0.437407, 0.2184, 0.886275)
-
-[node name="SliderVolume" type="HSlider" parent="MenuPausa"]
-z_index = 11
-offset_left = 120.0
-offset_top = 806.0
-offset_right = 588.0
-offset_bottom = 902.0
-max_value = 1.0
-step = 0.001
+[node name="pausar" parent="CanvasLayer" instance=ExtResource("31_tqe3g")]
 
 [connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
 [connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
-[connection signal="pressed" from="MenuPausa/BotaoContinuar" to="." method="_on_botao_pausa_pressed"]
-[connection signal="value_changed" from="MenuPausa/SliderVolume" to="." method="_on_slider_volume_value_changed"]
+[connection signal="Continue" from="CanvasLayer/pausar" to="." method="_on_pausar_continue"]
