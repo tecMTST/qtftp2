@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://di3duc3rpwxkh"]
+
+[ext_resource type="FontFile" uid="uid://b3d8eue11s445" path="res://TelaInicial/fontes/Amigate Endgame Italic.ttf" id="1_ppyvn"]
+[ext_resource type="Texture2D" uid="uid://cwu1a11babg8n" path="res://TelaInicial/imagens/logo.png" id="2_3jhxd"]
+[ext_resource type="FontFile" uid="uid://bhxa2qeqgdl2x" path="res://Recursos/Fontes/Alphakind.otf" id="3_lqw1y"]
+[ext_resource type="Texture2D" uid="uid://cjxet1qh5agnr" path="res://TelaInicial/imagens/logo_bn.png" id="4_xubx8"]
+
+[sub_resource type="Theme" id="Theme_a4vfs"]
+
+[node name="fim_demo" type="Node2D"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 720.0
+offset_bottom = 1280.0
+theme = SubResource("Theme_a4vfs")
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="fim_demo_label" type="Label" parent="MarginContainer/ColorRect"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 140.0
+offset_right = 719.0
+offset_bottom = 449.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ppyvn")
+theme_override_font_sizes/font_size = 75
+text = "Fim da demo. 
+Obrigado por jogar!"
+horizontal_alignment = 1
+
+[node name="lancamento_label" type="Label" parent="MarginContainer/ColorRect"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = 771.0
+offset_right = 722.0
+offset_bottom = 1080.0
+theme_override_fonts/font = ExtResource("1_ppyvn")
+theme_override_font_sizes/font_size = 75
+text = "Aguarde o lançamento!
+01/09/2025"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect"]
+layout_mode = 2
+offset_left = 145.0
+offset_top = 550.0
+offset_right = 462.0
+offset_bottom = 873.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_3jhxd")
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/TextureRect"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 334.0
+offset_right = 365.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0.0591289, 0.570839, 0.22413, 1)
+theme_override_fonts/font = ExtResource("3_lqw1y")
+theme_override_font_sizes/font_size = 35
+text = "Aliança pela Alimentação
+Adequada e Saudável"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/ColorRect"]
+layout_mode = 2
+offset_left = 331.0
+offset_top = 579.0
+offset_right = 651.0
+offset_bottom = 707.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_xubx8")
