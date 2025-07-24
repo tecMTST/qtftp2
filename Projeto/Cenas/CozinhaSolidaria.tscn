@@ -1,15 +1,19 @@
-[gd_scene load_steps=22 format=3 uid="uid://by4070jgxjh5f"]
+[gd_scene load_steps=26 format=3 uid="uid://by4070jgxjh5f"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_xgflc"]
 [ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="2_3kmma"]
 [ext_resource type="Texture2D" uid="uid://dw8mlmpulyrdy" path="res://Recursos/Graficos/Cenas/CozinhaSolidariaPlaceHolder.png" id="2_jlnmc"]
+[ext_resource type="Texture2D" uid="uid://cxb6qp0b7h80t" path="res://Recursos/Graficos/Cenas/Piso.svg" id="3_mna2v"]
 [ext_resource type="Script" uid="uid://dku77viqwklks" path="res://addons/analog_touch_control/scripts/TouchAnalog.gd" id="3_tkkxi"]
 [ext_resource type="PackedScene" uid="uid://b636g7sui3m6c" path="res://Componentes/Casa/Interagiveis/Fogao.tscn" id="5_djqwe"]
+[ext_resource type="Texture2D" uid="uid://b81lliwa063g" path="res://Recursos/Graficos/Interagiveis/Fogão.svg" id="5_xgflc"]
 [ext_resource type="PackedScene" uid="uid://c6n7piqbsbwoq" path="res://Componentes/Casa/Interagiveis/Pia.tscn" id="6_hqfdc"]
 [ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="7_djqwe"]
+[ext_resource type="Texture2D" uid="uid://cc2dcwpo1ky2s" path="res://Recursos/Graficos/Interagiveis/Bancada.svg" id="7_id67p"]
 [ext_resource type="PackedScene" uid="uid://c6ch38f6kai3t" path="res://Componentes/Casa/Interagiveis/Bancada.tscn" id="7_t71rn"]
 [ext_resource type="PackedScene" uid="uid://dpkfr6t86l4j" path="res://Componentes/Casa/Interagiveis/Geladeira.tscn" id="8_tsa1l"]
-[ext_resource type="Texture2D" uid="uid://c0xd5s2csunn7" path="res://Recursos/Graficos/Cenas/CasaFront.png" id="11_v348i"]
+[ext_resource type="Texture2D" uid="uid://c0dgemoh5s4a0" path="res://Recursos/Graficos/Interagiveis/Geladeira.svg" id="10_c3j0i"]
+[ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="10_i5bbl"]
 [ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="13_cn2kd"]
 [ext_resource type="Texture2D" uid="uid://bfhn7o5c0ni87" path="res://Recursos/Graficos/UI/botao_acao_pressed.svg" id="14_82luj"]
 [ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="15_0mka2"]
@@ -45,6 +49,12 @@ position = Vector2(464, 595)
 scale = Vector2(2, 2.3)
 texture = ExtResource("2_jlnmc")
 
+[node name="Piso" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(357, 536)
+scale = Vector2(0.973134, 1.75074)
+texture = ExtResource("3_mna2v")
+
 [node name="Player" parent="." instance=ExtResource("2_3kmma")]
 z_index = 10
 position = Vector2(376, 676)
@@ -53,14 +63,22 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Cozinha" type="Node2D" parent="."]
 
-[node name="Fogao" parent="Cozinha" instance=ExtResource("5_djqwe")]
-position = Vector2(153, 124)
+[node name="FogaoArte" type="Sprite2D" parent="Cozinha"]
+position = Vector2(167, 120)
+texture = ExtResource("5_xgflc")
 
-[node name="Pia" parent="Cozinha" instance=ExtResource("6_hqfdc")]
-position = Vector2(350, 108)
+[node name="Fogao" parent="Cozinha/FogaoArte" instance=ExtResource("5_djqwe")]
+position = Vector2(-38, -5)
 
-[node name="Bancada" parent="Cozinha" instance=ExtResource("7_t71rn")]
-position = Vector2(453, 121)
+[node name="Pia+BancadaArte" type="Sprite2D" parent="Cozinha"]
+position = Vector2(426, 103)
+texture = ExtResource("7_id67p")
+
+[node name="Bancada" parent="Cozinha/Pia+BancadaArte" instance=ExtResource("7_t71rn")]
+position = Vector2(-101, -13)
+
+[node name="Pia" parent="Cozinha/Pia+BancadaArte" instance=ExtResource("6_hqfdc")]
+position = Vector2(25, -20)
 
 [node name="BancadaCentral" parent="Cozinha" instance=ExtResource("7_t71rn")]
 texture_filter = 2
@@ -75,8 +93,12 @@ offset_right = 61.037
 offset_bottom = 68.5
 color = Color(1, 0, 0, 0.47451)
 
-[node name="Geladeira" parent="Cozinha" instance=ExtResource("8_tsa1l")]
-position = Vector2(597, 121)
+[node name="GeladeiraArte" type="Sprite2D" parent="Cozinha"]
+position = Vector2(610, 78)
+texture = ExtResource("10_c3j0i")
+
+[node name="Geladeira" parent="Cozinha/GeladeiraArte" instance=ExtResource("8_tsa1l")]
+position = Vector2(-16, 40)
 
 [node name="Distracoes" type="Node2D" parent="."]
 
@@ -92,9 +114,9 @@ offset_bottom = 112.0
 color = Color(1, 0, 0.486275, 0.392157)
 
 [node name="CasaFront" type="Sprite2D" parent="."]
-position = Vector2(358.5, 1155)
-scale = Vector2(1.38477, 1.44853)
-texture = ExtResource("11_v348i")
+position = Vector2(368.5, 1230)
+scale = Vector2(1.04583, 0.773234)
+texture = ExtResource("10_i5bbl")
 
 [node name="Limites" type="Node2D" parent="."]
 

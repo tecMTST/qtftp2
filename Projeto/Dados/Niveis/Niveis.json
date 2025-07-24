@@ -14,7 +14,14 @@
 		"ValorNutricionalMinimo" : 5,
 		"ValorSaborMinimo" : 2,
 		"PontosRecompensa" : 3,
-		"ReceitaRecompensa" : 0
+		"ReceitaRecompensa" : 0,
+		"Bagunca" : false,
+		"IntervaloBagunca" : 30.0,
+ 		"VariacaoBagunca" : 5.0,
+		"Choro" : true,		
+ 		"IntervaloChoro" : 20.0,
+ 		"VariacaoChoro" :  5.0,
+		"TempoLimiteChoro" :  20.0
 	},
 	{
 		"Id" : 2,
@@ -30,6 +37,13 @@
 		"ValorNutricionalMinimo" : 7,
 		"ValorSaborMinimo" : 4,
 		"PontosRecompensa" : 5,
-		"ReceitaRecompensa" : 2
+		"ReceitaRecompensa" : 2,
+		"Bagunca" : false,
+		"IntervaloBagunca" : 30.0,
+ 		"VariacaoBagunca" : 5.0,
+		"Choro" : false,
+		"IntervaloChoro" : 20.0,
+ 		"VariacaoChoro" :  5.0,
+		"TempoLimiteChoro" :  20.0
 	}
 ]
