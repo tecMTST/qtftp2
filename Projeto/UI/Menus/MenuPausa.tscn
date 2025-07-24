@@ -1,12 +1,88 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctllch62h4k43"]
+[gd_scene load_steps=6 format=3 uid="uid://cr74l6j0jbkx5"]
 
-[ext_resource type="Script" uid="uid://holjgvwle226" path="res://UI/Menus/menu_pausa.gd" id="1_xqg3s"]
+[ext_resource type="Script" uid="uid://u155yd1j8w7y" path="res://UI/Menus/menu_pausa.gd" id="1_xqg3s"]
+[ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://TelaInicial/controle_audio.gd" id="2_4oqih"]
 
-[node name="MenuPausa" type="Control"]
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_im0bb"]
+color = Color(1, 1, 1, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hu2ln"]
+color = Color(1.97336e-06, 0.591007, 0.321423, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6ska4"]
+color = Color(1.97336e-06, 0.591007, 0.321423, 1)
+thickness = 5
+
+[node name="pausar" type="Control"]
+process_mode = 3
+z_index = 10
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+script = ExtResource("1_xqg3s")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 12
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = -88.5
+offset_right = 132.5
+offset_bottom = 70.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xqg3s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+z_index = 14
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="volume2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+text = "Volume"
+
+[node name="controle_audio" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Volume principal "
+theme_override_constants/center_grabber = 0
+theme_override_constants/grabber_offset = 0
+theme_override_styles/slider = SubResource("StyleBoxLine_im0bb")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_hu2ln")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_6ska4")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("2_4oqih")
+audio_bus_name = "Master"
+
+[node name="continuar" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 20
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Continuar"
+
+[node name="retornar à tela inicial" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 16
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Voltar à tela inicial"
+
+[node name="sair" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 16
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Sair do jogo"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/controle_audio" to="MarginContainer/VBoxContainer/controle_audio" method="_on_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/retornar à tela inicial" to="." method="_on_retornar_à_tela_inicial_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]
