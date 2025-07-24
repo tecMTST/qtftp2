@@ -1,12 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://ditthu0qbi11r"]
+[gd_scene load_steps=12 format=3 uid="uid://ditthu0qbi11r"]
 
 [ext_resource type="Script" uid="uid://cppc6bykchl1o" path="res://TelaInicial/tela_opcoes.gd" id="1_3s4su"]
 [ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://TelaInicial/fontes/Byorg.ttf" id="1_navy5"]
 [ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://TelaInicial/controle_audio.gd" id="3_7iw6h"]
 [ext_resource type="Theme" uid="uid://beco18cn8vfan" path="res://TelaInicial/tema_botoes.tres" id="3_g8ynp"]
-[ext_resource type="AudioStream" uid="uid://dlijye6cektg2" path="res://Recursos/Audio/Musica/casa_loop.ogg" id="4_78hhk"]
 [ext_resource type="Texture2D" uid="uid://dla2uplg4nb81" path="res://TelaInicial/imagens/audio_on.png" id="4_npvpo"]
-[ext_resource type="Script" uid="uid://cn4t23a2ysigh" path="res://TelaInicial/mute.gd" id="4_pay61"]
+[ext_resource type="Script" uid="uid://dm4f0ou5bp74p" path="res://TelaInicial/mute.gd" id="4_pay61"]
 [ext_resource type="Texture2D" uid="uid://bkjng6bmdiln1" path="res://TelaInicial/imagens/audio_off.png" id="5_2153d"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_78hhk"]
@@ -128,10 +127,6 @@ theme = ExtResource("3_g8ynp")
 theme_override_fonts/font = ExtResource("1_navy5")
 theme_override_font_sizes/font_size = 30
 text = "Voltar"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_78hhk")
-autoplay = true
 
 [connection signal="value_changed" from="controle_audio" to="controle_audio" method="_on_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/mute" to="MarginContainer/VBoxContainer/mute" method="_on_pressed"]

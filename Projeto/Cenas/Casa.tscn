@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=38 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -28,11 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://351ntpmnbl0a" path="res://Recursos/Graficos/Interagiveis/Mesa.svg" id="18_dfuu3"]
 [ext_resource type="Texture2D" uid="uid://hkter5n7clor" path="res://Recursos/Graficos/UI/pause.svg" id="19_0gd5h"]
 [ext_resource type="Texture2D" uid="uid://bqbbdsv41kc8l" path="res://Recursos/Graficos/Interagiveis/Cadeira lateral.svg" id="19_tqe3g"]
-[ext_resource type="Texture2D" uid="uid://bfome0afr5jqs" path="res://Recursos/Graficos/UI/continuar.png" id="20_hybjd"]
 [ext_resource type="Texture2D" uid="uid://cwi34cgi7lhqc" path="res://Recursos/Graficos/Interagiveis/Rack.svg" id="21_dfuu3"]
-[ext_resource type="Texture2D" uid="uid://cgqot134nxvvu" path="res://Recursos/Graficos/UI/retornar.png" id="21_i0q67"]
-[ext_resource type="Texture2D" uid="uid://b5ffva58e4rps" path="res://Recursos/Graficos/UI/Volume.png" id="22_l87sh"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="23_tqe3g"]
+[ext_resource type="PackedScene" uid="uid://cr74l6j0jbkx5" path="res://UI/Menus/MenuPausa.tscn" id="31_tqe3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
 size = Vector2(259, 1546)
@@ -202,7 +200,6 @@ texture_normal = ExtResource("19_0gd5h")
 script = ExtResource("14_d2j33")
 
 [node name="Hud" parent="UI" instance=ExtResource("16_utqv5")]
-visible = false
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(5, 181)
@@ -239,55 +236,9 @@ position = Vector2(314, 809)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="pausar" type="Control" parent="CanvasLayer"]
-process_mode = 3
-z_index = 10
-layout_mode = 3
-anchors_preset = 0
-offset_right = 720.0
-offset_bottom = 1280.0
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/pausar"]
-z_index = 12
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -132.5
-offset_top = -88.5
-offset_right = 132.5
-offset_bottom = 70.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/pausar/MarginContainer"]
-z_index = 14
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="continuar" type="Button" parent="CanvasLayer/pausar/MarginContainer/VBoxContainer"]
-z_index = 20
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Continuar"
-
-[node name="retornar à tela inicial" type="Button" parent="CanvasLayer/pausar/MarginContainer/VBoxContainer"]
-z_index = 16
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Voltar à tela inicial"
-
-[node name="sair" type="Button" parent="CanvasLayer/pausar/MarginContainer/VBoxContainer"]
-z_index = 16
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Sair do jogo"
+[node name="pausar" parent="CanvasLayer" instance=ExtResource("31_tqe3g")]
 
 [connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
 [connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
-[connection signal="pressed" from="CanvasLayer/pausar/MarginContainer/VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="CanvasLayer/pausar/MarginContainer/VBoxContainer/retornar à tela inicial" to="." method="_on_retornar_à_tela_inicial_pressed"]
-[connection signal="pressed" from="CanvasLayer/pausar/MarginContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]
+[connection signal="Continue" from="CanvasLayer/pausar" to="." method="_on_pausar_continue"]
