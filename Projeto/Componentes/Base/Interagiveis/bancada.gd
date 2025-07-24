@@ -9,7 +9,7 @@ func _ready() -> void:
 	Eventos.EventoFalhou.connect(_on_desenformar_cancelado)
 	
 func _on_componente_interagivel_interagir(jogador: Player):
-	if jogador.objeto_agarrado != null:
+	if jogador.objeto_agarrado != null and _jogador == null:
 		var objetoIngrediente = jogador.objeto_agarrado
 		if objetoIngrediente.Ingrediente.Acoes[0].Alvo == "bancada":
 			_jogador = jogador
