@@ -72,8 +72,8 @@ func _ready() -> void:
 	add_child(_tempo_checagem)
 
 func IniciarNivel():
-	get_tree().paused = true
-	#get_tree().paused = false
+	#get_tree().paused = true
+	get_tree().paused = false
 	assert(NivelAtual is Nivel, "NivelAtual precisa ser carregado")
 	_reset_timers() # Verifica e para os timers caso em andamento
 	TempoJogo.wait_time = NivelAtual.Tempo
