@@ -1,12 +1,81 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjqpfs867y0in"]
+[gd_scene load_steps=13 format=3 uid="uid://cjqpfs867y0in"]
 
 [ext_resource type="Script" uid="uid://cc1rqfgoty0vw" path="res://Componentes/Casa/Interagiveis/berco.gd" id="1_408qi"]
+[ext_resource type="Texture2D" uid="uid://687eow50aj7w" path="res://Recursos/Graficos/Interagiveis/Berço.svg" id="2_tnk6n"]
+[ext_resource type="Texture2D" uid="uid://dwhconcu8ehsu" path="res://Recursos/Graficos/Interagiveis/Mobile.svg" id="3_r71e4"]
+[ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="4_r71e4"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="5_nrlxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82xuh"]
 size = Vector2(144, 258)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnk6n"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_r71e4"]
+
+[sub_resource type="Gradient" id="Gradient_2b3go"]
+offsets = PackedFloat32Array(0.00609756, 0.993902, 1)
+colors = PackedColorArray(0.462291, 0.462291, 0.462291, 1, 0.170732, 0.170732, 0.170732, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nrlxa"]
+gradient = SubResource("Gradient_2b3go")
+
+[sub_resource type="SphereMesh" id="SphereMesh_jejg1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrlxa"]
+size = Vector2(182, 303)
+
 [node name="Berco" type="StaticBody2D" groups=["berco", "interagivel"]]
 script = ExtResource("1_408qi")
 
+[node name="BercoArte" type="Sprite2D" parent="."]
+texture = ExtResource("2_tnk6n")
+
+[node name="MobileArte" type="Sprite2D" parent="BercoArte"]
+position = Vector2(-8, -118)
+texture = ExtResource("3_r71e4")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_82xuh")
+
+[node name="Bebe" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -41)
+scale = Vector2(34.7, 34.7)
+sprite_frames = SubResource("SpriteFrames_tnk6n")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Bebe"]
+position = Vector2(0, 1)
+mesh = SubResource("CapsuleMesh_r71e4")
+texture = SubResource("GradientTexture1D_nrlxa")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Bebe"]
+mesh = SubResource("SphereMesh_jejg1")
+
+[node name="AudioChoro" type="AudioStreamPlayer2D" parent="."]
+
+[node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
+position = Vector2(1, -92)
+script = ExtResource("4_r71e4")
+temporizador = NodePath("../Timer")
+radius = 20.0
+cor = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ComponenteInteragivel" type="Node2D" parent="." node_paths=PackedStringArray("area_de_interacao")]
+script = ExtResource("5_nrlxa")
+nome = "berco"
+descricao = "interação berço"
+area_de_interacao = NodePath("../AreaInteracao")
+possui_contorno = false
+metadata/_custom_type_script = "uid://ddwsslb5nraqq"
+
+[node name="AreaInteracao" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteracao"]
+position = Vector2(-4, 0.5)
+shape = SubResource("RectangleShape2D_nrlxa")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="interagir" from="ComponenteInteragivel" to="." method="_on_componente_interagivel_interagir"]

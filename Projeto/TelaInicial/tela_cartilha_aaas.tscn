@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://de6hj6bvks2es"]
+
+[ext_resource type="Texture2D" uid="uid://mct2gjtbyl0y" path="res://TelaInicial/imagens/aaas.png" id="1_45fkf"]
+[ext_resource type="Script" path="res://TelaInicial/tela_cartilha_aaas.gd" id="1_pod33"]
+[ext_resource type="FontFile" uid="uid://bhxa2qeqgdl2x" path="res://Recursos/Fontes/Alphakind.otf" id="2_1yb4q"]
+[ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://TelaInicial/fontes/Byorg.ttf" id="3_ajn4s"]
+[ext_resource type="Theme" uid="uid://beco18cn8vfan" path="res://TelaInicial/tema_botoes.tres" id="3_pslu7"]
+
+[node name="CartilhaAAAS" type="Node2D"]
+script = ExtResource("1_pod33")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 720.0
+offset_bottom = 1280.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="imagem_cartilha" type="Sprite2D" parent="CenterContainer"]
+position = Vector2(360.286, 315.5)
+scale = Vector2(0.727378, 0.727378)
+texture = ExtResource("1_45fkf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1000
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 720.0
+offset_bottom = 1280.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer4" type="CenterContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 1000.0
+offset_right = 716.0
+offset_bottom = 1150.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="voltar" type="Button" parent="CenterContainer4"]
+layout_mode = 2
+theme = ExtResource("3_pslu7")
+theme_override_fonts/font = ExtResource("3_ajn4s")
+theme_override_font_sizes/font_size = 30
+text = "Voltar"
+
+[node name="CenterContainer2" type="VBoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 683.0
+offset_right = 681.0
+offset_bottom = 865.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = -85
+
+[node name="texto_informativo" type="Label" parent="CenterContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1yb4q")
+theme_override_font_sizes/font_size = 20
+text = "Para mais informações sobre o trabalho da  
+Aliança pela Alimentação Adequada e Saudável, visite o site abaixo:"
+horizontal_alignment = 1
+
+[node name="siteaaas" type="LinkButton" parent="CenterContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_1yb4q")
+theme_override_font_sizes/font_size = 24
+text = "https://alimentacaosaudavel.org.br
+"
+underline = 2
+
+[node name="CenterContainer3" type="VBoxContainer" parent="."]
+offset_left = 43.0
+offset_top = 866.0
+offset_right = 684.0
+offset_bottom = 968.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = -88
+
+[node name="baixar_cartilha" type="Label" parent="CenterContainer3"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1yb4q")
+theme_override_font_sizes/font_size = 36
+text = "Baixar a cartilha:"
+horizontal_alignment = 1
+
+[node name="cartilha" type="LinkButton" parent="CenterContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_1yb4q")
+theme_override_font_sizes/font_size = 32
+text = "Cartilha AAAS"
+underline = 2
+
+[connection signal="pressed" from="CenterContainer4/voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="CenterContainer2/siteaaas" to="." method="_on_siteaaas_pressed"]
+[connection signal="pressed" from="CenterContainer3/cartilha" to="." method="_on_cartilha_pressed"]
