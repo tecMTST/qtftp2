@@ -9,5 +9,4 @@ func _ready() -> void:
 #modificador do volume principal do jogo (Master)
 func _on_value_changed(value: float) -> void:
 	var db = linear_to_db(value)
-	print_debug(value)
 	AudioServer.set_bus_volume_db(audio_bus_id, db)

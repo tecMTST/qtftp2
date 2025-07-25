@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpkfr6t86l4j"]
+[gd_scene load_steps=5 format=3 uid="uid://dpkfr6t86l4j"]
 
 [ext_resource type="Script" uid="uid://b6mqbmkjmrvhl" path="res://Componentes/Base/Interagiveis/geladeira.gd" id="1_pleqy"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_olqph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3mkr"]
 size = Vector2(174, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pleqy"]
+size = Vector2(86, 199)
 
 [node name="Geladeira" type="StaticBody2D" groups=["geladeira", "interagivel"]]
 script = ExtResource("1_pleqy")
@@ -18,3 +22,17 @@ offset_top = -64.0
 offset_right = 83.0
 offset_bottom = 64.0
 color = Color(0, 1, 1, 0.258824)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 37.5)
+shape = SubResource("RectangleShape2D_pleqy")
+
+[node name="ComponenteInteragivel" type="Node2D" parent="." node_paths=PackedStringArray("area_de_interacao")]
+script = ExtResource("2_olqph")
+nome = "Geladeira"
+area_de_interacao = NodePath("../Area2D")
+metadata/_custom_type_script = "uid://ddwsslb5nraqq"
+
+[connection signal="interagir" from="ComponenteInteragivel" to="." method="_on_componente_interagivel_interagir"]

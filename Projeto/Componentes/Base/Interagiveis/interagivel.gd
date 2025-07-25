@@ -106,7 +106,7 @@ func _process(_delta):
 func _ao_entrar_na_area(entidade):
 	if entidade is not Player:
 		return
-	
+	print_debug("Entrou")
 	jogador_no_alcance = entidade
 	entrar_no_alcance.emit(entidade)
 	entidade._on_area_acao_body_entered(get_parent())
@@ -120,7 +120,7 @@ func _ao_entrar_na_area(entidade):
 func _ao_sair_da_area(entidade):
 	if entidade is not Player:
 		return
-	
+	print_debug("Saiu")
 	jogador_no_alcance = null
 	sair_do_alcance.emit(entidade)
 	entidade._on_area_acao_body_exited(get_parent())
