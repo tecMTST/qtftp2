@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _interagir(jogador: Player):	
+func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	if(objetoAtual):
 		if(jogador.objeto_agarrado): return
 		jogador.objeto_agarrado = objetoAtual
