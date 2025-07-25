@@ -9,7 +9,7 @@ signal acao_desativada
 @onready var top_down_controler_2d: TopDownControler2D = $TopDownControler2D
 @onready var pivo_acao: Node2D = $PivoAcao
 @onready var posicao_objeto = $PosicaoObjeto
-@onready var menu_geladeira = preload("uid://ccxw6f3bwr8tt")
+
 
 var sfx_intervalo_passada: float = 0.35
 var sfx_timer: float = 0.0
@@ -79,12 +79,7 @@ func _executar_acao():
 	if interagivel_ativo:
 		# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?
 		if interagivel_ativo is Geladeira:
-			if not item_ativo:
-				var _geladeira = menu_geladeira.instantiate()
-				_geladeira.position =  Vector2(350,500)
-				add_sibling(_geladeira)
-			else:
-				item_ativo.queue_free()
+			pass
 		elif interagivel_ativo is Bancada:
 			pass
 		elif interagivel_ativo is Pia:

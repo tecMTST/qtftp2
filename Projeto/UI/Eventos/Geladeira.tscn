@@ -6,20 +6,28 @@
 [ext_resource type="Texture2D" uid="uid://sdkw0iqugey6" path="res://Recursos/Graficos/UI/geladeira_placeholder.png" id="3_egkq2"]
 [ext_resource type="PackedScene" uid="uid://cywx8j6su6jp2" path="res://Componentes/Objetos/Interagiveis/Prateleira.tscn" id="5_d75bn"]
 
-[node name="Geladeira" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+layer = 99
+
+[node name="Geladeira" type="Control" parent="."]
+process_mode = 3
 z_index = 30
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 0.999997
+offset_top = 1.99999
+offset_right = 1.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.7, 0.7)
-mouse_filter = 1
 script = ExtResource("1_b7hqd")
 caminho_ingredientes = "res://Dados/Niveis/Geladeira_Teste.json"
 
-[node name="GuiTransition" type="Node" parent="."]
+[node name="GuiTransition" type="Node" parent="Geladeira"]
 script = ExtResource("1_uiwjp")
 fade_layout = 0
 animation_enter = 3
@@ -31,21 +39,22 @@ layout = NodePath("..")
 layout_id = "Geladeira"
 metadata/_custom_type_script = "uid://b3ykmcnj6hjhq"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Geladeira"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_type_variation = &"ModalBackground"
 color = Color(0, 0, 0, 0.133333)
 
-[node name="Fader" type="Node" parent="ColorRect"]
+[node name="Fader" type="Node" parent="Geladeira/ColorRect"]
 script = ExtResource("2_egkq2")
 metadata/_custom_type_script = "uid://cpesqq3ctb78o"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Geladeira"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -58,10 +67,11 @@ offset_right = 357.5
 offset_bottom = 557.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_egkq2")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="Geladeira"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -75,44 +85,28 @@ offset_bottom = 490.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+mouse_filter = 0
 alignment = 1
 
-[node name="Prateleira" parent="VBoxContainer" instance=ExtResource("5_d75bn")]
+[node name="Prateleira" parent="Geladeira/VBoxContainer" instance=ExtResource("5_d75bn")]
 layout_mode = 2
 
-[node name="Prateleira2" parent="VBoxContainer" instance=ExtResource("5_d75bn")]
+[node name="Prateleira2" parent="Geladeira/VBoxContainer" instance=ExtResource("5_d75bn")]
 layout_mode = 2
 
-[node name="Prateleira3" parent="VBoxContainer" instance=ExtResource("5_d75bn")]
+[node name="Prateleira3" parent="Geladeira/VBoxContainer" instance=ExtResource("5_d75bn")]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="Geladeira"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.94
-anchor_top = 0.082
-anchor_right = 0.94
-anchor_bottom = 0.082
-offset_left = -12.8
-offset_top = -11.96
-offset_right = 12.2
-offset_bottom = 13.04
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Button"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -11.5
-offset_right = 5.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.1429
+offset_top = 91.4286
+offset_right = -32.1429
+offset_bottom = 116.429
+grow_horizontal = 0
 text = "X"
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Geladeira/Button" to="Geladeira" method="_on_button_pressed"]

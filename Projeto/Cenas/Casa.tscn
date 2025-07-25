@@ -39,7 +39,7 @@ size = Vector2(259, 1546)
 size = Vector2(273, 1546)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwul"]
-size = Vector2(276, 1161)
+size = Vector2(603, 1161)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gm3vv"]
 size = Vector2(378, 1164)
@@ -163,7 +163,7 @@ position = Vector2(318, -110)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite3"]
-position = Vector2(27.0001, -41.4999)
+position = Vector2(190.5, -41.4998)
 shape = SubResource("RectangleShape2D_7lwul")
 
 [node name="Limite4" type="StaticBody2D" parent="Limites"]
@@ -200,7 +200,6 @@ texture_normal = ExtResource("19_0gd5h")
 script = ExtResource("14_d2j33")
 
 [node name="Hud" parent="UI" instance=ExtResource("16_utqv5")]
-mouse_filter = 2
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(5, 181)
@@ -235,51 +234,12 @@ position = Vector2(507, 716)
 [node name="Waypoint7" type="Marker2D" parent="Waypoints"]
 position = Vector2(314, 809)
 
-[node name="MenuPausa" type="Node2D" parent="."]
-process_mode = 2
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pausar" parent="CanvasLayer" instance=ExtResource("31_tqe3g")]
 visible = false
 
-[node name="BotaoContinuar" type="TouchScreenButton" parent="MenuPausa"]
-z_index = 11
-position = Vector2(71, 424)
-texture_normal = ExtResource("20_hybjd")
-
-[node name="BotaoMenuPrincipal" type="TouchScreenButton" parent="MenuPausa"]
-z_index = 11
-position = Vector2(92, 526)
-scale = Vector2(0.798825, 0.929825)
-texture_normal = ExtResource("21_i0q67")
-
-[node name="TextureRect" type="TextureRect" parent="MenuPausa"]
-z_index = 11
-y_sort_enabled = true
-offset_left = 97.0
-offset_top = 694.0
-offset_right = 460.0
-offset_bottom = 838.0
-texture = ExtResource("22_l87sh")
-
-[node name="Cor" type="ColorRect" parent="MenuPausa"]
-z_index = 10
-offset_left = 84.0
-offset_top = 276.0
-offset_right = 632.0
-offset_bottom = 1020.0
-color = Color(0.91, 0.437407, 0.2184, 0.886275)
-
-[node name="SliderVolume" type="HSlider" parent="MenuPausa"]
-z_index = 11
-offset_left = 120.0
-offset_top = 806.0
-offset_right = 588.0
-offset_bottom = 902.0
-max_value = 1.0
-step = 0.001
-
-[node name="MenuGeladeira" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Geladeira" parent="MenuGeladeira" instance=ExtResource("4_i0q67")]
-
+[connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
+[connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
 [connection signal="Continue" from="CanvasLayer/pausar" to="." method="_on_pausar_continue"]

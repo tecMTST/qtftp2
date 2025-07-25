@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://ck8wg57jy340e"]
 
-[ext_resource type="Script" uid="uid://cd2jogo7kya5n" path="res://ingrediente.gd" id="1_hkx6c"]
+[ext_resource type="Script" uid="uid://cd2jogo7kya5n" path="res://Componentes/Objetos/Interagiveis/ingrediente.gd" id="1_hkx6c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkx6c"]
 
@@ -81,4 +81,4 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_bte0b")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_j2rbu")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_s6w4g")
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

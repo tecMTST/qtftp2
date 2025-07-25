@@ -176,8 +176,8 @@ shape = SubResource("RectangleShape2D_at0gs")
 script = ExtResource("2_sb6mk")
 nome = "Fogão"
 descricao = "Uma fogão"
-possui_contorno = false
 area_de_interacao = NodePath("../Area2D")
+possui_contorno = false
 
 [node name="Pivot" type="Node2D" parent="."]
 position = Vector2(26, -38)
@@ -207,3 +207,5 @@ sprite_frames = SubResource("SpriteFrames_kcmap")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.404909
+
+[connection signal="interagir" from="ComponenteInteragivel" to="." method="_on_componente_interagivel_interagir"]

@@ -1,6 +1,6 @@
 class_name ObjIngrediente extends Control
 
-signal botao_apertado
+signal botao_apertado(caminho)
 
 @export var Nome = ""
 @export var Descricao = ""
@@ -10,5 +10,5 @@ signal botao_apertado
 func _ready() -> void:
 	$Sprite.texture = Sprite
 
-func _on_button_button_up() -> void:
-	botao_apertado.emit()
+func _on_button_pressed() -> void:
+	botao_apertado.emit(CaminhoObjeto)
