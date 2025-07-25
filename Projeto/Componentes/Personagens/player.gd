@@ -90,16 +90,18 @@ func _executar_acao():
 func _on_area_acao_body_entered(body: Node2D) -> void:
 	if body.is_in_group("agarravel") and not acao_agarrar:
 		objeto_agarrado = body
-	elif body.is_in_group("interagivel"):
-		interagivel_ativo = body
-		acao_ativada.emit()
 
 func _on_area_acao_body_exited(body: Node2D) -> void:
 	if body.is_in_group("agarravel") and not acao_agarrar:
 		objeto_agarrado = null
-	elif body.is_in_group("interagivel"):
-		interagivel_ativo = null
-		acao_desativada.emit()
+
+func on_interagivel_entered(body : Node2D) -> void:
+	interagivel_ativo = body
+	acao_ativada.emit()
+	
+func on_interagivel_exited() -> void:
+	interagivel_ativo = null
+	acao_desativada.emit()
 
 func agarrar():
 	objeto_agarrado.get_node("CollisionShape2D").disabled = true
