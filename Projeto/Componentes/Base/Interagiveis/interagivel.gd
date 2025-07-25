@@ -16,7 +16,7 @@ var jogador_no_alcance: Player:
 		else:
 			_interagiveis_no_alcance.erase(self)
 		
-		_interagiveis_no_alcance.sort_custom(func (a: BaseInteragivel, b: BaseInteragivel):
+		_interagiveis_no_alcance.sort_custom(func (a: Interagivel, b: Interagivel):
 			return a.prioridade_de_interacao >= b.prioridade_de_interacao
 		)
 
@@ -106,9 +106,10 @@ func _process(_delta):
 func _ao_entrar_na_area(entidade):
 	if entidade is not Player:
 		return
-	
+	print_debug("Entrou")
 	jogador_no_alcance = entidade
 	entrar_no_alcance.emit(entidade)
+	entidade._on_area_acao_body_entered(get_parent())
 	
 	if not pode_interagir:
 		return
@@ -119,9 +120,10 @@ func _ao_entrar_na_area(entidade):
 func _ao_sair_da_area(entidade):
 	if entidade is not Player:
 		return
-	
+	print_debug("Saiu")
 	jogador_no_alcance = null
 	sair_do_alcance.emit(entidade)
+	entidade._on_area_acao_body_exited(get_parent())
 	
 	if not pode_interagir:
 		return

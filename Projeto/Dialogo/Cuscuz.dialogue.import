@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dd4c3bj1yyk35"
+path="res://.godot/imported/Cuscuz.dialogue-9ef4b88659a61a08b765086981a654cc.tres"
+
+[deps]
+
+source_file="res://Dialogo/Cuscuz.dialogue"
+dest_files=["res://.godot/imported/Cuscuz.dialogue-9ef4b88659a61a08b765086981a654cc.tres"]
+
+[params]
+
+defaults=true

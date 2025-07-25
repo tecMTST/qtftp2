@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bded1n2p50ups"]
+[gd_scene load_steps=4 format=3 uid="uid://bded1n2p50ups"]
 
 [ext_resource type="Script" uid="uid://d03ltmyrb44ag" path="res://UI/Menus/menu_fim_de_jogo.gd" id="1_2syna"]
+[ext_resource type="Script" uid="uid://b3ykmcnj6hjhq" path="res://addons/simple-gui-transitions/transition.gd" id="2_hqonr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2syna"]
 bg_color = Color(0.724643, 0.724643, 0.724642, 0.631373)
@@ -29,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2syna")
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="RepetirFase" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,7 +45,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Repetir"
 
-[node name="Button2" type="Button" parent="Panel"]
+[node name="SairFase" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -58,3 +59,12 @@ offset_bottom = 304.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Sair"
+
+[node name="GuiTransition" type="Node" parent="."]
+script = ExtResource("2_hqonr")
+layout = NodePath("..")
+layout_id = "Fim"
+metadata/_custom_type_script = "uid://b3ykmcnj6hjhq"
+
+[connection signal="button_up" from="Panel/RepetirFase" to="." method="_on_repetir_fase_button_up"]
+[connection signal="button_up" from="Panel/SairFase" to="." method="_on_sair_fase_button_up"]

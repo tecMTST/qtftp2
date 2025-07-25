@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://cywx8j6su6jp2"]
+
+[ext_resource type="Texture2D" uid="uid://utvgpy1f7nhr" path="res://Recursos/Graficos/UI/prateleira_placeholder.png" id="1_y0o16"]
+
+[node name="Prateleira" type="Control"]
+layout_mode = 3
+anchor_top = -0.040625
+anchor_right = 1.0
+anchor_bottom = 0.151562
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.811
+anchor_right = 0.5
+anchor_bottom = 0.811
+offset_left = -336.0
+offset_top = -46.5061
+offset_right = 336.0
+offset_bottom = 46.4939
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_y0o16")
+expand_mode = 1
+
+[node name="IngredienteContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.411
+anchor_right = 0.5
+anchor_bottom = 0.411
+offset_left = -326.0
+offset_top = -101.106
+offset_right = 326.0
+offset_bottom = 100.894
+grow_horizontal = 2

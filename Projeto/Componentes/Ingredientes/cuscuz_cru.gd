@@ -9,4 +9,5 @@ func _ready() -> void:
 		Descricao = Ingrediente.Descricao
 
 func enxaguar():
-	transformar(load("uid://cxh3fegmcf0w4").instantiate())
+	transformar(load("res://Componentes/Ingredientes/CuscuzHidratado.tscn").instantiate())
+	ControleDeFase.Jogador.iniciar_dialogo(load("res://Dialogo/Cuscuz.dialogue"), "cuscuz_descansar", 3.0)

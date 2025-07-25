@@ -176,5 +176,5 @@ visible = false
 position = Vector2(-3, 173)
 navigation_polygon = SubResource("NavigationPolygon_4xt8v")
 
-[connection signal="AcaoAtivada" from="Player" to="." method="_on_player_acao_ativada"]
-[connection signal="AcaoDesativada" from="Player" to="." method="_on_player_acao_desativada"]
+[connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
+[connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]

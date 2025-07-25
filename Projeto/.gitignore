@@ -7,9 +7,6 @@ export.cfg
 *.zip
 *.pck
 
-# se usarmos a AssetLib do Godot:
-addons/
-
 # cache e arquivos temporários:
 *.tmp
 *~

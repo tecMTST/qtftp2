@@ -15,3 +15,10 @@ var ValorNutricionalMinimo : int
 var ValorSaborMinimo : int
 var PontosRecompensa : int
 var ReceitaRecompensa : int
+var Bagunca : bool = false
+var IntervaloBagunca : float = 30
+var VariacaoBagunca : float = 5
+var Choro : bool = false
+var IntervaloChoro : float = 20
+var VariacaoChoro : float = 5
+var TempoLimiteChoro : float = 20.0
