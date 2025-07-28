@@ -10,6 +10,7 @@ signal acao_desativada
 @onready var pivo_acao: Node2D = $PivoAcao
 @onready var posicao_objeto = $PosicaoObjeto
 
+
 var sfx_intervalo_passada: float = 0.35
 var sfx_timer: float = 0.0
 var item_ativo: IngredienteBase
@@ -71,20 +72,16 @@ func _input(_event: InputEvent) -> void:
 	elif Input.is_action_just_released("action") and acao_executando:
 		acao_executando = false
 
+func agarrar_de_menu(objeto: Node):
+	add_sibling(objeto)
+	objeto_agarrado = objeto
+	agarrar()
+	
 func _executar_acao():
 	if interagivel_ativo:
 		# TODO: Necessário identificar itens no inventário ou nas mãos da personagem?
 		if interagivel_ativo is Geladeira:
-			if not item_ativo:
-				var ingrediente_atual = Globais.GetIngrediente(
-					ControleDeFase.PassoAtual.Ingredientes[0].IdIngrediente,
-					ControleDeFase.PassoAtual.Ingredientes[0].VariacaoIngrediente)
-				item_ativo = load(ingrediente_atual.Cena).instantiate()
-				add_sibling(item_ativo)
-				objeto_agarrado = item_ativo
-				agarrar()
-			else:
-				item_ativo.queue_free()
+			pass
 		elif interagivel_ativo is Bancada:
 			pass
 		elif interagivel_ativo is Pia:

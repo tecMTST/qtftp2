@@ -39,7 +39,7 @@ size = Vector2(259, 1546)
 size = Vector2(273, 1546)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwul"]
-size = Vector2(276, 1161)
+size = Vector2(603, 1161)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gm3vv"]
 size = Vector2(378, 1164)
@@ -163,7 +163,7 @@ position = Vector2(318, -110)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite3"]
-position = Vector2(27.0001, -41.4999)
+position = Vector2(190.5, -41.4998)
 shape = SubResource("RectangleShape2D_7lwul")
 
 [node name="Limite4" type="StaticBody2D" parent="Limites"]
@@ -237,6 +237,7 @@ position = Vector2(314, 809)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="pausar" parent="CanvasLayer" instance=ExtResource("31_tqe3g")]
+visible = false
 
 [connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
 [connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]

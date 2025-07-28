@@ -7,6 +7,7 @@
 		"Preco" : 1,
 		"Unidade" : "Gramas",
 		"Cena" : "",
+		"CaminhoSprite" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "fogao",
@@ -24,6 +25,7 @@
 		"Preco" : 1,
 		"Unidade" : "Gramas",
 		"Cena" : "",
+		"CaminhoSprite" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -41,6 +43,7 @@
 		"Preco" : 1,
 		"Unidade" : "Gramas",
 		"Cena" : "",
+		"CaminhoSprite" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "fogao",
@@ -58,6 +61,7 @@
 		"Preco" : 1,
 		"Unidade" : "Gramas",
 		"Cena" : "",
+		"CaminhoSprite" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -75,6 +79,7 @@
 		"Preco" : 1,
 		"Unidade" : "Gramas",
 		"Cena" : "",
+		"CaminhoSprite" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -92,6 +97,7 @@
 		"Preco" : 2,
 		"Unidade" : "Unidade",
 		"Cena" : "",
+		"CaminhoSprite" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "fogao",
@@ -115,6 +121,7 @@
 		"Preco" : 0,
 		"Unidade" : "Unidade",
 		"Cena" : "",
+		"CaminhoSprite" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -132,6 +139,7 @@
 		"Preco" : 0,
 		"Unidade" : "Unidade",
 		"Cena" : "",
+		"CaminhoSprite" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -148,7 +156,8 @@
 		"Descricao" : "Cuscuz Cru",
 		"Preco" : 1,
 		"Unidade" : "Gramas",
-		"Cena" : "uid://dorynrmsas25r",
+		"Cena" : "res://Componentes/Ingredientes/CuscuzCru.tscn",
+		"CaminhoSprite" : "res://Recursos/Graficos/Ingredientes/vitamilho.png",
 		"Acoes" : [
 			{
 				"Alvo" : "pia",
@@ -166,6 +175,7 @@
 		"Preco" : 1,
 		"Unidade" : "Gramas",
 		"Cena" : "res://Componentes/Ingredientes/CuscuzHidratado.tscn",
+		"CaminhoSprite" : "res://Recursos/Graficos/Ingredientes/CuscuzHidratado.svg",
 		"Acoes" : [
 			{
 				"Alvo" : "fogao",
@@ -182,7 +192,8 @@
 		"Descricao" : "Cuscuz cozido a vapor",
 		"Preco" : 1,
 		"Unidade" : "Gramas",
-		"Cena" : "",
+		"Cena" : "res://Componentes/Ingredientes/CuscuzCozido.tscn",
+		"CaminhoSprite" : "res://Recursos/Graficos/Ingredientes/Cuscuz_coziddo.png",
 		"Acoes" : [
 			{
 				"Alvo" : "bancada",
@@ -200,6 +211,7 @@
 		"Preco" : 1,
 		"Unidade" : "Gramas",
 		"Cena" : "",
+		"CaminhoSprite" : "res://Recursos/Graficos/Ingredientes/PoCafe.png",
 		"Acoes" : [
 			{
 				"Alvo" : "Fogão",
@@ -217,6 +229,7 @@
 		"Preco" : 1,
 		"Unidade" : "Gramas",
 		"Cena" : "",
+		"CaminhoSprite" : "",
 		"Acoes" : [
 			{
 				"Alvo" : "Bancada",

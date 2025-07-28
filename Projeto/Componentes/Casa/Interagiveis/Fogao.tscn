@@ -208,4 +208,4 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.404909
 
-[connection signal="interagir" from="ComponenteInteragivel" to="." method="_interagir"]
+[connection signal="interagir" from="ComponenteInteragivel" to="." method="_on_componente_interagivel_interagir"]
