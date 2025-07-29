@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://up0d06o57e2x"]
+
+[ext_resource type="Script" uid="uid://br41uvh44j2ah" path="res://Cenas/quadrinhos.gd" id="1_1jvtp"]
+[ext_resource type="Texture2D" uid="uid://bg2xjuy5l0ot3" path="res://Recursos/Graficos/Quadrinhos/Layer 2.png" id="2_0rtw6"]
+[ext_resource type="Texture2D" uid="uid://db5ygq1d46ide" path="res://Recursos/Graficos/Quadrinhos/Layer 3.png" id="3_s8js8"]
+[ext_resource type="Texture2D" uid="uid://bxq6ng3boktdq" path="res://Recursos/Graficos/Quadrinhos/Layer 4.png" id="4_dwqkb"]
+
+[sub_resource type="Animation" id="Animation_0rtw6"]
+resource_name = "bounce_quadrinhos_1"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-703, -0.25, 0, 0.366667, 35.5, 19, -0.1, -53.5, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_s8js8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_dwqkb"]
+resource_name = "bounce_quadrinhos_2"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-703, -0.25, 0, 0.366667, 35.5, 19, -0.1, -53.5, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_2gdfw"]
+resource_name = "bounce_quadrinhos_3"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect3:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-703, -0.25, 0, 0.366667, 35.5, 19, -0.1, -53.5, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q1onl"]
+_data = {
+&"RESET": SubResource("Animation_s8js8"),
+&"bounce_quadrinhos_1": SubResource("Animation_0rtw6"),
+&"bounce_quadrinhos_2": SubResource("Animation_dwqkb"),
+&"bounce_quadrinhos_3": SubResource("Animation_2gdfw")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1jvtp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 673.0
+offset_bottom = 320.0
+texture = ExtResource("2_0rtw6")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -703.0
+offset_top = 323.0
+offset_right = -33.0
+offset_bottom = 606.0
+texture = ExtResource("3_s8js8")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = -703.0
+offset_top = 627.0
+offset_right = -33.0
+offset_bottom = 908.0
+texture = ExtResource("4_dwqkb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_q1onl")
+}
+
+[node name="Avancar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -234.0
+offset_right = 126.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Avancar"
+
+[connection signal="pressed" from="Avancar" to="." method="_on_avancar_pressed"]
