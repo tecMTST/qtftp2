@@ -160,7 +160,7 @@
 		"CaminhoSprite" : "res://Recursos/Graficos/Ingredientes/vitamilho.png",
 		"Acoes" : [
 			{
-				"Alvo" : "bancada",
+				"Alvo" : "pia",
 				"Acao" : "hidratar",
 				"Tempo" : 10,
 				"VariacaoResultado" : 2

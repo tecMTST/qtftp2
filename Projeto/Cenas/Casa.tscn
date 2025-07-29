@@ -94,7 +94,7 @@ position = Vector2(405, 331)
 texture = ExtResource("9_xhdpr")
 
 [node name="Bancada" parent="Cozinha/Pia+BancadaArte" instance=ExtResource("6_mcihg")]
-position = Vector2(-101, -13)
+position = Vector2(-101, -15)
 
 [node name="Pia" parent="Cozinha/Pia+BancadaArte" instance=ExtResource("7_gm3vv")]
 position = Vector2(25, -20)
@@ -104,7 +104,7 @@ position = Vector2(618, 283)
 texture = ExtResource("12_tjjme")
 
 [node name="Geladeira" parent="Cozinha/GeladeiraArte" instance=ExtResource("7_nikh1")]
-position = Vector2(-16, 40)
+position = Vector2(-16, 33)
 
 [node name="Distracoes" type="Node2D" parent="."]
 
