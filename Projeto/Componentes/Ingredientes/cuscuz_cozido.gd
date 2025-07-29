@@ -37,10 +37,3 @@ func desenformar() -> void:
 		transformar(load("uid://brr34b4ohi5k6").instantiate())
 	else:
 		timer.paused = !timer.paused
-
-func entregar():
-	# Inserir animações e efeitos
-	ControleDeFase.Jogador.iniciar_dialogo(load("res://Dialogo/Cuscuz.dialogue"), "cuscuz_pronto", 3.5)
-	await get_tree().create_timer(1).timeout
-	ControleDeFase.entregarPrato(Ingrediente)
-	queue_free()
