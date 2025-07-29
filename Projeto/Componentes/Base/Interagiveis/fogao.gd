@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	if(objetoAtual):
-		if(jogador.objeto_agarrado): return
+		if(jogador.esta_agarrando): return
 		jogador.objeto_agarrado = objetoAtual
 		_recolherObjeto()
 		jogador.agarrar()
