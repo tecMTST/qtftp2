@@ -14,3 +14,4 @@ func entregar() -> void:
 		return
 	remove_from_group('prato_pronto')
 	add_to_group('prato_entregue')
+  

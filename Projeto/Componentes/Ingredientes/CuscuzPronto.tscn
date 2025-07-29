@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dc67"]
 size = Vector2(50, 32)
 
-[node name="CuscuzPronto" type="StaticBody2D"]
+[node name="CuscuzPronto" type="StaticBody2D" groups=["agarravel", "prato_pronto"]]
 script = ExtResource("1_5s83k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
