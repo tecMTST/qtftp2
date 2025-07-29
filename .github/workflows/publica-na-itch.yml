@@ -64,7 +64,7 @@ jobs:
       - name: Montando para Web
         working-directory: ./Projeto
         run: |
-          rm ../Release/Web/*.{png,js,html,js,pck,wasm,zip}
+          rm ../Release/Web/*
           godot -v --headless --export-release Web ../Release/Web/index.html
       - name: Publicando na Itch
         uses: yeslayla/butler-publish-itchio-action@master
