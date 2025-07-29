@@ -17,7 +17,7 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 		_recolherObjeto()
 		jogador.agarrar()
 	else:
-		if(!jogador.objeto_agarrado): return
+		if(!jogador.esta_agarrando): return
 		var objetoIngrediente = jogador.objeto_agarrado
 		if objetoIngrediente.Ingrediente.Acoes[0].Alvo == "fogao":
 			if(jogador.objeto_agarrado.cozinhar()):
