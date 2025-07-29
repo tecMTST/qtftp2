@@ -127,7 +127,7 @@ pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogo/Cuscuz.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogo/Cuscuz.dialogue", "res://Dialogo/Tutorial.dialogue")
 
 [physics]
 
