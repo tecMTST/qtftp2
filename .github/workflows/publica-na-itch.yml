@@ -67,11 +67,18 @@ jobs:
           mkdir -p ${GITHUB_WORKSPACE}/Release/Web
           godot -v --headless --export-release Web ${GITHUB_WORKSPACE}/Release/Web/index.html
           ls -lah ${GITHUB_WORKSPACE}/Release/Web
-      - name: Publicando na Itch
-        uses: yeslayla/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.itch_io_key }}
-          CHANNEL: web
-          ITCH_GAME: ${{ inputs.nome_na_itch }}
-          ITCH_USER: ${{ inputs.usuario_na_itch }}
-          PACKAGE: ./Release/Web
+      - name: Instalando Butler
+        run: |
+          curl -L -o butler.zip https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          chmod +x butler
+          mv butler /usr/local/bin/
+          butler -V  # Verifica a instalação
+      - name: Publicando na Itch.io
+        run: |
+          export BUTLER_API_KEY=${{ secrets.itch_io_key }}
+          PACKAGE_PATH="${GITHUB_WORKSPACE}/Release/Web"
+          TARGET="${{ inputs.usuario_na_itch }}/${{ inputs.nome_na_itch }}:web"
+          echo "Publicando $PACKAGE_PATH para $TARGET"
+          butler push "$PACKAGE_PATH" "$TARGET" --verbose
+          butler status "$TARGET"
