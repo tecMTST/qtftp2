@@ -69,6 +69,7 @@ jobs:
           mkdir -p ${GITHUB_WORKSPACE}/Release/Web
           godot --headless --export-release Web ${GITHUB_WORKSPACE}/Release/Web/index.html
           ls -lah ${GITHUB_WORKSPACE}/Release/Web
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           echo "Commit = $(git rev-parse HEAD)"
           echo "Pasta = $GITHUB_WORKSPACE/Release/Web"
       - name: Instalando Butler
