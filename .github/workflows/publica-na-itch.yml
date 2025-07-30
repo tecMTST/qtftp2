@@ -59,17 +59,20 @@ jobs:
           fetch-depth: 1
       - name: Configurando
         run: |
+          apt-get update && apt-get install -y curl unzip
           mkdir -v -p ~/.local/share/godot/export_templates/
           mv -v /root/.local/share/godot/export_templates/${GODOT_VERSAO}.stable ~/.local/share/godot/export_templates/${GODOT_VERSAO}.stable
       - name: Montando para Web
         working-directory: ./Projeto
         run: |
+          rm -rf ${GITHUB_WORKSPACE}/Release/Web/
           mkdir -p ${GITHUB_WORKSPACE}/Release/Web
-          godot -v --headless --export-release Web ${GITHUB_WORKSPACE}/Release/Web/index.html
+          godot --headless --export-release Web ${GITHUB_WORKSPACE}/Release/Web/index.html
           ls -lah ${GITHUB_WORKSPACE}/Release/Web
+          echo "Commit = $(git rev-parse HEAD)"
+          echo "Pasta = $GITHUB_WORKSPACE/Release/Web"
       - name: Instalando Butler
         run: |
-          apt-get update && apt-get install -y curl unzip
           curl -L -o butler.zip https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default
           unzip butler.zip
           chmod +x butler
@@ -81,5 +84,6 @@ jobs:
           PACKAGE_PATH="${GITHUB_WORKSPACE}/Release/Web"
           TARGET="${{ inputs.usuario_na_itch }}/${{ inputs.nome_na_itch }}:web"
           echo "Publicando $PACKAGE_PATH para $TARGET"
-          butler push "$PACKAGE_PATH" "$TARGET" --verbose
+          git checkout $PACKAGE_PATH/server.py
+          butler push "$PACKAGE_PATH" "$TARGET"
           butler status "$TARGET"
