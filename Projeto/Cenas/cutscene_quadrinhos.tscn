@@ -1,44 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://up0d06o57e2x"]
+[gd_scene load_steps=11 format=3 uid="uid://up0d06o57e2x"]
 
-[ext_resource type="Script" uid="uid://br41uvh44j2ah" path="res://Cenas/quadrinhos.gd" id="1_1jvtp"]
+[ext_resource type="Script" uid="uid://bfvf214mhvl7c" path="res://Scripts/Cutscenes/CutsceneQuadrinhos.gd" id="1_0rtw6"]
 [ext_resource type="Texture2D" uid="uid://bg2xjuy5l0ot3" path="res://Recursos/Graficos/Quadrinhos/Layer 2.png" id="2_0rtw6"]
+[ext_resource type="Script" uid="uid://dxcd21ohsu4ga" path="res://Scripts/Cutscenes/Quadrinho.gd" id="2_s8js8"]
 [ext_resource type="Texture2D" uid="uid://db5ygq1d46ide" path="res://Recursos/Graficos/Quadrinhos/Layer 3.png" id="3_s8js8"]
 [ext_resource type="Texture2D" uid="uid://bxq6ng3boktdq" path="res://Recursos/Graficos/Quadrinhos/Layer 4.png" id="4_dwqkb"]
 
-[sub_resource type="Animation" id="Animation_0rtw6"]
-resource_name = "bounce_quadrinhos_1"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-703, -0.25, 0, 0.366667, 35.5, 19, -0.1, -53.5, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-
 [sub_resource type="Animation" id="Animation_s8js8"]
 length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
+
+[sub_resource type="Animation" id="Animation_0rtw6"]
+resource_name = "bounce_quadrinhos_1"
 
 [sub_resource type="Animation" id="Animation_dwqkb"]
 resource_name = "bounce_quadrinhos_2"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect2:position:x")
+tracks/0/path = NodePath("Quadrinho_2/QuadrinhoRect:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -52,7 +31,7 @@ resource_name = "bounce_quadrinhos_3"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect3:position:x")
+tracks/0/path = NodePath("Quadrinho_3/QuadrinhoRect:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -69,14 +48,15 @@ _data = {
 &"bounce_quadrinhos_3": SubResource("Animation_2gdfw")
 }
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("listaQuadrinhos")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1jvtp")
+script = ExtResource("1_0rtw6")
+listaQuadrinhos = [NodePath("Quadrinho_1"), NodePath("Quadrinho_2"), NodePath("Quadrinho_3")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -86,26 +66,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_top = 28.0
-offset_right = 673.0
-offset_bottom = 320.0
+[node name="Quadrinho_1" type="Node2D" parent="." node_paths=PackedStringArray("posicaoBounceInicial")]
+script = ExtResource("2_s8js8")
+posicaoBounceInicial = NodePath("posicaoInicial")
+velocidadeBounce = 0.5
+
+[node name="QuadrinhoRect" type="TextureRect" parent="Quadrinho_1"]
+offset_left = 26.0
+offset_top = 33.0
+offset_right = 696.0
+offset_bottom = 314.0
 texture = ExtResource("2_0rtw6")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-offset_left = -703.0
-offset_top = 323.0
-offset_right = -33.0
-offset_bottom = 606.0
+[node name="posicaoInicial" type="Node2D" parent="Quadrinho_1"]
+position = Vector2(-679, 38)
+
+[node name="Quadrinho_2" type="Node2D" parent="."]
+script = ExtResource("2_s8js8")
+velocidadeBounce = 0.5
+
+[node name="QuadrinhoRect" type="TextureRect" parent="Quadrinho_2"]
+offset_left = 24.0
+offset_top = 340.0
+offset_right = 694.0
+offset_bottom = 623.0
 texture = ExtResource("3_s8js8")
 
-[node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = -703.0
-offset_top = 627.0
-offset_right = -33.0
-offset_bottom = 908.0
+[node name="posicaoInicial" type="Node2D" parent="Quadrinho_2"]
+position = Vector2(-679, 341)
+
+[node name="Quadrinho_3" type="Node2D" parent="." node_paths=PackedStringArray("posicaoBounceInicial")]
+script = ExtResource("2_s8js8")
+posicaoBounceInicial = NodePath("posicaoInicial")
+velocidadeBounce = 0.5
+
+[node name="QuadrinhoRect" type="TextureRect" parent="Quadrinho_3"]
+offset_left = 26.0
+offset_top = 644.0
+offset_right = 696.0
+offset_bottom = 925.0
 texture = ExtResource("4_dwqkb")
+
+[node name="posicaoInicial" type="Node2D" parent="Quadrinho_3"]
+position = Vector2(795, 649)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -127,4 +130,4 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Avancar"
 
-[connection signal="pressed" from="Avancar" to="." method="_on_avancar_pressed"]
+[connection signal="pressed" from="Avancar" to="." method="_on_input_action_pressed"]
