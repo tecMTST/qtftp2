@@ -83,8 +83,8 @@ jobs:
         run: |
           export BUTLER_API_KEY=${{ secrets.itch_io_key }}
           PACKAGE_PATH="${GITHUB_WORKSPACE}/Release/Web"
-          TARGET="${{ inputs.usuario_na_itch }}/${{ inputs.nome_na_itch }}:web"
+          TARGET="${{ inputs.usuario_na_itch }}/${{ inputs.nome_na_itch }}:html5"
           echo "Publicando $PACKAGE_PATH para $TARGET"
           git checkout $PACKAGE_PATH/server.py
-          butler push "$PACKAGE_PATH" "$TARGET"
-          butler status "$TARGET"
+          butler push $PACKAGE_PATH $TARGET
+          butler status $TARGET
