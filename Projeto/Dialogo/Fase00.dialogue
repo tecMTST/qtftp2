@@ -10,10 +10,12 @@ Nathan: Here are some choices.
 Nathan: For more information see the online documentation.
 => END
 
+#disparador
 ~ comecogameplay
-Carolina: Que fome…
+[speed=0.6] Carolina: Que fome…
+#o que acontece depois da fala
 => END!
 
 ~ Elzapegaprimeiroitem
-Carolina: Tem o quê pra comer?
+[speed=0.6] Carolina: Tem o quê pra comer?[/speed] [speed=1]Que fome… [/speed]
 => END!
