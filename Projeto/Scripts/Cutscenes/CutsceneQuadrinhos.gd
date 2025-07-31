@@ -2,6 +2,8 @@ extends Node
 
 @export var listaQuadrinhos : Array[Quadrinho]
 @export var guidProximaCena : String
+@export var tempoEsperaProximaCena : float
+@export var modoLoop : bool
 
 var index_quadrinhoAtual : int
 
@@ -9,8 +11,8 @@ func _ready() -> void:
 	for quadrinho in listaQuadrinhos:
 		quadrinho.Configurar_quadrinho()
 		
-	index_quadrinhoAtual = -1
-	#_ativar_quadrinho(index_quadrinhoAtual)
+	index_quadrinhoAtual = 0
+	_ativar_quadrinho(index_quadrinhoAtual)
 
 func _on_input_action_pressed() -> void:
 	index_quadrinhoAtual += 1
@@ -24,5 +26,5 @@ func _ativar_quadrinho(index : int) -> void:
 	listaQuadrinhos[index].AtivarQuadrinho()
 
 func _carregar_proxima_cena() -> void:
-	print("CARREGANDO PROXIMA CENA")
+	print("CARREGANDO PROXIMA CENA EM ", tempoEsperaProximaCena, " SEGUNDOS")
 	pass

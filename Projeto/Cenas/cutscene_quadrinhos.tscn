@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://up0d06o57e2x"]
+[gd_scene load_steps=12 format=3 uid="uid://up0d06o57e2x"]
 
 [ext_resource type="Script" uid="uid://bfvf214mhvl7c" path="res://Scripts/Cutscenes/CutsceneQuadrinhos.gd" id="1_0rtw6"]
 [ext_resource type="Texture2D" uid="uid://bg2xjuy5l0ot3" path="res://Recursos/Graficos/Quadrinhos/Layer 2.png" id="2_0rtw6"]
 [ext_resource type="Script" uid="uid://dxcd21ohsu4ga" path="res://Scripts/Cutscenes/Quadrinho.gd" id="2_s8js8"]
 [ext_resource type="Texture2D" uid="uid://db5ygq1d46ide" path="res://Recursos/Graficos/Quadrinhos/Layer 3.png" id="3_s8js8"]
 [ext_resource type="Texture2D" uid="uid://bxq6ng3boktdq" path="res://Recursos/Graficos/Quadrinhos/Layer 4.png" id="4_dwqkb"]
+[ext_resource type="Texture2D" uid="uid://bs6q034xn3lf7" path="res://Recursos/Graficos/Quadrinhos/Layer 5.png" id="6_dwqkb"]
 
 [sub_resource type="Animation" id="Animation_s8js8"]
 length = 0.001
@@ -14,31 +15,9 @@ resource_name = "bounce_quadrinhos_1"
 
 [sub_resource type="Animation" id="Animation_dwqkb"]
 resource_name = "bounce_quadrinhos_2"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Quadrinho_2/QuadrinhoRect:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-703, -0.25, 0, 0.366667, 35.5, 19, -0.1, -53.5, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
 
 [sub_resource type="Animation" id="Animation_2gdfw"]
 resource_name = "bounce_quadrinhos_3"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Quadrinho_3/QuadrinhoRect:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-703, -0.25, 0, 0.366667, 35.5, 19, -0.1, -53.5, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q1onl"]
 _data = {
@@ -56,9 +35,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0rtw6")
-listaQuadrinhos = [NodePath("Quadrinho_1"), NodePath("Quadrinho_2"), NodePath("Quadrinho_3")]
+listaQuadrinhos = [NodePath("Quadrinho_1"), NodePath("Quadrinho_2"), NodePath("Quadrinho_3"), NodePath("Quadrinho_4")]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="PlanoDeFundoRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,45 +49,50 @@ grow_vertical = 2
 script = ExtResource("2_s8js8")
 posicaoBounceInicial = NodePath("posicaoInicial")
 velocidadeBounce = 0.5
+duracaoFadeAlfa = 1.0
 
-[node name="QuadrinhoRect" type="TextureRect" parent="Quadrinho_1"]
-offset_left = 26.0
-offset_top = 33.0
-offset_right = 696.0
-offset_bottom = 314.0
+[node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_1"]
+position = Vector2(357, 187)
 texture = ExtResource("2_0rtw6")
 
 [node name="posicaoInicial" type="Node2D" parent="Quadrinho_1"]
-position = Vector2(-679, 38)
+position = Vector2(-365, 198)
 
-[node name="Quadrinho_2" type="Node2D" parent="."]
-script = ExtResource("2_s8js8")
-velocidadeBounce = 0.5
-
-[node name="QuadrinhoRect" type="TextureRect" parent="Quadrinho_2"]
-offset_left = 24.0
-offset_top = 340.0
-offset_right = 694.0
-offset_bottom = 623.0
-texture = ExtResource("3_s8js8")
-
-[node name="posicaoInicial" type="Node2D" parent="Quadrinho_2"]
-position = Vector2(-679, 341)
-
-[node name="Quadrinho_3" type="Node2D" parent="." node_paths=PackedStringArray("posicaoBounceInicial")]
+[node name="Quadrinho_2" type="Node2D" parent="." node_paths=PackedStringArray("posicaoBounceInicial")]
 script = ExtResource("2_s8js8")
 posicaoBounceInicial = NodePath("posicaoInicial")
 velocidadeBounce = 0.5
 
-[node name="QuadrinhoRect" type="TextureRect" parent="Quadrinho_3"]
-offset_left = 26.0
-offset_top = 644.0
-offset_right = 696.0
-offset_bottom = 925.0
+[node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_2"]
+position = Vector2(338, 483)
+texture = ExtResource("3_s8js8")
+
+[node name="posicaoInicial" type="Node2D" parent="Quadrinho_2"]
+position = Vector2(-365, 489)
+
+[node name="Quadrinho_3" type="Node2D" parent="." node_paths=PackedStringArray("posicaoBounceInicial")]
+script = ExtResource("2_s8js8")
+posicaoBounceInicial = NodePath("posicaoInicial")
+
+[node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_3"]
+position = Vector2(375, 590)
 texture = ExtResource("4_dwqkb")
 
 [node name="posicaoInicial" type="Node2D" parent="Quadrinho_3"]
-position = Vector2(795, 649)
+position = Vector2(1104, 580)
+
+[node name="Quadrinho_4" type="Node2D" parent="."]
+script = ExtResource("2_s8js8")
+velocidadeBounce = 0.0
+duracaoFadeAlfa = 2.0
+
+[node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_4"]
+position = Vector2(362, 903)
+texture = ExtResource("6_dwqkb")
+
+[node name="posicaoInicial" type="Node2D" parent="Quadrinho_4"]
+visible = false
+position = Vector2(1090.5, 888.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -123,9 +107,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -126.0
-offset_top = -234.0
+offset_top = -179.0
 offset_right = 126.0
-offset_bottom = -116.0
+offset_bottom = -61.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Avancar"
