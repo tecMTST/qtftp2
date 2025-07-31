@@ -19,15 +19,7 @@ var acao_executando: bool = false
 var esta_agarrando: bool = false
 var objeto_agarrado: ObjetoAgarravel:
 	set(valor):
-		if valor != null:
-			valor.ao_transformar.connect(ao_transformar_objeto_agarrado)
-		elif valor == null\
-			and objeto_agarrado != null\
-			and objeto_agarrado.ao_transformar.is_connected(ao_transformar_objeto_agarrado):
-			objeto_agarrado.ao_transformar.disconnect(ao_transformar_objeto_agarrado)
-
 		objeto_agarrado = valor
-
 
 func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
 	soltar()
@@ -93,6 +85,7 @@ func on_interagivel_exited() -> void:
 	acao_desativada.emit()
 
 func agarrar():
+	objeto_agarrado.ao_transformar.connect(ao_transformar_objeto_agarrado)
 	objeto_agarrado.get_node("CollisionShape2D").disabled = true
 	objeto_agarrado.reparent(posicao_objeto)
 	objeto_agarrado.global_position = posicao_objeto.global_position	
@@ -104,7 +97,7 @@ func rotacao(delta : float):
 			
 			
 func soltar():
+	objeto_agarrado.ao_transformar.disconnect(ao_transformar_objeto_agarrado)
 	objeto_agarrado.reparent(get_parent())
 	objeto_agarrado.get_node("CollisionShape2D").disabled = false
-	objeto_agarrado = null
 	esta_agarrando = false
