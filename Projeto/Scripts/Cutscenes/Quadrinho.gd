@@ -47,14 +47,14 @@ func _movimentar_bounce() -> void:
 	quadrinho_sprite.global_position += vetor_final
 	if(vetor_delta.length() < .15 and !_bounce_finalizado):
 		_bounce_finalizado = true
-		_checkSe_finalizado()
+		_check_se_finalizado()
 
 func _atualizar_transparencia() -> void:
 	quadrinho_sprite.modulate.a = tempo_de_fade / duracao_fade_alfa
 	if(tempo_de_fade / duracao_fade_alfa >= .9 and !_alpha_finalizado):
 		_alpha_finalizado = true
-		_checkSe_finalizado()
+		_check_se_finalizado()
 
-func _checkSe_finalizado() -> void:
+func _check_se_finalizado() -> void:
 	if(_alpha_finalizado && _bounce_finalizado):
 		on_quadrinho_finalizado.emit()
