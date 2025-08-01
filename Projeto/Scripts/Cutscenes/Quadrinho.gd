@@ -1,10 +1,10 @@
 class_name Quadrinho extends Node
 
+signal on_quadrinho_finalizado
+
 @export var posicao_bounce_inicial : Node2D
 @export var velocidade_bounce : float = 1
 @export var duracao_fade_alfa : float = 0
-
-signal OnQuadrinhoFinalizado
 
 var posicao_bounce_final : Vector2 = Vector2.ZERO
 var quadrinho_sprite : Sprite2D
@@ -57,4 +57,4 @@ func _atualizar_transparencia() -> void:
 
 func _checkSe_finalizado() -> void:
 	if(_alpha_finalizado && _bounce_finalizado):
-		OnQuadrinhoFinalizado.emit()
+		on_quadrinho_finalizado.emit()
