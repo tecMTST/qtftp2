@@ -8,8 +8,8 @@ var index_quadrinho_atual : int
 var quadrinhos_terminados : bool = false
 
 func _ready() -> void:
-	var ultimoQuadrinho = lista_quadrinhos.size()-1
-	lista_quadrinhos[ultimoQuadrinho].on_quadrinho_finalizado.connect(_quadrinhos_finalizados)
+	var ultimo_quadrinho = lista_quadrinhos.size()-1
+	lista_quadrinhos[ultimo_quadrinho].on_quadrinho_finalizado.connect(_quadrinhos_finalizados)
 	_reiniciar_quadrinhos()
 
 func _on_input_action_pressed() -> void:
