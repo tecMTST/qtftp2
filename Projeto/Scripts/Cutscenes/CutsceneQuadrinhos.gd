@@ -20,7 +20,7 @@ func _on_input_action_pressed() -> void:
 		_carregar_proxima_cena()
 
 func _ativar_quadrinho(index : int) -> void:
-	lista_quadrinhos[index].AtivarQuadrinho()
+	lista_quadrinhos[index].ativar_quadrinho()
 
 func _carregar_proxima_cena() -> void:
 	if(!quadrinhos_terminados): return
@@ -32,7 +32,7 @@ func _carregar_proxima_cena() -> void:
 
 func _reiniciar_quadrinhos() -> void:
 	for quadrinho in lista_quadrinhos:
-		quadrinho.Configurar_quadrinho()
+		quadrinho.configurar_quadrinho()
 
 	index_quadrinho_atual = 0
 	_ativar_quadrinho(index_quadrinho_atual)
