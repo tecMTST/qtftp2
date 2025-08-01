@@ -17,7 +17,6 @@ grow_vertical = 2
 script = ExtResource("1_0rtw6")
 lista_quadrinhos = [NodePath("Quadrinho_1"), NodePath("Quadrinho_2"), NodePath("Quadrinho_3"), NodePath("Quadrinho_4")]
 caminho_proxima_cena = "res://Cenas/Casa.tscn"
-modo_loop = true
 
 [node name="PlanoDeFundoRect" type="ColorRect" parent="."]
 layout_mode = 1
