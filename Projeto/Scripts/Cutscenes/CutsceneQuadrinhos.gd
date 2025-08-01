@@ -1,43 +1,43 @@
 extends Node
 
-@export var listaQuadrinhos : Array[Quadrinho]
-@export var caminhoProximaCena : String
-@export var modoLoop : bool
+@export var lista_quadrinhos : Array[Quadrinho]
+@export var caminho_proxima_cena : String
+@export var modo_loop : bool
 
-var index_quadrinhoAtual : int
-var quadrinhosTerminados : bool = false
+var index_quadrinho_atual : int
+var quadrinhos_terminados : bool = false
 
 func _ready() -> void:
-	listaQuadrinhos[listaQuadrinhos.size()-1].OnQuadrinhoFinalizado.connect(_quadrinhosFinalizados)
+	lista_quadrinhos[lista_quadrinhos.size()-1].OnQuadrinhoFinalizado.connect(_quadrinhos_finalizados)
 	_reiniciar_quadrinhos()
 
 func _on_input_action_pressed() -> void:
-	index_quadrinhoAtual += 1
-	
-	if(index_quadrinhoAtual < listaQuadrinhos.size()):
-		_ativar_quadrinho(index_quadrinhoAtual)
+	index_quadrinho_atual += 1
+
+	if(index_quadrinho_atual < lista_quadrinhos.size()):
+		_ativar_quadrinho(index_quadrinho_atual)
 	else:
 		_carregar_proxima_cena()
 
 func _ativar_quadrinho(index : int) -> void:
-	listaQuadrinhos[index].AtivarQuadrinho()
+	lista_quadrinhos[index].AtivarQuadrinho()
 
 func _carregar_proxima_cena() -> void:
-	if(!quadrinhosTerminados): return
-	
-	if(!modoLoop):
-		get_tree().change_scene_to_file(caminhoProximaCena)
+	if(!quadrinhos_terminados): return
+
+	if(!modo_loop):
+		get_tree().change_scene_to_file(caminho_proxima_cena)
 	else:
 		_reiniciar_quadrinhos()
 
 func _reiniciar_quadrinhos() -> void:
-	for quadrinho in listaQuadrinhos:
+	for quadrinho in lista_quadrinhos:
 		quadrinho.Configurar_quadrinho()
-	
-	index_quadrinhoAtual = 0
-	_ativar_quadrinho(index_quadrinhoAtual)
-	
-	quadrinhosTerminados = false
 
-func _quadrinhosFinalizados() -> void:
-	quadrinhosTerminados = true
+	index_quadrinho_atual = 0
+	_ativar_quadrinho(index_quadrinho_atual)
+
+	quadrinhos_terminados = false
+
+func _quadrinhos_finalizados() -> void:
+	quadrinhos_terminados = true
