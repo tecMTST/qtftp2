@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs6q034xn3lf7"
-path="res://.godot/imported/Layer 5.png-07f0fad5e562a0d997c723efa34f2535.ctex"
+uid="uid://db5ygq1d46ide"
+path="res://.godot/imported/Layer_3.png-79243b59b75105ec6649539e40dabe05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Quadrinhos/Layer 5.png"
-dest_files=["res://.godot/imported/Layer 5.png-07f0fad5e562a0d997c723efa34f2535.ctex"]
+source_file="res://Recursos/Graficos/Quadrinhos/Layer_3.png"
+dest_files=["res://.godot/imported/Layer_3.png-79243b59b75105ec6649539e40dabe05.ctex"]
 
 [params]
 
