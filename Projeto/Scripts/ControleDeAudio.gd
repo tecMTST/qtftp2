@@ -4,21 +4,30 @@ const TOM_MAXIMO := 2.4
 const INCREMENTO_DE_TOM := 1.2
 const TAMANHO_DO_GRUPO_DE_EFEITOS := 5
 
+var tocadores_em_ciclo := {}
 var toca_efeitos := []
 var biblioteca_de_audio := {
 	"musica": {
 		"casa_intro": preload("res://Recursos/Audio/Musica/casa_intro.ogg"),
 		"casa_loop": preload("res://Recursos/Audio/Musica/casa_loop.ogg"),
+		"menu": preload("res://Recursos/Audio/Musica/musica_menu.ogg"),
+		"quadrinhos": preload("res://Recursos/Audio/Musica/cena_introducao.ogg"),
 	},
 	"efeitos": {
-		"fogao": preload("res://Recursos/Audio/Efeitos/fogao.wav"),
+		"vitoria": preload("res://Recursos/Audio/Efeitos/jingle_vitoria.ogg"),
+		"derrota": preload("res://Recursos/Audio/Efeitos/jingle_derrota.ogg"),
+		"bebe_chorando": preload("res://Recursos/Audio/Efeitos/bebe_chorando.ogg"),
+		"bebe_feliz": preload("res://Recursos/Audio/Efeitos/bebe_feliz.ogg"),
+		"fogao_ligar": preload("res://Recursos/Audio/Efeitos/fogao_ligar.ogg"),
+		"fogao_cozinhando": preload("res://Recursos/Audio/Efeitos/fogao_cozinhando_loop.ogg"),
+		"fogao_alarme": preload("res://Recursos/Audio/Efeitos/fogao_alarme.ogg"),
 		"passos": [
-			preload("res://Recursos/Audio/Efeitos/passo1.wav"),
-			preload("res://Recursos/Audio/Efeitos/passo2.wav"),
-			preload("res://Recursos/Audio/Efeitos/passo3.wav"),
-			preload("res://Recursos/Audio/Efeitos/passo4.wav"),
-			preload("res://Recursos/Audio/Efeitos/passo5.wav"),
-			preload("res://Recursos/Audio/Efeitos/passo6.wav"),
+			preload("res://Recursos/Audio/Efeitos/passo1.ogg"),
+			preload("res://Recursos/Audio/Efeitos/passo2.ogg"),
+			preload("res://Recursos/Audio/Efeitos/passo3.ogg"),
+			preload("res://Recursos/Audio/Efeitos/passo4.ogg"),
+			preload("res://Recursos/Audio/Efeitos/passo5.ogg"),
+			preload("res://Recursos/Audio/Efeitos/passo6.ogg"),
 		]
 	}
 }
@@ -90,11 +99,11 @@ func para_musica() -> void:
 	toca_musica_ciclo.stop()
 
 
-func toca_efeito(nome_do_efeito: String) -> void:
+func toca_efeito(nome_do_efeito: String) -> int:
 	var origem = biblioteca_de_audio["efeitos"].get(nome_do_efeito)
 	if !origem:
 		push_error("efeito '{nome}' não encontrado".format({"nome": nome_do_efeito}))
-		return
+		return -1
 
 	var stream: AudioStream
 	if origem is Array:
@@ -102,12 +111,33 @@ func toca_efeito(nome_do_efeito: String) -> void:
 	else:
 		stream = origem;
 
-	var tocador = _encontra_tocador_disponivel()
-	if !tocador: return
-
+	var indice = _encontra_tocador_disponivel()
+	if indice == -1: return -1
+	var tocador: AudioStreamPlayer = toca_efeitos[indice]
 	tocador.stream = stream
 	tocador.pitch_scale = 1.0
 	tocador.play()
+	return indice
+
+
+func toca_efeito_ciclo(nome_do_efeito: String, nome_ciclo: String) -> void:
+	para_efeito_ciclo(nome_ciclo)
+	var indice = toca_efeito(nome_do_efeito)
+	if indice == -1: return
+	var tocador = toca_efeitos[indice]
+	tocador.stream.loop = true
+	tocadores_em_ciclo[nome_ciclo] = indice
+
+
+func para_efeito_ciclo(nome_ciclo: String) -> void:
+	print_debug("tentando parar ", nome_ciclo)
+	if not tocadores_em_ciclo.has(nome_ciclo): return
+	print_debug("ainda no ", nome_ciclo)
+	var tocador = toca_efeitos[ tocadores_em_ciclo[nome_ciclo] ]
+	tocador.stream.loop = false
+	tocador.stop()
+	tocadores_em_ciclo.erase(nome_ciclo)
+	print_debug("em tese já parou o ", nome_ciclo)
 
 
 func _prepara_musica_ciclo(stream: AudioStream) -> void:
@@ -138,13 +168,11 @@ func _on_intro_finalizada() -> void:
 	toca_musica_ciclo.play()
 
 
-func _encontra_tocador_disponivel() -> AudioStreamPlayer:
-	for tocador in toca_efeitos:
-		if !tocador.playing:
-			return tocador
-	# cria tocador temporário se não houver um disponível:
+func _encontra_tocador_disponivel() -> int:
+	for i in TAMANHO_DO_GRUPO_DE_EFEITOS:
+		if !toca_efeitos[i].playing: return i
 	push_warning("Impossível tocar efeito sonoro. Grupo pequeno demais.")
-	return null
+	return -1
 
 
 func _ajusta_volume_do_barramento(nome_do_barramento: String, volume: float) -> void:

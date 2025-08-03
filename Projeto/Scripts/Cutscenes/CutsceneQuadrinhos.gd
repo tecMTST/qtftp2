@@ -11,6 +11,7 @@ func _ready() -> void:
 	var ultimo_quadrinho = lista_quadrinhos.size()-1
 	lista_quadrinhos[ultimo_quadrinho].on_quadrinho_finalizado.connect(_quadrinhos_finalizados)
 	_reiniciar_quadrinhos()
+	ControleDeAudio.toca_musica("quadrinhos", false)
 
 func _on_input_action_pressed() -> void:
 	index_quadrinho_atual += 1

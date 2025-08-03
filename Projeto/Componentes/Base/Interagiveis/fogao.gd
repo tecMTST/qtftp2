@@ -28,13 +28,15 @@ func _recolherObjeto() -> void:
 	objetoAtual.cozinhar()
 	objetoAtual = null
 	fogoAnimado.hide()
+	ControleDeAudio.para_efeito_ciclo("fogao_cozinhando")
 
 func _cozinharObjeto(objeto : ObjetoAgarravel) -> void:
 	objetoAtual = objeto
 	objetoAtual.ao_transformar.connect(ao_transformar_objeto_cozinhando)
 	_posicionarObjetoNoFogao()
 	fogoAnimado.show()
-	ControleDeAudio.toca_efeito("fogao")
+	ControleDeAudio.toca_efeito("fogao_ligar")
+	ControleDeAudio.toca_efeito_ciclo("fogao_cozinhando", "fogao_cozinhando")
 
 func _posicionarObjetoNoFogao() -> void:
 	objetoAtual.reparent(pivotObjeto)
@@ -42,3 +44,5 @@ func _posicionarObjetoNoFogao() -> void:
 
 func ao_transformar_objeto_cozinhando(novo_objeto: ObjetoAgarravel):
 	objetoAtual = novo_objeto
+	ControleDeAudio.para_efeito_ciclo("fogao_cozinhado")
+	ControleDeAudio.toca_efeito("fogao_alarme")
