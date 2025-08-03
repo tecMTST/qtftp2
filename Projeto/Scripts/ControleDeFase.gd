@@ -89,19 +89,15 @@ func _verificar_condicoes():
 	EstadoNivel.TempoRestante = TempoJogo.time_left
 	_atualizar_bagunca()
 	if EstadoNivel.baguncado():
-		NivelConcluido.emit(NivelAtual, EstadoNivel)
 		_encerrar_nivel()
 		print_debug("Nível falhou")
 	elif TempoJogo.is_stopped():
-		NivelConcluido.emit(NivelAtual, EstadoNivel)
 		_encerrar_nivel()
 		print_debug("Nível falhou")
 	elif EstadoNivel.ChoroLimite():
-		NivelConcluido.emit(NivelAtual, EstadoNivel)
 		_encerrar_nivel()
 		print_debug("Nível falhou")
 	elif EstadoNivel.completo():
-		NivelConcluido.emit(NivelAtual, EstadoNivel)
 		_encerrar_nivel()
 		print_debug("Nível concluído")
 
@@ -110,8 +106,12 @@ func entregarPrato(prato: Ingrediente) -> void:
 	PratoEntregue.emit(prato)
 
 func _encerrar_nivel():
+	NivelConcluido.emit(NivelAtual, EstadoNivel)
 	_reset_timers()
 	get_tree().paused = true
+	ControleDeAudio.para_musica()
+	var efeito = "vitoria" if EstadoNivel.completo() else "derrota"
+	ControleDeAudio.toca_efeito(efeito)
 
 func _reset_timers() -> void:
 	if not TempoJogo.is_stopped():

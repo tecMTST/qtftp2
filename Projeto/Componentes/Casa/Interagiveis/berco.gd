@@ -4,7 +4,6 @@ var timer_choro: float = 0
 var iniciado: bool = false
 var choro_ativo: bool = false
 
-@onready var audio_choro: AudioStreamPlayer2D = $AudioChoro
 @onready var bebe: AnimatedSprite2D = $Bebe
 @onready var timer: Timer = $Timer
 @onready var visualizador_temporal: VisualizadorTemporal = $VisualizadorTemporal
@@ -37,14 +36,15 @@ func iniciar_choro():
 	#TODO animacao iniciar
 	choro_ativo = true
 	timer.start(ControleDeFase.NivelAtual.TempoLimiteChoro)
-	audio_choro.play()
+	ControleDeAudio.toca_efeito_ciclo("bebe_chorando", "bebe_chorando")
 
 
 func finalizar_choro():
 	#TODO animacao parar
 	choro_ativo = false
 	timer.stop()
-	audio_choro.stop()
+	ControleDeAudio.para_efeito_ciclo("bebe_chorando")
+	ControleDeAudio.toca_efeito("bebe_feliz")
 	resetar_timer()
 
 
