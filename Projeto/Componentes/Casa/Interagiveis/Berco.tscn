@@ -51,8 +51,6 @@ texture = SubResource("GradientTexture1D_nrlxa")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Bebe"]
 mesh = SubResource("SphereMesh_jejg1")
 
-[node name="AudioChoro" type="AudioStreamPlayer2D" parent="."]
-
 [node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
 position = Vector2(1, -92)
 script = ExtResource("4_r71e4")
