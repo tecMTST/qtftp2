@@ -27,10 +27,6 @@ ControleDeFase="*res://Scripts/ControleDeFase.gd"
 ControleDeAudio="*res://Scripts/ControleDeAudio.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
-[dialogue_manager]
-
-runtime/balloon_path="uid://cxus7xsj4lhv3"
-
 [display]
 
 window/size/viewport_width=720
