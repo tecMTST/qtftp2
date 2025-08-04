@@ -1,0 +1,75 @@
+~ barkcarolinafase0401
+#Quando o jogador/Elza entrega o primeiro prato, Carolina fala:
+Carolina: Você arrasa, mãe!
+=> END
+
+~ barksfila01
+#Ao entregar o 2o prato, o cliente 2 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente2: Aí sim!!
+=> END!
+
+~ barksfila02
+#Ao entregar o 5o prato, o cliente 5 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente5: Olha esse pratão!
+=> END!
+
+~ barksfila03
+#Ao entregar o 8o prato, o cliente 8 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente8: Valeu pela força, tia!
+=> END!
+
+~ barksfila04
+#Ao entregar o 12o prato, o cliente 12 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente12: Que cheiro bom!
+=> END!
+
+~ barksfila05
+#Ao entregar o 14o prato, o cliente 14 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente14: É muita comida!
+=> END!
+
+~ barkcarolinafase0402
+#Quando o jogador/Elza entrega o 15p prato, Carolina fala:
+Carolina: Que orgulho!
+=> END
+
+~ barksfila06
+#Ao entregar o 19o prato, o cliente 19 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente19: Muito obrigado, moça!
+=> END!
+
+~ barksfila07
+#Ao entregar o 24o prato, o cliente 24 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente24: Tá caprichado, hein?
+=> END!
+
+~ Posgameplayfase05
+#Assim que o jogador (Elza) entregar o útlimo prato, gameplay PAUSA
+#Um Ponto de Exclamação surge sobre a cabeça de Elza
+Elza: Tio Felix?
+#o homem na frente de Elza é Felix
+Felix: Elza?
+#Fade out
+#Fade in
+#Não há nenhuma fila do lado de fora da Cozinha
+#Elza e Felix estão frente a frente dentro da cozinha. 
+#Luisa Também está na cozinha mas mais distante
+#Carolina e Lucas estão no cenário no mesmo ponto que antes
+Elza: Tio Felix! Por que você não me procurou?
+Felix: Eu tava com tanta vergonha…
+Felix: Perdi minha casa… Passei fome…
+Felix: Se não fosse a Cozinha, nem sei o que seria de mim.
+Elza: Ô, tio… Eu também passei por uns maus bocados.
+Elza: Você não tem que ter vergonha nenhuma.
+#Luisa se aproxima de Elza e Felix
+Luisa: E não tem que ter mesmo. 
+Luisa: O que aconteceu com vocês foi uma quebra de direitos básicos.
+Elza: E é tanta gente passando por isso.
+Felix: Muita mesmo.
+Elza: …
+Elza: Eu queria poder ajudar mais.
+Elza: Queria pôr em prática o que eu aprendi com a Cartilha!
+Luisa: Eu te apoio, amiga!
+Luisa: Acho que podemos pensar em algo…
+#Fade Out
+=> END!

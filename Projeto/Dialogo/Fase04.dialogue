@@ -1,0 +1,62 @@
+~ tutorialfila04
+#Assim que começa a gameplay, surge uma caixa tutorial
+Tutorial: Não se preocupe com as crianças. Carolina está cuidando de Lucas.
+Tutorial: Mas atenção com a fila! Não deixe ela ficar muito grande!
+=> END
+
+~ barksfila01
+#Ao entregar o 1o prato, o cliente 1 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente1: Que cheiro bom!
+=> END!
+
+~ barksfila02
+#Ao entregar o 4o prato, o cliente 4 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente4: Tá caprichado, hein?
+=> END!
+
+~ barksfila03
+#Ao entregar o 9o prato, o cliente 9 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente9: Valeu pela força, tia!
+=> END!
+
+~ barksfila04
+#Ao entregar o 13o prato, o cliente 13 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente13: Aí sim!!
+=> END!
+
+~ barksfila05
+#Ao entregar o 16o prato, o cliente 16 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente16: Olha esse pratão!
+=> END!
+
+~ barksfila06
+#Ao entregar o 21o prato, o cliente 21 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente21: É muita comida!
+=> END!
+
+~ barksfila07
+#Ao entregar o 25o prato, o cliente 25 na fila agradece (em balãozinho, não vemos escrito ClienteX)
+Cliente25: Muito obrigado, moça!
+=> END!
+
+#Assim que o jogador (Elza) entregar o útlimo prato, gameplay PAUSA
+~ Posgameplayfase04
+#Elza se afasta da área de entrega e fica frente a frente com Luisa
+Elza:Nossa, Lu!
+Elza: Que trabalheira!
+Luisa: Sim, mas vale a pena.
+Luisa: Se o povo tem fome, damos de comer!
+Elza: Com certeza.
+Luisa: E como uma das moças simpáticas da “Aliança” me contou uma vez
+Luisa: A gente pode lutar contra fome!
+#Um ponto de interrogação surge sobre a cabeça de Elza
+Luisa] Elas contam tudo aqui nessa cartilha linda!
+Luisa: Toma , Elza. É para você!
+#Elza recebe a cartilha com uma animação estilo *Legend of Zelda* 
+#e fica segurando ela acima da cabeça mostrando para o jogador
+Tutorial: Você ganhou a Cartilha!
+Tutorial: O título é um pouco longo…
+Tutorial: “Exigibilidade do Direito a Estar Livre da Fome”.
+Tutorial: Mas a leitura era bem fácil!
+=> END!
+#Fade Out
