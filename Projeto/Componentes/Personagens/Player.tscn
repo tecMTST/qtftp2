@@ -528,6 +528,9 @@ metadata/_local_pose_override_enabled_ = true
 [node name="PernaEsq_1" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril/PernaEsq_0"]
 position = Vector2(-8, 20)
 rest = Transform2D(1, 0, 0, 1, -8, 20)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="PernaDir_0" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
 position = Vector2(-10, 0)
@@ -537,6 +540,9 @@ metadata/_local_pose_override_enabled_ = true
 [node name="PernaDir_1" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril/PernaDir_0"]
 position = Vector2(-8, 19)
 rest = Transform2D(1, 0, 0, 1, -8, 19)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Peito" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
 position = Vector2(-4.53922, -31.5392)
@@ -546,6 +552,9 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Cabeca" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril/Peito"]
 position = Vector2(1, -66)
 rest = Transform2D(1, 0, 0, 1, 1, -66)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="BracoEsq_0" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril/Peito"]
 position = Vector2(22, -10)
@@ -556,6 +565,9 @@ metadata/_local_pose_override_enabled_ = true
 [node name="BracoEsq_1" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril/Peito/BracoEsq_0"]
 position = Vector2(12, 31)
 rest = Transform2D(1, 0, 0, 1, 12, 31)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="BracoDir_0" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril/Peito"]
 position = Vector2(-12, -6)
@@ -567,6 +579,9 @@ metadata/_local_pose_override_enabled_ = true
 [node name="BracoDir_1" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril/Peito/BracoDir_0"]
 position = Vector2(-11, 26)
 rest = Transform2D(1, 0, 0, 1, -11, 26)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Node" type="Node2D" parent="GambiarraCamera/SpriteAnimado"]
 
