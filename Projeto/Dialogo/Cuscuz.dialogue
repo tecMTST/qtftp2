@@ -6,3 +6,8 @@
 ~ cuscuz_pronto
 Mae: [shake rate=20 level=10]MEU POVO[/shake], o cuscuz tá pronto 🗣️
 => END
+
+~ fim_de_cena
+Mae: Vem, filho. Mamãe precisa trabalhar.
+Mae: Vou te deixar na Luisa mas volto logo, tá?
+=> END

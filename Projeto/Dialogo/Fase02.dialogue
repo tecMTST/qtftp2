@@ -1,0 +1,31 @@
+#Nessa fase, Carolina já começa caminhando pelo cenário com a cara no celular, deixando bagunça.
+#Lucas está no berço.
+#Elza está ligeiramente mais lenta e a barra de choro de Lucas se enche mais rápido.
+
+~ barkbagunca02
+#Após Jogador/Elza pegar a primeira bagunça deixada por Carolina
+Elza: Olha bagunça, Carolina.
+Carolina:Peraí que tô resolvendo uma coisa aqui.
+=> END!
+
+~ barkmiojex
+#Assim que o jogador (Elza) entrega o sétimo prato (metade do total) na mesa,    
+#Carolina fala:
+Carolina: Miojex a semana toda?
+=> END!
+
+#Assim que o jogador (Elza) entregar o útlimo prato, gameplay PAUSA
+#Elza se senta na mesa
+~ Posgameplayfase02
+#Elza põe o celular sobre a mesa
+Elza: Que coisa.
+Elza: Não tô boa, não…
+#Elza fecha os olhos e dorme sentada
+#Nota: Ela dormindo pode ser representada pelos olhos em formato de “U” e a boca em formato de “O” e letras “Z” saindo de cima dela.
+#Celular começa a tocar. Um ponto de exclamação surge perto do celular
+#Carolina se aproxima da mesa onde Elza dorme
+Carolina: Mãe, a Luisa tá te ligando.
+#Pausa. Elza segue dormindo.
+Carolina: É… Deixa ela dormir.
+=> END!
+#Fade out
