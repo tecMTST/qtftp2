@@ -15,17 +15,17 @@ dest_files=["res://.godot/imported/elzaVetorCores2.svg-3c3d5ca89f72fcacf66306ba6
 
 [params]
 
-compress/mode=1
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.8
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=2
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
