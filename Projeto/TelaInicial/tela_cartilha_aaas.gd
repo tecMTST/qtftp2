@@ -12,4 +12,4 @@ func _on_cartilha_pressed() -> void:
 
 #volta para o menu principal
 func _on_voltar_pressed() -> void:
-	get_tree().change_scene_to_file("res://TelaInicial/menu_principal.tscn")
+	get_tree().change_scene_to_file("res://TelaInicial/menuprincipal.tscn")

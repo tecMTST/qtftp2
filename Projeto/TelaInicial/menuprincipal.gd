@@ -4,7 +4,7 @@ func _ready() -> void:
 	get_tree().paused = false
 	ControleDeAudio.toca_musica_com_intro("casa_intro", "casa_loop")
 
-#ao clicar em jogar deveria ir direto para a tela de cenas iniciais do jogo.
+#ao clicar em jogar deveria ir para o quadrinhos de início da história.
 func _on_jogar_pressed() -> void:
 	get_tree().change_scene_to_file("res://Cenas/cutscene_quadrinhos.tscn")
 

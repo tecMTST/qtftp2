@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://de6hj6bvks2es"]
 
 [ext_resource type="Texture2D" uid="uid://mct2gjtbyl0y" path="res://TelaInicial/imagens/aaas.png" id="1_45fkf"]
-[ext_resource type="Script" path="res://TelaInicial/tela_cartilha_aaas.gd" id="1_pod33"]
+[ext_resource type="Script" uid="uid://ctig4kbgv0xcx" path="res://TelaInicial/tela_cartilha_aaas.gd" id="1_pod33"]
 [ext_resource type="FontFile" uid="uid://bhxa2qeqgdl2x" path="res://Recursos/Fontes/Alphakind.otf" id="2_1yb4q"]
 [ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://TelaInicial/fontes/Byorg.ttf" id="3_ajn4s"]
 [ext_resource type="Theme" uid="uid://beco18cn8vfan" path="res://TelaInicial/tema_botoes.tres" id="3_pslu7"]

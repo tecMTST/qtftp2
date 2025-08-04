@@ -1,22 +1,22 @@
 [gd_scene load_steps=9 format=3 uid="uid://bsi1hrb4is74n"]
 
-[ext_resource type="FontFile" uid="uid://rdsaan7djww8" path="res://TelaInicial/fontes/ka1.ttf" id="1_qjphi"]
-[ext_resource type="Script" uid="uid://82iaul8d3yya" path="res://TelaInicial/menu_principal.gd" id="1_vbfma"]
-[ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://TelaInicial/fontes/Byorg.ttf" id="2_vbfma"]
-[ext_resource type="Texture2D" uid="uid://cwu1a11babg8n" path="res://TelaInicial/imagens/logo.png" id="4_rtq5s"]
-[ext_resource type="Texture2D" uid="uid://cjxet1qh5agnr" path="res://TelaInicial/imagens/logo_bn.png" id="5_vbfma"]
+[ext_resource type="Script" uid="uid://82iaul8d3yya" path="res://TelaInicial/menuprincipal.gd" id="1_e87sq"]
+[ext_resource type="FontFile" uid="uid://rdsaan7djww8" path="res://TelaInicial/fontes/ka1.ttf" id="2_n6y2a"]
+[ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://TelaInicial/fontes/Byorg.ttf" id="3_ka66b"]
+[ext_resource type="Texture2D" uid="uid://cwu1a11babg8n" path="res://TelaInicial/imagens/logo.png" id="4_pkjgd"]
+[ext_resource type="Texture2D" uid="uid://cjxet1qh5agnr" path="res://TelaInicial/imagens/logo_bn.png" id="5_ivhj5"]
 
 [sub_resource type="Theme" id="Theme_b6rvj"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_6rf8i"]
-diffuse_texture = ExtResource("4_rtq5s")
+diffuse_texture = ExtResource("4_pkjgd")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_wx2n5"]
-diffuse_texture = ExtResource("5_vbfma")
+diffuse_texture = ExtResource("5_ivhj5")
 
 [node name="MenuPrincipal" type="Node2D"]
 process_mode = 3
-script = ExtResource("1_vbfma")
+script = ExtResource("1_e87sq")
 
 [node name="Titulo" type="Label" parent="."]
 offset_top = 31.0
@@ -25,7 +25,7 @@ offset_bottom = 231.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/paragraph_spacing = 6
-theme_override_fonts/font = ExtResource("1_qjphi")
+theme_override_fonts/font = ExtResource("2_n6y2a")
 theme_override_font_sizes/font_size = 48
 text = "Quem tem fome 
 tem direito"
@@ -44,28 +44,28 @@ theme_override_constants/separation = 25
 
 [node name="jogar" type="Button" parent="CenterContainer/BotoesPrincipais"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vbfma")
+theme_override_fonts/font = ExtResource("3_ka66b")
 theme_override_font_sizes/font_size = 45
 text = "COZINHAR
 "
 
 [node name="opcoes" type="Button" parent="CenterContainer/BotoesPrincipais"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vbfma")
+theme_override_fonts/font = ExtResource("3_ka66b")
 theme_override_font_sizes/font_size = 45
 text = "OPÇÕES
 "
 
 [node name="cartilha" type="Button" parent="CenterContainer/BotoesPrincipais"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vbfma")
+theme_override_fonts/font = ExtResource("3_ka66b")
 theme_override_font_sizes/font_size = 45
 text = "CARTILHA AAAS
 "
 
 [node name="sair" type="Button" parent="CenterContainer/BotoesPrincipais"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_vbfma")
+theme_override_fonts/font = ExtResource("3_ka66b")
 theme_override_font_sizes/font_size = 45
 text = "SAIR
 "
@@ -77,7 +77,7 @@ offset_top = -14.0
 offset_right = 745.0
 offset_bottom = 1300.0
 mouse_filter = 2
-color = Color(0.129337, 0.492618, 2.88785e-07, 1)
+color = Color(0.757089, 0.56504, 0.462983, 1)
 
 [node name="logoAAAS" type="Sprite2D" parent="."]
 position = Vector2(372, 300)

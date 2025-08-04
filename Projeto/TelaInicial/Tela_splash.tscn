@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdo1d4aefoeh2"]
+
+[ext_resource type="Script" uid="uid://ct5so64x6wwnh" path="res://TelaInicial/tela_splash.gd" id="1_fgwb8"]
+[ext_resource type="Texture2D" uid="uid://dc4eu7v84vmut" path="res://TelaInicial/imagens/logomtst.png" id="2_psic2"]
+
+[sub_resource type="Animation" id="Animation_fxl2i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("logomtst:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fgwb8"]
+resource_name = "fade_out"
+length = 3.0
+step = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("logomtst:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.599456, 1.00961, 1.3181, 1.55298, 1.8159, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.718), Color(1, 1, 1, 0.342), Color(1, 1, 1, 0.674), Color(1, 1, 1, 0.271), Color(1, 1, 1, 0.619), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_exdr4"]
+_data = {
+&"RESET": SubResource("Animation_fxl2i"),
+&"fade_out": SubResource("Animation_fgwb8")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_fgwb8")
+
+[node name="Sprite2D" type="ColorRect" parent="."]
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(0, 0, 0, 1)
+
+[node name="logomtst" type="Node2D" parent="."]
+texture_filter = 1
+
+[node name="splash" type="Sprite2D" parent="logomtst"]
+position = Vector2(360, 640)
+texture = ExtResource("2_psic2")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+z_index = 55
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+
+[node name="animacao" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_exdr4")
+}
+autoplay = "fade_out"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="animation_finished" from="animacao" to="." method="_on_animacao_animation_finished"]
