@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b3ykmcnj6hjhq" path="res://addons/simple-gui-transitions/transition.gd" id="1_uiwjp"]
 [ext_resource type="Script" uid="uid://cpesqq3ctb78o" path="res://addons/uiJuicer/Fader.gd" id="2_egkq2"]
 [ext_resource type="Texture2D" uid="uid://sdkw0iqugey6" path="res://Recursos/Graficos/UI/geladeira_placeholder.png" id="3_egkq2"]
-[ext_resource type="PackedScene" uid="uid://cywx8j6su6jp2" path="res://Componentes/Objetos/Interagiveis/Prateleira.tscn" id="5_d75bn"]
+[ext_resource type="PackedScene" uid="uid://cywx8j6su6jp2" path="res://Componentes/Casa/Interagiveis/Prateleira.tscn" id="5_d75bn"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3

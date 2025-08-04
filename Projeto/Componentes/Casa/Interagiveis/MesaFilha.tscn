@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://tap31ifdmu6f"]
+[gd_scene load_steps=8 format=3 uid="uid://tap31ifdmu6f"]
 
 [ext_resource type="Script" uid="uid://cpi6tydbas0r3" path="res://Componentes/Casa/Interagiveis/mesa_filha.gd" id="1_eo1ls"]
-[ext_resource type="Script" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_paw2f"]
+[ext_resource type="Texture2D" uid="uid://351ntpmnbl0a" path="res://Recursos/Graficos/Interagiveis/Mesa.svg" id="2_imm24"]
+[ext_resource type="Texture2D" uid="uid://bqbbdsv41kc8l" path="res://Recursos/Graficos/Interagiveis/Cadeira lateral.svg" id="2_j3b4e"]
+[ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="2_oawju"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_paw2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1ls"]
 size = Vector2(240, 236)
@@ -11,6 +14,27 @@ size = Vector2(312, 312)
 
 [node name="MesaFilha" type="StaticBody2D" groups=["filha", "interagivel", "ponto_entrega"]]
 script = ExtResource("1_eo1ls")
+
+[node name="CadeiraFrente" type="TextureRect" parent="."]
+offset_left = -6.0
+offset_top = -126.0
+offset_right = 70.0
+offset_bottom = 51.0
+texture = ExtResource("2_oawju")
+
+[node name="CadeiraLateral" type="TextureRect" parent="."]
+offset_left = -122.0
+offset_top = -86.0
+offset_right = -36.0
+offset_bottom = 101.0
+texture = ExtResource("2_j3b4e")
+
+[node name="Arte" type="TextureRect" parent="."]
+offset_left = -34.0
+offset_top = -27.0
+offset_right = 120.0
+offset_bottom = 121.0
+texture = ExtResource("2_imm24")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.476757)

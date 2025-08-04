@@ -4,3 +4,4 @@ var Alvo : String
 var Acao : String
 var Tempo : int
 var VariacaoResultado : int
+var Evento : String

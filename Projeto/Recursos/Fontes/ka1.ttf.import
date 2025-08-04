@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b0offn37s2gik"
-path="res://.godot/imported/Byorg.ttf-441fc54721d09c88e02ff50dc0ca23c3.fontdata"
+uid="uid://rdsaan7djww8"
+path="res://.godot/imported/ka1.ttf-c5b299a470f2cc75aa6c903cdccefd25.fontdata"
 
 [deps]
 
-source_file="res://TelaInicial/fontes/Byorg.ttf"
-dest_files=["res://.godot/imported/Byorg.ttf-441fc54721d09c88e02ff50dc0ca23c3.fontdata"]
+source_file="res://Recursos/Fontes/ka1.ttf"
+dest_files=["res://.godot/imported/ka1.ttf-c5b299a470f2cc75aa6c903cdccefd25.fontdata"]
 
 [params]
 

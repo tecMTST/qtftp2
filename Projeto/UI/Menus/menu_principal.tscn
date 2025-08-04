@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bsi1hrb4is74n"]
 
-[ext_resource type="FontFile" uid="uid://rdsaan7djww8" path="res://TelaInicial/fontes/ka1.ttf" id="1_qjphi"]
-[ext_resource type="Script" uid="uid://82iaul8d3yya" path="res://TelaInicial/menu_principal.gd" id="1_vbfma"]
-[ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://TelaInicial/fontes/Byorg.ttf" id="2_vbfma"]
-[ext_resource type="Texture2D" uid="uid://cwu1a11babg8n" path="res://TelaInicial/imagens/logo.png" id="4_rtq5s"]
-[ext_resource type="Texture2D" uid="uid://cjxet1qh5agnr" path="res://TelaInicial/imagens/logo_bn.png" id="5_vbfma"]
+[ext_resource type="FontFile" uid="uid://rdsaan7djww8" path="res://Recursos/Fontes/ka1.ttf" id="1_qjphi"]
+[ext_resource type="Script" uid="uid://82iaul8d3yya" path="res://UI/Menus/menu_principal.gd" id="1_vbfma"]
+[ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://Recursos/Fontes/Byorg.ttf" id="2_vbfma"]
+[ext_resource type="Texture2D" uid="uid://cwu1a11babg8n" path="res://Recursos/Graficos/UI/logo.png" id="4_rtq5s"]
+[ext_resource type="Texture2D" uid="uid://cjxet1qh5agnr" path="res://Recursos/Graficos/UI/logo_bn.png" id="5_vbfma"]
 
 [sub_resource type="Theme" id="Theme_b6rvj"]
 
@@ -41,6 +41,13 @@ theme = SubResource("Theme_b6rvj")
 [node name="BotoesPrincipais" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 theme_override_constants/separation = 25
+
+[node name="continuar" type="Button" parent="CenterContainer/BotoesPrincipais"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vbfma")
+theme_override_font_sizes/font_size = 45
+text = "CONTINUAR
+"
 
 [node name="jogar" type="Button" parent="CenterContainer/BotoesPrincipais"]
 layout_mode = 2
@@ -89,6 +96,7 @@ position = Vector2(373, 1231)
 scale = Vector2(0.554687, 0.554687)
 texture = SubResource("CanvasTexture_wx2n5")
 
+[connection signal="pressed" from="CenterContainer/BotoesPrincipais/continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/cartilha" to="." method="_on_cartilha_pressed"]

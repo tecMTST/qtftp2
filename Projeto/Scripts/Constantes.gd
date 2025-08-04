@@ -21,3 +21,5 @@ const ACAO_MONTAR = "montar"
 const ACAO_MISTURAR = "misturar"
 const ACAO_CONGELAR = "congelar"
 const ACAO_LAVAR = "lavar"
+
+const ID_SALVAR = "salvar"

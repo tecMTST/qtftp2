@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cr74l6j0jbkx5"]
 
 [ext_resource type="Script" uid="uid://u155yd1j8w7y" path="res://UI/Menus/menu_pausa.gd" id="1_xqg3s"]
-[ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://TelaInicial/controle_audio.gd" id="2_4oqih"]
+[ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://Scripts/UI/controle_audio.gd" id="2_4oqih"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_im0bb"]
 color = Color(1, 1, 1, 1)
