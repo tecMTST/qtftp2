@@ -17,10 +17,13 @@ var __indexReceitaAtual : int = 0
 var __indexPassoAtual : int = 0
 
 var TempoJogo: Timer
-var EstadoJogo: EstadoDeJogo
 var EstadoNivel: EstadoDoNivel
 
-func CarregarNivel(idNivel : int):
+func CarregarNivel():	
+	var idNivel = EstadoDeJogo.NivelAtual
+	if idNivel == 0:
+		EstadoDeJogo.NivelAtual = 1
+		idNivel = 1	
 	var niveis = Globais.Niveis.filter(func(item : Nivel) : return item.Id == idNivel)
 	if len(niveis) > 0:
 		NivelAtual = niveis[0]

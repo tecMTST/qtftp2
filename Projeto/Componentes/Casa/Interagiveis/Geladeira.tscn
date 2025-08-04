@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpkfr6t86l4j"]
+[gd_scene load_steps=6 format=3 uid="uid://dpkfr6t86l4j"]
 
 [ext_resource type="Script" uid="uid://b6mqbmkjmrvhl" path="res://Componentes/Base/Interagiveis/geladeira.gd" id="1_pleqy"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_olqph"]
+[ext_resource type="Texture2D" uid="uid://c0dgemoh5s4a0" path="res://Recursos/Graficos/Interagiveis/Geladeira.svg" id="3_4yi6p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3mkr"]
 size = Vector2(174, 132)
@@ -34,5 +35,12 @@ script = ExtResource("2_olqph")
 nome = "Geladeira"
 area_de_interacao = NodePath("../Area2D")
 metadata/_custom_type_script = "uid://ddwsslb5nraqq"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -66.0
+offset_top = -163.0
+offset_right = 69.0
+offset_bottom = 96.0
+texture = ExtResource("3_4yi6p")
 
 [connection signal="interagir" from="ComponenteInteragivel" to="." method="_on_componente_interagivel_interagir"]

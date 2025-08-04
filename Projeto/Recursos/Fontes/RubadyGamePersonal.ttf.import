@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://danmso25wdb7m"
-path="res://.godot/imported/RubadyGamePersonal.ttf-fbaa44883255dcd149830ebf7674c174.fontdata"
+path="res://.godot/imported/RubadyGamePersonal.ttf-2b737769a1a3f4854b961b5526d1d904.fontdata"
 
 [deps]
 
-source_file="res://TelaInicial/fontes/RubadyGamePersonal.ttf"
-dest_files=["res://.godot/imported/RubadyGamePersonal.ttf-fbaa44883255dcd149830ebf7674c174.fontdata"]
+source_file="res://Recursos/Fontes/RubadyGamePersonal.ttf"
+dest_files=["res://.godot/imported/RubadyGamePersonal.ttf-2b737769a1a3f4854b961b5526d1d904.fontdata"]
 
 [params]
 

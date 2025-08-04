@@ -8,7 +8,7 @@ signal IngredienteEscolhido(caminho)
 @onready var prateleira_1 = $VBoxContainer/Prateleira
 @onready var prateleira_2 = $VBoxContainer/Prateleira2
 @onready var prateleira_3 = $VBoxContainer/Prateleira3
-@onready var instancia_ingrediente = preload("res://Componentes/Objetos/Interagiveis/ingrediente.tscn")
+@onready var instancia_ingrediente = preload("res://Componentes/Ingredientes/ingrediente.tscn")
 
 var conteudo_json
 var acaoExecutada = false
@@ -26,7 +26,7 @@ func preencher_Geladeira():
 		var ingrediente = Globais.GetIngrediente(ingredienteReceita.IdIngrediente, ingredienteReceita.VariacaoIngrediente)		
 		var sprite_ingrediente = load(ingrediente.CaminhoSprite)
 	
-		var igredienteGeladeira = load("res://Componentes/Objetos/Interagiveis/ingrediente.tscn").instantiate() as ObjIngrediente		
+		var igredienteGeladeira = load("res://Componentes/Ingredientes/ingrediente.tscn").instantiate() as ObjIngrediente		
 		igredienteGeladeira.Nome = ingrediente.Nome
 		igredienteGeladeira.Descricao = ingrediente.Descricao
 		igredienteGeladeira.Sprite = sprite_ingrediente

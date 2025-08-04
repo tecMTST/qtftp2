@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cywx8j6su6jp2"]
 
-[ext_resource type="Texture2D" uid="uid://utvgpy1f7nhr" path="res://Recursos/Graficos/UI/prateleira_placeholder.png" id="1_y0o16"]
+[ext_resource type="Texture2D" uid="uid://utvgpy1f7nhr" path="res://Recursos/Graficos/UI/prateleira_placeholder.png" id="1_4jn2t"]
 
 [node name="Prateleira" type="Control"]
 layout_mode = 3
@@ -26,7 +26,7 @@ offset_right = 336.0
 offset_bottom = 46.4939
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("1_y0o16")
+texture = ExtResource("1_4jn2t")
 expand_mode = 1
 
 [node name="IngredienteContainer" type="HBoxContainer" parent="."]

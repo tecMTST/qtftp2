@@ -17,11 +17,11 @@ var item_ativo: IngredienteBase
 var interagivel_ativo: Node2D
 var acao_executando: bool = false
 var esta_agarrando: bool = false
-var objeto_agarrado: ObjetoAgarravel:
+var objeto_agarrado: IngredienteBase:
 	set(valor):
 		objeto_agarrado = valor
 
-func ao_transformar_objeto_agarrado(novo_objeto: ObjetoAgarravel):
+func ao_transformar_objeto_agarrado(novo_objeto: IngredienteBase):
 	soltar()
 	objeto_agarrado = novo_objeto
 	agarrar()

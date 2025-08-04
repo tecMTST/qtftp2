@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dufv6opgj56bc"
-path="res://.godot/imported/comida.png-fb450bdd64e34970688f81bd057705c8.ctex"
+uid="uid://b82r7gdnw86r2"
+path="res://.godot/imported/Pia.svg-55bbb0f6e520af621ffede969e573771.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TelaInicial/imagens/comida.png"
-dest_files=["res://.godot/imported/comida.png-fb450bdd64e34970688f81bd057705c8.ctex"]
+source_file="res://Recursos/Graficos/Interagiveis/Pia.svg"
+dest_files=["res://.godot/imported/Pia.svg-55bbb0f6e520af621ffede969e573771.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

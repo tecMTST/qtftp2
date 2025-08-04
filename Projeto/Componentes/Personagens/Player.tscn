@@ -539,7 +539,7 @@ position = Vector2(-8, 19)
 rest = Transform2D(1, 0, 0, 1, -8, 19)
 
 [node name="Peito" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
-position = Vector2(-4.84497, -31.845)
+position = Vector2(-4.53922, -31.5392)
 rest = Transform2D(1, 0, 0, 1, -4, -35)
 metadata/_local_pose_override_enabled_ = true
 

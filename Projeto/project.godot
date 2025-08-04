@@ -49,10 +49,11 @@ folder_colors={
 "res://Cenas/": "orange",
 "res://Componentes/": "yellow",
 "res://Dados/": "green",
-"res://Recursos/": "teal",
-"res://Scripts/": "blue",
-"res://Shaders/": "gray",
-"res://UI/": "purple",
+"res://Dialogo/": "teal",
+"res://Recursos/": "blue",
+"res://Scripts/": "purple",
+"res://Shaders/": "pink",
+"res://UI/": "gray",
 "res://addons/": "red"
 }
 

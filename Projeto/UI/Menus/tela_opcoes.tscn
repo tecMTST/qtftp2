@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://ditthu0qbi11r"]
 
-[ext_resource type="Script" uid="uid://cppc6bykchl1o" path="res://TelaInicial/tela_opcoes.gd" id="1_3s4su"]
-[ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://TelaInicial/fontes/Byorg.ttf" id="1_navy5"]
-[ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://TelaInicial/controle_audio.gd" id="3_7iw6h"]
-[ext_resource type="Theme" uid="uid://beco18cn8vfan" path="res://TelaInicial/tema_botoes.tres" id="3_g8ynp"]
-[ext_resource type="Texture2D" uid="uid://dla2uplg4nb81" path="res://TelaInicial/imagens/audio_on.png" id="4_npvpo"]
-[ext_resource type="Script" uid="uid://dm4f0ou5bp74p" path="res://TelaInicial/mute.gd" id="4_pay61"]
-[ext_resource type="Texture2D" uid="uid://bkjng6bmdiln1" path="res://TelaInicial/imagens/audio_off.png" id="5_2153d"]
+[ext_resource type="Script" uid="uid://cppc6bykchl1o" path="res://UI/Menus/tela_opcoes.gd" id="1_3s4su"]
+[ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://Recursos/Fontes/Byorg.ttf" id="1_navy5"]
+[ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://Scripts/UI/controle_audio.gd" id="3_7iw6h"]
+[ext_resource type="Theme" uid="uid://beco18cn8vfan" path="res://UI/tema_botoes.tres" id="3_g8ynp"]
+[ext_resource type="Texture2D" uid="uid://dla2uplg4nb81" path="res://Recursos/Graficos/UI/audio_on.png" id="4_npvpo"]
+[ext_resource type="Script" uid="uid://dm4f0ou5bp74p" path="res://Scripts/UI/mute.gd" id="4_pay61"]
+[ext_resource type="Texture2D" uid="uid://bkjng6bmdiln1" path="res://Recursos/Graficos/UI/audio_off.png" id="5_2153d"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_78hhk"]
 color = Color(1, 1, 1, 1)

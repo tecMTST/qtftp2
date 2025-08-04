@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://ck8wg57jy340e"]
 
-[ext_resource type="Script" uid="uid://cd2jogo7kya5n" path="res://Componentes/Objetos/Interagiveis/ingrediente.gd" id="1_hkx6c"]
+[ext_resource type="Script" uid="uid://cd2jogo7kya5n" path="res://Componentes/Ingredientes/ingrediente.gd" id="1_hkx6c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkx6c"]
 
