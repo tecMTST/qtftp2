@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://di3duc3rpwxkh"]
 
-[ext_resource type="FontFile" uid="uid://b3d8eue11s445" path="res://TelaInicial/fontes/Amigate Endgame Italic.ttf" id="1_ppyvn"]
-[ext_resource type="Texture2D" uid="uid://cwu1a11babg8n" path="res://TelaInicial/imagens/logo.png" id="2_3jhxd"]
+[ext_resource type="FontFile" uid="uid://b3d8eue11s445" path="res://Recursos/Fontes/Amigate Endgame Italic.ttf" id="1_ppyvn"]
+[ext_resource type="Texture2D" uid="uid://cwu1a11babg8n" path="res://Recursos/Graficos/UI/logo.png" id="2_3jhxd"]
 [ext_resource type="FontFile" uid="uid://bhxa2qeqgdl2x" path="res://Recursos/Fontes/Alphakind.otf" id="3_lqw1y"]
-[ext_resource type="Texture2D" uid="uid://cjxet1qh5agnr" path="res://TelaInicial/imagens/logo_bn.png" id="4_xubx8"]
+[ext_resource type="Texture2D" uid="uid://cjxet1qh5agnr" path="res://Recursos/Graficos/UI/logo_bn.png" id="4_xubx8"]
 
 [sub_resource type="Theme" id="Theme_a4vfs"]
 

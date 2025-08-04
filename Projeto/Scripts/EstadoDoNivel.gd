@@ -23,6 +23,7 @@ func _init(nivel : Nivel):
 
 func motivo() -> String:
 	if completo():
+		EstadoDeJogo.NivelAtual += 1
 		return "Nível concluído!"
 	if baguncado():
 		return "Tudo bagunçado."
