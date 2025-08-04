@@ -185,6 +185,7 @@ metadata/_custom_type_script = "uid://dku77viqwklks"
 [node name="BotaoAcao" type="TouchScreenButton" parent="."]
 visible = false
 top_level = true
+z_index = 16
 position = Vector2(258, 1055)
 scale = Vector2(1.02692, 1.02692)
 texture_normal = ExtResource("12_7lwul")
