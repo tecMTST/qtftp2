@@ -2,24 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d04jrn8tis0gr"
-path="res://.godot/imported/elzaVetorCores2.svg-3c3d5ca89f72fcacf66306ba6826555f.ctex"
+uid="uid://cx2l2edobw7dh"
+path="res://.godot/imported/elzaVetorCores2.png-2fa6020a592729f024a7b562ef4df14b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Personagens/elzaVetorCores2.svg"
-dest_files=["res://.godot/imported/elzaVetorCores2.svg-3c3d5ca89f72fcacf66306ba6826555f.ctex"]
+source_file="res://Recursos/Graficos/Personagens/elzaVetorCores2.png"
+dest_files=["res://.godot/imported/elzaVetorCores2.png-2fa6020a592729f024a7b562ef4df14b.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.8
+compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=2
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
