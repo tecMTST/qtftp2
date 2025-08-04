@@ -13,7 +13,8 @@
 				"Alvo" : "fogao",
 				"Acao" : "cozer",
 				"Tempo" : 10,
-				"VariacaoResultado" : 2
+				"VariacaoResultado" : 2,
+				"Evento": ""
 			}
 		]
 	},
@@ -31,7 +32,8 @@
 				"Alvo" : "bancada",
 				"Acao" : "montar",
 				"Tempo" : 1,
-				"VariacaoResultado" : 0
+				"VariacaoResultado" : 0,
+				"Evento": ""
 			}
 		]
 	},
@@ -49,7 +51,8 @@
 				"Alvo" : "fogao",
 				"Acao" : "cozer",
 				"Tempo" : 20,
-				"VariacaoResultado" : 2
+				"VariacaoResultado" : 2,
+				"Evento": ""
 			}
 		]
 	},
@@ -67,7 +70,8 @@
 				"Alvo" : "bancada",
 				"Acao" : "misturar",
 				"Tempo" : 1,
-				"VariacaoResultado" : 0
+				"VariacaoResultado" : 0,
+				"Evento": ""
 			}
 		]
 	},
@@ -85,7 +89,8 @@
 				"Alvo" : "bancada",
 				"Acao" : "misturar",
 				"Tempo" : 1,
-				"VariacaoResultado" : 0
+				"VariacaoResultado" : 0,
+				"Evento": ""
 			}
 		]
 	},
@@ -103,13 +108,15 @@
 				"Alvo" : "fogao",
 				"Acao" : "fritar",
 				"Tempo" : 3,
-				"VariacaoResultado" : 2
+				"VariacaoResultado" : 2,
+				"Evento": ""
 			},
 			{
 				"Alvo" : "fogao",
 				"Acao" : "cozer",
 				"Tempo" : 6,
-				"VariacaoResultado" : 3
+				"VariacaoResultado" : 3,
+				"Evento": ""
 			}
 		]
 	},
@@ -127,7 +134,8 @@
 				"Alvo" : "bancada",
 				"Acao" : "misturar",
 				"Tempo" : 1,
-				"VariacaoResultado" : 0
+				"VariacaoResultado" : 0,
+				"Evento": ""
 			}
 		]
 	},
@@ -145,7 +153,8 @@
 				"Alvo" : "bancada",
 				"Acao" : "misturar",
 				"Tempo" : 1,
-				"VariacaoResultado" : 0
+				"VariacaoResultado" : 0,
+				"Evento": ""
 			}
 		]
 	},
@@ -163,7 +172,8 @@
 				"Alvo" : "pia",
 				"Acao" : "hidratar",
 				"Tempo" : 10,
-				"VariacaoResultado" : 2
+				"VariacaoResultado" : 2,
+				"Evento": ""
 			}
 		]
 	},
@@ -181,7 +191,8 @@
 				"Alvo" : "fogao",
 				"Acao" : "cozer",
 				"Tempo" : 10,
-				"VariacaoResultado" : 3
+				"VariacaoResultado" : 3,
+				"Evento": ""
 			}
 		]
 	},
@@ -199,7 +210,8 @@
 				"Alvo" : "bancada",
 				"Acao" : "misturar",
 				"Tempo" : 1,
-				"VariacaoResultado" : 0
+				"VariacaoResultado" : 0,
+				"Evento": "desenformar-cuscuz"
 			}
 		]
 	},
@@ -217,7 +229,8 @@
 				"Alvo" : "Fogão",
 				"Acao" : "cozer",
 				"Tempo" : 5,
-				"VariacaoResultado" : 2
+				"VariacaoResultado" : 2,
+				"Evento": ""
 			}
 		]
 	},
@@ -235,7 +248,8 @@
 				"Alvo" : "Bancada",
 				"Acao" : "misturar",
 				"Tempo" : 1,
-				"VariacaoResultado" : 0
+				"VariacaoResultado" : 0,
+				"Evento": ""
 			}
 		]
 	},

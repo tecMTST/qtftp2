@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://rdsaan7djww8"
-path="res://.godot/imported/ka1.ttf-e4aa8ef4302d696df42d98d91b481480.fontdata"
+uid="uid://b3d8eue11s445"
+path="res://.godot/imported/Amigate Endgame Italic.ttf-7dcb12f7c194ce45ff2d7db5f6d24dc3.fontdata"
 
 [deps]
 
-source_file="res://TelaInicial/fontes/ka1.ttf"
-dest_files=["res://.godot/imported/ka1.ttf-e4aa8ef4302d696df42d98d91b481480.fontdata"]
+source_file="res://Recursos/Fontes/Amigate Endgame Italic.ttf"
+dest_files=["res://.godot/imported/Amigate Endgame Italic.ttf-7dcb12f7c194ce45ff2d7db5f6d24dc3.fontdata"]
 
 [params]
 

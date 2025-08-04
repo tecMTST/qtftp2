@@ -23,7 +23,7 @@ func _on_timer_timeout():
 	elif(esta_cozinhando):
 		transformar(load("uid://jvc15grkq4fr").instantiate())
 		
-func cozinhar() -> bool:
+func acao_fogao() -> bool:
 	if(!esta_pronto_para_cozinhar): return false
 	if(!esta_cozinhando):
 		timer.paused = false

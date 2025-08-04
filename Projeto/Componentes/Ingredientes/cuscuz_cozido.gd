@@ -24,13 +24,13 @@ func _on_timer_timeout():
 	else: #Sinal do timer de desenformar
 		transformar(load("uid://dorynrmsas25r").instantiate())
 		
-func cozinhar() -> bool:  #Método para remover o cuscuz antes de queimar
+func acao_fogao() -> bool:  #Método para remover o cuscuz antes de queimar
 	visualizador_temporal.cor = Color("478cbf")
 	timer.start(Ingrediente.Acoes[0].Tempo)
 	timer.paused = true
 	return false
 	
-func desenformar() -> void:
+func acao_bancada() -> void:
 	if(!esta_desenformando):
 		timer.paused = false
 		esta_desenformando = true

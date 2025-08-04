@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkjng6bmdiln1"
-path="res://.godot/imported/audio_off.png-f105298a749c21c903dd401a42a450d3.ctex"
+uid="uid://cwu1a11babg8n"
+path="res://.godot/imported/logo.png-932f9e0f363d195fd6fa00652f111991.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TelaInicial/imagens/audio_off.png"
-dest_files=["res://.godot/imported/audio_off.png-f105298a749c21c903dd401a42a450d3.ctex"]
+source_file="res://Recursos/Graficos/UI/logo.png"
+dest_files=["res://.godot/imported/logo.png-932f9e0f363d195fd6fa00652f111991.ctex"]
 
 [params]
 

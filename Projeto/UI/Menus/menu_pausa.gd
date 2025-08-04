@@ -15,4 +15,4 @@ func _on_sair_pressed() -> void:
 #vai para a tela principal desde o menu de pausa
 func _on_retornar_à_tela_inicial_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://TelaInicial/menu_principal.tscn")
+	get_tree().change_scene_to_file("res://UI/Menus/menu_principal.tscn")
