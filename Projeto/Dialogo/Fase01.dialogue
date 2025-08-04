@@ -1,3 +1,51 @@
-~ comecogameplay
-Carolina: Que fome…
+
+#Durante a gameplay, diálogos/barks rolam sem parar o gameplay.
+#Lucas segue no berço. Carolina começa a fase sentada a mesa, olhando para o celular, 
+#apena no sétimo prato que Carolina se levanta.
+
+~ naotemfeijao
+#Assim que o jogador (Elza) entrega o segundo prato na mesa,
+#Carolina - sentada na mesa - fala (balãozinho):
+Carolina:Não tem feijão de novo?
+Elza: Ah, filha…
 => END!
+#Gameplay segue normal
+    
+~ barkCarolLucas01
+#Nessa fase, SE a barra/círculo do choro de Lucas encher pela metade,
+#Carolina - sentada na mesa - fala (balãozinho):
+Carolina: Mãe, o Lucas!
+=> END!
+#Gameplay segue normal
+
+~ Carolinaselevanta
+#Assim que o jogador (Elza) entrega o sétimo prato (metade do total) na mesa,
+#Carolina se levanta, passa a andar pela casa e deixar bagunças
+#QUANDO Jogador(Elza) esbarra na primeira bagunça ela fala:
+Elza: Olha essa bagunça, Carolina!
+Carolina: Eu arrumo depois.
+Elza: Mas eu tropeço nela agora!
+#avaliar se pausa o gameplay durante a caixa de tutorial
+#caixa de texto tutorial aparece:
+Tutorial: Limpe a bagunça de Carolina antes que a casa fique um caos.
+Tutorial: E não esqueça da comida!
+=> END!
+
+#Assim que o jogador (Elza) entregar o útlimo prato, gameplay PAUSA
+#Elza e Carolina se sentam na mesa
+~ Posgameplayfase01
+#Surge um ponto de exclamação tremido perto da cabeça de Elza (ela recebeu um zap)
+#Elza pega celular. Surge uma caixa de texto
+Celular: Mensagem de Luisa - Tive notícias do Felix hoje, Elza!
+#Nota: Celular pode ser representado por fonte diferente.
+Celular: Mensagem de Luisa - Parece que viram ele na rua.
+Elza: …
+#Elza - Guarda o celular
+Carolina: O que que aconteceu, mãe?
+Elza: Nada, filha.
+Elza: Congela a comida pra mim, tá?
+Elza: E fica de olho no seu irmão, hein!
+Carolina: Pode deixar , mãe.
+#Elza sai de casa
+=> END!
+#Fade out

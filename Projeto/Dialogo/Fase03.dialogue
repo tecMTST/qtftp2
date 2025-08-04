@@ -1,0 +1,59 @@
+#Nessa fase, Carolina caminha deixando bagunça - mais rápido que antes.
+#A barra de choro de Lucas enche mais rápido
+
+~ geladeiravazia
+# Quando Elza/jogador fechar a geladeira (que aparece vazia nessa fase)
+Elza: Nada aqui…
+=> END!
+
+~ semgas
+# Quando Elza/jogador interage com o fogão
+Elza: O gás acabou? Não acredito! 
+=> END!
+
+~ barkCarolLucas03
+#Nessa fase, SE a barra/círculo do choro de Lucas encher pela metade,
+#Carolina fala:
+Carolina: Mãe, o Lucas vai…
+Elza: Eu sei!
+=> END!
+ 
+~ elzaexausta
+#Quando o tempo do timer estiver próximo do fim (ums 5 segundos antes)
+Elza:Meu Deus…
+Elza: Eu não tô me aguentando em pé…
+#Elza senta no chão e chora, tapando o rosto com as mãos. Lágrimas pequenas voam de seu rosto
+#timer segue mas jogador não consegue mexer Elza
+=> END!
+
+~ Posgameplayfase03
+#Quando o timer acaba, Carolina vai até Elza que segue chorando no chão
+Carolina: Mãe, a gente não tem o que comer?
+#As lágrimas param de sair de Elza
+Elza: Filha…
+#Elza volta a chorar (obs: pensar no desenho de som)
+#Luisa Entra na casa apressadamente. Se aproxima de Elza e Carolina 
+#(mas não muito, pq ela vai se aproximar mais daqui a pouco)
+Luisa: Elza! Carol!
+Luisa: Sabia que tinha algo errado!
+#Elza  Se levanta, mas continua com expressão triste
+Elza: Lu… Não sei o que fazer.
+Elza: Se pago as contas, não compro comida.
+Elza: Se compro comida, não pago as contas.
+Elza: Tudo que quero é criar meus filhos bem.
+#Luisa dá um passo para frente, obstinada
+Luisa: Isso não é sua culpa, Elza!
+Luisa: Já estive nesse lugar também.
+Luisa: E ninguém tem que passar fome.
+Luisa: Isso é muito grave. GRAVÍSSIMO!
+Luisa: Você tem o direito a se alimentar!
+Elza: O direito?
+#Luisa dá mais um passo para frente, chegando bem perto de Elza
+Luisa: Vou te mostrar um lugar.
+Luisa: A Cozinha Solidária.
+Elza: Cozinha Solidária?
+Luisa: Vem comigo.
+#Carolina pega Lucas no berço. 
+#Luisa, Elza e Carolina (com Lucas) saem em fila da casa]
+#Fade Ouy
+=> END!
