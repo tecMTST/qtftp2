@@ -46,6 +46,7 @@ theme_override_constants/separation = 25
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vbfma")
 theme_override_font_sizes/font_size = 45
+disabled = true
 text = "CONTINUAR
 "
 
@@ -53,7 +54,7 @@ text = "CONTINUAR
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vbfma")
 theme_override_font_sizes/font_size = 45
-text = "COZINHAR
+text = "NOVO JOGO
 "
 
 [node name="opcoes" type="Button" parent="CenterContainer/BotoesPrincipais"]

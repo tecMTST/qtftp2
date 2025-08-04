@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var continuar: Button = $CenterContainer/BotoesPrincipais/continuar
-@onready var jogar: Button = $CenterContainer/BotoesPrincipais/jogar
 
 var jogo_salvo : SaveFile
 
@@ -9,12 +8,11 @@ func _ready() -> void:
 	get_tree().paused = false
 	ControleDeAudio.toca_musica("menu", false)
 	var arquivos_salvamento = SaveService.GetSlots()
-	continuar.visible = false
+	continuar.disabled = true
 	jogo_salvo = null
 	if len(arquivos_salvamento) > 0:
 		jogo_salvo = arquivos_salvamento[0]
-		continuar.visible = true	
-		jogar.text = "NOVO JOGO"
+		continuar.disabled = false
 
 #ao clicar em jogar deveria ir direto para a tela de cenas iniciais do jogo.
 func _on_jogar_pressed() -> void:
