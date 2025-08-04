@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var continuar: Button = $CenterContainer/BotoesPrincipais/continuar
+@onready var jogar: Button = $CenterContainer/BotoesPrincipais/jogar
 
 var jogo_salvo : SaveFile
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 	if len(arquivos_salvamento) > 0:
 		jogo_salvo = arquivos_salvamento[0]
 		continuar.visible = true	
+		jogar.text = "NOVO JOGO"
 
 #ao clicar em jogar deveria ir direto para a tela de cenas iniciais do jogo.
 func _on_jogar_pressed() -> void:
