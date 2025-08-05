@@ -1,12 +1,12 @@
 extends Node2D
 
 
-#descomentar as 3 linhas abaixo para ativar o audio da tela de splash
-#func _ready() -> void:
-	#$AudioStreamPlayer2D.play()
+
+func _ready() -> void:
+	$AudioStreamPlayer2D.play()
 
 func _on_animacao_animation_finished(anim_name: StringName) -> void:
-	#$AudioStreamPlayer2D.stop() 
+	$AudioStreamPlayer2D.stop() 
 	get_tree().change_scene_to_file("res://TelaInicial/parceria.tscn")
 	
 

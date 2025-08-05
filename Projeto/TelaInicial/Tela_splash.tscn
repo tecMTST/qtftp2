@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdo1d4aefoeh2"]
+[gd_scene load_steps=7 format=3 uid="uid://bdo1d4aefoeh2"]
 
 [ext_resource type="Script" uid="uid://ct5so64x6wwnh" path="res://TelaInicial/tela_splash.gd" id="1_fgwb8"]
 [ext_resource type="Texture2D" uid="uid://dc4eu7v84vmut" path="res://TelaInicial/imagens/logomtst.png" id="2_psic2"]
+[ext_resource type="AudioStream" uid="uid://des2wg72ltnj5" path="res://TelaInicial/audio/splash-vinheta.mp3" id="3_psic2"]
 
 [sub_resource type="Animation" id="Animation_fxl2i"]
 length = 0.001
@@ -64,6 +65,7 @@ offset_right = 720.0
 offset_bottom = 1280.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_psic2")
 autoplay = true
 
 [node name="animacao" type="AnimationPlayer" parent="."]
