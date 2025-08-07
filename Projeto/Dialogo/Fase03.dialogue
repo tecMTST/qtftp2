@@ -3,12 +3,12 @@
 
 ~ geladeiravazia
 # Quando Elza/jogador fechar a geladeira (que aparece vazia nessa fase)
-Elza: Nada aqui…
-=> END!
+% Mae: Nada aqui…
+=> END
 
 ~ semgas
 # Quando Elza/jogador interage com o fogão
-Elza: O gás acabou? Não acredito! 
+% Mae: O gás acabou? Não acredito! 
 => END!
 
 ~ barkCarolLucas03

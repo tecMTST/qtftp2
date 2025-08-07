@@ -40,14 +40,14 @@ func preencher_geladeira():
 
 		var container: Node
 
-		if i < qnt_na_prateleira:
-			container = prateleira_1.get_node("IngredienteContainer")
-		elif i < qnt_na_prateleira * 2:
-			container = prateleira_2.get_node("IngredienteContainer")
-		elif i < qnt_na_prateleira * 3:
-			container = prateleira_3.get_node("IngredienteContainer")
-		else:
-			break  # Se tiver mais itens do que o total possível, para aqui
+			if i < qnt_na_prateleira:
+				container = prateleira_1.get_node("IngredienteContainer")
+			elif i < qnt_na_prateleira * 2:
+				container = prateleira_2.get_node("IngredienteContainer")
+			elif i < qnt_na_prateleira * 3:
+				container = prateleira_3.get_node("IngredienteContainer")
+			else:
+				break  # Se tiver mais itens do que o total possível, para aqui
 
 		container.add_child(igrediente_geladeira)
 		i += 1
