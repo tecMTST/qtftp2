@@ -17,7 +17,7 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 		_recolher_objeto()
 		jogador.agarrar()
 	else:
-		if ControleDeFase.NivelAtual.Id == 1:		
+		if ControleDeFase.NivelAtual.Id == 3:		
 			ControleDeFase.Jogador.iniciar_dialogo(load("res://Dialogo/Fase03.dialogue"), "semgas", 3.0)
 		if(!jogador.esta_agarrando): return
 		var objeto_ingrediente = jogador.objeto_agarrado
