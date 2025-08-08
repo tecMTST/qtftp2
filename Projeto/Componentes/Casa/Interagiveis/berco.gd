@@ -31,6 +31,11 @@ func _process(delta: float) -> void:
 	if timer_choro <= 0:
 		iniciar_choro()
 
+func iniciar_mexer():
+	print_debug('mechendo')
+	
+func animacao_choro():
+	print_debug('choro')
 
 func iniciar_choro():
 	#TODO animacao iniciar

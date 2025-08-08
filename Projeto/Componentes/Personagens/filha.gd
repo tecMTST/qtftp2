@@ -1,9 +1,10 @@
-extends CharacterBody2D
+class_name Filha
+extends Personagem
 
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
-@onready var waypoints = get_parent().get_node("Waypoints")
 @onready var sprite: Sprite2D = $Sprite2D  # ou AnimatedSprite2D
 @export var bagunca_scene: PackedScene
+@export var waypoints : Node2D
 
 var target: Marker2D = null
 var speed: float = 100.0
@@ -44,6 +45,7 @@ func move_along_path(delta):
 	move_and_slide()
 
 func select_new_waypoint():
+	if not waypoints: return
 	var markers := waypoints.get_children()
 	if markers.is_empty():
 		return

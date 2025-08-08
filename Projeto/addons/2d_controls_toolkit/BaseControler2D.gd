@@ -65,3 +65,9 @@ func move():
 			parent.move_and_slide()
 		elif Movement_Type == movement_types.MoveAndCollide:
 			parent.move_and_collide(velocity)
+
+func activate():
+	Active = true
+
+func deactivate():
+	Active = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=34 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://hkter5n7clor" path="res://Recursos/Graficos/UI/pause.svg" id="19_0gd5h"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="23_tqe3g"]
 [ext_resource type="Script" uid="uid://balal13nfhegi" path="res://addons/saveEngine/scripts/SaveAgent.gd" id="25_d1xgi"]
+[ext_resource type="BehaviorTree" uid="uid://v1romtgfuw1k" path="res://ai/tutorial.tres" id="26_xhdpr"]
 [ext_resource type="PackedScene" uid="uid://cr74l6j0jbkx5" path="res://UI/Menus/MenuPausa.tscn" id="31_tqe3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
@@ -45,6 +46,8 @@ radius = 91.11
 vertices = PackedVector2Array(678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 185.742, 525, 50.8984, 525, 551.242, 503.078, 678.563, 502.07, 682.406, 569.117, 434.781, 572.117, 191.742, 753.031, 438.773, 753.961)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2, 6), PackedInt32Array(6, 7, 8, 9, 4), PackedInt32Array(10, 4, 9, 11)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 445, 582, 449, 764, 182, 763, 176, 535, 41, 535)])
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_tjjme"]
 
 [node name="Casa" type="Node2D"]
 script = ExtResource("1_6yvxp")
@@ -85,10 +88,6 @@ position = Vector2(622, 319)
 
 [node name="Fogao" parent="Cozinha" instance=ExtResource("6_xq1v8")]
 position = Vector2(104, 333)
-
-[node name="Player" parent="." instance=ExtResource("2_kc3ot")]
-z_index = 5
-position = Vector2(355, 606)
 
 [node name="Distracoes" type="Node2D" parent="."]
 
@@ -159,10 +158,17 @@ position = Vector2(507, 716)
 [node name="Waypoint7" type="Marker2D" parent="Waypoints"]
 position = Vector2(314, 809)
 
-[node name="Filha" parent="." instance=ExtResource("15_gklaa")]
+[node name="Personagens" type="Node2D" parent="."]
+
+[node name="Player" parent="Personagens" instance=ExtResource("2_kc3ot")]
+z_index = 5
+position = Vector2(355, 606)
+
+[node name="Filha" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("15_gklaa")]
 z_index = 10
 position = Vector2(497, 905)
 bagunca_scene = ExtResource("17_utqv5")
+waypoints = NodePath("../../Waypoints")
 
 [node name="CenarioiFront" type="Node2D" parent="."]
 z_index = 15
@@ -218,7 +224,12 @@ script = ExtResource("25_d1xgi")
 AutoSave = false
 metadata/_custom_type_script = "uid://balal13nfhegi"
 
-[connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
-[connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("26_xhdpr")
+blackboard_plan = SubResource("BlackboardPlan_tjjme")
+
+[connection signal="acao_agarrou" from="Personagens/Player" to="." method="_on_player_acao_agarrou"]
+[connection signal="acao_ativada" from="Personagens/Player" to="." method="_on_player_acao_ativada"]
+[connection signal="acao_desativada" from="Personagens/Player" to="." method="_on_player_acao_desativada"]
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
 [connection signal="Continue" from="CanvasLayer/pausar" to="." method="_on_pausar_continue"]

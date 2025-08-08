@@ -121,3 +121,11 @@ func _reset_timers() -> void:
 		TempoJogo.stop()
 	if not _tempo_checagem.is_stopped():
 		_tempo_checagem.stop()
+
+func congelar_tempo() -> void:
+	Jogador.process_mode = Node.PROCESS_MODE_DISABLED
+	TempoJogo.paused = true
+
+func descongelar_tempo() -> void:
+	Jogador.process_mode = Node.PROCESS_MODE_INHERIT
+	TempoJogo.paused = false

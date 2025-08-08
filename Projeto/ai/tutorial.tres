@@ -1,0 +1,328 @@
+[gd_resource type="BehaviorTree" load_steps=70 format=3 uid="uid://v1romtgfuw1k"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_b0q6c"]
+var/estado_fase/name = &"estado_fase"
+var/estado_fase/type = 2
+var/estado_fase/value = 0
+var/estado_fase/hint = 0
+var/estado_fase/hint_string = ""
+var/fim_tutorial/name = &"fim_tutorial"
+var/fim_tutorial/type = 1
+var/fim_tutorial/value = false
+var/fim_tutorial/hint = 0
+var/fim_tutorial/hint_string = ""
+
+[sub_resource type="BBVariant" id="BBVariant_gcowf"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_gvyd4"]
+variable = &"fim_tutorial"
+value = SubResource("BBVariant_gcowf")
+
+[sub_resource type="BBVariant" id="BBVariant_4f2oh"]
+type = 2
+saved_value = 0
+resource_name = "0"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_14yu7"]
+variable = &"estado_fase"
+value = SubResource("BBVariant_4f2oh")
+
+[sub_resource type="BBVariant" id="BBVariant_b0q6c"]
+type = 4
+value_source = 1
+variable = &"estado_fase"
+resource_name = "$estado_fase"
+
+[sub_resource type="BBVariant" id="BBVariant_14yu7"]
+type = 4
+saved_value = "inicio"
+resource_name = "inicio"
+
+[sub_resource type="BBNode" id="BBNode_b0q6c"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_4f2oh"]
+node = SubResource("BBNode_b0q6c")
+method = &"abrir_dialogo"
+result_var = &"estado_fase"
+args = Array[BBVariant]([SubResource("BBVariant_b0q6c"), SubResource("BBVariant_14yu7")])
+
+[sub_resource type="BTDelay" id="BTDelay_c0kla"]
+seconds = 2.0
+children = [SubResource("BTCallMethod_4f2oh")]
+
+[sub_resource type="BTSequence" id="BTSequence_p8ixh"]
+custom_name = "Início"
+children = [SubResource("BTCheckVar_14yu7"), SubResource("BTDelay_c0kla")]
+
+[sub_resource type="BBVariant" id="BBVariant_c0kla"]
+type = 2
+saved_value = 2
+resource_name = "2"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_p8ixh"]
+variable = &"estado_fase"
+value = SubResource("BBVariant_c0kla")
+
+[sub_resource type="BBVariant" id="BBVariant_gljxx"]
+type = 4
+value_source = 1
+variable = &"estado_fase"
+resource_name = "$estado_fase"
+
+[sub_resource type="BBVariant" id="BBVariant_qju4h"]
+type = 4
+saved_value = "abriu_geladeira"
+resource_name = "abriu_geladeira"
+
+[sub_resource type="BBNode" id="BBNode_vq2uv"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_7udja"]
+node = SubResource("BBNode_vq2uv")
+method = &"abrir_dialogo"
+result_var = &"estado_fase"
+args = Array[BBVariant]([SubResource("BBVariant_gljxx"), SubResource("BBVariant_qju4h")])
+
+[sub_resource type="BTDelay" id="BTDelay_b0q6c"]
+children = [SubResource("BTCallMethod_7udja")]
+
+[sub_resource type="BTSequence" id="BTSequence_a5r62"]
+custom_name = "Abriu a geladeira"
+children = [SubResource("BTCheckVar_p8ixh"), SubResource("BTDelay_b0q6c")]
+
+[sub_resource type="BBVariant" id="BBVariant_p8ixh"]
+type = 2
+saved_value = 4
+resource_name = "4"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_gljxx"]
+variable = &"estado_fase"
+value = SubResource("BBVariant_p8ixh")
+
+[sub_resource type="BBNode" id="BBNode_qju4h"]
+saved_value = NodePath("Distracoes/Berco")
+resource_name = "Distracoes/Berco"
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_vq2uv"]
+node = SubResource("BBNode_qju4h")
+method = &"iniciar_mexer"
+
+[sub_resource type="BTDelay" id="BTDelay_7udja"]
+children = [SubResource("BTCallMethod_vq2uv")]
+
+[sub_resource type="BBNode" id="BBNode_14yu7"]
+saved_value = NodePath("Personagens/Player")
+resource_name = "Personagens/Player"
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_c0kla"]
+node = SubResource("BBNode_14yu7")
+method = &"desativar"
+
+[sub_resource type="BBVariant" id="BBVariant_vq2uv"]
+type = 4
+value_source = 1
+variable = &"estado_fase"
+resource_name = "$estado_fase"
+
+[sub_resource type="BBVariant" id="BBVariant_7udja"]
+type = 4
+saved_value = "lucas_vai_chorar"
+resource_name = "lucas_vai_chorar"
+
+[sub_resource type="BBNode" id="BBNode_a5r62"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_4it8j"]
+node = SubResource("BBNode_a5r62")
+method = &"abrir_dialogo"
+result_var = &"estado_fase"
+args = Array[BBVariant]([SubResource("BBVariant_vq2uv"), SubResource("BBVariant_7udja")])
+
+[sub_resource type="BTDelay" id="BTDelay_865oy"]
+seconds = 5.0
+children = [SubResource("BTCallMethod_4it8j")]
+
+[sub_resource type="BBVariant" id="BBVariant_a5r62"]
+type = 4
+value_source = 1
+variable = &"estado_fase"
+resource_name = "$estado_fase"
+
+[sub_resource type="BBVariant" id="BBVariant_4it8j"]
+type = 4
+saved_value = "tutorial_choro"
+resource_name = "tutorial_choro"
+
+[sub_resource type="BBNode" id="BBNode_865oy"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_6uw80"]
+node = SubResource("BBNode_865oy")
+method = &"abrir_dialogo"
+result_var = &"estado_fase"
+args = Array[BBVariant]([SubResource("BBVariant_a5r62"), SubResource("BBVariant_4it8j")])
+
+[sub_resource type="BTDelay" id="BTDelay_4f2oh"]
+seconds = 8.0
+children = [SubResource("BTCallMethod_6uw80")]
+
+[sub_resource type="BBNode" id="BBNode_4f2oh"]
+saved_value = NodePath("Distracoes/Berco")
+resource_name = "Distracoes/Berco"
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_14yu7"]
+node = SubResource("BBNode_4f2oh")
+method = &"animacao_choro"
+
+[sub_resource type="BTDelay" id="BTDelay_p8ixh"]
+seconds = 5.0
+children = [SubResource("BTCallMethod_14yu7")]
+
+[sub_resource type="BBNode" id="BBNode_c0kla"]
+saved_value = NodePath("Personagens/Player")
+resource_name = "Personagens/Player"
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_p8ixh"]
+node = SubResource("BBNode_c0kla")
+method = &"ativar"
+
+[sub_resource type="BBNode" id="BBNode_p8ixh"]
+saved_value = NodePath("Distracoes/Berco")
+resource_name = "Distracoes/Berco"
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_gljxx"]
+node = SubResource("BBNode_p8ixh")
+method = &"iniciar_choro"
+
+[sub_resource type="BBVariant" id="BBVariant_865oy"]
+type = 2
+saved_value = 5
+resource_name = "5"
+
+[sub_resource type="BTSetVar" id="BTSetVar_6uw80"]
+variable = &"estado_fase"
+value = SubResource("BBVariant_865oy")
+
+[sub_resource type="BTSequence" id="BTSequence_b0q6c"]
+custom_name = "Choro do lucas"
+children = [SubResource("BTCheckVar_gljxx"), SubResource("BTDelay_7udja"), SubResource("BTCallMethod_c0kla"), SubResource("BTDelay_865oy"), SubResource("BTDelay_4f2oh"), SubResource("BTDelay_p8ixh"), SubResource("BTCallMethod_p8ixh"), SubResource("BTCallMethod_gljxx"), SubResource("BTSetVar_6uw80")]
+
+[sub_resource type="BBVariant" id="BBVariant_u7rdu"]
+type = 2
+saved_value = 6
+resource_name = "6"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_eyufq"]
+variable = &"estado_fase"
+value = SubResource("BBVariant_u7rdu")
+
+[sub_resource type="BBVariant" id="BBVariant_oxuxo"]
+type = 4
+value_source = 1
+variable = &"estado_fase"
+resource_name = "$estado_fase"
+
+[sub_resource type="BBVariant" id="BBVariant_nhbf0"]
+type = 4
+saved_value = "carolina_fim"
+resource_name = "carolina_fim"
+
+[sub_resource type="BBNode" id="BBNode_yfv50"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_necb5"]
+node = SubResource("BBNode_yfv50")
+method = &"abrir_dialogo"
+result_var = &"estado_fase"
+args = Array[BBVariant]([SubResource("BBVariant_oxuxo"), SubResource("BBVariant_nhbf0")])
+
+[sub_resource type="BTDelay" id="BTDelay_r14y5"]
+seconds = 6.0
+children = [SubResource("BTCallMethod_necb5")]
+
+[sub_resource type="BBVariant" id="BBVariant_6uw80"]
+type = 4
+value_source = 1
+variable = &"estado_fase"
+resource_name = "$estado_fase"
+
+[sub_resource type="BBVariant" id="BBVariant_eyufq"]
+type = 4
+saved_value = "elza_fim"
+resource_name = "elza_fim"
+
+[sub_resource type="BBNode" id="BBNode_oxuxo"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_nhbf0"]
+node = SubResource("BBNode_oxuxo")
+method = &"abrir_dialogo"
+result_var = &"estado_fase"
+args = Array[BBVariant]([SubResource("BBVariant_6uw80"), SubResource("BBVariant_eyufq")])
+
+[sub_resource type="BTDelay" id="BTDelay_yfv50"]
+seconds = 6.0
+children = [SubResource("BTCallMethod_nhbf0")]
+
+[sub_resource type="BBVariant" id="BBVariant_ouhrc"]
+type = 4
+value_source = 1
+variable = &"estado_fase"
+resource_name = "$estado_fase"
+
+[sub_resource type="BBVariant" id="BBVariant_b6asn"]
+type = 4
+saved_value = "lucas_fim"
+resource_name = "lucas_fim"
+
+[sub_resource type="BBNode" id="BBNode_gcowf"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_gvyd4"]
+node = SubResource("BBNode_gcowf")
+method = &"abrir_dialogo"
+result_var = &"estado_fase"
+args = Array[BBVariant]([SubResource("BBVariant_ouhrc"), SubResource("BBVariant_b6asn")])
+
+[sub_resource type="BTDelay" id="BTDelay_3fopp"]
+seconds = 6.0
+children = [SubResource("BTCallMethod_gvyd4")]
+
+[sub_resource type="BBNode" id="BBNode_gljxx"]
+saved_value = NodePath("Personagens/Player")
+resource_name = "Personagens/Player"
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_qju4h"]
+node = SubResource("BBNode_gljxx")
+method = &"mover"
+
+[sub_resource type="BBVariant" id="BBVariant_3fopp"]
+type = 1
+saved_value = true
+resource_name = "true"
+
+[sub_resource type="BTSetVar" id="BTSetVar_2nheo"]
+variable = &"fim_tutorial"
+value = SubResource("BBVariant_3fopp")
+
+[sub_resource type="BTSequence" id="BTSequence_6o38s"]
+custom_name = "Fim do tutorial"
+children = [SubResource("BTCheckVar_eyufq"), SubResource("BTDelay_r14y5"), SubResource("BTDelay_yfv50"), SubResource("BTDelay_3fopp"), SubResource("BTCallMethod_qju4h"), SubResource("BTSetVar_2nheo")]
+
+[sub_resource type="BTSelector" id="BTSelector_14yu7"]
+children = [SubResource("BTCheckVar_gvyd4"), SubResource("BTSequence_p8ixh"), SubResource("BTSequence_a5r62"), SubResource("BTSequence_b0q6c"), SubResource("BTSequence_6o38s")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_b0q6c")
+root_task = SubResource("BTSelector_14yu7")

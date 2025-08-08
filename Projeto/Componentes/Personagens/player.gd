@@ -3,6 +3,7 @@ extends Personagem
 
 signal acao_ativada
 signal acao_desativada
+signal acao_agarrou(objeto)
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var gambiarra_centralizar: Sprite2D = $GambiarraCentralizar
@@ -90,6 +91,7 @@ func agarrar():
 	objeto_agarrado.reparent(posicao_objeto)
 	objeto_agarrado.global_position = posicao_objeto.global_position	
 	esta_agarrando = true
+	acao_agarrou.emit(objeto_agarrado)
 	
 func rotacao(delta : float):	
 	var rotacao_atual = pivo_acao.rotation
@@ -101,3 +103,11 @@ func soltar():
 	objeto_agarrado.reparent(get_parent())
 	objeto_agarrado.get_node("CollisionShape2D").disabled = false
 	esta_agarrando = false
+
+func ativar():
+	top_down_controler_2d.Active = true
+	pass
+
+func desativar():
+	top_down_controler_2d.Active = false
+	pass
