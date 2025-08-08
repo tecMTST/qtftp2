@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=34 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://hkter5n7clor" path="res://Recursos/Graficos/UI/pause.svg" id="19_0gd5h"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="23_tqe3g"]
 [ext_resource type="Script" uid="uid://balal13nfhegi" path="res://addons/saveEngine/scripts/SaveAgent.gd" id="25_d1xgi"]
+[ext_resource type="Texture2D" uid="uid://ck4wrho1us2lv" path="res://Recursos/Graficos/UI/briefing-tutorial-p1.svg" id="26_tjjme"]
+[ext_resource type="Texture2D" uid="uid://le17mlh70cw6" path="res://Recursos/Graficos/UI/briefing-tutorial-p2.svg" id="27_xanav"]
 [ext_resource type="PackedScene" uid="uid://cr74l6j0jbkx5" path="res://UI/Menus/MenuPausa.tscn" id="31_tqe3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
@@ -217,6 +219,44 @@ visible = false
 script = ExtResource("25_d1xgi")
 AutoSave = false
 metadata/_custom_type_script = "uid://balal13nfhegi"
+
+[node name="Briefing" type="CanvasLayer" parent="."]
+
+[node name="Pagina 1" type="Panel" parent="Briefing"]
+offset_right = 715.0
+offset_bottom = 1277.0
+
+[node name="TextureRect" type="TextureRect" parent="Briefing/Pagina 1"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 134.0
+offset_right = 666.0
+offset_bottom = 1158.0
+texture = ExtResource("26_tjjme")
+
+[node name="Continuar 1" type="TouchScreenButton" parent="Briefing/Pagina 1"]
+position = Vector2(332, 1061)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("12_7lwul")
+texture_pressed = ExtResource("13_ksqrt")
+
+[node name="Pagina 2" type="Panel" parent="Briefing"]
+offset_right = 715.0
+offset_bottom = 1277.0
+
+[node name="TextureRect" type="TextureRect" parent="Briefing/Pagina 2"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 134.0
+offset_right = 666.0
+offset_bottom = 1158.0
+texture = ExtResource("27_xanav")
+
+[node name="Continuar 2" type="TouchScreenButton" parent="Briefing/Pagina 2"]
+position = Vector2(332, 1061)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("12_7lwul")
+texture_pressed = ExtResource("13_ksqrt")
 
 [connection signal="acao_ativada" from="Player" to="." method="_on_player_acao_ativada"]
 [connection signal="acao_desativada" from="Player" to="." method="_on_player_acao_desativada"]
