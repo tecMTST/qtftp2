@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://dy4r4c8l5fuxr"]
 
 [ext_resource type="Script" uid="uid://cv0ya3xdt4bn" path="res://Componentes/Personagens/player.gd" id="1_c2vf6"]
-[ext_resource type="Texture2D" uid="uid://d04jrn8tis0gr" path="res://Recursos/Graficos/Personagens/elzaVetorCores2.png" id="2_4ucjf"]
+[ext_resource type="Texture2D" uid="uid://d04jrn8tis0gr" path="res://Recursos/Graficos/Personagens/elzaVetorCores2.svg" id="2_4ucjf"]
 [ext_resource type="Script" uid="uid://cjm7t170vvwf" path="res://addons/2d_controls_toolkit/TopDownControler2D.gd" id="2_fo1re"]
 [ext_resource type="Texture2D" uid="uid://cx2l2edobw7dh" path="res://Recursos/Graficos/Personagens/elzaVetorCores2.png" id="3_4ucjf"]
 
@@ -340,8 +340,8 @@ node_connections = [&"output", 0, &"Velocidade"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_c2vf6")
-id = "Mae"
-nome = "Mãe"
+id = "elza"
+nome = "Elza"
 
 [node name="GambiarraCentralizar" type="Sprite2D" parent="."]
 position = Vector2(0, -21)
@@ -523,6 +523,8 @@ rest = Transform2D(0.998701, -0.0509536, 0.0509536, 0.998701, 39, 151)
 
 [node name="PernaEsq_0" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
 position = Vector2(18, 1)
+rotation = -0.0924511
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 18, 1)
 metadata/_local_pose_override_enabled_ = true
 
@@ -535,6 +537,7 @@ bone_angle = 0.0
 
 [node name="PernaDir_0" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
 position = Vector2(-10, 0)
+rotation = -0.0313487
 rest = Transform2D(1, 0, 0, 1, -10, 0)
 metadata/_local_pose_override_enabled_ = true
 
@@ -546,7 +549,7 @@ length = 16.0
 bone_angle = 0.0
 
 [node name="Peito" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
-position = Vector2(-4.53922, -31.5392)
+position = Vector2(-4.50554, -31.5055)
 rest = Transform2D(1, 0, 0, 1, -4, -35)
 metadata/_local_pose_override_enabled_ = true
 
@@ -559,7 +562,7 @@ bone_angle = 0.0
 
 [node name="BracoEsq_0" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril/Peito"]
 position = Vector2(22, -10)
-rotation = 0.0918505
+rotation = 0.190283
 rest = Transform2D(0.995785, 0.0917214, -0.0917214, 0.995785, 22, -10)
 metadata/_local_pose_override_enabled_ = true
 
@@ -572,7 +575,7 @@ bone_angle = 0.0
 
 [node name="BracoDir_0" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril/Peito"]
 position = Vector2(-12, -6)
-rotation = -0.0724246
+rotation = -0.194561
 scale = Vector2(1, 1)
 rest = Transform2D(0.997378, -0.0723613, 0.0723613, 0.997378, -12, -6)
 metadata/_local_pose_override_enabled_ = true

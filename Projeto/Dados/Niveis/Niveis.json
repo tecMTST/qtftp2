@@ -18,7 +18,7 @@
 		"Bagunca" : false,
 		"IntervaloBagunca" : 30.0,
  		"VariacaoBagunca" : 5.0,
-		"Choro" : true,		
+		"Choro" : false,
  		"IntervaloChoro" : 20.0,
  		"VariacaoChoro" :  5.0,
 		"TempoLimiteChoro" :  20.0
