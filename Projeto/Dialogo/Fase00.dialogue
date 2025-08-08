@@ -1,13 +1,12 @@
-
 #gameplay começa. Assim que o jogador começa a se mexer, Carolina - sentada na mesa - fala (balãozinho):
-~ comecogameplay
-[speed=0.6] Carolina: Que fome…
+~ inicio
+carolina: [speed=0.3] Que fome…[next=3]
 #gameplay segue. Carolina continua na mesa.
 => END!
 
 #Assim que o jogador (Elza) fecha a geladeira pela 1a vez, Carolina - sentada na mesa - fala (balãozinho):
-~ Elzafechaageladeira
-[speed=0.6] Carolina: Tem o quê pra comer?[/speed]
+~ abriu_geladeira
+carolina: [speed=0.6]Tem o quê pra comer?[/speed]
 #gameplay segue. Carolina continua na mesa.
 => END!
 
@@ -15,26 +14,36 @@
 #Lucas, bebê no berço, começa a  se mexe no berço
 #(se possível mesma movimentação do choro mas sem lágrimas)
 #Carolina olha para Lucas no berço (animação sutil, para não dar trabalho) e fala (balãozinho)
-~ Lucasvaichorar
-Carolina: Mãe! O Lucas quer mamar!
-Elza: Fala baixo, filha.
+~ lucas_vai_chorar
+carolina: Mãe! O Lucas quer mamar![next=2]
+elza: Fala baixo, filha.[next=2]
 #Lágrimas começam a sair de Lucas (meio cartoon mesmo, umas gotas voando)
 #uma caixa de tutorial surge na tela,
-Tutorial: Seu bebê vai chorar quando estiver com fome.
-Tutorial: Amamente Lucas antes que a barra fique cheia.
-Tutorial: E não esqueça da comida!
+=> END!
+
+~ tutorial_choro
+Seu bebê vai chorar quando estiver com fome.[next=3]
+Amamente Lucas antes que a barra fique vazia.[next=3]
+E não esqueça da comida![next=3]
 #o ícone de choro de Lucas surge perto dele e começa a se encher.
 => END!
 
 #Assim que o jogador (Elza) entregar o útlimo prato, gameplay PAUSA
 #Carolina se levanta da mesa
-~ Posgameplaytutorial
-Carolina: Tava muito bom, mãe! Beijo!
+~ carolina_fim
+carolina: Tava muito bom, mãe! Beijo![next=3]
 #Carolina vai em direção da porta e sai da casa 
-#Elza vai até Lucas e pega ele no colo
-Elza: Vem, filho. Mamãe precisa trabalhar.
-Elza: Vou te deixar na Luisa mas volto logo, tá?
 => END!
+
+~ elza_fim
+#Elza vai até Lucas e pega ele no colo
+elza: Vem, filho. Mamãe precisa trabalhar.[next=3]
+elza: Vou te deixar na Luisa mas volto logo, tá?[next=3]
+=> END!
+
 #Um emoji de coração surge em cima de Lucas.
+~ lucas_fim
+lucas: ❤️
+=> END!
 #Elza vai em direção da porta com Lucas no colo. Eles saem de casa 
 #Fade out

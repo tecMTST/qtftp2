@@ -52,13 +52,12 @@ var dialogue_line: DialogueLine:
 		current_character = ArrayExtension.find_first(characters, func(p: Personagem):
 			return p.id == dialogue_line.character)
 		
-		if current_character.referencia_de_colisao_para_dialogo != null:
-			current_character_collision = current_character.referencia_de_colisao_para_dialogo
-		else:
-			current_character_collision = NodeExtension.find_first_child(current_character,
-				func(child): return child is CollisionShape2D)
-		
 		if current_character != null:
+			if current_character.referencia_de_colisao_para_dialogo != null:
+				current_character_collision = current_character.referencia_de_colisao_para_dialogo
+			else:
+				current_character_collision = NodeExtension.find_first_child(current_character,
+					func(child): return child is CollisionShape2D)
 			character_label.text = tr(current_character.nome, "dialogue")
 		else:
 			character_label.text = tr(dialogue_line.character, "dialogue")
@@ -166,13 +165,21 @@ func next(next_id: String) -> void:
 	if current_character != null and previous_character != current_character:
 		_adjust_balloon_position_according_to_current_character()
 		animation_player.play("popup")
+		return
+	_adjust_ballon_position_to_bottom()
 
 func _adjust_balloon_position_according_to_current_character():
 	visible = true
+	arrow.visible = true
 	var collision = current_character_collision
 	if collision:
-		var height = collision.shape.radius if collision.shape is CircleShape2D\
-			else (collision.shape as RectangleShape2D).size.y
+		var height = 0
+		if collision.shape is CapsuleShape2D:
+			height = collision.shape.height
+		elif collision.shape is CircleShape2D:
+			height = collision.shape.radius
+		else:
+			height = collision.shape.size.y
 	
 		global_position = Vector2(
 			collision.global_position.x,
@@ -183,6 +190,14 @@ func _adjust_balloon_position_according_to_current_character():
 		arrow_position = DialogueBalloon.ARROW_POSITION.RIGHT
 	else:
 		arrow_position = DialogueBalloon.ARROW_POSITION.LEFT
+
+func _adjust_ballon_position_to_bottom() -> void:
+	visible = true
+	arrow.visible = false
+	global_position = Vector2(
+		screen_half_size.x - screen_half_size.x / 2,
+		screen_half_size.y
+	)
 
 func _on_mutated(_mutation: Dictionary) -> void:
 	is_waiting_for_input = false

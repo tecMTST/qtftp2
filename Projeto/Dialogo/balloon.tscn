@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bkxsj5wsqtnxf" path="res://Dialogo/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://cvteijabra03u" path="res://Recursos/Graficos/UI/dialogue_container.png" id="2_flwge"]
-[ext_resource type="Texture2D" uid="uid://bvl0laxkrenj2" path="res://Recursos/Graficos/UI/arrow.png" id="4_ia2ds"]
+[ext_resource type="Texture2D" uid="uid://ct1ld2vkvqlv0" path="res://Recursos/Graficos/Dialogo/Balao.svg" id="2_ia2ds"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="4_tib6h"]
+[ext_resource type="Texture2D" uid="uid://dw27rr7hhxybn" path="res://Recursos/Graficos/Dialogo/Tip.svg" id="5_tib6h"]
 
 [sub_resource type="Animation" id="Animation_1ive7"]
 length = 0.001
@@ -77,7 +77,7 @@ offset_bottom = 265.0
 [node name="NinePatchRect" type="NinePatchRect" parent="Balloon"]
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
-texture = ExtResource("2_flwge")
+texture = ExtResource("2_ia2ds")
 patch_margin_left = 32
 patch_margin_top = 32
 patch_margin_right = 32
@@ -139,9 +139,13 @@ text = "Response example"
 
 [node name="Arrow" type="Sprite2D" parent="."]
 z_index = 100
-position = Vector2(0, 24)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("4_ia2ds")
+position = Vector2(0, 15)
+scale = Vector2(2, 2)
+texture = ExtResource("5_tib6h")
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+region_filter_clip_enabled = true
 
 [node name="ArrowLeftMarker" type="Marker2D" parent="."]
 

@@ -1,13 +1,8 @@
 ~ cuscuz_descansar
-% Mae: Agora bora botar esse cuscuz pra\n[wait=0.5][wave amp=25 freq=5]DESCANSAR[/wave]
-% Mae: Hmmm, [wait=0.5][wave amp=25 freq=5]cuscuz[/wave]...
+% elza: Agora bora botar esse cuscuz pra\n[wait=0.5][wave amp=25 freq=5]DESCANSAR[/wave]
+% elza: Hmmm, [wait=0.5][wave amp=25 freq=5]cuscuz[/wave]...
 => END
 
 ~ cuscuz_pronto
-Mae: [shake rate=20 level=10]MEU POVO[/shake], o cuscuz tá pronto 🗣️
-=> END
-
-~ fim_de_cena
-Mae: Vem, filho. Mamãe precisa trabalhar.
-Mae: Vou te deixar na Luisa mas volto logo, tá?
+elza: [shake rate=20 level=10]MEU POVO[/shake], o cuscuz tá pronto
 => END
