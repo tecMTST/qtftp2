@@ -70,7 +70,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Continuar"
 
-[node name="retornar à tela inicial" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="retornar para tela inicial" type="Button" parent="MarginContainer/VBoxContainer"]
 z_index = 16
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
@@ -84,5 +84,5 @@ text = "Sair do jogo"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/controle_audio" to="MarginContainer/VBoxContainer/controle_audio" method="_on_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/retornar à tela inicial" to="." method="_on_retornar_à_tela_inicial_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/retornar para tela inicial" to="." method="_on_retornar_para_tela_inicial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]

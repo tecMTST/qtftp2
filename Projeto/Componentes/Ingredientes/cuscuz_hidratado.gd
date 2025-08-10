@@ -7,13 +7,13 @@ var esta_cozinhando = false
 @onready var visualizador_temporal: VisualizadorTemporal = $VisualizadorTemporal
 
 func _ready() -> void:
-	var ingredientes = Globais.Ingredientes.filter(
-		func(item : Ingrediente): return item.Id == 5 and item.Variacao == 2)
+	var ingredientes = Globais.ingredientes.filter(
+		func(item : Ingrediente): return item.id == 5 and item.variacao == 2)
 	if len(ingredientes) > 0:
-		Ingrediente = ingredientes[0]
-		Nome = Ingrediente.Nome
-		Descricao = Ingrediente.Descricao
-		timer.start(Ingrediente.Acoes[0].Tempo)
+		ingrediente = ingredientes[0]
+		nome = ingrediente.nome
+		descricao = ingrediente.descricao
+		timer.start(ingrediente.acoes[0].tempo)
 
 func _on_timer_timeout():
 	if(!esta_pronto_para_cozinhar):
@@ -22,12 +22,12 @@ func _on_timer_timeout():
 		visualizador_temporal.cor = Color("47dc00")
 	elif(esta_cozinhando):
 		transformar(load("uid://jvc15grkq4fr").instantiate())
-		
+
 func acao_fogao() -> bool:
 	if(!esta_pronto_para_cozinhar): return false
 	if(!esta_cozinhando):
 		timer.paused = false
-		timer.start(Ingrediente.Acoes[0].Tempo)
+		timer.start(ingrediente.acoes[0].tempo)
 		esta_cozinhando = true
 	else:
 		timer.paused = !timer.paused

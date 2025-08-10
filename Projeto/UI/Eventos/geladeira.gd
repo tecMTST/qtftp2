@@ -1,38 +1,43 @@
 extends Control
 
-signal IngredienteEscolhido(caminho)
+signal ingrediente_escolhido(caminho)
 
 @export var qnt_na_prateleira = 3
 @export var caminho_ingredientes = ""
+
+var conteudo_json
+var acao_executada = false
 
 @onready var prateleira_1 = $VBoxContainer/Prateleira
 @onready var prateleira_2 = $VBoxContainer/Prateleira2
 @onready var prateleira_3 = $VBoxContainer/Prateleira3
 @onready var instancia_ingrediente = preload("res://Componentes/Ingredientes/ingrediente.tscn")
 
-var conteudo_json
-var acaoExecutada = false
 
 func _ready() -> void:
-	acaoExecutada = false
-	preencher_Geladeira()
+	acao_executada = false
+	preencher_geladeira()
 
-func preencher_Geladeira():
-	if not ControleDeFase.NivelAtual or not ControleDeFase.ReceitaSelecionada:
+
+func preencher_geladeira():
+	if not ControleDeFase.nivel_atual or not ControleDeFase.receita_selecionada:
 		close()
-		
-	var i : int = 0	
-	for ingredienteReceita in ControleDeFase.ReceitaSelecionada.Ingredientes:
-		var ingrediente = Globais.GetIngrediente(ingredienteReceita.IdIngrediente, ingredienteReceita.VariacaoIngrediente)		
-		var sprite_ingrediente = load(ingrediente.CaminhoSprite)
-	
-		var igredienteGeladeira = load("res://Componentes/Ingredientes/ingrediente.tscn").instantiate() as ObjIngrediente		
-		igredienteGeladeira.Nome = ingrediente.Nome
-		igredienteGeladeira.Descricao = ingrediente.Descricao
-		igredienteGeladeira.Sprite = sprite_ingrediente
-		igredienteGeladeira.CaminhoObjeto = ingrediente.Cena	
-		igredienteGeladeira.botao_apertado.connect(ingrediente_escolhido)
-		
+
+	var i : int = 0
+	for ingrediente_receita in ControleDeFase.receita_selecionada.ingredientes:
+		var ingrediente = Globais.get_ingrediente(
+			ingrediente_receita.id_ingrediente,
+			ingrediente_receita.variacao_ingrediente
+		)
+		var sprite_ingrediente = load(ingrediente.caminho_sprite)
+
+		var igrediente_geladeira = instancia_ingrediente.instantiate() as ObjIngrediente
+		igrediente_geladeira.nome = ingrediente.nome
+		igrediente_geladeira.descricao = ingrediente.descricao
+		igrediente_geladeira.sprite = sprite_ingrediente
+		igrediente_geladeira.caminho_objeto = ingrediente.cena
+		igrediente_geladeira.botao_apertado.connect(escolhe_ingrediente)
+
 		var container: Node
 
 		if i < qnt_na_prateleira:
@@ -44,24 +49,26 @@ func preencher_Geladeira():
 		else:
 			break  # Se tiver mais itens do que o total possível, para aqui
 
-		container.add_child(igredienteGeladeira)
-		
+		container.add_child(igrediente_geladeira)
 		i += 1
-		
+
+
 func close() -> void:
 	GuiTransitions.hide("Geladeira")
 	await GuiTransitions.hide_completed
 	queue_free()
 
-func ingrediente_escolhido(caminho: String) -> void:
-	IngredienteEscolhido.emit(caminho)
+
+func escolhe_ingrediente(caminho: String) -> void:
+	ingrediente_escolhido.emit(caminho)
 	var caminho_objeto = load(caminho)
 	var objeto = caminho_objeto.instantiate()
-	var player = get_tree().get_nodes_in_group("player")	
-	if player and not acaoExecutada:
-		acaoExecutada = true
+	var player = get_tree().get_nodes_in_group("player")
+	if player and not acao_executada:
+		acao_executada = true
 		player[0].agarrar_de_menu(objeto)
 		close()
+
 
 func _on_button_pressed() -> void:
 	close()

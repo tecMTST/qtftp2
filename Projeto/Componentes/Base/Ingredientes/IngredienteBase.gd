@@ -2,9 +2,9 @@ class_name IngredienteBase extends StaticBody2D
 
 signal ao_transformar(novo_objeto: IngredienteBase)
 
-var Ingrediente : Ingrediente
-var Nome : String = ""
-var Descricao : String = ""
+var ingrediente : Ingrediente
+var nome : String = ""
+var descricao : String = ""
 
 func acao_pia():
 	pass
@@ -33,4 +33,3 @@ func entregar() -> void:
 		return
 	remove_from_group('prato_pronto')
 	add_to_group('prato_entregue')
-  

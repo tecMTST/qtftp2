@@ -5,19 +5,22 @@ func _ready() -> void:
 	%ProgressoEvento.failed.connect(_on_failed)
 	%ProgressoEvento.completed.connect(_on_completed)
 	%ProgressoEvento.start()
-	
+
+
 func close() -> void:
 	GuiTransitions.hide("Modal")
 	await GuiTransitions.hide_completed
 	get_tree().paused = false
 	queue_free()
 
+
 func _on_close_button_button_down() -> void:
-	Eventos.EventoFalhou.emit()
+	Eventos.evento_falhou.emit()
 	close()
 
+
 func _on_failed():
-	Eventos.EventoFalhou.emit()
+	Eventos.evento_falhou.emit()
 	var tween = create_tween()
 	tween.tween_property(self,"modulate", Color.INDIAN_RED, 2)
 	tween.set_trans(Tween.TRANS_ELASTIC)
@@ -25,8 +28,9 @@ func _on_failed():
 	await tween.finished
 	close()
 
+
 func _on_completed():
-	Eventos.EventoRealizado.emit()
+	Eventos.evento_realizado.emit()
 	var tween = create_tween()
 	tween.tween_property(self,"modulate", Color.LIME_GREEN, 2)
 	tween.set_trans(Tween.TRANS_ELASTIC)

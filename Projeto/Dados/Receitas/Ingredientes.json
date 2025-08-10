@@ -1,255 +1,255 @@
 [
 	{
-		"Id" : 1,
-		"Variacao": 1,
-		"Nome" : "Arroz",
-		"Descricao" : "Arroz branco",
-		"Preco" : 1,
-		"Unidade" : "Gramas",
-		"Cena" : "",
-		"CaminhoSprite" : "",
-		"Acoes" : [
+		"id" : 1,
+		"variacao": 1,
+		"nome" : "Arroz",
+		"descricao" : "Arroz branco",
+		"preco" : 1,
+		"unidade" : "Gramas",
+		"cena" : "",
+		"caminho_sprite" : "",
+		"acoes" : [
 			{
-				"Alvo" : "fogao",
-				"Acao" : "cozer",
-				"Tempo" : 10,
-				"VariacaoResultado" : 2,
-				"Evento": ""
+				"alvo" : "fogao",
+				"acao" : "cozer",
+				"tempo" : 10,
+				"variacao_resultado" : 2,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 1,
-		"Variacao": 2,
-		"Nome" : "Arroz Branco Cozido",
-		"Descricao" : "Arroz branco cozido",
-		"Preco" : 1,
-		"Unidade" : "Gramas",
-		"Cena" : "",
-		"CaminhoSprite" : "",
-		"Acoes" : [
+		"id" : 1,
+		"variacao": 2,
+		"nome" : "Arroz Branco Cozido",
+		"descricao" : "Arroz branco cozido",
+		"preco" : 1,
+		"unidade" : "Gramas",
+		"cena" : "",
+		"caminho_sprite" : "",
+		"acoes" : [
 			{
-				"Alvo" : "bancada",
-				"Acao" : "montar",
-				"Tempo" : 1,
-				"VariacaoResultado" : 0,
-				"Evento": ""
+				"alvo" : "bancada",
+				"acao" : "montar",
+				"tempo" : 1,
+				"variacao_resultado" : 0,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 2,
-		"Variacao": 1,
-		"Nome" : "Feijão Carioca",
-		"Descricao" : "Feijão carioca.",
-		"Preco" : 1,
-		"Unidade" : "Gramas",
-		"Cena" : "",
-		"CaminhoSprite" : "",
-		"Acoes" : [
+		"id" : 2,
+		"variacao": 1,
+		"nome" : "Feijão Carioca",
+		"descricao" : "Feijão carioca.",
+		"preco" : 1,
+		"unidade" : "Gramas",
+		"cena" : "",
+		"caminho_sprite" : "",
+		"acoes" : [
 			{
-				"Alvo" : "fogao",
-				"Acao" : "cozer",
-				"Tempo" : 20,
-				"VariacaoResultado" : 2,
-				"Evento": ""
+				"alvo" : "fogao",
+				"acao" : "cozer",
+				"tempo" : 20,
+				"variacao_resultado" : 2,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 2,
-		"Variacao": 2,
-		"Nome" : "Feijão Carioca Cozido",
-		"Descricao" : "Feijão carioca cozido.",
-		"Preco" : 1,
-		"Unidade" : "Gramas",
-		"Cena" : "",
-		"CaminhoSprite" : "",
-		"Acoes" : [
+		"id" : 2,
+		"variacao": 2,
+		"nome" : "Feijão Carioca Cozido",
+		"descricao" : "Feijão carioca cozido.",
+		"preco" : 1,
+		"unidade" : "Gramas",
+		"cena" : "",
+		"caminho_sprite" : "",
+		"acoes" : [
 			{
-				"Alvo" : "bancada",
-				"Acao" : "misturar",
-				"Tempo" : 1,
-				"VariacaoResultado" : 0,
-				"Evento": ""
+				"alvo" : "bancada",
+				"acao" : "misturar",
+				"tempo" : 1,
+				"variacao_resultado" : 0,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 3,
-		"Variacao": 1,
-		"Nome" : "Farinha de mandioca",
-		"Descricao" : "Farinha de mandioca",
-		"Preco" : 1,
-		"Unidade" : "Gramas",
-		"Cena" : "",
-		"CaminhoSprite" : "",
-		"Acoes" : [
+		"id" : 3,
+		"variacao": 1,
+		"nome" : "Farinha de mandioca",
+		"descricao" : "Farinha de mandioca",
+		"preco" : 1,
+		"unidade" : "Gramas",
+		"cena" : "",
+		"caminho_sprite" : "",
+		"acoes" : [
 			{
-				"Alvo" : "bancada",
-				"Acao" : "misturar",
-				"Tempo" : 1,
-				"VariacaoResultado" : 0,
-				"Evento": ""
+				"alvo" : "bancada",
+				"acao" : "misturar",
+				"tempo" : 1,
+				"variacao_resultado" : 0,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 4,
-		"Variacao": 1,
-		"Nome" : "Ovo branco",
-		"Descricao" : "Ovo branco",
-		"Preco" : 2,
-		"Unidade" : "Unidade",
-		"Cena" : "",
-		"CaminhoSprite" : "",
-		"Acoes" : [
+		"id" : 4,
+		"variacao": 1,
+		"nome" : "Ovo branco",
+		"descricao" : "Ovo branco",
+		"preco" : 2,
+		"unidade" : "unidade",
+		"cena" : "",
+		"caminho_sprite" : "",
+		"acoes" : [
 			{
-				"Alvo" : "fogao",
-				"Acao" : "fritar",
-				"Tempo" : 3,
-				"VariacaoResultado" : 2,
-				"Evento": ""
+				"alvo" : "fogao",
+				"acao" : "fritar",
+				"tempo" : 3,
+				"variacao_resultado" : 2,
+				"evento": ""
 			},
 			{
-				"Alvo" : "fogao",
-				"Acao" : "cozer",
-				"Tempo" : 6,
-				"VariacaoResultado" : 3,
-				"Evento": ""
+				"alvo" : "fogao",
+				"acao" : "cozer",
+				"tempo" : 6,
+				"variacao_resultado" : 3,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 4,
-		"Variacao": 2,
-		"Nome" : "Ovo branco Frito",
-		"Descricao" : "Ovo branco frito",
-		"Preco" : 0,
-		"Unidade" : "Unidade",
-		"Cena" : "",
-		"CaminhoSprite" : "",
-		"Acoes" : [
+		"id" : 4,
+		"variacao": 2,
+		"nome" : "Ovo branco Frito",
+		"descricao" : "Ovo branco frito",
+		"preco" : 0,
+		"unidade" : "unidade",
+		"cena" : "",
+		"caminho_sprite" : "",
+		"acoes" : [
 			{
-				"Alvo" : "bancada",
-				"Acao" : "misturar",
-				"Tempo" : 1,
-				"VariacaoResultado" : 0,
-				"Evento": ""
+				"alvo" : "bancada",
+				"acao" : "misturar",
+				"tempo" : 1,
+				"variacao_resultado" : 0,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 4,
-		"Variacao": 3,
-		"Nome" : "Ovo branco Cozido",
-		"Descricao" : "Ovo branco cozido",
-		"Preco" : 0,
-		"Unidade" : "Unidade",
-		"Cena" : "",
-		"CaminhoSprite" : "",
-		"Acoes" : [
+		"id" : 4,
+		"variacao": 3,
+		"nome" : "Ovo branco Cozido",
+		"descricao" : "Ovo branco cozido",
+		"preco" : 0,
+		"unidade" : "unidade",
+		"cena" : "",
+		"caminho_sprite" : "",
+		"acoes" : [
 			{
-				"Alvo" : "bancada",
-				"Acao" : "misturar",
-				"Tempo" : 1,
-				"VariacaoResultado" : 0,
-				"Evento": ""
+				"alvo" : "bancada",
+				"acao" : "misturar",
+				"tempo" : 1,
+				"variacao_resultado" : 0,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 5,
-		"Variacao": 1,
-		"Nome" : "Cuscuz Cru",
-		"Descricao" : "Cuscuz Cru",
-		"Preco" : 1,
-		"Unidade" : "Gramas",
-		"Cena" : "res://Componentes/Ingredientes/CuscuzCru.tscn",
-		"CaminhoSprite" : "res://Recursos/Graficos/Ingredientes/vitamilho.png",
-		"Acoes" : [
+		"id" : 5,
+		"variacao": 1,
+		"nome" : "Cuscuz Cru",
+		"descricao" : "Cuscuz Cru",
+		"preco" : 1,
+		"unidade" : "Gramas",
+		"cena" : "res://Componentes/Ingredientes/CuscuzCru.tscn",
+		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/vitamilho.png",
+		"acoes" : [
 			{
-				"Alvo" : "pia",
-				"Acao" : "hidratar",
-				"Tempo" : 10,
-				"VariacaoResultado" : 2,
-				"Evento": ""
+				"alvo" : "pia",
+				"acao" : "hidratar",
+				"tempo" : 10,
+				"variacao_resultado" : 2,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 5,
-		"Variacao": 2,
-		"Nome" : "Cuscuz Hidratado",
-		"Descricao" : "Cuscuz Hidratado",
-		"Preco" : 1,
-		"Unidade" : "Gramas",
-		"Cena" : "res://Componentes/Ingredientes/CuscuzHidratado.tscn",
-		"CaminhoSprite" : "res://Recursos/Graficos/Ingredientes/CuscuzHidratado.svg",
-		"Acoes" : [
+		"id" : 5,
+		"variacao": 2,
+		"nome" : "Cuscuz Hidratado",
+		"descricao" : "Cuscuz Hidratado",
+		"preco" : 1,
+		"unidade" : "Gramas",
+		"cena" : "res://Componentes/Ingredientes/CuscuzHidratado.tscn",
+		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/CuscuzHidratado.svg",
+		"acoes" : [
 			{
-				"Alvo" : "fogao",
-				"Acao" : "cozer",
-				"Tempo" : 10,
-				"VariacaoResultado" : 3,
-				"Evento": ""
+				"alvo" : "fogao",
+				"acao" : "cozer",
+				"tempo" : 10,
+				"variacao_resultado" : 3,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 5,
-		"Variacao": 3,
-		"Nome" : "Cuscuz cozido",
-		"Descricao" : "Cuscuz cozido a vapor",
-		"Preco" : 1,
-		"Unidade" : "Gramas",
-		"Cena" : "res://Componentes/Ingredientes/CuscuzCozido.tscn",
-		"CaminhoSprite" : "res://Recursos/Graficos/Ingredientes/Cuscuz_coziddo.png",
-		"Acoes" : [
+		"id" : 5,
+		"variacao": 3,
+		"nome" : "Cuscuz cozido",
+		"descricao" : "Cuscuz cozido a vapor",
+		"preco" : 1,
+		"unidade" : "Gramas",
+		"cena" : "res://Componentes/Ingredientes/CuscuzCozido.tscn",
+		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/Cuscuz_coziddo.png",
+		"acoes" : [
 			{
-				"Alvo" : "bancada",
-				"Acao" : "misturar",
-				"Tempo" : 1,
-				"VariacaoResultado" : 0,
-				"Evento": "desenformar-cuscuz"
+				"alvo" : "bancada",
+				"acao" : "misturar",
+				"tempo" : 1,
+				"variacao_resultado" : 0,
+				"evento": "desenformar-cuscuz"
 			}
 		]
 	},
 	{
-		"Id" : 6,
-		"Variacao": 1,
-		"Nome" : "Pó de Café",
-		"Descricao" : "Pó de Café",
-		"Preco" : 1,
-		"Unidade" : "Gramas",
-		"Cena" : "",
-		"CaminhoSprite" : "res://Recursos/Graficos/Ingredientes/PoCafe.png",
-		"Acoes" : [
+		"id" : 6,
+		"variacao": 1,
+		"nome" : "Pó de Café",
+		"descricao" : "Pó de Café",
+		"preco" : 1,
+		"unidade" : "Gramas",
+		"cena" : "",
+		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/PoCafe.png",
+		"acoes" : [
 			{
-				"Alvo" : "Fogão",
-				"Acao" : "cozer",
-				"Tempo" : 5,
-				"VariacaoResultado" : 2,
-				"Evento": ""
+				"alvo" : "Fogão",
+				"acao" : "cozer",
+				"tempo" : 5,
+				"variacao_resultado" : 2,
+				"evento": ""
 			}
 		]
 	},
 	{
-		"Id" : 6,
-		"Variacao": 2,
-		"Nome" : "Café Coado",
-		"Descricao" : "Café Coado",
-		"Preco" : 1,
-		"Unidade" : "Gramas",
-		"Cena" : "",
-		"CaminhoSprite" : "",
-		"Acoes" : [
+		"id" : 6,
+		"variacao": 2,
+		"nome" : "Café Coado",
+		"descricao" : "Café Coado",
+		"preco" : 1,
+		"unidade" : "Gramas",
+		"cena" : "",
+		"caminho_sprite" : "",
+		"acoes" : [
 			{
-				"Alvo" : "Bancada",
-				"Acao" : "misturar",
-				"Tempo" : 1,
-				"VariacaoResultado" : 0,
-				"Evento": ""
+				"alvo" : "Bancada",
+				"acao" : "misturar",
+				"tempo" : 1,
+				"variacao_resultado" : 0,
+				"evento": ""
 			}
 		]
 	},

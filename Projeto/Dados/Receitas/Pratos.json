@@ -1,31 +1,31 @@
 [
 	{
-		"Id" : 1,
-		"Nome" : "Arroz, Feijao e Farinha",
-		"Imagem" : "",
-		"ValorNutricional" : 5,
-		"ValorSabor" : 2
+		"id" : 1,
+		"nome" : "Arroz, Feijao e Farinha",
+		"imagem" : "",
+		"valor_nutricional" : 5,
+		"valor_sabor" : 2
 	},
 	{
-		"Id" : 2,
-		"Nome": "Arroz, Feijao e Ovo Frito",
-		"Imagem" : "",
-		"ValorNutricional" : 10,
-		"ValorSabor" : 4
+		"id" : 2,
+		"nome": "Arroz, Feijao e Ovo Frito",
+		"imagem" : "",
+		"valor_nutricional" : 10,
+		"valor_sabor" : 4
 	},
 	{
-		"Id" : 3,
-		"Nome": "Cuscuz com manteiga",
-		"Imagem" : "",
-		"ValorNutricional" : 10,
-		"ValorSabor" : 5
+		"id" : 3,
+		"nome": "Cuscuz com manteiga",
+		"imagem" : "",
+		"valor_nutricional" : 10,
+		"valor_sabor" : 5
 	},
 	{
-		"Id" : 4,
-		"Nome": "Café coado",
-		"Imagem" : "",
-		"ValorNutricional" : 2,
-		"ValorSabor" : 4
+		"id" : 4,
+		"nome": "Café coado",
+		"imagem" : "",
+		"valor_nutricional" : 2,
+		"valor_sabor" : 4
 	}
 	
 ]

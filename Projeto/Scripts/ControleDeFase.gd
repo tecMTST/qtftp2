@@ -1,63 +1,22 @@
 extends Node
 
-signal PratoEntregue(prato)
+signal prato_entregue(prato)
+signal nivel_iniciado(nivel, estado_nivel)
+signal nivel_concluido(nivel, estado_nivel)
 
-signal NivelIniciado(nivel, estado_nivel)
-signal NivelConcluido(nivel, estado_nivel)
+@export var nivel_atual : Nivel
+@export var jogador : Player
+@export var receitas_disponiveis : Array[Receita] = []
+@export var receita_selecionada : Receita
+@export var ingredientes_disponiveis : Array[Ingrediente] = []
+@export var passo_atual : PassoReceita
 
-@export var NivelAtual : Nivel
-@export var Jogador : Player
-@export var ReceitasDisponiveis : Array[Receita] = []
-@export var ReceitaSelecionada : Receita
-@export var IngredientesDisponiveis : Array[Ingrediente] = []
-@export var PassoAtual : PassoReceita
-
+var tempo_jogo: Timer
+var estado_nivel: EstadoDoNivel
 var _tempo_checagem: Timer
-var __indexReceitaAtual : int = 0
-var __indexPassoAtual : int = 0
+var _index_receita_atual : int = 0
+var _index_passo_atual : int = 0
 
-var TempoJogo: Timer
-var EstadoNivel: EstadoDoNivel
-
-func CarregarNivel():	
-	var idNivel = EstadoDeJogo.NivelAtual
-	if idNivel == 0:
-		EstadoDeJogo.NivelAtual = 1
-		idNivel = 1	
-	var niveis = Globais.Niveis.filter(func(item : Nivel) : return item.Id == idNivel)
-	if len(niveis) > 0:
-		NivelAtual = niveis[0]
-		ReceitasDisponiveis = Globais.Receitas.filter(
-			func(item : Receita) : return NivelAtual.IdReceitas.any(
-				func(id : int): return id == item.Id))	
-		__indexReceitaAtual = 0
-		SelecionarReceita(__indexReceitaAtual)
-	
-	Jogador = NodeExtension.find_first_child(get_tree().current_scene,
-		func(child): return child is Player)
-
-func SelecionarReceita(indexReceita) -> bool:
-	if not NivelAtual:
-		return false
-	if indexReceita > len(ReceitasDisponiveis) - 1 or indexReceita < 0:
-		return false
-	ReceitaSelecionada = ReceitasDisponiveis[indexReceita]
-	IngredientesDisponiveis = Globais.Ingredientes.filter(
-		func(item : Ingrediente): return ReceitaSelecionada.Ingredientes.any(
-			func(o) : return item.Id == o.IdIngrediente))
-	__indexPassoAtual = 0
-	PassoAtual = ReceitaSelecionada.Passos[__indexPassoAtual]
-	return true
-
-func ProximoPasso() -> bool:
-	if not ReceitaSelecionada:
-		return false
-	__indexPassoAtual += 1
-	if __indexPassoAtual > len(ReceitaSelecionada.Passos) - 1:
-		__indexReceitaAtual += 1
-		return SelecionarReceita(__indexReceitaAtual)
-	PassoAtual = ReceitaSelecionada.Passos[__indexPassoAtual]
-	return true
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -66,66 +25,118 @@ func _ready() -> void:
 	_tempo_checagem.autostart = false
 	_tempo_checagem.one_shot = false
 	_tempo_checagem.connect("timeout", _verificar_condicoes)
-	TempoJogo = Timer.new()
-	TempoJogo.wait_time = 1
-	TempoJogo.autostart = false
-	TempoJogo.one_shot = true
-	TempoJogo.connect("timeout", _verificar_condicoes)
-	add_child(TempoJogo)
+	tempo_jogo = Timer.new()
+	tempo_jogo.wait_time = 1
+	tempo_jogo.autostart = false
+	tempo_jogo.one_shot = true
+	tempo_jogo.connect("timeout", _verificar_condicoes)
+	add_child(tempo_jogo)
 	add_child(_tempo_checagem)
 
-func IniciarNivel():
+
+func carregar_nivel():
+	var id_nivel = EstadoDeJogo.nivel_atual
+	if id_nivel == 0:
+		EstadoDeJogo.nivel_atual = 1
+		id_nivel = 1
+	var niveis = Globais.niveis.filter(func(item : Nivel) : return item.id == id_nivel)
+	if len(niveis) > 0:
+		nivel_atual = niveis[0]
+		receitas_disponiveis = Globais.receitas.filter(
+			func(item : Receita) : return nivel_atual.id_receitas.any(
+				func(id : int): return id == item.id))
+		_index_receita_atual = 0
+		selecionar_receita(_index_receita_atual)
+
+	jogador = NodeExtension.find_first_child(get_tree().current_scene,
+		func(child): return child is Player)
+
+
+func selecionar_receita(indice_receita) -> bool:
+	if not nivel_atual:
+		return false
+	if indice_receita > len(receitas_disponiveis) - 1 or indice_receita < 0:
+		return false
+	receita_selecionada = receitas_disponiveis[indice_receita]
+	ingredientes_disponiveis = Globais.ingredientes.filter(
+		func(item : Ingrediente): return receita_selecionada.ingredientes.any(
+			func(o) : return item.id == o.id_ingrediente))
+	_index_passo_atual = 0
+	passo_atual = receita_selecionada.passos[_index_passo_atual]
+	return true
+
+
+func proximo_passo() -> bool:
+	if not receita_selecionada:
+		return false
+	_index_passo_atual += 1
+	if _index_passo_atual > len(receita_selecionada.passos) - 1:
+		_index_receita_atual += 1
+		return selecionar_receita(_index_receita_atual)
+	passo_atual = receita_selecionada.passos[_index_passo_atual]
+	return true
+
+
+
+func iniciar_nivel():
 	get_tree().paused = false
-	assert(NivelAtual is Nivel, "NivelAtual precisa ser carregado")
+	assert(nivel_atual is Nivel, "nivel_atual precisa ser carregado")
 	_reset_timers() # Verifica e para os timers caso em andamento
-	TempoJogo.wait_time = NivelAtual.Tempo
-	EstadoNivel = EstadoDoNivel.new(NivelAtual)
-	TempoJogo.start()
+	tempo_jogo.wait_time = nivel_atual.tempo
+	estado_nivel = EstadoDoNivel.new(nivel_atual)
+	tempo_jogo.start()
 	_tempo_checagem.start()
-	NivelIniciado.emit(NivelAtual, EstadoNivel)
+	nivel_iniciado.emit(nivel_atual, estado_nivel)
 	print_debug("Nível iniciado")
-	
+
+
 func _atualizar_bagunca() -> void:
-	EstadoNivel.Bagunca = get_tree().get_node_count_in_group('bagunca')
+	estado_nivel.bagunca = get_tree().get_node_count_in_group('bagunca')
+
 
 func _verificar_condicoes():
-	EstadoNivel.TempoRestante = TempoJogo.time_left
+	estado_nivel.tempo_restante = tempo_jogo.time_left
 	_atualizar_bagunca()
-	if EstadoNivel.baguncado():
+	if estado_nivel.baguncado():
 		_encerrar_nivel()
 		print_debug("Nível falhou")
-	elif TempoJogo.is_stopped():
+	elif tempo_jogo.is_stopped():
 		_encerrar_nivel()
 		print_debug("Nível falhou")
-	elif EstadoNivel.ChoroLimite():
+	elif estado_nivel.choro_limite():
 		_encerrar_nivel()
 		print_debug("Nível falhou")
-	elif EstadoNivel.completo():
+	elif estado_nivel.completo():
 		_encerrar_nivel()
 		print_debug("Nível concluído")
 
-func entregarPrato(prato: Ingrediente) -> void:
-	EstadoNivel.entregarPrato(prato)
-	PratoEntregue.emit(prato)
+
+func entregar_prato(prato: Ingrediente) -> void:
+	estado_nivel.entregar_prato(prato)
+	prato_entregue.emit(prato)
+
 
 func _encerrar_nivel():
-	NivelConcluido.emit(NivelAtual, EstadoNivel)
+	nivel_concluido.emit(nivel_atual, estado_nivel)
 	_reset_timers()
 	get_tree().paused = true
 	ControleDeAudio.para_musica()
-	var efeito = "vitoria" if EstadoNivel.completo() else "derrota"
+	var efeito = "vitoria" if estado_nivel.completo() else "derrota"
 	ControleDeAudio.toca_efeito(efeito)
 
+
 func _reset_timers() -> void:
-	if not TempoJogo.is_stopped():
-		TempoJogo.stop()
+	if not tempo_jogo.is_stopped():
+		tempo_jogo.stop()
 	if not _tempo_checagem.is_stopped():
 		_tempo_checagem.stop()
 
+
 func congelar_tempo() -> void:
-	Jogador.process_mode = Node.PROCESS_MODE_DISABLED
-	TempoJogo.paused = true
+	jogador.process_mode = Node.PROCESS_MODE_DISABLED
+	tempo_jogo.paused = true
+
 
 func descongelar_tempo() -> void:
-	Jogador.process_mode = Node.PROCESS_MODE_INHERIT
-	TempoJogo.paused = false
+	jogador.process_mode = Node.PROCESS_MODE_INHERIT
+	tempo_jogo.paused = false
