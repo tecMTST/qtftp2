@@ -232,4 +232,4 @@ blackboard_plan = SubResource("BlackboardPlan_tjjme")
 [connection signal="acao_ativada" from="Personagens/Player" to="." method="_on_player_acao_ativada"]
 [connection signal="acao_desativada" from="Personagens/Player" to="." method="_on_player_acao_desativada"]
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
-[connection signal="Continue" from="CanvasLayer/pausar" to="." method="_on_pausar_continue"]
+[connection signal="continuar" from="CanvasLayer/pausar" to="." method="_on_pausar_continuar"]

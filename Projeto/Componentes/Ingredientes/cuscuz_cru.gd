@@ -1,13 +1,17 @@
 class_name CuscuzCru extends IngredienteBase
 
 func _ready() -> void:
-	var ingredientes = Globais.Ingredientes.filter(
-		func(item : Ingrediente): return item.Id == 5 and item.Variacao == 1)
+	var ingredientes = Globais.ingredientes.filter(
+		func(item : Ingrediente): return item.id == 5 and item.variacao == 1)
 	if len(ingredientes) > 0:
-		Ingrediente = ingredientes[0]
-		Nome = Ingrediente.Nome
-		Descricao = Ingrediente.Descricao
+		ingrediente = ingredientes[0]
+		nome = ingrediente.nome
+		descricao = ingrediente.descricao
 
 func acao_pia():
 	transformar(load("res://Componentes/Ingredientes/CuscuzHidratado.tscn").instantiate())
-	ControleDeFase.Jogador.iniciar_dialogo(load("res://Dialogo/Cuscuz.dialogue"), "cuscuz_descansar", 3.0)
+	ControleDeFase.jogador.iniciar_dialogo(
+		load("res://Dialogo/Cuscuz.dialogue"),
+		"cuscuz_descansar",
+		3.0
+	)

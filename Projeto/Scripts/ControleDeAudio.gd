@@ -130,14 +130,11 @@ func toca_efeito_ciclo(nome_do_efeito: String, nome_ciclo: String) -> void:
 
 
 func para_efeito_ciclo(nome_ciclo: String) -> void:
-	print_debug("tentando parar ", nome_ciclo)
 	if not tocadores_em_ciclo.has(nome_ciclo): return
-	print_debug("ainda no ", nome_ciclo)
 	var tocador = toca_efeitos[ tocadores_em_ciclo[nome_ciclo] ]
 	tocador.stream.loop = false
 	tocador.stop()
 	tocadores_em_ciclo.erase(nome_ciclo)
-	print_debug("em tese já parou o ", nome_ciclo)
 
 
 func _prepara_musica_ciclo(stream: AudioStream) -> void:

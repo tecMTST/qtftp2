@@ -2,9 +2,9 @@ class_name Tv extends BaseInteragivel
 
 
 func _ready() -> void:
-	Nome = "Tv"	
+	nome = "Tv"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

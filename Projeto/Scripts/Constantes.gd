@@ -1,9 +1,9 @@
 extends Node
 
 const LOCAL_CASA = "casa"
-const LOCAL_CASA_PATH = "res://Cenas/Casa.tscn" 
+const LOCAL_CASA_PATH = "res://Cenas/Casa.tscn"
 const LOCAL_COZINHASOLIDARIA = "casa"
-const LOCAL_COZINHASOLIDARIA_PATH = "res://Cenas/CozinhaSolidaria.tscn" 
+const LOCAL_COZINHASOLIDARIA_PATH = "res://Cenas/CozinhaSolidaria.tscn"
 
 const ALVO_FOGAO = "fogao"
 const ALVO_BANCADA = "bancada"

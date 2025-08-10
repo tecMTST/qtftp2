@@ -1,5 +1,5 @@
-extends Node
 class_name BotaoPendulo
+extends Node
 
 @export_range(0.0, 5., 0.1, "suffix:s", "or_greater") var miss_time: float = 0.5
 @export var pendulo : MovimentoPendulo
@@ -15,7 +15,7 @@ func _ready() -> void:
 	add_child(miss_timer)
 
 func press() -> void:
-	if(pendulo._estaNoAlcanceCerto()):
+	if(pendulo._esta_no_alcance_certo()):
 		miss_timer.start()
 		progress.do_act()
 	else:

@@ -5,7 +5,7 @@ var audio_bus_id
 
 func _ready() -> void:
 	audio_bus_id = AudioServer.get_bus_index(audio_bus_name)
-	
+
 #modificador do volume principal do jogo (Master)
 func _on_value_changed(value: float) -> void:
 	var db = linear_to_db(value)
