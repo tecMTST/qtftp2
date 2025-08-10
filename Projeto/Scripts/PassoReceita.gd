@@ -1,7 +1,7 @@
 class_name PassoReceita extends Node
 
-var Ordem : int
-var Descricao : String
-var Alvo : String
-var Acao : String
-var Ingredientes : Array[IngredienteReceita]
+var ordem : int
+var descricao : String
+var alvo : String
+var acao : String
+var ingredientes : Array[IngredienteReceita]

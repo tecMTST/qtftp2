@@ -10,16 +10,15 @@ var choro_ativo: bool = false
 
 
 func _ready() -> void:
-	Nome = "Berço"
-	if not ControleDeFase.NivelAtual or not ControleDeFase.NivelAtual.Choro:
+	nome = "Berço"
+	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.choro:
 		return
-	#TODO Configurar Audio do choro
 	resetar_timer()
 	iniciado = true
 
 
 func _process(delta: float) -> void:
-	if not ControleDeFase.NivelAtual or not ControleDeFase.NivelAtual.Choro:
+	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.choro:
 		return
 	if not iniciado:
 		iniciado = true
@@ -31,16 +30,19 @@ func _process(delta: float) -> void:
 	if timer_choro <= 0:
 		iniciar_choro()
 
+
 func iniciar_mexer():
 	print_debug('mechendo')
-	
+
+
 func animacao_choro():
 	print_debug('choro')
+
 
 func iniciar_choro():
 	#TODO animacao iniciar
 	choro_ativo = true
-	timer.start(ControleDeFase.NivelAtual.TempoLimiteChoro)
+	timer.start(ControleDeFase.nivel_atual.tempo_limite_choro)
 	ControleDeAudio.toca_efeito_ciclo("bebe_chorando", "bebe_chorando")
 
 
@@ -54,17 +56,17 @@ func finalizar_choro():
 
 
 func resetar_timer():
-	if ControleDeFase.NivelAtual:
+	if ControleDeFase.nivel_atual:
 		timer_choro = (
-			ControleDeFase.NivelAtual.IntervaloChoro
+			ControleDeFase.nivel_atual.intervalo_choro
 			+ randf_range(
-				-ControleDeFase.NivelAtual.VariacaoChoro, ControleDeFase.NivelAtual.VariacaoChoro
+				-ControleDeFase.nivel_atual.variacao_choro, ControleDeFase.nivel_atual.variacao_choro
 			)
 		)
 
 
 func _on_timer_timeout() -> void:
-	ControleDeFase.EstadoNivel.LimiteChoroAtingido = true
+	ControleDeFase.estado_nivel.limite_choro_atingido = true
 
 
 func _on_componente_interagivel_interagir(_jogador: Player) -> void:

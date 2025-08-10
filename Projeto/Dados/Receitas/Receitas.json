@@ -1,97 +1,97 @@
 [
 	{
-		"Id" : 1,
-		"Nome" : "Cuscuz",
-		"Descricao" : "Prato de cuscuz com manteiga",
-		"Ingredientes" : [
+		"id" : 1,
+		"nome" : "Cuscuz",
+		"descricao" : "Prato de cuscuz com manteiga",
+		"ingredientes" : [
 			{
-				"IdIngrediente" : 5,
-				"VariacaoIngrediente": 1,
-				"Quantidade" : 1
+				"id_ingrediente" : 5,
+				"variacao_ingrediente": 1,
+				"quantidade" : 1
 			}
 		],
-		"Passos" : [
+		"passos" : [
 			{
-				"Ordem" : 1,
-				"Descricao" : "Hidratar o cuscuz",
-				"Alvo" : "pia",
-				"Acao" : "molhar",
-				"Ingredientes" : [
+				"ordem" : 1,
+				"descricao" : "Hidratar o cuscuz",
+				"alvo" : "pia",
+				"acao" : "molhar",
+				"ingredientes" : [
 					{
-						"IdIngrediente" : 5,
-						"VariacaoIngrediente": 1,
-						"Quantidade" : 1
+						"id_ingrediente" : 5,
+						"variacao_ingrediente": 1,
+						"quantidade" : 1
 					}
 				]
 			},
 			{
-				"Ordem" : 2,
-				"Descricao" : "Cozinhar o cuscuz",
-				"Alvo" : "fogao",
-				"Acao" : "cozer",
-				"Ingredientes" : [
+				"ordem" : 2,
+				"descricao" : "Cozinhar o cuscuz",
+				"alvo" : "fogao",
+				"acao" : "cozer",
+				"ingredientes" : [
 					{
-						"IdIngrediente" : 5,
-						"VariacaoIngrediente": 2,
-						"Quantidade" : 1
+						"id_ingrediente" : 5,
+						"variacao_ingrediente": 2,
+						"quantidade" : 1
 					}
 				]
 			},
 			{
-				"Ordem" : 3,
-				"Descricao" : "Montar o prato",
-				"Alvo" : "bancada",
-				"Acao" : "montagem",
-				"Ingredientes" : [
+				"ordem" : 3,
+				"descricao" : "Montar o prato",
+				"alvo" : "bancada",
+				"acao" : "montagem",
+				"ingredientes" : [
 					{
-						"IdIngrediente" : 5,
-						"VariacaoIngrediente": 3,
-						"Quantidade" : 1
+						"id_ingrediente" : 5,
+						"variacao_ingrediente": 3,
+						"quantidade" : 1
 					}
 				]
 			}
 		],
-		"Resultado" : 3
+		"resultado" : 3
 	},
 	{
-		"Id" : 2,
-		"Nome" : "Café Coado",
-		"Descricao" : "Xícara de café coado",
-		"Ingredientes" : [
+		"id" : 2,
+		"nome" : "Café Coado",
+		"descricao" : "Xícara de café coado",
+		"ingredientes" : [
 			{
-				"IdIngrediente" : 6,
-				"VariacaoIngrediente": 1,
-				"Quantidade" : 1
+				"id_ingrediente" : 6,
+				"variacao_ingrediente": 1,
+				"quantidade" : 1
 			}
 		],
-		"Passos" : [
+		"passos" : [
 			{
-				"Ordem" : 1,
-				"Descricao" : "Passar o café",
-				"Alvo" : "fogao",
-				"Acao" : "cozer",
-				"Ingredientes" : [
+				"ordem" : 1,
+				"descricao" : "Passar o café",
+				"alvo" : "fogao",
+				"acao" : "cozer",
+				"ingredientes" : [
 					{
-						"IdIngrediente" : 6,
-						"VariacaoIngrediente": 1,
-						"Quantidade" : 1
+						"id_ingrediente" : 6,
+						"variacao_ingrediente": 1,
+						"quantidade" : 1
 					}
 				]
 			},
 			{
-				"Ordem" : 3,
-				"Descricao" : "Servir café",
-				"Alvo" : "bancada",
-				"Acao" : "montagem",
-				"Ingredientes" : [
+				"ordem" : 3,
+				"descricao" : "Servir café",
+				"alvo" : "bancada",
+				"acao" : "montagem",
+				"ingredientes" : [
 					{
-						"IdIngrediente" : 6,
-						"VariacaoIngrediente": 2,
-						"Quantidade" : 1
+						"id_ingrediente" : 6,
+						"variacao_ingrediente": 2,
+						"quantidade" : 1
 					}
 				]
 			}
 		],
-		"Resultado" : 4
+		"resultado" : 4
 	}
 ]

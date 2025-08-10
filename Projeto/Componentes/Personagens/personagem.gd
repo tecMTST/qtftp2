@@ -16,9 +16,9 @@ func iniciar_dialogo(dialogo: DialogueResource, titulo: String, duracao := -1.0)
 	get_tree().current_scene.add_child(balao)
 	balao.start(dialogo, titulo)
 	balao.tree_exited.connect(encerrar_dialogo)
-	
+
 	if duracao > 0:
 		await get_tree().create_timer(duracao).timeout
-		
+
 		if balao != null and is_instance_valid(balao):
 			balao.remove()

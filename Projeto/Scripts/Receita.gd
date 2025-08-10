@@ -1,8 +1,8 @@
 class_name Receita extends Node
 
-var Id : int
-var Nome : String
-var Descricao : String
-var Ingredientes : Array[IngredienteReceita]
-var Passos : Array[PassoReceita]
-var Resultado : int
+var id : int
+var nome : String
+var descricao : String
+var ingredientes : Array[IngredienteReceita]
+var passos : Array[PassoReceita]
+var resultado : int

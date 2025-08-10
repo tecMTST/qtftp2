@@ -1,7 +1,7 @@
 class_name Prato extends Node
 
-var Id : int
-var Nome : String
-var Imagem : String
-var ValorNutricional : int
-var ValorSabor : int
+var id : int
+var nome : String
+var imagem : String
+var valor_nutricional : int
+var valor_sabor : int

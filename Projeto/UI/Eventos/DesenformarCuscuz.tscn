@@ -43,7 +43,7 @@ texture = ExtResource("4_xq4bp")
 script = ExtResource("6_skdxr")
 alcance = 255.0
 velocidade = 2.31
-alcanceCerto = 127.5
+alcance_certo = 127.5
 
 [node name="ProgressoEvento" type="TextureProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer" index="4" node_paths=PackedStringArray("event_timer", "behavior")]
 unique_name_in_owner = true
