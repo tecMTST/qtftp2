@@ -1,8 +1,9 @@
 extends Node2D
 
+var jogo_salvo : SaveFile
+
 @onready var continuar: Button = $CenterContainer/BotoesPrincipais/continuar
 
-var jogo_salvo : SaveFile
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -30,6 +31,6 @@ func _on_cartilha_pressed() -> void:
 func _on_sair_pressed() -> void:
 	get_tree().quit()
 
-func _on_continuar_pressed() -> void:		
+func _on_continuar_pressed() -> void:
 	SaveService.LoadGame(jogo_salvo.SlotId)
 	get_tree().change_scene_to_file(jogo_salvo.CurrentSceneId)

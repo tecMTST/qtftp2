@@ -1,50 +1,50 @@
 class_name Fogao extends BaseInteragivel
 
-@onready var pivotObjeto : Node2D = $Pivot
-@onready var fogoAnimado : AnimatedSprite2D = $AnimatedFire
-var objetoAtual : IngredienteBase = null
+var objeto_atual : IngredienteBase = null
+@onready var pivot_objeto : Node2D = $Pivot
+@onready var fogo_animado : AnimatedSprite2D = $AnimatedFire
 
 func _ready() -> void:
-	Nome = "Fogão"
+	nome = "Fogão"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
-	if(objetoAtual):
+	if(objeto_atual):
 		if(jogador.esta_agarrando): return
-		jogador.objeto_agarrado = objetoAtual
-		_recolherObjeto()
+		jogador.objeto_agarrado = objeto_atual
+		_recolher_objeto()
 		jogador.agarrar()
 	else:
 		if(!jogador.esta_agarrando): return
-		var objetoIngrediente = jogador.objeto_agarrado
-		if objetoIngrediente.Ingrediente.Acoes[0].Alvo == "fogao":
+		var objeto_ingrediente = jogador.objeto_agarrado
+		if objeto_ingrediente.ingrediente.acoes[0].alvo == "fogao":
 			if(jogador.objeto_agarrado.acao_fogao()):
-				_cozinharObjeto(jogador.objeto_agarrado)
+				_cozinhar_objeto(jogador.objeto_agarrado)
 				jogador.soltar()
-			if objetoIngrediente.Ingrediente.Acoes[0].Evento != "":
-				Eventos.EventoIniciado.emit(objetoIngrediente.Ingrediente.Acoes[0].Evento)
+			if objeto_ingrediente.ingrediente.acoes[0].evento != "":
+				Eventos.evento_iniciado.emit(objeto_ingrediente.ingrediente.acoes[0].evento)
 
-func _recolherObjeto() -> void:
-	objetoAtual.acao_fogao()
-	objetoAtual = null
-	fogoAnimado.hide()
+func _recolher_objeto() -> void:
+	objeto_atual.acao_fogao()
+	objeto_atual = null
+	fogo_animado.hide()
 	ControleDeAudio.para_efeito_ciclo("fogao_cozinhando")
 
-func _cozinharObjeto(objeto : IngredienteBase) -> void:
-	objetoAtual = objeto
-	objetoAtual.ao_transformar.connect(ao_transformar_objeto_cozinhando)
-	_posicionarObjetoNoFogao()
-	fogoAnimado.show()
+func _cozinhar_objeto(objeto : IngredienteBase) -> void:
+	objeto_atual = objeto
+	objeto_atual.ao_transformar.connect(ao_transformar_objeto_cozinhando)
+	_posicionar_objeto_no_fogao()
+	fogo_animado.show()
 	ControleDeAudio.toca_efeito("fogao_ligar")
 	ControleDeAudio.toca_efeito_ciclo("fogao_cozinhando", "fogao_cozinhando")
 
-func _posicionarObjetoNoFogao() -> void:
-	objetoAtual.reparent(pivotObjeto)
-	objetoAtual.global_position = pivotObjeto.global_position
+func _posicionar_objeto_no_fogao() -> void:
+	objeto_atual.reparent(pivot_objeto)
+	objeto_atual.global_position = pivot_objeto.global_position
 
 func ao_transformar_objeto_cozinhando(novo_objeto: IngredienteBase):
-	objetoAtual = novo_objeto
+	objeto_atual = novo_objeto
 	ControleDeAudio.para_efeito_ciclo("fogao_cozinhado")
 	ControleDeAudio.toca_efeito("fogao_alarme")

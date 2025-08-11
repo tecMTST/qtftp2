@@ -1,18 +1,19 @@
-extends Node2D
 class_name MovimentoPendulo
+extends Node2D
 
 @export var alcance : float
 @export var velocidade : float
-@export var alcanceCerto : float
+@export var alcance_certo : float
 
-var tempoPassado : float = 0
-var alcanceAtual : float
+var alcance_atual : float
+var tempo_passado : float = 0
 
 func _process(delta: float) -> void:
-	tempoPassado += delta
-	
-	alcanceAtual = sin(tempoPassado * velocidade) * alcance
-	position.x = 285 + alcanceAtual
+	tempo_passado += delta
 
-func _estaNoAlcanceCerto() -> bool:
-	return abs(alcanceAtual) < alcanceCerto
+	alcance_atual = sin(tempo_passado * velocidade) * alcance
+	position.x = 285 + alcance_atual
+
+
+func _esta_no_alcance_certo() -> bool:
+	return abs(alcance_atual) < alcance_certo

@@ -5,13 +5,6 @@ signal acao_ativada
 signal acao_desativada
 signal acao_agarrou(objeto)
 
-@onready var animation_tree: AnimationTree = $AnimationTree
-@onready var gambiarra_centralizar: Sprite2D = $GambiarraCentralizar
-@onready var top_down_controler_2d: TopDownControler2D = $TopDownControler2D
-@onready var pivo_acao: Node2D = $PivoAcao
-@onready var posicao_objeto = $PosicaoObjeto
-
-
 var sfx_intervalo_passada: float = 0.35
 var sfx_timer: float = 0.0
 var item_ativo: IngredienteBase
@@ -21,6 +14,13 @@ var esta_agarrando: bool = false
 var objeto_agarrado: IngredienteBase:
 	set(valor):
 		objeto_agarrado = valor
+
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var gambiarra_centralizar: Sprite2D = $GambiarraCentralizar
+@onready var top_down_controler_2d: TopDownControler2D = $TopDownControler2D
+@onready var pivo_acao: Node2D = $PivoAcao
+@onready var posicao_objeto = $PosicaoObjeto
+
 
 func ao_transformar_objeto_agarrado(novo_objeto: IngredienteBase):
 	soltar()
@@ -39,19 +39,19 @@ func _physics_process(delta: float) -> void:
 	else:
 		sfx_timer = 0.0
 
-	var velocidadeAnimacao = remap(abs(velocity.length()),0.0, 600.0, 0.0, 1.0)
-	animation_tree.set("parameters/Velocidade/blend_position", velocidadeAnimacao)
-	
+	var velocidade_animacao = remap(abs(velocity.length()),0.0, 600.0, 0.0, 1.0)
+	animation_tree.set("parameters/Velocidade/blend_position", velocidade_animacao)
+
 	var velocidade = velocity.x
 	rotacao(delta)
-	if velocidade > 0:			
+	if velocidade > 0:
 		gambiarra_centralizar.flip_h = true
 		posicao_objeto.position.x = abs(posicao_objeto.position.x)
 	elif velocidade < 0:
 		gambiarra_centralizar.flip_h = false
 		posicao_objeto.position.x = -abs(posicao_objeto.position.x)
-		
-		
+
+
 func _input(_event: InputEvent) -> void:
 	if(!interagivel_ativo):
 		if objeto_agarrado and Input.is_action_just_pressed("action") and not esta_agarrando:
@@ -64,50 +64,56 @@ func _input(_event: InputEvent) -> void:
 	elif Input.is_action_just_released("action") and acao_executando:
 		acao_executando = false
 
+
 func agarrar_de_menu(objeto: Node):
 	add_sibling(objeto)
 	objeto_agarrado = objeto
 	agarrar()
 
+
 func _on_area_acao_body_entered(body: Node2D) -> void:
 	if body.is_in_group("agarravel") and not esta_agarrando:
 		objeto_agarrado = body
+
 
 func _on_area_acao_body_exited(body: Node2D) -> void:
 	if body.is_in_group("agarravel") and not esta_agarrando:
 		objeto_agarrado = null
 
+
 func on_interagivel_entered(body : Node2D) -> void:
 	interagivel_ativo = body
 	acao_ativada.emit()
-	
+
+
 func on_interagivel_exited() -> void:
 	interagivel_ativo = null
 	acao_desativada.emit()
+
 
 func agarrar():
 	objeto_agarrado.ao_transformar.connect(ao_transformar_objeto_agarrado)
 	objeto_agarrado.get_node("CollisionShape2D").disabled = true
 	objeto_agarrado.reparent(posicao_objeto)
-	objeto_agarrado.global_position = posicao_objeto.global_position	
+	objeto_agarrado.global_position = posicao_objeto.global_position
 	esta_agarrando = true
 	acao_agarrou.emit(objeto_agarrado)
-	
-func rotacao(delta : float):	
-	var rotacao_atual = pivo_acao.rotation
+
+
+func rotacao(_delta : float):
 	pivo_acao.look_at(pivo_acao.global_position + top_down_controler_2d.last_direction)
-			
-			
+
+
 func soltar():
 	objeto_agarrado.ao_transformar.disconnect(ao_transformar_objeto_agarrado)
 	objeto_agarrado.reparent(get_parent())
 	objeto_agarrado.get_node("CollisionShape2D").disabled = false
 	esta_agarrando = false
 
+
 func ativar():
 	top_down_controler_2d.Active = true
-	pass
+
 
 func desativar():
 	top_down_controler_2d.Active = false
-	pass

@@ -1,6 +1,6 @@
 extends Node
 
-var CenaAtual : String
-var NivelAtual : int
-var ReceitasAprendidas : Array[int]
-var Aprimoramentos : Array[int]
+var cena_atual : String
+var nivel_atual : int
+var receitas_aprendidas : Array[int]
+var aprimoramentos : Array[int]

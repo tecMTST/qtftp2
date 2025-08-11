@@ -1,21 +1,24 @@
 class_name MesaFilha extends BaseInteragivel
 
+var objeto_atual : IngredienteBase = null
+
 @onready var pivot: Node2D = $Pivot
 
-var objetoAtual : IngredienteBase = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Nome = "Mesa"
+	nome = "Mesa"
+
 
 func _interagir(jogador: Player) -> void:
-	if(objetoAtual == null and jogador.objeto_agarrado is IngredienteBase):
+	if(objeto_atual == null and jogador.objeto_agarrado is IngredienteBase):
 		if (jogador.objeto_agarrado.pode_entregar()):
-			objetoAtual = jogador.objeto_agarrado
+			objeto_atual = jogador.objeto_agarrado
 			jogador.soltar()
-			_posicionarObjeto()
-			objetoAtual.entregar()
+			_posicionar_objeto()
+			objeto_atual.entregar()
 
-func _posicionarObjeto() -> void:
-	objetoAtual.reparent(pivot)
-	objetoAtual.global_position = pivot.global_position
+
+func _posicionar_objeto() -> void:
+	objeto_atual.reparent(pivot)
+	objeto_atual.global_position = pivot.global_position
