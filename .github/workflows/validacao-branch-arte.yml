@@ -63,3 +63,26 @@ jobs:
           done
 
           echo "✅ mudanças validadas!"
+  integra:
+    needs: valida
+    runs-on: ubuntu-latest
+    steps:
+        - name: Obtendo main
+          uses: actions/checkout@v4
+          with:
+            ref: main
+            tokan: ${{ secrets.GITHUB_TOKEN }}
+            fetch-depth: 1000
+
+        - name: Obtendo repositório arte
+          run: |
+            git fetch origin arte --depth=1000
+
+        - name: Inserindo Arte dentro da Main
+        - run: |
+            git config user.name "Bot Sincronizador da Main"
+            git config user.email "bot@github.com"
+            git merge-base --is-ancestor HEAD origin/arte && git merge --no-ff origin/arte
+        - name: Atualizando repositório Main
+          run: |
+            git push origin main

@@ -13,7 +13,7 @@ jobs:
         with:
           ref: arte
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
+          fetch-depth: 1000
 
       - name: Lendo última versão da main
         run: |
