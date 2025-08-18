@@ -1,5 +1,6 @@
 extends Node
 
+@warning_ignore("unused_signal")
 signal evento_iniciado(evento)
 signal evento_falhou(evento)
 signal evento_realizado(evento)
