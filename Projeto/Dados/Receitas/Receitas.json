@@ -3,6 +3,7 @@
 		"id" : 1,
 		"nome" : "Cuscuz",
 		"descricao" : "Prato de cuscuz com manteiga",
+		"caminho_sprite": "res://Recursos/Graficos/Ingredientes/Cuscuz_desenformado.png",
 		"ingredientes" : [
 			{
 				"id_ingrediente" : 5,
@@ -57,6 +58,7 @@
 		"id" : 2,
 		"nome" : "Café Coado",
 		"descricao" : "Xícara de café coado",
+		"caminho_sprite": "res://Recursos/Graficos/Ingredientes/copoCafe.svg",
 		"ingredientes" : [
 			{
 				"id_ingrediente" : 6,

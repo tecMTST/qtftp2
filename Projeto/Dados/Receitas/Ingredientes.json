@@ -204,7 +204,7 @@
 		"preco" : 1,
 		"unidade" : "Gramas",
 		"cena" : "res://Componentes/Ingredientes/CuscuzCozido.tscn",
-		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/Cuscuz_coziddo.png",
+		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/Cuscuz_cozido.png",
 		"acoes" : [
 			{
 				"alvo" : "bancada",
@@ -222,11 +222,11 @@
 		"descricao" : "Pó de Café",
 		"preco" : 1,
 		"unidade" : "Gramas",
-		"cena" : "",
+		"cena" : "res://Componentes/Ingredientes/PoCafe.tscn",
 		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/PoCafe.png",
 		"acoes" : [
 			{
-				"alvo" : "Fogão",
+				"alvo" : "fogao",
 				"acao" : "cozer",
 				"tempo" : 5,
 				"variacao_resultado" : 2,
@@ -241,16 +241,16 @@
 		"descricao" : "Café Coado",
 		"preco" : 1,
 		"unidade" : "Gramas",
-		"cena" : "",
-		"caminho_sprite" : "",
+		"cena" : "res://Componentes/Ingredientes/CafeCoado.tscn",
+		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/coador.svg",
 		"acoes" : [
 			{
-				"alvo" : "Bancada",
+				"alvo" : "bancada",
 				"acao" : "misturar",
 				"tempo" : 1,
 				"variacao_resultado" : 0,
 				"evento": ""
 			}
 		]
-	},
+	}
 ]

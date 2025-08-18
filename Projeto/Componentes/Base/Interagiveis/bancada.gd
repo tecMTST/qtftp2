@@ -16,6 +16,8 @@ func _on_componente_interagivel_interagir(jogador: Player):
 			_jogador = jogador
 			if objeto_ingrediente.ingrediente.acoes[0].evento != "":
 				Eventos.evento_iniciado.emit(objeto_ingrediente.ingrediente.acoes[0].evento)
+			else: # se não há evento, vai direto pra _on_acao_bancada().
+				Eventos.evento_realizado.emit()
 
 
 func _on_acao_bancada():

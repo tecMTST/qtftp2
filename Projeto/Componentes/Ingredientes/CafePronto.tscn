@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bofmie6prghft"]
+
+[ext_resource type="Script" uid="uid://ce5bea04xrgvk" path="res://Componentes/Ingredientes/cafe_pronto.gd" id="1_vtyw7"]
+[ext_resource type="Texture2D" uid="uid://e87jdh8tqvpf" path="res://Recursos/Graficos/Ingredientes/copoCafe.svg" id="2_vtyw7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dc67"]
+size = Vector2(50, 32)
+
+[node name="CafePronto" type="StaticBody2D" groups=["agarravel", "prato_pronto"]]
+script = ExtResource("1_vtyw7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3dc67")
+
+[node name="Cafe" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 4.76837e-07)
+scale = Vector2(0.0578512, 0.0621126)
+texture = ExtResource("2_vtyw7")

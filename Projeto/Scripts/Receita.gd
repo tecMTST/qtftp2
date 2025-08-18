@@ -6,3 +6,4 @@ var descricao : String
 var ingredientes : Array[IngredienteReceita]
 var passos : Array[PassoReceita]
 var resultado : int
+var caminho_sprite: String
