@@ -10,6 +10,7 @@
 </g>
 <path d="M214 94C214 106.15 198.778 116 180 116C161.222 116 146 106.15 146 94" stroke="black" stroke-width="2"/>
 <path d="M205 71C205 80.9411 193.807 89 180 89C166.193 89 155 80.9411 155 71C155 70 155 64 155 64H205C205 64 205 69.9779 205 71Z" stroke="black" stroke-width="2"/>
+<ellipse cx="180" cy="63" rx="25" ry="18" fill="#2FADE4" stroke="black" stroke-width="2"/>
 <ellipse cx="180" cy="63" rx="21" ry="14" fill="#296891" stroke="black" stroke-width="2"/>
 <ellipse cx="180" cy="67" rx="18" ry="10" fill="#218DD2" stroke="black" stroke-width="2"/>
 <g style="mix-blend-mode:soft-light" opacity="0.5">
