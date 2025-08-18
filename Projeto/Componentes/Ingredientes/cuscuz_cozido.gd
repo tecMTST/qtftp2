@@ -24,7 +24,7 @@ func _on_timer_timeout():
 		ao_transformar.emit(null)
 		queue_free()
 	else: #Sinal do timer de desenformar
-		transformar(load("uid://dorynrmsas25r").instantiate())
+		transformar(load("res://Componentes/Ingredientes/CuscuzCru.tscn").instantiate())
 
 
 func acao_fogao() -> bool:  #Método para remover o cuscuz antes de queimar
@@ -38,6 +38,6 @@ func acao_bancada() -> void:
 	if(!esta_desenformando):
 		timer.paused = false
 		esta_desenformando = true
-		transformar(load("uid://brr34b4ohi5k6").instantiate())
+		transformar(load("res://Componentes/Ingredientes/CuscuzPronto.tscn").instantiate())
 	else:
 		timer.paused = !timer.paused

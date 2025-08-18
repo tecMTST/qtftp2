@@ -21,7 +21,7 @@ func _on_timer_timeout():
 		timer.paused = true
 		visualizador_temporal.cor = Color("47dc00")
 	elif(esta_cozinhando):
-		transformar(load("uid://jvc15grkq4fr").instantiate())
+		transformar(load("res://Componentes/Ingredientes/CuscuzCozido.tscn").instantiate())
 
 func acao_fogao() -> bool:
 	if(!esta_pronto_para_cozinhar): return false
