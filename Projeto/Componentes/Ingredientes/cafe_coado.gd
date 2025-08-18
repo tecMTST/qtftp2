@@ -1,4 +1,4 @@
-class_name CuscuzCozido extends IngredienteBase
+class_name CafeCoado extends IngredienteBase
 
 @export var tempo_ate_queimar: int = 10
 
@@ -10,7 +10,7 @@ var esta_desenformando = false
 
 func _ready() -> void:
 	var ingredientes = Globais.ingredientes.filter(
-		func(item : Ingrediente): return item.id == 5 and item.variacao == 3)
+		func(item : Ingrediente): return item.id == 6 and item.variacao == 2)
 	if len(ingredientes) > 0:
 		ingrediente = ingredientes[0]
 		nome = ingrediente.nome
@@ -23,12 +23,10 @@ func _on_timer_timeout():
 		timer.paused = true
 		ao_transformar.emit(null)
 		queue_free()
-	else: #Sinal do timer de desenformar
-		transformar(load("res://Componentes/Ingredientes/CuscuzCru.tscn").instantiate())
 
 
-func acao_fogao() -> bool:  #Método para remover o cuscuz antes de queimar
-	visualizador_temporal.cor = Color("478cbf")
+func acao_fogao() -> bool:  #Método para remover o cafe do fogão antes de queimar
+	visualizador_temporal.cor = Color("478cbf") # azul
 	timer.start(ingrediente.acoes[0].tempo)
 	timer.paused = true
 	return false
@@ -38,6 +36,6 @@ func acao_bancada() -> void:
 	if(!esta_desenformando):
 		timer.paused = false
 		esta_desenformando = true
-		transformar(load("res://Componentes/Ingredientes/CuscuzPronto.tscn").instantiate())
+		transformar(load("res://Componentes/Ingredientes/CafePronto.tscn").instantiate())
 	else:
 		timer.paused = !timer.paused

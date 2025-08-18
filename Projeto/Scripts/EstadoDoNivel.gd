@@ -36,6 +36,7 @@ func motivo() -> String:
 
 func entregar_prato(prato) -> void:
 	pratos_entregues.append(prato)
+	if !completo(): ControleDeFase.selecionar_receita_aleatoria()
 
 
 func completo() -> bool:

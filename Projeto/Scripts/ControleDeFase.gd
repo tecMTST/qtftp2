@@ -3,6 +3,7 @@ extends Node
 signal prato_entregue(prato)
 signal nivel_iniciado(nivel, estado_nivel)
 signal nivel_concluido(nivel, estado_nivel)
+signal nova_receita(receita)
 
 @export var nivel_atual : Nivel
 @export var jogador : Player
@@ -45,24 +46,28 @@ func carregar_nivel():
 		receitas_disponiveis = Globais.receitas.filter(
 			func(item : Receita) : return nivel_atual.id_receitas.any(
 				func(id : int): return id == item.id))
-		_index_receita_atual = 0
-		selecionar_receita(_index_receita_atual)
+		selecionar_receita_aleatoria()
 
 	jogador = NodeExtension.find_first_child(get_tree().current_scene,
 		func(child): return child is Player)
 
+func selecionar_receita_aleatoria() -> void:
+	selecionar_receita(randi() % receitas_disponiveis.size())
 
 func selecionar_receita(indice_receita) -> bool:
 	if not nivel_atual:
 		return false
 	if indice_receita > len(receitas_disponiveis) - 1 or indice_receita < 0:
 		return false
-	receita_selecionada = receitas_disponiveis[indice_receita]
+	_index_receita_atual = indice_receita
+	receita_selecionada = receitas_disponiveis[_index_receita_atual]
 	ingredientes_disponiveis = Globais.ingredientes.filter(
 		func(item : Ingrediente): return receita_selecionada.ingredientes.any(
 			func(o) : return item.id == o.id_ingrediente))
 	_index_passo_atual = 0
 	passo_atual = receita_selecionada.passos[_index_passo_atual]
+	print_debug("receita atual: ", _index_receita_atual, " (", receita_selecionada.nome, ")")
+	nova_receita.emit(receita_selecionada)
 	return true
 
 
