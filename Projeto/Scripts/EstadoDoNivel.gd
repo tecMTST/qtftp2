@@ -13,6 +13,8 @@ var pratos_entregues := []
 var bagunca := 0
 var limite_bagunca : int
 var limite_choro_atingido : bool
+var cena_final_iniciada : bool
+var cena_final_concluida : bool
 
 
 func _init(nivel : Nivel):
@@ -38,14 +40,14 @@ func entregar_prato(prato) -> void:
 	pratos_entregues.append(prato)
 	if !completo(): ControleDeFase.selecionar_receita_aleatoria()
 
-
 func completo() -> bool:
-	return pratos_entregues.size() >= pratos_necessarios
-
+	return pratos_entregues.size() >= pratos_necessarios and not cena_final_iniciada
+	
+func finalizado() -> bool:
+	return cena_final_concluida
 
 func baguncado() -> bool:
 	return bagunca >= limite_bagunca
-
 
 func choro_limite() -> bool:
 	return limite_choro_atingido

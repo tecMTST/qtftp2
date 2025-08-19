@@ -70,10 +70,10 @@ vertical_alignment = 1
 [node name="MostradorBagunca" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0472222
-anchor_top = 1.0375
-anchor_right = 1.32361
-anchor_bottom = 1.04062
+anchor_left = -0.0472229
+anchor_top = 1.0164
+anchor_right = 1.22917
+anchor_bottom = 1.01953
 offset_left = 64.0
 offset_top = -265.0
 offset_right = -518.0
