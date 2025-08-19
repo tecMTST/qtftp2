@@ -10,5 +10,6 @@ export.cfg
 # cache e arquivos temporários:
 *.tmp
 *~
+~*
 **/.DS_Store
 .vscode/
