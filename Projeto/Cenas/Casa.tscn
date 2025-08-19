@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=40 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -15,16 +15,23 @@
 [ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="9_4bf15"]
 [ext_resource type="PackedScene" uid="uid://cjdso8f820o6i" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="10_cpm0k"]
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="11_utqv5"]
-[ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="12_7lwul"]
-[ext_resource type="Texture2D" uid="uid://bfhn7o5c0ni87" path="res://Recursos/Graficos/UI/botao_acao_pressed.svg" id="13_ksqrt"]
 [ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="14_d2j33"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="15_gklaa"]
 [ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="16_utqv5"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunça/BaguncaCena.tscn" id="17_utqv5"]
-[ext_resource type="Texture2D" uid="uid://hkter5n7clor" path="res://Recursos/Graficos/UI/pause.svg" id="19_0gd5h"]
+[ext_resource type="Texture2D" uid="uid://bfjh0swdtn76j" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_default.svg" id="19_tjjme"]
+[ext_resource type="Texture2D" uid="uid://dlg3aobixykl7" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_disabled.svg" id="19_xanav"]
+[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="19_xhdpr"]
+[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="20_tjjme"]
+[ext_resource type="Texture2D" uid="uid://hqdjtxoh826" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_default_pause.svg" id="20_xhdpr"]
+[ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="21_tjjme"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="23_tqe3g"]
 [ext_resource type="Script" uid="uid://balal13nfhegi" path="res://addons/saveEngine/scripts/SaveAgent.gd" id="25_d1xgi"]
+[ext_resource type="Texture2D" uid="uid://7oe7qju28gml" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_pressed_pause.svg" id="25_dfuu3"]
 [ext_resource type="BehaviorTree" uid="uid://v1romtgfuw1k" path="res://ai/tutorial.tres" id="26_xhdpr"]
+[ext_resource type="PackedScene" uid="uid://n5v3ssyg823a" path="res://UI/Briefing/Briefing.tscn" id="29_tqe3g"]
+[ext_resource type="Texture2D" uid="uid://h0fwtdbdje0f" path="res://Recursos/Graficos/UI/briefing-tutorial-p1.svg" id="30_y8kni"]
+[ext_resource type="Texture2D" uid="uid://b5xomuvfc25s0" path="res://Recursos/Graficos/UI/briefing-tutorial-p2.svg" id="31_7k32u"]
 [ext_resource type="PackedScene" uid="uid://cr74l6j0jbkx5" path="res://UI/Menus/MenuPausa.tscn" id="31_tqe3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
@@ -38,9 +45,6 @@ size = Vector2(603, 1161)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gm3vv"]
 size = Vector2(378, 1164)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ksqrt"]
-radius = 91.11
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
 vertices = PackedVector2Array(678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 185.742, 525, 50.8984, 525, 551.242, 503.078, 678.563, 502.07, 682.406, 569.117, 434.781, 572.117, 191.742, 753.031, 438.773, 753.961)
@@ -186,24 +190,61 @@ texture = ExtResource("11_utqv5")
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_x64wv")
 PositionType = 1
+ControlsColor = Color(1, 1, 1, 1)
+CircleTexture = ExtResource("19_xanav")
+KnobTexture = ExtResource("19_tjjme")
 metadata/_custom_type_script = "uid://dku77viqwklks"
 
 [node name="BotaoAcao" type="TouchScreenButton" parent="."]
-visible = false
-top_level = true
-z_index = 16
-position = Vector2(258, 1055)
-scale = Vector2(1.02692, 1.02692)
-texture_normal = ExtResource("12_7lwul")
-texture_pressed = ExtResource("13_ksqrt")
-shape = SubResource("CircleShape2D_ksqrt")
+z_index = 99
+position = Vector2(264, 1064)
+texture_normal = ExtResource("19_xhdpr")
+texture_pressed = ExtResource("20_tjjme")
 action = "action"
+
+[node name="Label" type="Label" parent="BotaoAcao"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("21_tjjme")
+text = "Ação"
 
 [node name="BotaoPausa" type="TouchScreenButton" parent="."]
 process_mode = 3
 position = Vector2(35, 28)
-scale = Vector2(0.52, 0.52)
-texture_normal = ExtResource("19_0gd5h")
+scale = Vector2(1.12222, 1.12222)
+texture_normal = ExtResource("20_xhdpr")
+texture_pressed = ExtResource("25_dfuu3")
+
+[node name="BotaoFim" type="TouchScreenButton" parent="."]
+visible = false
+z_index = 99
+position = Vector2(265, 1064)
+texture_normal = ExtResource("19_xhdpr")
+texture_pressed = ExtResource("20_tjjme")
+
+[node name="Label" type="Label" parent="BotaoFim"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("21_tjjme")
+text = "Avançar"
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("14_d2j33")
@@ -219,6 +260,10 @@ navigation_polygon = SubResource("NavigationPolygon_4xt8v")
 [node name="pausar" parent="CanvasLayer" instance=ExtResource("31_tqe3g")]
 visible = false
 
+[node name="Briefing" parent="." instance=ExtResource("29_tqe3g")]
+visible = false
+Partes = Array[Texture2D]([ExtResource("30_y8kni"), ExtResource("31_7k32u")])
+
 [node name="SaveAgent" type="Node" parent="."]
 script = ExtResource("25_d1xgi")
 AutoSave = false
@@ -232,4 +277,7 @@ blackboard_plan = SubResource("BlackboardPlan_tjjme")
 [connection signal="acao_ativada" from="Personagens/Player" to="." method="_on_player_acao_ativada"]
 [connection signal="acao_desativada" from="Personagens/Player" to="." method="_on_player_acao_desativada"]
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
+[connection signal="pressed" from="BotaoFim" to="." method="_on_botao_fim_pressed"]
 [connection signal="continuar" from="CanvasLayer/pausar" to="." method="_on_pausar_continuar"]
+[connection signal="Finalizado" from="Briefing" to="." method="_on_briefing_finalizado"]
+[connection signal="Iniciado" from="Briefing" to="." method="_on_briefing_iniciado"]

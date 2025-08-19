@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=70 format=3 uid="uid://v1romtgfuw1k"]
+[gd_resource type="BehaviorTree" load_steps=75 format=3 uid="uid://v1romtgfuw1k"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_b0q6c"]
 var/estado_fase/name = &"estado_fase"
@@ -224,6 +224,22 @@ resource_name = "6"
 variable = &"estado_fase"
 value = SubResource("BBVariant_u7rdu")
 
+[sub_resource type="BBNode" id="BBNode_ouhrc"]
+saved_value = NodePath("Personagens/Player")
+resource_name = "Personagens/Player"
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_b6asn"]
+node = SubResource("BBNode_ouhrc")
+method = &"desativar"
+
+[sub_resource type="BBNode" id="BBNode_b6asn"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_gcowf"]
+node = SubResource("BBNode_b6asn")
+method = &"_mostrar_botao_fim"
+
 [sub_resource type="BBVariant" id="BBVariant_oxuxo"]
 type = 4
 value_source = 1
@@ -299,14 +315,6 @@ args = Array[BBVariant]([SubResource("BBVariant_ouhrc"), SubResource("BBVariant_
 seconds = 6.0
 children = [SubResource("BTCallMethod_gvyd4")]
 
-[sub_resource type="BBNode" id="BBNode_gljxx"]
-saved_value = NodePath("Personagens/Player")
-resource_name = "Personagens/Player"
-
-[sub_resource type="BTCallMethod" id="BTCallMethod_qju4h"]
-node = SubResource("BBNode_gljxx")
-method = &"mover"
-
 [sub_resource type="BBVariant" id="BBVariant_3fopp"]
 type = 1
 saved_value = true
@@ -316,12 +324,22 @@ resource_name = "true"
 variable = &"fim_tutorial"
 value = SubResource("BBVariant_3fopp")
 
+[sub_resource type="BTDelay" id="BTDelay_2nheo"]
+seconds = 6.0
+
 [sub_resource type="BTSequence" id="BTSequence_6o38s"]
 custom_name = "Fim do tutorial"
-children = [SubResource("BTCheckVar_eyufq"), SubResource("BTDelay_r14y5"), SubResource("BTDelay_yfv50"), SubResource("BTDelay_3fopp"), SubResource("BTCallMethod_qju4h"), SubResource("BTSetVar_2nheo")]
+children = [SubResource("BTCheckVar_eyufq"), SubResource("BTCallMethod_b6asn"), SubResource("BTCallMethod_gcowf"), SubResource("BTDelay_r14y5"), SubResource("BTDelay_yfv50"), SubResource("BTDelay_3fopp"), SubResource("BTSetVar_2nheo"), SubResource("BTDelay_2nheo")]
+
+[sub_resource type="BBNode" id="BBNode_gvyd4"]
+saved_value = NodePath(".")
+resource_name = "."
+
+[sub_resource type="BTCallMethod" id="BTCallMethod_3fopp"]
+node = SubResource("BBNode_gvyd4")
 
 [sub_resource type="BTSelector" id="BTSelector_14yu7"]
-children = [SubResource("BTCheckVar_gvyd4"), SubResource("BTSequence_p8ixh"), SubResource("BTSequence_a5r62"), SubResource("BTSequence_b0q6c"), SubResource("BTSequence_6o38s")]
+children = [SubResource("BTCheckVar_gvyd4"), SubResource("BTSequence_p8ixh"), SubResource("BTSequence_a5r62"), SubResource("BTSequence_b0q6c"), SubResource("BTSequence_6o38s"), SubResource("BTCallMethod_3fopp")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_b0q6c")

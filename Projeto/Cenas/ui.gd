@@ -4,7 +4,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	Eventos.evento_iniciado.connect(self._on_evento_iniciado)
-	ControleDeFase.nivel_concluido.connect(nivel_concluido)
+	ControleDeFase.nivel_concluido_falha.connect(nivel_concluido)
 
 func _on_evento_iniciado(evento):
 	var cena := Eventos.CENAS[evento] as PackedScene

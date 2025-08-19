@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://n5v3ssyg823a"]
+
+[ext_resource type="Script" uid="uid://dcuar7typ5dy5" path="res://UI/Briefing/Briefing.gd" id="1_jgbmn"]
+[ext_resource type="Script" uid="uid://cpesqq3ctb78o" path="res://addons/uiJuicer/Fader.gd" id="2_u36wo"]
+[ext_resource type="Texture2D" uid="uid://h0fwtdbdje0f" path="res://Recursos/Graficos/UI/briefing-tutorial-p1.svg" id="3_dxlru"]
+[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="4_1q18d"]
+[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="5_a2g8k"]
+[ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="6_26tsy"]
+[ext_resource type="Texture2D" uid="uid://wgsvfpbslx6u" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_default_left.svg" id="7_26tsy"]
+[ext_resource type="Texture2D" uid="uid://b6cnteh8cei7l" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_pressed_left.svg" id="8_drl5u"]
+
+[node name="Briefing" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_jgbmn")
+
+[node name="BriefingBase" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FaderPrincipal" type="Node" parent="BriefingBase"]
+script = ExtResource("2_u36wo")
+metadata/_custom_type_script = "uid://cpesqq3ctb78o"
+
+[node name="Panel" type="Panel" parent="BriefingBase"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Centro" type="Control" parent="BriefingBase/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 73.0
+offset_top = 169.0
+offset_right = -73.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FaderCentro" type="Node" parent="BriefingBase/Panel/Centro"]
+script = ExtResource("2_u36wo")
+AutoFadeIn = false
+metadata/_custom_type_script = "uid://cpesqq3ctb78o"
+
+[node name="Imagem" type="TextureRect" parent="BriefingBase/Panel/Centro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dxlru")
+
+[node name="Proximo" type="TouchScreenButton" parent="BriefingBase"]
+z_index = 99
+position = Vector2(264, 1064)
+texture_normal = ExtResource("4_1q18d")
+texture_pressed = ExtResource("5_a2g8k")
+action = "action"
+
+[node name="ProximoLabel" type="Label" parent="BriefingBase/Proximo"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_26tsy")
+text = "Próximo"
+
+[node name="Voltar" type="TouchScreenButton" parent="BriefingBase"]
+position = Vector2(150, 1134)
+texture_normal = ExtResource("7_26tsy")
+texture_pressed = ExtResource("8_drl5u")
+
+[connection signal="pressed" from="BriefingBase/Proximo" to="." method="_on_proximo_pressed"]
+[connection signal="pressed" from="BriefingBase/Voltar" to="." method="_on_voltar_pressed"]
