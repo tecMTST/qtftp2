@@ -1,6 +1,6 @@
-[gd_scene load_steps=42 format=3 uid="uid://toyuyf660lm7"]
+[gd_scene load_steps=43 format=3 uid="uid://toyuyf660lm7"]
 
-[ext_resource type="Script" uid="uid://fmdhy8p6vnli" path="res://Cenas/Cozinha_Solidaria.gd" id="1_bhph4"]
+[ext_resource type="Script" uid="uid://fmdhy8p6vnli" path="res://Cenas/cozinha_solidaria.gd" id="1_bhph4"]
 [ext_resource type="Texture2D" uid="uid://dvmyl6wj2vvrc" path="res://Recursos/Graficos/Cenas/Cozinha-Solidaria-1.png" id="2_2sbpv"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_g36sf"]
 [ext_resource type="Texture2D" uid="uid://cxb6qp0b7h80t" path="res://Recursos/Graficos/Cenas/Piso.svg" id="3_2sbpv"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="13_a7ro6"]
 [ext_resource type="Texture2D" uid="uid://ccptc50w23unq" path="res://Recursos/Graficos/Cenas/entradaCS_1.svg" id="14_vcq8c"]
 [ext_resource type="Script" uid="uid://dku77viqwklks" path="res://addons/analog_touch_control/scripts/TouchAnalog.gd" id="18_k21wa"]
+[ext_resource type="PackedScene" uid="uid://cqcepha3vdbs2" path="res://Componentes/Casa/Interagiveis/BalcaoEntrega.tscn" id="18_pdorv"]
 [ext_resource type="Texture2D" uid="uid://dlg3aobixykl7" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_disabled.svg" id="19_vd0u2"]
 [ext_resource type="Texture2D" uid="uid://bfjh0swdtn76j" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_default.svg" id="20_01qrq"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="21_syhsj"]
@@ -43,7 +44,7 @@ size = Vector2(259, 1546)
 size = Vector2(273, 1546)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwul"]
-size = Vector2(603, 1161)
+size = Vector2(548, 1161)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gm3vv"]
 size = Vector2(378, 1164)
@@ -146,8 +147,11 @@ position = Vector2(588, 286)
 [node name="FogaoCS" parent="Cozinha" instance=ExtResource("10_g36sf")]
 position = Vector2(308, 298)
 
+[node name="MesaFilha2" parent="Cozinha" instance=ExtResource("18_pdorv")]
+position = Vector2(446, 798)
+scale = Vector2(1.3, 1)
+
 [node name="Limites" type="Node2D" parent="."]
-visible = false
 
 [node name="Limite1" type="StaticBody2D" parent="Limites"]
 position = Vector2(-110, 556)
@@ -168,7 +172,7 @@ position = Vector2(318, -110)
 rotation = 1.57079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite3"]
-position = Vector2(190.5, -41.4998)
+position = Vector2(163, -41.4998)
 shape = SubResource("RectangleShape2D_7lwul")
 
 [node name="Limite4" type="StaticBody2D" parent="Limites"]
@@ -278,13 +282,11 @@ theme = ExtResource("23_q432q")
 text = "Avançar"
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("26_u2tsi")
 
 [node name="Hud" parent="UI" instance=ExtResource("27_00r2q")]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 position = Vector2(5, 181)
 navigation_polygon = SubResource("NavigationPolygon_4xt8v")
 
