@@ -247,6 +247,7 @@ theme = ExtResource("21_tjjme")
 text = "Avançar"
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("14_d2j33")
 
 [node name="Hud" parent="UI" instance=ExtResource("16_utqv5")]

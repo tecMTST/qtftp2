@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnva0fw1epbgd"
-path="res://.godot/imported/Bagunca.svg-4de234dadb030330f7e037fbefe37386.ctex"
+uid="uid://cfn3heumi5j4"
+path="res://.godot/imported/lixo3.svg-1c3179609074f467fd706861f8281b1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Bagunca/Bagunca.svg"
-dest_files=["res://.godot/imported/Bagunca.svg-4de234dadb030330f7e037fbefe37386.ctex"]
+source_file="res://Recursos/Graficos/Bagunca/lixo3.svg"
+dest_files=["res://.godot/imported/lixo3.svg-1c3179609074f467fd706861f8281b1d.ctex"]
 
 [params]
 

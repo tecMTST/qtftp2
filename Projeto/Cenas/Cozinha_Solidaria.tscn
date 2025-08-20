@@ -1,0 +1,316 @@
+[gd_scene load_steps=42 format=3 uid="uid://toyuyf660lm7"]
+
+[ext_resource type="Script" uid="uid://fmdhy8p6vnli" path="res://Cenas/Cozinha_Solidaria.gd" id="1_bhph4"]
+[ext_resource type="Texture2D" uid="uid://dvmyl6wj2vvrc" path="res://Recursos/Graficos/Cenas/Cozinha-Solidaria-1.png" id="2_2sbpv"]
+[ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_g36sf"]
+[ext_resource type="Texture2D" uid="uid://cxb6qp0b7h80t" path="res://Recursos/Graficos/Cenas/Piso.svg" id="3_2sbpv"]
+[ext_resource type="Texture2D" uid="uid://b0wevbyj2yhx2" path="res://Recursos/Graficos/Cenas/Parede traseira.svg" id="4_pdorv"]
+[ext_resource type="Texture2D" uid="uid://jao8sblqyw23" path="res://Recursos/Graficos/Cenas/PisoCS.svg" id="5_2sbpv"]
+[ext_resource type="Texture2D" uid="uid://c7crxt6cjssfn" path="res://Recursos/Graficos/Cenas/Parede lateral.svg" id="5_vb5b3"]
+[ext_resource type="Texture2D" uid="uid://h76ryp5122cb" path="res://Recursos/Graficos/Cenas/espelhoCS.svg" id="7_8hfn8"]
+[ext_resource type="PackedScene" uid="uid://ctxkobo82pt6n" path="res://Componentes/Casa/Interagiveis/BancadaGrande.tscn" id="7_pdorv"]
+[ext_resource type="PackedScene" uid="uid://b74qrakxakkhv" path="res://Componentes/Casa/Interagiveis/PiaCS.tscn" id="8_g36sf"]
+[ext_resource type="Texture2D" uid="uid://cucyfh44mgofd" path="res://Recursos/Graficos/Cenas/paredeCS.svg" id="8_hsv3g"]
+[ext_resource type="Texture2D" uid="uid://c3xlfpedo0giw" path="res://Recursos/Graficos/Cenas/balcaoCS.svg" id="8_pdorv"]
+[ext_resource type="PackedScene" uid="uid://cvv18olqll13f" path="res://Componentes/Casa/Interagiveis/GeladeiraCS.tscn" id="9_2sbpv"]
+[ext_resource type="PackedScene" uid="uid://g3f8sup6huqo" path="res://Componentes/Casa/Interagiveis/FogaoSC.tscn" id="10_g36sf"]
+[ext_resource type="Texture2D" uid="uid://3goqgunlythu" path="res://Recursos/Graficos/Cenas/divisoriaCS.svg" id="11_vb5b3"]
+[ext_resource type="Texture2D" uid="uid://ryuh2l8e3vr7" path="res://Recursos/Graficos/Cenas/placaCS.svg" id="12_01gh4"]
+[ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="13_7ct51"]
+[ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="13_a7ro6"]
+[ext_resource type="Texture2D" uid="uid://ccptc50w23unq" path="res://Recursos/Graficos/Cenas/entradaCS_1.svg" id="14_vcq8c"]
+[ext_resource type="Script" uid="uid://dku77viqwklks" path="res://addons/analog_touch_control/scripts/TouchAnalog.gd" id="18_k21wa"]
+[ext_resource type="Texture2D" uid="uid://dlg3aobixykl7" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_disabled.svg" id="19_vd0u2"]
+[ext_resource type="Texture2D" uid="uid://bfjh0swdtn76j" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_default.svg" id="20_01qrq"]
+[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="21_syhsj"]
+[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="22_xaado"]
+[ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="23_q432q"]
+[ext_resource type="Texture2D" uid="uid://hqdjtxoh826" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_default_pause.svg" id="24_ps5ac"]
+[ext_resource type="Texture2D" uid="uid://7oe7qju28gml" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_pressed_pause.svg" id="25_swgi1"]
+[ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="26_u2tsi"]
+[ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="27_00r2q"]
+[ext_resource type="PackedScene" uid="uid://cr74l6j0jbkx5" path="res://UI/Menus/MenuPausa.tscn" id="28_lx3st"]
+[ext_resource type="PackedScene" uid="uid://n5v3ssyg823a" path="res://UI/Briefing/Briefing.tscn" id="29_l13ps"]
+[ext_resource type="Texture2D" uid="uid://h0fwtdbdje0f" path="res://Recursos/Graficos/UI/briefing-tutorial-p1.svg" id="30_4gfwa"]
+[ext_resource type="Texture2D" uid="uid://b5xomuvfc25s0" path="res://Recursos/Graficos/UI/briefing-tutorial-p2.svg" id="31_a8cd3"]
+[ext_resource type="Script" uid="uid://balal13nfhegi" path="res://addons/saveEngine/scripts/SaveAgent.gd" id="32_r2taa"]
+[ext_resource type="BehaviorTree" uid="uid://v1romtgfuw1k" path="res://ai/tutorial.tres" id="33_3c0xy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
+size = Vector2(259, 1546)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bf15"]
+size = Vector2(273, 1546)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lwul"]
+size = Vector2(603, 1161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm3vv"]
+size = Vector2(378, 1164)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
+vertices = PackedVector2Array(678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 185.742, 525, 50.8984, 525, 551.242, 503.078, 678.563, 502.07, 682.406, 569.117, 434.781, 572.117, 191.742, 753.031, 438.773, 753.961)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2, 6), PackedInt32Array(6, 7, 8, 9, 4), PackedInt32Array(10, 4, 9, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 445, 582, 449, 764, 182, 763, 176, 535, 41, 535)])
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_tjjme"]
+
+[node name="CozinhaSolidaria" type="Node2D"]
+script = ExtResource("1_bhph4")
+
+[node name="CenarioFundo" type="Node2D" parent="."]
+
+[node name="Background2" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(358.789, 637.563)
+scale = Vector2(0.62, 0.45)
+texture = ExtResource("2_2sbpv")
+
+[node name="Background" type="Sprite2D" parent="CenarioFundo"]
+visible = false
+position = Vector2(358.789, 637.563)
+scale = Vector2(0.997807, 1.00068)
+texture = ExtResource("2_g36sf")
+
+[node name="Piso" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(-30, 184)
+scale = Vector2(1.08358, 1.14243)
+texture = ExtResource("3_2sbpv")
+offset = Vector2(360, 670)
+
+[node name="PisoCS" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(359.5, 712)
+scale = Vector2(1.08209, 1.15396)
+texture = ExtResource("5_2sbpv")
+
+[node name="ParedeTraseira" type="Sprite2D" parent="CenarioFundo"]
+visible = false
+position = Vector2(360, 168)
+texture = ExtResource("4_pdorv")
+
+[node name="ParedeEsquerda" type="Sprite2D" parent="CenarioFundo"]
+visible = false
+position = Vector2(13, 672)
+texture = ExtResource("5_vb5b3")
+
+[node name="ParedeDireita" type="Sprite2D" parent="CenarioFundo"]
+visible = false
+position = Vector2(708, 672)
+texture = ExtResource("5_vb5b3")
+
+[node name="Balcao+Caixas" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(356, 734)
+scale = Vector2(0.63, 0.4)
+texture = ExtResource("8_pdorv")
+
+[node name="Espelho" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(79, 128)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_8hfn8")
+
+[node name="ParedeFundoCS" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(359, 161)
+scale = Vector2(0.63, 0.45)
+texture = ExtResource("8_hsv3g")
+
+[node name="DivisoriaParedeFundoCS" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(210, 236)
+scale = Vector2(0.6, 0.45)
+texture = ExtResource("11_vb5b3")
+
+[node name="PlacaCS" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(556, 117)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("12_01gh4")
+
+[node name="Cadeira01" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(248, 857)
+scale = Vector2(1.8, 0.8)
+texture = ExtResource("13_a7ro6")
+
+[node name="Cadeira02" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(109, 857)
+scale = Vector2(1.8, 0.8)
+texture = ExtResource("13_a7ro6")
+
+[node name="Cozinha" type="Node2D" parent="."]
+
+[node name="BancadaGrande" parent="Cozinha" instance=ExtResource("7_pdorv")]
+position = Vector2(300, 536)
+
+[node name="PiaCS" parent="Cozinha" instance=ExtResource("8_g36sf")]
+position = Vector2(72, 273)
+
+[node name="GeladeiraCS" parent="Cozinha" instance=ExtResource("9_2sbpv")]
+position = Vector2(588, 286)
+
+[node name="FogaoCS" parent="Cozinha" instance=ExtResource("10_g36sf")]
+position = Vector2(308, 298)
+
+[node name="Limites" type="Node2D" parent="."]
+visible = false
+
+[node name="Limite1" type="StaticBody2D" parent="Limites"]
+position = Vector2(-110, 556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite1"]
+position = Vector2(18.5, 0)
+shape = SubResource("RectangleShape2D_p822v")
+
+[node name="Limite2" type="StaticBody2D" parent="Limites"]
+position = Vector2(832, 556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite2"]
+position = Vector2(-25.5, 0)
+shape = SubResource("RectangleShape2D_4bf15")
+
+[node name="Limite3" type="StaticBody2D" parent="Limites"]
+position = Vector2(318, -110)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite3"]
+position = Vector2(190.5, -41.4998)
+shape = SubResource("RectangleShape2D_7lwul")
+
+[node name="Limite4" type="StaticBody2D" parent="Limites"]
+position = Vector2(404, 1391)
+rotation = 1.57079
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/Limite4"]
+position = Vector2(-250, 45.9985)
+shape = SubResource("RectangleShape2D_gm3vv")
+
+[node name="Waypoints" type="Node2D" parent="."]
+visible = false
+
+[node name="Waypoint1" type="Marker2D" parent="Waypoints"]
+position = Vector2(467, 592)
+
+[node name="Waypoint2" type="Marker2D" parent="Waypoints"]
+position = Vector2(111, 487)
+
+[node name="Waypoint3" type="Marker2D" parent="Waypoints"]
+position = Vector2(327, 492)
+
+[node name="Waypoint4" type="Marker2D" parent="Waypoints"]
+position = Vector2(212, 666)
+
+[node name="Waypoint5" type="Marker2D" parent="Waypoints"]
+position = Vector2(219, 905)
+
+[node name="Waypoint6" type="Marker2D" parent="Waypoints"]
+position = Vector2(507, 716)
+
+[node name="Waypoint7" type="Marker2D" parent="Waypoints"]
+position = Vector2(314, 809)
+
+[node name="Personagens" type="Node2D" parent="."]
+
+[node name="Player" parent="Personagens" instance=ExtResource("13_7ct51")]
+z_index = 5
+position = Vector2(355, 606)
+
+[node name="CenarioiFront" type="Node2D" parent="."]
+z_index = 15
+
+[node name="CasaFront" type="Sprite2D" parent="CenarioiFront"]
+position = Vector2(358, 1101)
+scale = Vector2(0.63, 0.688)
+texture = ExtResource("14_vcq8c")
+
+[node name="TouchAnalog" type="Node2D" parent="."]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("18_k21wa")
+PositionType = 1
+ControlsColor = Color(1, 1, 1, 1)
+CircleTexture = ExtResource("19_vd0u2")
+KnobTexture = ExtResource("20_01qrq")
+metadata/_custom_type_script = "uid://dku77viqwklks"
+
+[node name="BotaoAcao" type="TouchScreenButton" parent="."]
+z_index = 99
+position = Vector2(264, 1064)
+texture_normal = ExtResource("21_syhsj")
+texture_pressed = ExtResource("22_xaado")
+action = "action"
+
+[node name="Label" type="Label" parent="BotaoAcao"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("23_q432q")
+text = "Ação"
+
+[node name="BotaoPausa" type="TouchScreenButton" parent="."]
+process_mode = 3
+position = Vector2(35, 28)
+scale = Vector2(1.12222, 1.12222)
+texture_normal = ExtResource("24_ps5ac")
+texture_pressed = ExtResource("25_swgi1")
+
+[node name="BotaoFim" type="TouchScreenButton" parent="."]
+visible = false
+z_index = 99
+position = Vector2(265, 1064)
+texture_normal = ExtResource("21_syhsj")
+texture_pressed = ExtResource("22_xaado")
+
+[node name="Label" type="Label" parent="BotaoFim"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("23_q432q")
+text = "Avançar"
+
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("26_u2tsi")
+
+[node name="Hud" parent="UI" instance=ExtResource("27_00r2q")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+position = Vector2(5, 181)
+navigation_polygon = SubResource("NavigationPolygon_4xt8v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pausar" parent="CanvasLayer" instance=ExtResource("28_lx3st")]
+visible = false
+
+[node name="Briefing" parent="." instance=ExtResource("29_l13ps")]
+visible = false
+Partes = Array[Texture2D]([ExtResource("30_4gfwa"), ExtResource("31_a8cd3")])
+
+[node name="SaveAgent" type="Node" parent="."]
+script = ExtResource("32_r2taa")
+AutoSave = false
+metadata/_custom_type_script = "uid://balal13nfhegi"
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("33_3c0xy")
+blackboard_plan = SubResource("BlackboardPlan_tjjme")
+
+[connection signal="acao_agarrou" from="Personagens/Player" to="." method="_on_player_acao_agarrou"]
+[connection signal="acao_ativada" from="Personagens/Player" to="." method="_on_player_acao_ativada"]
+[connection signal="acao_desativada" from="Personagens/Player" to="." method="_on_player_acao_desativada"]
+[connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
+[connection signal="pressed" from="BotaoFim" to="." method="_on_botao_fim_pressed"]
+[connection signal="continuar" from="CanvasLayer/pausar" to="." method="_on_pausar_continuar"]
+[connection signal="Finalizado" from="Briefing" to="." method="_on_briefing_finalizado"]
+[connection signal="Iniciado" from="Briefing" to="." method="_on_briefing_iniciado"]

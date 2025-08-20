@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnva0fw1epbgd"
-path="res://.godot/imported/Bagunca.svg-4de234dadb030330f7e037fbefe37386.ctex"
+uid="uid://2wbb4kajxwwb"
+path="res://.godot/imported/freezerCS.svg-5d9a5d158926b3a0288af460e6f0f17f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Bagunca/Bagunca.svg"
-dest_files=["res://.godot/imported/Bagunca.svg-4de234dadb030330f7e037fbefe37386.ctex"]
+source_file="res://Recursos/Graficos/Cenas/freezerCS.svg"
+dest_files=["res://.godot/imported/freezerCS.svg-5d9a5d158926b3a0288af460e6f0f17f.ctex"]
 
 [params]
 

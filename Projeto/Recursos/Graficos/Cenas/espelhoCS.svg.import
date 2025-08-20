@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnva0fw1epbgd"
-path="res://.godot/imported/Bagunca.svg-4de234dadb030330f7e037fbefe37386.ctex"
+uid="uid://h76ryp5122cb"
+path="res://.godot/imported/espelhoCS.svg-c4dde31dcfce25310894745943d55fab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Bagunca/Bagunca.svg"
-dest_files=["res://.godot/imported/Bagunca.svg-4de234dadb030330f7e037fbefe37386.ctex"]
+source_file="res://Recursos/Graficos/Cenas/espelhoCS.svg"
+dest_files=["res://.godot/imported/espelhoCS.svg-c4dde31dcfce25310894745943d55fab.ctex"]
 
 [params]
 

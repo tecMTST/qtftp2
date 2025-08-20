@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnva0fw1epbgd"
-path="res://.godot/imported/Bagunca.svg-4de234dadb030330f7e037fbefe37386.ctex"
+uid="uid://c3xlfpedo0giw"
+path="res://.godot/imported/balcaoCS.svg-3990c6452e8888a766fca2d011a41d95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Bagunca/Bagunca.svg"
-dest_files=["res://.godot/imported/Bagunca.svg-4de234dadb030330f7e037fbefe37386.ctex"]
+source_file="res://Recursos/Graficos/Cenas/balcaoCS.svg"
+dest_files=["res://.godot/imported/balcaoCS.svg-3990c6452e8888a766fca2d011a41d95.ctex"]
 
 [params]
 

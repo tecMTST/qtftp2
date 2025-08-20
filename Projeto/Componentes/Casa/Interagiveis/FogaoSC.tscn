@@ -1,0 +1,220 @@
+[gd_scene load_steps=27 format=3 uid="uid://g3f8sup6huqo"]
+
+[ext_resource type="Script" uid="uid://c2o0stv3doic" path="res://Componentes/Base/Interagiveis/fogao.gd" id="1_wtnlt"]
+[ext_resource type="Texture2D" uid="uid://ig1da6mhbn5n" path="res://Recursos/Graficos/Cenas/fogaoCS.svg" id="2_wtnlt"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_wyfj2"]
+[ext_resource type="Texture2D" uid="uid://c3iyhekfm06dt" path="res://Recursos/Graficos/Cenas/Fire+Sparks-Sheet.png" id="4_2xtak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvsi0"]
+size = Vector2(223, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at0gs"]
+size = Vector2(179, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3dhy"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txub3"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2fhf"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d12wr"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwy48"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fud41"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ecvy"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xhsq"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(288, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twv6b"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ducat"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqkdo"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vftr1"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(288, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbygj"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(0, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3oui"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(96, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxk7h"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(192, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pixb"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(288, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k5dw"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(0, 384, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mohep"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(96, 384, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54pkq"]
+atlas = ExtResource("4_2xtak")
+region = Rect2(192, 384, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcmap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3dhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txub3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2fhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d12wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwy48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fud41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ecvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xhsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twv6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ducat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqkdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vftr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbygj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3oui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxk7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pixb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4k5dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mohep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54pkq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 16.0
+}]
+
+[node name="Fogao" type="StaticBody2D" groups=["fogao", "interagivel"]]
+script = ExtResource("1_wtnlt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -70.0
+offset_top = -72.0
+offset_right = 145.0
+offset_bottom = 77.0
+scale = Vector2(0.6, 0.45)
+texture = ExtResource("2_wtnlt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(44.5, -32.5)
+shape = SubResource("RectangleShape2D_cvsi0")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+visible = false
+offset_left = -65.0
+offset_top = -78.0
+offset_right = 65.0
+offset_bottom = 80.0
+color = Color(1, 0, 0, 0.490196)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(43.5, 56.5)
+shape = SubResource("RectangleShape2D_at0gs")
+
+[node name="ComponenteInteragivel" type="Node2D" parent="." node_paths=PackedStringArray("area_de_interacao")]
+script = ExtResource("3_wyfj2")
+nome = "Fogão"
+descricao = "Uma fogão"
+area_de_interacao = NodePath("../Area2D")
+possui_contorno = false
+
+[node name="Pivot" type="Node2D" parent="."]
+position = Vector2(26, -38)
+
+[node name="AnimatedFire" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(26, -36)
+scale = Vector2(0.366896, 0.366896)
+sprite_frames = SubResource("SpriteFrames_kcmap")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0854628
+
+[node name="AnimatedFire2" type="AnimatedSprite2D" parent="AnimatedFire"]
+z_index = 1
+position = Vector2(25, 7.94728e-06)
+sprite_frames = SubResource("SpriteFrames_kcmap")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.939957
+
+[node name="AnimatedFire3" type="AnimatedSprite2D" parent="AnimatedFire/AnimatedFire2"]
+z_index = 1
+position = Vector2(-47.2222, -1.05964e-05)
+sprite_frames = SubResource("SpriteFrames_kcmap")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.404909
+
+[connection signal="interagir" from="ComponenteInteragivel" to="." method="_on_componente_interagivel_interagir"]
