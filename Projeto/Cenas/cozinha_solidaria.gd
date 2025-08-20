@@ -19,7 +19,7 @@ func _ready() -> void:
 	ControleDeFase.cena_final.connect(_fim_cena)
 	pausar.hide()
 	save_agent.SaveSceneData()
-	briefing.Iniciar()
+	briefing.iniciar()
 
 func _on_player_acao_ativada() -> void:
 	botao_acao.visible = true
