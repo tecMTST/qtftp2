@@ -6,7 +6,7 @@ carolina: [speed=0.3] Que fome…[next=3]
 
 #Assim que o jogador (Elza) fecha a geladeira pela 1a vez, Carolina - sentada na mesa - fala (balãozinho):
 ~ abriu_geladeira
-carolina: [speed=0.6]Tem o quê pra comer?[/speed]
+carolina: [speed=0.6]Tem o quê pra comer?[/speed][next=3]
 #gameplay segue. Carolina continua na mesa.
 => END!
 
