@@ -79,7 +79,7 @@ jobs:
             git fetch origin arte --depth=1000
 
         - name: Inserindo Arte dentro da Main
-        - run: |
+          run: |
             git config user.name "Bot Sincronizador da Main"
             git config user.email "bot@github.com"
             git merge-base --is-ancestor HEAD origin/arte && git merge --no-ff origin/arte
