@@ -109,7 +109,7 @@ func _verificar_condicoes():
 		print_debug("Nível falhou")
 	elif estado_nivel.choro_limite():
 		_encerrar_nivel_falha()
-		print_debug("Nível falhou")	
+		print_debug("Nível falhou")
 	elif estado_nivel.completo():
 		_cena_final()
 		print_debug("Nível completo")
@@ -132,9 +132,9 @@ func _encerrar_nivel():
 	ControleDeAudio.para_musica()
 	var efeito = "vitoria" if estado_nivel.completo() else "derrota"
 	ControleDeAudio.toca_efeito(efeito)
-	EstadoDeJogo.nivel_atual += 1	
+	EstadoDeJogo.nivel_atual += 1
 	_abrir_proximo_nivel()
-	
+
 func _encerrar_nivel_falha():
 	_reset_timers()
 	get_tree().paused = true
@@ -142,18 +142,17 @@ func _encerrar_nivel_falha():
 	var efeito = "vitoria" if estado_nivel.completo() else "derrota"
 	ControleDeAudio.toca_efeito(efeito)
 	nivel_concluido_falha.emit(nivel_atual, estado_nivel)
-	
+
 func _abrir_proximo_nivel():
 	var niveis = Globais.niveis.filter(func(item : Nivel) : return item.id == EstadoDeJogo.nivel_atual)
 	if len(niveis) > 0:
-		nivel_atual = niveis[0]		
+		nivel_atual = niveis[0]
 		#TODO Remover este loop e direcionar para a sequencia da casa
 		EstadoDeJogo.nivel_atual = 1
 		#LOOP da fase da casa
 		get_tree().paused = false
 		get_tree().change_scene_to_file(niveis[0].local)
 
-			
 func _reset_timers() -> void:
 	if not tempo_jogo.is_stopped():
 		tempo_jogo.stop()
