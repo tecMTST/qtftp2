@@ -1,9 +1,11 @@
 class_name Briefing extends CanvasLayer
 
-signal Iniciado
-signal Finalizado
+signal iniciado
+signal finalizado
 
-@export var Partes : Array[Texture2D] = []
+@export var partes: Array[Texture2D] = []
+
+var atual: int = -1
 
 @onready var fader_principal: Fader = $BriefingBase/FaderPrincipal
 @onready var imagem: TextureRect = $BriefingBase/Panel/Centro/Imagem
@@ -11,59 +13,58 @@ signal Finalizado
 @onready var proximo_label: Label = $BriefingBase/Proximo/ProximoLabel
 @onready var voltar: TouchScreenButton = $BriefingBase/Voltar
 
-var atual : int = -1
 
-func Iniciar():
+func iniciar():
 	visible = true
 	get_tree().paused = true
-	__proximo()	
-	__mostrar()
-	Iniciado.emit()
-	
-func __mostrar():
+	_proximo()
+	_mostrar()
+	iniciado.emit()
+
+func _mostrar():
 	await fader_principal.finished
 	fader_centro.FadeIn()
 	await fader_centro.finished
 
-func __proximo():		
-	atual += 1	
+func _proximo():
+	atual += 1
 	if atual == 0:
 		voltar.visible = false
 	else:
 		voltar.visible = true
-	if len(Partes) == 0:
-		__finalizar()
-	elif len(Partes) - 1 > atual:
-		imagem.texture = Partes[atual]	
+	if len(partes) == 0:
+		_finalizar()
+	elif len(partes) - 1 > atual:
+		imagem.texture = partes[atual]
 		if atual == 0:
 			voltar.visible = false
 		else:
-			voltar.visible = true			
-	elif len(Partes) - 1 == atual:	
-		imagem.texture = Partes[atual]	
-		proximo_label.text = "Começar"		
+			voltar.visible = true
+	elif len(partes) - 1 == atual:
+		imagem.texture = partes[atual]
+		proximo_label.text = "Começar"
 	else:
-		__finalizar()
+		_finalizar()
 
-func __voltar():
+func _voltar():
 	if atual > 0:
 		atual -= 1
-		proximo_label.text = "Próximo"	
+		proximo_label.text = "Próximo"
 		if atual == 0:
 			voltar.visible = false
 		else:
-			voltar.visible = true	
-		imagem.texture = Partes[atual]	
-			
-func __finalizar():
+			voltar.visible = true
+		imagem.texture = partes[atual]
+
+func _finalizar():
 	fader_principal.FadeOut()
 	await fader_principal.finished
 	get_tree().paused = false
-	Finalizado.emit()
+	finalizado.emit()
 	queue_free()
 
 func _on_voltar_pressed() -> void:
-	__voltar()
+	_voltar()
 
 func _on_proximo_pressed() -> void:
-	__proximo()
+	_proximo()
