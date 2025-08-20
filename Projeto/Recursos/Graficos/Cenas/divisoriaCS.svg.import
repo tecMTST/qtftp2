@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnva0fw1epbgd"
-path="res://.godot/imported/Bagunca.svg-4de234dadb030330f7e037fbefe37386.ctex"
+uid="uid://cafjtau05ef7n"
+path="res://.godot/imported/divisoriaCS.svg-6f4d76792decbf1d3948c4d2bea58318.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Bagunca/Bagunca.svg"
-dest_files=["res://.godot/imported/Bagunca.svg-4de234dadb030330f7e037fbefe37386.ctex"]
+source_file="res://Recursos/Graficos/Cenas/divisoriaCS.svg"
+dest_files=["res://.godot/imported/divisoriaCS.svg-6f4d76792decbf1d3948c4d2bea58318.ctex"]
 
 [params]
 
