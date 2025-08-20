@@ -262,7 +262,7 @@ visible = false
 
 [node name="Briefing" parent="." instance=ExtResource("29_tqe3g")]
 visible = false
-Partes = Array[Texture2D]([ExtResource("30_y8kni"), ExtResource("31_7k32u")])
+partes = Array[Texture2D]([ExtResource("30_y8kni"), ExtResource("31_7k32u")])
 
 [node name="SaveAgent" type="Node" parent="."]
 script = ExtResource("25_d1xgi")
@@ -279,5 +279,5 @@ blackboard_plan = SubResource("BlackboardPlan_tjjme")
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
 [connection signal="pressed" from="BotaoFim" to="." method="_on_botao_fim_pressed"]
 [connection signal="continuar" from="CanvasLayer/pausar" to="." method="_on_pausar_continuar"]
-[connection signal="Finalizado" from="Briefing" to="." method="_on_briefing_finalizado"]
-[connection signal="Iniciado" from="Briefing" to="." method="_on_briefing_iniciado"]
+[connection signal="finalizado" from="Briefing" to="." method="_on_briefing_finalizado"]
+[connection signal="iniciado" from="Briefing" to="." method="_on_briefing_iniciado"]
