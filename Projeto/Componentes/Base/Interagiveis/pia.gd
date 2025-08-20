@@ -4,7 +4,7 @@ func _ready() -> void:
 	nome = "Pia"
 
 func _on_componente_interagivel_interagir(jogador: Player):
-	if jogador.esta_agarrando != null:
+	if jogador.esta_agarrando:
 		var objeto_ingrediente = jogador.objeto_agarrado
 		if objeto_ingrediente.ingrediente.acoes[0].alvo == "pia":
 			jogador.objeto_agarrado.acao_pia()
