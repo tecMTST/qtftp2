@@ -11,7 +11,11 @@ func _ready() -> void:
 
 
 func _interagir(jogador: Player) -> void:
-	if(objeto_atual == null and jogador.objeto_agarrado != null and jogador.objeto_agarrado is IngredienteBase):
+	if(
+		objeto_atual == null
+		and jogador.objeto_agarrado != null
+		and jogador.objeto_agarrado is IngredienteBase
+	):
 		if (jogador.objeto_agarrado.pode_entregar()):
 			objeto_atual = jogador.objeto_agarrado
 			jogador.soltar()
