@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6ch38f6kai3t"]
 
 [ext_resource type="Script" uid="uid://78y5jrqf3oo4" path="res://Componentes/Base/Interagiveis/bancada.gd" id="1_awsmu"]
-[ext_resource type="Texture2D" uid="uid://b3ami1vh08c7k" path="res://Recursos/Graficos/Interagiveis/Bancada_Sep.svg" id="2_0dyue"]
+[ext_resource type="Texture2D" uid="uid://cc2dcwpo1ky2s" path="res://Recursos/Graficos/Interagiveis/Bancada.svg" id="2_0dyue"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_1yb7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xld1x"]
