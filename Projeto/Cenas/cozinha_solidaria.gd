@@ -1,4 +1,5 @@
 class_name Cozinha_Solidaria extends Node2D
+var travar_dialogos = true
 
 @onready var botao_acao: TouchScreenButton = $BotaoAcao
 @onready var botao_pausa: TouchScreenButton = $BotaoPausa
@@ -8,7 +9,7 @@ class_name Cozinha_Solidaria extends Node2D
 @onready var botao_fim: TouchScreenButton = $BotaoFim
 @onready var briefing: Briefing = $Briefing
 
-var travar_dialogos = true
+
 
 func _ready() -> void:
 	ControleDeFase.carregar_nivel()
@@ -18,8 +19,8 @@ func _ready() -> void:
 	ControleDeFase.cena_final.connect(_fim_cena)
 	pausar.hide()
 	save_agent.SaveSceneData()
-	briefing.Iniciar()	
-	
+	briefing.Iniciar()
+
 func _on_player_acao_ativada() -> void:
 	botao_acao.visible = true
 
@@ -65,7 +66,7 @@ func _on_briefing_iniciado() -> void:
 	ControleDeFase.congelar_tempo()
 	travar_dialogos = true
 
-func _on_briefing_finalizado() -> void:	
+func _on_briefing_finalizado() -> void:
 	ControleDeFase.descongelar_tempo()
 	travar_dialogos = false
 
