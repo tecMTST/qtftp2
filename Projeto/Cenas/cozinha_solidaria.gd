@@ -74,4 +74,4 @@ func _mostrar_botao_fim():
 	botao_fim.visible = true
 
 func _on_botao_fim_pressed() -> void:
-	_finalizar_nivel()	
+	_finalizar_nivel()
