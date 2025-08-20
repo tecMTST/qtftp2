@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=75 format=3 uid="uid://v1romtgfuw1k"]
+[gd_resource type="BehaviorTree" load_steps=73 format=3 uid="uid://v1romtgfuw1k"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_b0q6c"]
 var/estado_fase/name = &"estado_fase"
@@ -331,15 +331,8 @@ seconds = 6.0
 custom_name = "Fim do tutorial"
 children = [SubResource("BTCheckVar_eyufq"), SubResource("BTCallMethod_b6asn"), SubResource("BTCallMethod_gcowf"), SubResource("BTDelay_r14y5"), SubResource("BTDelay_yfv50"), SubResource("BTDelay_3fopp"), SubResource("BTSetVar_2nheo"), SubResource("BTDelay_2nheo")]
 
-[sub_resource type="BBNode" id="BBNode_gvyd4"]
-saved_value = NodePath(".")
-resource_name = "."
-
-[sub_resource type="BTCallMethod" id="BTCallMethod_3fopp"]
-node = SubResource("BBNode_gvyd4")
-
 [sub_resource type="BTSelector" id="BTSelector_14yu7"]
-children = [SubResource("BTCheckVar_gvyd4"), SubResource("BTSequence_p8ixh"), SubResource("BTSequence_a5r62"), SubResource("BTSequence_b0q6c"), SubResource("BTSequence_6o38s"), SubResource("BTCallMethod_3fopp")]
+children = [SubResource("BTCheckVar_gvyd4"), SubResource("BTSequence_p8ixh"), SubResource("BTSequence_a5r62"), SubResource("BTSequence_b0q6c"), SubResource("BTSequence_6o38s")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_b0q6c")
