@@ -38,11 +38,11 @@ func motivo() -> String:
 
 func entregar_prato(prato) -> void:
 	pratos_entregues.append(prato)
-	if !completo(): ControleDeFase.selecionar_receita_aleatoria()
+	if !completo(): ControleDeFase.selecionar_proxima_receita()
 
 func completo() -> bool:
 	return pratos_entregues.size() >= pratos_necessarios and not cena_final_iniciada
-	
+
 func finalizado() -> bool:
 	return cena_final_concluida
 

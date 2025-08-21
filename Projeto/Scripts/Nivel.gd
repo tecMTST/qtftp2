@@ -9,6 +9,7 @@ var local : String
 var tempo : int
 var limite_bagunca : int
 var id_receitas : Array[int] = []
+var ordem_aleatoria: bool = true
 var quantidade_pratos_real : int
 var quantidade_pratos_exibido : int
 var valor_nutricional_minimo : int
