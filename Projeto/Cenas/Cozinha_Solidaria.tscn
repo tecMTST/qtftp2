@@ -1,29 +1,23 @@
-[gd_scene load_steps=41 format=3 uid="uid://toyuyf660lm7"]
+[gd_scene load_steps=35 format=3 uid="uid://toyuyf660lm7"]
 
 [ext_resource type="Script" uid="uid://fmdhy8p6vnli" path="res://Cenas/cozinha_solidaria.gd" id="1_bhph4"]
-[ext_resource type="Texture2D" uid="uid://dvmyl6wj2vvrc" path="res://Recursos/Graficos/Cenas/Cozinha-Solidaria-1.png" id="2_2sbpv"]
-[ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_g36sf"]
-[ext_resource type="Texture2D" uid="uid://cxb6qp0b7h80t" path="res://Recursos/Graficos/Cenas/Piso.svg" id="3_2sbpv"]
-[ext_resource type="Texture2D" uid="uid://b0wevbyj2yhx2" path="res://Recursos/Graficos/Cenas/Parede traseira.svg" id="4_pdorv"]
-[ext_resource type="Texture2D" uid="uid://ckwgsoywjl1en" path="res://Recursos/Graficos/Cenas/PisoCS.svg" id="5_2sbpv"]
+[ext_resource type="Texture2D" uid="uid://dmon3wtcmi48s" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Piso.svg" id="5_pdorv"]
 [ext_resource type="Texture2D" uid="uid://c7crxt6cjssfn" path="res://Recursos/Graficos/Cenas/Parede lateral.svg" id="5_vb5b3"]
-[ext_resource type="Texture2D" uid="uid://bvb6qkgyxnu8r" path="res://Recursos/Graficos/Cenas/espelhoCS.svg" id="7_8hfn8"]
 [ext_resource type="PackedScene" uid="uid://ctxkobo82pt6n" path="res://Componentes/Casa/Interagiveis/BancadaGrande.tscn" id="7_pdorv"]
 [ext_resource type="PackedScene" uid="uid://b74qrakxakkhv" path="res://Componentes/Casa/Interagiveis/PiaCS.tscn" id="8_g36sf"]
-[ext_resource type="Texture2D" uid="uid://tcyqrfvs5jhe" path="res://Recursos/Graficos/Cenas/paredeCS.svg" id="8_hsv3g"]
-[ext_resource type="Texture2D" uid="uid://drb7dosrwyq4x" path="res://Recursos/Graficos/Cenas/balcaoCS.svg" id="8_pdorv"]
 [ext_resource type="PackedScene" uid="uid://cvv18olqll13f" path="res://Componentes/Casa/Interagiveis/GeladeiraCS.tscn" id="9_2sbpv"]
 [ext_resource type="PackedScene" uid="uid://g3f8sup6huqo" path="res://Componentes/Casa/Interagiveis/FogaoSC.tscn" id="10_g36sf"]
-[ext_resource type="Texture2D" uid="uid://cafjtau05ef7n" path="res://Recursos/Graficos/Cenas/divisoriaCS.svg" id="11_vb5b3"]
-[ext_resource type="Texture2D" uid="uid://5ngr8pw5rerx" path="res://Recursos/Graficos/Cenas/placaCS.svg" id="12_01gh4"]
+[ext_resource type="Texture2D" uid="uid://bj6aj585thqpt" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Parede traseira.svg" id="10_vb5b3"]
 [ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="13_7ct51"]
 [ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="13_a7ro6"]
-[ext_resource type="Texture2D" uid="uid://bnogi08qywfuq" path="res://Recursos/Graficos/Cenas/entradaCS_1.svg" id="14_vcq8c"]
+[ext_resource type="Texture2D" uid="uid://vg6ay2fqb1ap" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Meia parede.svg" id="14_01gh4"]
+[ext_resource type="Texture2D" uid="uid://dr5hjjytycg17" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Caixotes.svg" id="15_a7ro6"]
 [ext_resource type="Script" uid="uid://dku77viqwklks" path="res://addons/analog_touch_control/scripts/TouchAnalog.gd" id="18_k21wa"]
 [ext_resource type="PackedScene" uid="uid://cqcepha3vdbs2" path="res://Componentes/Casa/Interagiveis/BalcaoEntrega.tscn" id="18_pdorv"]
 [ext_resource type="Texture2D" uid="uid://dlg3aobixykl7" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_disabled.svg" id="19_vd0u2"]
 [ext_resource type="Texture2D" uid="uid://bfjh0swdtn76j" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_default.svg" id="20_01qrq"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="21_syhsj"]
+[ext_resource type="Texture2D" uid="uid://c4itpvbt4he0k" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Parede frontal.svg" id="22_hoxd7"]
 [ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="22_xaado"]
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="23_q432q"]
 [ext_resource type="Texture2D" uid="uid://hqdjtxoh826" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_default_pause.svg" id="24_ps5ac"]
@@ -59,95 +53,58 @@ script = ExtResource("1_bhph4")
 
 [node name="CenarioFundo" type="Node2D" parent="."]
 
-[node name="Background2" type="Sprite2D" parent="CenarioFundo"]
-position = Vector2(358.789, 637.563)
-scale = Vector2(0.62, 0.45)
-texture = ExtResource("2_2sbpv")
-
-[node name="Background" type="Sprite2D" parent="CenarioFundo"]
-visible = false
-position = Vector2(358.789, 637.563)
-scale = Vector2(0.997807, 1.00068)
-texture = ExtResource("2_g36sf")
-
-[node name="Piso" type="Sprite2D" parent="CenarioFundo"]
-position = Vector2(-30, 184)
-scale = Vector2(1.08358, 1.14243)
-texture = ExtResource("3_2sbpv")
-offset = Vector2(360, 670)
-
 [node name="PisoCS" type="Sprite2D" parent="CenarioFundo"]
-position = Vector2(359.5, 712)
-scale = Vector2(1.08209, 1.15396)
-texture = ExtResource("5_2sbpv")
-
-[node name="ParedeTraseira" type="Sprite2D" parent="CenarioFundo"]
-visible = false
-position = Vector2(360, 168)
-texture = ExtResource("4_pdorv")
+position = Vector2(359.5, 805)
+texture = ExtResource("5_pdorv")
 
 [node name="ParedeEsquerda" type="Sprite2D" parent="CenarioFundo"]
-visible = false
 position = Vector2(13, 672)
 texture = ExtResource("5_vb5b3")
 
 [node name="ParedeDireita" type="Sprite2D" parent="CenarioFundo"]
-visible = false
 position = Vector2(708, 672)
 texture = ExtResource("5_vb5b3")
 
-[node name="Balcao+Caixas" type="Sprite2D" parent="CenarioFundo"]
-position = Vector2(356, 734)
-scale = Vector2(0.63, 0.4)
-texture = ExtResource("8_pdorv")
-
-[node name="Espelho" type="Sprite2D" parent="CenarioFundo"]
-position = Vector2(79, 128)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_8hfn8")
-
 [node name="ParedeFundoCS" type="Sprite2D" parent="CenarioFundo"]
 position = Vector2(359, 161)
-scale = Vector2(0.63, 0.45)
-texture = ExtResource("8_hsv3g")
+texture = ExtResource("10_vb5b3")
 
-[node name="DivisoriaParedeFundoCS" type="Sprite2D" parent="CenarioFundo"]
-position = Vector2(210, 236)
-scale = Vector2(0.6, 0.45)
-texture = ExtResource("11_vb5b3")
+[node name="ParedeBalcao" type="Sprite2D" parent="CenarioFundo"]
+position = Vector2(77, 735)
+texture = ExtResource("14_01gh4")
 
-[node name="PlacaCS" type="Sprite2D" parent="CenarioFundo"]
-position = Vector2(556, 117)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("12_01gh4")
-
-[node name="Cadeira01" type="Sprite2D" parent="CenarioFundo"]
+[node name="Cadeira01" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(248, 857)
 scale = Vector2(1.8, 0.8)
 texture = ExtResource("13_a7ro6")
 
-[node name="Cadeira02" type="Sprite2D" parent="CenarioFundo"]
+[node name="Cadeira02" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(109, 857)
 scale = Vector2(1.8, 0.8)
 texture = ExtResource("13_a7ro6")
 
+[node name="Caixotes" type="Sprite2D" parent="."]
+position = Vector2(371, 676)
+texture = ExtResource("15_a7ro6")
+
 [node name="Cozinha" type="Node2D" parent="."]
 
 [node name="BancadaGrande" parent="Cozinha" instance=ExtResource("7_pdorv")]
-position = Vector2(300, 536)
+position = Vector2(321, 556)
 
 [node name="PiaCS" parent="Cozinha" instance=ExtResource("8_g36sf")]
-position = Vector2(72, 273)
+position = Vector2(95, 326)
 
 [node name="GeladeiraCS" parent="Cozinha" instance=ExtResource("9_2sbpv")]
-position = Vector2(588, 286)
+position = Vector2(619, 313)
 
 [node name="FogaoCS" parent="Cozinha" instance=ExtResource("10_g36sf")]
-position = Vector2(308, 298)
+position = Vector2(301, 330)
 
-[node name="MesaFilha2" parent="Cozinha" instance=ExtResource("18_pdorv")]
-position = Vector2(446, 798)
-scale = Vector2(1.3, 1)
+[node name="BalcaoEntrega" parent="Cozinha" instance=ExtResource("18_pdorv")]
+position = Vector2(412, 805)
 
 [node name="Limites" type="Node2D" parent="."]
 
@@ -209,15 +166,14 @@ position = Vector2(314, 809)
 
 [node name="Player" parent="Personagens" instance=ExtResource("13_7ct51")]
 z_index = 5
-position = Vector2(355, 606)
+position = Vector2(563, 623)
 
 [node name="CenarioiFront" type="Node2D" parent="."]
 z_index = 15
 
 [node name="CasaFront" type="Sprite2D" parent="CenarioiFront"]
-position = Vector2(358, 1101)
-scale = Vector2(0.63, 0.688)
-texture = ExtResource("14_vcq8c")
+position = Vector2(359, 1141)
+texture = ExtResource("22_hoxd7")
 
 [node name="TouchAnalog" type="Node2D" parent="."]
 scale = Vector2(0.8, 0.8)

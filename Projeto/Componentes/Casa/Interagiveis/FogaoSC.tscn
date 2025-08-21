@@ -1,15 +1,15 @@
 [gd_scene load_steps=27 format=3 uid="uid://g3f8sup6huqo"]
 
 [ext_resource type="Script" uid="uid://c2o0stv3doic" path="res://Componentes/Base/Interagiveis/fogao.gd" id="1_wtnlt"]
-[ext_resource type="Texture2D" uid="uid://ig1da6mhbn5n" path="res://Recursos/Graficos/Cenas/fogaoCS.svg" id="2_wtnlt"]
+[ext_resource type="Texture2D" uid="uid://dinjrxb4hojxc" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Fogão.svg" id="2_wtnlt"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_wyfj2"]
 [ext_resource type="Texture2D" uid="uid://c3iyhekfm06dt" path="res://Recursos/Graficos/Cenas/Fire+Sparks-Sheet.png" id="4_2xtak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvsi0"]
-size = Vector2(223, 77)
+size = Vector2(182.5, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_at0gs"]
-size = Vector2(179, 97)
+size = Vector2(179, 101.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3dhy"]
 atlas = ExtResource("4_2xtak")
@@ -160,11 +160,10 @@ offset_left = -70.0
 offset_top = -72.0
 offset_right = 145.0
 offset_bottom = 77.0
-scale = Vector2(0.6, 0.45)
 texture = ExtResource("2_wtnlt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(44.5, -32.5)
+position = Vector2(102.75, -33)
 shape = SubResource("RectangleShape2D_cvsi0")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
@@ -178,7 +177,7 @@ color = Color(1, 0, 0, 0.490196)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(43.5, 56.5)
+position = Vector2(103, 48.25)
 shape = SubResource("RectangleShape2D_at0gs")
 
 [node name="ComponenteInteragivel" type="Node2D" parent="." node_paths=PackedStringArray("area_de_interacao")]
@@ -189,12 +188,12 @@ area_de_interacao = NodePath("../Area2D")
 possui_contorno = false
 
 [node name="Pivot" type="Node2D" parent="."]
-position = Vector2(26, -38)
+position = Vector2(101, -31)
 
 [node name="AnimatedFire" type="AnimatedSprite2D" parent="."]
 visible = false
 z_index = 1
-position = Vector2(26, -36)
+position = Vector2(101, -40)
 scale = Vector2(0.366896, 0.366896)
 sprite_frames = SubResource("SpriteFrames_kcmap")
 animation = &"idle"

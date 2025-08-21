@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b6mqbmkjmrvhl" path="res://Componentes/Base/Interagiveis/geladeira.gd" id="1_ssnq7"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_au0yj"]
-[ext_resource type="Texture2D" uid="uid://2wbb4kajxwwb" path="res://Recursos/Graficos/Cenas/freezerCS.svg" id="3_ssnq7"]
+[ext_resource type="Texture2D" uid="uid://dlnhi8w3kqf70" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Freezer.svg" id="2_ssnq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3mkr"]
-size = Vector2(234, 85)
+size = Vector2(177, 85)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pleqy"]
-size = Vector2(165, 199)
+size = Vector2(165, 196.5)
 
 [node name="Geladeira" type="StaticBody2D" groups=["geladeira", "interagivel"]]
 script = ExtResource("1_ssnq7")
@@ -18,11 +18,11 @@ offset_left = -115.0
 offset_top = -69.0
 offset_right = 261.0
 offset_bottom = 231.0
-scale = Vector2(0.65, 0.45)
-texture = ExtResource("3_ssnq7")
+scale = Vector2(0.5, 0.55)
+texture = ExtResource("2_ssnq7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, -23.5)
+position = Vector2(-21.5, -23.5)
 shape = SubResource("RectangleShape2D_w3mkr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -36,7 +36,7 @@ color = Color(0, 1, 1, 0.258824)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(4.5, 37.5)
+position = Vector2(-22, 44.75)
 shape = SubResource("RectangleShape2D_pleqy")
 
 [node name="ComponenteInteragivel" type="Node2D" parent="." node_paths=PackedStringArray("area_de_interacao")]
