@@ -2,8 +2,14 @@ extends Node
 
 @warning_ignore("unused_signal")
 signal evento_iniciado(evento)
+
+@warning_ignore("unused_signal")
 signal evento_falhou(evento)
+
+@warning_ignore("unused_signal")
 signal evento_realizado(evento)
+
+@warning_ignore("unused_signal")
 signal evento_finalizado(evento)
 
 const CENAS := {
