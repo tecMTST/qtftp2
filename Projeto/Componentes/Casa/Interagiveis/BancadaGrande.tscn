@@ -8,7 +8,7 @@
 size = Vector2(197, 116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dyue"]
-size = Vector2(266, 194.5)
+size = Vector2(244, 140)
 
 [node name="Bancada" type="StaticBody2D" groups=["bancada", "interagivel"]]
 script = ExtResource("1_nf28l")
@@ -36,7 +36,7 @@ color = Color(1, 1, 1, 0)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(38, -14.25)
+position = Vector2(39, -20)
 shape = SubResource("RectangleShape2D_0dyue")
 
 [node name="ComponenteInteragível" type="Node2D" parent="."]

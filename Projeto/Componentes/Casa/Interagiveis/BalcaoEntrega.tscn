@@ -8,7 +8,7 @@
 size = Vector2(559, 252.24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imm24"]
-size = Vector2(498.81, 458.273)
+size = Vector2(498.81, 356)
 
 [node name="MesaFilha" type="StaticBody2D" groups=["filha", "interagivel", "ponto_entrega"]]
 script = ExtResource("1_2uwb5")
@@ -31,7 +31,7 @@ possui_contorno = false
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-70.5, -32.18)
+position = Vector2(-70.5, -9.68)
 scale = Vector2(0.84, 0.44)
 shape = SubResource("RectangleShape2D_imm24")
 

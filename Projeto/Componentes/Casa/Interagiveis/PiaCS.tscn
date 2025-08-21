@@ -8,7 +8,7 @@
 size = Vector2(131, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oc46i"]
-size = Vector2(119, 121)
+size = Vector2(44, 121)
 
 [node name="Pia" type="StaticBody2D" groups=["interagivel", "pia"]]
 script = ExtResource("1_rmucm")
@@ -37,7 +37,7 @@ color = Color(1, 1, 0, 0.376471)
 position = Vector2(0, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, -2.5)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_oc46i")
 
 [node name="ComponenteInteragivel" type="Node2D" parent="." node_paths=PackedStringArray("area_de_interacao")]
