@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctxkobo82pt6n"]
 
 [ext_resource type="Script" uid="uid://78y5jrqf3oo4" path="res://Componentes/Base/Interagiveis/bancada.gd" id="1_nf28l"]
-[ext_resource type="Texture2D" uid="uid://chslfcxhyt7hi" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Mesa.svg" id="2_nf28l"]
+[ext_resource type="Texture2D" uid="uid://chslfcxhyt7hi" path="res://Recursos/Graficos/Cenas/Cenario_2/Mesa.svg" id="2_nf28l"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_nrg2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xld1x"]

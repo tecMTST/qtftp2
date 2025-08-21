@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vg6ay2fqb1ap"
-path="res://.godot/imported/Meia parede.svg-104851d03dd823d3a9361d57e9d3d4c8.ctex"
+uid="uid://dmon3wtcmi48s"
+path="res://.godot/imported/Piso.svg-ed8cb0431419d02fe3348eba611503fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Meia parede.svg"
-dest_files=["res://.godot/imported/Meia parede.svg-104851d03dd823d3a9361d57e9d3d4c8.ctex"]
+source_file="res://Recursos/Graficos/Cenas/Cenario_2/Piso.svg"
+dest_files=["res://.godot/imported/Piso.svg-ed8cb0431419d02fe3348eba611503fa.ctex"]
 
 [params]
 

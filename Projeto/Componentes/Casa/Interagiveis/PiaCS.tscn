@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b74qrakxakkhv"]
 
 [ext_resource type="Script" uid="uid://c54ra8i7yu3lf" path="res://Componentes/Base/Interagiveis/pia.gd" id="1_rmucm"]
-[ext_resource type="Texture2D" uid="uid://pqs7cidabn1s" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Pia.svg" id="2_chrhn"]
+[ext_resource type="Texture2D" uid="uid://pqs7cidabn1s" path="res://Recursos/Graficos/Cenas/Cenario_2/Pia.svg" id="2_chrhn"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_dodmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tpct"]

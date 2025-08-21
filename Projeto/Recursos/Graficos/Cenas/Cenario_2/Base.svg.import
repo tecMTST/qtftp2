@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckoocbrx77mdq"
-path="res://.godot/imported/fogaoCS.svg-7ec826abd92d83d5f816f7ae943db61a.ctex"
+uid="uid://sdkj22usai4e"
+path="res://.godot/imported/Base.svg-21c0e4e6c70c2cd8bf3b5294c8f8a8c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Cenas/fogaoCS.svg"
-dest_files=["res://.godot/imported/fogaoCS.svg-7ec826abd92d83d5f816f7ae943db61a.ctex"]
+source_file="res://Recursos/Graficos/Cenas/Cenario_2/Base.svg"
+dest_files=["res://.godot/imported/Base.svg-21c0e4e6c70c2cd8bf3b5294c8f8a8c2.ctex"]
 
 [params]
 

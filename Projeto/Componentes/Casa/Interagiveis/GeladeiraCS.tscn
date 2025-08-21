@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6mqbmkjmrvhl" path="res://Componentes/Base/Interagiveis/geladeira.gd" id="1_ssnq7"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_au0yj"]
-[ext_resource type="Texture2D" uid="uid://dlnhi8w3kqf70" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Freezer.svg" id="2_ssnq7"]
+[ext_resource type="Texture2D" uid="uid://dlnhi8w3kqf70" path="res://Recursos/Graficos/Cenas/Cenario_2/Freezer.svg" id="2_ssnq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3mkr"]
 size = Vector2(177, 85)

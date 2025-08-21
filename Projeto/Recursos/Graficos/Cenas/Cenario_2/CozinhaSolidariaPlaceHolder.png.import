@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ngr8pw5rerx"
-path="res://.godot/imported/placaCS.svg-bca10044905e4ae3bdf7a667faf52292.ctex"
+uid="uid://dw8mlmpulyrdy"
+path="res://.godot/imported/CozinhaSolidariaPlaceHolder.png-6f97e5678034750c205b33b1ec13b254.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Cenas/placaCS.svg"
-dest_files=["res://.godot/imported/placaCS.svg-bca10044905e4ae3bdf7a667faf52292.ctex"]
+source_file="res://Recursos/Graficos/Cenas/Cenario_2/CozinhaSolidariaPlaceHolder.png"
+dest_files=["res://.godot/imported/CozinhaSolidariaPlaceHolder.png-6f97e5678034750c205b33b1ec13b254.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

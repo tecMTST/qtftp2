@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://g3f8sup6huqo"]
 
 [ext_resource type="Script" uid="uid://c2o0stv3doic" path="res://Componentes/Base/Interagiveis/fogao.gd" id="1_wtnlt"]
-[ext_resource type="Texture2D" uid="uid://dinjrxb4hojxc" path="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Fogão.svg" id="2_wtnlt"]
+[ext_resource type="Texture2D" uid="uid://dinjrxb4hojxc" path="res://Recursos/Graficos/Cenas/Cenario_2/Fogao.svg" id="2_wtnlt"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_wyfj2"]
 [ext_resource type="Texture2D" uid="uid://c3iyhekfm06dt" path="res://Recursos/Graficos/Cenas/Fire+Sparks-Sheet.png" id="4_2xtak"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlnhi8w3kqf70"
-path="res://.godot/imported/Freezer.svg-4edf8f94c2b0d164411ee800a59085e0.ctex"
+uid="uid://d072jky2wp25v"
+path="res://.godot/imported/Bancada.svg-5b30cbec3f473ae2706d791d5a41c8c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Freezer.svg"
-dest_files=["res://.godot/imported/Freezer.svg-4edf8f94c2b0d164411ee800a59085e0.ctex"]
+source_file="res://Recursos/Graficos/Cenas/Cenario_2/Bancada.svg"
+dest_files=["res://.godot/imported/Bancada.svg-5b30cbec3f473ae2706d791d5a41c8c2.ctex"]
 
 [params]
 

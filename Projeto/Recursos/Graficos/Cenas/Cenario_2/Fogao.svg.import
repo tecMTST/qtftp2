@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pqs7cidabn1s"
-path="res://.godot/imported/Pia.svg-bb849ebf6f18a6d4644ea69cad507e6f.ctex"
+uid="uid://dinjrxb4hojxc"
+path="res://.godot/imported/Fogao.svg-8f8dcae07fd4823a47ab06eda886d0b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Pia.svg"
-dest_files=["res://.godot/imported/Pia.svg-bb849ebf6f18a6d4644ea69cad507e6f.ctex"]
+source_file="res://Recursos/Graficos/Cenas/Cenario_2/Fogao.svg"
+dest_files=["res://.godot/imported/Fogao.svg-8f8dcae07fd4823a47ab06eda886d0b9.ctex"]
 
 [params]
 
