@@ -1,0 +1,36 @@
+<svg width="136" height="142" viewBox="0 0 136 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_281_15879)">
+<circle cx="69" cy="116" r="8" fill="#999999" stroke="black" stroke-width="2"/>
+<rect x="64" y="85" width="10" height="35" rx="5" fill="#999999" stroke="black" stroke-width="2"/>
+<g style="mix-blend-mode:multiply" opacity="0.4">
+<path d="M0 70C0 63.9249 4.92487 59 11 59H122C128.075 59 133 63.9249 133 70V131C133 137.075 128.075 142 122 142H11C4.92487 142 0 137.075 0 131V70Z" fill="black"/>
+</g>
+<rect x="3" y="23" width="132" height="83" rx="8" fill="#E3E3E3" stroke="black" stroke-width="2"/>
+<rect x="9" y="29" width="120" height="50" rx="4" fill="#999999" stroke="black" stroke-width="2"/>
+<rect x="9" y="39" width="120" height="40" rx="4" fill="#CACACA" stroke="black" stroke-width="2"/>
+<g style="mix-blend-mode:lighten" opacity="0.28">
+<path d="M59.4655 80H97L90.5345 105H53L59.4655 80Z" fill="white"/>
+</g>
+<g style="mix-blend-mode:lighten" opacity="0.28">
+<path d="M47.1765 80H55L48.8235 105H41L47.1765 80Z" fill="white"/>
+</g>
+<ellipse cx="69" cy="64" rx="4" ry="3" fill="#4C4B4A"/>
+<circle cx="69" cy="9" r="8" fill="#CCCCCC" stroke="black" stroke-width="2"/>
+<path d="M62.9236 33.917C62.9668 33.3987 63.4 33 63.9201 33H74.0799C74.6 33 75.0332 33.3987 75.0764 33.917L75.4585 38.5017C75.75 41.9998 72.9894 45 69.4792 45H68.5208C65.0106 45 62.25 41.9998 62.5415 38.5017L62.9236 33.917Z" fill="#CCCCCC" stroke="black" stroke-width="2"/>
+<rect x="64" y="5" width="10" height="35" rx="5" fill="#CCCCCC" stroke="black" stroke-width="2"/>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<rect x="70" y="9" width="2" height="16" rx="1" fill="#D9D9D9"/>
+</g>
+<rect width="4" height="4" transform="matrix(-1 0 0 1 78 11)" fill="#B3B3B3" stroke="black" stroke-width="2"/>
+<rect x="78" y="9" width="5" height="8" rx="2" fill="#CCCCCC" stroke="black" stroke-width="2"/>
+<path d="M79.5 9H81.5L82.5 1H79.5V9Z" fill="#CCCCCC" stroke="black" stroke-width="2"/>
+<g style="mix-blend-mode:soft-light" opacity="0.5">
+<rect x="81" y="9" width="2" height="8" rx="1" fill="#D9D9D9"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_281_15879">
+<rect width="136" height="142" fill="white"/>
+</clipPath>
+</defs>
+</svg>
