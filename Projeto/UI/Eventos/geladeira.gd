@@ -22,23 +22,23 @@ func _ready() -> void:
 func preencher_geladeira():
 	if not ControleDeFase.nivel_atual or not ControleDeFase.receita_selecionada:
 		close()
+	if ControleDeFase.nivel_atual.id != 3:		
+		var i : int = 0
+		for ingrediente_receita in ControleDeFase.receita_selecionada.ingredientes:
+			var ingrediente = Globais.get_ingrediente(
+				ingrediente_receita.id_ingrediente,
+				ingrediente_receita.variacao_ingrediente
+			)
+			var sprite_ingrediente = load(ingrediente.caminho_sprite)
 
-	var i : int = 0
-	for ingrediente_receita in ControleDeFase.receita_selecionada.ingredientes:
-		var ingrediente = Globais.get_ingrediente(
-			ingrediente_receita.id_ingrediente,
-			ingrediente_receita.variacao_ingrediente
-		)
-		var sprite_ingrediente = load(ingrediente.caminho_sprite)
+			var igrediente_geladeira = instancia_ingrediente.instantiate() as ObjIngrediente
+			igrediente_geladeira.nome = ingrediente.nome
+			igrediente_geladeira.descricao = ingrediente.descricao
+			igrediente_geladeira.sprite = sprite_ingrediente
+			igrediente_geladeira.caminho_objeto = ingrediente.cena
+			igrediente_geladeira.botao_apertado.connect(escolhe_ingrediente)
 
-		var igrediente_geladeira = instancia_ingrediente.instantiate() as ObjIngrediente
-		igrediente_geladeira.nome = ingrediente.nome
-		igrediente_geladeira.descricao = ingrediente.descricao
-		igrediente_geladeira.sprite = sprite_ingrediente
-		igrediente_geladeira.caminho_objeto = ingrediente.cena
-		igrediente_geladeira.botao_apertado.connect(escolhe_ingrediente)
-
-		var container: Node
+			var container: Node
 
 			if i < qnt_na_prateleira:
 				container = prateleira_1.get_node("IngredienteContainer")
@@ -49,14 +49,16 @@ func preencher_geladeira():
 			else:
 				break  # Se tiver mais itens do que o total possível, para aqui
 
-		container.add_child(igrediente_geladeira)
-		i += 1
+			container.add_child(igrediente_geladeira)
+			i += 1
 
 
 func close() -> void:
 	GuiTransitions.hide("Geladeira")
 	await GuiTransitions.hide_completed
 	queue_free()
+	if ControleDeFase.NivelAtual.Id == 3:		
+		ControleDeFase.Jogador.iniciar_dialogo(load("res://Dialogo/Fase03.dialogue"), "geladeiravazia", 3.0)
 
 
 func escolhe_ingrediente(caminho: String) -> void:

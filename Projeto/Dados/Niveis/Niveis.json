@@ -45,5 +45,29 @@
 		"intervalo_choro" : 20.0,
  		"variacao_choro" :  5.0,
 		"tempo_limite_choro" :  20.0
+	},
+	{
+		"Id" : 3,
+		"Nome" : "Dia 3",
+		"Descricao" : "Casa",
+		"Textos" : [],
+		"Imagem" : "",
+		"Local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"IdReceitas" : [1],
+		"Tempo": 30,
+		"LimiteBagunca": 5,
+		"QuantidadePratosReal" : 10,
+		"QuantidadePratosExibido" : 10,
+		"ValorNutricionalMinimo" : 7,
+		"ValorSaborMinimo" : 4,
+		"PontosRecompensa" : 5,
+		"ReceitaRecompensa" : 2,
+		"Bagunca" : true,
+		"IntervaloBagunca" : 2.0,
+ 		"VariacaoBagunca" : 0.0,
+		"Choro" : true,
+		"IntervaloChoro" : 2.0,
+ 		"VariacaoChoro" :  0.0,
+		"TempoLimiteChoro" :  10.0
 	}
 ]
