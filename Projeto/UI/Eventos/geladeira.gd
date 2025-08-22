@@ -57,8 +57,8 @@ func close() -> void:
 	GuiTransitions.hide("Geladeira")
 	await GuiTransitions.hide_completed
 	queue_free()
-	if ControleDeFase.NivelAtual.Id == 3:		
-		ControleDeFase.Jogador.iniciar_dialogo(load("res://Dialogo/Fase03.dialogue"), "geladeiravazia", 3.0)
+	if ControleDeFase.nivel_atual.id == 3:		
+		ControleDeFase.jogador.iniciar_dialogo(load("res://Dialogo/Fase03.dialogue"), "geladeiravazia", 3.0)
 
 
 func escolhe_ingrediente(caminho: String) -> void:
