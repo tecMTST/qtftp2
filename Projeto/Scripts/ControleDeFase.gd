@@ -7,6 +7,8 @@ signal nivel_concluido_falha(nivel, estado_nivel)
 signal cena_final(nivel, estado_nivel)
 signal nova_receita(receita)
 
+const TEMPO_INFINITO = -1
+
 @export var nivel_atual : Nivel
 @export var jogador : Player
 @export var receitas_disponiveis : Array[Receita] = []
@@ -86,7 +88,7 @@ func iniciar_nivel():
 	get_tree().paused = false
 	assert(nivel_atual is Nivel, "nivel_atual precisa ser carregado")
 	_reset_timers() # Verifica e para os timers caso em andamento
-	tempo_jogo.wait_time = nivel_atual.tempo
+	tempo_jogo.wait_time = nivel_atual.tempo if nivel_atual.tempo > 0 else 1
 	estado_nivel = EstadoDoNivel.new(nivel_atual)
 	tempo_jogo.start()
 	_tempo_checagem.start()
@@ -104,7 +106,7 @@ func _verificar_condicoes():
 	if estado_nivel.baguncado():
 		_encerrar_nivel_falha()
 		print_debug("Nível falhou")
-	elif tempo_jogo.is_stopped():
+	elif tempo_jogo.is_stopped() and nivel_atual.tempo != TEMPO_INFINITO:
 		_encerrar_nivel_falha()
 		print_debug("Nível falhou")
 	elif estado_nivel.choro_limite():

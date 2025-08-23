@@ -2,10 +2,16 @@ class_name EstadoDoNivel
 
 var tempo_restante : float:
 	set(tempo):
-		var minutes = int(tempo / 60)
-		var seconds = fmod(tempo, 60)
-		tempo_restante_formatado = "%02d:%02d" % [minutes, seconds]
 		tempo_restante = tempo
+		if (
+			!ControleDeFase.nivel_atual
+			or ControleDeFase.nivel_atual.tempo == ControleDeFase.TEMPO_INFINITO
+		):
+			tempo_restante_formatado = "∞"
+		else:
+			var minutes = int(tempo / 60)
+			var seconds = fmod(tempo, 60)
+			tempo_restante_formatado = "%02d:%02d" % [minutes, seconds]
 var tempo_restante_formatado : String
 var receitas_nivel : int
 var pratos_necessarios : int
