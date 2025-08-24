@@ -6,6 +6,10 @@
 		"textos" : [],
 		"imagem" : "",
 		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"caminhos_briefing": [
+			"res://Recursos/Graficos/UI/briefing-tutorial-p1.svg",
+			"res://Recursos/Graficos/UI/briefing-tutorial-p2.svg"
+		],
 		"id_receitas" : [1, 2],
 		"tempo": 180,
 		"limite_bagunca": 5,
