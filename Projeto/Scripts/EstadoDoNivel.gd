@@ -48,7 +48,7 @@ func entregar_prato(prato) -> void:
 
 func completo() -> bool:
 	return pratos_entregues.size() >= pratos_necessarios and not cena_final_iniciada
-	
+
 func finalizado() -> bool:
 	return cena_final_concluida
 
