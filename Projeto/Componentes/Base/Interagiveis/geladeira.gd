@@ -1,8 +1,9 @@
 class_name Geladeira extends BaseInteragivel
 
+var geladeira_aberta
+
 @onready var menu_geladeira = preload("res://UI/Eventos/Geladeira.tscn")
 
-var geladeira_aberta
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
