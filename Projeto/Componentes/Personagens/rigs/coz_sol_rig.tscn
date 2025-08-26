@@ -1,0 +1,311 @@
+[gd_scene load_steps=6 format=3 uid="uid://flifx14ni1j5"]
+
+[ext_resource type="Texture2D" uid="uid://p7yl7rf7dauw" path="res://vetores_spritesheets/coz sol1.svg" id="1_dyuse"]
+[ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://vetores_spritesheets/qtftd anims.res" id="2_2q64s"]
+
+[sub_resource type="Animation" id="Animation_s14bq"]
+resource_name = "andar"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rig1/Skeleton2D/tronco/pernaDir:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.551339, -0.25, 0, 0.25, 0, 0.633314, -0.25, 0, 0.25, 0, -0.551339, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rig1/Skeleton2D/tronco/pernaEsq:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.617994, -0.25, 0, 0.25, 0, -0.529521, -0.25, 0, 0.25, 0, 0.617994, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("rig1/Skeleton2D/tronco/bracoDir:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.884439, -0.25, 0, 0.25, 0, -0.249008, -0.25, 0, 0.25, 0, 0.884439, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("rig1/Skeleton2D/tronco/bracoEsq:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.505287, -0.25, 0, 0.25, 0, 0.377899, -0.25, 0, 0.25, 0, -0.505287, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("rig1/Skeleton2D/tronco:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("rig1/Skeleton2D/tronco:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(400, -0.25, 0, 0.25, 0, 429, -0.25, 0, 0.25, 0, 400, -0.25, 0, 0.25, 0, 429, -0.25, 0, 0.25, 0, 400, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8)
+}
+
+[sub_resource type="Animation" id="Animation_qefc8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rig1/Skeleton2D/tronco/pernaDir:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rig1/Skeleton2D/tronco/pernaEsq:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("rig1/Skeleton2D/tronco/bracoDir:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.884439, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("rig1/Skeleton2D/tronco/bracoEsq:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.377899, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("rig1/Skeleton2D/tronco:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("rig1/Skeleton2D/tronco:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(330, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ek6he"]
+_data = {
+"RESET": SubResource("Animation_qefc8"),
+"andar": SubResource("Animation_s14bq")
+}
+
+[node name="cozSol_rig" type="Node2D"]
+
+[node name="rig1" type="Node2D" parent="."]
+
+[node name="sprites" type="Node2D" parent="rig1"]
+
+[node name="cabelo2" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-1459, -2018)
+scale = Vector2(2.39612, 2.39612)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(689.665, 816.305, 672.438, 831.75, 660.557, 856.7, 671.25, 871.551, 696.199, 879.274, 716.991, 862.047, 716.397, 837.691)
+uv = PackedVector2Array(689.665, 816.305, 672.438, 831.75, 660.557, 856.7, 671.25, 871.551, 696.199, 879.274, 716.991, 862.047, 716.397, 837.691)
+bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)]
+
+[node name="bracoEsq" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-678, -1349)
+scale = Vector2(2.2988, 2.2988)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(248.249, 609.451, 276.233, 614.851, 290.47, 641.853, 283.106, 689.475, 258.068, 736.606, 236.466, 742.006, 211.428, 728.26, 205.536, 700.276, 224.192, 658.054)
+uv = PackedVector2Array(248.249, 609.451, 276.233, 614.851, 290.47, 641.853, 283.106, 689.475, 258.068, 736.606, 236.466, 742.006, 211.428, 728.26, 205.536, 700.276, 224.192, 658.054)
+bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1)]
+
+[node name="tracinho perna" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-188, -797)
+scale = Vector2(1.99379, 1.99379)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(113.103, 573.281, 128.524, 573.281, 125.818, 597.089, 126.9, 621.708, 113.103, 622.79, 110.938, 595.195)
+uv = PackedVector2Array(113.103, 573.281, 128.524, 573.281, 125.818, 597.089, 126.9, 621.708, 113.103, 622.79, 110.938, 595.195)
+bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(1, 1, 1, 1, 1, 1), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0)]
+
+[node name="quadrilTras" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-342.684, -2242.41)
+scale = Vector2(2.62516, 2.92611)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(73.7961, 855.884, 139.404, 864.364, 219.295, 859.901, 209.476, 889.357, 180.019, 913.012, 145.653, 915.69, 103.699, 910.781, 76.474, 885.341)
+uv = PackedVector2Array(73.7961, 855.884, 139.404, 864.364, 219.295, 859.901, 209.476, 889.357, 180.019, 913.012, 145.653, 915.69, 103.699, 910.781, 76.474, 885.341)
+bones = ["tronco", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="pernaEsq" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-231.329, -1217)
+scale = Vector2(2.47782, 2.47782)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(31.6629, 607.158, 83.0567, 609.53, 110.73, 635.622, 111.134, 661.046, 111.521, 685.435, 105.986, 714.69, 23.7562, 713.108, 14.2681, 692.551, 30.0816, 673.575)
+uv = PackedVector2Array(31.6629, 607.158, 83.0567, 609.53, 110.73, 635.622, 111.134, 661.046, 111.521, 685.435, 105.986, 714.69, 23.7562, 713.108, 14.2681, 692.551, 30.0816, 673.575)
+bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="quadrilFrente" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-319, -1990.71)
+scale = Vector2(2.4345, 2.51154)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(77.6549, 910.996, 134.899, 917.476, 169.462, 916.396, 216.445, 911.536, 213.745, 929.357, 191.064, 957.439, 154.341, 966.62, 102.497, 959.059, 70.0943, 929.357)
+uv = PackedVector2Array(77.6549, 910.996, 134.899, 917.476, 169.462, 916.396, 216.445, 911.536, 213.745, 929.357, 191.064, 957.439, 154.341, 966.62, 102.497, 959.059, 70.0943, 929.357)
+bones = ["tronco", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="pernaDir" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-279, -1217)
+scale = Vector2(2.47039, 2.47039)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(195.296, 607.81, 148.901, 611.73, 124.07, 636.561, 122.763, 674.461, 109.04, 694.718, 107.733, 713.669, 195.296, 714.322, 201.177, 681.649)
+uv = PackedVector2Array(195.296, 607.81, 148.901, 611.73, 124.07, 636.561, 122.763, 674.461, 109.04, 694.718, 107.733, 713.669, 195.296, 714.322, 201.177, 681.649)
+bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="tronco" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-334.949, -1817.28)
+scale = Vector2(2.55143, 2.50438)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(137.779, 861.257, 215.545, 857.476, 214.721, 791.117, 214.465, 770.53, 192.864, 721.386, 94.5761, 737.047, 59.4734, 772.69, 68.114, 801.312, 75.6746, 807.253, 74.5945, 850.456)
+uv = PackedVector2Array(137.779, 861.257, 215.545, 857.476, 214.721, 791.117, 214.465, 770.53, 192.864, 721.386, 94.5761, 737.047, 59.4734, 772.69, 68.114, 801.312, 75.6746, 807.253, 74.5945, 850.456)
+bones = ["tronco", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="bracoDir" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-523, -1812)
+scale = Vector2(2.49502, 2.49502)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(267.407, 722.066, 243.687, 752.112, 235.78, 784.53, 260.291, 825.645, 263.454, 852.528, 290.337, 870.713, 314.057, 864.388, 323.545, 827.226, 305.359, 773.46)
+uv = PackedVector2Array(267.407, 722.066, 243.687, 752.112, 235.78, 784.53, 260.291, 825.645, 263.454, 852.528, 290.337, 870.713, 314.057, 864.388, 323.545, 827.226, 305.359, 773.46)
+bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="cabeca" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-1038.23, -1909.91)
+scale = Vector2(2.52169, 2.52169)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(351.828, 627.308, 432.862, 596.789, 490.743, 626.256, 512.843, 684.137, 521.262, 707.29, 514.948, 740.966, 487.586, 765.171, 434.966, 783.061, 366.561, 783.061, 323.413, 752.542, 333.937, 704.132, 325.518, 655.723)
+uv = PackedVector2Array(351.828, 627.308, 432.862, 596.789, 490.743, 626.256, 512.843, 684.137, 521.262, 707.29, 514.948, 740.966, 487.586, 765.171, 434.966, 783.061, 366.561, 783.061, 323.413, 752.542, 333.937, 704.132, 325.518, 655.723)
+bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="rostoCabelo" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-1568, -2155)
+scale = Vector2(2.5565, 2.5565)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(659.567, 694.223, 574.965, 694.223, 531.477, 729.013, 526.733, 781.197, 551.244, 827.057, 586.034, 852.358, 653.241, 849.195, 688.031, 811.243, 724.402, 805.708, 716.495, 723.478)
+uv = PackedVector2Array(659.567, 694.223, 574.965, 694.223, 531.477, 729.013, 526.733, 781.197, 551.244, 827.057, 586.034, 852.358, 653.241, 849.195, 688.031, 811.243, 724.402, 805.708, 716.495, 723.478)
+bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="bone" type="Polygon2D" parent="rig1/sprites"]
+position = Vector2(-1566, -1903)
+scale = Vector2(2.51509, 2.51509)
+texture = ExtResource("1_dyuse")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(563.649, 669.837, 554.082, 686.363, 529.729, 685.493, 506.246, 660.27, 525.38, 641.136, 557.561, 628.09, 585.393, 590.691, 654.972, 591.561, 712.375, 621.132, 729.77, 651.573, 726.291, 696.799, 716.724, 708.106, 678.455, 678.535, 659.321, 696.799, 614.094, 692.451, 582.783, 672.447)
+uv = PackedVector2Array(563.649, 669.837, 554.082, 686.363, 529.729, 685.493, 506.246, 660.27, 525.38, 641.136, 557.561, 628.09, 585.393, 590.691, 654.972, 591.561, 712.375, 621.132, 729.77, 651.573, 726.291, 696.799, 716.724, 708.106, 678.455, 678.535, 659.321, 696.799, 614.094, 692.451, 582.783, 672.447)
+bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="rig1"]
+
+[node name="tronco" type="Bone2D" parent="rig1/Skeleton2D"]
+position = Vector2(35, 330)
+rest = Transform2D(1, 0, 0, 1, 35, 429)
+
+[node name="pescoco" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
+position = Vector2(0, -410)
+rest = Transform2D(1, 0, 0, 1, 0, -410)
+
+[node name="rosto" type="Bone2D" parent="rig1/Skeleton2D/tronco/pescoco"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="pernaDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
+position = Vector2(95, -125)
+rest = Transform2D(1, 0, 0, 1, 95, -125)
+
+[node name="pernaEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
+position = Vector2(-101, -126)
+rest = Transform2D(1, 0, 0, 1, -101, -126)
+
+[node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
+position = Vector2(99, -384)
+rotation = 0.884439
+scale = Vector2(1, 1)
+rest = Transform2D(1, 0, 0, 1, 99, -384)
+
+[node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
+position = Vector2(-84, -379)
+rotation = 0.377899
+rest = Transform2D(1, 0, 0, 1, -84, -379)
+
+[node name="CozSol1" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.152941)
+position = Vector2(391, 545)
+scale = Vector2(1.70844, 1.70844)
+texture = ExtResource("1_dyuse")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ek6he"),
+"qtftd anims": ExtResource("2_2q64s")
+}
+autoplay = "andar"
