@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://flifx14ni1j5"]
 
-[ext_resource type="Texture2D" uid="uid://p7yl7rf7dauw" path="res://vetores_spritesheets/coz sol1.svg" id="1_dyuse"]
-[ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://vetores_spritesheets/qtftd anims.res" id="2_2q64s"]
+[ext_resource type="Texture2D" uid="uid://p7yl7rf7dauw" path="res://Componentes/Personagens/rigs/vetores_spritesheets/cozsol1.svg" id="1_dyuse"]
+[ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://Componentes/Personagens/rigs/vetores_spritesheets/qtftdanims.res" id="2_2q64s"]
 
 [sub_resource type="Animation" id="Animation_s14bq"]
 resource_name = "andar"

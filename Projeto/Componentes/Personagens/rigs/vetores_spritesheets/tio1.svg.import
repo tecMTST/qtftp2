@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bchb4nmd7g15b"
-path="res://.godot/imported/tio1.svg-5577630dcefdd003fa1910aff60bb76c.ctex"
+path="res://.godot/imported/tio1.svg-1e45d5e057c733b53ef914fc341374b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://vetores_spritesheets/tio1.svg"
-dest_files=["res://.godot/imported/tio1.svg-5577630dcefdd003fa1910aff60bb76c.ctex"]
+source_file="res://Componentes/Personagens/rigs/vetores_spritesheets/tio1.svg"
+dest_files=["res://.godot/imported/tio1.svg-1e45d5e057c733b53ef914fc341374b4.ctex"]
 
 [params]
 

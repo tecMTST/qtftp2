@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4reg6fm7xkhh"]
 
-[ext_resource type="Texture2D" uid="uid://0khtdrc0ija5" path="res://vetores_spritesheets/carolinaVetorCores1.svg" id="1_uxxl6"]
-[ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://vetores_spritesheets/qtftd anims.res" id="2_v00ph"]
+[ext_resource type="Texture2D" uid="uid://0khtdrc0ija5" path="res://Componentes/Personagens/rigs/vetores_spritesheets/carolinaVetorCores1.svg" id="1_uxxl6"]
+[ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://Componentes/Personagens/rigs/vetores_spritesheets/qtftdanims.res" id="2_v00ph"]
 
 [node name="carolina_rig" type="Node2D"]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8b1pqhnv6k3m"]
 
-[ext_resource type="Texture2D" uid="uid://cqji2bqb74k5t" path="res://vetores_spritesheets/elzaVetorCores1.2.svg" id="1_71cfc"]
-[ext_resource type="Texture2D" uid="uid://dfgvmg6os7nnp" path="res://DUMP/conceptsMae.png" id="2_usmws"]
-[ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://vetores_spritesheets/qtftd anims.res" id="3_57tek"]
+[ext_resource type="Texture2D" uid="uid://cqji2bqb74k5t" path="res://Componentes/Personagens/rigs/vetores_spritesheets/elzaVetorCores1.2.svg" id="1_71cfc"]
+[ext_resource type="Texture2D" path="res://DUMP/conceptsMae.png" id="2_usmws"]
+[ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://Componentes/Personagens/rigs/vetores_spritesheets/qtftdanims.res" id="3_57tek"]
 
 [node name="elza_rig_dessat" type="Node2D"]
 

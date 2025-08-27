@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqji2bqb74k5t"
-path="res://.godot/imported/elzaVetorCores1.2.svg-8b84c7ef7fa782beb380c85c9e3f5aae.ctex"
+path="res://.godot/imported/elzaVetorCores1.2.svg-2904bcc32a9c633fcf0aea69fd8fe18c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://vetores_spritesheets/elzaVetorCores1.2.svg"
-dest_files=["res://.godot/imported/elzaVetorCores1.2.svg-8b84c7ef7fa782beb380c85c9e3f5aae.ctex"]
+source_file="res://Componentes/Personagens/rigs/vetores_spritesheets/elzaVetorCores1.2.svg"
+dest_files=["res://.godot/imported/elzaVetorCores1.2.svg-2904bcc32a9c633fcf0aea69fd8fe18c.ctex"]
 
 [params]
 

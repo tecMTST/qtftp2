@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4iw7sish6ger"]
 
-[ext_resource type="Texture2D" uid="uid://bchb4nmd7g15b" path="res://vetores_spritesheets/tio1.svg" id="1_50ah3"]
-[ext_resource type="Texture2D" uid="uid://crkepl60hm636" path="res://DUMP/tio_2_1.png" id="1_ppkjv"]
-[ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://vetores_spritesheets/qtftd anims.res" id="3_60mmd"]
+[ext_resource type="Texture2D" uid="uid://bchb4nmd7g15b" path="res://Componentes/Personagens/rigs/vetores_spritesheets/tio1.svg" id="1_50ah3"]
+[ext_resource type="Texture2D" path="res://DUMP/tio_2_1.png" id="1_ppkjv"]
+[ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://Componentes/Personagens/rigs/vetores_spritesheets/qtftdanims.res" id="3_60mmd"]
 
 [node name="tio_2_rig" type="Node2D"]
 

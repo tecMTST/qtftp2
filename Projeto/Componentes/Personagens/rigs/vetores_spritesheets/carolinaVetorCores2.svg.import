@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvmg4u62yc1rj"
-path="res://.godot/imported/carolinaVetorCores2.svg-4c99752c96a838feed52325d61979a16.ctex"
+path="res://.godot/imported/carolinaVetorCores2.svg-d699e8e45adbc18b7821d6484f091690.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://vetores_spritesheets/carolinaVetorCores2.svg"
-dest_files=["res://.godot/imported/carolinaVetorCores2.svg-4c99752c96a838feed52325d61979a16.ctex"]
+source_file="res://Componentes/Personagens/rigs/vetores_spritesheets/carolinaVetorCores2.svg"
+dest_files=["res://.godot/imported/carolinaVetorCores2.svg-d699e8e45adbc18b7821d6484f091690.ctex"]
 
 [params]
 

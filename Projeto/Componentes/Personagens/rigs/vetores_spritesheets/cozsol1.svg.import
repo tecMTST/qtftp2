@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p7yl7rf7dauw"
-path="res://.godot/imported/coz sol1.svg-6d0f27c90771fab3e1823cae5bb50526.ctex"
+path="res://.godot/imported/cozsol1.svg-c1708bca26474a46f0bb9428d83af41d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://vetores_spritesheets/coz sol1.svg"
-dest_files=["res://.godot/imported/coz sol1.svg-6d0f27c90771fab3e1823cae5bb50526.ctex"]
+source_file="res://Componentes/Personagens/rigs/vetores_spritesheets/cozsol1.svg"
+dest_files=["res://.godot/imported/cozsol1.svg-c1708bca26474a46f0bb9428d83af41d.ctex"]
 
 [params]
 
