@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=38 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -30,8 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://7oe7qju28gml" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_pressed_pause.svg" id="25_dfuu3"]
 [ext_resource type="BehaviorTree" uid="uid://v1romtgfuw1k" path="res://ai/tutorial.tres" id="26_xhdpr"]
 [ext_resource type="PackedScene" uid="uid://n5v3ssyg823a" path="res://UI/Briefing/Briefing.tscn" id="29_tqe3g"]
-[ext_resource type="Texture2D" uid="uid://h0fwtdbdje0f" path="res://Recursos/Graficos/UI/briefing-tutorial-p1.svg" id="30_y8kni"]
-[ext_resource type="Texture2D" uid="uid://b5xomuvfc25s0" path="res://Recursos/Graficos/UI/briefing-tutorial-p2.svg" id="31_7k32u"]
 [ext_resource type="PackedScene" uid="uid://cr74l6j0jbkx5" path="res://UI/Menus/MenuPausa.tscn" id="31_tqe3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
@@ -263,7 +261,6 @@ visible = false
 
 [node name="Briefing" parent="." instance=ExtResource("29_tqe3g")]
 visible = false
-partes = Array[Texture2D]([ExtResource("30_y8kni"), ExtResource("31_7k32u")])
 
 [node name="SaveAgent" type="Node" parent="."]
 script = ExtResource("25_d1xgi")

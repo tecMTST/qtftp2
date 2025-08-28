@@ -8,7 +8,11 @@
 		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
 		"id_receitas" : [1, 2, 1, 2],
 		"ordem_aleatoria": false,
-		"tempo": 180,
+		"caminhos_briefing": [
+			"res://Recursos/Graficos/UI/briefing-tutorial-p1.svg",
+			"res://Recursos/Graficos/UI/briefing-tutorial-p2.svg"
+		],
+		"tempo": -1,
 		"limite_bagunca": 5,
 		"quantidade_pratos_real" : 4,
 		"quantidade_pratos_exibido" : 4,
@@ -32,6 +36,7 @@
 		"imagem" : "",
 		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
 		"id_receitas" : [2],
+		"tempo": 300,
 		"limite_bagunca": 0,
 		"quantidade_pratos_real" : 10,
 		"quantidade_pratos_exibido" : 10,

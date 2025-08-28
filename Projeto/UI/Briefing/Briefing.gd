@@ -17,9 +17,15 @@ var atual: int = -1
 func iniciar():
 	visible = true
 	get_tree().paused = true
+	_carregar_imagens_de_briefing()
 	_proximo()
 	_mostrar()
 	iniciado.emit()
+
+func _carregar_imagens_de_briefing():
+	partes = []
+	for caminho_briefing in ControleDeFase.nivel_atual.caminhos_briefing:
+		partes.push_front(load(caminho_briefing))
 
 func _mostrar():
 	await fader_principal.finished
