@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqcx4iugleyen"
-path="res://.godot/imported/Parede traseira.svg-144dd8513572b30c10e1b85449604f83.ctex"
+uid="uid://dr5hjjytycg17"
+path="res://.godot/imported/Caixotes.svg-f3fbf615b939073c61427813c0fbc46d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Cenas/Cena_2_Versao_2/Parede traseira.svg"
-dest_files=["res://.godot/imported/Parede traseira.svg-144dd8513572b30c10e1b85449604f83.ctex"]
+source_file="res://Recursos/Graficos/Cenas/Cenario_2/Caixotes.svg"
+dest_files=["res://.godot/imported/Caixotes.svg-f3fbf615b939073c61427813c0fbc46d.ctex"]
 
 [params]
 

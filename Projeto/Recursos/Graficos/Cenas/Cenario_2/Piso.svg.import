@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpqadw5bvlt77"
-path="res://.godot/imported/mesaCS.svg-4abfc1237a71e886972d44a7ad158488.ctex"
+uid="uid://dmon3wtcmi48s"
+path="res://.godot/imported/Piso.svg-ed8cb0431419d02fe3348eba611503fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Cenas/mesaCS.svg"
-dest_files=["res://.godot/imported/mesaCS.svg-4abfc1237a71e886972d44a7ad158488.ctex"]
+source_file="res://Recursos/Graficos/Cenas/Cenario_2/Piso.svg"
+dest_files=["res://.godot/imported/Piso.svg-ed8cb0431419d02fe3348eba611503fa.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cafjtau05ef7n"
-path="res://.godot/imported/divisoriaCS.svg-6f4d76792decbf1d3948c4d2bea58318.ctex"
+uid="uid://c4itpvbt4he0k"
+path="res://.godot/imported/Parede frontal.svg-7063f834116abce1049f116a4256715b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Cenas/divisoriaCS.svg"
-dest_files=["res://.godot/imported/divisoriaCS.svg-6f4d76792decbf1d3948c4d2bea58318.ctex"]
+source_file="res://Recursos/Graficos/Cenas/Cenario_2/Parede frontal.svg"
+dest_files=["res://.godot/imported/Parede frontal.svg-7063f834116abce1049f116a4256715b.ctex"]
 
 [params]
 
