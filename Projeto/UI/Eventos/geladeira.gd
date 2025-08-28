@@ -56,7 +56,7 @@ func preencher_geladeira():
 func close() -> void:
 	GuiTransitions.hide("Geladeira")
 	await GuiTransitions.hide_completed
-	queue_free()
+	get_parent().queue_free()
 
 
 func escolhe_ingrediente(caminho: String) -> void:
