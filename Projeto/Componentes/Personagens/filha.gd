@@ -12,12 +12,14 @@ var waypoint_index := 0
 var moving_forward := true
 
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
-@onready var sprite: Sprite2D = $Sprite2D  # ou AnimatedSprite2D
+@onready var sprite: CarolinaRig = $carolina_rig
 
 
 func _ready():
 	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
+		sprite.Sentada = true
 		return
+	sprite.Sentada = false
 	select_new_waypoint()
 	ControleDeFase.prato_entregue.connect(_ir_comer)
 

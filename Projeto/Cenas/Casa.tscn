@@ -168,7 +168,7 @@ position = Vector2(355, 606)
 
 [node name="Filha" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("15_gklaa")]
 z_index = 10
-position = Vector2(497, 905)
+position = Vector2(505, 877)
 bagunca_scene = ExtResource("17_utqv5")
 waypoints = NodePath("../../Waypoints")
 

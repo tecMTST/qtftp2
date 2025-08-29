@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvfdorkninsg1"]
+[gd_scene load_steps=3 format=3 uid="uid://cvfdorkninsg1"]
 
-[ext_resource type="Texture2D" path="res://DUMP/tio_1.png" id="1_aqrw7"]
 [ext_resource type="Texture2D" uid="uid://cc3mu1abyi3pd" path="res://Componentes/Personagens/rigs/vetores_spritesheets/tio2.svg" id="1_bxfg3"]
 [ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://Componentes/Personagens/rigs/vetores_spritesheets/qtftdanims.res" id="3_214gm"]
 
@@ -127,7 +126,6 @@ rest = Transform2D(1, 0, 0, 1, -101, -126)
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(99, -384)
 rotation = 0.186886
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 99, -384)
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
@@ -140,10 +138,9 @@ visible = false
 modulate = Color(1, 1, 1, 0.243137)
 position = Vector2(264, 421)
 scale = Vector2(1.61166, 1.61166)
-texture = ExtResource("1_aqrw7")
 metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"qtftd anims": ExtResource("3_214gm")
+&"qtftd anims": ExtResource("3_214gm")
 }
