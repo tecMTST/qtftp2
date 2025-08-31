@@ -7,6 +7,8 @@ signal nivel_concluido_falha(nivel, estado_nivel)
 signal cena_final(nivel, estado_nivel)
 signal nova_receita(receita)
 
+const TEMPO_INFINITO = -1
+
 @export var nivel_atual : Nivel
 @export var jogador : Player
 @export var receitas_disponiveis : Array[Receita] = []
@@ -44,18 +46,27 @@ func carregar_nivel():
 	var niveis = Globais.niveis.filter(func(item : Nivel) : return item.id == id_nivel)
 	if len(niveis) > 0:
 		nivel_atual = niveis[0]
-		receitas_disponiveis = Globais.receitas.filter(
-			func(item : Receita) : return nivel_atual.id_receitas.any(
-				func(id : int): return id == item.id))
-		selecionar_receita_aleatoria()
+		_index_receita_atual = -1
+		receitas_disponiveis = []
+		for id_receita in nivel_atual.id_receitas:
+			for receita in Globais.receitas:
+				if id_receita == receita.id:
+					receitas_disponiveis.append(receita)
+					break
+		selecionar_proxima_receita()
 
 	jogador = NodeExtension.find_first_child(get_tree().current_scene,
 		func(child): return child is Player)
 
-func selecionar_receita_aleatoria() -> void:
-	selecionar_receita(randi() % receitas_disponiveis.size())
+func selecionar_proxima_receita() -> bool:
+	if nivel_atual.ordem_aleatoria:
+		return selecionar_receita_aleatoria()
+	return selecionar_receita_especifica(_index_receita_atual + 1)
 
-func selecionar_receita(indice_receita) -> bool:
+func selecionar_receita_aleatoria() -> bool:
+	return selecionar_receita_especifica(randi() % receitas_disponiveis.size())
+
+func selecionar_receita_especifica(indice_receita) -> bool:
 	if not nivel_atual:
 		return false
 	if indice_receita > len(receitas_disponiveis) - 1 or indice_receita < 0:
@@ -77,8 +88,7 @@ func proximo_passo() -> bool:
 		return false
 	_index_passo_atual += 1
 	if _index_passo_atual > len(receita_selecionada.passos) - 1:
-		_index_receita_atual += 1
-		return selecionar_receita(_index_receita_atual)
+		return selecionar_proxima_receita()
 	passo_atual = receita_selecionada.passos[_index_passo_atual]
 	return true
 
@@ -86,12 +96,12 @@ func iniciar_nivel():
 	get_tree().paused = false
 	assert(nivel_atual is Nivel, "nivel_atual precisa ser carregado")
 	_reset_timers() # Verifica e para os timers caso em andamento
-	tempo_jogo.wait_time = nivel_atual.tempo
+	tempo_jogo.wait_time = nivel_atual.tempo if nivel_atual.tempo > 0 else 1
 	estado_nivel = EstadoDoNivel.new(nivel_atual)
 	tempo_jogo.start()
 	_tempo_checagem.start()
 	nivel_iniciado.emit(nivel_atual, estado_nivel)
-	print_debug("Nível iniciado")
+	print_debug("Nível ", nivel_atual.id, " iniciado")
 
 
 func _atualizar_bagunca() -> void:
@@ -104,7 +114,7 @@ func _verificar_condicoes():
 	if estado_nivel.baguncado():
 		_encerrar_nivel_falha()
 		print_debug("Nível falhou")
-	elif tempo_jogo.is_stopped():
+	elif tempo_jogo.is_stopped() and nivel_atual.tempo != TEMPO_INFINITO:
 		_encerrar_nivel_falha()
 		print_debug("Nível falhou")
 	elif estado_nivel.choro_limite():

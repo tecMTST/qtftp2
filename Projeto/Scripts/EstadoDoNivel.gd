@@ -2,10 +2,16 @@ class_name EstadoDoNivel
 
 var tempo_restante : float:
 	set(tempo):
-		var minutes = int(tempo / 60)
-		var seconds = fmod(tempo, 60)
-		tempo_restante_formatado = "%02d:%02d" % [minutes, seconds]
 		tempo_restante = tempo
+		if (
+			!ControleDeFase.nivel_atual
+			or ControleDeFase.nivel_atual.tempo == ControleDeFase.TEMPO_INFINITO
+		):
+			tempo_restante_formatado = "∞"
+		else:
+			var minutes = int(tempo / 60)
+			var seconds = fmod(tempo, 60)
+			tempo_restante_formatado = "%02d:%02d" % [minutes, seconds]
 var tempo_restante_formatado : String
 var receitas_nivel : int
 var pratos_necessarios : int
@@ -38,11 +44,11 @@ func motivo() -> String:
 
 func entregar_prato(prato) -> void:
 	pratos_entregues.append(prato)
-	if !completo(): ControleDeFase.selecionar_receita_aleatoria()
+	if !completo(): ControleDeFase.selecionar_proxima_receita()
 
 func completo() -> bool:
 	return pratos_entregues.size() >= pratos_necessarios and not cena_final_iniciada
-	
+
 func finalizado() -> bool:
 	return cena_final_concluida
 

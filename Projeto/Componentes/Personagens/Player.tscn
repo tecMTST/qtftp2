@@ -524,7 +524,6 @@ rest = Transform2D(0.998701, -0.0509536, 0.0509536, 0.998701, 39, 151)
 [node name="PernaEsq_0" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
 position = Vector2(18, 1)
 rotation = -0.0924511
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 18, 1)
 metadata/_local_pose_override_enabled_ = true
 
@@ -549,7 +548,7 @@ length = 16.0
 bone_angle = 0.0
 
 [node name="Peito" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
-position = Vector2(-4.50554, -31.5055)
+position = Vector2(-4.02168, -31.0217)
 rest = Transform2D(1, 0, 0, 1, -4, -35)
 metadata/_local_pose_override_enabled_ = true
 

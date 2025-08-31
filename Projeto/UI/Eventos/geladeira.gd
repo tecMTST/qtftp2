@@ -56,7 +56,7 @@ func preencher_geladeira():
 func close() -> void:
 	GuiTransitions.hide("Geladeira")
 	await GuiTransitions.hide_completed
-	queue_free()
+	get_parent().queue_free()
 	if ControleDeFase.nivel_atual.id == 3:		
 		ControleDeFase.jogador.iniciar_dialogo(load("res://Dialogo/Fase03.dialogue"), "geladeiravazia", 3.0)
 

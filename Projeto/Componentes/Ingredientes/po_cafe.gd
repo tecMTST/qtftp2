@@ -7,12 +7,13 @@ var esta_cozinhando = false
 
 func _ready() -> void:
 	var ingredientes = Globais.ingredientes.filter(
-		func(item : Ingrediente): return item.id == 6 and item.variacao == 1)
-	if len(ingredientes) > 0:
-		ingrediente = ingredientes[0]
-		nome = ingrediente.nome
-		descricao = ingrediente.descricao
-		timer.start(ingrediente.acoes[0].tempo)
+		func(item: Ingrediente): return item.id == 6 and item.variacao == 1
+	)
+	assert(len(ingredientes) > 0, "ingrediente não encontrado!")
+	ingrediente = ingredientes[0]
+	nome = ingrediente.nome
+	descricao = ingrediente.descricao
+	timer.start(ingrediente.acoes[0].tempo)
 
 
 func _on_timer_timeout():
