@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=42 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://h0fwtdbdje0f" path="res://Recursos/Graficos/UI/briefing-tutorial-p1.svg" id="30_y8kni"]
 [ext_resource type="Texture2D" uid="uid://b5xomuvfc25s0" path="res://Recursos/Graficos/UI/briefing-tutorial-p2.svg" id="31_7k32u"]
 [ext_resource type="PackedScene" uid="uid://cr74l6j0jbkx5" path="res://UI/Menus/MenuPausa.tscn" id="31_tqe3g"]
+[ext_resource type="BehaviorTree" uid="uid://c3g4ont1yrqai" path="res://ai/fase_3.tres" id="34_7k32u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
 size = Vector2(259, 1546)
@@ -52,6 +53,8 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 445, 582, 449, 764, 182, 763, 176, 535, 41, 535)])
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_tjjme"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_2tmn8"]
 
 [node name="Casa" type="Node2D"]
 script = ExtResource("1_6yvxp")
@@ -273,6 +276,10 @@ metadata/_custom_type_script = "uid://balal13nfhegi"
 [node name="BTPlayer" type="BTPlayer" parent="."]
 behavior_tree = ExtResource("26_xhdpr")
 blackboard_plan = SubResource("BlackboardPlan_tjjme")
+
+[node name="BTPlayerFase3" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("34_7k32u")
+blackboard_plan = SubResource("BlackboardPlan_2tmn8")
 
 [connection signal="acao_agarrou" from="Personagens/Player" to="." method="_on_player_acao_agarrou"]
 [connection signal="acao_ativada" from="Personagens/Player" to="." method="_on_player_acao_ativada"]
