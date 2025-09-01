@@ -6,13 +6,14 @@ signal finalizado
 @export var partes: Array[Texture2D] = []
 
 var atual: int = -1
+var tratar_pause:bool=true
 
 @onready var fader_principal: Fader = $BriefingBase/FaderPrincipal
 @onready var imagem: TextureRect = $BriefingBase/Panel/Centro/Imagem
 @onready var fader_centro: Fader = $BriefingBase/Panel/Centro/FaderCentro
 @onready var proximo_label: Label = $BriefingBase/Proximo/ProximoLabel
 @onready var voltar: TouchScreenButton = $BriefingBase/Voltar
-var tratar_pause:bool=true
+
 
 func iniciar(pause:bool=true):
 	fader_principal.FadeIn()
