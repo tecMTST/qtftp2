@@ -176,3 +176,6 @@ func congelar_tempo() -> void:
 func descongelar_tempo() -> void:
 	jogador.process_mode = Node.PROCESS_MODE_INHERIT
 	tempo_jogo.paused = false
+
+func fase_atual() -> int:
+	return EstadoDeJogo.nivel_atual

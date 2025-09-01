@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=41 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="11_utqv5"]
 [ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="14_d2j33"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="15_gklaa"]
+[ext_resource type="PackedScene" uid="uid://33ix112wt1og" path="res://Componentes/Personagens/luiza.tscn" id="16_it5c5"]
 [ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="16_utqv5"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunça/BaguncaCena.tscn" id="17_utqv5"]
 [ext_resource type="Texture2D" uid="uid://bfjh0swdtn76j" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_default.svg" id="19_tjjme"]
@@ -28,9 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="23_tqe3g"]
 [ext_resource type="Script" uid="uid://balal13nfhegi" path="res://addons/saveEngine/scripts/SaveAgent.gd" id="25_d1xgi"]
 [ext_resource type="Texture2D" uid="uid://7oe7qju28gml" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_pressed_pause.svg" id="25_dfuu3"]
-[ext_resource type="BehaviorTree" uid="uid://v1romtgfuw1k" path="res://ai/tutorial.tres" id="26_xhdpr"]
 [ext_resource type="PackedScene" uid="uid://n5v3ssyg823a" path="res://UI/Briefing/Briefing.tscn" id="29_tqe3g"]
 [ext_resource type="PackedScene" uid="uid://cr74l6j0jbkx5" path="res://UI/Menus/MenuPausa.tscn" id="31_tqe3g"]
+[ext_resource type="BehaviorTree" uid="uid://v1romtgfuw1k" path="res://ai/tutorial.tres" id="32_y8kni"]
 [ext_resource type="BehaviorTree" uid="uid://c3g4ont1yrqai" path="res://ai/fase_3.tres" id="34_7k32u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
@@ -175,6 +176,10 @@ position = Vector2(505, 877)
 bagunca_scene = ExtResource("17_utqv5")
 waypoints = NodePath("../../Waypoints")
 
+[node name="Luisa" parent="Personagens" instance=ExtResource("16_it5c5")]
+position = Vector2(415, 1100)
+scale = Vector2(0.5, 0.5)
+
 [node name="CenarioiFront" type="Node2D" parent="."]
 z_index = 15
 
@@ -271,7 +276,7 @@ AutoSave = false
 metadata/_custom_type_script = "uid://balal13nfhegi"
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = ExtResource("26_xhdpr")
+behavior_tree = ExtResource("32_y8kni")
 blackboard_plan = SubResource("BlackboardPlan_tjjme")
 
 [node name="BTPlayerFase3" type="BTPlayer" parent="."]

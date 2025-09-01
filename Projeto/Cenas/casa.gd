@@ -77,3 +77,9 @@ func _mostrar_botao_fim():
 
 func _on_botao_fim_pressed() -> void:
 	_finalizar_nivel()
+
+func luisa_entra() -> void:
+	$Personagens/Luisa.position = $Personagens/Luisa.position.lerp(Vector2(415, 800), 0.0167 * 100)
+
+func retorna_nivel() -> int:
+	return ControleDeFase.fase_atual()

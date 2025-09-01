@@ -14,45 +14,45 @@ elza: O gás acabou? Não acredito!
 ~ barkCarolLucas03
 #Nessa fase, SE a barra/círculo do choro de Lucas encher pela metade,
 #Carolina fala:
-carolina: Mãe, o Lucas vai…
-elza: Eu sei!
+carolina: Mãe, o Lucas vai…[next=auto]
+elza: Eu sei![next=2]
 => END!
  
 ~ elzaexausta
 #Quando o tempo do timer estiver próximo do fim (ums 5 segundos antes)
-elza: Meu Deus…
-elza: Eu não tô me aguentando em pé…
+elza: Meu Deus…[next=1]
+elza: Eu não tô me aguentando em pé…[next=3]
 #Elza senta no chão e chora, tapando o rosto com as mãos. Lágrimas pequenas voam de seu rosto
 #timer segue mas jogador não consegue mexer Elza
 => END!
 
 ~ Posgameplayfase03
 #Quando o timer acaba, Carolina vai até Elza que segue chorando no chão
-carolina: Mãe, a gente não tem o que comer?
+carolina: Mãe, a gente não tem o que comer?[next=auto]
 #As lágrimas param de sair de Elza
-elza: Filha…
+elza: Filha…[next=2]
 #Elza volta a chorar (obs: pensar no desenho de som)
 #Luisa Entra na casa apressadamente. Se aproxima de Elza e Carolina 
 #(mas não muito, pq ela vai se aproximar mais daqui a pouco)
-Luisa: Elza! Carol!
-Luisa: Sabia que tinha algo errado!
+Luisa: Elza! Carol! [next=2]
+Luisa: Sabia que tinha algo errado![next=3]
 #Elza  Se levanta, mas continua com expressão triste
-elza: Lu… Não sei o que fazer.
-elza: Se pago as contas, não compro comida.
-elza: Se compro comida, não pago as contas.
-elza: Tudo que quero é criar meus filhos bem.
+elza: Lu… Não sei o que fazer.[next=auto]
+elza: Se pago as contas, não compro comida.[next=auto]
+elza: Se compro comida, não pago as contas.[next=auto]
+elza: Tudo que quero é criar meus filhos bem.[next=auto]
 #Luisa dá um passo para frente, obstinada
-Luisa: Isso não é sua culpa, Elza!
-Luisa: Já estive nesse lugar também.
-Luisa: E ninguém tem que passar fome.
-Luisa: Isso é muito grave. GRAVÍSSIMO!
-Luisa: Você tem o direito a se alimentar!
-elza: O direito?
+Luisa: Isso não é sua culpa, Elza![next=auto]
+Luisa: Já estive nesse lugar também.[next=auto]
+Luisa: E ninguém tem que passar fome.[next=auto]
+Luisa: Isso é muito grave. GRAVÍSSIMO![next=auto]
+Luisa: Você tem o direito a se alimentar![next=auto]
+elza: O direito?[next=auto]
 #Luisa dá mais um passo para frente, chegando bem perto de Elza
-Luisa: Vou te mostrar um lugar.
-Luisa: A Cozinha Solidária.
-elza: Cozinha Solidária?
-Luisa: Vem comigo.
+Luisa: Vou te mostrar um lugar.[next=auto]
+Luisa: A Cozinha Solidária.[next=auto]
+elza: Cozinha Solidária?[next=auto]
+Luisa: Vem comigo.[next=auto]
 #Carolina pega Lucas no berço. 
 #Luisa, Elza e Carolina (com Lucas) saem em fila da casa]
 #Fade Ouy

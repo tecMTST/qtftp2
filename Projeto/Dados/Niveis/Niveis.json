@@ -60,10 +60,10 @@
 		"imagem" : "",
 		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
 		"id_receitas" : [1, 2],
-		"tempo": 30,
+		"tempo": -1,
 		"limite_bagunca": 5,
 		"quantidade_pratos_real" : 3,
-		"quantidade_pratos_exibido" : 3,
+		"quantidade_pratos_exibido" : 0,
 		"valor_nutricional_minimo" : 5,
 		"valor_sabor_minimo" : 2,
 		"pontos_recompensa" : 3,
@@ -72,8 +72,8 @@
 		"intervalo_bagunca" : 4.0,
  		"variacao_bagunca" : 5.0,
 		"choro" : true,
- 		"intervalo_choro" : 2.0,
+ 		"intervalo_choro" : 4.0,
  		"variacao_choro" :  0.0,
-		"tempo_limite_choro" :  10.0
+		"tempo_limite_choro" :  400.0
 	},
 ]
