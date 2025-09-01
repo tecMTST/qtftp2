@@ -22,7 +22,7 @@ func _ready() -> void:
 func preencher_geladeira():
 	if not ControleDeFase.nivel_atual or not ControleDeFase.receita_selecionada:
 		close()
-	if ControleDeFase.nivel_atual.id != 3:		
+	if ControleDeFase.nivel_atual.id != 3:
 		var i : int = 0
 		for ingrediente_receita in ControleDeFase.receita_selecionada.ingredientes:
 			var ingrediente = Globais.get_ingrediente(
@@ -48,7 +48,6 @@ func preencher_geladeira():
 				container = prateleira_3.get_node("IngredienteContainer")
 			else:
 				break  # Se tiver mais itens do que o total possível, para aqui
-
 			container.add_child(igrediente_geladeira)
 			i += 1
 
@@ -57,8 +56,8 @@ func close() -> void:
 	GuiTransitions.hide("Geladeira")
 	await GuiTransitions.hide_completed
 	get_parent().queue_free()
-	if ControleDeFase.nivel_atual.id == 3:		
-		ControleDeFase.jogador.iniciar_dialogo(load("res://Dialogo/Fase03.dialogue"), "geladeiravazia", 3.0)
+	if ControleDeFase.nivel_atual.id == 3:
+		ControleDeFase.jogador.iniciar_dialogo(load("res://Dialogo/Fase03.dialogue"),"geladeiravazia", 3.0)
 
 
 func escolhe_ingrediente(caminho: String) -> void:
