@@ -23,6 +23,7 @@ grow_vertical = 2
 
 [node name="FaderPrincipal" type="Node" parent="BriefingBase"]
 script = ExtResource("2_u36wo")
+AutoFadeIn = false
 metadata/_custom_type_script = "uid://cpesqq3ctb78o"
 
 [node name="Panel" type="Panel" parent="BriefingBase"]

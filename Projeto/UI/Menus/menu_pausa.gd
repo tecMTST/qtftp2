@@ -2,6 +2,8 @@ class_name MenuPausa extends Control
 
 signal continuar
 
+@export var briefing : Briefing
+
 # essa função despausa o jogo
 func _on_continuar_pressed() -> void:
 	continuar.emit()
@@ -18,3 +20,8 @@ func _on_sair_pressed() -> void:
 func _on_retornar_para_tela_inicial_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://UI/Menus/menu_principal.tscn")
+
+#abre o briefing novamente
+func _on_briefing_pressed() -> void:
+	briefing.iniciar(false)
+	pass # Replace with function body.
