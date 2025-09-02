@@ -1,14 +1,17 @@
+# essa é a representação do ingrediente dentro da geladeira.
+# ao ser escolhido (_on_button_pressed) ele indica qual foi
+# o ingrediente escolhido.
 class_name ObjIngrediente extends Control
 
-signal botao_apertado(caminho)
+signal ingrediente_escolhido(ingrediente)
 
-@export var nome = ""
 @export var descricao = ""
-@export var caminho_objeto = ""
 @export var sprite: Texture
+
+var ingrediente: Ingrediente
 
 func _ready() -> void:
 	$Sprite.texture = sprite
 
 func _on_button_pressed() -> void:
-	botao_apertado.emit(caminho_objeto)
+	ingrediente_escolhido.emit(ingrediente)

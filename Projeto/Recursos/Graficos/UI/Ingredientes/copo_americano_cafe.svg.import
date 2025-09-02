@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8pfsprdp0ge7"
-path="res://.godot/imported/arrozPronto.svg-8c507501016077aea56ce813b925c507.ctex"
+uid="uid://dyctyv7msm2tg"
+path="res://.godot/imported/copo_americano_cafe.svg-8f3ea86e84357519d2f9d9eb740d82e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Ingredientes/arrozPronto.svg"
-dest_files=["res://.godot/imported/arrozPronto.svg-8c507501016077aea56ce813b925c507.ctex"]
+source_file="res://Recursos/Graficos/UI/Ingredientes/copo_americano_cafe.svg"
+dest_files=["res://.godot/imported/copo_americano_cafe.svg-8f3ea86e84357519d2f9d9eb740d82e8.ctex"]
 
 [params]
 

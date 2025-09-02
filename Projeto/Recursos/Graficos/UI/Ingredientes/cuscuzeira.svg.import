@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yn6n3asckt0q"
-path="res://.godot/imported/cuscuzDesenformado.svg-c701a27550c26121668fdc13089460d2.ctex"
+uid="uid://d15w8twocimip"
+path="res://.godot/imported/cuscuzeira.svg-13d417be62878d981f139b996f5f2381.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Ingredientes/cuscuzDesenformado.svg"
-dest_files=["res://.godot/imported/cuscuzDesenformado.svg-c701a27550c26121668fdc13089460d2.ctex"]
+source_file="res://Recursos/Graficos/UI/Ingredientes/cuscuzeira.svg"
+dest_files=["res://.godot/imported/cuscuzeira.svg-13d417be62878d981f139b996f5f2381.ctex"]
 
 [params]
 

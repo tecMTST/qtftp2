@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx0oygwodj5sx"
-path="res://.godot/imported/arrozPote.svg-623e0a81acbc361760477f93b9ed319e.ctex"
+uid="uid://ehydmw0tbg8c"
+path="res://.godot/imported/cuscuzeira_fumaca.svg-4a044c7533127ad016740f4a6cbeef29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Ingredientes/arrozPote.svg"
-dest_files=["res://.godot/imported/arrozPote.svg-623e0a81acbc361760477f93b9ed319e.ctex"]
+source_file="res://Recursos/Graficos/UI/Ingredientes/cuscuzeira_fumaca.svg"
+dest_files=["res://.godot/imported/cuscuzeira_fumaca.svg-4a044c7533127ad016740f4a6cbeef29.ctex"]
 
 [params]
 

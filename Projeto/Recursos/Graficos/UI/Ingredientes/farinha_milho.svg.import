@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7saajf4a60ty"
-path="res://.godot/imported/alho.svg-196cd145791fce3b5df62a515c499c9c.ctex"
+uid="uid://dswriybantrou"
+path="res://.godot/imported/farinha_milho.svg-6f6f919403c1e62f601e51dfdc43b69f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Ingredientes/alho.svg"
-dest_files=["res://.godot/imported/alho.svg-196cd145791fce3b5df62a515c499c9c.ctex"]
+source_file="res://Recursos/Graficos/UI/Ingredientes/farinha_milho.svg"
+dest_files=["res://.godot/imported/farinha_milho.svg-6f6f919403c1e62f601e51dfdc43b69f.ctex"]
 
 [params]
 

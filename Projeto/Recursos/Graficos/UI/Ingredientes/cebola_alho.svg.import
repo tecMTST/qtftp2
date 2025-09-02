@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp4x42lgomkpj"
-path="res://.godot/imported/panelaFervendo.svg-d96d2c9ea10f9b08691f1fda89cec05b.ctex"
+uid="uid://clslan0b05exi"
+path="res://.godot/imported/cebola_alho.svg-9d7f58e4d7d232c2925e73fded943b26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Ingredientes/panelaFervendo.svg"
-dest_files=["res://.godot/imported/panelaFervendo.svg-d96d2c9ea10f9b08691f1fda89cec05b.ctex"]
+source_file="res://Recursos/Graficos/UI/Ingredientes/cebola_alho.svg"
+dest_files=["res://.godot/imported/cebola_alho.svg-9d7f58e4d7d232c2925e73fded943b26.ctex"]
 
 [params]
 

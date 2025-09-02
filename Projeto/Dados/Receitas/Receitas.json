@@ -3,97 +3,141 @@
 		"id" : 1,
 		"nome" : "Cuscuz",
 		"descricao" : "Prato de cuscuz com manteiga",
-		"caminho_sprite": "res://Recursos/Graficos/Ingredientes/Cuscuz_desenformado.png",
-		"ingredientes" : [
-			{
-				"id_ingrediente" : 5,
-				"variacao_ingrediente": 1,
-				"quantidade" : 1
-			}
-		],
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/cuscuz.svg",
 		"passos" : [
 			{
-				"ordem" : 1,
+				"descricao" : "Pegar Cuscuz na geladeira",
+				"alvo" : "geladeira",
+				"ingrediente": "cuscuz_cru"
+			},
+			{
 				"descricao" : "Hidratar o cuscuz",
-				"alvo" : "Pia",
-				"acao" : "molhar",
-				"ingredientes" : [
-					{
-						"id_ingrediente" : 5,
-						"variacao_ingrediente": 1,
-						"quantidade" : 1
-					}
-				]
+				"alvo" : "pia"
 			},
 			{
-				"ordem" : 2,
 				"descricao" : "Cozinhar o cuscuz",
-				"alvo" : "Fogão",
-				"acao" : "cozer",
-				"ingredientes" : [
-					{
-						"id_ingrediente" : 5,
-						"variacao_ingrediente": 2,
-						"quantidade" : 1
-					}
-				]
+				"alvo" : "fogao"
 			},
 			{
-				"ordem" : 3,
-				"descricao" : "Montar o prato",
-				"alvo" : "Bancada",
-				"acao" : "montagem",
-				"ingredientes" : [
-					{
-						"id_ingrediente" : 5,
-						"variacao_ingrediente": 3,
-						"quantidade" : 1
-					}
-				]
+				"descricao": "Tirar o cuscuz do fogo!",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Desenformar o cuscuz",
+				"alvo" : "bancada"
+			},
+			{
+				"descricao" : "Servir o cuscuz",
+				"alvo" : "mesa"
 			}
-		],
-		"resultado" : 3
+		]
 	},
 	{
 		"id" : 2,
 		"nome" : "Café Coado",
 		"descricao" : "Xícara de café coado",
 		"caminho_sprite": "res://Recursos/Graficos/Ingredientes/copoCafe.svg",
-		"ingredientes" : [
-			{
-				"id_ingrediente" : 6,
-				"variacao_ingrediente": 1,
-				"quantidade" : 1
-			}
-		],
 		"passos" : [
 			{
-				"ordem" : 1,
-				"descricao" : "Passar o café",
-				"alvo" : "Fogão",
-				"acao" : "cozer",
-				"ingredientes" : [
-					{
-						"id_ingrediente" : 6,
-						"variacao_ingrediente": 1,
-						"quantidade" : 1
-					}
-				]
+				"descricao" : "Pegar pó de café na geladeira",
+				"alvo" : "geladeira",
+				"ingrediente" : "po_de_cafe"
 			},
 			{
-				"ordem" : 3,
-				"descricao" : "Servir café",
-				"alvo" : "Bancada",
-				"acao" : "montagem",
-				"ingredientes" : [
-					{
-						"id_ingrediente" : 6,
-						"variacao_ingrediente": 2,
-						"quantidade" : 1
-					}
-				]
+				"descricao": "deixar pó de café na bancada",
+				"alvo": "bancada"
+			},
+			{
+				"descricao" : "Pegar água da pia",
+				"alvo" : "pia"
+			},
+			{
+				"descricao" : "Ferver a água",
+				"alvo" : "fogao"
+			},
+			{
+				"descricao": "Tirar a água do fogo",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Coar o café",
+				"alvo" : "bancada"
+			},
+			{
+				"descricao" : "Servir o café",
+				"alvo" : "mesa"
 			}
-		],
-		"resultado" : 4
+		]
+	},
+	{
+		"id" : 3,
+		"nome" : "Arroz Cozido",
+		"descricao" : "Porção de arroz cozido",
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/arroz.svg",
+		"passos" : [
+			{
+				"descricao": "Pegar cebola e alho na geladeira",
+				"alvo": "geladeira",
+				"ingrediente": "cebola_e_alho"
+			},
+			{
+				"descricao": "Picar cebola e alho na bancada",
+				"alvo": "bancada"
+			},
+			{
+				"descricao": "Colocar refogado no fogo",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Pegar arroz cru na geladeira",
+				"alvo" : "geladeira",
+				"ingrediente": "arroz_cru"
+			},
+			{
+				"descricao": "Cobrir o arroz com água",
+				"alvo": "pia"
+			},
+			{
+				"descricao": "Colocar arroz no refogado",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Servir o arroz",
+				"alvo" : "mesa"
+			}
+		]
+	},
+	{
+		"id" : 4,
+		"nome" : "Ovo frito",
+		"descricao" : "Ovo de galinha frito",
+		"caminho_sprite": "res://Recursos/Graficos/Ingredientes/Cuscuz_desenformado.png",
+		"passos" : [
+			{
+				"descricao" : "Pegar Cuscuz na geladeira",
+				"alvo" : "geladeira",
+				"ingrediente": "cuscuz_cru"
+			},
+			{
+				"descricao" : "Hidratar o cuscuz",
+				"alvo" : "pia"
+			},
+			{
+				"descricao" : "Cozinhar o cuscuz",
+				"alvo" : "fogao"
+			},
+			{
+				"descricao": "Tirar o cuscuz do fogo!",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Desenformar o cuscuz",
+				"alvo" : "bancada"
+			},
+			{
+				"descricao" : "Servir o cuscuz",
+				"alvo" : "mesa"
+			}
+		]
 	}
 ]
