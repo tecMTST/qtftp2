@@ -23,9 +23,10 @@ texture = ExtResource("2_0ph45")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
-position = Vector2(20, -20)
+position = Vector2(40, -41)
 script = ExtResource("3_ekgof")
 temporizador = NodePath("../Timer")
+radius = 30.0
 cor = Color(0.909804, 0.211765, 0.215686, 1)
 metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
 

@@ -1,14 +1,15 @@
 class_name Fogao extends BaseInteragivel
 
 var objeto_atual : IngredienteBase = null
+@onready var indicador: Sprite2D = $Indicador
 @onready var pivot_objeto : Node2D = $Pivot
 @onready var fogo_animado : AnimatedSprite2D = $AnimatedFire
 
 func _ready() -> void:
 	nome = "Fogão"
 
-func _process(_delta: float) -> void:
-	pass
+func _process(delta: float) -> void:
+	indicador.visible = ControleDeFase.verifica_proximo_ponto("Fogão")
 
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	if(objeto_atual):

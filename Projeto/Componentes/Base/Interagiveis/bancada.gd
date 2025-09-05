@@ -1,6 +1,7 @@
 class_name Bancada extends BaseInteragivel
 
 var _jogador : Player
+@onready var indicador: Sprite2D = $Indicador
 
 func _ready() -> void:
 	nome = "Bancada"
@@ -8,6 +9,8 @@ func _ready() -> void:
 	Eventos.evento_finalizado.connect(_on_acao_bancada_cancelada)
 	Eventos.evento_falhou.connect(_on_acao_bancada_cancelada)
 
+func _process(delta: float) -> void:
+	indicador.visible = ControleDeFase.verifica_proximo_ponto("Bancada")
 
 func _on_componente_interagivel_interagir(jogador: Player):
 	if jogador.objeto_agarrado != null and _jogador == null:

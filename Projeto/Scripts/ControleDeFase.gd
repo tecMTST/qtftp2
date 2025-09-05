@@ -15,6 +15,7 @@ const TEMPO_INFINITO = -1
 @export var receita_selecionada : Receita
 @export var ingredientes_disponiveis : Array[Ingrediente] = []
 @export var passo_atual : PassoReceita
+@export var indicador_proximo : String = ""
 
 var tempo_jogo: Timer
 var estado_nivel: EstadoDoNivel
@@ -54,11 +55,13 @@ func carregar_nivel():
 					receitas_disponiveis.append(receita)
 					break
 		selecionar_proxima_receita()
+		
 
 	jogador = NodeExtension.find_first_child(get_tree().current_scene,
 		func(child): return child is Player)
 
 func selecionar_proxima_receita() -> bool:
+	indicador_proximo = "Geladeira"
 	if nivel_atual.ordem_aleatoria:
 		return selecionar_receita_aleatoria()
 	return selecionar_receita_especifica(_index_receita_atual + 1)
@@ -91,6 +94,9 @@ func proximo_passo() -> bool:
 		return selecionar_proxima_receita()
 	passo_atual = receita_selecionada.passos[_index_passo_atual]
 	return true
+
+func verifica_proximo_ponto(alvo : String) -> bool:
+	return indicador_proximo == alvo
 
 func iniciar_nivel():
 	get_tree().paused = false
@@ -144,6 +150,7 @@ func _encerrar_nivel():
 	ControleDeAudio.toca_efeito(efeito)
 	EstadoDeJogo.nivel_atual += 1
 	_abrir_proximo_nivel()
+	indicador_proximo = ""
 
 func _encerrar_nivel_falha():
 	_reset_timers()

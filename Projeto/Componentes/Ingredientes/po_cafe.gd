@@ -14,6 +14,7 @@ func _ready() -> void:
 	nome = ingrediente.nome
 	descricao = ingrediente.descricao
 	timer.start(ingrediente.acoes[0].tempo)
+	ControleDeFase.indicador_proximo = "Fogão"
 
 
 func _on_timer_timeout():
@@ -22,6 +23,7 @@ func _on_timer_timeout():
 
 
 func acao_fogao() -> bool:
+	ControleDeFase.indicador_proximo = ""
 	if(!esta_cozinhando):
 		timer.paused = false
 		timer.start(ingrediente.acoes[0].tempo)

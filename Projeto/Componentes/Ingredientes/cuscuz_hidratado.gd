@@ -15,6 +15,7 @@ func _ready() -> void:
 	nome = ingrediente.nome
 	descricao = ingrediente.descricao
 	timer.start(ingrediente.acoes[0].tempo)
+	ControleDeFase.indicador_proximo = ""
 
 
 func _on_timer_timeout():
@@ -22,10 +23,12 @@ func _on_timer_timeout():
 		esta_pronto_para_cozinhar= true
 		timer.paused = true
 		visualizador_temporal.cor = Color("47dc00")
+		ControleDeFase.indicador_proximo = "Fogão"
 	elif(esta_cozinhando):
 		transformar(load("res://Componentes/Ingredientes/CuscuzCozido.tscn").instantiate())
 
 func acao_fogao() -> bool:
+	ControleDeFase.indicador_proximo = ""
 	if(!esta_pronto_para_cozinhar): return false
 	if(!esta_cozinhando):
 		timer.paused = false

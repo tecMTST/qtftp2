@@ -8,7 +8,9 @@ func _ready() -> void:
 	ingrediente = ingredientes[0]
 	nome = ingrediente.nome
 	descricao = ingrediente.descricao
+	ControleDeFase.indicador_proximo = "Mesa"
 
 func entregar():
 	ControleDeFase.entregar_prato(ingrediente)
+	ControleDeFase.indicador_proximo = "Geladeira"
 	queue_free()
