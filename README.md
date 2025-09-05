@@ -1,4 +1,4 @@
-# Quem tem fome tem pressa 2
-Novo projeto do NT-MTST
+# Quem Tem Fome Tem Direitos
+Jogo que simula o ato de cozinhar pela exigibilidade do direito de não passar fome.
 
 https://ntmtst.itch.io/qtftp2teste

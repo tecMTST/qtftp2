@@ -6,6 +6,7 @@ signal finalizado
 @export var partes: Array[Texture2D] = []
 
 var atual: int = -1
+var tratar_pause:bool=true
 
 @onready var fader_principal: Fader = $BriefingBase/FaderPrincipal
 @onready var imagem: TextureRect = $BriefingBase/Panel/Centro/Imagem
@@ -14,9 +15,12 @@ var atual: int = -1
 @onready var voltar: TouchScreenButton = $BriefingBase/Voltar
 
 
-func iniciar():
+func iniciar(pause:bool=true):
+	fader_principal.FadeIn()
+	tratar_pause=pause
 	visible = true
-	get_tree().paused = true
+	if tratar_pause:
+		get_tree().paused = true
 	_carregar_imagens_de_briefing()
 	_proximo()
 	_mostrar()
@@ -65,9 +69,12 @@ func _voltar():
 func _finalizar():
 	fader_principal.FadeOut()
 	await fader_principal.finished
-	get_tree().paused = false
+	if tratar_pause:
+		get_tree().paused = false
 	finalizado.emit()
-	queue_free()
+	#queue_free()
+	visible = false
+	atual=-1
 
 func _on_voltar_pressed() -> void:
 	_voltar()

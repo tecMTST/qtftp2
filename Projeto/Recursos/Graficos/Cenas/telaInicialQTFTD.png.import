@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7duewe4oe42b"
-path="res://.godot/imported/slider_base.svg-856436f2d3af556c68e4898d3f6a0adb.ctex"
+uid="uid://bmihn7u5mpqmi"
+path="res://.godot/imported/telaInicialQTFTD.png-c0d8273158d4dba47080689abc2660da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Componentes/slider/slider_base.svg"
-dest_files=["res://.godot/imported/slider_base.svg-856436f2d3af556c68e4898d3f6a0adb.ctex"]
+source_file="res://Recursos/Graficos/Cenas/telaInicialQTFTD.png"
+dest_files=["res://.godot/imported/telaInicialQTFTD.png-c0d8273158d4dba47080689abc2660da.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

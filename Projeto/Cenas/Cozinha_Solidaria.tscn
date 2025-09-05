@@ -248,8 +248,9 @@ navigation_polygon = SubResource("NavigationPolygon_4xt8v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="pausar" parent="CanvasLayer" instance=ExtResource("28_lx3st")]
+[node name="pausar" parent="CanvasLayer" node_paths=PackedStringArray("briefing") instance=ExtResource("28_lx3st")]
 visible = false
+briefing = NodePath("../../Briefing")
 
 [node name="Briefing" parent="." instance=ExtResource("29_l13ps")]
 visible = false
