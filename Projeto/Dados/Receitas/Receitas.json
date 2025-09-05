@@ -15,7 +15,7 @@
 			{
 				"ordem" : 1,
 				"descricao" : "Hidratar o cuscuz",
-				"alvo" : "pia",
+				"alvo" : "Pia",
 				"acao" : "molhar",
 				"ingredientes" : [
 					{
@@ -28,7 +28,7 @@
 			{
 				"ordem" : 2,
 				"descricao" : "Cozinhar o cuscuz",
-				"alvo" : "fogao",
+				"alvo" : "Fogão",
 				"acao" : "cozer",
 				"ingredientes" : [
 					{
@@ -41,7 +41,7 @@
 			{
 				"ordem" : 3,
 				"descricao" : "Montar o prato",
-				"alvo" : "bancada",
+				"alvo" : "Bancada",
 				"acao" : "montagem",
 				"ingredientes" : [
 					{
@@ -70,7 +70,7 @@
 			{
 				"ordem" : 1,
 				"descricao" : "Passar o café",
-				"alvo" : "fogao",
+				"alvo" : "Fogão",
 				"acao" : "cozer",
 				"ingredientes" : [
 					{
@@ -83,7 +83,7 @@
 			{
 				"ordem" : 3,
 				"descricao" : "Servir café",
-				"alvo" : "bancada",
+				"alvo" : "Bancada",
 				"acao" : "montagem",
 				"ingredientes" : [
 					{

@@ -17,6 +17,7 @@ func _ready() -> void:
 	nome = ingrediente.nome
 	descricao = ingrediente.descricao
 	timer.start(tempo_ate_queimar)
+	ControleDeFase.indicador_proximo = "Fogão"
 
 
 func _on_timer_timeout():
@@ -30,6 +31,8 @@ func acao_fogao() -> bool:  #Método para remover o cafe do fogão antes de quei
 	visualizador_temporal.cor = Color("478cbf") # azul
 	timer.start(ingrediente.acoes[0].tempo)
 	timer.paused = true
+	ControleDeFase.indicador_proximo = "Bancada"
+	visualizador_temporal.visible = false
 	return false
 
 

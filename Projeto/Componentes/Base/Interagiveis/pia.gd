@@ -1,7 +1,12 @@
 class_name Pia extends BaseInteragivel
 
+@onready var indicador: Sprite2D = $Indicador
+
 func _ready() -> void:
 	nome = "Pia"
+	
+func _process(delta: float) -> void:
+	indicador.visible = ControleDeFase.verifica_proximo_ponto("Pia")
 
 func _on_componente_interagivel_interagir(jogador: Player):
 	if jogador.esta_agarrando:

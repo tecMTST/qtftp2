@@ -17,6 +17,7 @@ func _ready() -> void:
 	nome = ingrediente.nome
 	descricao = ingrediente.descricao
 	timer.start(tempo_ate_queimar)
+	ControleDeFase.indicador_proximo = "Fogão"
 
 
 func _on_timer_timeout():
@@ -32,10 +33,12 @@ func acao_fogao() -> bool:  #Método para remover o cuscuz antes de queimar
 	visualizador_temporal.cor = Color("478cbf")
 	timer.start(ingrediente.acoes[0].tempo)
 	timer.paused = true
+	ControleDeFase.indicador_proximo = "Bancada"
 	return false
 
 
 func acao_bancada() -> void:
+	ControleDeFase.indicador_proximo = ""
 	if(!esta_desenformando):
 		timer.paused = false
 		esta_desenformando = true

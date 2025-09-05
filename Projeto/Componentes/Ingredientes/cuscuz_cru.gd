@@ -8,6 +8,7 @@ func _ready() -> void:
 	ingrediente = ingredientes[0]
 	nome = ingrediente.nome
 	descricao = ingrediente.descricao
+	ControleDeFase.indicador_proximo = "Pia"
 
 
 func acao_pia():

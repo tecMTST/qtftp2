@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2q0862qh20rg"]
+
+[ext_resource type="Script" uid="uid://cgt3aj5bjgmyn" path="res://Componentes/VisualizadorTemporal/visualizador_percentual.gd" id="1_jebqt"]
+
+[node name="VisualizadorPercentual" type="Node2D"]
+script = ExtResource("1_jebqt")
+percentual = null

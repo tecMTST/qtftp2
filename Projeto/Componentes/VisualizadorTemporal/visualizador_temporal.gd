@@ -10,7 +10,7 @@ const QUANTIDADE_DE_PONTOS_NO_CIRCULO := 32
 		if Engine.is_editor_hint():
 			update_configuration_warnings()
 
-@export var radius := 10.0
+@export var radius := 20.0
 @export var angulo_inicial := -90
 @export var cor := Color("478cbf")
 
