@@ -74,7 +74,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_04gav")
 blend_point_1/pos = 0.6
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_et0jp"]
-graph_offset = Vector2(-594, 98)
+graph_offset = Vector2(-677.625, 10.9581)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ir1in")
 nodes/Animation/position = Vector2(-700, 260)
 nodes/Sentada/node = SubResource("AnimationNodeBlend2_04gav")
@@ -223,7 +223,6 @@ rest = Transform2D(1, 0, 0, 1, 99, -384)
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-84, -379)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -84, -379)
 
 [node name="CarolinaVetorCores1" type="Sprite2D" parent="."]

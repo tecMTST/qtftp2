@@ -8,11 +8,12 @@ func _ready() -> void:
 	ingrediente = ingredientes[0]
 	nome = ingrediente.nome
 	descricao = ingrediente.descricao
-
+	ControleDeFase.indicador_proximo = "Mesa"
 
 func entregar():
 	# Inserir animações e efeitos
 	ControleDeFase.jogador.iniciar_dialogo(load("res://Dialogo/Cuscuz.dialogue"), "cuscuz_pronto", 3.5)
 	await get_tree().create_timer(1).timeout
 	ControleDeFase.entregar_prato(ingrediente)
+	ControleDeFase.indicador_proximo = "Geladeira"
 	queue_free()

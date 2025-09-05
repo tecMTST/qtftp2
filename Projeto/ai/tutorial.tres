@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=73 format=3 uid="uid://v1romtgfuw1k"]
+[gd_resource type="BehaviorTree" load_steps=80 format=3 uid="uid://v1romtgfuw1k"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_b0q6c"]
 var/estado_fase/name = &"estado_fase"
@@ -30,6 +30,11 @@ resource_name = "0"
 variable = &"estado_fase"
 value = SubResource("BBVariant_4f2oh")
 
+[sub_resource type="BBVariant" id="BBVariant_ouhrc"]
+type = 4
+saved_value = "Fase00"
+resource_name = "Fase00"
+
 [sub_resource type="BBVariant" id="BBVariant_b0q6c"]
 type = 4
 value_source = 1
@@ -49,7 +54,7 @@ resource_name = "."
 node = SubResource("BBNode_b0q6c")
 method = &"abrir_dialogo"
 result_var = &"estado_fase"
-args = Array[BBVariant]([SubResource("BBVariant_b0q6c"), SubResource("BBVariant_14yu7")])
+args = Array[BBVariant]([SubResource("BBVariant_ouhrc"), SubResource("BBVariant_b0q6c"), SubResource("BBVariant_14yu7")])
 
 [sub_resource type="BTDelay" id="BTDelay_c0kla"]
 seconds = 2.0
@@ -68,29 +73,34 @@ resource_name = "2"
 variable = &"estado_fase"
 value = SubResource("BBVariant_c0kla")
 
-[sub_resource type="BBVariant" id="BBVariant_gljxx"]
+[sub_resource type="BBVariant" id="BBVariant_b6asn"]
+type = 4
+saved_value = "Fase00"
+resource_name = "Fase00"
+
+[sub_resource type="BBVariant" id="BBVariant_gvyd4"]
 type = 4
 value_source = 1
 variable = &"estado_fase"
 resource_name = "$estado_fase"
 
-[sub_resource type="BBVariant" id="BBVariant_qju4h"]
+[sub_resource type="BBVariant" id="BBVariant_2nheo"]
 type = 4
 saved_value = "abriu_geladeira"
 resource_name = "abriu_geladeira"
 
-[sub_resource type="BBNode" id="BBNode_vq2uv"]
+[sub_resource type="BBNode" id="BBNode_5lvjo"]
 saved_value = NodePath(".")
 resource_name = "."
 
-[sub_resource type="BTCallMethod" id="BTCallMethod_7udja"]
-node = SubResource("BBNode_vq2uv")
+[sub_resource type="BTCallMethod" id="BTCallMethod_ws45a"]
+node = SubResource("BBNode_5lvjo")
 method = &"abrir_dialogo"
 result_var = &"estado_fase"
-args = Array[BBVariant]([SubResource("BBVariant_gljxx"), SubResource("BBVariant_qju4h")])
+args = Array[BBVariant]([SubResource("BBVariant_b6asn"), SubResource("BBVariant_gvyd4"), SubResource("BBVariant_2nheo")])
 
 [sub_resource type="BTDelay" id="BTDelay_b0q6c"]
-children = [SubResource("BTCallMethod_7udja")]
+children = [SubResource("BTCallMethod_ws45a")]
 
 [sub_resource type="BTSequence" id="BTSequence_a5r62"]
 custom_name = "Abriu a geladeira"
@@ -124,55 +134,65 @@ resource_name = "Personagens/Player"
 node = SubResource("BBNode_14yu7")
 method = &"desativar"
 
-[sub_resource type="BBVariant" id="BBVariant_vq2uv"]
+[sub_resource type="BBVariant" id="BBVariant_jg5m0"]
+type = 4
+saved_value = "Fase00"
+resource_name = "Fase00"
+
+[sub_resource type="BBVariant" id="BBVariant_1xnby"]
 type = 4
 value_source = 1
 variable = &"estado_fase"
 resource_name = "$estado_fase"
 
-[sub_resource type="BBVariant" id="BBVariant_7udja"]
+[sub_resource type="BBVariant" id="BBVariant_hmtds"]
 type = 4
 saved_value = "lucas_vai_chorar"
 resource_name = "lucas_vai_chorar"
 
-[sub_resource type="BBNode" id="BBNode_a5r62"]
+[sub_resource type="BBNode" id="BBNode_1a6ap"]
 saved_value = NodePath(".")
 resource_name = "."
 
-[sub_resource type="BTCallMethod" id="BTCallMethod_4it8j"]
-node = SubResource("BBNode_a5r62")
+[sub_resource type="BTCallMethod" id="BTCallMethod_qyjmb"]
+node = SubResource("BBNode_1a6ap")
 method = &"abrir_dialogo"
 result_var = &"estado_fase"
-args = Array[BBVariant]([SubResource("BBVariant_vq2uv"), SubResource("BBVariant_7udja")])
+args = Array[BBVariant]([SubResource("BBVariant_jg5m0"), SubResource("BBVariant_1xnby"), SubResource("BBVariant_hmtds")])
 
 [sub_resource type="BTDelay" id="BTDelay_865oy"]
 seconds = 5.0
-children = [SubResource("BTCallMethod_4it8j")]
+children = [SubResource("BTCallMethod_qyjmb")]
 
-[sub_resource type="BBVariant" id="BBVariant_a5r62"]
+[sub_resource type="BBVariant" id="BBVariant_thbgv"]
+type = 4
+saved_value = "Fase00"
+resource_name = "Fase00"
+
+[sub_resource type="BBVariant" id="BBVariant_6fvxv"]
 type = 4
 value_source = 1
 variable = &"estado_fase"
 resource_name = "$estado_fase"
 
-[sub_resource type="BBVariant" id="BBVariant_4it8j"]
+[sub_resource type="BBVariant" id="BBVariant_o0gsc"]
 type = 4
 saved_value = "tutorial_choro"
 resource_name = "tutorial_choro"
 
-[sub_resource type="BBNode" id="BBNode_865oy"]
+[sub_resource type="BBNode" id="BBNode_d7keh"]
 saved_value = NodePath(".")
 resource_name = "."
 
-[sub_resource type="BTCallMethod" id="BTCallMethod_6uw80"]
-node = SubResource("BBNode_865oy")
+[sub_resource type="BTCallMethod" id="BTCallMethod_52kh7"]
+node = SubResource("BBNode_d7keh")
 method = &"abrir_dialogo"
 result_var = &"estado_fase"
-args = Array[BBVariant]([SubResource("BBVariant_a5r62"), SubResource("BBVariant_4it8j")])
+args = Array[BBVariant]([SubResource("BBVariant_thbgv"), SubResource("BBVariant_6fvxv"), SubResource("BBVariant_o0gsc")])
 
 [sub_resource type="BTDelay" id="BTDelay_4f2oh"]
 seconds = 8.0
-children = [SubResource("BTCallMethod_6uw80")]
+children = [SubResource("BTCallMethod_52kh7")]
 
 [sub_resource type="BBNode" id="BBNode_4f2oh"]
 saved_value = NodePath("Distracoes/Berco")
@@ -240,80 +260,95 @@ resource_name = "."
 node = SubResource("BBNode_b6asn")
 method = &"_mostrar_botao_fim"
 
-[sub_resource type="BBVariant" id="BBVariant_oxuxo"]
+[sub_resource type="BBVariant" id="BBVariant_yejgu"]
+type = 4
+saved_value = "Fase00"
+resource_name = "Fase00"
+
+[sub_resource type="BBVariant" id="BBVariant_4sjly"]
 type = 4
 value_source = 1
 variable = &"estado_fase"
 resource_name = "$estado_fase"
 
-[sub_resource type="BBVariant" id="BBVariant_nhbf0"]
+[sub_resource type="BBVariant" id="BBVariant_ecfyh"]
 type = 4
 saved_value = "carolina_fim"
 resource_name = "carolina_fim"
 
-[sub_resource type="BBNode" id="BBNode_yfv50"]
+[sub_resource type="BBNode" id="BBNode_sbv2x"]
 saved_value = NodePath(".")
 resource_name = "."
 
-[sub_resource type="BTCallMethod" id="BTCallMethod_necb5"]
-node = SubResource("BBNode_yfv50")
+[sub_resource type="BTCallMethod" id="BTCallMethod_n4kyt"]
+node = SubResource("BBNode_sbv2x")
 method = &"abrir_dialogo"
 result_var = &"estado_fase"
-args = Array[BBVariant]([SubResource("BBVariant_oxuxo"), SubResource("BBVariant_nhbf0")])
+args = Array[BBVariant]([SubResource("BBVariant_yejgu"), SubResource("BBVariant_4sjly"), SubResource("BBVariant_ecfyh")])
 
 [sub_resource type="BTDelay" id="BTDelay_r14y5"]
 seconds = 6.0
-children = [SubResource("BTCallMethod_necb5")]
+children = [SubResource("BTCallMethod_n4kyt")]
 
-[sub_resource type="BBVariant" id="BBVariant_6uw80"]
+[sub_resource type="BBVariant" id="BBVariant_qpodu"]
+type = 4
+saved_value = "Fase00"
+resource_name = "Fase00"
+
+[sub_resource type="BBVariant" id="BBVariant_ja5rr"]
 type = 4
 value_source = 1
 variable = &"estado_fase"
 resource_name = "$estado_fase"
 
-[sub_resource type="BBVariant" id="BBVariant_eyufq"]
+[sub_resource type="BBVariant" id="BBVariant_yluoa"]
 type = 4
 saved_value = "elza_fim"
 resource_name = "elza_fim"
 
-[sub_resource type="BBNode" id="BBNode_oxuxo"]
+[sub_resource type="BBNode" id="BBNode_xfr5i"]
 saved_value = NodePath(".")
 resource_name = "."
 
-[sub_resource type="BTCallMethod" id="BTCallMethod_nhbf0"]
-node = SubResource("BBNode_oxuxo")
+[sub_resource type="BTCallMethod" id="BTCallMethod_4i7da"]
+node = SubResource("BBNode_xfr5i")
 method = &"abrir_dialogo"
 result_var = &"estado_fase"
-args = Array[BBVariant]([SubResource("BBVariant_6uw80"), SubResource("BBVariant_eyufq")])
+args = Array[BBVariant]([SubResource("BBVariant_qpodu"), SubResource("BBVariant_ja5rr"), SubResource("BBVariant_yluoa")])
 
 [sub_resource type="BTDelay" id="BTDelay_yfv50"]
 seconds = 6.0
-children = [SubResource("BTCallMethod_nhbf0")]
+children = [SubResource("BTCallMethod_4i7da")]
 
-[sub_resource type="BBVariant" id="BBVariant_ouhrc"]
+[sub_resource type="BBVariant" id="BBVariant_8cl6y"]
+type = 4
+saved_value = "Fase00"
+resource_name = "Fase00"
+
+[sub_resource type="BBVariant" id="BBVariant_j58ul"]
 type = 4
 value_source = 1
 variable = &"estado_fase"
 resource_name = "$estado_fase"
 
-[sub_resource type="BBVariant" id="BBVariant_b6asn"]
+[sub_resource type="BBVariant" id="BBVariant_eaof3"]
 type = 4
 saved_value = "lucas_fim"
 resource_name = "lucas_fim"
 
-[sub_resource type="BBNode" id="BBNode_gcowf"]
+[sub_resource type="BBNode" id="BBNode_5bop4"]
 saved_value = NodePath(".")
 resource_name = "."
 
-[sub_resource type="BTCallMethod" id="BTCallMethod_gvyd4"]
-node = SubResource("BBNode_gcowf")
+[sub_resource type="BTCallMethod" id="BTCallMethod_dneqh"]
+node = SubResource("BBNode_5bop4")
 method = &"abrir_dialogo"
 result_var = &"estado_fase"
-args = Array[BBVariant]([SubResource("BBVariant_ouhrc"), SubResource("BBVariant_b6asn")])
+args = Array[BBVariant]([SubResource("BBVariant_8cl6y"), SubResource("BBVariant_j58ul"), SubResource("BBVariant_eaof3")])
 
 [sub_resource type="BTDelay" id="BTDelay_3fopp"]
 seconds = 6.0
-children = [SubResource("BTCallMethod_gvyd4")]
+children = [SubResource("BTCallMethod_dneqh")]
 
 [sub_resource type="BBVariant" id="BBVariant_3fopp"]
 type = 1

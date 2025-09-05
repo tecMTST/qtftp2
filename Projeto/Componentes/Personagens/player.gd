@@ -53,11 +53,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(_event: InputEvent) -> void:
-	if(!interagivel_ativo):
-		if objeto_agarrado and Input.is_action_just_pressed("action") and not esta_agarrando:
-			agarrar()
-		elif objeto_agarrado and Input.is_action_just_pressed("action") and esta_agarrando:
-			soltar()
 
 	if Input.is_action_just_pressed("action") and not acao_executando:
 		acao_executando = true

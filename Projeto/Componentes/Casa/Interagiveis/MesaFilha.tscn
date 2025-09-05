@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://tap31ifdmu6f"]
+[gd_scene load_steps=10 format=3 uid="uid://tap31ifdmu6f"]
 
 [ext_resource type="Script" uid="uid://cpi6tydbas0r3" path="res://Componentes/Casa/Interagiveis/mesa_filha.gd" id="1_eo1ls"]
 [ext_resource type="Texture2D" uid="uid://351ntpmnbl0a" path="res://Recursos/Graficos/Interagiveis/Mesa.svg" id="2_imm24"]
 [ext_resource type="Texture2D" uid="uid://bqbbdsv41kc8l" path="res://Recursos/Graficos/Interagiveis/Cadeira lateral.svg" id="2_j3b4e"]
 [ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="2_oawju"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_paw2f"]
+[ext_resource type="Texture2D" uid="uid://dmxtex2h0cm00" path="res://Recursos/Graficos/UI/indicador.svg" id="6_0id5j"]
+[ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="7_ogud8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1ls"]
 size = Vector2(240, 236)
@@ -55,5 +57,15 @@ shape = SubResource("RectangleShape2D_imm24")
 
 [node name="Pivot" type="Node2D" parent="."]
 position = Vector2(-26, 0)
+
+[node name="Indicador" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.90735e-06, -116)
+scale = Vector2(0.306875, 0.306875)
+texture = ExtResource("6_0id5j")
+
+[node name="Bouncer" type="Node" parent="Indicador"]
+script = ExtResource("7_ogud8")
+metadata/_custom_type_script = "uid://d1lhbtx247tsg"
 
 [connection signal="interagir" from="ComponenteInteragivel" to="." method="_interagir"]

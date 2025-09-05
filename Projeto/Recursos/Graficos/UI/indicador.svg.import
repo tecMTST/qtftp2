@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7duewe4oe42b"
-path="res://.godot/imported/slider_base.svg-856436f2d3af556c68e4898d3f6a0adb.ctex"
+uid="uid://dmxtex2h0cm00"
+path="res://.godot/imported/indicador.svg-bcf1aec1bb7d3476883cda7d300e9c06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Componentes/slider/slider_base.svg"
-dest_files=["res://.godot/imported/slider_base.svg-856436f2d3af556c68e4898d3f6a0adb.ctex"]
+source_file="res://Recursos/Graficos/UI/indicador.svg"
+dest_files=["res://.godot/imported/indicador.svg-bcf1aec1bb7d3476883cda7d300e9c06.ctex"]
 
 [params]
 
