@@ -2,15 +2,15 @@ class_name Bancada extends BaseInteragivel
 
 @export var posicao_do_objeto_na_bancada: Vector2 = Vector2(0, 0)
 
-var _jogador: Player
 var objeto_na_bancada: IngredienteBase = null
+var _jogador: Player
 
 @onready var indicador: Sprite2D = $Indicador
 
 func _ready() -> void:
 	nome = "Bancada"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("bancada")
 
 func _on_componente_interagivel_interagir(jogador: Player) -> void:

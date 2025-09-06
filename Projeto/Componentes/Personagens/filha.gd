@@ -24,7 +24,7 @@ func _ready():
 	select_new_waypoint()
 	ControleDeFase.prato_entregue.connect(_ir_comer)
 	visualizador_percentual.valor = 0
-	
+
 
 func _process(delta):
 	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
@@ -38,7 +38,9 @@ func _process(delta):
 		move_along_path(delta)
 	visualizador_percentual.valor_maximo = ControleDeFase.estado_nivel.limite_bagunca
 	visualizador_percentual.valor = ControleDeFase.estado_nivel.bagunca
-	rotation = 0 
+	rotation = 0
+
+
 func move_along_path(delta):
 	if agent.is_navigation_finished():
 		return

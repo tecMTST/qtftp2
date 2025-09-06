@@ -3,11 +3,10 @@ class_name MesaFilha extends BaseInteragivel
 @onready var pivot: Node2D = $Pivot
 @onready var indicador: Sprite2D = $Indicador
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	nome = "Mesa"
-	
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("mesa")
 
 func _interagir(jogador: Player) -> void:

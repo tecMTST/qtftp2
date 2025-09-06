@@ -55,10 +55,11 @@ func carregar_nivel():
 					receitas_disponiveis.append(receita)
 					break
 		selecionar_proxima_receita()
-		
 
-	jogador = NodeExtension.find_first_child(get_tree().current_scene,
-		func(child): return child is Player)
+	jogador = NodeExtension.find_first_child(
+		get_tree().current_scene,
+		func(child): return child is Player
+	)
 
 func selecionar_proxima_receita() -> bool:
 	if nivel_atual.ordem_aleatoria:
