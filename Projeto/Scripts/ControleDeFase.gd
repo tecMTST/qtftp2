@@ -64,6 +64,10 @@ func carregar_nivel():
 func selecionar_proxima_receita() -> bool:
 	if nivel_atual.ordem_aleatoria:
 		return selecionar_receita_aleatoria()
+	assert(
+		_indice_receita_atual < receitas_disponiveis.size(),
+		"receitas em ordem precisam estar todas presentes na lista"
+	)
 	return selecionar_receita_especifica(_indice_receita_atual + 1)
 
 func selecionar_receita_aleatoria() -> bool:

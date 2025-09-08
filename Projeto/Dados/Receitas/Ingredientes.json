@@ -54,47 +54,35 @@
 		]
 	},
 	{
-		"id" : 4,
-		"variacao": 1,
-		"nome" : "Ovo branco",
-		"descricao" : "Ovo branco",
-		"preco" : 2,
-		"unidade" : "unidade",
-		"cena" : "",
-		"caminho_sprite" : "",
+		"id" : "ovo_cru",
+		"descricao" : "Ovo branco cru",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/ovo.svg",
 		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"acao" : "fritar",
-				"tempo" : 3,
-				"variacao_resultado" : 2,
-				"evento": ""
+				"resultado" : "ovo_fritando",
 			},
+		]
+	},
+	{
+		"id" : "ovo_fritando",
+		"descricao" : "Ovo branco fritando na frigideira",
+		"tempo": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/ovo_frigideira.svg",
+		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"acao" : "cozer",
-				"tempo" : 6,
-				"variacao_resultado" : 3,
-				"evento": ""
+				"resultado": "ovo_frito"
 			}
 		]
 	},
 	{
-		"id" : 4,
-		"variacao": 2,
-		"nome" : "Ovo branco Frito",
-		"descricao" : "Ovo branco frito",
-		"preco" : 0,
-		"unidade" : "unidade",
-		"cena" : "",
-		"caminho_sprite" : "",
+		"id" : "ovo_frito",
+		"descricao" : "Ovo branco frito e pronto para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/ovo_frito.svg",
 		"acoes" : [
 			{
-				"alvo" : "bancada",
-				"acao" : "misturar",
-				"tempo" : 1,
-				"variacao_resultado" : 0,
-				"evento": ""
+				"alvo" : "mesa",
 			}
 		]
 	},

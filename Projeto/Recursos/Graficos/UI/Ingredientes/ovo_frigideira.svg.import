@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgslmx380pamj"
-path="res://.godot/imported/ovoFrito.svg-01d7f61b7995d0af05c7773e06a6f054.ctex"
+uid="uid://dmiisuha0f8wb"
+path="res://.godot/imported/ovo_frigideira.svg-f4068b5274bdf2a3d91a47e2c46924e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Ingredientes/ovoFrito.svg"
-dest_files=["res://.godot/imported/ovoFrito.svg-01d7f61b7995d0af05c7773e06a6f054.ctex"]
+source_file="res://Recursos/Graficos/UI/Ingredientes/ovo_frigideira.svg"
+dest_files=["res://.godot/imported/ovo_frigideira.svg-f4068b5274bdf2a3d91a47e2c46924e6.ctex"]
 
 [params]
 

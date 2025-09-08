@@ -1,11 +1,11 @@
 class_name Fogao extends BaseInteragivel
 
-var objeto_atual : IngredienteBase = null
-var _jogador : Player
+var objeto_no_fogao: IngredienteBase = null
+var _jogador: Player
 
 @onready var indicador: Sprite2D = $Indicador
-@onready var pivot_objeto : Node2D = $Pivot
-@onready var fogo_animado : AnimatedSprite2D = $AnimatedFire
+@onready var pivot_objeto: Node2D = $Pivot
+@onready var fogo_animado: AnimatedSprite2D = $AnimatedFire
 
 func _ready() -> void:
 	nome = "Fogão"
@@ -16,15 +16,31 @@ func _process(_delta: float) -> void:
 
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	print_debug("[fogao]")
-	if(objeto_atual):
-		if(
-			jogador.esta_agarrando
-			or objeto_atual.estado_atual == objeto_atual.EstadoIngrediente.COZINHANDO
-		):
-			print_debug("  [-] calma! ", objeto_atual.id, " ainda está cozinhando")
+	if (_jogador != null):
+		print_debug("  [-] ação em andamento, não posso seguir")
+		return
+
+	if(objeto_no_fogao):
+		if(objeto_no_fogao.estado_atual == objeto_no_fogao.EstadoIngrediente.COZINHANDO):
+			print_debug("  [-] calma! ", objeto_no_fogao.id, " ainda está cozinhando")
 			return
-		_jogador = jogador
-		_recolher_objeto()
+		if (jogador.esta_agarrando):
+			var objeto_na_mao: IngredienteBase = jogador.objeto_agarrado
+			if objeto_no_fogao.ingrediente.acoes[0].alvo != objeto_na_mao.id:
+				print_debug(
+					"  [-] fogão tem ", objeto_no_fogao.descricao, " que espera ",
+					objeto_no_fogao.ingrediente.acoes[0].alvo,
+					" mas personagem está segurando uma ", objeto_na_mao.id
+				)
+				return
+			print_debug(
+				"  [-] fogão com ", objeto_no_fogao.id, ". misturando com ", objeto_na_mao.id
+			)
+			_jogador = jogador
+			_misturar_ingredientes_na_panela()
+		else:
+			_jogador = jogador
+			_recolher_objeto()
 	else:
 		if ControleDeFase.nivel_atual.id == 3:
 			var fase03 = "res://Dialogo/Fase03.dialogue"
@@ -40,13 +56,28 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 			print_debug("  [-] ", objeto_ingrediente.id, " não interage com fogão")
 			return
 
+func _misturar_ingredientes_na_panela() -> void:
+	objeto_no_fogao.ao_transformar_sucesso.connect(_on_misturar_itens)
+	objeto_no_fogao.ao_transformar_falha.connect(_on_falhou_transformacao)
+	objeto_no_fogao.transformar()
+
+func _on_misturar_itens(novo_item: IngredienteBase) -> void:
+	var objeto_antigo = _jogador.objeto_agarrado
+	_jogador.soltar()
+	objeto_antigo.queue_free()
+
+	# agarrar() faz add_sibling(), que só funciona em nós órfãos.
+	#novo_item.get_parent().remove_child(novo_item)
+	objeto_no_fogao = novo_item
+	_jogador = null
+
 
 func _recolher_objeto() -> void:
-	print_debug("  [-] se preparando pra tirar ", objeto_atual.id, " do fogão")
-	print_debug("  [-] que vira ", objeto_atual.ingrediente.acoes[0].resultado)
-	objeto_atual.ao_transformar_sucesso.connect(_on_recolher_objeto_do_fogao)
-	objeto_atual.ao_transformar_falha.connect(_on_falhou_transformacao)
-	objeto_atual.transformar()
+	print_debug("  [-] se preparando pra tirar ", objeto_no_fogao.id, " do fogão")
+	print_debug("  [-] que vira ", objeto_no_fogao.ingrediente.acoes[0].resultado)
+	objeto_no_fogao.ao_transformar_sucesso.connect(_on_recolher_objeto_do_fogao)
+	objeto_no_fogao.ao_transformar_falha.connect(_on_falhou_transformacao)
+	objeto_no_fogao.transformar()
 
 
 func _cozinhar_objeto(objeto : IngredienteBase) -> void:
@@ -61,7 +92,7 @@ func _on_recolher_objeto_do_fogao(objeto: IngredienteBase) -> void:
 	fogo_animado.hide()
 	ControleDeAudio.para_efeito_ciclo("fogao_cozinhando")
 	_jogador.agarrar(objeto)
-	objeto_atual = null
+	objeto_no_fogao = null
 	_jogador = null
 
 
@@ -75,11 +106,11 @@ func _on_posicionar_objeto_no_fogao(novo_objeto) -> void:
 	print_debug("  [-] colocando ", novo_objeto.id, " no fogão")
 	_jogador.soltar()
 	_jogador = null
-	objeto_atual = novo_objeto
-	objeto_atual.estado_atual = objeto_atual.EstadoIngrediente.COZINHANDO
-	objeto_atual.ao_tempo_limite_atingido.connect(ao_tempo_cozimento_atingido)
-	objeto_atual.reparent(pivot_objeto)
-	objeto_atual.global_position = pivot_objeto.global_position
+	objeto_no_fogao = novo_objeto
+	objeto_no_fogao.estado_atual = objeto_no_fogao.EstadoIngrediente.COZINHANDO
+	objeto_no_fogao.ao_tempo_limite_atingido.connect(ao_tempo_cozimento_atingido)
+	objeto_no_fogao.reparent(pivot_objeto)
+	objeto_no_fogao.global_position = pivot_objeto.global_position
 	fogo_animado.show()
 	ControleDeAudio.toca_efeito("fogao_ligar")
 	ControleDeAudio.toca_efeito_ciclo("fogao_cozinhando", "fogao_cozinhando")

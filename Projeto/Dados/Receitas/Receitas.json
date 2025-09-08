@@ -102,6 +102,10 @@
 				"alvo": "fogao"
 			},
 			{
+				"descricao": "Esperar arroz ficar pronto",
+				"alvo": "fogao"
+			},
+			{
 				"descricao" : "Servir o arroz",
 				"alvo" : "mesa"
 			}
@@ -111,31 +115,23 @@
 		"id" : 4,
 		"nome" : "Ovo frito",
 		"descricao" : "Ovo de galinha frito",
-		"caminho_sprite": "res://Recursos/Graficos/Ingredientes/Cuscuz_desenformado.png",
+		"caminho_sprite": "res://Recursos/Graficos/Ingredientes/ovo_frito.svg",
 		"passos" : [
 			{
-				"descricao" : "Pegar Cuscuz na geladeira",
+				"descricao" : "Pegar ovo na geladeira",
 				"alvo" : "geladeira",
-				"ingrediente": "cuscuz_cru"
+				"ingrediente": "ovo_cru"
 			},
 			{
-				"descricao" : "Hidratar o cuscuz",
-				"alvo" : "pia"
-			},
-			{
-				"descricao" : "Cozinhar o cuscuz",
+				"descricao" : "Fritar o ovo",
 				"alvo" : "fogao"
 			},
 			{
-				"descricao": "Tirar o cuscuz do fogo!",
+				"descricao": "Tirar o ovo da frigideira!",
 				"alvo": "fogao"
 			},
 			{
-				"descricao" : "Desenformar o cuscuz",
-				"alvo" : "bancada"
-			},
-			{
-				"descricao" : "Servir o cuscuz",
+				"descricao" : "Servir o ovo frito",
 				"alvo" : "mesa"
 			}
 		]
