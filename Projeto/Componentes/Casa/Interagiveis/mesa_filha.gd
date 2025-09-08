@@ -8,6 +8,7 @@ var objeto_atual : IngredienteBase = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	nome = "Mesa"
+	acao = "Servir"
 
 
 func _interagir(jogador: Player) -> void:

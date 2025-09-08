@@ -6,6 +6,7 @@ var objeto_atual : IngredienteBase = null
 
 func _ready() -> void:
 	nome = "Fogão"
+	acao = "Cozinhar"
 
 func _process(_delta: float) -> void:
 	pass

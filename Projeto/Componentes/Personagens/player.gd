@@ -83,7 +83,7 @@ func _on_area_acao_body_exited(body: Node2D) -> void:
 
 func on_interagivel_entered(body : Node2D) -> void:
 	interagivel_ativo = body
-	acao_ativada.emit()
+	acao_ativada.emit(interagivel_ativo.acao)
 
 
 func on_interagivel_exited() -> void:

@@ -3,6 +3,7 @@ class_name Casa extends Node2D
 var travar_dialogos = true
 
 @onready var botao_acao: TouchScreenButton = $BotaoAcao
+@onready var label_acao: Label = $BotaoAcao/Label
 @onready var botao_pausa: TouchScreenButton = $BotaoPausa
 @onready var pausar: MenuPausa = $CanvasLayer/pausar
 @onready var save_agent: SaveAgent = $SaveAgent
@@ -21,7 +22,8 @@ func _ready() -> void:
 	save_agent.SaveSceneData()
 	briefing.iniciar()
 
-func _on_player_acao_ativada() -> void:
+func _on_player_acao_ativada(acao: String) -> void:
+	label_acao.text = acao
 	botao_acao.visible = true
 
 func _on_player_acao_desativada() -> void:

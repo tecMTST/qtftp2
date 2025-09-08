@@ -2,6 +2,7 @@ class_name Pia extends BaseInteragivel
 
 func _ready() -> void:
 	nome = "Pia"
+	acao = "Preparar"
 
 func _on_componente_interagivel_interagir(jogador: Player):
 	if jogador.esta_agarrando:

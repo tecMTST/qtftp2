@@ -11,6 +11,7 @@ var choro_ativo: bool = false
 
 func _ready() -> void:
 	nome = "Berço"
+	acao = "Amamentar"
 	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.choro:
 		return
 	resetar_timer()

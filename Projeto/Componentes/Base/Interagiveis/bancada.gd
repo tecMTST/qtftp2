@@ -4,6 +4,7 @@ var _jogador : Player
 
 func _ready() -> void:
 	nome = "Bancada"
+	acao = "Finalizar"
 	Eventos.evento_realizado.connect(_on_acao_bancada)
 	Eventos.evento_finalizado.connect(_on_acao_bancada_cancelada)
 	Eventos.evento_falhou.connect(_on_acao_bancada_cancelada)
