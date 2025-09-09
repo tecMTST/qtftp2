@@ -115,7 +115,7 @@
 		"id" : 4,
 		"nome" : "Ovo frito",
 		"descricao" : "Ovo de galinha frito",
-		"caminho_sprite": "res://Recursos/Graficos/Ingredientes/ovo_frito.svg",
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/ovo_frito.svg",
 		"passos" : [
 			{
 				"descricao" : "Pegar ovo na geladeira",
@@ -135,5 +135,71 @@
 				"alvo" : "mesa"
 			}
 		]
-	}
+	},
+	{
+		"id" : 5,
+		"nome" : "Macarrão Instantâneo",
+		"descricao" : "Aquele miojex pronto em 3 minutos",
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/miojex_pronto.svg",
+		"passos" : [
+			{
+				"descricao" : "Pegar macarrão na geladeira",
+				"alvo" : "geladeira",
+				"ingrediente": "miojex"
+			},
+			{
+				"descricao" : "Botar água no macarrão",
+				"alvo" : "pia"
+			},
+			{
+				"descricao": "Botar macarrão pra ferver",
+				"alvo": "fogao"
+			},
+			{
+				"descricao": "3 minutos, pode tirar do fogo",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Servir o miojex",
+				"alvo" : "mesa"
+			}
+		]
+	},
+	{
+		"id" : 6,
+		"nome" : "Salsicha",
+		"descricao" : "Salsicha picadinha pra incrementar o prato",
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/salsicha_fatiada.svg",
+		"passos" : [
+			{
+				"descricao": "Pegar salsicha congelada na geladeira",
+				"alvo": "geladeira",
+				"ingrediente": "salsicha_congelada"
+			},
+			{
+				"descricao": "Colocar salsicha no fogo",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Pegar água da pia",
+				"alvo" : "pia"
+			},
+			{
+				"descricao": "Colocar água na salsicha",
+				"alvo": "fogao"
+			},
+			{
+				"descricao": "Esperar salsicha ficar pronta",
+				"alvo": "fogao"
+			},
+			{
+				"descricao": "Picar a salsicha",
+				"alvo": "bancada"
+			},
+			{
+				"descricao" : "Servir a salsicha",
+				"alvo" : "mesa"
+			}
+		]
+	},
 ]

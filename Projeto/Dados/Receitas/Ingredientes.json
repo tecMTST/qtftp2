@@ -287,4 +287,104 @@
 			}
 		]
 	},
+	{
+		"id" : "miojex",
+		"descricao" : "Macarrão Instantâneo na Embalagem",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/miojex.svg",
+		"acoes" : [
+			{
+				"alvo" : "pia",
+				"resultado": "miojex_hidratado"
+			}
+		]
+	},
+	{
+		"id" : "miojex_hidratado",
+		"descricao" : "Miojex Com Água",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "miojex_cozinhando"
+			}
+		]
+	},
+	{
+		"id" : "miojex_cozinhando",
+		"descricao" : "Miojex Cozinhando no Fogão",
+		"tempo": 5,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "miojex_pronto"
+			}
+		]
+	},
+	{
+		"id" : "miojex_pronto",
+		"descricao" : "Miojex Pronto para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/miojex_pronto.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa",
+			}
+		]
+	},
+	{
+		"id" : "salsicha_congelada",
+		"descricao" : "Salsicha congelada na geladeira",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salsicha_congelada.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "salsicha_fritando"
+			}
+		]
+	},
+	{
+		"id" : "salsicha_fritando",
+		"descricao" : "Salsicha fritando na frigideira",
+		"tempo": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "agua_fria",
+				"resultado": "salsicha_cozinhando"
+			}
+		]
+	},
+	{
+		"id" : "salsicha_cozinhando",
+		"descricao" : "Salsicha cozinhando na água",
+		"tempo": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "salsicha_cozida"
+			}
+		]
+	},
+	{
+		"id" : "salsicha_cozida",
+		"descricao" : "Salsicha pronta para picar",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+				"resultado": "salsicha_fatiada"
+			}
+		]
+	},
+	{
+		"id" : "salsicha_fatiada",
+		"descricao" : "Salsicha pronta e fatiada, é só servir!",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salsicha_fatiada.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa",
+			}
+		]
+	},
 ]
