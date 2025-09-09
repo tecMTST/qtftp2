@@ -60,8 +60,8 @@
 		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"resultado" : "ovo_fritando",
-			},
+				"resultado" : "ovo_fritando"
+			}
 		]
 	},
 	{
@@ -82,7 +82,7 @@
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/ovo_frito.svg",
 		"acoes" : [
 			{
-				"alvo" : "mesa",
+				"alvo" : "mesa"
 			}
 		]
 	},
@@ -139,7 +139,7 @@
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/cuscuz.svg",
 		"acoes" : [
 			{
-				"alvo" : "mesa",
+				"alvo" : "mesa"
 			}
 		]
 	},
@@ -172,7 +172,7 @@
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/copo_americano_cafe.svg",
 		"acoes" : [
 			{
-				"alvo" : "mesa",
+				"alvo" : "mesa"
 			}
 		]
 	},
@@ -251,7 +251,7 @@
 		"acoes" : [
 			{
 				"alvo" : "pia",
-				"resultado": "arroz_com_agua",
+				"resultado": "arroz_com_agua"
 			}
 		]
 	},
@@ -261,7 +261,7 @@
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor.svg",
 		"acoes" : [
 			{
-				"alvo" : "fogao",
+				"alvo" : "fogao"
 			}
 		]
 	},
@@ -283,7 +283,7 @@
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/arroz.svg",
 		"acoes" : [
 			{
-				"alvo" : "mesa",
+				"alvo" : "mesa"
 			}
 		]
 	},
@@ -327,7 +327,7 @@
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/miojex_pronto.svg",
 		"acoes" : [
 			{
-				"alvo" : "mesa",
+				"alvo" : "mesa"
 			}
 		]
 	},
@@ -383,8 +383,8 @@
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salsicha_fatiada.svg",
 		"acoes" : [
 			{
-				"alvo" : "mesa",
+				"alvo" : "mesa"
 			}
 		]
-	},
+	}
 ]
