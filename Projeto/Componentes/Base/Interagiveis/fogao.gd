@@ -20,12 +20,18 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 		print_debug("  [-] ação em andamento, não posso seguir")
 		return
 
+	var objeto_na_mao: IngredienteBase
+	if jogador.esta_agarrando:
+		objeto_na_mao = jogador.objeto_agarrado
+		if objeto_na_mao.estado_atual != objeto_na_mao.EstadoIngrediente.PRONTO_PARA_COZINHAR:
+			print_debug("  [-] objeto na mão ainda não está pronto para ferver")
+			return
+
 	if(objeto_no_fogao):
 		if(objeto_no_fogao.estado_atual == objeto_no_fogao.EstadoIngrediente.COZINHANDO):
 			print_debug("  [-] calma! ", objeto_no_fogao.id, " ainda está cozinhando")
 			return
-		if (jogador.esta_agarrando):
-			var objeto_na_mao: IngredienteBase = jogador.objeto_agarrado
+		if (objeto_na_mao):
 			if objeto_no_fogao.ingrediente.acoes[0].alvo != objeto_na_mao.id:
 				print_debug(
 					"  [-] fogão tem ", objeto_no_fogao.descricao, " que espera ",
@@ -45,15 +51,14 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 		if ControleDeFase.nivel_atual.id == 3:
 			var fase03 = "res://Dialogo/Fase03.dialogue"
 			ControleDeFase.jogador.iniciar_dialogo(load(fase03), "semgas", 3.0)
-		if(!jogador.esta_agarrando):
+		if(!objeto_na_mao):
 			print_debug("  [-] jogador sem nada, fogão sem nada... nada pra fazer")
 			return
-		var objeto_ingrediente = jogador.objeto_agarrado
-		if objeto_ingrediente.ingrediente.acoes[0].alvo == "fogao":
+		if objeto_na_mao.ingrediente.acoes[0].alvo == "fogao":
 			_jogador = jogador
-			_cozinhar_objeto(objeto_ingrediente)
+			_cozinhar_objeto(objeto_na_mao)
 		else:
-			print_debug("  [-] ", objeto_ingrediente.id, " não interage com fogão")
+			print_debug("  [-] ", objeto_na_mao.id, " não interage com fogão")
 			return
 
 func _misturar_ingredientes_na_panela() -> void:
