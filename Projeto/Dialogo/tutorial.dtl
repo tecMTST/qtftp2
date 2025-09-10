@@ -1,0 +1,44 @@
+label inicio
+carolina: Que fome…
+[end_timeline]
+label abriu_geladeira
+carolina: [speed=0.6]Tem o que pra comer?[/speed][next=3]
+[end_timeline]
+
+#Assim que o jogador (Elza) entrega o segundo prato na mesa,
+#Lucas, bebê no berço, começa a  se mexe no berço
+#(se possível mesma movimentação do choro mas sem lágrimas)
+#Carolina olha para Lucas no berço (animação sutil, para não dar trabalho) e fala (balãozinho)
+label lucas_vai_chorar
+carolina: Mãe! O Lucas quer mamar![next=2]
+elza: Fala baixo, filha.[next=2]
+#Lágrimas começam a sair de Lucas (meio cartoon mesmo, umas gotas voando)
+#uma caixa de tutorial surge na tela,
+[end_timeline]
+
+label tutorial_choro
+Seu bebê vai chorar quando estiver com fome.[next=3]
+Amamente Lucas antes que a barra fique vazia.[next=3]
+E não esqueça da comida![next=3]
+#o ícone de choro de Lucas surge perto dele e começa a se encher.
+[end_timeline]
+
+#Assim que o jogador (Elza) entregar o útlimo prato, gameplay PAUSA
+#Carolina se levanta da mesa
+label carolina_fim
+carolina: Tava muito bom, mãe! Beijo![next=3]
+#Carolina vai em direção da porta e sai da casa 
+[end_timeline]
+
+label elza_fim
+#Elza vai até Lucas e pega ele no colo
+elza: Vem, filho. Mamãe precisa trabalhar.[next=3]
+elza: Vou te deixar na Luisa mas volto logo, tá?[next=3]
+[end_timeline]
+
+#Um emoji de coração surge em cima de Lucas.
+label lucas_fim
+lucas: ❤️
+[end_timeline]
+#Elza vai em direção da porta com Lucas no colo. Eles saem de casa 
+#Fade out
