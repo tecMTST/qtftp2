@@ -61,7 +61,7 @@ func _on_timer_timeout():
 		EstadoIngrediente.COZINHANDO:
 			estado_atual = EstadoIngrediente.QUEIMANDO
 			visualizador_temporal.cor = Color("e83637") # vermelho!
-			timer.start(tempo)
+			timer.start(ingrediente.tempo_queima)
 		EstadoIngrediente.QUEIMANDO:
 			print_debug("queimou! tem que tirar de cena")
 		_:
