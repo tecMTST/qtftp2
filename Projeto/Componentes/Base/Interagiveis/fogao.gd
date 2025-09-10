@@ -8,7 +8,7 @@ var objeto_atual : IngredienteBase = null
 func _ready() -> void:
 	nome = "Fogão"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("Fogão")
 
 func _on_componente_interagivel_interagir(jogador: Player) -> void:

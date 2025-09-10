@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dy4r4c8l5fuxr"]
+[gd_scene load_steps=23 format=3 uid="uid://dy4r4c8l5fuxr"]
 
 [ext_resource type="Script" uid="uid://cv0ya3xdt4bn" path="res://Componentes/Personagens/player.gd" id="1_c2vf6"]
 [ext_resource type="Texture2D" uid="uid://d04jrn8tis0gr" path="res://Recursos/Graficos/Personagens/elzaVetorCores2.svg" id="2_4ucjf"]
@@ -338,10 +338,13 @@ nodes/Velocidade/position = Vector2(80, 100)
 nodes/output/position = Vector2(640, 140)
 node_connections = [&"output", 0, &"Velocidade"]
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ucjf"]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("referencia_de_colisao_para_dialogo") groups=["player"]]
 script = ExtResource("1_c2vf6")
 id = "elza"
 nome = "Elza"
+referencia_de_colisao_para_dialogo = NodePath("DialogueRef")
 
 [node name="GambiarraCentralizar" type="Sprite2D" parent="."]
 position = Vector2(0, -21)
@@ -548,7 +551,7 @@ length = 16.0
 bone_angle = 0.0
 
 [node name="Peito" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
-position = Vector2(-4.62663, -31.6266)
+position = Vector2(-4.38258, -31.3826)
 rest = Transform2D(1, 0, 0, 1, -4, -35)
 metadata/_local_pose_override_enabled_ = true
 
@@ -619,6 +622,10 @@ position = Vector2(16, 139)
 tree_root = SubResource("AnimationNodeBlendTree_dgr1c")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Velocidade/blend_position = 0.0
+
+[node name="DialogueRef" type="CollisionShape2D" parent="."]
+position = Vector2(-17, 9)
+shape = SubResource("RectangleShape2D_4ucjf")
 
 [connection signal="area_entered" from="PivoAcao/AreaAcao" to="." method="_on_area_acao_area_entered"]
 [connection signal="area_exited" from="PivoAcao/AreaAcao" to="." method="_on_area_acao_area_exited"]

@@ -9,7 +9,7 @@ func _ready() -> void:
 	Eventos.evento_finalizado.connect(_on_acao_bancada_cancelada)
 	Eventos.evento_falhou.connect(_on_acao_bancada_cancelada)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("Bancada")
 
 func _on_componente_interagivel_interagir(jogador: Player):

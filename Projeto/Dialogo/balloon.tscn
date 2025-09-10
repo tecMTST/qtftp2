@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://2nh1i0xeu1tt"]
+[gd_scene load_steps=9 format=3 uid="uid://b6j6tbkmejhfw"]
 
 [ext_resource type="Script" uid="uid://bkxsj5wsqtnxf" path="res://Dialogo/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -146,14 +146,6 @@ flip_v = true
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 region_filter_clip_enabled = true
-
-[node name="ArrowLeftMarker" type="Marker2D" parent="."]
-
-[node name="ArrowMiddleMarker" type="Marker2D" parent="."]
-position = Vector2(154, 0)
-
-[node name="ArrowRightMarker" type="Marker2D" parent="."]
-position = Vector2(292, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -10,7 +10,7 @@ var parent :CharacterBody2D
 func _ready() -> void:
 	parent = get_parent()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if parent and not Sentada:
 		var velocidade_animacao = remap(abs(parent.velocity.length()),0.0, 600.0, 0.0, 1.0)
 		animation_tree.set("parameters/Velocidade/blend_position", velocidade_animacao)

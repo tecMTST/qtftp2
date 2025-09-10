@@ -1,27 +1,10 @@
 class_name DialogueBalloon
 extends Node2D
 
-enum ArrowPosition { LEFT, CENTER, RIGHT }
-
 const BALLOON_Y_MARGIN := 20
 
 @export var next_action: StringName = &"ui_accept"
 @export var skip_action: StringName = &"ui_cancel"
-
-var arrow_position := ArrowPosition.LEFT:
-	set(value):
-		arrow_position = value
-
-		match value:
-			ArrowPosition.LEFT:
-				position.x -= arrow_left_marker.position.x
-				arrow.position.x = arrow_left_marker.position.x
-			ArrowPosition.CENTER:
-				position.x -= arrow_middle_marker.position.x
-				arrow.position.x = arrow_middle_marker.position.x
-			ArrowPosition.RIGHT:
-				position.x -= arrow_right_marker.position.x
-				arrow.position.x = arrow_right_marker.position.x
 
 var dialogue_line: DialogueLine:
 	set(next_dialogue_line):
@@ -100,12 +83,10 @@ var _locale := TranslationServer.get_locale()
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
-@onready var arrow = $Arrow
-@onready var arrow_left_marker = $ArrowLeftMarker
-@onready var arrow_middle_marker = $ArrowMiddleMarker
-@onready var arrow_right_marker = $ArrowRightMarker
+@onready var arrow: Sprite2D = $Arrow
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@onready var balloon_initial_x := balloon.position.x
+@onready var balloon_rect := balloon.get_rect()
 
 func _ready() -> void:
 	balloon.hide()
@@ -142,67 +123,64 @@ func _notification(what: int) -> void:
 func start(dialogue_resource: DialogueResource, title: String, extra_states: Array = []) -> void:
 	var dialogue_characters := NodeExtension.filter_children(get_tree().current_scene,
 		func(child): return child is Personagem)
-
+	
 	for character_name in dialogue_resource.character_names:
 		if characters.any(func(c): return c.id == character_name):
 			continue
-
+		
 		var character = ArrayExtension.find_first(
 			dialogue_characters,
 			func(dialogue_character: Personagem):
 				return dialogue_character.id == character_name
 		)
-
+		
 		if character == null:
 			continue
-
+		
 		characters.append(character)
-
+	
 	temporary_game_states =  [self] + extra_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
 	var camera_2d = NodeExtension.find_first_child(get_tree().current_scene,
 		func(child): return child is Camera2D)
-
 	screen_half_size = (get_viewport_rect().size * 0.5)
-
+	
 	if camera_2d != null:
 		screen_half_size = screen_half_size / camera_2d.zoom
-
+	
 	visible = true
 	next(title)
 
 func next(next_id: String) -> void:
 	dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
-
+	
 	if current_character != null and previous_character != current_character:
 		_adjust_balloon_position_according_to_current_character()
 		animation_player.play("popup")
 		return
+	
 	_adjust_ballon_position_to_bottom()
 
 func _adjust_balloon_position_according_to_current_character():
 	visible = true
 	arrow.visible = true
-	var collision = current_character_collision
+	var collision := current_character_collision
+	
 	if collision:
-		var height = 0
+		var height := 0
+		
 		if collision.shape is CapsuleShape2D:
 			height = collision.shape.height
 		elif collision.shape is CircleShape2D:
 			height = collision.shape.radius
 		else:
 			height = collision.shape.size.y
-
+		
 		global_position = Vector2(
 			collision.global_position.x,
-			collision.global_position.y + height
+			collision.global_position.y + (height * .5)
 		)
-
-	if global_position.x > screen_half_size.x:
-		arrow_position = DialogueBalloon.ArrowPosition.RIGHT
-	else:
-		arrow_position = DialogueBalloon.ArrowPosition.LEFT
 
 func _adjust_ballon_position_to_bottom() -> void:
 	visible = true

@@ -10,7 +10,7 @@ var geladeira_aberta
 func _ready() -> void:
 	nome = "Geladeira"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("Geladeira")
 
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
