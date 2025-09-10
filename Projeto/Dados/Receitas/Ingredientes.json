@@ -373,6 +373,7 @@
 		"acoes" : [
 			{
 				"alvo" : "bancada",
+				"evento": "cortar_alimento",
 				"resultado": "salsicha_fatiada"
 			}
 		]
