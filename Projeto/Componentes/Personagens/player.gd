@@ -7,7 +7,6 @@ signal acao_agarrou(objeto)
 
 var sfx_intervalo_passada: float = 0.35
 var sfx_timer: float = 0.0
-var item_ativo: IngredienteBase
 var interagivel_ativo: Node2D
 var acao_executando: bool = false
 var esta_agarrando: bool = false
@@ -24,8 +23,7 @@ var objeto_agarrado: IngredienteBase:
 
 func ao_transformar_objeto_agarrado(novo_objeto: IngredienteBase):
 	soltar()
-	objeto_agarrado = novo_objeto
-	agarrar()
+	agarrar(novo_objeto)
 
 func _physics_process(delta: float) -> void:
 	if (Input.is_action_pressed("up")   or
@@ -53,17 +51,16 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(_event: InputEvent) -> void:
-
 	if Input.is_action_just_pressed("action") and not acao_executando:
 		acao_executando = true
 	elif Input.is_action_just_released("action") and acao_executando:
 		acao_executando = false
 
 
-func agarrar_de_menu(objeto: Node):
+func agarrar(objeto: Node):
 	add_sibling(objeto)
 	objeto_agarrado = objeto
-	agarrar()
+	_agarrar()
 
 
 func _on_area_acao_body_entered(body: Node2D) -> void:
@@ -86,10 +83,10 @@ func on_interagivel_exited() -> void:
 	acao_desativada.emit()
 
 
-func agarrar():
-	objeto_agarrado.ao_transformar.connect(ao_transformar_objeto_agarrado)
-	objeto_agarrado.get_node("CollisionShape2D").disabled = true
+func _agarrar():
 	objeto_agarrado.reparent(posicao_objeto)
+	objeto_agarrado.ao_transformar_sucesso.connect(ao_transformar_objeto_agarrado)
+	objeto_agarrado.get_node("CollisionShape2D").disabled = true
 	objeto_agarrado.global_position = posicao_objeto.global_position
 	esta_agarrando = true
 	acao_agarrou.emit(objeto_agarrado)
@@ -100,7 +97,7 @@ func rotacao(_delta : float):
 
 
 func soltar():
-	objeto_agarrado.ao_transformar.disconnect(ao_transformar_objeto_agarrado)
+	objeto_agarrado.ao_transformar_sucesso.disconnect(ao_transformar_objeto_agarrado)
 	objeto_agarrado.reparent(get_parent())
 	objeto_agarrado.get_node("CollisionShape2D").disabled = false
 	esta_agarrando = false

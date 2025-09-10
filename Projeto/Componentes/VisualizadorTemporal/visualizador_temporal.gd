@@ -12,7 +12,7 @@ const QUANTIDADE_DE_PONTOS_NO_CIRCULO := 32
 
 @export var radius := 20.0
 @export var angulo_inicial := -90
-@export var cor := Color("478cbf")
+@export var cor := Color("478cbf") # azul
 
 @export_tool_button("Iniciar/Parar timer no editor")
 var botao = func():
