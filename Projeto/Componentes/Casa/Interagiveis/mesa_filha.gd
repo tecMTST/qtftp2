@@ -12,12 +12,13 @@ func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("Mesa")
 
 func _interagir(jogador: Player) -> void:
-	if(objeto_atual == null and jogador.objeto_agarrado != null and jogador.objeto_agarrado is IngredienteBase):
-		if (jogador.objeto_agarrado.pode_entregar()):
-			objeto_atual = jogador.objeto_agarrado
-			jogador.soltar()
-			_posicionar_objeto()
-			objeto_atual.entregar()
+	if(objeto_atual == null and jogador.objeto_agarrado != null\
+		and jogador.objeto_agarrado is IngredienteBase)\
+		and jogador.objeto_agarrado.pode_entregar():
+		objeto_atual = jogador.objeto_agarrado
+		jogador.soltar()
+		_posicionar_objeto()
+		objeto_atual.entregar()
 
 func _posicionar_objeto() -> void:
 	objeto_atual.reparent(pivot)
