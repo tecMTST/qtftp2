@@ -22,6 +22,7 @@ func iniciar(pause:bool=true):
 	if tratar_pause:
 		get_tree().paused = true
 	_carregar_imagens_de_briefing()
+	ControleDeAudio.toca_musica("briefing", false)
 	_proximo()
 	_mostrar()
 	iniciado.emit()
