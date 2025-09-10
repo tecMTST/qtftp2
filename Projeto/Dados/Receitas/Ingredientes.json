@@ -1,36 +1,34 @@
 [
 	{
-		"id" : 2,
-		"variacao": 1,
-		"nome" : "Feijão Carioca Cru",
-		"descricao" : "Feijão carioca cru",
-		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/FeijaoCru.svg",
+		"id" : "feijao_no_pote",
+		"descricao" : "Feijão carioca cru no pote de plástico",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/feijao_no_pote.svg",
 		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"acao" : "cozer",
-				"tempo" : 20,
-				"variacao_resultado" : 2,
-				"evento": ""
+				"resultado" : "feijao_fervendo",
 			}
 		]
 	},
 	{
-		"id" : 2,
-		"variacao": 2,
-		"nome" : "Feijão Carioca Cozido",
-		"descricao" : "Feijão carioca cozido.",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "",
-		"caminho_sprite" : "",
+		"id" : "feijao_fervendo",
+		"descricao" : "Feijão carioca fervendo no fogão",
+		"tempo": 5,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
-				"alvo" : "bancada",
-				"acao" : "misturar",
-				"tempo" : 1,
-				"variacao_resultado" : 0,
-				"evento": ""
+				"alvo" : "fogao",
+				"resultado" : "feijao_pronto",
+			}
+		]
+	},
+	{
+		"id" : "feijao_pronto",
+		"descricao" : "Feijão carioca cozido.",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/feijao.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa",
 			}
 		]
 	},
@@ -217,6 +215,7 @@
 		"acoes" : [
 			{
 				"alvo" : "bancada",
+				"evento": "cortar_alimento",
 				"resultado": "cebola_e_alho_picados"
 			}
 		]
@@ -241,6 +240,10 @@
 			{
 				"alvo": "arroz_com_agua",
 				"resultado": "arroz_cozinhando"
+			},
+			{
+				"alvo": "carne_moida_crua",
+				"resultado": "carne_moida_cozinhando"
 			}
 		]
 	},
@@ -386,5 +389,81 @@
 				"alvo" : "mesa"
 			}
 		]
-	}
+	},
+	{
+		"id" : "carne_crua",
+		"descricao" : "Acém guardado na geladeira",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/acem.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+				"evento": "cortar_alimento",
+				"resultado": "carne_moida_crua"
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_crua",
+		"descricao" : "Acém picado pronto para colocar no fogo",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/carne_moida_crua.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_cozinhando",
+		"descricao" : "Carne moída cozinhando no fogão",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "carne_moida_quente"
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_quente",
+		"descricao" : "Carne moída cozida para misturar com temperos",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/carne_moida.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+				"evento": "depositar",
+				"resultado": "carne_moida_sem_tempero"
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_sem_tempero",
+		"descricao" : "Carne moída aguardando temperos na bancada",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/carne_moida.svg",
+		"acoes" : [
+			{
+				"alvo" : "salada",
+				"resultado": "marmita_carne_salada"
+			}
+		]
+	},
+	{
+		"id" : "salada",
+		"descricao" : "Saladinha crua pronta para misturar na carne moída",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salada.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+			}
+		]
+	},
+	{
+		"id" : "marmita_carne_salada",
+		"descricao" : "Mistura de carne com salada pronta para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/marmita_carne_salada.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa",
+			}
+		]
+	},
 ]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b35ir0o7hkl2i"
-path="res://.godot/imported/carne.svg-971872c4bd4063b33b91c0a8c9c3c122.ctex"
+uid="uid://busdw1820l54"
+path="res://.godot/imported/carne_moida.svg-6cf4ab4c8d92309132e02ca9846a9c95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Ingredientes/carne.svg"
-dest_files=["res://.godot/imported/carne.svg-971872c4bd4063b33b91c0a8c9c3c122.ctex"]
+source_file="res://Recursos/Graficos/UI/Ingredientes/carne_moida.svg"
+dest_files=["res://.godot/imported/carne_moida.svg-6cf4ab4c8d92309132e02ca9846a9c95.ctex"]
 
 [params]
 

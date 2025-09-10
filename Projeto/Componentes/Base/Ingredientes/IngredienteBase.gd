@@ -17,6 +17,8 @@ var ingrediente: Ingrediente
 var tempo: int = 0
 var estado_atual = EstadoIngrediente.INICIAL
 
+var _id_acao_atual: int = -1
+
 @onready var timer: Timer = $Timer
 @onready var visualizador_temporal: VisualizadorTemporal = $VisualizadorTemporal
 @onready var sprite: Sprite2D = $Sprite2D
@@ -69,23 +71,25 @@ func _on_timer_timeout():
 	ao_tempo_limite_atingido.emit(self)
 
 
-func _liga_captura_de_eventos() -> void:
+func _liga_captura_de_eventos(id_acao: int) -> void:
+	_id_acao_atual = id_acao
 	Eventos.evento_realizado.connect(_on_evento_realizado)
 	Eventos.evento_falhou.connect(_on_evento_falhou)
 	Eventos.evento_finalizado.connect(_on_evento_falhou)
 
 
 func _desliga_captura_de_eventos() -> void:
+	_id_acao_atual = -1
 	Eventos.evento_realizado.disconnect(_on_evento_realizado)
 	Eventos.evento_falhou.disconnect(_on_evento_falhou)
 	Eventos.evento_finalizado.disconnect(_on_evento_falhou)
 
 
 # transforma o ingrediente em outro
-func transformar() -> void:
-	_liga_captura_de_eventos()
-	if ingrediente.acoes[0].evento and ingrediente.acoes[0].evento != "depositar":
-		Eventos.evento_iniciado.emit(ingrediente.acoes[0].evento)
+func transformar(id_acao: int = 0) -> void:
+	_liga_captura_de_eventos(id_acao)
+	if ingrediente.acoes[id_acao].evento and ingrediente.acoes[id_acao].evento != "depositar":
+		Eventos.evento_iniciado.emit(ingrediente.acoes[id_acao].evento)
 	else:
 		Eventos.evento_realizado.emit()
 
@@ -95,7 +99,7 @@ func _on_evento_falhou() -> void:
 
 func _on_evento_realizado() -> void:
 	_desliga_captura_de_eventos()
-	var id_novo_ingrediente = ingrediente.acoes[0].resultado
+	var id_novo_ingrediente = ingrediente.acoes[_id_acao_atual].resultado
 	var dados_ingrediente = Globais.obtem_ingrediente(id_novo_ingrediente)
 	assert(dados_ingrediente != null, "ingrediente " + id_novo_ingrediente + " não encontrado")
 
