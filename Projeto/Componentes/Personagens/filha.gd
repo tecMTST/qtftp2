@@ -18,9 +18,9 @@ var moving_forward := true
 
 func _ready():
 	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
-		sprite.Sentada = true
+		sprite.sentada = true
 		return
-	sprite.Sentada = false
+	sprite.sentada = false
 	select_new_waypoint()
 	ControleDeFase.prato_entregue.connect(_ir_comer)
 	visualizador_percentual.valor = 0

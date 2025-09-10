@@ -4,7 +4,7 @@ class_name Pia extends BaseInteragivel
 
 func _ready() -> void:
 	nome = "Pia"
-	
+
 func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("Pia")
 

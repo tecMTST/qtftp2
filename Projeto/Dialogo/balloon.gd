@@ -123,60 +123,60 @@ func _notification(what: int) -> void:
 func start(dialogue_resource: DialogueResource, title: String, extra_states: Array = []) -> void:
 	var dialogue_characters := NodeExtension.filter_children(get_tree().current_scene,
 		func(child): return child is Personagem)
-	
+
 	for character_name in dialogue_resource.character_names:
 		if characters.any(func(c): return c.id == character_name):
 			continue
-		
+
 		var character = ArrayExtension.find_first(
 			dialogue_characters,
 			func(dialogue_character: Personagem):
 				return dialogue_character.id == character_name
 		)
-		
+
 		if character == null:
 			continue
-		
+
 		characters.append(character)
-	
+
 	temporary_game_states =  [self] + extra_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
 	var camera_2d = NodeExtension.find_first_child(get_tree().current_scene,
 		func(child): return child is Camera2D)
 	screen_half_size = (get_viewport_rect().size * 0.5)
-	
+
 	if camera_2d != null:
 		screen_half_size = screen_half_size / camera_2d.zoom
-	
+
 	visible = true
 	next(title)
 
 func next(next_id: String) -> void:
 	dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
-	
+
 	if current_character != null and previous_character != current_character:
 		_adjust_balloon_position_according_to_current_character()
 		animation_player.play("popup")
 		return
-	
+
 	_adjust_ballon_position_to_bottom()
 
 func _adjust_balloon_position_according_to_current_character():
 	visible = true
 	arrow.visible = true
 	var collision := current_character_collision
-	
+
 	if collision:
 		var height := 0
-		
+
 		if collision.shape is CapsuleShape2D:
 			height = collision.shape.height
 		elif collision.shape is CircleShape2D:
 			height = collision.shape.radius
 		else:
 			height = collision.shape.size.y
-		
+
 		global_position = Vector2(
 			collision.global_position.x,
 			collision.global_position.y + (height * .5)
