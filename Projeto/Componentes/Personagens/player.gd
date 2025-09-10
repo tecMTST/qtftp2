@@ -56,6 +56,12 @@ func _input(_event: InputEvent) -> void:
 	elif Input.is_action_just_released("action") and acao_executando:
 		acao_executando = false
 
+func eliminar_ingrediente() -> void:
+	esta_agarrando = false
+	if objeto_agarrado != null:
+		objeto_agarrado.queue_free()
+		objeto_agarrado = null
+
 
 func agarrar(objeto: Node):
 	add_sibling(objeto)
