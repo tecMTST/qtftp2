@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xw5kmw27eh2s"
-path="res://.godot/imported/feijaoDeMolho.svg-97695f581d077a0d32ad14a814e0fa69.ctex"
+uid="uid://by43ccu30135n"
+path="res://.godot/imported/carne_moida_crua.svg-9232115fde151ad722768c521d7fbe4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Ingredientes/feijaoDeMolho.svg"
-dest_files=["res://.godot/imported/feijaoDeMolho.svg-97695f581d077a0d32ad14a814e0fa69.ctex"]
+source_file="res://Recursos/Graficos/UI/Ingredientes/carne_moida_crua.svg"
+dest_files=["res://.godot/imported/carne_moida_crua.svg-9232115fde151ad722768c521d7fbe4e.ctex"]
 
 [params]
 

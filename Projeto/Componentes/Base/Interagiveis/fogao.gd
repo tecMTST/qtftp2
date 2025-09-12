@@ -42,18 +42,22 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 			print_debug("  [-] calma! ", objeto_no_fogao.id, " ainda está cozinhando")
 			return
 		if (objeto_na_mao):
-			if objeto_no_fogao.ingrediente.acoes[0].alvo != objeto_na_mao.id:
+			var indice_acao: int = -1
+			for idx in objeto_no_fogao.ingrediente.acoes.size():
+				if objeto_no_fogao.ingrediente.acoes[idx].alvo == objeto_na_mao.id:
+					indice_acao = idx
+					break
+			if indice_acao == -1:
 				print_debug(
-					"  [-] fogão tem ", objeto_no_fogao.descricao, " que espera ",
-					objeto_no_fogao.ingrediente.acoes[0].alvo,
-					" mas personagem está segurando uma ", objeto_na_mao.id
+					"  [-] objeto no fogao (", objeto_no_fogao.descricao, ") não espera ",
+					objeto_na_mao.id, " que personagem está segurando"
 				)
 				return
 			print_debug(
 				"  [-] fogão com ", objeto_no_fogao.id, ". misturando com ", objeto_na_mao.id
 			)
 			_jogador = jogador
-			_misturar_ingredientes_na_panela()
+			_misturar_ingredientes_na_panela(indice_acao)
 		else:
 			_jogador = jogador
 			_recolher_objeto()
@@ -71,10 +75,10 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 			print_debug("  [-] ", objeto_na_mao.id, " não interage com fogão")
 			return
 
-func _misturar_ingredientes_na_panela() -> void:
+func _misturar_ingredientes_na_panela(indice_acao: int) -> void:
 	objeto_no_fogao.ao_transformar_sucesso.connect(_on_misturar_itens)
 	objeto_no_fogao.ao_transformar_falha.connect(_on_falhou_transformacao)
-	objeto_no_fogao.transformar()
+	objeto_no_fogao.transformar(indice_acao)
 
 func _on_misturar_itens(novo_item: IngredienteBase) -> void:
 	var objeto_antigo = _jogador.objeto_agarrado

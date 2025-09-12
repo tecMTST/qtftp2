@@ -82,7 +82,7 @@
 			},
 			{
 				"descricao": "Picar cebola e alho na bancada",
-				"alvo": "bancada"
+				"alvo": "bancada",
 			},
 			{
 				"descricao": "Colocar refogado no fogo",
@@ -198,6 +198,85 @@
 			},
 			{
 				"descricao" : "Servir a salsicha",
+				"alvo" : "mesa"
+			}
+		]
+	},
+	{
+		"id" : 7,
+		"nome" : "Feijão",
+		"descricao" : "Feijão de molho pronto pra fazer",
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/feijao.svg",
+		"passos" : [
+			{
+				"descricao": "Pegar feijão de molho na geladeira",
+				"alvo": "geladeira",
+				"ingrediente": "feijao_no_pote"
+			},
+			{
+				"descricao": "Colocar feijão no fogo",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Tirar feijão do fogo",
+				"alvo" : "fogao"
+			},
+			{
+				"descricao" : "Servir o feijão",
+				"alvo" : "mesa"
+			}
+		]
+	},
+	{
+		"id" : 8,
+		"nome" : "Mistura",
+		"descricao" : "Carne Moída com Temperos e Salada",
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/marmita_carne_salada.svg",
+		"passos" : [
+			{
+				"descricao": "Pegar cebola e alho na geladeira",
+				"alvo": "geladeira",
+				"ingrediente": "cebola_e_alho"
+			},
+			{
+				"descricao": "Picar cebola e alho na bancada",
+				"alvo": "bancada",
+			},
+			{
+				"descricao": "Colocar refogado no fogo",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Pegar acém cru na geladeira",
+				"alvo" : "geladeira",
+				"ingrediente": "carne_crua"
+			},
+			{
+				"descricao": "Picar a carne",
+				"alvo": "bancada",
+			},
+			{
+				"descricao": "Colocar carne moída no refogado",
+				"alvo": "fogao"
+			},
+			{
+				"descricao": "Esperar carne moída ficar pronta",
+				"alvo": "fogao"
+			},
+			{
+				"descricao": "Deixar carne moída na bancada",
+				"alvo": "bancada"
+			},
+			{
+				"descricao": "Pegar salada na outra bancada",
+				"alvo": "bancada_salada"
+			},
+			{
+				"descricao": "Misturar salada na carne moída",
+				"alvo": "bancada"
+			},
+			{
+				"descricao" : "Servir a mistura",
 				"alvo" : "mesa"
 			}
 		]

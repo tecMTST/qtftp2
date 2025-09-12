@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bge4y0nlccxby"
-path="res://.godot/imported/salada.svg-5efa397be3e75313cb57e731c8388672.ctex"
+uid="uid://blcpxucrg5qs6"
+path="res://.godot/imported/marmita_carne_salada.svg-b064ba79610e59713f6461aadb390256.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/Ingredientes/salada.svg"
-dest_files=["res://.godot/imported/salada.svg-5efa397be3e75313cb57e731c8388672.ctex"]
+source_file="res://Recursos/Graficos/UI/Ingredientes/marmita_carne_salada.svg"
+dest_files=["res://.godot/imported/marmita_carne_salada.svg-b064ba79610e59713f6461aadb390256.ctex"]
 
 [params]
 
