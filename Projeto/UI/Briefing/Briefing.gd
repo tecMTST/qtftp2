@@ -22,11 +22,11 @@ func iniciar(pause:bool=true, receita:String=""):
 	visible = true
 	if tratar_pause:
 		get_tree().paused = true
+		ControleDeAudio.toca_musica("briefing", false)
 	var caminhos_briefing:Array[CaminhoBriefing]=ControleDeFase.nivel_atual.caminhos_briefing
-	if(receita!=""):
-		caminhos_briefing= ControleDeFase.nivel_atual.caminhos_briefing.filter(func(c): return c.nome==receita)
+	if(receita != ""):
+		caminhos_briefing = ControleDeFase.nivel_atual.caminhos_briefing.filter(func(c): return c.nome==receita)
 	_carregar_imagens_de_briefing(caminhos_briefing)
-	ControleDeAudio.toca_musica("briefing", false)
 	_proximo()
 	_mostrar()
 	iniciado.emit()
