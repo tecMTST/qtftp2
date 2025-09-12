@@ -40,6 +40,8 @@ func _ready() -> void:
 
 	if tempo:
 		timer.start(tempo)
+	else:
+		estado_atual = EstadoIngrediente.PRONTO_PARA_COZINHAR
 
 
 func iniciar(ingrediente_dados: Ingrediente) -> void:
