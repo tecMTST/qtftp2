@@ -6,7 +6,7 @@ var descricao : String
 var textos : Array[String]
 var imagem : String
 var local : String
-var caminhos_briefing: Array[String]
+var caminhos_briefing: Array[CaminhoBriefing]
 var tempo : int
 var limite_bagunca : int
 var id_receitas : Array[int] = []
