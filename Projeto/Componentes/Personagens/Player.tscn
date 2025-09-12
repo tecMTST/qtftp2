@@ -548,7 +548,7 @@ length = 16.0
 bone_angle = 0.0
 
 [node name="Peito" type="Bone2D" parent="GambiarraCamera/SpriteAnimado/Skeleton2D/Quadril"]
-position = Vector2(-4.83885, -31.8389)
+position = Vector2(-4.511, -31.511)
 rest = Transform2D(1, 0, 0, 1, -4, -35)
 metadata/_local_pose_override_enabled_ = true
 

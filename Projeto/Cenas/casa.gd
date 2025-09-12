@@ -32,6 +32,7 @@ func _on_botao_pausa_pressed() -> void:
 	get_tree().paused = true
 	botao_pausa.visible = false
 	travar_dialogos = true
+	pausar.atualizar()
 	pausar.show()
 
 func _on_pausar_continuar() -> void:
