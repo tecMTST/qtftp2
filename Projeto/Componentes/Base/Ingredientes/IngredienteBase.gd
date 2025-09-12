@@ -76,9 +76,12 @@ func _liga_captura_de_eventos() -> void:
 
 
 func _desliga_captura_de_eventos() -> void:
-	Eventos.evento_realizado.disconnect(_on_evento_realizado)
-	Eventos.evento_falhou.disconnect(_on_evento_falhou)
-	Eventos.evento_finalizado.disconnect(_on_evento_falhou)
+	if Eventos.evento_realizado.is_connected(_on_evento_realizado):
+		Eventos.evento_realizado.disconnect(_on_evento_realizado)
+	if Eventos.evento_falhou.is_connected(_on_evento_falhou):
+		Eventos.evento_falhou.disconnect(_on_evento_falhou)
+	if Eventos.evento_finalizado.is_connected(_on_evento_falhou):
+		Eventos.evento_finalizado.disconnect(_on_evento_falhou)
 
 
 # transforma o ingrediente em outro
