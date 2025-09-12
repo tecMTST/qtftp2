@@ -14,6 +14,16 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("fogao")
 
+
+func eliminar_ingrediente() -> void:
+	fogo_animado.hide()
+	ControleDeAudio.para_efeito_ciclo("fogao_alarme")
+	ControleDeAudio.para_efeito_ciclo("fogao_cozinhando")
+	if objeto_no_fogao != null: objeto_no_fogao.queue_free()
+	objeto_no_fogao = null
+	_jogador = null
+
+
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	print_debug("[fogao]")
 	if (_jogador != null):
@@ -125,3 +135,17 @@ func ao_tempo_cozimento_atingido(_objeto: IngredienteBase):
 	print_debug("  [-] tempo de cozimento atingido!")
 	ControleDeAudio.para_efeito_ciclo("fogao_cozinhado")
 	ControleDeAudio.toca_efeito("fogao_alarme")
+	objeto_no_fogao.ao_tempo_limite_atingido.disconnect(ao_tempo_cozimento_atingido)
+	objeto_no_fogao.ao_tempo_limite_atingido.connect(ao_tempo_queimado_atingido)
+
+
+func ao_tempo_queimado_atingido(_objeto: IngredienteBase):
+	print_debug("  [-] ", _objeto.descricao, " queimou no fogão! Recomeçando receita...")
+	for interagivel in get_tree().get_nodes_in_group("interagivel"):
+		if interagivel.has_method("eliminar_ingrediente"):
+			print_debug("  [-] eliminando ingrediente de ", interagivel.name)
+			interagivel.eliminar_ingrediente()
+			interagivel.eliminar_ingrediente()
+	var player: Player = get_tree().get_nodes_in_group("player")[0]
+	player.eliminar_ingrediente()
+	ControleDeFase.carrega_passo_inicial()

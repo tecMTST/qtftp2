@@ -13,6 +13,13 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("bancada")
 
+
+func eliminar_ingrediente() -> void:
+	if objeto_na_bancada != null: objeto_na_bancada.queue_free()
+	objeto_na_bancada = null
+	_jogador = null
+
+
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	var objeto = jogador.objeto_agarrado
 	print_debug("[bancada]")
