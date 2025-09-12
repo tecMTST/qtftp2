@@ -9,8 +9,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("pia")
 
+
 func _on_componente_interagivel_interagir(jogador: Player):
 	print_debug("[pia]")
+	if ControleDeFase.passo_atual.alvo != "pia":
+		print_debug("  [-] não é hora de usar a pia")
+		return
 	if jogador.esta_agarrando:
 		var objeto_ingrediente = jogador.objeto_agarrado
 		if objeto_ingrediente.ingrediente.acoes[0].alvo == "pia":

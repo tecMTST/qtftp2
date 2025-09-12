@@ -87,8 +87,11 @@ func _on_misturar_itens(novo_item: IngredienteBase) -> void:
 
 
 func _on_transformar_falhou(item_atual: IngredienteBase) -> void:
-	item_atual.ao_transformar_sucesso.disconnect(_on_pegar_item_da_bancada)
-	item_atual.ao_transformar_sucesso.disconnect(_on_colocar_item_na_bancada)
-	item_atual.ao_transformar_sucesso.disconnect(_on_misturar_itens)
+	if item_atual.ao_transformar_sucesso.is_connected(_on_pegar_item_da_bancada):
+		item_atual.ao_transformar_sucesso.disconnect(_on_pegar_item_da_bancada)
+	if item_atual.ao_transformar_sucesso.is_connected(_on_colocar_item_na_bancada):
+		item_atual.ao_transformar_sucesso.disconnect(_on_colocar_item_na_bancada)
+	if item_atual.ao_transformar_sucesso.is_connected(_on_misturar_itens):
+		item_atual.ao_transformar_sucesso.disconnect(_on_misturar_itens)
 	_jogador = null
 	return
