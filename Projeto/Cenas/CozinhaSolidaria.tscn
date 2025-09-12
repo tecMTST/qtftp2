@@ -270,3 +270,5 @@ blackboard_plan = SubResource("BlackboardPlan_tjjme")
 [connection signal="pressed" from="BotaoPausa" to="." method="_on_botao_pausa_pressed"]
 [connection signal="pressed" from="BotaoFim" to="." method="_on_botao_fim_pressed"]
 [connection signal="continuar" from="CanvasLayer/pausar" to="." method="_on_pausar_continuar"]
+[connection signal="finalizado" from="Briefing" to="." method="_on_briefing_finalizado"]
+[connection signal="iniciado" from="Briefing" to="." method="_on_briefing_iniciado"]

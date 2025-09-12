@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b74qrakxakkhv"]
+[gd_scene load_steps=8 format=3 uid="uid://b74qrakxakkhv"]
 
 [ext_resource type="Script" uid="uid://c54ra8i7yu3lf" path="res://Componentes/Base/Interagiveis/pia.gd" id="1_rmucm"]
 [ext_resource type="Texture2D" uid="uid://pqs7cidabn1s" path="res://Recursos/Graficos/Cenas/Cenario_2/Pia.svg" id="2_chrhn"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_dodmi"]
+[ext_resource type="Texture2D" uid="uid://dmxtex2h0cm00" path="res://Recursos/Graficos/UI/indicador.svg" id="4_hf37v"]
+[ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="5_eymmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tpct"]
 size = Vector2(131, 111)
@@ -47,5 +49,15 @@ descricao = "Uma pia"
 area_de_interacao = NodePath("../Area2D")
 possui_contorno = false
 metadata/_custom_type_script = "uid://ddwsslb5nraqq"
+
+[node name="Indicador" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.99999, -52)
+scale = Vector2(0.307, 0.307)
+texture = ExtResource("4_hf37v")
+
+[node name="Bouncer" type="Node" parent="Indicador"]
+script = ExtResource("5_eymmy")
+metadata/_custom_type_script = "uid://d1lhbtx247tsg"
 
 [connection signal="interagir" from="ComponenteInteragivel" to="." method="_on_componente_interagivel_interagir"]
