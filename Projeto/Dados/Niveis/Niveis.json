@@ -5,7 +5,7 @@
 		"descricao" : "Tutorial",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"local" : "res://Cenas/cutscene_quadrinhos_tutorial.tscn",
 		"id_receitas" : [1,2,1,2],
 		"ordem_aleatoria": false,
 		"caminhos_briefing": [
@@ -44,7 +44,7 @@
 		"descricao" : "Rotina da família em casa",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_1.tscn",
 		"id_receitas" : [3, 4],
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
@@ -83,7 +83,7 @@
 		"descricao" : "Em casa, elza está ficando cansada pela rotina e má alimentação",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_2.tscn",
 		"id_receitas" : [5, 6],
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
@@ -118,7 +118,7 @@
 		"descricao" : "Não tem nada pra comer",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_3.tscn",
 		"id_receitas" : [],
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
