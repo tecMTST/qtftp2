@@ -23,4 +23,7 @@ func _on_retornar_para_tela_inicial_pressed() -> void:
 
 #abre o briefing novamente
 func _on_briefing_pressed() -> void:
-	briefing.iniciar(false)
+	if(ControleDeFase.receita_selecionada):
+		briefing.iniciar(false, ControleDeFase.receita_selecionada.nome)
+	else:
+		briefing.iniciar(false)
