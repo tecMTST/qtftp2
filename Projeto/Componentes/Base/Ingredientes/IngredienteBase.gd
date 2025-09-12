@@ -63,7 +63,7 @@ func _on_timer_timeout():
 		EstadoIngrediente.COZINHANDO:
 			estado_atual = EstadoIngrediente.QUEIMANDO
 			visualizador_temporal.cor = Color("e83637") # vermelho!
-			timer.start(tempo)
+			timer.start(ingrediente.tempo_queima)
 		EstadoIngrediente.QUEIMANDO:
 			print_debug("queimou! tem que tirar de cena")
 		_:
@@ -80,15 +80,20 @@ func _liga_captura_de_eventos(id_acao: int) -> void:
 
 func _desliga_captura_de_eventos() -> void:
 	_id_acao_atual = -1
-	Eventos.evento_realizado.disconnect(_on_evento_realizado)
-	Eventos.evento_falhou.disconnect(_on_evento_falhou)
-	Eventos.evento_finalizado.disconnect(_on_evento_falhou)
+	if Eventos.evento_realizado.is_connected(_on_evento_realizado):
+		Eventos.evento_realizado.disconnect(_on_evento_realizado)
+	if Eventos.evento_falhou.is_connected(_on_evento_falhou):
+		Eventos.evento_falhou.disconnect(_on_evento_falhou)
+	if Eventos.evento_finalizado.is_connected(_on_evento_falhou):
+		Eventos.evento_finalizado.disconnect(_on_evento_falhou)
 
 
 # transforma o ingrediente em outro
 func transformar(id_acao: int = 0) -> void:
 	_liga_captura_de_eventos(id_acao)
-	if ingrediente.acoes[id_acao].evento and ingrediente.acoes[id_acao].evento != "depositar":
+	if tempo > 0 and estado_atual == EstadoIngrediente.INICIAL:
+		Eventos.evento_falhou.emit()
+	elif ingrediente.acoes[id_acao].evento and ingrediente.acoes[id_acao].evento != "depositar":
 		Eventos.evento_iniciado.emit(ingrediente.acoes[id_acao].evento)
 	else:
 		Eventos.evento_realizado.emit()
