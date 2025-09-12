@@ -87,7 +87,9 @@ func _desliga_captura_de_eventos() -> void:
 # transforma o ingrediente em outro
 func transformar() -> void:
 	_liga_captura_de_eventos()
-	if ingrediente.acoes[0].evento and ingrediente.acoes[0].evento != "depositar":
+	if tempo > 0 and estado_atual == EstadoIngrediente.INICIAL:
+		Eventos.evento_falhou.emit()
+	elif ingrediente.acoes[0].evento and ingrediente.acoes[0].evento != "depositar":
 		Eventos.evento_iniciado.emit(ingrediente.acoes[0].evento)
 	else:
 		Eventos.evento_realizado.emit()
