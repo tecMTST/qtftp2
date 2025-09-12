@@ -64,6 +64,7 @@ func eliminar_ingrediente() -> void:
 
 
 func agarrar(objeto: Node):
+	if objeto.get_parent(): objeto.get_parent().remove_child(objeto)
 	add_sibling(objeto)
 	objeto_agarrado = objeto
 	_agarrar()

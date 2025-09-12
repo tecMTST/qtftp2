@@ -7,6 +7,7 @@ signal finalizado
 
 var atual: int = -1
 var tratar_pause:bool=true
+var receita_atual:String=""
 
 @onready var fader_principal: Fader = $BriefingBase/FaderPrincipal
 @onready var imagem: TextureRect = $BriefingBase/Panel/Centro/Imagem
@@ -15,21 +16,25 @@ var tratar_pause:bool=true
 @onready var voltar: TouchScreenButton = $BriefingBase/Voltar
 
 
-func iniciar(pause:bool=true):
+func iniciar(pause:bool=true, receita:String=""):
 	fader_principal.FadeIn()
 	tratar_pause=pause
 	visible = true
 	if tratar_pause:
 		get_tree().paused = true
-	_carregar_imagens_de_briefing()
+		ControleDeAudio.toca_musica("briefing", false)
+	var caminhos_briefing:Array[CaminhoBriefing]=ControleDeFase.nivel_atual.caminhos_briefing
+	if(receita != ""):
+		caminhos_briefing = ControleDeFase.nivel_atual.caminhos_briefing.filter(func(c): return c.nome==receita)
+	_carregar_imagens_de_briefing(caminhos_briefing)
 	_proximo()
 	_mostrar()
 	iniciado.emit()
 
-func _carregar_imagens_de_briefing():
+func _carregar_imagens_de_briefing(caminhos_briefing:Array[CaminhoBriefing]):
 	partes = []
-	for caminho_briefing in ControleDeFase.nivel_atual.caminhos_briefing:
-		partes.push_front(load(caminho_briefing))
+	for caminho_briefing in caminhos_briefing:
+		partes.push_back(load(caminho_briefing.caminho))
 
 func _mostrar():
 	await fader_principal.finished

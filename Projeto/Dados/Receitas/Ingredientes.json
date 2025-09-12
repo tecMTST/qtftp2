@@ -68,6 +68,7 @@
 		"id" : "ovo_fritando",
 		"descricao" : "Ovo branco fritando na frigideira",
 		"tempo": 10,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/ovo_frigideira.svg",
 		"acoes" : [
 			{
@@ -113,6 +114,7 @@
 		"id" : "cuscuz_cozinhando",
 		"descricao" : "Cuscuz Cozinhando na Cuscuzeira",
 		"tempo": 10,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/cuscuzeira.svg",
 		"acoes" : [
 			{
@@ -191,6 +193,7 @@
 		"id" : "agua_esquentando",
 		"descricao" : "Água fervendo no fogo",
 		"tempo": 5,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor_fumaca.svg",
 		"acoes" : [
 			{
@@ -236,6 +239,7 @@
 		"id" : "cebola_e_alho_fritando",
 		"descricao" : "Cebola e Alho fritando no fogão quente",
 		"tempo": 20,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
@@ -269,6 +273,7 @@
 		"id" : "arroz_cozinhando",
 		"descricao" : "Arroz branco cozinhando na Água",
 		"tempo": 10,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
@@ -313,6 +318,7 @@
 		"id" : "miojex_cozinhando",
 		"descricao" : "Miojex Cozinhando no Fogão",
 		"tempo": 5,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
@@ -346,6 +352,7 @@
 		"id" : "salsicha_fritando",
 		"descricao" : "Salsicha fritando na frigideira",
 		"tempo": 10,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
@@ -358,6 +365,7 @@
 		"id" : "salsicha_cozinhando",
 		"descricao" : "Salsicha cozinhando na água",
 		"tempo": 10,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{

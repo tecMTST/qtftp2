@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcuar7typ5dy5" path="res://UI/Briefing/Briefing.gd" id="1_jgbmn"]
 [ext_resource type="Script" uid="uid://cpesqq3ctb78o" path="res://addons/uiJuicer/Fader.gd" id="2_u36wo"]
-[ext_resource type="Texture2D" uid="uid://h0fwtdbdje0f" path="res://Recursos/Graficos/UI/briefing-tutorial-p1.svg" id="3_dxlru"]
+[ext_resource type="Texture2D" uid="uid://h0fwtdbdje0f" path="res://Recursos/Graficos/UI/Briefing/briefing-tutorial-p1.svg" id="3_dxlru"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="4_1q18d"]
 [ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="5_a2g8k"]
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="6_26tsy"]
