@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128mm"
+   height="27mm"
+   viewBox="0 0 128 27"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="botao.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="256"
+     inkscape:cx="425.58594"
+     inkscape:cy="23.634766"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <clipPath
+       id="clip0_289_9630">
+      <rect
+         width="54"
+         height="98"
+         fill="#ffffff"
+         id="rect5"
+         x="0"
+         y="0" />
+    </clipPath>
+    <mask
+       id="path-2-inside-1_289_9630"
+       fill="#ffffff">
+      <path
+         d="M 4,49 C 4,24.1472 24.1472,4 49,4 h 5 V 94 H 49 C 24.1472,94 4,73.8528 4,49 Z"
+         id="path2" />
+    </mask>
+  </defs>
+  <g
+     id="layer1">
+    <g
+       style="fill:none"
+       id="g1"
+       transform="matrix(0.26458333,0,0,0.26458333,46.819394,-10.179681)">
+      <g
+         clip-path="url(#clip0_289_9630)"
+         id="g5"
+         transform="translate(-176.65428,38.9474)">
+        <path
+           d="M 8,53 C 8,28.1472 28.1472,8 53,8 h 1 V 98 H 53 C 28.1472,98 8,77.8528 8,53 Z"
+           fill="#000000"
+           fill-opacity="0.4"
+           id="path1" />
+        <mask
+           id="mask3"
+           fill="#ffffff">
+          <path
+             d="M 4,49 C 4,24.1472 24.1472,4 49,4 h 5 V 94 H 49 C 24.1472,94 4,73.8528 4,49 Z"
+             id="path3" />
+        </mask>
+        <path
+           d="M 4,49 C 4,24.1472 24.1472,4 49,4 h 5 V 94 H 49 C 24.1472,94 4,73.8528 4,49 Z"
+           fill="#70e7fd"
+           id="path4" />
+        <path
+           d="M 2,49 C 2,23.0426 23.0426,2 49,2 h 5 V 6 H 49 C 25.2518,6 6,25.2518 6,49 Z M 54,96 H 49 C 23.0426,96 2,74.9574 2,49 h 4 c 0,23.7482 19.2518,43 43,43 h 5 z m -5,0 C 23.0426,96 2,74.9574 2,49 2,23.0426 23.0426,2 49,2 V 6 C 25.2518,6 6,25.2518 6,49 6,72.7482 25.2518,92 49,92 Z M 54,4 v 90 z"
+           fill="#000000"
+           mask="url(#path-2-inside-1_289_9630)"
+           id="path5" />
+        <path
+           d="m 15.6089,35.396 c 2.4478,-5.3647 6.0515,-10.122 10.5529,-13.9311 4.5015,-3.809 9.7895,-6.5757 15.4854,-8.1019"
+           stroke="#ffffff"
+           stroke-width="4"
+           stroke-linecap="round"
+           id="path6" />
+      </g>
+    </g>
+    <g
+       style="fill:none"
+       id="g2"
+       transform="matrix(0.26458333,0,0,0.26458333,14.353182,0.36600836)">
+      <path
+         d="M 0,4 H 372 V 94 H 0 Z"
+         fill="#70e7fd"
+         id="path2-9" />
+      <path
+         d="M 0,4 V 6 H 372 V 4 2 H 0 Z M 372,94 V 92 H 0 v 2 2 h 372 z"
+         fill="#000000"
+         mask="url(#path-1-inside-1_289_9634)"
+         id="path3-4" />
+      <path
+         d="m 0,94 h 372 v 4 H 0 Z"
+         fill="#000000"
+         fill-opacity="0.4"
+         id="path4-8" />
+    </g>
+    <g
+       style="fill:none"
+       id="g3-5-8"
+       transform="matrix(0.26458333,0,0,0.26458333,112.77661,0.36637036)">
+      <path
+         d="M 54,53 C 54,28.1472 33.8528,8 9,8 H 0 V 98 H 9 C 33.8528,98 54,77.8528 54,53 Z"
+         fill="#000000"
+         fill-opacity="0.4"
+         id="path1-8-2-2" />
+      <path
+         d="M 50,49 C 50,24.1472 29.8528,4 5,4 H 0 V 94 H 5 C 29.8528,94 50,73.8528 50,49 Z"
+         fill="#70e7fd"
+         id="path3-45-7-4" />
+      <path
+         d="M 52,49 C 52,23.0426 30.9574,2 5,2 H 0 V 6 H 5 C 28.7482,6 48,25.2518 48,49 Z M 0,96 H 5 C 30.9574,96 52,74.9574 52,49 H 48 C 48,72.7482 28.7482,92 5,92 H 0 Z m 5,0 C 30.9574,96 52,74.9574 52,49 52,23.0426 30.9574,2 5,2 V 6 C 28.7482,6 48,25.2518 48,49 48,72.7482 28.7482,92 5,92 Z M 0,4 v 90 z"
+         fill="#000000"
+         mask="url(#path-2-inside-1_289_9638)"
+         id="path4-5-6-5" />
+    </g>
+  </g>
+</svg>

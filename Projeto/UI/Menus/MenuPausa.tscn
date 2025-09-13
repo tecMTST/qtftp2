@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr74l6j0jbkx5"]
+[gd_scene load_steps=13 format=3 uid="uid://cr74l6j0jbkx5"]
 
 [ext_resource type="Script" uid="uid://u155yd1j8w7y" path="res://UI/Menus/menu_pausa.gd" id="1_xqg3s"]
 [ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://Scripts/UI/controle_audio.gd" id="2_4oqih"]
@@ -7,8 +7,21 @@
 [ext_resource type="Texture2D" uid="uid://blae51ijpjbkn" path="res://Recursos/Graficos/UI/Componentes/slider/button_slider_pressed.svg" id="4_etmqt"]
 [ext_resource type="Texture2D" uid="uid://c7duewe4oe42b" path="res://Recursos/Graficos/UI/Componentes/slider/slider_base.svg" id="5_w833q"]
 [ext_resource type="Texture2D" uid="uid://islp56puf408" path="res://Recursos/Graficos/UI/Ingredientes/miojex_pronto.svg" id="7_etmqt"]
+[ext_resource type="Theme" uid="uid://dehhxr018a0b0" path="res://UI/botaoPause.tres" id="7_w833q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo2rv"]
+bg_color = Color(0.631373, 0.192157, 0.403922, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w833q"]
 bg_color = Color(0.631373, 0.192157, 0.403922, 1)
 border_width_left = 1
 border_width_top = 1
@@ -29,6 +42,7 @@ texture = ExtResource("5_w833q")
 HSlider/icons/grabber = ExtResource("3_081tb")
 HSlider/icons/grabber_highlight = ExtResource("4_etmqt")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_vo2rv")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w833q")
 HSlider/styles/slider = SubResource("StyleBoxTexture_nqldo")
 
 [node name="pausar" type="Control"]
@@ -135,25 +149,42 @@ theme_override_constants/separation = 15
 [node name="continuar" type="Button" parent="MarginContainer/VBoxContainer"]
 z_index = 20
 layout_mode = 2
+theme = ExtResource("7_w833q")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 25
 text = "Continuar"
 
 [node name="botao_briefing" type="Button" parent="MarginContainer/VBoxContainer"]
 z_index = 20
 layout_mode = 2
+theme = ExtResource("7_w833q")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.670588)
+theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 25
-text = "Briefing"
+text = "Receita"
 icon = ExtResource("7_etmqt")
+icon_alignment = 1
 
 [node name="retornar para tela inicial" type="Button" parent="MarginContainer/VBoxContainer"]
 z_index = 16
 layout_mode = 2
+theme = ExtResource("7_w833q")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 25
 text = "Voltar à tela inicial"
 
 [node name="sair" type="Button" parent="MarginContainer/VBoxContainer"]
 z_index = 16
 layout_mode = 2
+theme = ExtResource("7_w833q")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 25
 text = "Sair do jogo"
 
