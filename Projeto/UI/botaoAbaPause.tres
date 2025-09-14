@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cgh8y8776n7oo"]
+
+[ext_resource type="Texture2D" uid="uid://gtn7jhnhevjd" path="res://Recursos/Graficos/UI/Componentes/tab_select/button_tab_select_selected.svg" id="1_gioro"]
+[ext_resource type="Texture2D" uid="uid://vmx7b6hvx2hk" path="res://Recursos/Graficos/UI/Componentes/tab_select/button_tab_select_pressed.svg" id="2_lriti"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i8bvw"]
+texture = ExtResource("1_gioro")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cvjei"]
+texture = ExtResource("2_lriti")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f235h"]
+texture = ExtResource("1_gioro")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5d7jf"]
+texture = ExtResource("2_lriti")
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.172832, 0.172833, 0.172833, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxTexture_i8bvw")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_cvjei")
+Button/styles/normal = SubResource("StyleBoxTexture_f235h")
+Button/styles/pressed = SubResource("StyleBoxTexture_5d7jf")
