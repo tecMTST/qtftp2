@@ -1,13 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr74l6j0jbkx5"]
+[gd_scene load_steps=17 format=3 uid="uid://cr74l6j0jbkx5"]
 
 [ext_resource type="Script" uid="uid://u155yd1j8w7y" path="res://UI/Menus/menu_pausa.gd" id="1_xqg3s"]
-[ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://Scripts/UI/controle_audio.gd" id="2_4oqih"]
 [ext_resource type="Texture2D" uid="uid://dvc8fbsaf1o6g" path="res://Recursos/Graficos/UI/Componentes/menu_tutorialPause/menu_tutorialPause_base_opcoes.svg" id="2_im0bb"]
+[ext_resource type="Texture2D" uid="uid://c4uyv1m1otdm4" path="res://Recursos/Graficos/UI/Componentes/tab_select/tab_select_base.svg" id="3_7cjwt"]
 [ext_resource type="Texture2D" uid="uid://ddslhel4hq4ja" path="res://Recursos/Graficos/UI/Componentes/slider/button_slider_default.svg" id="3_081tb"]
 [ext_resource type="Texture2D" uid="uid://blae51ijpjbkn" path="res://Recursos/Graficos/UI/Componentes/slider/button_slider_pressed.svg" id="4_etmqt"]
+[ext_resource type="Theme" uid="uid://cgh8y8776n7oo" path="res://UI/botaoAbaPause.tres" id="4_paes4"]
 [ext_resource type="Texture2D" uid="uid://c7duewe4oe42b" path="res://Recursos/Graficos/UI/Componentes/slider/slider_base.svg" id="5_w833q"]
+[ext_resource type="Texture2D" uid="uid://dx3mg7d53285n" path="res://Recursos/Graficos/UI/Ingredientes/controles.svg" id="6_coa44"]
 [ext_resource type="Texture2D" uid="uid://islp56puf408" path="res://Recursos/Graficos/UI/Ingredientes/miojex_pronto.svg" id="7_etmqt"]
+[ext_resource type="Texture2D" uid="uid://btkfmdva6rg47" path="res://Recursos/Graficos/UI/Ingredientes/configuracoes.svg" id="7_r5mwj"]
 [ext_resource type="Theme" uid="uid://dehhxr018a0b0" path="res://UI/botaoPause.tres" id="7_w833q"]
+[ext_resource type="Script" uid="uid://bfah6lu1pheaj" path="res://Scripts/ControleDeAudio.gd" id="11_7cjwt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo2rv"]
 bg_color = Color(0.631373, 0.192157, 0.403922, 1)
@@ -62,18 +66,69 @@ offset_right = 656.0
 offset_bottom = 1174.0
 texture = ExtResource("2_im0bb")
 
-[node name="volume2" type="Label" parent="."]
+[node name="Menu Abas" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 332.0
+offset_right = 192.0
+offset_bottom = 428.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7cjwt")
+
+[node name="botao_briefing" type="Button" parent="TextureRect/Menu Abas"]
+z_index = 20
 layout_mode = 2
-offset_left = 313.5
-offset_top = 365.5
-offset_right = 405.5
-offset_bottom = 400.5
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+offset_left = 32.0
+offset_top = 11.0
+offset_right = 120.0
+offset_bottom = 81.0
+theme = ExtResource("4_paes4")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.670588)
+theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 25
-text = "Volume"
+text = "Receita"
+icon = ExtResource("7_etmqt")
+icon_alignment = 1
+
+[node name="botao_controles" type="Button" parent="TextureRect/Menu Abas"]
+z_index = 20
+layout_mode = 2
+offset_left = 148.0
+offset_top = 11.0
+offset_right = 236.0
+offset_bottom = 81.0
+theme = ExtResource("4_paes4")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.670588)
+theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "Control
+"
+icon = ExtResource("6_coa44")
+icon_alignment = 1
+
+[node name="botao_configuracoes" type="Button" parent="TextureRect/Menu Abas"]
+z_index = 20
+layout_mode = 2
+offset_left = 264.0
+offset_top = 11.0
+offset_right = 352.0
+offset_bottom = 81.0
+theme = ExtResource("4_paes4")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.670588)
+theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "Config"
+icon = ExtResource("7_r5mwj")
+icon_alignment = 1
 
 [node name="Opcoes" type="Label" parent="."]
 layout_mode = 1
@@ -112,19 +167,73 @@ theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="controle_audio" type="HSlider" parent="."]
+[node name="Musica" type="Label" parent="."]
+layout_mode = 2
+offset_left = 313.5
+offset_top = 333.5
+offset_right = 405.5
+offset_bottom = 406.5
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "Música
+"
+
+[node name="controle_audio_musica" type="HSlider" parent="."]
 layout_mode = 2
 offset_left = 143.0
-offset_top = 402.0
+offset_top = 370.0
 offset_right = 577.0
-offset_bottom = 492.0
+offset_bottom = 460.0
 tooltip_text = "Volume principal "
 theme = SubResource("Theme_r5rmd")
 max_value = 1.0
 step = 0.05
 value = 0.5
-script = ExtResource("2_4oqih")
-audio_bus_name = "Master"
+script = ExtResource("11_7cjwt")
+
+[node name="Efeitos Sonoros" type="Label" parent="."]
+layout_mode = 2
+offset_left = 264.0
+offset_top = 474.0
+offset_right = 451.0
+offset_bottom = 547.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "Efeitos Sonoros
+"
+
+[node name="controle_audio_efeita_sonoro" type="HSlider" parent="."]
+layout_mode = 2
+offset_left = 143.0
+offset_top = 506.0
+offset_right = 577.0
+offset_bottom = 596.0
+tooltip_text = "Volume principal "
+theme = SubResource("Theme_r5rmd")
+max_value = 1.0
+step = 0.05
+value = 0.5
+script = ExtResource("11_7cjwt")
+
+[node name="retornar para tela inicial" type="Button" parent="."]
+z_index = 16
+layout_mode = 2
+offset_left = 227.5
+offset_top = 671.0
+offset_right = 492.5
+offset_bottom = 741.0
+theme = ExtResource("7_w833q")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "Voltar à tela inicial"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 z_index = 12
@@ -135,18 +244,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -132.5
-offset_top = -88.5
+offset_top = 109.0
 offset_right = 132.5
-offset_bottom = 70.5
+offset_bottom = 329.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 z_index = 14
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 16
 
 [node name="continuar" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 z_index = 20
 layout_mode = 2
 theme = ExtResource("7_w833q")
@@ -156,29 +266,8 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 25
 text = "Continuar"
 
-[node name="botao_briefing" type="Button" parent="MarginContainer/VBoxContainer"]
-z_index = 20
-layout_mode = 2
-theme = ExtResource("7_w833q")
-theme_override_colors/font_outline_color = Color(1, 1, 1, 0.670588)
-theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 25
-text = "Receita"
-icon = ExtResource("7_etmqt")
-icon_alignment = 1
-
-[node name="retornar para tela inicial" type="Button" parent="MarginContainer/VBoxContainer"]
-z_index = 16
-layout_mode = 2
-theme = ExtResource("7_w833q")
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 25
-text = "Voltar à tela inicial"
-
 [node name="sair" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 z_index = 16
 layout_mode = 2
 theme = ExtResource("7_w833q")
@@ -189,15 +278,17 @@ theme_override_font_sizes/font_size = 25
 text = "Sair do jogo"
 
 [node name="Receita Atual" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 160.0
 offset_top = 798.0
 offset_right = 200.0
 offset_bottom = 838.0
 
-[connection signal="value_changed" from="controle_audio" to="controle_audio" method="_on_value_changed"]
+[connection signal="pressed" from="TextureRect/Menu Abas/botao_briefing" to="." method="_on_briefing_pressed"]
+[connection signal="pressed" from="TextureRect/Menu Abas/botao_controles" to="." method="_on_briefing_pressed"]
+[connection signal="pressed" from="TextureRect/Menu Abas/botao_configuracoes" to="." method="_on_briefing_pressed"]
+[connection signal="value_changed" from="controle_audio_musica" to="controle_audio_musica" method="_on_value_changed"]
+[connection signal="value_changed" from="controle_audio_efeita_sonoro" to="controle_audio_efeita_sonoro" method="_on_value_changed"]
+[connection signal="pressed" from="retornar para tela inicial" to="." method="_on_retornar_para_tela_inicial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/botao_briefing" to="." method="_on_briefing_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/retornar para tela inicial" to="." method="_on_retornar_para_tela_inicial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]

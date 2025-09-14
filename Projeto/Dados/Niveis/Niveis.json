@@ -49,6 +49,10 @@
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
+				"nome": "controles",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
+			},
+			{
 				"nome": "chorobebe",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase1-chorobebe.svg"
 			},
@@ -88,6 +92,10 @@
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
+				"nome": "controles",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
+			},
+			{
 				"nome": "Macarrão Instantâneo",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase2-macarraoinstantaneo.svg"
 			},
@@ -123,6 +131,10 @@
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
+				"nome": "controles",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
+			},
+			{
 				"nome": "fome",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase3.svg"
 			}
@@ -154,6 +166,10 @@
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
+				"nome": "controles",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
+			},
+			{
 				"nome": "filadupla",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase4-filadupla.svg"
 			},
@@ -182,12 +198,59 @@
 		"valor_sabor_minimo" : 2,
 		"pontos_recompensa" : 3,
 		"receita_recompensa" : 0,
-		"bagunca" : true,
-		"intervalo_bagunca" : 4.0,
-		"variacao_bagunca" : 5.0,
-		"choro" : true,
-		"intervalo_choro" : 4.0,
-		"variacao_choro" :  0.0,
-		"tempo_limite_choro" :  400.0
+		"bagunca" : false,
+		"intervalo_bagunca" : 30.0,
+ 		"variacao_bagunca" : 5.0,
+		"choro" : false,
+ 		"intervalo_choro" : 20.0,
+ 		"variacao_choro" :  5.0,
+		"tempo_limite_choro" :  20.0
+	},
+	{
+		"id" : 6,
+		"nome" : "Sábado de Sol",
+		"descricao" : "Tutorial",
+		"textos" : [],
+		"imagem" : "",
+		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"id_receitas" : [1,2,1,2],
+		"ordem_aleatoria": false,
+		"caminhos_briefing": [
+			{
+				"nome": "controles",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
+			},
+			{
+				"nome": "Arroz Cozido",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase5-arroz.svg"
+			},
+			{
+				"nome": "Feijão",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase5-feijao.svg"
+			},
+			{
+				"nome": "Farofa com Couve",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase5-farofacouve.svg"
+			},
+			{
+				"nome": "Frutas",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase5-frutas.svg"
+			}
+		],
+		"tempo": -1,
+		"limite_bagunca": 5,
+		"quantidade_pratos_real" : 4,
+		"quantidade_pratos_exibido" : 4,
+		"valor_nutricional_minimo" : 5,
+		"valor_sabor_minimo" : 2,
+		"pontos_recompensa" : 3,
+		"receita_recompensa" : 0,
+		"bagunca" : false,
+		"intervalo_bagunca" : 30.0,
+ 		"variacao_bagunca" : 5.0,
+		"choro" : false,
+ 		"intervalo_choro" : 20.0,
+ 		"variacao_choro" :  5.0,
+		"tempo_limite_choro" :  20.0
 	}
 ]
