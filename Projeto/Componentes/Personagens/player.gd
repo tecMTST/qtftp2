@@ -39,7 +39,13 @@ func _physics_process(delta: float) -> void:
 
 	var velocidade_animacao = remap(abs(velocity.length()),0.0, 600.0, 0.0, 1.0)
 	animation_tree.set("parameters/Velocidade/blend_position", velocidade_animacao)
-
+	animation_tree.set("parameters/VelocidadeSegurando/blend_position", velocidade_animacao)
+	
+	if esta_agarrando:
+		animation_tree.set("parameters/Segurando/blend_amount", 1)
+	else:
+		animation_tree.set("parameters/Segurando/blend_amount", 0)
+		
 	var velocidade = velocity.x
 	rotacao(delta)
 	if velocidade > 0:

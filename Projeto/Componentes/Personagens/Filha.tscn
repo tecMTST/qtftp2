@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2fdciig7einf"]
+[gd_scene load_steps=7 format=3 uid="uid://d2fdciig7einf"]
 
 [ext_resource type="Script" uid="uid://dnibm5siaj76a" path="res://Componentes/Personagens/filha.gd" id="2_suqhv"]
 [ext_resource type="PackedScene" uid="uid://b4reg6fm7xkhh" path="res://Componentes/Personagens/rigs/carolina_rig.tscn" id="3_b34n8"]
 [ext_resource type="PackedScene" uid="uid://d2q0862qh20rg" path="res://Componentes/VisualizadorTemporal/visualizador_percentual.tscn" id="3_jt3xk"]
+[ext_resource type="BehaviorTree" uid="uid://dg4au85ocqv7c" path="res://ai/filha.tres" id="4_jt3xk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_suqhv"]
 radius = 23.0
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_s06ml"]
 
 [node name="Filha" type="CharacterBody2D"]
 collision_layer = 0
@@ -24,8 +27,12 @@ shape = SubResource("CircleShape2D_suqhv")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="VisualizadorPercentual" parent="." instance=ExtResource("3_jt3xk")]
-position = Vector2(-3, -96)
+position = Vector2(-1, -134)
 scale = Vector2(0.12, 0.12)
-valor = null
 radius = 300.0
 cor = Color(1, 0, 0, 1)
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("4_jt3xk")
+active = false
+blackboard_plan = SubResource("BlackboardPlan_s06ml")

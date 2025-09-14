@@ -69,10 +69,10 @@
 		"valor_sabor_minimo" : 4,
 		"pontos_recompensa" : 5,
 		"receita_recompensa" : 2,
-		"bagunca" : false,
+		"bagunca" : true,
 		"intervalo_bagunca" : 30.0,
  		"variacao_bagunca" : 5.0,
-		"choro" : false,
+		"choro" : true,
 		"intervalo_choro" : 20.0,
  		"variacao_choro" :  5.0,
 		"tempo_limite_choro" :  20.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxisooqckxyia"]
 
 [ext_resource type="Script" uid="uid://devfsntvvhdkr" path="res://Componentes/Bagunça/bagunca_cena.gd" id="1_jqi74"]
-[ext_resource type="Texture2D" uid="uid://cnva0fw1epbgd" path="res://Recursos/Graficos/Bagunça/Bagunca.svg" id="1_kvyup"]
+[ext_resource type="Texture2D" uid="uid://cnva0fw1epbgd" path="res://Recursos/Graficos/Bagunca/Bagunca.svg" id="1_kvyup"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_h13so"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvyup"]

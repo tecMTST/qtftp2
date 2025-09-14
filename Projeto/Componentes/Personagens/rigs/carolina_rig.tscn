@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4reg6fm7xkhh"]
+[gd_scene load_steps=16 format=3 uid="uid://b4reg6fm7xkhh"]
 
 [ext_resource type="Texture2D" uid="uid://0khtdrc0ija5" path="res://Componentes/Personagens/rigs/vetores_spritesheets/carolinaVetorCores1.svg" id="1_uxxl6"]
 [ext_resource type="Script" uid="uid://cedhey5pej703" path="res://Componentes/Personagens/rigs/carolina_rig.gd" id="1_v02eu"]
@@ -56,8 +56,18 @@ _data = {
 &"RESET": SubResource("Animation_hnpr2")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h13ea"]
+animation = &"qtftd anims/parada"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_et0jp"]
+animation = &"qtftd anims/sentada"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ir1in"]
 animation = &"qtftd anims/sentada"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_et0jp"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_8n0rb"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_04gav"]
 
@@ -74,14 +84,23 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_04gav")
 blend_point_1/pos = 0.6
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_et0jp"]
-graph_offset = Vector2(-677.625, 10.9581)
+graph_offset = Vector2(-326.27, 110.557)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ir1in")
 nodes/Animation/position = Vector2(-700, 260)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_h13ea")
+"nodes/Animation 2/position" = Vector2(-360, 460)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_et0jp")
+"nodes/Animation 3/position" = Vector2(-120, 600)
+nodes/Celular/node = SubResource("AnimationNodeBlend2_et0jp")
+nodes/Celular/position = Vector2(140, 220)
+nodes/Celular_Sentada/node = SubResource("AnimationNodeBlend2_8n0rb")
+nodes/Celular_Sentada/position = Vector2(440, 340)
 nodes/Sentada/node = SubResource("AnimationNodeBlend2_04gav")
-nodes/Sentada/position = Vector2(-200, 60)
+nodes/Sentada/position = Vector2(-220, 60)
 nodes/Velocidade/node = SubResource("AnimationNodeBlendSpace1D_h13ea")
 nodes/Velocidade/position = Vector2(-700, 20)
-node_connections = [&"Sentada", 0, &"Velocidade", &"Sentada", 1, &"Animation", &"output", 0, &"Sentada"]
+nodes/output/position = Vector2(680, 120)
+node_connections = [&"Celular", 0, &"Sentada", &"Celular", 1, &"Animation 2", &"Celular_Sentada", 0, &"Celular", &"Celular_Sentada", 1, &"Animation 3", &"Sentada", 0, &"Velocidade", &"Sentada", 1, &"Animation", &"output", 0, &"Celular_Sentada"]
 
 [node name="carolina_rig" type="Node2D"]
 script = ExtResource("1_v02eu")
@@ -211,10 +230,12 @@ rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="pernaDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(146, -83)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 146, -83)
 
 [node name="pernaEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-144, -81)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, -144, -81)
 
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
@@ -242,5 +263,7 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_et0jp")
 anim_player = NodePath("../AnimationPlayer")
+parameters/Celular/blend_amount = 0
+parameters/Celular_Sentada/blend_amount = 0
 parameters/Sentada/blend_amount = 1.0
-parameters/Velocidade/blend_position = false
+parameters/Velocidade/blend_position = 0.0

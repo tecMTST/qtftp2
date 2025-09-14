@@ -49,7 +49,9 @@ func desenhar_circulo_de_visualizacao():
 		var ponto = Vector2(cos(angulo_do_ponto), sin(angulo_do_ponto)) * radius
 		pontos_no_arco.push_back(ponto)
 
+	cor.a = 0.80
 	draw_colored_polygon(pontos_no_arco, cor)
+	z_index = 99
 
 func _draw():
 	if not visible or temporizador == null:

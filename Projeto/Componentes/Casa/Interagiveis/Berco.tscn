@@ -61,11 +61,12 @@ scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_81y1e")
 
 [node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
-position = Vector2(3, -108)
+z_index = 99
+position = Vector2(0, -171)
 script = ExtResource("4_r71e4")
 temporizador = NodePath("../Timer")
 radius = 30.0
-cor = Color(1, 0, 0, 1)
+cor = Color(1, 0, 0, 0.8)
 metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
 
 [node name="Timer" type="Timer" parent="."]

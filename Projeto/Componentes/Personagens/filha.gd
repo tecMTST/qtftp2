@@ -14,32 +14,40 @@ var moving_forward := true
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
 @onready var sprite: CarolinaRig = $carolina_rig
 @onready var visualizador_percentual: VisualizadorPercentual = $VisualizadorPercentual
+@onready var bt_player: BTPlayer = $BTPlayer
 
 
 func _ready():
-	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
-		sprite.sentada = true
-		return
+	#if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
+	#	sprite.sentada = true
+	#	return
+	#else:
+	bt_player.active = true
 	sprite.sentada = false
-	select_new_waypoint()
 	ControleDeFase.prato_entregue.connect(_ir_comer)
 	visualizador_percentual.valor = 0
 
-
 func _process(delta):
-	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
-		return
-	if target and global_position.distance_to(target.global_position) < agent.target_desired_distance:
-		spawn_bagunca()
-		target = null
-		await get_tree().create_timer(1.0).timeout
-		select_new_waypoint()
-	else:
+	#if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
+	#	return
+		
+	if not (target and global_position.distance_to(target.global_position) < agent.target_desired_distance):
 		move_along_path(delta)
 	visualizador_percentual.valor_maximo = ControleDeFase.estado_nivel.limite_bagunca
 	visualizador_percentual.valor = ControleDeFase.estado_nivel.bagunca
 	rotation = 0
 
+
+func mover():
+	target = null
+	sprite.celular = false
+	sprite.sentada = false	
+	await get_tree().create_timer(1.0).timeout
+	select_new_waypoint()
+
+func celular():
+	target = null
+	sprite.celular = true
 
 func move_along_path(delta):
 	if agent.is_navigation_finished():
@@ -78,7 +86,7 @@ func select_new_waypoint():
 func spawn_bagunca():
 	if bagunca_scene and target:
 		var bagunca = bagunca_scene.instantiate()
-		bagunca.global_position = target.global_position
+		bagunca.global_position = global_position
 		get_tree().current_scene.add_child(bagunca)
 
 func _ir_comer(_prato) -> void:
