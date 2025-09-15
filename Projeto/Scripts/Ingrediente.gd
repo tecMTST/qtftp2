@@ -1,11 +1,8 @@
 class_name Ingrediente extends Node
 
-var id : int
-var variacao : int
-var nome : String
+var id : String
 var descricao : String
-var preco : int
-var unidade : String
-var cena : String
 var caminho_sprite : String
+var tempo : int
+var tempo_queima : int
 var acoes : Array[IngredienteAcao]

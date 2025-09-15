@@ -7,18 +7,21 @@ signal nivel_concluido_falha(nivel, estado_nivel)
 signal cena_final(nivel, estado_nivel)
 signal nova_receita(receita)
 
-@export var nivel_atual : Nivel
-@export var jogador : Player
-@export var receitas_disponiveis : Array[Receita] = []
-@export var receita_selecionada : Receita
-@export var ingredientes_disponiveis : Array[Ingrediente] = []
-@export var passo_atual : PassoReceita
+const TEMPO_INFINITO = -1
+
+@export var nivel_atual: Nivel
+@export var jogador: Player
+@export var receitas_disponiveis: Array[Receita] = []
+@export var receita_selecionada: Receita
+@export var ingredientes_disponiveis: Array[Ingrediente] = []
+@export var passo_atual: PassoReceita
+@export var indicador_proximo : String = ""
 
 var tempo_jogo: Timer
 var estado_nivel: EstadoDoNivel
 var _tempo_checagem: Timer
-var _index_receita_atual : int = 0
-var _index_passo_atual : int = 0
+var _indice_receita_atual: int = 0
+var _indice_passo_atual: int = 0
 
 
 func _ready() -> void:
@@ -44,54 +47,79 @@ func carregar_nivel():
 	var niveis = Globais.niveis.filter(func(item : Nivel) : return item.id == id_nivel)
 	if len(niveis) > 0:
 		nivel_atual = niveis[0]
-		receitas_disponiveis = Globais.receitas.filter(
-			func(item : Receita) : return nivel_atual.id_receitas.any(
-				func(id : int): return id == item.id))
-		selecionar_receita_aleatoria()
+		_indice_receita_atual = -1
+		receitas_disponiveis = []
+		for id_receita in nivel_atual.id_receitas:
+			for receita in Globais.receitas:
+				if id_receita == receita.id:
+					receitas_disponiveis.append(receita)
+					break
+		selecionar_proxima_receita()
 
-	jogador = NodeExtension.find_first_child(get_tree().current_scene,
-		func(child): return child is Player)
+	jogador = NodeExtension.find_first_child(
+		get_tree().current_scene,
+		func(child): return child is Player
+	)
 
-func selecionar_receita_aleatoria() -> void:
-	selecionar_receita(randi() % receitas_disponiveis.size())
+func selecionar_proxima_receita() -> bool:
+	if nivel_atual.ordem_aleatoria:
+		return selecionar_receita_aleatoria()
+	assert(
+		_indice_receita_atual < receitas_disponiveis.size(),
+		"receitas em ordem precisam estar todas presentes na lista"
+	)
+	return selecionar_receita_especifica(_indice_receita_atual + 1)
 
-func selecionar_receita(indice_receita) -> bool:
+func selecionar_receita_aleatoria() -> bool:
+	return selecionar_receita_especifica(randi() % receitas_disponiveis.size())
+
+func selecionar_receita_especifica(indice_receita) -> bool:
 	if not nivel_atual:
 		return false
 	if indice_receita > len(receitas_disponiveis) - 1 or indice_receita < 0:
 		return false
-	_index_receita_atual = indice_receita
-	receita_selecionada = receitas_disponiveis[_index_receita_atual]
+	_indice_receita_atual = indice_receita
+	receita_selecionada = receitas_disponiveis[_indice_receita_atual]
 	ingredientes_disponiveis = Globais.ingredientes.filter(
 		func(item : Ingrediente): return receita_selecionada.ingredientes.any(
 			func(o) : return item.id == o.id_ingrediente))
-	_index_passo_atual = 0
-	passo_atual = receita_selecionada.passos[_index_passo_atual]
-	print_debug("receita atual: ", _index_receita_atual, " (", receita_selecionada.nome, ")")
+	print_debug("receita atual: ", _indice_receita_atual, " (", receita_selecionada.nome, ")")
+	carrega_passo_inicial()
 	nova_receita.emit(receita_selecionada)
 	return true
 
 
+func carrega_passo_inicial() -> bool:
+	_indice_passo_atual = -1
+	return proximo_passo()
+
+
 func proximo_passo() -> bool:
-	if not receita_selecionada:
+	if not receita_selecionada || _indice_passo_atual > len(receita_selecionada.passos) - 1:
 		return false
-	_index_passo_atual += 1
-	if _index_passo_atual > len(receita_selecionada.passos) - 1:
-		_index_receita_atual += 1
-		return selecionar_receita(_index_receita_atual)
-	passo_atual = receita_selecionada.passos[_index_passo_atual]
+	_indice_passo_atual += 1
+	passo_atual = receita_selecionada.passos[_indice_passo_atual]
+	print(
+		" => iniciando passo ", _indice_passo_atual, ": ",
+		passo_atual.descricao,
+		" (", passo_atual.alvo, ")"
+	)
+	indicador_proximo = passo_atual.alvo
 	return true
+
+func verifica_proximo_ponto(alvo : String) -> bool:
+	return indicador_proximo == alvo
 
 func iniciar_nivel():
 	get_tree().paused = false
 	assert(nivel_atual is Nivel, "nivel_atual precisa ser carregado")
 	_reset_timers() # Verifica e para os timers caso em andamento
-	tempo_jogo.wait_time = nivel_atual.tempo
+	tempo_jogo.wait_time = nivel_atual.tempo if nivel_atual.tempo > 0 else 1
 	estado_nivel = EstadoDoNivel.new(nivel_atual)
 	tempo_jogo.start()
 	_tempo_checagem.start()
 	nivel_iniciado.emit(nivel_atual, estado_nivel)
-	print_debug("Nível iniciado")
+	print_debug("Nível ", nivel_atual.id, " iniciado")
 
 
 func _atualizar_bagunca() -> void:
@@ -104,7 +132,7 @@ func _verificar_condicoes():
 	if estado_nivel.baguncado():
 		_encerrar_nivel_falha()
 		print_debug("Nível falhou")
-	elif tempo_jogo.is_stopped():
+	elif tempo_jogo.is_stopped() and nivel_atual.tempo != TEMPO_INFINITO:
 		_encerrar_nivel_falha()
 		print_debug("Nível falhou")
 	elif estado_nivel.choro_limite():
@@ -130,28 +158,25 @@ func _encerrar_nivel():
 	_reset_timers()
 	get_tree().paused = true
 	ControleDeAudio.para_musica()
-	var efeito = "vitoria" if estado_nivel.completo() else "derrota"
-	ControleDeAudio.toca_efeito(efeito)
-	EstadoDeJogo.nivel_atual += 1
+	ControleDeAudio.toca_efeito("vitoria")
 	_abrir_proximo_nivel()
+	indicador_proximo = ""
 
 func _encerrar_nivel_falha():
 	_reset_timers()
 	get_tree().paused = true
 	ControleDeAudio.para_musica()
-	var efeito = "vitoria" if estado_nivel.completo() else "derrota"
-	ControleDeAudio.toca_efeito(efeito)
+	ControleDeAudio.toca_efeito("derrota")
 	nivel_concluido_falha.emit(nivel_atual, estado_nivel)
 
 func _abrir_proximo_nivel():
-	var niveis = Globais.niveis.filter(func(item : Nivel) : return item.id == EstadoDeJogo.nivel_atual)
-	if len(niveis) > 0:
-		nivel_atual = niveis[0]
-		#TODO Remover este loop e direcionar para a sequencia da casa
-		EstadoDeJogo.nivel_atual = 1
-		#LOOP da fase da casa
-		get_tree().paused = false
-		get_tree().change_scene_to_file(niveis[0].local)
+	EstadoDeJogo.nivel_atual += 1
+	var niveis = Globais.niveis.filter(
+		func(item : Nivel) : return item.id == EstadoDeJogo.nivel_atual
+	)
+	if len(niveis) > 0: nivel_atual = niveis[0]
+	get_tree().paused = false
+	get_tree().change_scene_to_file(nivel_atual.local)
 
 func _reset_timers() -> void:
 	if not tempo_jogo.is_stopped():
@@ -166,3 +191,6 @@ func congelar_tempo() -> void:
 func descongelar_tempo() -> void:
 	jogador.process_mode = Node.PROCESS_MODE_INHERIT
 	tempo_jogo.paused = false
+
+func fase_atual() -> int:
+	return EstadoDeJogo.nivel_atual

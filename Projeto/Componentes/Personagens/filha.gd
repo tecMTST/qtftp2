@@ -12,14 +12,19 @@ var waypoint_index := 0
 var moving_forward := true
 
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
-@onready var sprite: Sprite2D = $Sprite2D  # ou AnimatedSprite2D
+@onready var sprite: CarolinaRig = $carolina_rig
+@onready var visualizador_percentual: VisualizadorPercentual = $VisualizadorPercentual
 
 
 func _ready():
 	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
+		sprite.sentada = true
 		return
+	sprite.sentada = false
 	select_new_waypoint()
 	ControleDeFase.prato_entregue.connect(_ir_comer)
+	visualizador_percentual.valor = 0
+
 
 func _process(delta):
 	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
@@ -31,6 +36,10 @@ func _process(delta):
 		select_new_waypoint()
 	else:
 		move_along_path(delta)
+	visualizador_percentual.valor_maximo = ControleDeFase.estado_nivel.limite_bagunca
+	visualizador_percentual.valor = ControleDeFase.estado_nivel.bagunca
+	rotation = 0
+
 
 func move_along_path(delta):
 	if agent.is_navigation_finished():

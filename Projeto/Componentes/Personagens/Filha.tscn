@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2fdciig7einf"]
+[gd_scene load_steps=5 format=3 uid="uid://d2fdciig7einf"]
 
-[ext_resource type="Texture2D" uid="uid://b0bk8mi33olrk" path="res://Recursos/Graficos/Personagens/FilhaStakeholder.svg" id="1_wk0xs"]
 [ext_resource type="Script" uid="uid://dnibm5siaj76a" path="res://Componentes/Personagens/filha.gd" id="2_suqhv"]
+[ext_resource type="PackedScene" uid="uid://b4reg6fm7xkhh" path="res://Componentes/Personagens/rigs/carolina_rig.tscn" id="3_b34n8"]
+[ext_resource type="PackedScene" uid="uid://d2q0862qh20rg" path="res://Componentes/VisualizadorTemporal/visualizador_percentual.tscn" id="3_jt3xk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_suqhv"]
 radius = 23.0
@@ -13,13 +14,18 @@ script = ExtResource("2_suqhv")
 id = "carolina"
 nome = "Carolina"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3, 0)
-rotation = 1.5708
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_wk0xs")
+[node name="carolina_rig" parent="." instance=ExtResource("3_b34n8")]
+position = Vector2(-9.53674e-07, -10)
+scale = Vector2(0.12, 0.12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_suqhv")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="VisualizadorPercentual" parent="." instance=ExtResource("3_jt3xk")]
+position = Vector2(-3, -96)
+scale = Vector2(0.12, 0.12)
+valor = null
+radius = 300.0
+cor = Color(1, 0, 0, 1)

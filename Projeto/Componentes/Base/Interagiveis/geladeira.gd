@@ -1,16 +1,20 @@
 class_name Geladeira extends BaseInteragivel
 
-@onready var menu_geladeira = preload("res://UI/Eventos/Geladeira.tscn")
+var geladeira_aberta
 
-# Called when the node enters the scene tree for the first time.
+@onready var menu_geladeira = preload("res://UI/Eventos/Geladeira.tscn")
+@onready var indicador: Sprite2D = $Indicador
+
 func _ready() -> void:
 	nome = "Geladeira"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	indicador.visible = ControleDeFase.verifica_proximo_ponto("geladeira")
 
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
-	if jogador.objeto_agarrado == null:
-		var geladeira = menu_geladeira.instantiate()
-		add_sibling(geladeira)
+	if(
+		!jogador.esta_agarrando # não pode abrir geladeira segurando coisas
+		and (!geladeira_aberta || !is_instance_valid(geladeira_aberta)) # nem com geladeira aberta
+	):
+		geladeira_aberta = menu_geladeira.instantiate()
+		add_sibling(geladeira_aberta)

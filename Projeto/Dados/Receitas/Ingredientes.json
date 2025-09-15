@@ -1,77 +1,34 @@
 [
 	{
-		"id" : 1,
-		"variacao": 1,
-		"nome" : "Arroz",
-		"descricao" : "Arroz branco",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "",
-		"caminho_sprite" : "",
+		"id" : "feijao_no_pote",
+		"descricao" : "Feijão carioca cru no pote de plástico",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/feijao_no_pote.svg",
 		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"acao" : "cozer",
-				"tempo" : 10,
-				"variacao_resultado" : 2,
-				"evento": ""
+				"resultado" : "feijao_fervendo",
 			}
 		]
 	},
 	{
-		"id" : 1,
-		"variacao": 2,
-		"nome" : "Arroz Branco Cozido",
-		"descricao" : "Arroz branco cozido",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "",
-		"caminho_sprite" : "",
-		"acoes" : [
-			{
-				"alvo" : "bancada",
-				"acao" : "montar",
-				"tempo" : 1,
-				"variacao_resultado" : 0,
-				"evento": ""
-			}
-		]
-	},
-	{
-		"id" : 2,
-		"variacao": 1,
-		"nome" : "Feijão Carioca",
-		"descricao" : "Feijão carioca.",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "",
-		"caminho_sprite" : "",
+		"id" : "feijao_fervendo",
+		"descricao" : "Feijão carioca fervendo no fogão",
+		"tempo": 5,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"acao" : "cozer",
-				"tempo" : 20,
-				"variacao_resultado" : 2,
-				"evento": ""
+				"resultado" : "feijao_pronto",
 			}
 		]
 	},
 	{
-		"id" : 2,
-		"variacao": 2,
-		"nome" : "Feijão Carioca Cozido",
+		"id" : "feijao_pronto",
 		"descricao" : "Feijão carioca cozido.",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "",
-		"caminho_sprite" : "",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/feijao.svg",
 		"acoes" : [
 			{
-				"alvo" : "bancada",
-				"acao" : "misturar",
-				"tempo" : 1,
-				"variacao_resultado" : 0,
-				"evento": ""
+				"alvo" : "mesa",
 			}
 		]
 	},
@@ -95,162 +52,427 @@
 		]
 	},
 	{
-		"id" : 4,
-		"variacao": 1,
-		"nome" : "Ovo branco",
-		"descricao" : "Ovo branco",
-		"preco" : 2,
-		"unidade" : "unidade",
-		"cena" : "",
-		"caminho_sprite" : "",
+		"id" : "ovo_cru",
+		"descricao" : "Ovo branco cru",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/ovo.svg",
 		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"acao" : "fritar",
-				"tempo" : 3,
-				"variacao_resultado" : 2,
-				"evento": ""
-			},
+				"resultado" : "ovo_fritando"
+			}
+		]
+	},
+	{
+		"id" : "ovo_fritando",
+		"descricao" : "Ovo branco fritando na frigideira",
+		"tempo": 10,
+		"tempo_queima": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/ovo_frigideira.svg",
+		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"acao" : "cozer",
-				"tempo" : 6,
-				"variacao_resultado" : 3,
-				"evento": ""
+				"resultado": "ovo_frito"
 			}
 		]
 	},
 	{
-		"id" : 4,
-		"variacao": 2,
-		"nome" : "Ovo branco Frito",
-		"descricao" : "Ovo branco frito",
-		"preco" : 0,
-		"unidade" : "unidade",
-		"cena" : "",
-		"caminho_sprite" : "",
+		"id" : "ovo_frito",
+		"descricao" : "Ovo branco frito e pronto para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/ovo_frito.svg",
 		"acoes" : [
 			{
-				"alvo" : "bancada",
-				"acao" : "misturar",
-				"tempo" : 1,
-				"variacao_resultado" : 0,
-				"evento": ""
+				"alvo" : "mesa"
 			}
 		]
 	},
 	{
-		"id" : 4,
-		"variacao": 3,
-		"nome" : "Ovo branco Cozido",
-		"descricao" : "Ovo branco cozido",
-		"preco" : 0,
-		"unidade" : "unidade",
-		"cena" : "",
-		"caminho_sprite" : "",
-		"acoes" : [
-			{
-				"alvo" : "bancada",
-				"acao" : "misturar",
-				"tempo" : 1,
-				"variacao_resultado" : 0,
-				"evento": ""
-			}
-		]
-	},
-	{
-		"id" : 5,
-		"variacao": 1,
-		"nome" : "Cuscuz Cru",
+		"id" : "cuscuz_cru",
 		"descricao" : "Cuscuz Cru",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "res://Componentes/Ingredientes/CuscuzCru.tscn",
-		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/vitamilho.png",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/farinha_milho.svg",
 		"acoes" : [
 			{
 				"alvo" : "pia",
-				"acao" : "hidratar",
-				"tempo" : 10,
-				"variacao_resultado" : 2,
-				"evento": ""
+				"resultado": "cuscuz_hidratado"
 			}
 		]
 	},
 	{
-		"id" : 5,
-		"variacao": 2,
-		"nome" : "Cuscuz Hidratado",
+		"id" : "cuscuz_hidratado",
 		"descricao" : "Cuscuz Hidratado",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "res://Componentes/Ingredientes/CuscuzHidratado.tscn",
-		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/CuscuzHidratado.svg",
+		"tempo": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor.svg",
 		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"acao" : "cozer",
-				"tempo" : 10,
-				"variacao_resultado" : 3,
-				"evento": ""
+				"resultado": "cuscuz_cozinhando"
 			}
 		]
 	},
 	{
-		"id" : 5,
-		"variacao": 3,
-		"nome" : "Cuscuz cozido",
-		"descricao" : "Cuscuz cozido a vapor",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "res://Componentes/Ingredientes/CuscuzCozido.tscn",
-		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/Cuscuz_cozido.png",
+		"id" : "cuscuz_cozinhando",
+		"descricao" : "Cuscuz Cozinhando na Cuscuzeira",
+		"tempo": 10,
+		"tempo_queima": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/cuscuzeira.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "cuscuz_cozido"
+			}
+		]
+	},
+	{
+		"id" : "cuscuz_cozido",
+		"descricao" : "Cuscuz cozido pronto para desenformar",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/cuscuzeira_fumaca.svg",
 		"acoes" : [
 			{
 				"alvo" : "bancada",
-				"acao" : "misturar",
-				"tempo" : 1,
-				"variacao_resultado" : 0,
-				"evento": "desenformar-cuscuz"
+				"evento": "desenformar_cuscuz",
+				"resultado": "cuscuz_pronto"
 			}
 		]
 	},
 	{
-		"id" : 6,
-		"variacao": 1,
-		"nome" : "Pó de Café",
+		"id" : "cuscuz_pronto",
+		"descricao" : "Cuscuz Pronto para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/cuscuz.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa"
+			}
+		]
+	},
+	{
+		"id" : "po_de_cafe",
 		"descricao" : "Pó de Café",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "res://Componentes/Ingredientes/PoCafe.tscn",
-		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/PoCafe.png",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/potinho_cafe.svg",
 		"acoes" : [
 			{
-				"alvo" : "fogao",
-				"acao" : "cozer",
-				"tempo" : 5,
-				"variacao_resultado" : 2,
-				"evento": ""
+				"alvo" : "bancada",
+				"evento": "depositar",
+				"resultado": "cafe_no_coador"
 			}
 		]
 	},
 	{
-		"id" : 6,
-		"variacao": 2,
-		"nome" : "Café Coado",
-		"descricao" : "Café Coado",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "res://Componentes/Ingredientes/CafeCoado.tscn",
-		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/coador.svg",
+		"id" : "cafe_no_coador",
+		"descricao" : "Pó de Café Esperando Água Quente no Coador",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/coador.svg",
+		"acoes" : [
+			{
+				"alvo" : "agua_quente",
+				"resultado": "cafe_coado"
+			}
+		]
+	},
+	{
+		"id" : "cafe_coado",
+		"descricao" : "Café Coado pronto para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/copo_americano_cafe.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa"
+			}
+		]
+	},
+	{
+		"id" : "agua_fria",
+		"descricao" : "Água fria da pia para ferver",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "agua_esquentando"
+			}
+		]
+	},
+	{
+		"id" : "agua_esquentando",
+		"descricao" : "Água fervendo no fogo",
+		"tempo": 5,
+		"tempo_queima": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor_fumaca.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "agua_quente"
+			}
+		]
+	},
+	{
+		"id" : "agua_quente",
+		"descricao" : "Água Fervida e pronta pra misturar",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor_fumaca.svg",
 		"acoes" : [
 			{
 				"alvo" : "bancada",
-				"acao" : "misturar",
-				"tempo" : 1,
-				"variacao_resultado" : 0,
-				"evento": ""
+				"evento": "depositar"
 			}
 		]
-	}
+	},
+	{
+		"id" : "cebola_e_alho",
+		"descricao" : "Cebola e Alho para picar",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/cebola_alho.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+				"evento": "cortar_alimento",
+				"resultado": "cebola_e_alho_picados"
+			}
+		]
+	},
+	{
+		"id" : "cebola_e_alho_picados",
+		"descricao" : "Cebola e Alho prontos para refogar",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/temperos_picados.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "cebola_e_alho_fritando"
+			}
+		]
+	},
+	{
+		"id" : "cebola_e_alho_fritando",
+		"descricao" : "Cebola e Alho fritando no fogão quente",
+		"tempo": 20,
+		"tempo_queima": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo": "arroz_com_agua",
+				"resultado": "arroz_cozinhando"
+			},
+			{
+				"alvo": "carne_moida_crua",
+				"resultado": "carne_moida_cozinhando"
+			}
+		]
+	},
+	{
+		"id" : "arroz_cru",
+		"descricao" : "Arroz branco Cru",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/pacote_arroz.svg",
+		"acoes" : [
+			{
+				"alvo" : "pia",
+				"resultado": "arroz_com_agua"
+			}
+		]
+	},
+	{
+		"id" : "arroz_com_agua",
+		"descricao" : "Arroz branco com Água",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao"
+			}
+		]
+	},
+	{
+		"id" : "arroz_cozinhando",
+		"descricao" : "Arroz branco cozinhando na Água",
+		"tempo": 10,
+		"tempo_queima": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "arroz_pronto"
+			}
+		]
+	},
+	{
+		"id" : "arroz_pronto",
+		"descricao" : "Arroz branco cozido pronto para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/arroz.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa"
+			}
+		]
+	},
+	{
+		"id" : "miojex",
+		"descricao" : "Macarrão Instantâneo na Embalagem",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/miojex.svg",
+		"acoes" : [
+			{
+				"alvo" : "pia",
+				"resultado": "miojex_hidratado"
+			}
+		]
+	},
+	{
+		"id" : "miojex_hidratado",
+		"descricao" : "Miojex Com Água",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "miojex_cozinhando"
+			}
+		]
+	},
+	{
+		"id" : "miojex_cozinhando",
+		"descricao" : "Miojex Cozinhando no Fogão",
+		"tempo": 5,
+		"tempo_queima": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "miojex_pronto"
+			}
+		]
+	},
+	{
+		"id" : "miojex_pronto",
+		"descricao" : "Miojex Pronto para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/miojex_pronto.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa"
+			}
+		]
+	},
+	{
+		"id" : "salsicha_congelada",
+		"descricao" : "Salsicha congelada na geladeira",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salsicha_congelada.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "salsicha_fritando"
+			}
+		]
+	},
+	{
+		"id" : "salsicha_fritando",
+		"descricao" : "Salsicha fritando na frigideira",
+		"tempo": 10,
+		"tempo_queima": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "agua_fria",
+				"resultado": "salsicha_cozinhando"
+			}
+		]
+	},
+	{
+		"id" : "salsicha_cozinhando",
+		"descricao" : "Salsicha cozinhando na água",
+		"tempo": 10,
+		"tempo_queima": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "salsicha_cozida"
+			}
+		]
+	},
+	{
+		"id" : "salsicha_cozida",
+		"descricao" : "Salsicha pronta para picar",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+				"evento": "cortar_alimento",
+				"resultado": "salsicha_fatiada"
+			}
+		]
+	},
+	{
+		"id" : "salsicha_fatiada",
+		"descricao" : "Salsicha pronta e fatiada, é só servir!",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salsicha_fatiada.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa"
+			}
+		]
+	},
+	{
+		"id" : "carne_crua",
+		"descricao" : "Acém guardado na geladeira",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/acem.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+				"evento": "cortar_alimento",
+				"resultado": "carne_moida_crua"
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_crua",
+		"descricao" : "Acém picado pronto para colocar no fogo",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/carne_moida_crua.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_cozinhando",
+		"descricao" : "Carne moída cozinhando no fogão",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "carne_moida_quente"
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_quente",
+		"descricao" : "Carne moída cozida para misturar com temperos",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/carne_moida.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+				"evento": "depositar",
+				"resultado": "carne_moida_sem_tempero"
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_sem_tempero",
+		"descricao" : "Carne moída aguardando temperos na bancada",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/carne_moida.svg",
+		"acoes" : [
+			{
+				"alvo" : "salada",
+				"resultado": "marmita_carne_salada"
+			}
+		]
+	},
+	{
+		"id" : "salada",
+		"descricao" : "Saladinha crua pronta para misturar na carne moída",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salada.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+			}
+		]
+	},
+	{
+		"id" : "marmita_carne_salada",
+		"descricao" : "Mistura de carne com salada pronta para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/marmita_carne_salada.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa",
+			}
+		]
+	},
 ]

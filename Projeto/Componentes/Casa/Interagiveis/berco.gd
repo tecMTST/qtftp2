@@ -32,22 +32,24 @@ func _process(delta: float) -> void:
 
 
 func iniciar_mexer():
+	bebe.frame = 1
 	print_debug('mechendo')
 
 
 func animacao_choro():
+	bebe.frame = 2
 	print_debug('choro')
 
 
 func iniciar_choro():
-	#TODO animacao iniciar
+	bebe.frame = 2
 	choro_ativo = true
 	timer.start(ControleDeFase.nivel_atual.tempo_limite_choro)
 	ControleDeAudio.toca_efeito_ciclo("bebe_chorando", "bebe_chorando")
 
 
 func finalizar_choro():
-	#TODO animacao parar
+	bebe.frame = 0
 	choro_ativo = false
 	timer.stop()
 	ControleDeAudio.para_efeito_ciclo("bebe_chorando")

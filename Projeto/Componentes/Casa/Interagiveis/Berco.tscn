@@ -3,24 +3,41 @@
 [ext_resource type="Script" uid="uid://cc1rqfgoty0vw" path="res://Componentes/Casa/Interagiveis/berco.gd" id="1_408qi"]
 [ext_resource type="Texture2D" uid="uid://687eow50aj7w" path="res://Recursos/Graficos/Interagiveis/Berço.svg" id="2_tnk6n"]
 [ext_resource type="Texture2D" uid="uid://dwhconcu8ehsu" path="res://Recursos/Graficos/Interagiveis/Mobile.svg" id="3_r71e4"]
+[ext_resource type="Texture2D" uid="uid://dgrn83q2w2ial" path="res://Recursos/Graficos/Personagens/lucasVetorCores1.svg" id="4_jejg1"]
 [ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="4_r71e4"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="5_nrlxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82xuh"]
 size = Vector2(144, 258)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tnk6n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdkb0"]
+atlas = ExtResource("4_jejg1")
+region = Rect2(0, 0, 844, 1629)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_r71e4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gycvt"]
+atlas = ExtResource("4_jejg1")
+region = Rect2(844, 0, 844, 1629)
 
-[sub_resource type="Gradient" id="Gradient_2b3go"]
-offsets = PackedFloat32Array(0.00609756, 0.993902, 1)
-colors = PackedColorArray(0.462291, 0.462291, 0.462291, 1, 0.170732, 0.170732, 0.170732, 1, 1, 1, 1, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vne63"]
+atlas = ExtResource("4_jejg1")
+region = Rect2(1688, 0, 844, 1629)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_nrlxa"]
-gradient = SubResource("Gradient_2b3go")
-
-[sub_resource type="SphereMesh" id="SphereMesh_jejg1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_81y1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdkb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gycvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vne63")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrlxa"]
 size = Vector2(182, 303)
@@ -39,23 +56,15 @@ texture = ExtResource("3_r71e4")
 shape = SubResource("RectangleShape2D_82xuh")
 
 [node name="Bebe" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -41)
-scale = Vector2(34.7, 34.7)
-sprite_frames = SubResource("SpriteFrames_tnk6n")
-
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="Bebe"]
-position = Vector2(0, 1)
-mesh = SubResource("CapsuleMesh_r71e4")
-texture = SubResource("GradientTexture1D_nrlxa")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Bebe"]
-mesh = SubResource("SphereMesh_jejg1")
+position = Vector2(4, -19)
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_81y1e")
 
 [node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
-position = Vector2(1, -92)
+position = Vector2(3, -108)
 script = ExtResource("4_r71e4")
 temporizador = NodePath("../Timer")
-radius = 20.0
+radius = 30.0
 cor = Color(1, 0, 0, 1)
 metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
 

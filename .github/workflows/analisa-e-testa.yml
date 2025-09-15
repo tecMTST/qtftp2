@@ -38,7 +38,7 @@ jobs:
       - name: Obtendo lista de arquivos alterados
         id: arquivos-alterados
         run: |
-          ARQUIVOS_ALTERADOS=$(git diff --name-only main...${GITHUB_SHA} -- Projeto/ | grep -v '^Projeto/addons/' | grep -E '\.gd$' | tr '\n' ' ')
+          ARQUIVOS_ALTERADOS=$(git diff --name-only --diff-filter=ACMR main...${GITHUB_SHA} -- Projeto/ | grep -v '^Projeto/addons/' | grep -E '\.gd$' | tr '\n' ' ')
           echo "arquivos_alterados=${ARQUIVOS_ALTERADOS}" >> $GITHUB_OUTPUT
 
       - name: Analisando código estaticamente

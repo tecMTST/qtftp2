@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://daemcv4oofrhb"]
+
+[ext_resource type="Script" uid="uid://ddnieijd5o1uy" path="res://Componentes/Base/Ingredientes/IngredienteBase.gd" id="1_tjm5u"]
+[ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="3_nn7td"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l42kw"]
+size = Vector2(50, 32)
+
+[node name="IngredienteBase" type="StaticBody2D" groups=["agarravel"]]
+script = ExtResource("1_tjm5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l42kw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 2.38419e-07)
+scale = Vector2(0.07, 0.07)
+
+[node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
+position = Vector2(20, -20)
+script = ExtResource("3_nn7td")
+temporizador = NodePath("../Timer")
+radius = 30.0
+metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

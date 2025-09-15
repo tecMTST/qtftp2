@@ -1,16 +1,31 @@
 [
 	{
 		"id" : 1,
-		"nome" : "Dia 1",
-		"descricao" : "Cozinhando para familia",
+		"nome" : "É Hora de Preparar o Café",
+		"descricao" : "Tutorial",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
-		"id_receitas" : [1, 2],
-		"tempo": 180,
+		"local" : "res://Cenas/cutscene_quadrinhos_tutorial.tscn",
+		"id_receitas" : [1,2,1,2],
+		"ordem_aleatoria": false,
+		"caminhos_briefing": [
+			{
+				"nome": "controles",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
+			},
+			{
+				"nome":"Café Coado",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-cafe.svg"
+			},
+			{
+				"nome":"Cuscuz",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-cuscuz.svg"
+			}
+		],
+		"tempo": -1,
 		"limite_bagunca": 5,
-		"quantidade_pratos_real" : 3,
-		"quantidade_pratos_exibido" : 3,
+		"quantidade_pratos_real" : 4,
+		"quantidade_pratos_exibido" : 4,
 		"valor_nutricional_minimo" : 5,
 		"valor_sabor_minimo" : 2,
 		"pontos_recompensa" : 3,
@@ -25,13 +40,29 @@
 	},
 	{
 		"id" : 2,
-		"nome" : "Dia 2",
-		"descricao" : "Cozinha solidária",
+		"nome" : "Bora Almoçar",
+		"descricao" : "Rotina da família em casa",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
-		"id_receitas" : [2],
-		"limite_bagunca": 0,
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_1.tscn",
+		"id_receitas" : [3, 4],
+		"ordem_aleatoria": true,
+		"caminhos_briefing": [
+			{
+				"nome": "chorobebe",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase1-chorobebe.svg"
+			},
+			{
+				"nome": "Arroz Cozido",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase1-arroz.svg"
+			},	
+			{
+				"nome": "Ovo frito",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase1-ovofrito.svg"
+			}
+			],
+		"tempo": 300,
+		"limite_bagunca": 5,
 		"quantidade_pratos_real" : 10,
 		"quantidade_pratos_exibido" : 10,
 		"valor_nutricional_minimo" : 7,
@@ -45,5 +76,118 @@
 		"intervalo_choro" : 20.0,
  		"variacao_choro" :  5.0,
 		"tempo_limite_choro" :  20.0
+	},
+	{
+		"id" : 3,
+		"nome" : "Do Bom e do Barato...?",
+		"descricao" : "Em casa, elza está ficando cansada pela rotina e má alimentação",
+		"textos" : [],
+		"imagem" : "",
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_2.tscn",
+		"id_receitas" : [5, 6],
+		"ordem_aleatoria": true,
+		"caminhos_briefing": [
+			{
+				"nome": "Macarrão Instantâneo",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase2-macarraoinstantaneo.svg"
+			},
+			{
+				"nome": "Salsicha",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase2-salsicha.svg"
+			}
+			],
+		"tempo": 300,
+		"limite_bagunca": 5,
+		"quantidade_pratos_real" : 3,
+		"quantidade_pratos_exibido" : 0,
+		"valor_nutricional_minimo" : 5,
+		"valor_sabor_minimo" : 2,
+		"pontos_recompensa" : 3,
+		"receita_recompensa" : 0,
+		"bagunca" : true,
+		"intervalo_bagunca" : 4.0,
+ 		"variacao_bagunca" : 5.0,
+		"choro" : true,
+ 		"intervalo_choro" : 4.0,
+ 		"variacao_choro" :  0.0,
+		"tempo_limite_choro" :  400.0
+	},
+	{
+		"id" : 4,
+		"nome" : "Que Fome!!",
+		"descricao" : "Não tem nada pra comer",
+		"textos" : [],
+		"imagem" : "",
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_3.tscn",
+		"id_receitas" : [],
+		"ordem_aleatoria": true,
+		"caminhos_briefing": [
+			{
+				"nome": "fome",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase3.svg"
+			}
+			],
+		"tempo": 300,
+		"limite_bagunca": 5,
+		"quantidade_pratos_real" : 3,
+		"quantidade_pratos_exibido" : 0,
+		"valor_nutricional_minimo" : 5,
+		"valor_sabor_minimo" : 2,
+		"pontos_recompensa" : 3,
+		"receita_recompensa" : 0,
+		"bagunca" : true,
+		"intervalo_bagunca" : 4.0,
+		"variacao_bagunca" : 5.0,
+		"choro" : true,
+		"intervalo_choro" : 4.0,
+		"variacao_choro" :  0.0,
+		"tempo_limite_choro" :  400.0
+	},
+	{
+		"id" : 5,
+		"nome" : "Hora do Rush!",
+		"descricao" : "Hora da Cozinha Solidária Brilhar",
+		"textos" : [],
+		"imagem" : "",
+		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"id_receitas" : [5,7,8,9],
+		"ordem_aleatoria": true,
+		"caminhos_briefing": [
+			{
+				"nome": "filadupla",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase4-filadupla.svg"
+			},
+			{
+				"nome": "Arroz Cozido",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase4-arroz.svg"
+			},
+			{
+				"nome": "Feijão",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase4-feijao.svg"
+			},
+			{
+				"nome": "Carne com Salada",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase4-carnesalada.svg"
+			},
+			{
+				"nome": "Frutas",
+				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase4-frutas.svg"
+			}
+			],
+		"tempo": 300,
+		"limite_bagunca": 5,
+		"quantidade_pratos_real" : 3,
+		"quantidade_pratos_exibido" : 0,
+		"valor_nutricional_minimo" : 5,
+		"valor_sabor_minimo" : 2,
+		"pontos_recompensa" : 3,
+		"receita_recompensa" : 0,
+		"bagunca" : true,
+		"intervalo_bagunca" : 4.0,
+		"variacao_bagunca" : 5.0,
+		"choro" : true,
+		"intervalo_choro" : 4.0,
+		"variacao_choro" :  0.0,
+		"tempo_limite_choro" :  400.0
 	}
 ]

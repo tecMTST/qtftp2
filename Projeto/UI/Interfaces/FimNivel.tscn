@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bo6m3gqwpe31u"]
 
 [ext_resource type="PackedScene" uid="uid://dsnts70s2x6ks" path="res://UI/Interfaces/Modal.tscn" id="1_bb4aq"]
-[ext_resource type="Script" path="res://UI/Interfaces/fim_nivel.gd" id="2_68evo"]
+[ext_resource type="Script" uid="uid://bvc6h1xvet0me" path="res://UI/Interfaces/fim_nivel.gd" id="2_68evo"]
 [ext_resource type="Theme" uid="uid://ddvbl64i00b36" path="res://UI/default_theme.tres" id="2_lx2ks"]
 
 [node name="Modal" instance=ExtResource("1_bb4aq")]
