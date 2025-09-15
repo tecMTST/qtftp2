@@ -14,7 +14,6 @@ var travar_dialogos = true
 func _ready() -> void:
 	ControleDeFase.carregar_nivel()
 	ControleDeFase.iniciar_nivel()
-	ControleDeAudio.toca_musica_com_intro("casa_intro", "casa_loop")
 	ControleDeFase.prato_entregue.connect(_prato_entregue)
 	ControleDeFase.cena_final.connect(_fim_cena)
 	pausar.hide()
@@ -70,6 +69,10 @@ func _on_briefing_iniciado() -> void:
 
 func _on_briefing_finalizado() -> void:
 	ControleDeFase.descongelar_tempo()
+	ControleDeAudio.toca_musica_com_intro(
+		"casa_intro", "casa_loop",
+		ControleDeFase.nivel_atual.tempo != ControleDeFase.TEMPO_INFINITO
+	)
 	travar_dialogos = false
 
 func _mostrar_botao_fim():

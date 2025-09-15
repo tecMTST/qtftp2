@@ -5,7 +5,7 @@
 		"descricao" : "Tutorial",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"local" : "res://Cenas/cutscene_quadrinhos_tutorial.tscn",
 		"id_receitas" : [1,2,1,2],
 		"ordem_aleatoria": false,
 		"caminhos_briefing": [
@@ -44,7 +44,7 @@
 		"descricao" : "Rotina da família em casa",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_1.tscn",
 		"id_receitas" : [3, 4],
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
@@ -84,10 +84,10 @@
 	{
 		"id" : 3,
 		"nome" : "Do Bom e do Barato...?",
-		"descricao" : "Casa",
+		"descricao" : "Em casa, elza está ficando cansada pela rotina e má alimentação",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_2.tscn",
 		"id_receitas" : [5, 6],
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
@@ -123,12 +123,12 @@
 	{
 		"id" : 4,
 		"nome" : "Que Fome!!",
-		"descricao" : "Tutorial",
+		"descricao" : "Não tem nada pra comer",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
-		"id_receitas" : [1,2,1,2],
-		"ordem_aleatoria": false,
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_3.tscn",
+		"id_receitas" : [],
+		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
 				"nome": "controles",
@@ -139,31 +139,31 @@
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase3.svg"
 			}
 			],
-		"tempo": -1,
+		"tempo": 300,
 		"limite_bagunca": 5,
-		"quantidade_pratos_real" : 4,
-		"quantidade_pratos_exibido" : 4,
+		"quantidade_pratos_real" : 3,
+		"quantidade_pratos_exibido" : 0,
 		"valor_nutricional_minimo" : 5,
 		"valor_sabor_minimo" : 2,
 		"pontos_recompensa" : 3,
 		"receita_recompensa" : 0,
-		"bagunca" : false,
-		"intervalo_bagunca" : 30.0,
- 		"variacao_bagunca" : 5.0,
-		"choro" : false,
- 		"intervalo_choro" : 20.0,
- 		"variacao_choro" :  5.0,
-		"tempo_limite_choro" :  20.0
+		"bagunca" : true,
+		"intervalo_bagunca" : 4.0,
+		"variacao_bagunca" : 5.0,
+		"choro" : true,
+		"intervalo_choro" : 4.0,
+		"variacao_choro" :  0.0,
+		"tempo_limite_choro" :  400.0
 	},
 	{
 		"id" : 5,
 		"nome" : "Hora do Rush!",
-		"descricao" : "Tutorial",
+		"descricao" : "Hora da Cozinha Solidária Brilhar",
 		"textos" : [],
 		"imagem" : "",
 		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
-		"id_receitas" : [1,2,1,2],
-		"ordem_aleatoria": false,
+		"id_receitas" : [5,7,8,9],
+		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
 				"nome": "controles",
@@ -188,12 +188,12 @@
 			{
 				"nome": "Frutas",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase4-frutas.svg"
-			},
+			}
 			],
-		"tempo": -1,
+		"tempo": 300,
 		"limite_bagunca": 5,
-		"quantidade_pratos_real" : 4,
-		"quantidade_pratos_exibido" : 4,
+		"quantidade_pratos_real" : 3,
+		"quantidade_pratos_exibido" : 0,
 		"valor_nutricional_minimo" : 5,
 		"valor_sabor_minimo" : 2,
 		"pontos_recompensa" : 3,
@@ -235,8 +235,8 @@
 			{
 				"nome": "Frutas",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase5-frutas.svg"
-			},
-			],
+			}
+		],
 		"tempo": -1,
 		"limite_bagunca": 5,
 		"quantidade_pratos_real" : 4,
@@ -252,5 +252,5 @@
  		"intervalo_choro" : 20.0,
  		"variacao_choro" :  5.0,
 		"tempo_limite_choro" :  20.0
-	},
+	}
 ]

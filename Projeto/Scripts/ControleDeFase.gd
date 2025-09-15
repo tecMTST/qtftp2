@@ -84,10 +84,14 @@ func selecionar_receita_especifica(indice_receita) -> bool:
 		func(item : Ingrediente): return receita_selecionada.ingredientes.any(
 			func(o) : return item.id == o.id_ingrediente))
 	print_debug("receita atual: ", _indice_receita_atual, " (", receita_selecionada.nome, ")")
-	_indice_passo_atual = -1
-	proximo_passo()
+	carrega_passo_inicial()
 	nova_receita.emit(receita_selecionada)
 	return true
+
+
+func carrega_passo_inicial() -> bool:
+	_indice_passo_atual = -1
+	return proximo_passo()
 
 
 func proximo_passo() -> bool:

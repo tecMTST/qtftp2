@@ -13,6 +13,13 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("bancada")
 
+
+func eliminar_ingrediente() -> void:
+	if objeto_na_bancada != null: objeto_na_bancada.queue_free()
+	objeto_na_bancada = null
+	_jogador = null
+
+
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	var objeto = jogador.objeto_agarrado
 	print_debug("[bancada]")
@@ -87,8 +94,11 @@ func _on_misturar_itens(novo_item: IngredienteBase) -> void:
 
 
 func _on_transformar_falhou(item_atual: IngredienteBase) -> void:
-	item_atual.ao_transformar_sucesso.disconnect(_on_pegar_item_da_bancada)
-	item_atual.ao_transformar_sucesso.disconnect(_on_colocar_item_na_bancada)
-	item_atual.ao_transformar_sucesso.disconnect(_on_misturar_itens)
+	if item_atual.ao_transformar_sucesso.is_connected(_on_pegar_item_da_bancada):
+		item_atual.ao_transformar_sucesso.disconnect(_on_pegar_item_da_bancada)
+	if item_atual.ao_transformar_sucesso.is_connected(_on_colocar_item_na_bancada):
+		item_atual.ao_transformar_sucesso.disconnect(_on_colocar_item_na_bancada)
+	if item_atual.ao_transformar_sucesso.is_connected(_on_misturar_itens):
+		item_atual.ao_transformar_sucesso.disconnect(_on_misturar_itens)
 	_jogador = null
 	return

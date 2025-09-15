@@ -12,6 +12,7 @@ var biblioteca_de_audio := {
 		"casa_loop": preload("res://Recursos/Audio/Musica/casa_loop.ogg"),
 		"menu": preload("res://Recursos/Audio/Musica/musica_menu.ogg"),
 		"quadrinhos": preload("res://Recursos/Audio/Musica/cena_introducao.ogg"),
+		"briefing": preload("res://Recursos/Audio/Musica/briefing.ogg")
 	},
 	"efeitos": {
 		"vitoria": preload("res://Recursos/Audio/Efeitos/jingle_vitoria.ogg"),
@@ -143,6 +144,7 @@ func _prepara_musica_ciclo(stream: AudioStream) -> void:
 	toca_musica_ciclo.stream.loop = false
 	toca_musica_ciclo.pitch_scale = 1.0
 	efeito_de_pitch.pitch_scale = 1.0
+	toca_musica_ciclo.process_mode = Node.PROCESS_MODE_ALWAYS
 
 
 func _on_musica_ciclo_completo() -> void:

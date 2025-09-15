@@ -1,36 +1,34 @@
 [
 	{
-		"id" : 2,
-		"variacao": 1,
-		"nome" : "Feijão Carioca Cru",
-		"descricao" : "Feijão carioca cru",
-		"caminho_sprite" : "res://Recursos/Graficos/Ingredientes/FeijaoCru.svg",
+		"id" : "feijao_no_pote",
+		"descricao" : "Feijão carioca cru no pote de plástico",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/feijao_no_pote.svg",
 		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"acao" : "cozer",
-				"tempo" : 20,
-				"variacao_resultado" : 2,
-				"evento": ""
+				"resultado" : "feijao_fervendo",
 			}
 		]
 	},
 	{
-		"id" : 2,
-		"variacao": 2,
-		"nome" : "Feijão Carioca Cozido",
-		"descricao" : "Feijão carioca cozido.",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "",
-		"caminho_sprite" : "",
+		"id" : "feijao_fervendo",
+		"descricao" : "Feijão carioca fervendo no fogão",
+		"tempo": 5,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
-				"alvo" : "bancada",
-				"acao" : "misturar",
-				"tempo" : 1,
-				"variacao_resultado" : 0,
-				"evento": ""
+				"alvo" : "fogao",
+				"resultado" : "feijao_pronto",
+			}
+		]
+	},
+	{
+		"id" : "feijao_pronto",
+		"descricao" : "Feijão carioca cozido.",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/feijao.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa",
 			}
 		]
 	},
@@ -68,6 +66,7 @@
 		"id" : "ovo_fritando",
 		"descricao" : "Ovo branco fritando na frigideira",
 		"tempo": 10,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/ovo_frigideira.svg",
 		"acoes" : [
 			{
@@ -100,7 +99,6 @@
 	{
 		"id" : "cuscuz_hidratado",
 		"descricao" : "Cuscuz Hidratado",
-		"tempo": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor.svg",
 		"acoes" : [
 			{
@@ -113,6 +111,7 @@
 		"id" : "cuscuz_cozinhando",
 		"descricao" : "Cuscuz Cozinhando na Cuscuzeira",
 		"tempo": 10,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/cuscuzeira.svg",
 		"acoes" : [
 			{
@@ -191,6 +190,7 @@
 		"id" : "agua_esquentando",
 		"descricao" : "Água fervendo no fogo",
 		"tempo": 5,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor_fumaca.svg",
 		"acoes" : [
 			{
@@ -217,6 +217,7 @@
 		"acoes" : [
 			{
 				"alvo" : "bancada",
+				"evento": "cortar_alimento",
 				"resultado": "cebola_e_alho_picados"
 			}
 		]
@@ -236,11 +237,16 @@
 		"id" : "cebola_e_alho_fritando",
 		"descricao" : "Cebola e Alho fritando no fogão quente",
 		"tempo": 20,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
 				"alvo": "arroz_com_agua",
 				"resultado": "arroz_cozinhando"
+			},
+			{
+				"alvo": "carne_moida_crua",
+				"resultado": "carne_moida_cozinhando"
 			}
 		]
 	},
@@ -269,6 +275,7 @@
 		"id" : "arroz_cozinhando",
 		"descricao" : "Arroz branco cozinhando na Água",
 		"tempo": 10,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
@@ -313,6 +320,7 @@
 		"id" : "miojex_cozinhando",
 		"descricao" : "Miojex Cozinhando no Fogão",
 		"tempo": 5,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
@@ -346,6 +354,7 @@
 		"id" : "salsicha_fritando",
 		"descricao" : "Salsicha fritando na frigideira",
 		"tempo": 10,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
@@ -358,6 +367,7 @@
 		"id" : "salsicha_cozinhando",
 		"descricao" : "Salsicha cozinhando na água",
 		"tempo": 10,
+		"tempo_queima": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
@@ -373,6 +383,7 @@
 		"acoes" : [
 			{
 				"alvo" : "bancada",
+				"evento": "cortar_alimento",
 				"resultado": "salsicha_fatiada"
 			}
 		]
@@ -386,5 +397,59 @@
 				"alvo" : "mesa"
 			}
 		]
-	}
+	},
+	{
+		"id" : "carne_crua",
+		"descricao" : "Acém guardado na geladeira",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/acem.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+				"evento": "cortar_alimento",
+				"resultado": "carne_moida_crua"
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_crua",
+		"descricao" : "Acém picado pronto para colocar no fogo",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/carne_moida_crua.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_cozinhando",
+		"descricao" : "Carne moída cozinhando no fogão",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "carne_moida_quente"
+			}
+		]
+	},
+	{
+		"id" : "carne_moida_quente",
+		"descricao" : "Carne moída cozida para misturar com temperos",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/carne_moida.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+				"resultado": "marmita_carne_salada"
+			}
+		]
+	},
+	{
+		"id" : "marmita_carne_salada",
+		"descricao" : "Mistura de carne com salada pronta para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/marmita_carne_salada.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa",
+			}
+		]
+	},
 ]
