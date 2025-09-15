@@ -50,11 +50,15 @@ func _physics_process(delta: float) -> void:
 		posicao_objeto.position.x = -abs(posicao_objeto.position.x)
 
 
-func _input(_event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("action") and not acao_executando:
 		acao_executando = true
 	elif Input.is_action_just_released("action") and acao_executando:
 		acao_executando = false
+
+	# FIXME: remover (cheat para trocar de receita)
+	if event is InputEventKey and event.is_pressed() and not event.is_echo() and event.keycode == KEY_K:
+		ControleDeFase.trapaca_muda_receita()
 
 func eliminar_ingrediente() -> void:
 	esta_agarrando = false

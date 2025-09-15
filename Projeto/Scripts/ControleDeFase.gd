@@ -61,6 +61,11 @@ func carregar_nivel():
 		func(child): return child is Player
 	)
 
+func trapaca_muda_receita() -> void:
+	receitas_disponiveis = Globais.receitas
+	selecionar_receita_especifica((_indice_receita_atual + 1) % receitas_disponiveis.size())
+
+
 func selecionar_proxima_receita() -> bool:
 	if nivel_atual.ordem_aleatoria:
 		return selecionar_receita_aleatoria()
