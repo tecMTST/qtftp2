@@ -273,4 +273,21 @@
 			}
 		]
 	},
+{
+		"id" : 9,
+		"nome" : "Frutas",
+		"descricao" : "Frutas frescas prontas para servir",
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/laranja_banana.svg",
+		"passos" : [
+			{
+				"descricao": "Pegar frutas na bancada",
+				"alvo": "bancada",
+				"ingrediente": "frutas_frescas"
+			},
+			{
+				"descricao": "Servir as frutas",
+				"alvo": "mesa"
+			}
+		]
+	},
 ]

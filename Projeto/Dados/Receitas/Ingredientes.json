@@ -452,4 +452,14 @@
 			}
 		]
 	},
+	{
+		"id" : "frutas_frescas",
+		"descricao" : "Laranjas e bananas prontas para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/laranja_banana.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa",
+			}
+		]
+	}
 ]
