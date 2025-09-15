@@ -20,15 +20,6 @@ polygon = PackedVector2Array(480.738, 682.586, 462.475, 698.039, 436.485, 705.76
 uv = PackedVector2Array(480.738, 682.586, 462.475, 698.039, 436.485, 705.766, 449.831, 741.589, 473.713, 792.867, 472.309, 823.773, 497.596, 830.797, 518.669, 851.87, 546.063, 837.119, 544.658, 799.891)
 bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
 
-[node name="pqpk7" type="Polygon2D" parent="rig1/sprites"]
-position = Vector2(-947, -2124)
-scale = Vector2(2.43783, 2.43783)
-texture = ExtResource("1_bxfg3")
-skeleton = NodePath("../../Skeleton2D")
-polygon = PackedVector2Array(399.234, 1051.52, 405.67, 1052.29, 407.987, 1044.31, 406.571, 1011.75, 408.115, 1002.74, 399.877, 1000.68, 396.531, 1013.16)
-uv = PackedVector2Array(399.234, 1051.52, 405.67, 1052.29, 407.987, 1044.31, 406.571, 1011.75, 408.115, 1002.74, 399.877, 1000.68, 396.531, 1013.16)
-bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)]
-
 [node name="quadrilFundo" type="Polygon2D" parent="rig1/sprites"]
 position = Vector2(-825, -1750)
 scale = Vector2(2.19387, 2.19387)
@@ -116,7 +107,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 [node name="Skeleton2D" type="Skeleton2D" parent="rig1"]
 
 [node name="tronco" type="Bone2D" parent="rig1/Skeleton2D"]
-position = Vector2(35, 428.772)
+position = Vector2(35, 400)
 rest = Transform2D(1, 0, 0, 1, 35, 429)
 
 [node name="pescoco" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
@@ -128,23 +119,28 @@ rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="pernaDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(95, -125)
+rotation = -0.551339
 rest = Transform2D(1, 0, 0, 1, 95, -125)
 
 [node name="pernaEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-101, -126)
+rotation = 0.617994
 rest = Transform2D(1, 0, 0, 1, -101, -126)
 
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
-position = Vector2(110.79, -386.79)
+position = Vector2(99, -384)
+rotation = 0.884439
 rest = Transform2D(1, 0, 0, 1, 99, -384)
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
-position = Vector2(-97.7903, -388.79)
+position = Vector2(-84, -379)
+rotation = -0.505287
 rest = Transform2D(1, 0, 0, 1, -84, -379)
 
 [node name="Tio1" type="Sprite2D" parent="."]
 position = Vector2(264, 421)
 scale = Vector2(1.61166, 1.61166)
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
