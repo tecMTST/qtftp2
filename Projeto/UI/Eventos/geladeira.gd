@@ -3,7 +3,6 @@ extends Control
 signal escolheu_ingrediente
 
 var acao_executada = false
-var _posicao_geladeira: int = 0
 
 @onready var prateleira_1 = $VBoxContainer/Prateleira
 @onready var prateleira_2 = $VBoxContainer/Prateleira2

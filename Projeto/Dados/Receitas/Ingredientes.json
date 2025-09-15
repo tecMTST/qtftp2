@@ -99,7 +99,6 @@
 	{
 		"id" : "cuscuz_hidratado",
 		"descricao" : "Cuscuz Hidratado",
-		"tempo": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor.svg",
 		"acoes" : [
 			{
