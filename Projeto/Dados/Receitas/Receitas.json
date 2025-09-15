@@ -264,15 +264,7 @@
 				"alvo": "fogao"
 			},
 			{
-				"descricao": "Deixar carne moída na bancada",
-				"alvo": "bancada"
-			},
-			{
-				"descricao": "Pegar salada na outra bancada",
-				"alvo": "bancada_salada"
-			},
-			{
-				"descricao": "Misturar salada na carne moída",
+				"descricao": "Misturar carne moída com salada na bancada",
 				"alvo": "bancada"
 			},
 			{
