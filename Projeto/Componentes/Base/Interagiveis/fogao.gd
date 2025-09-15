@@ -94,8 +94,10 @@ func _on_misturar_itens(novo_item: IngredienteBase) -> void:
 func _recolher_objeto() -> void:
 	print_debug("  [-] se preparando pra tirar ", objeto_no_fogao.id, " do fogão")
 	print_debug("  [-] que vira ", objeto_no_fogao.ingrediente.acoes[0].resultado)
-	objeto_no_fogao.ao_transformar_sucesso.connect(_on_recolher_objeto_do_fogao)
-	objeto_no_fogao.ao_transformar_falha.connect(_on_falhou_transformacao)
+	if !objeto_no_fogao.ao_transformar_sucesso.is_connected(_on_recolher_objeto_do_fogao):
+		objeto_no_fogao.ao_transformar_sucesso.connect(_on_recolher_objeto_do_fogao)
+	if !objeto_no_fogao.ao_transformar_falha.is_connected(_on_falhou_transformacao):
+		objeto_no_fogao.ao_transformar_falha.connect(_on_falhou_transformacao)
 	objeto_no_fogao.transformar()
 
 
@@ -117,8 +119,10 @@ func _on_recolher_objeto_do_fogao(objeto: IngredienteBase) -> void:
 
 func _on_falhou_transformacao(objeto: IngredienteBase) -> void:
 	print_debug("  [-] erro ao interagir com fogao")
-	objeto.ao_transformar_sucesso.disconnect(_on_posicionar_objeto_no_fogao)
-	objeto.ao_transformar_falha.disconnect(_on_falhou_transformacao)
+	if objeto.ao_transformar_sucesso.is_connected(_on_posicionar_objeto_no_fogao):
+		objeto.ao_transformar_sucesso.disconnect(_on_posicionar_objeto_no_fogao)
+	if objeto.ao_transformar_falha.is_connected(_on_falhou_transformacao):
+		objeto.ao_transformar_falha.disconnect(_on_falhou_transformacao)
 	_jogador = null
 
 func _on_posicionar_objeto_no_fogao(novo_objeto) -> void:
