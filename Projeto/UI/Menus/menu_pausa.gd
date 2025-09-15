@@ -5,14 +5,12 @@ signal continuar
 @export var briefing : Briefing
 @onready var fase: Label = $Fase
 @onready var receita_atual: TextureRect = $"Receita Atual"
-@onready var botao_briefing: Button = $MarginContainer/VBoxContainer/botao_briefing
+@onready var botao_briefing: Button = $"TextureRect/Menu Abas/botao_briefing"
 
 
 
 func atualizar() -> void:
 	fase.text=ControleDeFase.nivel_atual.nome
-	print(ControleDeFase.receita_selecionada)
-	receita_atual.icon=load(ControleDeFase.receita_selecionada)
 	botao_briefing.icon=load(ControleDeFase.receita_selecionada.caminho_sprite)
 	
 

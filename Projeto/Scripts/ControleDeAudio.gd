@@ -174,12 +174,13 @@ func _encontra_tocador_disponivel() -> int:
 
 func _ajusta_volume_do_barramento(nome_do_barramento: String, volume: float) -> void:
 	var indice_do_barramento = AudioServer.get_bus_index(nome_do_barramento)
+	print_debug("Ajustando ", nome_do_barramento, " para ", volume)
 	if indice_do_barramento >= 0:
 		AudioServer.set_bus_volume_db(indice_do_barramento, linear_to_db(volume))
 
 
 func _on_value_changed(new_value: float) -> void:
-	ControleDeAudio.volume_de_musica(new_value)
+	ControleDeAudio.volume_da_musica(new_value)
 	
 func _on_value_changed_sfx(new_value: float) -> void:
 	ControleDeAudio.volume_de_efeitos(new_value)

@@ -256,7 +256,6 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="continuar" type="Button" parent="MarginContainer/VBoxContainer"]
-visible = false
 z_index = 20
 layout_mode = 2
 theme = ExtResource("7_w833q")
@@ -288,7 +287,7 @@ offset_bottom = 838.0
 [connection signal="pressed" from="TextureRect/Menu Abas/botao_controles" to="." method="_on_briefing_pressed"]
 [connection signal="pressed" from="TextureRect/Menu Abas/botao_configuracoes" to="." method="_on_briefing_pressed"]
 [connection signal="value_changed" from="controle_audio_musica" to="controle_audio_musica" method="_on_value_changed"]
-[connection signal="value_changed" from="controle_audio_efeita_sonoro" to="controle_audio_efeita_sonoro" method="_on_value_changed"]
+[connection signal="value_changed" from="controle_audio_efeita_sonoro" to="controle_audio_efeita_sonoro" method="_on_value_changed_sfx"]
 [connection signal="pressed" from="retornar para tela inicial" to="." method="_on_retornar_para_tela_inicial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]
