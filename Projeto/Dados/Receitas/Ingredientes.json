@@ -33,25 +33,6 @@
 		]
 	},
 	{
-		"id" : 3,
-		"variacao": 1,
-		"nome" : "Farinha de mandioca",
-		"descricao" : "Farinha de mandioca",
-		"preco" : 1,
-		"unidade" : "Gramas",
-		"cena" : "",
-		"caminho_sprite" : "",
-		"acoes" : [
-			{
-				"alvo" : "bancada",
-				"acao" : "misturar",
-				"tempo" : 1,
-				"variacao_resultado" : 0,
-				"evento": ""
-			}
-		]
-	},
-	{
 		"id" : "ovo_cru",
 		"descricao" : "Ovo branco cru",
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/ovo.svg",
@@ -99,7 +80,6 @@
 	{
 		"id" : "cuscuz_hidratado",
 		"descricao" : "Cuscuz Hidratado",
-		"tempo": 10,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/fervedor.svg",
 		"acoes" : [
 			{
@@ -248,6 +228,10 @@
 			{
 				"alvo": "carne_moida_crua",
 				"resultado": "carne_moida_cozinhando"
+			},
+			{
+				"alvo": "couve_picada",
+				"resultado": "couve_fritando"
 			}
 		]
 	},
@@ -439,29 +423,7 @@
 		"acoes" : [
 			{
 				"alvo" : "bancada",
-				"evento": "depositar",
-				"resultado": "carne_moida_sem_tempero"
-			}
-		]
-	},
-	{
-		"id" : "carne_moida_sem_tempero",
-		"descricao" : "Carne moída aguardando temperos na bancada",
-		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/carne_moida.svg",
-		"acoes" : [
-			{
-				"alvo" : "salada",
 				"resultado": "marmita_carne_salada"
-			}
-		]
-	},
-	{
-		"id" : "salada",
-		"descricao" : "Saladinha crua pronta para misturar na carne moída",
-		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salada.svg",
-		"acoes" : [
-			{
-				"alvo" : "bancada",
 			}
 		]
 	},
@@ -469,6 +431,61 @@
 		"id" : "marmita_carne_salada",
 		"descricao" : "Mistura de carne com salada pronta para servir",
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/marmita_carne_salada.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa",
+			}
+		]
+	},
+	{
+		"id" : "frutas_frescas",
+		"descricao" : "Laranjas e bananas prontas para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/laranja_banana.svg",
+		"acoes" : [
+			{
+				"alvo" : "mesa",
+			}
+		]
+	},
+	{
+		"id" : "couve_crua",
+		"descricao" : "Maço de couve crua para picar",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/maco_couve.svg",
+		"acoes" : [
+			{
+				"alvo" : "bancada",
+				"evento": "cortar_alimento",
+				"resultado": "couve_picada"
+			}
+		]
+	},
+	{
+		"id" : "couve_picada",
+		"descricao" : "Couve crua picada, pronta para ir ao forno",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/couve_picada.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+			}
+		]
+	},
+	{
+		"id" : "couve_fritando",
+		"descricao" : "Couve fritando na panela",
+		"tempo": 5,
+		"tempo_queima": 10,
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
+		"acoes" : [
+			{
+				"alvo" : "fogao",
+				"resultado": "marmita_couve"
+			}
+		]
+	},
+	{
+		"id" : "marmita_couve",
+		"descricao" : "Marmita de farofa e couve pronta para servir",
+		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/marmita_farofa_couve.svg",
 		"acoes" : [
 			{
 				"alvo" : "mesa",

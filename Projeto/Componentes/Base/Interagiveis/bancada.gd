@@ -2,6 +2,7 @@ class_name Bancada extends BaseInteragivel
 
 @export var posicao_do_objeto_na_bancada: Vector2 = Vector2(0, 0)
 
+
 var objeto_na_bancada: IngredienteBase = null
 var _jogador: Player
 
@@ -23,12 +24,28 @@ func eliminar_ingrediente() -> void:
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	var objeto = jogador.objeto_agarrado
 	print_debug("[bancada]")
+	if ControleDeFase.passo_atual.alvo != "bancada":
+		print_debug("  [-] não é hora de usar a bancada")
+		return
 	if (_jogador != null):
 		print_debug("  [-] ação em andamento, não posso seguir")
 		return
 	if objeto == null:
 		print_debug("  [-] jogador não está segurando nada")
-		if objeto_na_bancada == null: return
+		if objeto_na_bancada == null:
+			var ingrediente_a_criar = ControleDeFase.passo_atual.ingrediente
+			if ingrediente_a_criar == null:
+				print_debug(" [-] nada a fazer")
+				return
+			var dados_ingrediente = Globais.obtem_ingrediente(ingrediente_a_criar)
+			var novo_ingrediente: IngredienteBase = load(
+				"res://Componentes/Ingredientes/IngredienteBase.tscn"
+			).instantiate()
+			novo_ingrediente.iniciar(dados_ingrediente)
+			novo_ingrediente.estado_atual = novo_ingrediente.EstadoIngrediente.PRONTO_PARA_COZINHAR
+			jogador.agarrar(novo_ingrediente)
+			ControleDeFase.proximo_passo()
+			return
 		print_debug("  [-] jogador vai pegar ", objeto_na_bancada.descricao)
 		objeto = objeto_na_bancada
 		objeto.ao_transformar_sucesso.connect(_on_pegar_item_da_bancada)

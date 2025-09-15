@@ -264,19 +264,70 @@
 				"alvo": "fogao"
 			},
 			{
-				"descricao": "Deixar carne moída na bancada",
-				"alvo": "bancada"
-			},
-			{
-				"descricao": "Pegar salada na outra bancada",
-				"alvo": "bancada_salada"
-			},
-			{
-				"descricao": "Misturar salada na carne moída",
+				"descricao": "Misturar carne moída com salada na bancada",
 				"alvo": "bancada"
 			},
 			{
 				"descricao" : "Servir a mistura",
+				"alvo" : "mesa"
+			}
+		]
+	},
+	{
+		"id" : 9,
+		"nome" : "Frutas",
+		"descricao" : "Frutas frescas prontas para servir",
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/laranja_banana.svg",
+		"passos" : [
+			{
+				"descricao": "Pegar frutas na bancada",
+				"alvo": "bancada",
+				"ingrediente": "frutas_frescas"
+			},
+			{
+				"descricao": "Servir as frutas",
+				"alvo": "mesa"
+			}
+		]
+	},
+	{
+		"id" : 10,
+		"nome" : "Farofa com Couve",
+		"descricao" : "Prato de farofa com couve mineira",
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/marmita_farofa_couve.svg",
+		"passos" : [
+			{
+				"descricao": "Pegar cebola e alho na geladeira",
+				"alvo": "geladeira",
+				"ingrediente": "cebola_e_alho"
+			},
+			{
+				"descricao": "Picar cebola e alho na bancada",
+				"alvo": "bancada",
+			},
+			{
+				"descricao": "Colocar refogado no fogo",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Pegar folhas de couve na geladeira",
+				"alvo" : "geladeira",
+				"ingrediente": "couve_crua"
+			},
+			{
+				"descricao": "Picar a couve na bancada",
+				"alvo": "bancada"
+			},
+			{
+				"descricao": "Colocar couve picadinha no refogado",
+				"alvo": "fogao"
+			},
+			{
+				"descricao": "Esperar couve ficar pronta",
+				"alvo": "fogao"
+			},
+			{
+				"descricao" : "Servir a marmita de couve",
 				"alvo" : "mesa"
 			}
 		]

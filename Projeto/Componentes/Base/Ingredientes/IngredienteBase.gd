@@ -105,11 +105,10 @@ func _on_evento_falhou() -> void:
 	ao_transformar_falha.emit(self)
 
 func _on_evento_realizado() -> void:
-	_desliga_captura_de_eventos()
 	var id_novo_ingrediente = ingrediente.acoes[_id_acao_atual].resultado
+	_desliga_captura_de_eventos()
 	var dados_ingrediente = Globais.obtem_ingrediente(id_novo_ingrediente)
 	assert(dados_ingrediente != null, "ingrediente " + id_novo_ingrediente + " não encontrado")
-
 	print_debug("[TRANSFORMAR] ", id_novo_ingrediente, " carregado como ", dados_ingrediente.id)
 	var novo_ingrediente: IngredienteBase = load(
 		"res://Componentes/Ingredientes/IngredienteBase.tscn"

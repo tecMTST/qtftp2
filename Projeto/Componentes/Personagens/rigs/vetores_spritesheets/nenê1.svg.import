@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6oy04ah5g314"
-path="res://.godot/imported/couvePicada.svg-1f8907aaf0838e6c22b8cdea0d0db271.ctex"
+uid="uid://c2y7yp6sucboc"
+path="res://.godot/imported/nenê1.svg-a254ac7d2ccd3484383d15dd68673fc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Ingredientes/couvePicada.svg"
-dest_files=["res://.godot/imported/couvePicada.svg-1f8907aaf0838e6c22b8cdea0d0db271.ctex"]
+source_file="res://Componentes/Personagens/rigs/vetores_spritesheets/nenê1.svg"
+dest_files=["res://.godot/imported/nenê1.svg-a254ac7d2ccd3484383d15dd68673fc9.ctex"]
 
 [params]
 

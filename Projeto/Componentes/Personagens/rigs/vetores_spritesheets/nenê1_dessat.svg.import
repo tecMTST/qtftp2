@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djwwxrccqg5qs"
-path="res://.godot/imported/marmitaFarofaCouve.svg-d830083d9cccacc07120ad5cac665554.ctex"
+uid="uid://de7m4n4afowt2"
+path="res://.godot/imported/nenê1_dessat.svg-7a033c9bad3e376c7579fa42a4216c5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Ingredientes/marmitaFarofaCouve.svg"
-dest_files=["res://.godot/imported/marmitaFarofaCouve.svg-d830083d9cccacc07120ad5cac665554.ctex"]
+source_file="res://Componentes/Personagens/rigs/vetores_spritesheets/nenê1_dessat.svg"
+dest_files=["res://.godot/imported/nenê1_dessat.svg-7a033c9bad3e376c7579fa42a4216c5a.ctex"]
 
 [params]
 

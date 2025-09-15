@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw0e3ofr341t7"
-path="res://.godot/imported/macoCouve.svg-a5a11234a6a614cb3d8f3a7c48b8457f.ctex"
+uid="uid://chusfwttit3yg"
+path="res://.godot/imported/assetsCutscenes.svg-2e7ae7e4b1ecbb54348a1443b9676da1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Ingredientes/macoCouve.svg"
-dest_files=["res://.godot/imported/macoCouve.svg-a5a11234a6a614cb3d8f3a7c48b8457f.ctex"]
+source_file="res://Componentes/Personagens/rigs/vetores_spritesheets/assetsCutscenes.svg"
+dest_files=["res://.godot/imported/assetsCutscenes.svg-2e7ae7e4b1ecbb54348a1443b9676da1.ctex"]
 
 [params]
 

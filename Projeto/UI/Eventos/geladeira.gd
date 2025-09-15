@@ -1,5 +1,7 @@
 extends Control
 
+signal escolheu_ingrediente
+
 var acao_executada = false
 
 @onready var prateleira_1 = $VBoxContainer/Prateleira
@@ -10,9 +12,9 @@ var acao_executada = false
 
 func _ready() -> void:
 	acao_executada = false
-	preencher_geladeira()
 
-func preencher_geladeira():
+
+func preencher_geladeira(posicao_do_ingrediente):
 	print_debug("[abrindo geladeira]")
 	if not ControleDeFase.nivel_atual or not ControleDeFase.receita_selecionada:
 		close()
@@ -35,7 +37,7 @@ func preencher_geladeira():
 		prateleira_1,
 		prateleira_2,
 		prateleira_3
-	].pick_random().get_node("IngredienteContainer")
+	][posicao_do_ingrediente % 3].get_node("IngredienteContainer")
 	container.add_child(ingrediente_geladeira)
 
 
@@ -61,6 +63,7 @@ func escolhe_ingrediente(ingrediente_escolhido: Ingrediente) -> void:
 		player[0].agarrar(ingrediente)
 		ControleDeFase.proximo_passo()
 		ingrediente_escolhido = null
+		escolheu_ingrediente.emit()
 		close()
 
 
