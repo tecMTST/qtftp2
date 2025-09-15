@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://toyuyf660lm7"]
+[gd_scene load_steps=39 format=3 uid="uid://toyuyf660lm7"]
 
 [ext_resource type="Script" uid="uid://fmdhy8p6vnli" path="res://Cenas/cozinha_solidaria.gd" id="1_bhph4"]
 [ext_resource type="Texture2D" uid="uid://dmon3wtcmi48s" path="res://Recursos/Graficos/Cenas/Cenario_2/Piso.svg" id="5_pdorv"]
@@ -45,6 +45,9 @@ size = Vector2(378, 1164)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5m24"]
 size = Vector2(120, 268)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eds2h"]
+size = Vector2(154, 142)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
 vertices = PackedVector2Array(678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 185.742, 525, 50.8984, 525, 551.242, 503.078, 678.563, 502.07, 682.406, 569.117, 434.781, 572.117, 191.742, 753.031, 438.773, 753.961)
@@ -152,6 +155,12 @@ position = Vector2(40, 729)
 scale = Vector2(1.00452, 1.0056)
 shape = SubResource("RectangleShape2D_k5m24")
 
+[node name="LimiteCaixasAzuis" type="StaticBody2D" parent="Limites"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/LimiteCaixasAzuis"]
+position = Vector2(372, 677)
+shape = SubResource("RectangleShape2D_eds2h")
+
 [node name="Waypoints" type="Node2D" parent="."]
 visible = false
 
@@ -253,6 +262,7 @@ text = "Avançar"
 script = ExtResource("26_u2tsi")
 
 [node name="Hud" parent="UI" instance=ExtResource("27_00r2q")]
+visible = false
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
