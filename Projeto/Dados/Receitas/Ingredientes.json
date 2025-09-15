@@ -439,29 +439,7 @@
 		"acoes" : [
 			{
 				"alvo" : "bancada",
-				"evento": "depositar",
-				"resultado": "carne_moida_sem_tempero"
-			}
-		]
-	},
-	{
-		"id" : "carne_moida_sem_tempero",
-		"descricao" : "Carne moída aguardando temperos na bancada",
-		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/carne_moida.svg",
-		"acoes" : [
-			{
-				"alvo" : "salada",
 				"resultado": "marmita_carne_salada"
-			}
-		]
-	},
-	{
-		"id" : "salada",
-		"descricao" : "Saladinha crua pronta para misturar na carne moída",
-		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/salada.svg",
-		"acoes" : [
-			{
-				"alvo" : "bancada",
 			}
 		]
 	},
