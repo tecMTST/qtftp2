@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c78rpsjjkoxkw"]
+
+[ext_resource type="Shader" uid="uid://wtlp4dnklyoe" path="res://Recursos/Graficos/Efeitos/check.gdshader" id="1_1en7q"]
+[ext_resource type="Script" uid="uid://dhduk25mgv0ok" path="res://Recursos/Graficos/Efeitos/check.gd" id="2_jdaij"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0f7t"]
+shader = ExtResource("1_1en7q")
+shader_parameter/progress = 0.0
+shader_parameter/circle_thickness = 0.05
+shader_parameter/circle_color = Color(0.588235, 0.643137, 0.0980392, 1)
+shader_parameter/checkmark_color = Color(0.588235, 0.643137, 0.0980392, 1)
+shader_parameter/reverse = false
+
+[node name="Check" type="ColorRect"]
+material = SubResource("ShaderMaterial_i0f7t")
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("2_jdaij")
