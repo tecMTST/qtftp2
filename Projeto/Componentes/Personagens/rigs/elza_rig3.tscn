@@ -91,6 +91,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("rig1/sprites/mamadeira:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_njihp"]
 _data = {
@@ -688,7 +700,6 @@ uv = PackedVector2Array(2458.85, 1990.15, 2628.18, 1895.89, 2811.47, 2149.01, 28
 bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1)]
 
 [node name="celular" type="Polygon2D" parent="rig1/sprites"]
-visible = false
 position = Vector2(-186, 299)
 rotation = -1.08224
 scale = Vector2(0.799245, 0.799245)
@@ -867,7 +878,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pes
 [node name="mamadeira" type="Polygon2D" parent="rig1/sprites"]
 visible = false
 position = Vector2(164, 347)
-rotation = -4.11703
+rotation = 2.16616
 scale = Vector2(0.611347, 0.611347)
 offset = Vector2(-410.946, -163.734)
 texture = ExtResource("2_1utah")
@@ -895,7 +906,7 @@ position = Vector2(35, 429)
 rest = Transform2D(1, 0, 0, 1, 35, 429)
 
 [node name="pescoco" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
-position = Vector2(0, -414.347)
+position = Vector2(0, -410)
 rest = Transform2D(1, 0, 0, 1, 0, -410)
 
 [node name="rosto" type="Bone2D" parent="rig1/Skeleton2D/tronco/pescoco"]
@@ -903,6 +914,7 @@ rest = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="pernaDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(95, -125)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 95, -125)
 
 [node name="pernaEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
@@ -910,14 +922,13 @@ position = Vector2(-101, -126)
 rest = Transform2D(1, 0, 0, 1, -101, -126)
 
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
-position = Vector2(78, -353)
-rotation = 1.40123
-scale = Vector2(1, 1)
+position = Vector2(99, -384)
 rest = Transform2D(1, 0, 0, 1, 99, -384)
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-84, -379)
-rotation = 0.501302
+rotation = 0.950819
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -84, -379)
 
 [node name="ConceptsMae" type="Sprite2D" parent="rig1"]
