@@ -41,25 +41,27 @@ func _on_retornar_para_tela_inicial_pressed() -> void:
 
 #abre a receita atual
 func _on_receita_pressed() -> void:
-	var caminho_receita=ControleDeFase.nivel_atual.caminhos_briefing.filter(func(c): return c.nome==ControleDeFase.receita_selecionada.nome)[0]
+	var caminho_receita=ControleDeFase.nivel_atual.caminhos_briefing.filter(
+		func(c): return c.nome==ControleDeFase.receita_selecionada.nome)[0]
 	receita_miolo.texture=load(caminho_receita.caminho.replace("briefing","pause"))
 	receita_miolo.show()
 	retornar_para_tela_inicial.hide()
 	botao_controles.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))
 	botao_configuracoes.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))
 	botao_briefing.set_theme(load("res://UI/botaoAbaPause.tres"))
-	
+
 #abre a aba de controles 
 func _on_control_pressed() -> void:
-	var caminho_receita=ControleDeFase.nivel_atual.caminhos_briefing.filter(func(c): return c.nome==ControleDeFase.receita_selecionada.nome)[0]
+	var caminho_receita=ControleDeFase.nivel_atual.caminhos_briefing.filter(
+		func(c): return c.nome==ControleDeFase.receita_selecionada.nome)[0]
 	receita_miolo.texture=load("res://Recursos/Graficos/UI/Briefing/pause-tutorial-controles.svg")
 	receita_miolo.show()
 	retornar_para_tela_inicial.hide()
 	botao_controles.set_theme(load("res://UI/botaoAbaPause.tres"))
 	botao_configuracoes.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))
 	botao_briefing.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))
-	
-	#abre a aba de configurações 
+
+#abre a aba de configurações 
 func _on_config_pressed() -> void:
 	receita_miolo.hide()
 	botao_briefing.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))

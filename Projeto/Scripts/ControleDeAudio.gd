@@ -183,6 +183,6 @@ func _ajusta_volume_do_barramento(nome_do_barramento: String, volume: float) -> 
 
 func _on_value_changed(new_value: float) -> void:
 	ControleDeAudio.volume_da_musica(new_value)
-	
+
 func _on_value_changed_sfx(new_value: float) -> void:
 	ControleDeAudio.volume_de_efeitos(new_value)
