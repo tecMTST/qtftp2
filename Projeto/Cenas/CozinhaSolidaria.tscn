@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://20ja5ny2iom8" path="res://Recursos/Graficos/UI/Ingredientes/laranja_banana.svg" id="30_k5m24"]
 [ext_resource type="Script" uid="uid://balal13nfhegi" path="res://addons/saveEngine/scripts/SaveAgent.gd" id="32_r2taa"]
 [ext_resource type="BehaviorTree" uid="uid://v1romtgfuw1k" path="res://ai/tutorial.tres" id="33_3c0xy"]
+[ext_resource type="PackedScene" uid="uid://n52w7lk2j46x" path="res://Componentes/Casa/Interagiveis/EntregaNaFila.tscn" id="33_vqmvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
 size = Vector2(259, 1546)
@@ -48,11 +49,6 @@ size = Vector2(120, 268)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eds2h"]
 size = Vector2(154, 142)
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
-vertices = PackedVector2Array(678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 185.742, 525, 50.8984, 525, 551.242, 503.078, 678.563, 502.07, 682.406, 569.117, 434.781, 572.117, 191.742, 753.031, 438.773, 753.961)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2, 6), PackedInt32Array(6, 7, 8, 9, 4), PackedInt32Array(10, 4, 9, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 445, 582, 449, 764, 182, 763, 176, 535, 41, 535)])
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_tjjme"]
 
@@ -262,11 +258,6 @@ text = "Avançar"
 script = ExtResource("26_u2tsi")
 
 [node name="Hud" parent="UI" instance=ExtResource("27_00r2q")]
-visible = false
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(5, 181)
-navigation_polygon = SubResource("NavigationPolygon_4xt8v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -295,6 +286,12 @@ texture = ExtResource("29_saehm")
 position = Vector2(304, 552)
 scale = Vector2(0.714286, 0.714286)
 texture = ExtResource("30_k5m24")
+
+[node name="EntregaNaFila1" parent="." instance=ExtResource("33_vqmvo")]
+position = Vector2(208, 731)
+
+[node name="EntregaNaFila2" parent="." instance=ExtResource("33_vqmvo")]
+position = Vector2(529, 733)
 
 [connection signal="acao_agarrou" from="Personagens/Player" to="." method="_on_player_acao_agarrou"]
 [connection signal="acao_ativada" from="Personagens/Player" to="." method="_on_player_acao_ativada"]

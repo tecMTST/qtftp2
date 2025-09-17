@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://n52w7lk2j46x"]
+
+[ext_resource type="Script" uid="uid://cpi6tydbas0r3" path="res://Componentes/Casa/Interagiveis/mesa_filha.gd" id="1_7fq27"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_7fq27"]
+[ext_resource type="Texture2D" uid="uid://dmxtex2h0cm00" path="res://Recursos/Graficos/UI/indicador.svg" id="3_7gv1b"]
+[ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="4_0holi"]
+[ext_resource type="Script" uid="uid://mkb6qqi4x84c" path="res://Componentes/Personagens/fila_para_comida.gd" id="5_7gv1b"]
+[ext_resource type="PackedScene" uid="uid://c3rsirptmnfb1" path="res://Componentes/Personagens/pessoa_na_fila.tscn" id="6_7gv1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1ls"]
+size = Vector2(163, 254.338)
+
+[node name="EntregaNaFila" type="StaticBody2D" node_paths=PackedStringArray("fila") groups=["filha", "interagivel", "ponto_entrega"]]
+script = ExtResource("1_7fq27")
+fila = NodePath("Fila")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.5, 4.37137)
+scale = Vector2(1, 0.476757)
+shape = SubResource("RectangleShape2D_eo1ls")
+
+[node name="ComponenteInteragivel" type="Node2D" parent="."]
+script = ExtResource("2_7fq27")
+nome = "Mesa"
+descricao = "Uma mesa"
+possui_contorno = false
+
+[node name="Pivot" type="Node2D" parent="."]
+position = Vector2(-26, 0)
+
+[node name="Indicador" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(94, -10)
+scale = Vector2(0.307, 0.307)
+texture = ExtResource("3_7gv1b")
+
+[node name="Bouncer" type="Node" parent="Indicador"]
+script = ExtResource("4_0holi")
+metadata/_custom_type_script = "uid://d1lhbtx247tsg"
+
+[node name="Fila" type="Node" parent="."]
+script = ExtResource("5_7gv1b")
+pessoa = ExtResource("6_7gv1b")
+posicao_inicial = Vector2(-50, 0)
+distancia_entre_pessoas = 50
+variacao_maxima_horizontal = 10
+maximo_na_fila = 5
+tempo_minimo_proxima_pessoa = 20.0
+tempo_maximo_proxima_pessoa = 60.0
+
+[node name="Timer" type="Timer" parent="Fila"]
+one_shot = true
+
+[connection signal="interagir" from="ComponenteInteragivel" to="." method="_interagir"]
+[connection signal="timeout" from="Fila/Timer" to="Fila" method="_on_hora_de_entrar_na_fila"]
