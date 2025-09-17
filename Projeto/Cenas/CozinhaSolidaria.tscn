@@ -241,10 +241,8 @@ text = "Avançar"
 script = ExtResource("26_u2tsi")
 
 [node name="Hud" parent="UI" instance=ExtResource("27_00r2q")]
-visible = false
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 position = Vector2(5, 181)
 navigation_polygon = SubResource("NavigationPolygon_4xt8v")
 

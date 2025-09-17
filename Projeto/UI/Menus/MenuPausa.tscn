@@ -247,39 +247,6 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 25
 text = "X"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
-z_index = 12
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -132.5
-offset_top = 109.0
-offset_right = 132.5
-offset_bottom = 329.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-visible = false
-z_index = 14
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="sair" type="Button" parent="MarginContainer/VBoxContainer"]
-visible = false
-z_index = 16
-layout_mode = 2
-theme = ExtResource("7_w833q")
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 25
-text = "Sair do jogo"
-
 [node name="Receita Atual" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 160.0
@@ -302,4 +269,3 @@ texture = ExtResource("15_r5mwj")
 [connection signal="value_changed" from="controle_audio_efeita_sonoro" to="controle_audio_efeita_sonoro" method="_on_value_changed_sfx"]
 [connection signal="pressed" from="retornar para tela inicial" to="." method="_on_retornar_para_tela_inicial_pressed"]
 [connection signal="pressed" from="continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/sair" to="." method="_on_sair_pressed"]
