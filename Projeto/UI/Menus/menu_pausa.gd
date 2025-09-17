@@ -11,8 +11,8 @@ signal continuar
 @onready var retornar_para_tela_inicial: Button = $"retornar para tela inicial"
 @onready var botao_controles: Button = $"TextureRect/Menu Abas/botao_controles"
 @onready var botao_configuracoes: Button = $"TextureRect/Menu Abas/botao_configuracoes"
-
-
+@onready var botaoAba= preload("res://UI/botaoAbaPause.tres")
+@onready var botaoAba_naoSelecionado=preload("res://UI/MenuAbaPause_naoselecionado.tres")
 
 
 func atualizar() -> void:
@@ -46,25 +46,25 @@ func _on_receita_pressed() -> void:
 	receita_miolo.texture=load(caminho_receita.caminho.replace("briefing","pause"))
 	receita_miolo.show()
 	retornar_para_tela_inicial.hide()
-	botao_controles.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))
-	botao_configuracoes.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))
-	botao_briefing.set_theme(load("res://UI/botaoAbaPause.tres"))
+	botao_controles.set_theme(botaoAba_naoSelecionado)
+	botao_configuracoes.set_theme(botaoAba_naoSelecionado)
+	botao_briefing.set_theme(botaoAba)
 
-#abre a aba de controles 
+#abre a aba de controles
 func _on_control_pressed() -> void:
 	var caminho_receita=ControleDeFase.nivel_atual.caminhos_briefing.filter(
 		func(c): return c.nome==ControleDeFase.receita_selecionada.nome)[0]
 	receita_miolo.texture=load("res://Recursos/Graficos/UI/Briefing/pause-tutorial-controles.svg")
 	receita_miolo.show()
 	retornar_para_tela_inicial.hide()
-	botao_controles.set_theme(load("res://UI/botaoAbaPause.tres"))
-	botao_configuracoes.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))
-	botao_briefing.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))
+	botao_controles.set_theme(botaoAba)
+	botao_configuracoes.set_theme(botaoAba_naoSelecionado)
+	botao_briefing.set_theme(botaoAba_naoSelecionado)
 
-#abre a aba de configurações 
+#abre a aba de configurações
 func _on_config_pressed() -> void:
 	receita_miolo.hide()
-	botao_briefing.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))
-	botao_controles.set_theme(load("res://UI/MenuAbaPause_naoselecionado.tres"))
-	botao_configuracoes.set_theme(load("res://UI/botaoAbaPause.tres"))
+	botao_briefing.set_theme(botaoAba_naoSelecionado)
+	botao_controles.set_theme(botaoAba_naoSelecionado)
+	botao_configuracoes.set_theme(botaoAba)
 	retornar_para_tela_inicial.show()
