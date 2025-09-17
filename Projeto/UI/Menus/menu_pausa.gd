@@ -23,7 +23,6 @@ func atualizar() -> void:
 	else:
 		_on_control_pressed()
 		botao_briefing.hide()
-		
 
 
 # essa função despausa o jogo
