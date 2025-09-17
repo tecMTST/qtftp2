@@ -141,7 +141,7 @@ func _verificar_condicoes():
 	elif tempo_jogo.is_stopped() and nivel_atual.tempo != TEMPO_INFINITO:
 		_encerrar_nivel_falha()
 		print_debug("Nível falhou")
-	elif estado_nivel.choro_limite():
+	elif estado_nivel.choro_limite() or estado_nivel.fila_limite():
 		_encerrar_nivel_falha()
 		print_debug("Nível falhou")
 	elif estado_nivel.completo():
