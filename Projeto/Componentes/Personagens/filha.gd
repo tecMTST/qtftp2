@@ -85,8 +85,9 @@ func select_new_waypoint():
 
 func spawn_bagunca():
 	if bagunca_scene and target:
-		var bagunca = bagunca_scene.instantiate()
+		var bagunca = bagunca_scene.instantiate() as Node2D
 		bagunca.global_position = global_position
+		bagunca.z_index = 4
 		get_tree().current_scene.add_child(bagunca)
 
 func _ir_comer(_prato) -> void:

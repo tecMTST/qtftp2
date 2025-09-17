@@ -1,19 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxisooqckxyia"]
+[gd_scene load_steps=9 format=3 uid="uid://dxisooqckxyia"]
 
 [ext_resource type="Script" uid="uid://devfsntvvhdkr" path="res://Componentes/Bagunça/bagunca_cena.gd" id="1_jqi74"]
-[ext_resource type="Texture2D" uid="uid://cnva0fw1epbgd" path="res://Recursos/Graficos/Bagunca/Bagunca.svg" id="1_kvyup"]
+[ext_resource type="Texture2D" uid="uid://cm1aeymk1r000" path="res://Recursos/Graficos/Bagunca/lixo1.svg" id="2_36i6j"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_h13so"]
+[ext_resource type="Texture2D" uid="uid://0x2l5f6yj6a2" path="res://Recursos/Graficos/Bagunca/lixo2.svg" id="3_mavke"]
+[ext_resource type="Texture2D" uid="uid://cyueyjxrn0b7s" path="res://Recursos/Graficos/Bagunca/lixo3.svg" id="4_yokdg"]
+[ext_resource type="Texture2D" uid="uid://cn4fnnht3u7l0" path="res://Recursos/Graficos/Bagunca/lixo4.svg" id="5_m5wlx"]
+[ext_resource type="Texture2D" uid="uid://cdag7wf1yvgmw" path="res://Recursos/Graficos/Bagunca/lixo5.svg" id="6_6cjgu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvyup"]
 size = Vector2(35, 41)
 
 [node name="BaguncaCena" type="Node2D" groups=["bagunca", "interagivel"]]
 script = ExtResource("1_jqi74")
+baguncas = Array[Texture2D]([ExtResource("2_36i6j"), ExtResource("3_mavke"), ExtResource("4_yokdg"), ExtResource("5_m5wlx"), ExtResource("6_6cjgu")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 5
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_kvyup")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_mavke")
 
 [node name="Area2D" type="Area2D" parent="."]
 

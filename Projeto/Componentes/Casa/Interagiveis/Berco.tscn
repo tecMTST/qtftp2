@@ -1,43 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjqpfs867y0in"]
+[gd_scene load_steps=9 format=3 uid="uid://cjqpfs867y0in"]
 
 [ext_resource type="Script" uid="uid://cc1rqfgoty0vw" path="res://Componentes/Casa/Interagiveis/berco.gd" id="1_408qi"]
 [ext_resource type="Texture2D" uid="uid://687eow50aj7w" path="res://Recursos/Graficos/Interagiveis/Berço.svg" id="2_tnk6n"]
 [ext_resource type="Texture2D" uid="uid://dwhconcu8ehsu" path="res://Recursos/Graficos/Interagiveis/Mobile.svg" id="3_r71e4"]
-[ext_resource type="Texture2D" uid="uid://dgrn83q2w2ial" path="res://Recursos/Graficos/Personagens/lucasVetorCores1.svg" id="4_jejg1"]
+[ext_resource type="PackedScene" uid="uid://x3x4hdetf5a8" path="res://Componentes/Personagens/rigs/lucas_rig_dessat.tscn" id="4_jejg1"]
 [ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="4_r71e4"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="5_nrlxa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82xuh"]
 size = Vector2(144, 258)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kdkb0"]
-atlas = ExtResource("4_jejg1")
-region = Rect2(0, 0, 844, 1629)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gycvt"]
-atlas = ExtResource("4_jejg1")
-region = Rect2(844, 0, 844, 1629)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vne63"]
-atlas = ExtResource("4_jejg1")
-region = Rect2(1688, 0, 844, 1629)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_81y1e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kdkb0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gycvt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vne63")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrlxa"]
 size = Vector2(182, 303)
@@ -55,10 +26,9 @@ texture = ExtResource("3_r71e4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_82xuh")
 
-[node name="Bebe" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -19)
-scale = Vector2(0.06, 0.06)
-sprite_frames = SubResource("SpriteFrames_81y1e")
+[node name="lucas_rig" parent="." instance=ExtResource("4_jejg1")]
+position = Vector2(-2, -14)
+scale = Vector2(0.255, 0.255)
 
 [node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
 z_index = 99

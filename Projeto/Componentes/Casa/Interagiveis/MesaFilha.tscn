@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqbbdsv41kc8l" path="res://Recursos/Graficos/Interagiveis/Cadeira lateral.svg" id="2_j3b4e"]
 [ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="2_oawju"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_paw2f"]
-[ext_resource type="Texture2D" uid="uid://dmxtex2h0cm00" path="res://Recursos/Graficos/UI/indicador.svg" id="6_0id5j"]
+[ext_resource type="Texture2D" uid="uid://cveybcnysc1p4" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="6_0id5j"]
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="7_ogud8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1ls"]
@@ -61,7 +61,7 @@ position = Vector2(-26, 0)
 [node name="Indicador" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-1.90735e-06, -116)
-scale = Vector2(0.306875, 0.306875)
+scale = Vector2(0.667, 0.667)
 texture = ExtResource("6_0id5j")
 
 [node name="Bouncer" type="Node" parent="Indicador"]
