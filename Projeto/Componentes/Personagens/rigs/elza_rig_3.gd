@@ -6,7 +6,7 @@ var amamentando : bool = false
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var velocidade_animacao = remap(abs(get_parent().velocity.length()),0.0, 600.0, 0.0, 1.0)
 	animation_tree.set("parameters/Velocidade/blend_position", velocidade_animacao)
 	if segurando:
