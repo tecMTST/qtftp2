@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://ditthu0qbi11r"]
+[gd_scene load_steps=13 format=3 uid="uid://ditthu0qbi11r"]
 
 [ext_resource type="Script" uid="uid://cppc6bykchl1o" path="res://UI/Menus/tela_opcoes.gd" id="1_3s4su"]
-[ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://Recursos/Fontes/Byorg.ttf" id="1_navy5"]
+[ext_resource type="FontFile" uid="uid://ck6c6ppwbb03j" path="res://Recursos/Fontes/SourGummy-Bold.ttf" id="2_e8qgh"]
 [ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://Scripts/UI/controle_audio.gd" id="3_7iw6h"]
 [ext_resource type="Theme" uid="uid://beco18cn8vfan" path="res://UI/tema_botoes.tres" id="3_g8ynp"]
+[ext_resource type="FontFile" uid="uid://dgsx8f04jvfhg" path="res://Recursos/Fontes/SourGummy-Regular.ttf" id="3_xajug"]
 [ext_resource type="Texture2D" uid="uid://dla2uplg4nb81" path="res://Recursos/Graficos/UI/audio_on.png" id="4_npvpo"]
 [ext_resource type="Script" uid="uid://dm4f0ou5bp74p" path="res://Scripts/UI/mute.gd" id="4_pay61"]
 [ext_resource type="Texture2D" uid="uid://bkjng6bmdiln1" path="res://Recursos/Graficos/UI/audio_off.png" id="5_2153d"]
@@ -44,7 +45,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(8.18223e-07, 0.592554, 0.198757, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_navy5")
+theme_override_fonts/font = ExtResource("2_e8qgh")
 theme_override_font_sizes/font_size = 30
 text = "Opções do jogo"
 
@@ -55,6 +56,8 @@ offset_top = 80.0
 offset_right = 389.0
 offset_bottom = 103.0
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_xajug")
+theme_override_font_sizes/font_size = 22
 text = "Volume"
 
 [node name="controle_audio" type="HSlider" parent="."]
@@ -63,9 +66,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -105.0
-offset_top = 110.0
+offset_top = 115.0
 offset_right = 105.0
-offset_bottom = 126.0
+offset_bottom = 131.0
 grow_horizontal = 2
 tooltip_text = "Volume principal "
 theme_override_constants/center_grabber = 0
@@ -79,7 +82,7 @@ value = 1.0
 script = ExtResource("3_7iw6h")
 audio_bus_name = "Master"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,6 +99,8 @@ size_flags_vertical = 0
 [node name="silenciar" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_xajug")
+theme_override_font_sizes/font_size = 22
 text = "Silenciar"
 
 [node name="mute" type="CheckButton" parent="MarginContainer/VBoxContainer"]
@@ -112,10 +117,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.5
-offset_top = -360.0
-offset_right = 27.5
-offset_bottom = -320.0
+offset_left = -47.5
+offset_top = -280.0
+offset_right = 47.5
+offset_bottom = -233.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -124,7 +129,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_g8ynp")
-theme_override_fonts/font = ExtResource("1_navy5")
+theme_override_fonts/font = ExtResource("2_e8qgh")
 theme_override_font_sizes/font_size = 30
 text = "Voltar"
 

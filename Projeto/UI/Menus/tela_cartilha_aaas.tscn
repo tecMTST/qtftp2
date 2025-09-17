@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://mct2gjtbyl0y" path="res://Recursos/Graficos/UI/aaas.png" id="1_45fkf"]
 [ext_resource type="Script" uid="uid://ctig4kbgv0xcx" path="res://UI/Menus/tela_cartilha_aaas.gd" id="1_pod33"]
-[ext_resource type="FontFile" uid="uid://bhxa2qeqgdl2x" path="res://Recursos/Fontes/Alphakind.otf" id="2_1yb4q"]
-[ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://Recursos/Fontes/Byorg.ttf" id="3_ajn4s"]
 [ext_resource type="Theme" uid="uid://beco18cn8vfan" path="res://UI/tema_botoes.tres" id="3_pslu7"]
+[ext_resource type="FontFile" uid="uid://ck6c6ppwbb03j" path="res://Recursos/Fontes/SourGummy-Bold.ttf" id="4_ect2l"]
+[ext_resource type="FontFile" uid="uid://dgsx8f04jvfhg" path="res://Recursos/Fontes/SourGummy-Regular.ttf" id="5_4oof2"]
 
 [node name="CartilhaAAAS" type="Node2D"]
 script = ExtResource("1_pod33")
@@ -48,8 +48,8 @@ grow_vertical = 0
 [node name="voltar" type="Button" parent="CenterContainer4"]
 layout_mode = 2
 theme = ExtResource("3_pslu7")
-theme_override_fonts/font = ExtResource("3_ajn4s")
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("4_ect2l")
+theme_override_font_sizes/font_size = 35
 text = "Voltar"
 
 [node name="CenterContainer2" type="VBoxContainer" parent="."]
@@ -65,7 +65,7 @@ theme_override_constants/separation = -85
 clip_contents = true
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_1yb4q")
+theme_override_fonts/font = ExtResource("5_4oof2")
 theme_override_font_sizes/font_size = 20
 text = "Para mais informações sobre o trabalho da  
 Aliança pela Alimentação Adequada e Saudável, visite o site abaixo:"
@@ -75,7 +75,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_1yb4q")
+theme_override_fonts/font = ExtResource("5_4oof2")
 theme_override_font_sizes/font_size = 24
 text = "https://alimentacaosaudavel.org.br
 "
@@ -94,7 +94,7 @@ theme_override_constants/separation = -88
 clip_contents = true
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_1yb4q")
+theme_override_fonts/font = ExtResource("4_ect2l")
 theme_override_font_sizes/font_size = 36
 text = "Baixar a cartilha:"
 horizontal_alignment = 1
@@ -103,9 +103,9 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_1yb4q")
+theme_override_fonts/font = ExtResource("5_4oof2")
 theme_override_font_sizes/font_size = 32
-text = "Cartilha AAAS"
+text = "-> Cartilha AAAS <-"
 underline = 2
 
 [connection signal="pressed" from="CenterContainer4/voltar" to="." method="_on_voltar_pressed"]

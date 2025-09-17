@@ -14,8 +14,7 @@ func _ready() -> void:
 	modal_title_label.text = estado_nivel.motivo()
 	pratos_value.text = str(estado_nivel.pratos_entregues.size())
 	bagunca_value.text = str(estado_nivel.bagunca)
-	await get_tree().create_timer(4).timeout
-	get_tree().change_scene_to_file("res://Cenas/fim_demo.tscn")
+
 
 
 func _on_botao_jogar_button_down() -> void:
