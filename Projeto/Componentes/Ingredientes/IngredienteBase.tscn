@@ -17,10 +17,11 @@ position = Vector2(4.76837e-07, 2.38419e-07)
 scale = Vector2(0.07, 0.07)
 
 [node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
-position = Vector2(20, -20)
+position = Vector2(0, -56)
 script = ExtResource("3_nn7td")
 temporizador = NodePath("../Timer")
 radius = 30.0
+cor = Color(0.278431, 0.54902, 0.74902, 0.75)
 metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
 
 [node name="Timer" type="Timer" parent="."]

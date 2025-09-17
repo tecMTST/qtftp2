@@ -12,6 +12,7 @@ enum ControlPosition {
 @export var ControlsColor : Color = Color.from_rgba8(0,0,0,128) 
 @export var CircleTexture : Texture2D = preload("res://addons/analog_touch_control/images/Circle.svg")
 @export var KnobTexture : Texture2D = preload("res://addons/analog_touch_control/images/Dot.svg")
+@export var RestPosition : Node2D
 
 @export_category("Input")
 @export var Deadzone : float = 15
@@ -39,7 +40,10 @@ func _input(event: InputEvent) -> void:
 				visible = true
 				knob.pressing = true
 			if event.is_released():
-				visible = false
+				if not RestPosition:
+					visible = false
+				else:
+					position = RestPosition.global_position
 				knob.pressing = false
 		elif event is InputEventMouseButton:
 			if event.is_pressed():			
@@ -47,7 +51,10 @@ func _input(event: InputEvent) -> void:
 				visible = true				
 				knob.pressing = true
 			if event.is_released():						
-				visible = false	
+				if not RestPosition:
+					visible = false
+				else:
+					position = RestPosition.global_position
 				knob.pressing = false	
 		
 
@@ -72,9 +79,18 @@ func _ready() -> void:
 	knob.modulate = ControlsColor
 	if PositionType == ControlPosition.OnTouch:
 		visible = false
+	if RestPosition:
+		visible = true
+		position = RestPosition.global_position
 		
 func _process(delta: float) -> void:
-	
+	if get_tree().paused:
+		if PositionType == ControlPosition.OnTouch:
+			visible = false
+		if RestPosition:
+			visible = true
+			position = RestPosition.global_position
+		return
 	up_event.strength = 0
 	up_event.pressed = false
 	down_event.strength = 0
