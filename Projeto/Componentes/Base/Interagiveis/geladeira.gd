@@ -19,6 +19,7 @@ func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("geladeira")
 
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
+	if ControleDeFase.passo_atual.alvo != "geladeira": return
 	if(
 		!jogador.esta_agarrando # não pode abrir geladeira segurando coisas
 		and (!geladeira_aberta || !is_instance_valid(geladeira_aberta)) # nem com geladeira aberta

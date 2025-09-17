@@ -53,11 +53,29 @@ func _input(event: InputEvent) -> void:
 		acao_executando = true
 	elif Input.is_action_just_released("action") and acao_executando:
 		acao_executando = false
+	_trapaceia(event)
 
-	# FIXME: remover (cheat para trocar de receita)
-	if event is InputEventKey and event.is_pressed() \
-	and not event.is_echo() and event.keycode == KEY_K:
-		ControleDeFase.trapaca_muda_receita()
+
+func _trapaceia(evento: InputEvent) -> void:
+	if !(evento is InputEventKey and evento.is_pressed() and not evento.is_echo()): return
+	match evento.keycode:
+		KEY_K:
+			ControleDeFase.trapaca_muda_receita()
+		KEY_J:
+			ControleDeFase._encerrar_nivel()
+		KEY_1:
+			var fila = get_node("/root/CozinhaSolidaria/EntregaNaFila1/Fila")
+			if is_instance_valid(fila): fila.adiciona_pessoa_na_fila()
+		KEY_2:
+			var fila = get_node("/root/CozinhaSolidaria/EntregaNaFila1/Fila")
+			if is_instance_valid(fila): fila.remove_pessoa_da_fila()
+		KEY_3:
+			var fila = get_node("/root/CozinhaSolidaria/EntregaNaFila2/Fila")
+			if is_instance_valid(fila): fila.adiciona_pessoa_na_fila()
+		KEY_4:
+			var fila = get_node("/root/CozinhaSolidaria/EntregaNaFila1/Fila")
+			if is_instance_valid(fila): fila.remove_pessoa_da_fila()
+
 
 func eliminar_ingrediente() -> void:
 	esta_agarrando = false
