@@ -21,17 +21,16 @@ func _ready():
 	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
 		sprite.sentada = true
 		return
-	else:
-		bt_player.active = true
-		sprite.sentada = false
-		ControleDeFase.prato_entregue.connect(_ir_comer)
-		visualizador_percentual.valor = 0
+	bt_player.active = true
+	sprite.sentada = false
+	ControleDeFase.prato_entregue.connect(_ir_comer)
+	visualizador_percentual.valor = 0
 
 func _process(delta):
 	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
 		return
-		
-	if not (target and global_position.distance_to(target.global_position) < agent.target_desired_distance):
+	if not (target and global_position.distance_to(target.global_position) \
+	< agent.target_desired_distance):
 		move_along_path(delta)
 	visualizador_percentual.valor_maximo = ControleDeFase.estado_nivel.limite_bagunca
 	visualizador_percentual.valor = ControleDeFase.estado_nivel.bagunca
@@ -41,7 +40,7 @@ func _process(delta):
 func mover():
 	target = null
 	sprite.celular = false
-	sprite.sentada = false	
+	sprite.sentada = false
 	await get_tree().create_timer(1.0).timeout
 	select_new_waypoint()
 

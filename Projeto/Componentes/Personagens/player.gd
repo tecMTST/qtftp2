@@ -55,7 +55,8 @@ func _input(event: InputEvent) -> void:
 		acao_executando = false
 
 	# FIXME: remover (cheat para trocar de receita)
-	if event is InputEventKey and event.is_pressed() and not event.is_echo() and event.keycode == KEY_K:
+	if event is InputEventKey and event.is_pressed() \
+	and not event.is_echo() and event.keycode == KEY_K:
 		ControleDeFase.trapaca_muda_receita()
 
 func eliminar_ingrediente() -> void:

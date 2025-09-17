@@ -40,5 +40,3 @@ func _process(_delta: float) -> void:
 	elif celular and not sentada:
 		animation_tree.set("parameters/Velocidade/blend_position", 0)
 		animation_tree.set("parameters/Sentada/blend_amount", 0)
-
-		
