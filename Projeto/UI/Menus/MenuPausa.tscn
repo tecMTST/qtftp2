@@ -1,7 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr74l6j0jbkx5"]
+[gd_scene load_steps=8 format=3 uid="uid://cr74l6j0jbkx5"]
 
 [ext_resource type="Script" uid="uid://u155yd1j8w7y" path="res://UI/Menus/menu_pausa.gd" id="1_xqg3s"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://TelaInicial/controle_audio.gd" id="2_4oqih"]
+=======
+[ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://Scripts/UI/controle_audio.gd" id="2_4oqih"]
+[ext_resource type="FontFile" uid="uid://ck6c6ppwbb03j" path="res://Recursos/Fontes/SourGummy-Bold.ttf" id="2_im0bb"]
+[ext_resource type="FontFile" uid="uid://dgsx8f04jvfhg" path="res://Recursos/Fontes/SourGummy-Regular.ttf" id="4_hu2ln"]
+>>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_im0bb"]
 color = Color(1, 1, 1, 1)
@@ -47,6 +53,7 @@ theme_override_constants/separation = 15
 [node name="volume2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_im0bb")
 theme_override_font_sizes/font_size = 25
 text = "Volume"
 
@@ -67,18 +74,32 @@ audio_bus_name = "Master"
 [node name="continuar" type="Button" parent="MarginContainer/VBoxContainer"]
 z_index = 20
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hu2ln")
 theme_override_font_sizes/font_size = 25
 text = "Continuar"
 
+<<<<<<< Updated upstream
 [node name="retornar à tela inicial" type="Button" parent="MarginContainer/VBoxContainer"]
+=======
+[node name="botao_briefing" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 20
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hu2ln")
+theme_override_font_sizes/font_size = 25
+text = "Briefing"
+
+[node name="retornar para tela inicial" type="Button" parent="MarginContainer/VBoxContainer"]
+>>>>>>> Stashed changes
 z_index = 16
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hu2ln")
 theme_override_font_sizes/font_size = 25
 text = "Voltar à tela inicial"
 
 [node name="sair" type="Button" parent="MarginContainer/VBoxContainer"]
 z_index = 16
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_hu2ln")
 theme_override_font_sizes/font_size = 25
 text = "Sair do jogo"
 
