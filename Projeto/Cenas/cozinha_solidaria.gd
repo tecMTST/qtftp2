@@ -16,8 +16,8 @@ func _ready() -> void:
 	ControleDeFase.iniciar_nivel()
 	ControleDeFase.prato_entregue.connect(_prato_entregue)
 	ControleDeFase.cena_final.connect(_fim_cena)
+	SaveService.SaveGame()
 	pausar.hide()
-	save_agent.SaveSceneData()
 	briefing.iniciar()
 
 func _on_player_acao_ativada() -> void:

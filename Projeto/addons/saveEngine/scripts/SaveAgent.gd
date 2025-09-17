@@ -66,12 +66,12 @@ func SaveSceneData(auto = false):
 	
 	var persistentNodes = get_tree().get_nodes_in_group(SaveService.PERSISTENCE_GROUP)
 	for persistent in persistentNodes:
-		sceneData.SceneNodes.append(persistent.Serialize())	
+		sceneData.SceneNodes.append(persistent.Serialize())
 		
 	if SaveService.CurrentLoadedSlot.ScenesData.any(func(item: SaveFileScene) : return item.ScenePath == parent.scene_file_path):		
 		var currentIndex = SaveService.CurrentLoadedSlot.ScenesData.find(SaveService.CurrentLoadedSlot.ScenesData.filter(func(item: SaveFileScene) : return item.ScenePath == parent.scene_file_path)[0])
 		SaveService.CurrentLoadedSlot.ScenesData.remove_at(currentIndex)
-	SaveService.CurrentLoadedSlot.ScenesData.append(sceneData)	
+	SaveService.CurrentLoadedSlot.ScenesData.append(sceneData)
 	SaveService.SaveGame()
 	
 	await SaveService.saveCompleted

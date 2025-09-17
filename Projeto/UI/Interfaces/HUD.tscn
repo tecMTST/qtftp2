@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://objc5v4kvd50"]
+[gd_scene load_steps=7 format=3 uid="uid://objc5v4kvd50"]
 
 [ext_resource type="Script" uid="uid://bl8fuivc5ww82" path="res://UI/Interfaces/hud.gd" id="1_p5xxs"]
+[ext_resource type="Texture2D" uid="uid://5xrp5aa21tey" path="res://Recursos/Graficos/UI/Componentes/display_timer/display_timer_base.svg" id="2_pbqt0"]
+[ext_resource type="Texture2D" uid="uid://lxhr1jw4pdlk" path="res://Recursos/Graficos/UI/Componentes/display_prato/display_prato_base.svg" id="2_tehyh"]
+[ext_resource type="Texture2D" uid="uid://dfwrmgfsm3yik" path="res://Recursos/Graficos/UI/Componentes/display_prato/display_prato_pill_2_digitos.svg" id="3_5nhkk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5xxs"]
 bg_color = Color(0.93845, 0.93845, 0.93845, 1)
@@ -13,14 +16,6 @@ border_color = Color(0.241156, 0.241156, 0.241156, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_tehyh"]
 font_size = 32
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tehyh"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.75961, 0.100786, 0.354457, 1)
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -36,80 +31,59 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -174.0
-offset_top = 30.0
-offset_right = -33.0
-offset_bottom = 96.0
+offset_left = -161.0
+offset_top = 15.0
+offset_right = -20.0
+offset_bottom = 81.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_p5xxs")
 
-[node name="MarginContainer" type="MarginContainer" parent="Tempo"]
+[node name="TextureRect" type="TextureRect" parent="Tempo"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+texture = ExtResource("2_pbqt0")
 
-[node name="TempoLabel" type="Label" parent="Tempo/MarginContainer"]
+[node name="TempoLabel" type="Label" parent="Tempo"]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -23.0
+offset_right = 60.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 1
 text = "--:--"
 label_settings = SubResource("LabelSettings_tehyh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 100.0
-offset_top = 45.0
-offset_right = 140.0
-offset_bottom = 85.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="PratosEntreguesLabel" type="Label" parent="Panel"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "-/-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="ReceitaAtual" type="Control" parent="."]
-clip_contents = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -50.0
-offset_top = 15.0
-offset_right = 50.0
-offset_bottom = 115.0
-grow_horizontal = 2
+anchors_preset = 0
+offset_left = 21.0
+offset_top = 21.0
+offset_right = 192.0
+offset_bottom = 121.0
 
-[node name="Panel" type="Panel" parent="ReceitaAtual"]
+[node name="TextureRect" type="TextureRect" parent="ReceitaAtual"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tehyh")
+texture = ExtResource("2_tehyh")
 
 [node name="TexturaReceita" type="TextureRect" parent="ReceitaAtual"]
 layout_mode = 1
@@ -126,3 +100,31 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 3
 stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 98.0
+offset_bottom = 47.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_5nhkk")
+
+[node name="PratosEntreguesLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "-/-"
+horizontal_alignment = 1
+vertical_alignment = 1

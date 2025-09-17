@@ -4,9 +4,9 @@ var timer_choro: float = 0
 var iniciado: bool = false
 var choro_ativo: bool = false
 
-@onready var bebe: AnimatedSprite2D = $Bebe
 @onready var timer: Timer = $Timer
 @onready var visualizador_temporal: VisualizadorTemporal = $VisualizadorTemporal
+@onready var lucas_rig: LucasRig = $lucas_rig
 
 
 func _ready() -> void:
@@ -15,6 +15,8 @@ func _ready() -> void:
 		return
 	resetar_timer()
 	iniciado = true
+	lucas_rig.choramingando = false
+	lucas_rig.chorando = false
 
 
 func _process(delta: float) -> void:
@@ -30,26 +32,20 @@ func _process(delta: float) -> void:
 	if timer_choro <= 0:
 		iniciar_choro()
 
-
 func iniciar_mexer():
-	bebe.frame = 1
-	print_debug('mechendo')
-
-
-func animacao_choro():
-	bebe.frame = 2
-	print_debug('choro')
+	lucas_rig.choramingando = true
 
 
 func iniciar_choro():
-	bebe.frame = 2
+	lucas_rig.chorando = true
 	choro_ativo = true
 	timer.start(ControleDeFase.nivel_atual.tempo_limite_choro)
 	ControleDeAudio.toca_efeito_ciclo("bebe_chorando", "bebe_chorando")
 
 
 func finalizar_choro():
-	bebe.frame = 0
+	lucas_rig.choramingando = false
+	lucas_rig.chorando = false
 	choro_ativo = false
 	timer.stop()
 	ControleDeAudio.para_efeito_ciclo("bebe_chorando")

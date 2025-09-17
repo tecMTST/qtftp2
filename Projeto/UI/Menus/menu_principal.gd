@@ -18,6 +18,8 @@ func _ready() -> void:
 #ao clicar em jogar deveria ir direto para a tela de cenas iniciais do jogo.
 func _on_jogar_pressed() -> void:
 	SaveService.DeleteSlot(Constantes.ID_SALVAR)
+	SaveService.NewSlot(Constantes.ID_SALVAR)
+	SaveService.LoadGame(Constantes.ID_SALVAR)
 	get_tree().change_scene_to_file(Globais.niveis[0].local)
 
 #ao clicar vai para a tela de opções do jogo
@@ -32,5 +34,5 @@ func _on_sair_pressed() -> void:
 	get_tree().quit()
 
 func _on_continuar_pressed() -> void:
-	SaveService.LoadGame(jogo_salvo.SlotId)
-	get_tree().change_scene_to_file(jogo_salvo.CurrentSceneId)
+	SaveService.LoadGame(Constantes.ID_SALVAR)
+	get_tree().change_scene_to_file(EstadoDeJogo.cena_atual)

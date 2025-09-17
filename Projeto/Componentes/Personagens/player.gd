@@ -15,10 +15,10 @@ var objeto_agarrado: IngredienteBase:
 		objeto_agarrado = valor
 
 @onready var animation_tree: AnimationTree = $AnimationTree
-@onready var gambiarra_centralizar: Sprite2D = $GambiarraCentralizar
 @onready var top_down_controler_2d: TopDownControler2D = $TopDownControler2D
 @onready var pivo_acao: Node2D = $PivoAcao
 @onready var posicao_objeto = $PosicaoObjeto
+@onready var elza_rig: ElzaRig = $"elza rig"
 
 
 func ao_transformar_objeto_agarrado(novo_objeto: IngredienteBase):
@@ -36,17 +36,15 @@ func _physics_process(delta: float) -> void:
 			sfx_timer = sfx_intervalo_passada
 	else:
 		sfx_timer = 0.0
-
-	var velocidade_animacao = remap(abs(velocity.length()),0.0, 600.0, 0.0, 1.0)
-	animation_tree.set("parameters/Velocidade/blend_position", velocidade_animacao)
+	elza_rig.segurando = esta_agarrando
 
 	var velocidade = velocity.x
 	rotacao(delta)
 	if velocidade > 0:
-		gambiarra_centralizar.flip_h = true
+		elza_rig.scale.x = -abs(elza_rig.scale.x)
 		posicao_objeto.position.x = abs(posicao_objeto.position.x)
 	elif velocidade < 0:
-		gambiarra_centralizar.flip_h = false
+		elza_rig.scale.x = abs(elza_rig.scale.x)
 		posicao_objeto.position.x = -abs(posicao_objeto.position.x)
 
 
@@ -57,7 +55,8 @@ func _input(event: InputEvent) -> void:
 		acao_executando = false
 
 	# FIXME: remover (cheat para trocar de receita)
-	if event is InputEventKey and event.is_pressed() and not event.is_echo() and event.keycode == KEY_K:
+	if event is InputEventKey and event.is_pressed() \
+	and not event.is_echo() and event.keycode == KEY_K:
 		ControleDeFase.trapaca_muda_receita()
 
 func eliminar_ingrediente() -> void:
@@ -113,6 +112,8 @@ func soltar():
 	objeto_agarrado.get_node("CollisionShape2D").disabled = false
 	esta_agarrando = false
 
+func ajuntar():
+	elza_rig.ajuntar()
 
 func ativar():
 	top_down_controler_2d.Active = true

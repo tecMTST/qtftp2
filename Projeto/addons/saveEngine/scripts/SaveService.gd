@@ -83,7 +83,7 @@ func SaveGame(autoSetCurrentScene = true) -> bool:
 	CurrentLoadedSlot.DateTime = Time.get_datetime_dict_from_system()	
 	CurrentLoadedSlot.GameTime = CurrentLoadedSlot.GameTime + (Time.get_unix_time_from_system() - CurrentLoadedSlot.LastTime)
 	CurrentLoadedSlot.LastTime = Time.get_unix_time_from_system()	
-	if autoSetCurrentScene:
+	if autoSetCurrentScene && get_tree().current_scene:
 		CurrentLoadedSlot.CurrentSceneId = get_tree().current_scene.scene_file_path
 	CurrentLoadedSlot.Hash = ""	
 	var serialized = __SerializeSaveFile(CurrentLoadedSlot)

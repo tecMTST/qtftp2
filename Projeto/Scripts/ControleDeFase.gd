@@ -55,7 +55,7 @@ func carregar_nivel():
 					receitas_disponiveis.append(receita)
 					break
 		selecionar_proxima_receita()
-
+	EstadoDeJogo.cena_atual = nivel_atual.local
 	jogador = NodeExtension.find_first_child(
 		get_tree().current_scene,
 		func(child): return child is Player
@@ -182,7 +182,8 @@ func _abrir_proximo_nivel():
 	)
 	if len(niveis) > 0: nivel_atual = niveis[0]
 	get_tree().paused = false
-	get_tree().change_scene_to_file(nivel_atual.local)
+	EstadoDeJogo.cena_atual = nivel_atual.local
+	get_tree().change_scene_to_file(EstadoDeJogo.cena_atual)
 
 func _reset_timers() -> void:
 	if not tempo_jogo.is_stopped():
