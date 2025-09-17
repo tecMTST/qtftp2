@@ -49,10 +49,6 @@
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
-				"nome": "controles",
-				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
-			},
-			{
 				"nome": "chorobebe",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase1-chorobebe.svg"
 			},
@@ -92,10 +88,6 @@
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
-				"nome": "controles",
-				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
-			},
-			{
 				"nome": "Macarrão Instantâneo",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase2-macarraoinstantaneo.svg"
 			},
@@ -131,10 +123,6 @@
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
-				"nome": "controles",
-				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
-			},
-			{
 				"nome": "fome",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase3.svg"
 			}
@@ -165,10 +153,6 @@
 		"id_receitas" : [5,7,8,9],
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
-			{
-				"nome": "controles",
-				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
-			},
 			{
 				"nome": "filadupla",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase4-filadupla.svg"
@@ -216,10 +200,6 @@
 		"id_receitas" : [1,2,1,2],
 		"ordem_aleatoria": false,
 		"caminhos_briefing": [
-			{
-				"nome": "controles",
-				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-tutorial-controles.svg"
-			},
 			{
 				"nome": "Arroz Cozido",
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase5-arroz.svg"

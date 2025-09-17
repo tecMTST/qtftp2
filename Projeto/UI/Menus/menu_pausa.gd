@@ -17,8 +17,13 @@ signal continuar
 
 func atualizar() -> void:
 	fase.text=ControleDeFase.nivel_atual.nome
-	botao_briefing.icon=load(ControleDeFase.receita_selecionada.caminho_sprite)
-	_on_receita_pressed()
+	if(ControleDeFase.receita_selecionada):
+		botao_briefing.icon=load(ControleDeFase.receita_selecionada.caminho_sprite)
+		_on_receita_pressed()
+	else:
+		_on_control_pressed()
+		botao_briefing.hide()
+		
 
 
 # essa função despausa o jogo
@@ -52,8 +57,6 @@ func _on_receita_pressed() -> void:
 
 #abre a aba de controles
 func _on_control_pressed() -> void:
-	var caminho_receita=ControleDeFase.nivel_atual.caminhos_briefing.filter(
-		func(c): return c.nome==ControleDeFase.receita_selecionada.nome)[0]
 	receita_miolo.texture=load("res://Recursos/Graficos/UI/Briefing/pause-tutorial-controles.svg")
 	receita_miolo.show()
 	retornar_para_tela_inicial.hide()
