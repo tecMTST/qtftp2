@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128mm"
+   height="27mm"
+   viewBox="0 0 128 27"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="botao_pressionado.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.8355469"
+     inkscape:cx="205.93318"
+     inkscape:cy="64.01362"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1">
+    <clipPath
+       id="clip0_289_9642">
+      <rect
+         width="54"
+         height="98"
+         fill="#ffffff"
+         id="rect4"
+         x="0"
+         y="0" />
+    </clipPath>
+    <mask
+       id="path-1-inside-1_289_9642"
+       fill="#ffffff">
+      <path
+         d="M 8,49 C 8,26.3563 26.3563,8 49,8 h 5 V 90 H 49 C 26.3563,90 8,71.6437 8,49 Z"
+         id="path1-1" />
+    </mask>
+    <clipPath
+       id="clip0_445_8107">
+      <rect
+         width="480"
+         height="220"
+         fill="#ffffff"
+         id="rect4-2"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#clip0_445_8107)"
+     id="g3"
+     transform="matrix(0.26458333,0,0,0.26458333,0.59453822,-32.036374)">
+    <rect
+       x="9"
+       y="131"
+       width="462"
+       height="80"
+       rx="40"
+       fill="#22c7e5"
+       stroke="#000000"
+       stroke-width="2"
+       id="rect3" />
+    <path
+       d="m 42.1653,137.295 c 1.0668,-0.286 2.1633,0.347 2.4492,1.414 0.2858,1.067 -0.3472,2.164 -1.4141,2.449 -4.8415,1.298 -9.3368,3.649 -13.1631,6.887 -3.8262,3.238 -6.8891,7.282 -8.9697,11.842 -0.4585,1.005 -1.6446,1.448 -2.6494,0.989 -1.0049,-0.458 -1.4476,-1.644 -0.9893,-2.649 2.3254,-5.097 5.749,-9.617 10.0254,-13.236 4.2763,-3.618 9.3,-6.246 14.711,-7.696 z"
+       fill="#ffffff"
+       id="path3" />
+  </g>
+</svg>

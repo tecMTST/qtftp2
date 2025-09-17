@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128mm"
+   height="27mm"
+   viewBox="0 0 128 27"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="botao.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2"
+     inkscape:cx="233"
+     inkscape:cy="108.75"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <clipPath
+       id="clip0_289_9630">
+      <rect
+         width="54"
+         height="98"
+         fill="#ffffff"
+         id="rect5"
+         x="0"
+         y="0" />
+    </clipPath>
+    <mask
+       id="path-2-inside-1_289_9630"
+       fill="#ffffff">
+      <path
+         d="M 4,49 C 4,24.1472 24.1472,4 49,4 h 5 V 94 H 49 C 24.1472,94 4,73.8528 4,49 Z"
+         id="path2" />
+    </mask>
+  </defs>
+  <g
+     id="layer1">
+    <rect
+       x="2.1166668"
+       y="2.5135391"
+       width="124.88333"
+       height="23.8125"
+       rx="11.90625"
+       fill="#000000"
+       fill-opacity="0.4"
+       id="rect1"
+       style="stroke-width:0.264583" />
+    <rect
+       x="1.3229162"
+       y="1.7197922"
+       width="124.35416"
+       height="23.283333"
+       rx="11.641666"
+       fill="#70e7fd"
+       stroke="#000000"
+       stroke-width="0.529167"
+       id="rect2" />
+    <path
+       d="m 10.882338,3.421272 c 0.282257,-0.07557 0.572399,0.09213 0.648017,0.374386 0.07559,0.282257 -0.09189,0.572399 -0.374121,0.648043 -1.4316327,0.383593 -2.7608207,1.078918 -3.8922847,2.036287 -1.131464,0.957447 -2.037292,2.153391 -2.652527,3.501866 -0.121338,0.265853 -0.435398,0.383037 -0.701252,0.261752 -0.265853,-0.121338 -0.383064,-0.435398 -0.261752,-0.701251 0.680006,-1.490398 1.681321,-2.81186 2.931874,-3.870061 1.250553,-1.058201 2.719652,-1.827027 4.3020457,-2.251022 z"
+       fill="#ffffff"
+       id="path2-5"
+       style="stroke-width:0.264583" />
+  </g>
+</svg>

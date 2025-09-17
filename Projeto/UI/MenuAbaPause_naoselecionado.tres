@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://egdtqbppy6xr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djaxy"]
+
+[resource]
+Button/styles/hover = null
+Button/styles/normal = SubResource("StyleBoxTexture_djaxy")
+Button/styles/pressed = null
