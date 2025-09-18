@@ -15,6 +15,7 @@ func _on_componente_interagivel_interagir(jogador: Player):
 	if ControleDeFase.passo_atual.alvo != "pia":
 		print_debug("  [-] não é hora de usar a pia")
 		return
+	ControleDeAudio.toca_efeito("hidratar")
 	if jogador.esta_agarrando:
 		var objeto_ingrediente = jogador.objeto_agarrado
 		if objeto_ingrediente.ingrediente.acoes[0].alvo == "pia":
