@@ -75,10 +75,13 @@ func selecionar_proxima_receita() -> bool:
 	)
 	return selecionar_receita_especifica(_indice_receita_atual + 1)
 
+
 func selecionar_receita_aleatoria() -> bool:
 	if(len(receitas_disponiveis)>0):
 		return selecionar_receita_especifica(randi() % receitas_disponiveis.size())
 	return false
+
+
 func selecionar_receita_especifica(indice_receita) -> bool:
 	if not nivel_atual:
 		return false
@@ -155,6 +158,7 @@ func _verificar_condicoes():
 func entregar_prato(prato: Ingrediente) -> void:
 	estado_nivel.entregar_prato(prato)
 	prato_entregue.emit(prato)
+	ControleDeAudio.toca_efeito("alimento_servido")
 
 func _cena_final():
 	cena_final.emit(nivel_atual, estado_nivel)
