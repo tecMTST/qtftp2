@@ -19,6 +19,9 @@ func _on_close_button_button_down() -> void:
 	close()
 
 
+func _on_cortou_alimento() -> void:
+	ControleDeAudio.toca_efeito("cortar")
+
 func _on_failed():
 	Eventos.evento_falhou.emit()
 	var tween = create_tween()

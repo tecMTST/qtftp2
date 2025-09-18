@@ -61,4 +61,5 @@ size_flags_vertical = 8
 texture_normal = ExtResource("2_bsy65")
 stretch_mode = 5
 
+[connection signal="pressed" from="MarginContainer/PanelContainer/BotaoAcao" to="." method="_on_cortou_alimento"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/BotaoAcao" to="MarginContainer/PanelContainer/VBoxContainer/ProgressoEvento/SmashButton" method="press"]

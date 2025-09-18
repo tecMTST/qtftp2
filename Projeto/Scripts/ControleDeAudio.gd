@@ -22,6 +22,10 @@ var biblioteca_de_audio := {
 		"fogao_ligar": preload("res://Recursos/Audio/Efeitos/fogao_ligar.ogg"),
 		"fogao_cozinhando": preload("res://Recursos/Audio/Efeitos/fogao_cozinhando_loop.ogg"),
 		"fogao_alarme": preload("res://Recursos/Audio/Efeitos/fogao_alarme.ogg"),
+		"clique": preload("res://Recursos/Audio/Efeitos/click.ogg"),
+		"hidratar": preload("res://Recursos/Audio/Efeitos/hidratar.ogg"),
+		"pegar_item": preload("res://Recursos/Audio/Efeitos/pegar_item.ogg"),
+		"alimento_servido": preload("res://Recursos/Audio/Efeitos/alimento_servido.ogg"),
 		"passos": [
 			preload("res://Recursos/Audio/Efeitos/passo1.ogg"),
 			preload("res://Recursos/Audio/Efeitos/passo2.ogg"),
@@ -29,10 +33,17 @@ var biblioteca_de_audio := {
 			preload("res://Recursos/Audio/Efeitos/passo4.ogg"),
 			preload("res://Recursos/Audio/Efeitos/passo5.ogg"),
 			preload("res://Recursos/Audio/Efeitos/passo6.ogg"),
-		]
+		],
+		"cortar": [
+			preload("res://Recursos/Audio/Efeitos/cut1.ogg"),
+			preload("res://Recursos/Audio/Efeitos/cut2.ogg"),
+			preload("res://Recursos/Audio/Efeitos/cut3.ogg"),
+			preload("res://Recursos/Audio/Efeitos/cut4.ogg"),
+		],
 	}
 }
 
+var nome_da_faixa_atual: String
 var musica_acelera: bool
 var efeito_de_pitch: AudioEffectPitchShift
 var toca_musica_intro: AudioStreamPlayer
@@ -79,9 +90,11 @@ func toca_musica(nome_da_faixa: String, acelera: bool = true) -> void:
 	musica_acelera = acelera
 	var stream = biblioteca_de_audio["musica"].get(nome_da_faixa)
 	if !stream: return
+	if nome_da_faixa_atual == nome_da_faixa: return
 	para_musica()
 	_prepara_musica_ciclo(stream)
 	toca_musica_ciclo.play()
+	nome_da_faixa_atual = nome_da_faixa
 
 
 func toca_musica_com_intro(nome_intro: String, nome_ciclo: String, acelera: bool = true) -> void:

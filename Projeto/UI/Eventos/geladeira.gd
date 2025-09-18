@@ -59,8 +59,8 @@ func escolhe_ingrediente(ingrediente_escolhido: Ingrediente) -> void:
 			"res://Componentes/Ingredientes/IngredienteBase.tscn"
 		).instantiate()
 		ingrediente.iniciar(ingrediente_escolhido)
-
 		player[0].agarrar(ingrediente)
+		ControleDeAudio.toca_efeito("pegar_item")
 		ControleDeFase.proximo_passo()
 		ingrediente_escolhido = null
 		escolheu_ingrediente.emit()
