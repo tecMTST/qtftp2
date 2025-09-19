@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://x3x4hdetf5a8"]
+[gd_scene load_steps=13 format=3 uid="uid://x3x4hdetf5a9"]
 
 [ext_resource type="Texture2D" uid="uid://de7m4n4afowt2" path="res://Componentes/Personagens/rigs/vetores_spritesheets/nenê1_dessat.svg" id="1_enbtl"]
 [ext_resource type="Texture2D" uid="uid://c2y7yp6sucboc" path="res://Componentes/Personagens/rigs/vetores_spritesheets/nenê1.svg" id="1_owljr"]
