@@ -78,19 +78,11 @@ func _ready() -> void:
 		toca_efeitos.append(tocador)
 
 
-func volume_da_musica(volume: float) -> void:
-	_ajusta_volume_do_barramento("Musica", volume)
-
-
-func volume_de_efeitos(volume: float) -> void:
-	_ajusta_volume_do_barramento("Efeitos", volume)
-
-
 func toca_musica(nome_da_faixa: String, acelera: bool = true) -> void:
 	musica_acelera = acelera
 	var stream = biblioteca_de_audio["musica"].get(nome_da_faixa)
 	if !stream: return
-	#if nome_da_faixa_atual == nome_da_faixa: return
+	if nome_da_faixa_atual == nome_da_faixa: return
 	para_musica()
 	_prepara_musica_ciclo(stream)
 	toca_musica_ciclo.play()
@@ -187,6 +179,14 @@ func _encontra_tocador_disponivel() -> int:
 	return -1
 
 
+func volume_da_musica(volume: float) -> void:
+	_ajusta_volume_do_barramento("Musica", volume)
+
+
+func volume_de_efeitos(volume: float) -> void:
+	_ajusta_volume_do_barramento("Efeitos", volume)
+
+
 func _ajusta_volume_do_barramento(nome_do_barramento: String, volume: float) -> void:
 	var indice_do_barramento = AudioServer.get_bus_index(nome_do_barramento)
 	print_debug("Ajustando ", nome_do_barramento, " para ", volume)
@@ -195,7 +195,8 @@ func _ajusta_volume_do_barramento(nome_do_barramento: String, volume: float) -> 
 
 
 func _on_value_changed(new_value: float) -> void:
-	ControleDeAudio.volume_da_musica(new_value)
+	volume_da_musica(new_value)
+
 
 func _on_value_changed_sfx(new_value: float) -> void:
-	ControleDeAudio.volume_de_efeitos(new_value)
+	volume_de_efeitos(new_value)
