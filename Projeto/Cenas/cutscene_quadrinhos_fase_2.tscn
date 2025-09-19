@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8akackk4unui"]
+[gd_scene load_steps=15 format=3 uid="uid://b8akackk4unui"]
 
 [ext_resource type="Script" uid="uid://bfvf214mhvl7c" path="res://Scripts/Cutscenes/CutsceneQuadrinhos.gd" id="1_u8plq"]
 [ext_resource type="Script" uid="uid://dxcd21ohsu4ga" path="res://Scripts/Cutscenes/Quadrinho.gd" id="2_c5qlf"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="11_6b1t2"]
 [ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="12_kdtj6"]
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="13_a0b26"]
+[ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="14_c5qlf"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("lista_quadrinhos")]
 layout_mode = 3
@@ -131,5 +132,7 @@ theme = ExtResource("13_a0b26")
 text = "Avançar"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TransicaoCena" parent="." instance=ExtResource("14_c5qlf")]
 
 [connection signal="pressed" from="Avancar" to="." method="_on_input_action_pressed"]

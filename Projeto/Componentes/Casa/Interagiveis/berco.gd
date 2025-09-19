@@ -6,7 +6,7 @@ var choro_ativo: bool = false
 
 @onready var timer: Timer = $Timer
 @onready var visualizador_temporal: VisualizadorTemporal = $VisualizadorTemporal
-@onready var lucas_rig: LucasRig = $lucas_rig
+@onready var lucas_rig: LucasRigDessat = $lucas_rig_dessat
 
 
 func _ready() -> void:

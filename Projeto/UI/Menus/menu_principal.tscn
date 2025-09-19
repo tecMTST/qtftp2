@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsi1hrb4is74n"]
+[gd_scene load_steps=6 format=3 uid="uid://bsi1hrb4is74n"]
 
 [ext_resource type="Script" uid="uid://82iaul8d3yya" path="res://UI/Menus/menu_principal.gd" id="1_vbfma"]
 [ext_resource type="FontFile" uid="uid://dh6sc33fercr7" path="res://Recursos/Fontes/SourGummy-BoldItalic.ttf" id="3_26fyp"]
+[ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="4_26fyp"]
 [ext_resource type="Texture2D" uid="uid://bmihn7u5mpqmi" path="res://Recursos/Graficos/Cenas/telaInicialQTFTD.png" id="4_u2yia"]
 
 [sub_resource type="Theme" id="Theme_b6rvj"]
@@ -81,6 +82,8 @@ offset_bottom = 1277.0
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_u2yia")
+
+[node name="TransicaoCena" parent="." instance=ExtResource("4_26fyp")]
 
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/jogar" to="." method="_on_jogar_pressed"]

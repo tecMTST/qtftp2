@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://buvhd4fyx2kdl"]
+[gd_scene load_steps=8 format=3 uid="uid://buvhd4fyx2kdl"]
 
 [ext_resource type="Script" uid="uid://bfvf214mhvl7c" path="res://Scripts/Cutscenes/CutsceneQuadrinhos.gd" id="1_5gcmj"]
 [ext_resource type="Script" uid="uid://dxcd21ohsu4ga" path="res://Scripts/Cutscenes/Quadrinho.gd" id="2_ukam1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://db5ygq1d46ide" path="res://Recursos/Graficos/Quadrinhos/Layer_3.png" id="4_nl11g"]
 [ext_resource type="Texture2D" uid="uid://bxq6ng3boktdq" path="res://Recursos/Graficos/Quadrinhos/Layer_4.png" id="5_wcelg"]
 [ext_resource type="Texture2D" uid="uid://bs6q034xn3lf7" path="res://Recursos/Graficos/Quadrinhos/Layer_5.png" id="6_xjy1e"]
+[ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="7_qjneu"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("lista_quadrinhos")]
 layout_mode = 3
@@ -88,5 +89,7 @@ offset_bottom = -61.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Avancar"
+
+[node name="TransicaoCena" parent="." instance=ExtResource("7_qjneu")]
 
 [connection signal="pressed" from="Avancar" to="." method="_on_input_action_pressed"]

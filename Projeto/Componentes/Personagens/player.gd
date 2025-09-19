@@ -135,7 +135,9 @@ func ajuntar():
 
 func ativar():
 	top_down_controler_2d.Active = true
+	elza_rig.ativo = true
 
 
 func desativar():
 	top_down_controler_2d.Active = false
+	elza_rig.ativo = false

@@ -3,6 +3,7 @@ extends Node
 @export var lista_quadrinhos : Array[Quadrinho]
 @export var caminho_proxima_cena : String
 @export var modo_loop : bool
+@onready var transicao_cena: TransicaoCena = $TransicaoCena
 
 var index_quadrinho_atual : int
 var quadrinhos_terminados : bool = false
@@ -28,6 +29,8 @@ func _carregar_proxima_cena() -> void:
 	if(!quadrinhos_terminados): return
 
 	if(!modo_loop):
+		transicao_cena.escurecer()
+		await transicao_cena.finalizou
 		get_tree().change_scene_to_file(caminho_proxima_cena)
 	else:
 		_reiniciar_quadrinhos()
