@@ -90,7 +90,7 @@ func toca_musica(nome_da_faixa: String, acelera: bool = true) -> void:
 	musica_acelera = acelera
 	var stream = biblioteca_de_audio["musica"].get(nome_da_faixa)
 	if !stream: return
-	if nome_da_faixa_atual == nome_da_faixa: return
+	#if nome_da_faixa_atual == nome_da_faixa: return
 	para_musica()
 	_prepara_musica_ciclo(stream)
 	toca_musica_ciclo.play()
