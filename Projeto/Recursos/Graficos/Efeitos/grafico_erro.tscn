@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfny062sbusd2"]
+
+[ext_resource type="Shader" uid="uid://c8n67plhx3jll" path="res://Recursos/Graficos/Efeitos/grafico_erro.gdshader" id="1_2ky1h"]
+[ext_resource type="Script" uid="uid://de87hoqy3i7m7" path="res://Recursos/Graficos/Efeitos/grafico_erro.gd" id="2_sc7vb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fd50a"]
+shader = ExtResource("1_2ky1h")
+shader_parameter/progress = 0.0
+shader_parameter/circle_thickness = 0.05
+shader_parameter/circle_color = Color(0.854902, 0.0470588, 0.0823529, 1)
+shader_parameter/checkmark_color = Color(0.854902, 0.0470588, 0.0823529, 1)
+shader_parameter/reverse = false
+shader_parameter/outline_width = 0.03
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/shadow_offset = Vector2(0.07, 0.07)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.4)
+shader_parameter/container_size = Vector2(1, 1)
+shader_parameter/size_scale = 1.2
+
+[node name="Erro" type="ColorRect"]
+material = SubResource("ShaderMaterial_fd50a")
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_sc7vb")
