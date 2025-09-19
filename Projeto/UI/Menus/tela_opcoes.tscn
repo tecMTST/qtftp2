@@ -1,12 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://ditthu0qbi11r"]
+[gd_scene load_steps=7 format=3 uid="uid://ditthu0qbi11r"]
 
 [ext_resource type="Script" uid="uid://cppc6bykchl1o" path="res://UI/Menus/tela_opcoes.gd" id="1_3s4su"]
 [ext_resource type="FontFile" uid="uid://b0offn37s2gik" path="res://Recursos/Fontes/Byorg.ttf" id="1_navy5"]
-[ext_resource type="Script" uid="uid://8dpkyqpce1pm" path="res://Scripts/UI/controle_audio.gd" id="3_7iw6h"]
 [ext_resource type="Theme" uid="uid://beco18cn8vfan" path="res://UI/tema_botoes.tres" id="3_g8ynp"]
-[ext_resource type="Texture2D" uid="uid://dla2uplg4nb81" path="res://Recursos/Graficos/UI/audio_on.png" id="4_npvpo"]
-[ext_resource type="Script" uid="uid://dm4f0ou5bp74p" path="res://Scripts/UI/mute.gd" id="4_pay61"]
-[ext_resource type="Texture2D" uid="uid://bkjng6bmdiln1" path="res://Recursos/Graficos/UI/audio_off.png" id="5_2153d"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_78hhk"]
 color = Color(1, 1, 1, 1)
@@ -19,10 +15,6 @@ thickness = 5
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_pay61"]
 color = Color(1.97336e-06, 0.591007, 0.321423, 1)
 thickness = 5
-
-[sub_resource type="Theme" id="Theme_npvpo"]
-CheckButton/icons/checked = ExtResource("5_2153d")
-CheckButton/icons/unchecked = ExtResource("4_npvpo")
 
 [node name="tela_opcoes" type="Control"]
 layout_mode = 3
@@ -48,14 +40,16 @@ theme_override_fonts/font = ExtResource("1_navy5")
 theme_override_font_sizes/font_size = 30
 text = "Opções do jogo"
 
-[node name="volume2" type="Label" parent="."]
+[node name="Volume da Música" type="Label" parent="."]
 layout_mode = 2
-offset_left = 330.0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
 offset_top = 80.0
-offset_right = 389.0
+offset_right = 70.0
 offset_bottom = 103.0
 size_flags_horizontal = 4
-text = "Volume"
+text = "Volume da Música"
 
 [node name="controle_audio" type="HSlider" parent="."]
 layout_mode = 1
@@ -67,7 +61,7 @@ offset_top = 110.0
 offset_right = 105.0
 offset_bottom = 126.0
 grow_horizontal = 2
-tooltip_text = "Volume principal "
+tooltip_text = "Volume da Música"
 theme_override_constants/center_grabber = 0
 theme_override_constants/grabber_offset = 0
 theme_override_styles/slider = SubResource("StyleBoxLine_78hhk")
@@ -76,34 +70,47 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_pay61")
 max_value = 1.0
 step = 0.05
 value = 1.0
-script = ExtResource("3_7iw6h")
-audio_bus_name = "Master"
+
+[node name="controle_audio2" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.0
+offset_top = 194.0
+offset_right = 105.0
+offset_bottom = 210.0
+grow_horizontal = 2
+tooltip_text = "Volume da Música"
+theme_override_constants/center_grabber = 0
+theme_override_constants/grabber_offset = 0
+theme_override_styles/slider = SubResource("StyleBoxLine_78hhk")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_7iw6h")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_pay61")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Volume dos Efeitos" type="Label" parent="."]
+layout_mode = 2
+anchor_left = 0.501
+anchor_right = 0.501
+offset_left = -73.72
+offset_top = 152.0
+offset_right = 74.28
+offset_bottom = 175.0
+size_flags_horizontal = 4
+text = "Volume dos Efeitos"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 130.0
+offset_top = 253.0
 offset_bottom = -950.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="silenciar" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Silenciar"
-
-[node name="mute" type="CheckButton" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource("Theme_npvpo")
-script = ExtResource("4_pay61")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -128,6 +135,6 @@ theme_override_fonts/font = ExtResource("1_navy5")
 theme_override_font_sizes/font_size = 30
 text = "Voltar"
 
-[connection signal="value_changed" from="controle_audio" to="controle_audio" method="_on_value_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/mute" to="MarginContainer/VBoxContainer/mute" method="_on_pressed"]
+[connection signal="value_changed" from="controle_audio" to="." method="_on_value_changed"]
+[connection signal="value_changed" from="controle_audio2" to="." method="_on_value_changed_sfx"]
 [connection signal="pressed" from="CenterContainer/voltar" to="." method="_on_voltar_pressed"]
