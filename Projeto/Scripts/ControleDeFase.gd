@@ -62,6 +62,7 @@ func carregar_nivel():
 	)
 
 func trapaca_muda_receita() -> void:
+	get_node("/root/Casa/Cozinha/Fogao").ao_tempo_queimado_atingido(null)
 	receitas_disponiveis = Globais.receitas
 	selecionar_receita_especifica((_indice_receita_atual + 1) % receitas_disponiveis.size())
 

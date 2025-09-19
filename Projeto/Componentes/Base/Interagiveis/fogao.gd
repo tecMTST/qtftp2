@@ -148,7 +148,7 @@ func ao_tempo_cozimento_atingido(_objeto: IngredienteBase):
 
 
 func ao_tempo_queimado_atingido(_objeto: IngredienteBase):
-	print_debug("  [-] ", _objeto.descricao, " queimou no fogão! Recomeçando receita...")
+	print_debug("  [-] ingrediente queimou no fogão! Recomeçando receita...")
 	for interagivel in get_tree().get_nodes_in_group("interagivel"):
 		if interagivel.has_method("eliminar_ingrediente"):
 			print_debug("  [-] eliminando ingrediente de ", interagivel.name)
