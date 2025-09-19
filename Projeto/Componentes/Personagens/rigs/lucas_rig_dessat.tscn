@@ -146,22 +146,25 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 
 [node name="tronco" type="Bone2D" parent="Skeleton2D"]
 position = Vector2(0, 161)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, 161)
 
 [node name="pescoco" type="Bone2D" parent="Skeleton2D/tronco"]
-position = Vector2(0, -161.053)
-scale = Vector2(1, 1)
+position = Vector2(0, -167.899)
 rest = Transform2D(1, 0, 0, 1, 0, -161)
 
 [node name="rosto" type="Bone2D" parent="Skeleton2D/tronco/pescoco"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="babador" type="Bone2D" parent="Skeleton2D/tronco/pescoco"]
 position = Vector2(-10, 0)
-rotation = 0.00132192
-scale = Vector2(1, 1)
+rotation = 0.170554
 rest = Transform2D(1, 0, 0, 1, -10, -161)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0757404
 
 [node name="Nenê1" type="Sprite2D" parent="."]
 visible = false
