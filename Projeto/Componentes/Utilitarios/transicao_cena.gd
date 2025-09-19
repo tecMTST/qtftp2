@@ -14,14 +14,13 @@ func _ready() -> void:
 	visible = true
 	if auto_clarear:
 		clarear()
-	
+
 func escurecer():
 	fader.FadeIn(tempo_transicao)
 	await fader.finished
 	finalizou.emit()
-	
+
 func clarear():
 	fader.FadeOut(tempo_transicao)
 	await fader.finished
 	finalizou.emit()
- 

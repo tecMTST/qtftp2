@@ -3,10 +3,11 @@ extends Node
 @export var lista_quadrinhos : Array[Quadrinho]
 @export var caminho_proxima_cena : String
 @export var modo_loop : bool
-@onready var transicao_cena: TransicaoCena = $TransicaoCena
 
 var index_quadrinho_atual : int
 var quadrinhos_terminados : bool = false
+
+@onready var transicao_cena: TransicaoCena = $TransicaoCena
 
 func _ready() -> void:
 	var ultimo_quadrinho = lista_quadrinhos.size()-1

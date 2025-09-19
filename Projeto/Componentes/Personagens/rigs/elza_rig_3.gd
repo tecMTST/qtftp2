@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 			animation_tree.set("parameters/SegurarLucas/blend_amount", 0)
 	else:
 		animation_tree.set("parameters/Velocidade/blend_position", 0)
-		
+
 func ajuntar():
 	animation_tree.set("parameters/Velocidade/blend_position", 0.0)
 	animation_tree.set("parameters/Pegar/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
