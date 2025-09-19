@@ -9,6 +9,7 @@ var travar_dialogos = true
 @onready var bt_player: BTPlayer = $BTPlayer
 @onready var botao_fim: TouchScreenButton = $Molduras/BotaoFim
 @onready var briefing: Briefing = $Briefing
+@onready var transicao_cena: TransicaoCena = $TransicaoCena
 
 func _ready() -> void:
 	ControleDeFase.carregar_nivel()
@@ -60,6 +61,8 @@ func _fim_cena(_nivel, _estado_nivel):
 	bt_player.blackboard.set_var('estado_fase', 6)
 
 func _finalizar_nivel():
+	transicao_cena.escurecer()
+	await transicao_cena.finalizou
 	ControleDeFase.estado_nivel.cena_final_concluida = true
 
 func _on_briefing_iniciado() -> void:
