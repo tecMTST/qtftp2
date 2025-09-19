@@ -32,6 +32,6 @@ func play_sequence():
 	tween.finished.connect(func():
 		queue_free()
 	)
-	
+
 func _process(delta):
 	position.y -= move_speed * delta
