@@ -108,7 +108,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.261, 400)]
+"values": [Vector2(0, 0)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -182,7 +182,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_v02eu")
 blend_point_1/pos = 0.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_et0jp"]
-graph_offset = Vector2(-863.401, -107.048)
+graph_offset = Vector2(-874.94, -58.9386)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ir1in")
 nodes/Animation/position = Vector2(-1000, 280)
 nodes/Sentada/node = SubResource("AnimationNodeBlend2_04gav")
@@ -195,6 +195,7 @@ node_connections = [&"Sentada", 0, &"Velocidade", &"Sentada", 1, &"Animation", &
 script = ExtResource("1_v02eu")
 
 [node name="rig1" type="Node2D" parent="."]
+position = Vector2(0, 437)
 scale = Vector2(-1, 1)
 
 [node name="sprites" type="Node2D" parent="rig1"]
@@ -380,7 +381,6 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tron
 position = Vector2(-35.615, -18.8194)
 
 [node name="tronco" type="Bone2D" parent="rig1/Skeleton2D"]
-position = Vector2(0.261, 400)
 rest = Transform2D(1, 0, 0, 1, 35, 429)
 
 [node name="pescoco" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
@@ -395,6 +395,7 @@ bone_angle = 0.0
 
 [node name="pernaDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(146, -83)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 146, -83)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -402,6 +403,7 @@ bone_angle = 0.0
 
 [node name="pernaEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-144, -81)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -144, -81)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -409,13 +411,14 @@ bone_angle = 0.0
 
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(99, -384)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 99, -384)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 0.0
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
-position = Vector2(-86.3342, -380.712)
+position = Vector2(-84, -379)
 rest = Transform2D(1, 0, 0, 1, -84, -379)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -439,4 +442,4 @@ libraries = {
 tree_root = SubResource("AnimationNodeBlendTree_et0jp")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Sentada/blend_amount = 0.0
-parameters/Velocidade/blend_position = 0.0
+parameters/Velocidade/blend_position = -0.00298506

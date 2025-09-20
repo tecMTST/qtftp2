@@ -2,11 +2,13 @@ class_name Geladeira extends BaseInteragivel
 
 var geladeira_aberta
 var _posicao_geladeira: int = 0
+var player : Player
 
 @onready var menu_geladeira = preload("res://UI/Eventos/Geladeira.tscn")
 @onready var indicador: Sprite2D = $Indicador
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
 	nome = "Geladeira"
 	ControleDeFase.nova_receita.connect(_prepara_geladeira_para_proxima_receita)
 
@@ -22,8 +24,9 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	if ControleDeFase.passo_atual.alvo != "geladeira": return
 	if(
 		!jogador.esta_agarrando # não pode abrir geladeira segurando coisas
-		and (!geladeira_aberta || !is_instance_valid(geladeira_aberta)) # nem com geladeira aberta
+		and !get_tree().get_first_node_in_group("menu_geladeira") # nem com geladeira aberta
 	):
+		player.desativar()
 		geladeira_aberta = menu_geladeira.instantiate()
 		add_sibling(geladeira_aberta)
 		geladeira_aberta.get_child(0).preencher_geladeira(_posicao_geladeira)

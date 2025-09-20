@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dy4r4c8l5fuxr"]
+[gd_scene load_steps=22 format=3 uid="uid://dy4r4c8l5fuxr"]
 
 [ext_resource type="Script" uid="uid://cv0ya3xdt4bn" path="res://Componentes/Personagens/player.gd" id="1_c2vf6"]
 [ext_resource type="PackedScene" uid="uid://daxpprdmxope6" path="res://Componentes/Personagens/rigs/elza_rig3.tscn" id="2_4ucjf"]
 [ext_resource type="Script" uid="uid://cjm7t170vvwf" path="res://addons/2d_controls_toolkit/TopDownControler2D.gd" id="2_fo1re"]
 [ext_resource type="Texture2D" uid="uid://cx2l2edobw7dh" path="res://Recursos/Graficos/Personagens/elzaVetorCores2.png" id="3_4ucjf"]
+[ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="5_da2mp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c2vf6"]
 radius = 46.0109
@@ -85,7 +86,6 @@ id = "elza"
 nome = "Elza"
 
 [node name="elza rig" parent="." instance=ExtResource("2_4ucjf")]
-position = Vector2(0, 51)
 scale = Vector2(0.13, 0.13)
 
 [node name="PosicaoObjeto" type="Marker2D" parent="."]
@@ -133,7 +133,19 @@ parameters/Segurando/blend_amount = 0
 parameters/Velocidade/blend_position = 0.0
 parameters/VelocidadeSegurando/blend_position = 0.0
 
+[node name="TimerAmamentacao" type="Timer" parent="."]
+one_shot = true
+
+[node name="VisualizadorTemporalLucas" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
+visible = false
+z_index = 99
+script = ExtResource("5_da2mp")
+temporizador = NodePath("../TimerAmamentacao")
+cor = Color(0.278431, 0.54902, 0.74902, 0.8)
+metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
+
 [connection signal="area_entered" from="PivoAcao/AreaAcao" to="." method="_on_area_acao_area_entered"]
 [connection signal="area_exited" from="PivoAcao/AreaAcao" to="." method="_on_area_acao_area_exited"]
 [connection signal="body_entered" from="PivoAcao/AreaAcao" to="." method="_on_area_acao_body_entered"]
 [connection signal="body_exited" from="PivoAcao/AreaAcao" to="." method="_on_area_acao_body_exited"]
+[connection signal="timeout" from="TimerAmamentacao" to="." method="_on_timer_amamentacao_timeout"]

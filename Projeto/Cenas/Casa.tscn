@@ -171,7 +171,7 @@ z_index = 5
 
 [node name="Filha" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("15_gklaa")]
 z_index = 5
-position = Vector2(505, 877)
+position = Vector2(504, 860)
 bagunca_scene = ExtResource("17_utqv5")
 waypoints = NodePath("../../Waypoints")
 
@@ -207,7 +207,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BasePause" type="TextureRect" parent="Molduras/Moldura"]
+[node name="BaseAcao" type="TextureRect" parent="Molduras/Moldura"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -222,17 +222,17 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("23_y8kni")
 
-[node name="BaseAcao" type="TextureRect" parent="Molduras/Moldura"]
+[node name="BasePause1" type="TextureRect" parent="Molduras/Moldura"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -348.0
-offset_top = -163.0
-offset_right = -249.0
-offset_bottom = -67.0
+offset_left = -357.0
+offset_top = -93.0
+offset_right = -258.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("19_xanav")
@@ -282,7 +282,7 @@ text = "Ação"
 [node name="BotaoPausa" type="TouchScreenButton" parent="Molduras"]
 process_mode = 3
 z_index = 300
-position = Vector2(11, 1114)
+position = Vector2(2, 1184)
 scale = Vector2(1.12222, 1.12222)
 texture_normal = ExtResource("20_xhdpr")
 texture_pressed = ExtResource("25_dfuu3")

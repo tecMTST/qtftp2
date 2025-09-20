@@ -72,6 +72,7 @@ bagunca=""
 prato_pronto=""
 prato_entregue=""
 ponto_entrega=""
+menu_geladeira=""
 
 [gui]
 
