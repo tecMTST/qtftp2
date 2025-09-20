@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dsnts70s2x6ks" path="res://UI/Interfaces/Modal.tscn" id="1_0k68q"]
 [ext_resource type="Script" uid="uid://dfrvqfogmjhje" path="res://UI/Eventos/CortarAlimento.gd" id="2_w5m2d"]
-[ext_resource type="Texture2D" uid="uid://dom3bhk5msjv8" path="res://Recursos/Graficos/Ingredientes/Cuscuz_cozido.png" id="3_skdxr"]
+[ext_resource type="Texture2D" uid="uid://ehydmw0tbg8c" path="res://Recursos/Graficos/UI/Ingredientes/cuscuzeira_fumaca.svg" id="3_skdxr"]
 [ext_resource type="Texture2D" uid="uid://cw5dlm5tsa2cj" path="res://Recursos/Graficos/UI/BarraPendulo_placeholder.png" id="4_w5m2d"]
 [ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="4_xq4bp"]
 [ext_resource type="Script" uid="uid://b0tgsnmsppesf" path="res://addons/events/quick_timer_progress_bar.gd" id="5_m7v2p"]
