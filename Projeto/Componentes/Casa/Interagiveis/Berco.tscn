@@ -31,17 +31,20 @@ position = Vector2(-2, -14)
 scale = Vector2(0.255, 0.255)
 
 [node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
+visible = false
 z_index = 99
 position = Vector2(0, -171)
 script = ExtResource("4_r71e4")
 temporizador = NodePath("../Timer")
 radius = 30.0
 cor = Color(1, 0, 0, 0.8)
+invertido = null
 metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="ComponenteInteragivel" type="Node2D" parent="." node_paths=PackedStringArray("area_de_interacao")]
+visible = false
 script = ExtResource("5_nrlxa")
 nome = "berco"
 descricao = "interação berço"

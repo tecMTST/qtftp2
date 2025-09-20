@@ -20,6 +20,9 @@ func _ready() -> void:
 	pausar.hide()
 	briefing.iniciar()
 
+func _process(delta: float) -> void:
+	botao_pausa.visible = not ControleDeFase.jogador.esta_dialogando
+
 func _on_player_acao_ativada() -> void:
 	botao_acao.visible = true
 
@@ -43,7 +46,6 @@ func abrir_dialogo(fase: String, estado_fase: int, linha_dialogo: String) -> int
 		return estado_fase
 	ControleDeFase.jogador.iniciar_dialogo(load("res://Dialogo/"+ fase +".dialogue"), linha_dialogo)
 	return estado_fase + 1
-
 
 func _on_player_acao_agarrou(_objeto: Variant) -> void:
 	if bt_player.blackboard.get_var('estado_fase') == 1:

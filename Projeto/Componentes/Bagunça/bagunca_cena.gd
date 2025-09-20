@@ -1,5 +1,5 @@
 class_name BaguncaCena
-extends Node2D
+extends BaseInteragivel
 
 @export var baguncas : Array[Texture2D] = []
 @onready var sprite_2d: Sprite2D = $Sprite2D

@@ -13,7 +13,10 @@ var esta_agarrando: bool = false
 var objeto_agarrado: IngredienteBase:
 	set(valor):
 		objeto_agarrado = valor
-
+var ajuntando : bool = false
+		
+@onready var visualizador_temporal_lucas: VisualizadorTemporal = $VisualizadorTemporalLucas
+@onready var timer_amamentacao: Timer = $TimerAmamentacao
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var top_down_controler_2d: TopDownControler2D = $TopDownControler2D
 @onready var pivo_acao: Node2D = $PivoAcao
@@ -102,8 +105,9 @@ func _on_area_acao_body_exited(body: Node2D) -> void:
 
 
 func on_interagivel_entered(body : Node2D) -> void:
-	interagivel_ativo = body
-	acao_ativada.emit()
+	if (body as BaseInteragivel).ativo:
+		interagivel_ativo = body
+		acao_ativada.emit()
 
 
 func on_interagivel_exited() -> void:
@@ -131,13 +135,42 @@ func soltar():
 	esta_agarrando = false
 
 func ajuntar():
-	elza_rig.ajuntar()
-
+	if not ajuntando:
+		ajuntando = true
+		elza_rig.ajuntar()
+		desativar()
+		await get_tree().create_timer(1).timeout
+		ativar()
+		ajuntando = false
+	
 func ativar():
 	top_down_controler_2d.Active = true
 	elza_rig.ativo = true
 
-
 func desativar():
 	top_down_controler_2d.Active = false
 	elza_rig.ativo = false
+	
+func inicia_amamentacao(berco : Berco, total : float):
+	berco.amamentando = true
+	desativar()
+	elza_rig.pegar_lucas()
+	berco.ocultar_lucas()
+	await get_tree().create_timer(0.5).timeout
+	elza_rig.amamentar()
+	await get_tree().create_timer(0.5).timeout
+	elza_rig.amamentando = true
+	timer_amamentacao.wait_time = total
+	timer_amamentacao.start()
+	visualizador_temporal_lucas.visible = true
+	await timer_amamentacao.timeout
+	elza_rig.largar_lucas()
+	visualizador_temporal_lucas.visible = false
+	timer_amamentacao.stop()
+	await get_tree().create_timer(0.5).timeout
+	berco.mostrar_lucas()
+	berco.resetar_timer()
+	berco.amamentando = false
+	ativar()
+	
+	
