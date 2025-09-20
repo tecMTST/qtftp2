@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://coxf2q1kw800c"]
+
+[ext_resource type="Shader" uid="uid://bwn67r3arduxb" path="res://Recursos/Graficos/Efeitos/grafico_filtrodessaturar.gdshader" id="1_kle4q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fygws"]
+shader = ExtResource("1_kle4q")
+shader_parameter/saturation = 0.75
+
+[node name="FiltroDessaturar" type="CanvasLayer"]
+process_mode = 4
+layer = 0
+
+[node name="ShaderDessat" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fygws")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
