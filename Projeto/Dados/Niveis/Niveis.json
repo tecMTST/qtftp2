@@ -127,7 +127,7 @@
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase3.svg"
 			}
 			],
-		"tempo": 300,
+		"tempo": 60,
 		"limite_bagunca": 5,
 		"quantidade_pratos_real" : 3,
 		"quantidade_pratos_exibido" : 0,
