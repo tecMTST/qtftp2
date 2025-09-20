@@ -28,8 +28,8 @@ result_var = &"fase_atual"
 
 [sub_resource type="BBVariant" id="BBVariant_fr134"]
 type = 2
-saved_value = 3
-resource_name = "3"
+saved_value = 4
+resource_name = "4"
 
 [sub_resource type="BTCheckVar" id="BTCheckVar_kkxnx"]
 variable = &"fase_atual"
