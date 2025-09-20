@@ -36,7 +36,7 @@
 		"id" : 2,
 		"nome" : "Café Coado",
 		"descricao" : "Xícara de café coado",
-		"caminho_sprite": "res://Recursos/Graficos/Ingredientes/copoCafe.svg",
+		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/copo_americano_cafe.svg",
 		"passos" : [
 			{
 				"descricao" : "Pegar pó de café na geladeira",
