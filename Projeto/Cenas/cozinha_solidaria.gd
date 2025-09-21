@@ -2,8 +2,8 @@ class_name CozinhaSolidaria extends Node2D
 
 var travar_dialogos = true
 
-@onready var botao_acao: TouchScreenButton = $BotaoAcao
-@onready var botao_pausa: TouchScreenButton = $BotaoPausa
+@onready var botao_acao: TouchScreenButton = $Molduras/BotaoAcao
+@onready var botao_pausa: TouchScreenButton = $Molduras/BotaoPausa
 @onready var pausar: MenuPausa = $CanvasLayer/pausar
 @onready var save_agent: SaveAgent = $SaveAgent
 @onready var bt_player: BTPlayer = $BTPlayer

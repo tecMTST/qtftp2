@@ -38,7 +38,6 @@ script = ExtResource("4_r71e4")
 temporizador = NodePath("../Timer")
 radius = 30.0
 cor = Color(1, 0, 0, 0.8)
-invertido = null
 metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
 
 [node name="Timer" type="Timer" parent="."]
