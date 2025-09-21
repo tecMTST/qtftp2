@@ -16,7 +16,7 @@ func _process(_delta: float) -> void:
 
 
 func eliminar_ingrediente() -> void:
-	if objeto_na_bancada != null: objeto_na_bancada.queue_free()
+	if objeto_na_bancada != null: objeto_na_bancada.destruir()
 	objeto_na_bancada = null
 	_jogador = null
 

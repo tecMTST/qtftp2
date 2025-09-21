@@ -14,7 +14,7 @@ var objeto_agarrado: IngredienteBase:
 	set(valor):
 		objeto_agarrado = valor
 var ajuntando : bool = false
-		
+
 @onready var visualizador_temporal_lucas: VisualizadorTemporal = $VisualizadorTemporalLucas
 @onready var timer_amamentacao: Timer = $TimerAmamentacao
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -83,7 +83,7 @@ func _trapaceia(evento: InputEvent) -> void:
 func eliminar_ingrediente() -> void:
 	esta_agarrando = false
 	if objeto_agarrado != null:
-		objeto_agarrado.queue_free()
+		objeto_agarrado.destruir()
 		objeto_agarrado = null
 
 
@@ -142,7 +142,7 @@ func ajuntar():
 		await get_tree().create_timer(1).timeout
 		ativar()
 		ajuntando = false
-	
+
 func ativar():
 	top_down_controler_2d.Active = true
 	elza_rig.ativo = true
@@ -150,7 +150,7 @@ func ativar():
 func desativar():
 	top_down_controler_2d.Active = false
 	elza_rig.ativo = false
-	
+
 func inicia_amamentacao(berco : Berco, total : float):
 	berco.amamentando = true
 	desativar()
@@ -172,5 +172,3 @@ func inicia_amamentacao(berco : Berco, total : float):
 	berco.resetar_timer()
 	berco.amamentando = false
 	ativar()
-	
-	

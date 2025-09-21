@@ -71,12 +71,12 @@ func _on_timer_timeout() -> void:
 	ControleDeFase.estado_nivel.limite_choro_atingido = true
 
 func _on_componente_interagivel_interagir(_jogador: Player) -> void:
-	if ativo and not player.esta_agarrando: 
+	if ativo and not player.esta_agarrando:
 		player.inicia_amamentacao(self, timer.wait_time - timer.time_left)
 		finalizar_choro()
 
 func ocultar_lucas():
 	lucas_rig.visible = false
-	
+
 func mostrar_lucas():
 	lucas_rig.visible = true

@@ -41,7 +41,7 @@ func _process(_delta):
 			porcentagem = temporizador.time_left / temporizador.wait_time
 		else:
 			porcentagem = 1 - (temporizador.time_left / temporizador.wait_time)
-		
+
 func desenhar_circulo_de_visualizacao():
 	var de_angulo = angulo_inicial
 	var ate_angulo = angulo_inicial + (360 * porcentagem)
