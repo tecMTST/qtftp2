@@ -1,8 +1,8 @@
 class_name Geladeira extends BaseInteragivel
 
 var geladeira_aberta
+var player: Player
 var _posicao_geladeira: int = 0
-var player : Player
 
 @onready var menu_geladeira = preload("res://UI/Eventos/Geladeira.tscn")
 @onready var indicador: Sprite2D = $Indicador

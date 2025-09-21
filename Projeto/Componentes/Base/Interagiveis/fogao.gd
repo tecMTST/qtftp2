@@ -77,7 +77,7 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 			_cozinhar_objeto(objeto_na_mao)
 		else:
 			print_debug("  [-] ", objeto_na_mao.id, " não interage com fogão")
-			return
+
 
 func _misturar_ingredientes_na_panela(indice_acao: int) -> void:
 	objeto_no_fogao.ao_transformar_sucesso.connect(_on_misturar_itens)
