@@ -22,6 +22,7 @@ var biblioteca_de_audio := {
 		"fogao_ligar": preload("res://Recursos/Audio/Efeitos/fogao_ligar.ogg"),
 		"fogao_cozinhando": preload("res://Recursos/Audio/Efeitos/fogao_cozinhando_loop.ogg"),
 		"fogao_alarme": preload("res://Recursos/Audio/Efeitos/fogao_alarme.ogg"),
+		"splash_screen": preload("res://Recursos/Audio/Efeitos/splash.ogg"),
 		"passos": [
 			preload("res://Recursos/Audio/Efeitos/passo1.ogg"),
 			preload("res://Recursos/Audio/Efeitos/passo2.ogg"),
