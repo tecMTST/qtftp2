@@ -22,16 +22,9 @@ func _on_jogar_pressed() -> void:
 	SaveService.LoadGame(Constantes.ID_SALVAR)
 	get_tree().change_scene_to_file(Globais.niveis[0].local)
 
-#ao clicar vai para a tela de opções do jogo
-func _on_opcoes_pressed() -> void:
-	get_tree().change_scene_to_file("res://UI/Menus/tela_opcoes.tscn")
-
 #ao clicar vai para a tela com a imagem da cartilha e informações para baixá-la
-func _on_cartilha_pressed() -> void:
-	get_tree().change_scene_to_file("res://UI/Menus/tela_cartilha_aaas.tscn")
-
-func _on_sair_pressed() -> void:
-	get_tree().quit()
+func _on_extras_pressed() -> void:
+	get_tree().change_scene_to_file("res://UI/Menus/menu_extras.tscn")
 
 func _on_continuar_pressed() -> void:
 	SaveService.LoadGame(Constantes.ID_SALVAR)

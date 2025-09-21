@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2uanplavulb4"]
+
+[ext_resource type="Texture2D" uid="uid://bmihn7u5mpqmi" path="res://Recursos/Graficos/Cenas/telaInicialQTFTD.png" id="1_h4eay"]
+[ext_resource type="Texture2D" uid="uid://c6hn1bdbueq6t" path="res://Recursos/Graficos/UI/Componentes/logos/logo_qtftd.svg" id="2_vwjvg"]
+[ext_resource type="Texture2D" uid="uid://d2v16kpn2mkxk" path="res://Recursos/Graficos/UI/Componentes/menu_telaInicial/menu_telaInicial_base_extras.svg" id="3_xcdby"]
+[ext_resource type="FontFile" uid="uid://dh6sc33fercr7" path="res://Recursos/Fontes/SourGummy-BoldItalic.ttf" id="4_p7c65"]
+
+[node name="Node2D" type="Node2D"]
+metadata/_edit_vertical_guides_ = [375.0]
+
+[node name="TelaInicialQtftd" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.415686)
+position = Vector2(360, 640)
+texture = ExtResource("1_h4eay")
+
+[node name="LogoQtftd" type="Sprite2D" parent="."]
+position = Vector2(360, 130)
+texture = ExtResource("2_vwjvg")
+
+[node name="MenuTelaInicialBaseExtras" type="Sprite2D" parent="."]
+position = Vector2(360, 755)
+texture = ExtResource("3_xcdby")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 323.0
+offset_top = 327.0
+offset_right = 432.0
+offset_bottom = 373.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_p7c65")
+theme_override_font_sizes/font_size = 35
+text = "Extras"
