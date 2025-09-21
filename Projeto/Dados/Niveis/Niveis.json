@@ -149,7 +149,7 @@
 		"descricao" : "Hora da Cozinha Solidária Brilhar",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_4.tscn",
 		"id_receitas" : [5,7,8,9],
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
@@ -193,12 +193,12 @@
 	{
 		"id" : 6,
 		"nome" : "Sábado de Sol",
-		"descricao" : "Tutorial",
+		"descricao" : "Última fase",
 		"textos" : [],
 		"imagem" : "",
-		"local" : "res://Cenas/cutscene_quadrinhos.tscn",
-		"id_receitas" : [1,2,1,2],
-		"ordem_aleatoria": false,
+		"local" : "res://Cenas/cutscene_quadrinhos_fase_5.tscn",
+		"id_receitas" : [3, 7, 10, 9],
+		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
 				"nome": "Arroz Cozido",
@@ -217,10 +217,10 @@
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase5-frutas.svg"
 			}
 		],
-		"tempo": -1,
+		"tempo": 300,
 		"limite_bagunca": 5,
-		"quantidade_pratos_real" : 4,
-		"quantidade_pratos_exibido" : 4,
+		"quantidade_pratos_real" : 25,
+		"quantidade_pratos_exibido" : 25,
 		"valor_nutricional_minimo" : 5,
 		"valor_sabor_minimo" : 2,
 		"pontos_recompensa" : 3,

@@ -185,9 +185,12 @@ func _abrir_proximo_nivel():
 	var niveis = Globais.niveis.filter(
 		func(item : Nivel) : return item.id == EstadoDeJogo.nivel_atual
 	)
-	if len(niveis) > 0: nivel_atual = niveis[0]
+	if len(niveis) == 0:
+		EstadoDeJogo.cena_atual = "res://Cenas/cutscene_quadrinhos_epilogo.tscn"
+	else:
+		nivel_atual = niveis[0]
+		EstadoDeJogo.cena_atual = nivel_atual.local
 	get_tree().paused = false
-	EstadoDeJogo.cena_atual = nivel_atual.local
 	get_tree().change_scene_to_file(EstadoDeJogo.cena_atual)
 
 func _reset_timers() -> void:
