@@ -106,13 +106,16 @@ func _on_area_acao_body_exited(body: Node2D) -> void:
 
 func on_interagivel_entered(body : Node2D) -> void:
 	if (body as BaseInteragivel).ativo:
-		interagivel_ativo = body
-		acao_ativada.emit()
+		match (body as BaseInteragivel).nome.to_lower():
+			ControleDeFase.passo_atual.alvo, "berço", "":
+				interagivel_ativo = body
+				acao_ativada.emit()
 
 
 func on_interagivel_exited() -> void:
-	interagivel_ativo = null
-	acao_desativada.emit()
+	if interagivel_ativo != null:
+		interagivel_ativo = null
+		acao_desativada.emit()
 
 
 func _agarrar():

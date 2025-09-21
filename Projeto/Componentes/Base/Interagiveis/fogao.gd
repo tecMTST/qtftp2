@@ -8,7 +8,7 @@ var _jogador: Player
 @onready var fogo_animado: AnimatedSprite2D = $AnimatedFire
 
 func _ready() -> void:
-	nome = "Fogão"
+	nome = "Fogao"
 
 
 func _process(_delta: float) -> void:
