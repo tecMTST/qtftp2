@@ -5,8 +5,10 @@ extends Control
 
 
 func _ready() -> void:
-	receita.text=ControleDeFase.receita_selecionada.nome
-	
+	receita.text="Cuscuz"
+	if(is_instance_valid(ControleDeFase.receita_selecionada)):
+		receita.text="
+		"+ControleDeFase.receita_selecionada.nome
 	if %ProgressoEvento.running: return
 	%ProgressoEvento.failed.connect(_on_failed)
 	%ProgressoEvento.completed.connect(_on_completed)

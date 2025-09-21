@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bofs810qp351p"]
+[gd_scene load_steps=13 format=3 uid="uid://bofs810qp351p"]
 
 [ext_resource type="PackedScene" uid="uid://dsnts70s2x6ks" path="res://UI/Interfaces/Modal.tscn" id="1_0k68q"]
 [ext_resource type="Script" uid="uid://d2cvdw1p8kcum" path="res://UI/Eventos/DesenformarAlimento.gd" id="2_rl88k"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cltnj5ehqln43" path="res://Scripts/UI/MovimentoPendulo.gd" id="6_skdxr"]
 [ext_resource type="Texture2D" uid="uid://brtylvorvhyv3" path="res://Recursos/Graficos/UI/Componentes/popup_minigames/popup_minigame_barra_indicador.svg" id="7_mf8c0"]
 [ext_resource type="Script" uid="uid://l1k133hbrmib" path="res://Scripts/UI/BotaoPendulo.gd" id="8_skdxr"]
+[ext_resource type="Theme" uid="uid://manffmwy5jfe" path="res://UI/botaoFechar.tres" id="12_l2rbf"]
 
 [node name="DesenformarCuscuz" instance=ExtResource("1_0k68q")]
 script = ExtResource("2_rl88k")
@@ -184,9 +185,9 @@ unique_name_in_owner = true
 z_index = 1
 layout_mode = 2
 offset_left = 199.0
-offset_top = 211.0
+offset_top = 251.0
 offset_right = 381.0
-offset_bottom = 393.0
+offset_bottom = 433.0
 size_flags_horizontal = 4
 step = 100.0
 fill_mode = 4
@@ -218,5 +219,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = ExtResource("4_xq4bp")
 stretch_mode = 5
+
+[node name="CloseButton" parent="MarginContainer/PanelContainer/VBoxContainer" index="7"]
+custom_minimum_size = Vector2(100, 100)
+theme = ExtResource("12_l2rbf")
+text = ""
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Instrucao/ProgressoEvento/BotaoAcao" to="MarginContainer/PanelContainer/VBoxContainer/Instrucao/ProgressoEvento/SmashButton" method="press"]
