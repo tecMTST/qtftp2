@@ -43,6 +43,10 @@ func _on_sair_pressed() -> void:
 	await transicao_cena.finalizou
 	get_tree().quit()
 
+#ao clicar vai para a tela com a imagem da cartilha e informações para baixá-la
+func _on_extras_pressed() -> void:
+	get_tree().change_scene_to_file("res://UI/Menus/menu_extras.tscn")
+
 func _on_continuar_pressed() -> void:
 	SaveService.LoadGame(Constantes.ID_SALVAR)
 	transicao_cena.escurecer()
