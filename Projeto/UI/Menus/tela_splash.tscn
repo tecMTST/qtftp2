@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2tdr58yk8m23"]
+[gd_scene load_steps=10 format=3 uid="uid://dquw2j5sas5ws"]
 
-[ext_resource type="FontFile" uid="uid://bs0kc3ghs0jgm" path="res://Recursos/Fontes/SourGummy-Italic.ttf" id="1_0mp76"]
-[ext_resource type="Script" uid="uid://bx21p5ti5jmcv" path="res://UI/Menus/tela_splash.gd" id="1_286d4"]
-[ext_resource type="AudioStream" uid="uid://oimlovlaooaf" path="res://Recursos/Audio/Efeitos/splash.mp3" id="3_f2keg"]
+[ext_resource type="Script" path="res://UI/Menus/tela_splash.gd" id="1_286d4"]
+[ext_resource type="Texture2D" uid="uid://dtohi5qh8mdqa" path="res://Recursos/Graficos/UI/Componentes/logos/logo_tpt.svg" id="2_po15b"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_286d4"]
+load_path = "res://.godot/imported/logo_aaas.svg-5f5cc0089a9e0e6a57dac3e2c7b7e1aa.ctex"
 
 [sub_resource type="Animation" id="Animation_0mp76"]
 length = 0.001
@@ -21,7 +23,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_286d4"]
 resource_name = "fade_splash"
-length = 4.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -29,7 +31,7 @@ tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.7, 4),
+"times": PackedFloat32Array(0.0666667, 1.26667, 2.93333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -39,6 +41,43 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_0mp76"),
 &"fade_splash": SubResource("Animation_286d4")
+}
+
+[sub_resource type="Animation" id="Animation_po15b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xd8yv"]
+resource_name = "fade_alianca"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.03333, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6r5v"]
+_data = {
+&"RESET": SubResource("Animation_po15b"),
+&"fade_alianca": SubResource("Animation_xd8yv")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -54,43 +93,35 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -196.5
-offset_top = -72.0
-offset_right = 196.5
-offset_bottom = 72.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_0mp76")
-theme_override_font_sizes/font_size = 40
-text = "Aliança pela Alimentação 
-Adequada e Saudável 
-apresenta..."
-horizontal_alignment = 1
+[node name="LogoTpt" type="Sprite2D" parent="."]
+position = Vector2(360, 640)
+texture = ExtResource("2_po15b")
+
+[node name="LogoAaas" type="Sprite2D" parent="."]
+position = Vector2(360, 640)
+texture = SubResource("CompressedTexture2D_286d4")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
 offset_right = 720.0
 offset_bottom = 1280.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="anim_1" type="AnimationPlayer" parent="."]
 root_node = NodePath("../ColorRect2")
 libraries = {
 &"": SubResource("AnimationLibrary_f2keg")
 }
 
-[node name="som_splash" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_f2keg")
+[node name="anim_2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../anim_1")
+libraries = {
+&"": SubResource("AnimationLibrary_a6r5v")
+}
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
+[node name="som_splash" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="animation_finished" from="anim_1" to="." method="_on_anim_1_animation_finished"]
+[connection signal="animation_finished" from="anim_2" to="." method="_on_anim_2_animation_finished"]

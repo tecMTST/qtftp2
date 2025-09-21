@@ -1,6 +1,11 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=5 format=3 uid="uid://bsi1hrb4is74n"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://bsi1hrb4is74n"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://82iaul8d3yya" path="res://UI/Menus/menu_principal.gd" id="1_vbfma"]
+[ext_resource type="Texture2D" uid="uid://c6hn1bdbueq6t" path="res://Recursos/Graficos/UI/Componentes/logos/logo_qtftd.svg" id="2_u2yia"]
 [ext_resource type="FontFile" uid="uid://dh6sc33fercr7" path="res://Recursos/Fontes/SourGummy-BoldItalic.ttf" id="3_26fyp"]
 [ext_resource type="Texture2D" uid="uid://bmihn7u5mpqmi" path="res://Recursos/Graficos/Cenas/telaInicialQTFTD.png" id="4_u2yia"]
 
@@ -10,19 +15,9 @@
 process_mode = 3
 script = ExtResource("1_vbfma")
 
-[node name="Titulo" type="Label" parent="."]
-offset_top = 29.0
-offset_right = 720.0
-offset_bottom = 229.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/paragraph_spacing = 6
-theme_override_fonts/font = ExtResource("3_26fyp")
-theme_override_font_sizes/font_size = 65
-text = "Quem tem fome 
-tem direitos"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="LogoQtftd" type="Sprite2D" parent="."]
+position = Vector2(360, 150)
+texture = ExtResource("2_u2yia")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_top = 862.0
@@ -34,19 +29,19 @@ theme = SubResource("Theme_b6rvj")
 layout_mode = 2
 theme_override_constants/separation = 15
 
+[node name="jogar" type="Button" parent="CenterContainer/BotoesPrincipais"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_26fyp")
+theme_override_font_sizes/font_size = 45
+text = "NOVO JOGO
+"
+
 [node name="continuar" type="Button" parent="CenterContainer/BotoesPrincipais"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_26fyp")
 theme_override_font_sizes/font_size = 45
 disabled = true
 text = "CONTINUAR
-"
-
-[node name="jogar" type="Button" parent="CenterContainer/BotoesPrincipais"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_26fyp")
-theme_override_font_sizes/font_size = 45
-text = "NOVO JOGO
 "
 
 [node name="opcoes" type="Button" parent="CenterContainer/BotoesPrincipais"]
@@ -61,14 +56,7 @@ text = "OPÇÕES
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_26fyp")
 theme_override_font_sizes/font_size = 42
-text = "CARTILHA AAAS
-"
-
-[node name="sair" type="Button" parent="CenterContainer/BotoesPrincipais"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_26fyp")
-theme_override_font_sizes/font_size = 45
-text = "SAIR
+text = "Extras
 "
 
 [node name="fundo" type="TextureRect" parent="."]
@@ -82,8 +70,13 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_u2yia")
 
+<<<<<<< Updated upstream
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/continuar" to="." method="_on_continuar_pressed"]
+=======
+[node name="TransicaoCena" parent="." instance=ExtResource("4_26fyp")]
+
+>>>>>>> Stashed changes
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="CenterContainer/BotoesPrincipais/continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/cartilha" to="." method="_on_cartilha_pressed"]
-[connection signal="pressed" from="CenterContainer/BotoesPrincipais/sair" to="." method="_on_sair_pressed"]

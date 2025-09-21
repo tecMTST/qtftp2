@@ -22,6 +22,13 @@ var biblioteca_de_audio := {
 		"fogao_ligar": preload("res://Recursos/Audio/Efeitos/fogao_ligar.ogg"),
 		"fogao_cozinhando": preload("res://Recursos/Audio/Efeitos/fogao_cozinhando_loop.ogg"),
 		"fogao_alarme": preload("res://Recursos/Audio/Efeitos/fogao_alarme.ogg"),
+<<<<<<< Updated upstream
+=======
+		"clique": preload("res://Recursos/Audio/Efeitos/click.ogg"),
+		"hidratar": preload("res://Recursos/Audio/Efeitos/hidratar.ogg"),
+		"pegar_item": preload("res://Recursos/Audio/Efeitos/pegar_item.ogg"),
+		"alimento_servido": preload("res://Recursos/Audio/Efeitos/alimento_servido.ogg"),
+>>>>>>> Stashed changes
 		"splash_screen": preload("res://Recursos/Audio/Efeitos/splash.ogg"),
 		"passos": [
 			preload("res://Recursos/Audio/Efeitos/passo1.ogg"),
