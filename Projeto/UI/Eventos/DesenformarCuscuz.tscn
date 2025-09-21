@@ -1,54 +1,192 @@
-[gd_scene load_steps=9 format=3 uid="uid://bofs810qp351p"]
+[gd_scene load_steps=12 format=3 uid="uid://bofs810qp351p"]
 
 [ext_resource type="PackedScene" uid="uid://dsnts70s2x6ks" path="res://UI/Interfaces/Modal.tscn" id="1_0k68q"]
-[ext_resource type="Script" uid="uid://dfrvqfogmjhje" path="res://UI/Eventos/CortarAlimento.gd" id="2_w5m2d"]
+[ext_resource type="Script" uid="uid://d2cvdw1p8kcum" path="res://UI/Eventos/DesenformarAlimento.gd" id="2_rl88k"]
+[ext_resource type="Theme" uid="uid://cmmbeb1vnduka" path="res://Recursos/Fontes/Label_SourGummy_Regular.tres" id="3_rl88k"]
 [ext_resource type="Texture2D" uid="uid://ehydmw0tbg8c" path="res://Recursos/Graficos/UI/Ingredientes/cuscuzeira_fumaca.svg" id="3_skdxr"]
-[ext_resource type="Texture2D" uid="uid://cw5dlm5tsa2cj" path="res://Recursos/Graficos/UI/BarraPendulo_placeholder.png" id="4_w5m2d"]
+[ext_resource type="Texture2D" uid="uid://ca4hwp2k1c7i6" path="res://Recursos/Graficos/UI/Ingredientes/presicao.svg" id="4_l2rbf"]
 [ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="4_xq4bp"]
 [ext_resource type="Script" uid="uid://b0tgsnmsppesf" path="res://addons/events/quick_timer_progress_bar.gd" id="5_m7v2p"]
+[ext_resource type="Texture2D" uid="uid://d4k6e10xjkkal" path="res://Recursos/Graficos/UI/Componentes/popup_minigames/popup_minigame_barra_base_preenchimento.svg" id="6_c5aef"]
 [ext_resource type="Script" uid="uid://cltnj5ehqln43" path="res://Scripts/UI/MovimentoPendulo.gd" id="6_skdxr"]
+[ext_resource type="Texture2D" uid="uid://brtylvorvhyv3" path="res://Recursos/Graficos/UI/Componentes/popup_minigames/popup_minigame_barra_indicador.svg" id="7_mf8c0"]
 [ext_resource type="Script" uid="uid://l1k133hbrmib" path="res://Scripts/UI/BotaoPendulo.gd" id="8_skdxr"]
 
 [node name="DesenformarCuscuz" instance=ExtResource("1_0k68q")]
-script = ExtResource("2_w5m2d")
+script = ExtResource("2_rl88k")
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="1"]
+[node name="Receita" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="0"]
 layout_mode = 2
+theme = ExtResource("3_rl88k")
 theme_type_variation = &"ModalTitle"
-text = "Pressione o botão na hora certa para 
-desenformar o cuscuz"
+theme_override_font_sizes/font_size = 40
+text = "
+Cuscuz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icone Minigame" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Receita" index="0"]
+layout_mode = 2
+offset_left = 76.0
+offset_top = 33.0
+offset_right = 668.0
+offset_bottom = 103.0
+texture = ExtResource("4_l2rbf")
+stretch_mode = 2
+
+[node name="Preenchimento" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="1"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme = ExtResource("3_rl88k")
+theme_type_variation = &"ModalTitle"
+theme_override_font_sizes/font_size = 40
+text = "
+Cuscuz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icone Minigame" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Preenchimento" index="0"]
+layout_mode = 2
+offset_left = 76.0
+offset_top = 33.0
+offset_right = 668.0
+offset_bottom = 103.0
+texture = ExtResource("4_l2rbf")
+stretch_mode = 2
+
+[node name="Preenchimento2" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme = ExtResource("3_rl88k")
+theme_type_variation = &"ModalTitle"
+theme_override_font_sizes/font_size = 40
+text = "
+Cuscuz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icone Minigame" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Preenchimento2" index="0"]
+layout_mode = 2
+offset_left = 76.0
+offset_top = 33.0
+offset_right = 668.0
+offset_bottom = 103.0
+texture = ExtResource("4_l2rbf")
+stretch_mode = 2
+
+[node name="Preenchimento3" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme = ExtResource("3_rl88k")
+theme_type_variation = &"ModalTitle"
+theme_override_font_sizes/font_size = 40
+text = "
+Cuscuz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icone Minigame" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Preenchimento3" index="0"]
+layout_mode = 2
+offset_left = 76.0
+offset_top = 33.0
+offset_right = 668.0
+offset_bottom = 103.0
+texture = ExtResource("4_l2rbf")
+stretch_mode = 2
+
+[node name="Preenchimento4" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="4"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme = ExtResource("3_rl88k")
+theme_type_variation = &"ModalTitle"
+theme_override_font_sizes/font_size = 40
+text = "
+Cuscuz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icone Minigame" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Preenchimento4" index="0"]
+layout_mode = 2
+offset_left = 76.0
+offset_top = 33.0
+offset_right = 668.0
+offset_bottom = 103.0
+texture = ExtResource("4_l2rbf")
+stretch_mode = 2
+
+[node name="Preenchimento5" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="5"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme = ExtResource("3_rl88k")
+theme_type_variation = &"ModalTitle"
+theme_override_font_sizes/font_size = 40
+text = "
+Cuscuz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icone Minigame" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Preenchimento5" index="0"]
+layout_mode = 2
+offset_left = 76.0
+offset_top = 33.0
+offset_right = 668.0
+offset_bottom = 103.0
+texture = ExtResource("4_l2rbf")
+stretch_mode = 2
+
+[node name="Instrucao" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="6"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("3_rl88k")
+theme_type_variation = &"ModalTitle"
+theme_override_font_sizes/font_size = 40
+text = "Pressione o BOTÃO
+ na hora certa!"
 horizontal_alignment = 1
 
-[node name="ImagemEvento" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer" index="2"]
+[node name="ImagemEvento" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Instrucao" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = 127.0
+offset_top = -470.0
+offset_right = 212.0
+offset_bottom = -400.0
+scale = Vector2(4, 4)
 size_flags_vertical = 3
 texture = ExtResource("3_skdxr")
-expand_mode = 1
 stretch_mode = 5
 
-[node name="ImagemPendulo_barra" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer" index="3"]
+[node name="ImagemPendulo_barra" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Instrucao" index="1"]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = 30.0
+offset_top = -160.0
+offset_right = 558.0
+offset_bottom = -86.0
 size_flags_vertical = 3
-texture = ExtResource("4_w5m2d")
-expand_mode = 1
+texture = ExtResource("6_c5aef")
+expand_mode = 5
 stretch_mode = 5
 
-[node name="Pendulo" type="Sprite2D" parent="MarginContainer/PanelContainer/VBoxContainer/ImagemPendulo_barra" index="0"]
+[node name="Pendulo" type="Sprite2D" parent="MarginContainer/PanelContainer/VBoxContainer/Instrucao/ImagemPendulo_barra" index="0"]
 unique_name_in_owner = true
-position = Vector2(285, 116)
+position = Vector2(250, 78)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_xq4bp")
+texture = ExtResource("7_mf8c0")
 script = ExtResource("6_skdxr")
 alcance = 255.0
 velocidade = 2.31
 alcance_certo = 127.5
 
-[node name="ProgressoEvento" type="TextureProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer" index="4" node_paths=PackedStringArray("event_timer", "behavior")]
+[node name="ProgressoEvento" type="TextureProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer/Instrucao" index="2" node_paths=PackedStringArray("event_timer", "behavior")]
 unique_name_in_owner = true
 z_index = 1
 layout_mode = 2
+offset_left = 199.0
+offset_top = 211.0
+offset_right = 381.0
+offset_bottom = 393.0
 size_flags_horizontal = 4
 step = 100.0
 fill_mode = 4
@@ -61,21 +199,24 @@ event_timer = NodePath("Timer")
 behavior = NodePath("SmashButton")
 metadata/_custom_type_script = "uid://b0tgsnmsppesf"
 
-[node name="Timer" type="Timer" parent="MarginContainer/PanelContainer/VBoxContainer/ProgressoEvento" index="0"]
+[node name="Timer" type="Timer" parent="MarginContainer/PanelContainer/VBoxContainer/Instrucao/ProgressoEvento" index="0"]
 wait_time = 10.0
 one_shot = true
 
-[node name="SmashButton" type="Node" parent="MarginContainer/PanelContainer/VBoxContainer/ProgressoEvento" index="1" node_paths=PackedStringArray("pendulo")]
+[node name="SmashButton" type="Node" parent="MarginContainer/PanelContainer/VBoxContainer/Instrucao/ProgressoEvento" index="1" node_paths=PackedStringArray("pendulo")]
 script = ExtResource("8_skdxr")
 miss_time = 2.0
 pendulo = NodePath("../../ImagemPendulo_barra/Pendulo")
 metadata/_custom_type_script = "uid://44oftg34g52d"
 
-[node name="BotaoAcao" type="TextureButton" parent="MarginContainer/PanelContainer" index="1"]
+[node name="BotaoAcao" type="TextureButton" parent="MarginContainer/PanelContainer/VBoxContainer/Instrucao/ProgressoEvento" index="2"]
 layout_mode = 2
+offset_top = 1.0
+offset_right = 182.0
+offset_bottom = 183.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = ExtResource("4_xq4bp")
 stretch_mode = 5
 
-[connection signal="pressed" from="MarginContainer/PanelContainer/BotaoAcao" to="MarginContainer/PanelContainer/VBoxContainer/ProgressoEvento/SmashButton" method="press"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Instrucao/ProgressoEvento/BotaoAcao" to="MarginContainer/PanelContainer/VBoxContainer/Instrucao/ProgressoEvento/SmashButton" method="press"]

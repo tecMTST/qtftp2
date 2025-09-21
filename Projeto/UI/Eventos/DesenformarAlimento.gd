@@ -5,7 +5,7 @@ extends Control
 
 
 func _ready() -> void:
-	#receita.text=ControleDeFase.receita_selecionada.nome
+	receita.text=ControleDeFase.receita_selecionada.nome
 	
 	if %ProgressoEvento.running: return
 	%ProgressoEvento.failed.connect(_on_failed)
