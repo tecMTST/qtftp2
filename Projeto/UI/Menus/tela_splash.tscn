@@ -1,6 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://dquw2j5sas5ws"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://UI/Menus/tela_splash.gd" id="1_286d4"]
+=======
+[ext_resource type="Script" uid="uid://dkll1jgpnp0we" path="res://UI/Menus/tela_splash.gd" id="1_286d4"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://dtohi5qh8mdqa" path="res://Recursos/Graficos/UI/Componentes/logos/logo_tpt.svg" id="2_po15b"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_286d4"]

@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=5 format=3 uid="uid://bsi1hrb4is74n"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://bsi1hrb4is74n"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=7 format=3 uid="uid://bsi1hrb4is74n"]
 >>>>>>> Stashed changes
@@ -75,6 +79,9 @@ texture = ExtResource("4_u2yia")
 =======
 [node name="TransicaoCena" parent="." instance=ExtResource("4_26fyp")]
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/continuar" to="." method="_on_continuar_pressed"]

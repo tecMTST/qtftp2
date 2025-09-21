@@ -28,6 +28,9 @@ var biblioteca_de_audio := {
 		"hidratar": preload("res://Recursos/Audio/Efeitos/hidratar.ogg"),
 		"pegar_item": preload("res://Recursos/Audio/Efeitos/pegar_item.ogg"),
 		"alimento_servido": preload("res://Recursos/Audio/Efeitos/alimento_servido.ogg"),
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		"splash_screen": preload("res://Recursos/Audio/Efeitos/splash.ogg"),
 		"passos": [
