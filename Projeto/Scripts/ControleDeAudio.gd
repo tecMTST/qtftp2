@@ -29,6 +29,9 @@ var biblioteca_de_audio := {
 		"pegar_item": preload("res://Recursos/Audio/Efeitos/pegar_item.ogg"),
 		"alimento_servido": preload("res://Recursos/Audio/Efeitos/alimento_servido.ogg"),
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

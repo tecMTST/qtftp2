@@ -1,7 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://dquw2j5sas5ws"]
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://UI/Menus/tela_splash.gd" id="1_286d4"]
+=======
+[ext_resource type="Script" uid="uid://dkll1jgpnp0we" path="res://UI/Menus/tela_splash.gd" id="1_286d4"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="Script" uid="uid://dkll1jgpnp0we" path="res://UI/Menus/tela_splash.gd" id="1_286d4"]
 >>>>>>> Stashed changes
