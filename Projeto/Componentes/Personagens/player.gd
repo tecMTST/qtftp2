@@ -83,7 +83,7 @@ func _trapaceia(evento: InputEvent) -> void:
 func eliminar_ingrediente() -> void:
 	esta_agarrando = false
 	if objeto_agarrado != null:
-		objeto_agarrado.queue_free()
+		objeto_agarrado.destruir()
 		objeto_agarrado = null
 
 

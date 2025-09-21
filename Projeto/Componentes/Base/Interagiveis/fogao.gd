@@ -19,7 +19,7 @@ func eliminar_ingrediente() -> void:
 	fogo_animado.hide()
 	ControleDeAudio.para_efeito_ciclo("fogao_alarme")
 	ControleDeAudio.para_efeito_ciclo("fogao_cozinhando")
-	if objeto_no_fogao != null: objeto_no_fogao.queue_free()
+	if objeto_no_fogao != null: objeto_no_fogao.destruir()
 	objeto_no_fogao = null
 	_jogador = null
 

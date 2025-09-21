@@ -11,6 +11,8 @@ enum EstadoIngrediente {
 	QUEIMANDO
 }
 
+@export var duracao_shader: float
+
 var id: String = ""
 var descricao: String = ""
 var ingrediente: Ingrediente
@@ -18,10 +20,14 @@ var tempo: int = 0
 var estado_atual = EstadoIngrediente.INICIAL
 
 var _id_acao_atual: int = -1
+var _shader_ativo: String
+var _shader_tempo_atual: float
 
 @onready var timer: Timer = $Timer
 @onready var visualizador_temporal: VisualizadorTemporal = $VisualizadorTemporal
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var shader_material: ShaderMaterial = sprite.material
+
 
 func _ready() -> void:
 	assert(
@@ -37,6 +43,8 @@ func _ready() -> void:
 	var escala_final = min(escala_x, escala_y)
 	sprite.scale = Vector2(escala_final, escala_final)
 	sprite.texture = nova_textura
+	_shader_tempo_atual = 0.0
+	_shader_ativo = ""
 
 	if tempo:
 		timer.start(tempo)
@@ -67,7 +75,7 @@ func _on_timer_timeout():
 			visualizador_temporal.cor = Color("e83637") # vermelho!
 			timer.start(ingrediente.tempo_queima)
 		EstadoIngrediente.QUEIMANDO:
-			print_debug("queimou! tem que tirar de cena")
+			_shader_ativo = "burn_progress"
 		_:
 			print_debug("estado " + estado_atual + " inválido")
 	ao_tempo_limite_atingido.emit(self)
@@ -121,12 +129,29 @@ func _on_evento_realizado() -> void:
 	queue_free()
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	global_rotation = 0
+	_atualiza_shader(delta)
+
+
+func _atualiza_shader(delta: float) -> void:
+	if _shader_ativo == "": return
+	_shader_tempo_atual += delta
+	var t = clamp(_shader_tempo_atual / duracao_shader, 0.0, 1.0)
+	shader_material.set_shader_parameter(_shader_ativo, t)
+	if t >= 1.0:
+		shader_material.set_shader_parameter(_shader_ativo, 0.0)
+		queue_free()
 
 
 func entregar() -> void:
 	print_debug("entregando")
 	_desliga_captura_de_eventos()
 	ControleDeFase.entregar_prato(self.ingrediente)
-	queue_free()
+	_shader_ativo = "completion_wipe_progress"
+	shader_material.set_shader_parameter(_shader_ativo, 0.0)
+
+
+func destruir() -> void:
+	_shader_ativo = "burn_progress"
+	shader_material.set_shader_parameter(_shader_ativo, 0.0)
