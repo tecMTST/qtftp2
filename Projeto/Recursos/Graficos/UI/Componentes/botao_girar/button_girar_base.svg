@@ -6,7 +6,7 @@
    fill="none"
    version="1.1"
    id="svg1"
-   sodipodi:docname="button_action_pressed_base.svg"
+   sodipodi:docname="button_girar_base.svg"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -23,9 +23,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="2.5"
-     inkscape:cx="17.8"
-     inkscape:cy="136.8"
+     inkscape:zoom="1.25"
+     inkscape:cx="-52.4"
+     inkscape:cy="223.2"
      inkscape:window-width="1920"
      inkscape:window-height="1043"
      inkscape:window-x="1920"
@@ -52,4 +52,9 @@
      rx="2.40625"
      fill="white"
      id="rect1" />
+  <path
+     id="circle1-5"
+     style="opacity:0.79949238;fill:#ffffff;stroke-width:0.296248"
+     d="m 83.457464,19.187657 c -33.442749,-4.1e-5 -60.969534,26.305959 -62.485501,59.714331 -0.09509,3.313147 2.400723,7.273639 6.410661,15.270921 l 9.050015,-15.270921 c 1.499544,-24.872013 22.107652,-44.275073 47.024825,-44.275082 24.917186,7e-6 45.525286,19.403068 47.024836,44.275082 l -9.49295,-0.03949 16.803,21.149882 17.23831,-20.725788 -9.0877,-0.384621 C 144.427,45.493617 116.90022,19.187619 83.457464,19.187657 Z"
+     sodipodi:nodetypes="ccccscccccc" />
 </svg>
