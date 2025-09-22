@@ -5,6 +5,7 @@ var jogo_salvo : SaveFile
 @onready var continuar: Button = $CenterContainer/BotoesPrincipais/continuar
 @onready var transicao_cena: TransicaoCena = $TransicaoCena
 
+var fundo = self_modulate
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -45,6 +46,8 @@ func _on_sair_pressed() -> void:
 
 #ao clicar vai para a tela com a imagem da cartilha e informações para baixá-la
 func _on_extras_pressed() -> void:
+	fundo.a = 0.5
+	self_modulate = fundo
 	get_tree().change_scene_to_file("res://UI/Menus/menu_extras.tscn")
 
 func _on_continuar_pressed() -> void:
