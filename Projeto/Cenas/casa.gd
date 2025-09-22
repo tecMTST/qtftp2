@@ -20,7 +20,7 @@ func _ready() -> void:
 	pausar.hide()
 	briefing.iniciar()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	botao_pausa.visible = not ControleDeFase.jogador.esta_dialogando
 
 func _on_player_acao_ativada() -> void:

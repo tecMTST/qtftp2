@@ -79,6 +79,6 @@ func _on_componente_interagivel_interagir(_jogador: Player) -> void:
 
 func ocultar_lucas():
 	lucas_rig.visible = false
-	
+
 func mostrar_lucas():
 	lucas_rig.visible = true

@@ -1,29 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://daemcv4oofrhb"]
+[gd_scene load_steps=6 format=3 uid="uid://daemcv4oofrhb"]
 
 [ext_resource type="Script" uid="uid://ddnieijd5o1uy" path="res://Componentes/Base/Ingredientes/IngredienteBase.gd" id="1_tjm5u"]
+[ext_resource type="Shader" uid="uid://d2ippdkh0ygmu" path="res://Recursos/Graficos/Efeitos/grafico_shadercomida.gdshader" id="2_tjm5u"]
 [ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="3_nn7td"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l42kw"]
 size = Vector2(50, 32)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0y48w"]
+shader = ExtResource("2_tjm5u")
+shader_parameter/burn_progress = 0.0
+shader_parameter/completion_wipe_progress = 0.0
+shader_parameter/noise_force = 2.0
+shader_parameter/burn_color = Color(0.855, 0.047, 0.082, 1)
+shader_parameter/border_width = 0.3
+shader_parameter/burn_direction = 145.0
+shader_parameter/completion_color = Color(1, 1, 1, 1)
+shader_parameter/wipe_direction = 145.0
+shader_parameter/wipe_softness = 0.2
+
 [node name="IngredienteBase" type="StaticBody2D" groups=["agarravel"]]
 script = ExtResource("1_tjm5u")
+duracao_shader = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l42kw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0y48w")
 position = Vector2(4.76837e-07, 2.38419e-07)
 scale = Vector2(0.07, 0.07)
 
 [node name="VisualizadorTemporal" type="Node2D" parent="." node_paths=PackedStringArray("temporizador")]
+z_index = 99
 position = Vector2(0, -56)
 script = ExtResource("3_nn7td")
 temporizador = NodePath("../Timer")
 radius = 30.0
-cor = Color(0.278431, 0.54902, 0.74902, 0.75)
+cor = Color(0.278431, 0.54902, 0.74902, 0.8)
 metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

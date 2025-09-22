@@ -23,6 +23,7 @@ func _on_jogar_pressed() -> void:
 	SaveService.LoadGame(Constantes.ID_SALVAR)
 	transicao_cena.escurecer()
 	await transicao_cena.finalizou
+	EstadoDeJogo.nivel_atual = 1
 	get_tree().change_scene_to_file(Globais.niveis[0].local)
 
 #ao clicar vai para a tela de opções do jogo

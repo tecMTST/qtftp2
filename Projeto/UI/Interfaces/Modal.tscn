@@ -1,30 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsnts70s2x6ks"]
+[gd_scene load_steps=8 format=3 uid="uid://dsnts70s2x6ks"]
 
 [ext_resource type="Script" uid="uid://ceg4uv7kfbj2" path="res://UI/Interfaces/modal.gd" id="1_ra54o"]
 [ext_resource type="Script" uid="uid://cpesqq3ctb78o" path="res://addons/uiJuicer/Fader.gd" id="2_ra54o"]
 [ext_resource type="Script" uid="uid://b3ykmcnj6hjhq" path="res://addons/simple-gui-transitions/transition.gd" id="3_ra54o"]
+[ext_resource type="Texture2D" uid="uid://dentlu8ycawlw" path="res://Recursos/Graficos/UI/Componentes/popup_minigames/popup_minigame_base.svg" id="4_yfavh"]
+[ext_resource type="Theme" uid="uid://cgh8y8776n7oo" path="res://UI/botaoAbaPause.tres" id="5_dldar"]
+[ext_resource type="FontFile" uid="uid://dxlayylvmb60b" path="res://Recursos/Fontes/SourGummy-Medium.ttf" id="6_iuixk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av34c"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(1, 0.788235, 0.662745, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-expand_margin_left = 16.0
-expand_margin_top = 16.0
-expand_margin_right = 16.0
-expand_margin_bottom = 16.0
-shadow_size = 16
-shadow_offset = Vector2(8, 8)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s3b2c"]
+texture = ExtResource("4_yfavh")
 
 [node name="Modal" type="Control"]
 layout_mode = 3
@@ -72,16 +56,23 @@ theme_type_variation = &"ModalContainer"
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_av34c")
+theme_override_styles/panel = SubResource("StyleBoxTexture_s3b2c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="CloseButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("5_dldar")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_iuixk")
+theme_override_font_sizes/font_size = 40
 text = "X"
 
 [connection signal="button_down" from="MarginContainer/PanelContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_button_down"]
