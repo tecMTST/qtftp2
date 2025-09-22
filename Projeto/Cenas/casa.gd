@@ -4,7 +4,6 @@ class_name Casa extends Node2D
 @onready var botao_pausa: TouchScreenButton = $Molduras/BotaoPausa
 @onready var pausar: MenuPausa = $CanvasLayer/pausar
 @onready var save_agent: SaveAgent = $SaveAgent
-@onready var bt_player: BTPlayer = $BTPlayer
 @onready var botao_fim: TouchScreenButton = $Molduras/BotaoFim
 @onready var briefing: Briefing = $Briefing
 @onready var transicao_cena: TransicaoCena = $TransicaoCena
@@ -12,7 +11,6 @@ class_name Casa extends Node2D
 func _ready() -> void:
 	ControleDeFase.carregar_nivel()
 	ControleDeFase.iniciar_nivel()
-	ControleDeFase.prato_entregue.connect(_prato_entregue)
 	ControleDeFase.cena_final.connect(_fim_cena)
 	SaveService.SaveGame()
 	pausar.hide()
@@ -39,26 +37,9 @@ func _on_pausar_continuar() -> void:
 	botao_pausa.visible = true
 	ControleDeFase.travar_dialogos = false
 
-func abrir_dialogo(fase: String, estado_fase: int, linha_dialogo: String) -> int:
-	if ControleDeFase.travar_dialogos:
-		return estado_fase
-	ControleDeFase.abrir_dialogo(fase, linha_dialogo)
-	return estado_fase + 1
-
-func _on_player_acao_agarrou(_objeto: Variant) -> void:
-	if bt_player.blackboard.get_var('estado_fase') == 1:
-		bt_player.blackboard.set_var('estado_fase', 2)
-
-func _prato_entregue(_prato):
-	if ControleDeFase.estado_nivel.pratos_entregues.size() != 2:
-		return
-	if bt_player.blackboard.get_var('estado_fase') == 3:
-		bt_player.blackboard.set_var('estado_fase', 4)
-
 func _fim_cena(_nivel, _estado_nivel):
 	ControleDeFase.congelar_tempo()
 	ControleDeFase.estado_nivel.cena_final_iniciada = true
-	bt_player.blackboard.set_var('estado_fase', 6)
 
 func _finalizar_nivel():
 	transicao_cena.escurecer()

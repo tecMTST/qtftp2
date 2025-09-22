@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://toyuyf660lm7"]
+[gd_scene load_steps=40 format=3 uid="uid://toyuyf660lm7"]
 
 [ext_resource type="Script" uid="uid://fmdhy8p6vnli" path="res://Cenas/cozinha_solidaria.gd" id="1_bhph4"]
 [ext_resource type="Texture2D" uid="uid://dmon3wtcmi48s" path="res://Recursos/Graficos/Cenas/Cenario_2/Piso.svg" id="5_pdorv"]
@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://20ja5ny2iom8" path="res://Recursos/Graficos/UI/Ingredientes/laranja_banana.svg" id="30_k5m24"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="32_7pup0"]
 [ext_resource type="Script" uid="uid://balal13nfhegi" path="res://addons/saveEngine/scripts/SaveAgent.gd" id="32_r2taa"]
-[ext_resource type="BehaviorTree" uid="uid://v1romtgfuw1k" path="res://ai/tutorial.tres" id="33_3c0xy"]
 [ext_resource type="Texture2D" uid="uid://bu37qio7g3ob4" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_disabled_base.svg" id="33_4fql6"]
 [ext_resource type="PackedScene" uid="uid://n52w7lk2j46x" path="res://Componentes/Casa/Interagiveis/EntregaNaFila.tscn" id="33_vqmvo"]
 [ext_resource type="Texture2D" uid="uid://dytixyovx6d7d" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/thumb_stick_base.svg" id="34_5hxbm"]
@@ -52,8 +51,6 @@ size = Vector2(120, 268)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eds2h"]
 size = Vector2(154, 142)
-
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_tjjme"]
 
 [node name="CozinhaSolidaria" type="Node2D"]
 script = ExtResource("1_bhph4")
@@ -246,10 +243,6 @@ visible = false
 script = ExtResource("32_r2taa")
 AutoSave = false
 metadata/_custom_type_script = "uid://balal13nfhegi"
-
-[node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = ExtResource("33_3c0xy")
-blackboard_plan = SubResource("BlackboardPlan_tjjme")
 
 [node name="Salada" type="Sprite2D" parent="."]
 position = Vector2(425, 554)
