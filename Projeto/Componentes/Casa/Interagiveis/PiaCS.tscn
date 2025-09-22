@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="5_eymmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tpct"]
-size = Vector2(131, 117)
+size = Vector2(131, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oc46i"]
 size = Vector2(76, 121)
@@ -24,7 +24,7 @@ scale = Vector2(0.7, 0.95)
 texture = ExtResource("2_chrhn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 8.5)
+position = Vector2(0.5, -4.5)
 shape = SubResource("RectangleShape2D_2tpct")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
