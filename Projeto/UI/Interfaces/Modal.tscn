@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://ceg4uv7kfbj2" path="res://UI/Interfaces/modal.gd" id="1_ra54o"]
 [ext_resource type="Script" uid="uid://cpesqq3ctb78o" path="res://addons/uiJuicer/Fader.gd" id="2_ra54o"]
 [ext_resource type="Script" uid="uid://b3ykmcnj6hjhq" path="res://addons/simple-gui-transitions/transition.gd" id="3_ra54o"]
-[ext_resource type="Texture2D" uid="uid://dentlu8ycawlw" path="res://Recursos/Graficos/UI/Componentes/popup_minigames/popup_minigame_base.svg" id="4_yfavh"]
+[ext_resource type="Texture2D" uid="uid://5it01pmdc6sy" path="res://Recursos/Graficos/UI/Componentes/popup_minigames/popup_minigame_base.svg" id="4_yfavh"]
 [ext_resource type="Theme" uid="uid://cgh8y8776n7oo" path="res://UI/botaoAbaPause.tres" id="5_dldar"]
-[ext_resource type="FontFile" uid="uid://dxlayylvmb60b" path="res://Recursos/Fontes/SourGummy-Medium.ttf" id="6_iuixk"]
+[ext_resource type="FontFile" uid="uid://35it1xrxsnfx" path="res://Recursos/Fontes/SourGummy-Medium.ttf" id="6_iuixk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s3b2c"]
 texture = ExtResource("4_yfavh")

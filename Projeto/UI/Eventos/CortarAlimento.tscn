@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dsnts70s2x6ks" path="res://UI/Interfaces/Modal.tscn" id="1_s7xxv"]
 [ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="2_bsy65"]
 [ext_resource type="Script" uid="uid://dfrvqfogmjhje" path="res://UI/Eventos/CortarAlimento.gd" id="2_w4mwm"]
-[ext_resource type="Texture2D" uid="uid://cib3ljq1q5q6p" path="res://Recursos/Graficos/UI/Ingredientes/cortar.svg" id="3_boqlv"]
+[ext_resource type="Texture2D" uid="uid://c2hpypvmk83dx" path="res://Recursos/Graficos/UI/Ingredientes/cortar.svg" id="3_boqlv"]
 [ext_resource type="Script" uid="uid://b0tgsnmsppesf" path="res://addons/events/quick_timer_progress_bar.gd" id="3_imsks"]
 [ext_resource type="Texture2D" uid="uid://dthvcmgkvbpqs" path="res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida.svg" id="4_mct0n"]
 [ext_resource type="Script" uid="uid://44oftg34g52d" path="res://addons/events/behavior/smash_button.gd" id="4_w4mwm"]

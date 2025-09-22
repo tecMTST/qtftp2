@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bkoohyyxjha2h" path="res://UI/Eventos/geladeira.gd" id="1_b7hqd"]
 [ext_resource type="Script" uid="uid://b3ykmcnj6hjhq" path="res://addons/simple-gui-transitions/transition.gd" id="1_uiwjp"]
 [ext_resource type="Script" uid="uid://cpesqq3ctb78o" path="res://addons/uiJuicer/Fader.gd" id="2_egkq2"]
-[ext_resource type="Texture2D" uid="uid://edei5uq8gqa1" path="res://Recursos/Graficos/UI/Componentes/popup_geladeira/popup_geladeira.svg" id="4_cob2e"]
+[ext_resource type="Texture2D" uid="uid://1odgir1q772r" path="res://Recursos/Graficos/UI/Componentes/popup_geladeira/popup_geladeira.svg" id="4_cob2e"]
 [ext_resource type="PackedScene" uid="uid://cywx8j6su6jp2" path="res://Componentes/Casa/Interagiveis/Prateleira.tscn" id="5_d75bn"]
 [ext_resource type="Theme" uid="uid://manffmwy5jfe" path="res://UI/botaoFechar.tres" id="6_bniup"]
 

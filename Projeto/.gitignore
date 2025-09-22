@@ -6,7 +6,6 @@
 export.cfg
 *.zip
 *.pck
-*.import
 
 # cache e arquivos temporários:
 *.tmp
