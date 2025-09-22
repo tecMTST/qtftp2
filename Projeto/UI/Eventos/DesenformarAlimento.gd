@@ -1,27 +1,13 @@
 extends Control
 
 @onready var receita: Label = $MarginContainer/PanelContainer/VBoxContainer/Receita
-@onready var imagem_evento: TextureRect = %ImagemEvento
-
 
 
 
 func _ready() -> void:
-	receita.text="Nome Receita"
+	receita.text="Cuscuz"
 	if(is_instance_valid(ControleDeFase.receita_selecionada)):
 		receita.text=ControleDeFase.receita_selecionada.nome
-	var receita_match: String= "Picar a salsicha"
-	if(is_instance_valid(ControleDeFase.passo_atual)):
-		receita_match = ControleDeFase.passo_atual.descricao
-	match receita_match:
-		"Picar cebola e alho na bancada":
-			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/cebola_alho.svg")
-		"Picar a salsicha":
-			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida.svg")
-		"Picar a carne":
-			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/acem.svg")
-		"Picar a couve na bancada":
-			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/maco_couve.svg")
 	if %ProgressoEvento.running: return
 	%ProgressoEvento.failed.connect(_on_failed)
 	%ProgressoEvento.completed.connect(_on_completed)

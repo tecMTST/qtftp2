@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cr74l6j0jbkx5"]
+[gd_scene load_steps=21 format=3 uid="uid://cr74l6j0jbkx5"]
 
 [ext_resource type="Script" uid="uid://u155yd1j8w7y" path="res://UI/Menus/menu_pausa.gd" id="1_xqg3s"]
 [ext_resource type="Texture2D" uid="uid://dvc8fbsaf1o6g" path="res://Recursos/Graficos/UI/Componentes/menu_tutorialPause/menu_tutorialPause_base_opcoes.svg" id="2_im0bb"]
@@ -14,7 +14,8 @@
 [ext_resource type="FontFile" uid="uid://dgsx8f04jvfhg" path="res://Recursos/Fontes/SourGummy-Regular.ttf" id="8_r5mwj"]
 [ext_resource type="Theme" uid="uid://cmmbeb1vnduka" path="res://Recursos/Fontes/Label_SourGummy_Regular.tres" id="9_jttf2"]
 [ext_resource type="Script" uid="uid://bfah6lu1pheaj" path="res://Scripts/ControleDeAudio.gd" id="11_7cjwt"]
-[ext_resource type="Texture2D" uid="uid://rlbtxubsbsm4" path="res://Recursos/Graficos/UI/Briefing/pause-tutorial-cafe.svg" id="15_r5mwj"]
+[ext_resource type="Theme" uid="uid://manffmwy5jfe" path="res://UI/botaoFechar.tres" id="15_jttf2"]
+[ext_resource type="Texture2D" uid="uid://q5rk10nnr308" path="res://Recursos/Graficos/UI/Briefing/pause-tutorial-cafe.svg" id="15_r5mwj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo2rv"]
 bg_color = Color(0.631373, 0.192157, 0.403922, 1)
@@ -235,17 +236,19 @@ text = "Voltar à tela inicial"
 
 [node name="continuar" type="Button" parent="."]
 z_index = 20
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 offset_left = 52.0
 offset_top = 1113.0
 offset_right = 99.0
 offset_bottom = 1167.0
-theme = ExtResource("4_paes4")
+theme = ExtResource("15_jttf2")
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 25
-text = "X"
+text = "
+"
 
 [node name="Receita Atual" type="TextureRect" parent="."]
 layout_mode = 0
