@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b6mqbmkjmrvhl" path="res://Componentes/Base/Interagiveis/geladeira.gd" id="1_ssnq7"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_au0yj"]
 [ext_resource type="Texture2D" uid="uid://dlnhi8w3kqf70" path="res://Recursos/Graficos/Cenas/Cenario_2/Freezer.svg" id="2_ssnq7"]
-[ext_resource type="Texture2D" uid="uid://dmxtex2h0cm00" path="res://Recursos/Graficos/UI/indicador.svg" id="4_3o1v5"]
+[ext_resource type="Texture2D" uid="uid://p44b1nwn8o23" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="4_3o1v5"]
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="5_sybf6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3mkr"]
@@ -49,8 +49,8 @@ metadata/_custom_type_script = "uid://ddwsslb5nraqq"
 
 [node name="Indicador" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-26, -46)
-scale = Vector2(0.307, 0.307)
+position = Vector2(-25, -89)
+scale = Vector2(0.667, 0.667)
 texture = ExtResource("4_3o1v5")
 
 [node name="Bouncer" type="Node" parent="Indicador"]
