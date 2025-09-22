@@ -36,16 +36,18 @@ SaveService="*res://addons/saveEngine/scripts/SaveService.gd"
 directories/dch_directory={
 "carolina": "res://Dialogo/carolina.dch",
 "elza": "res://Dialogo/elza.dch",
-"lucas": "res://Dialogo/lucas.dch"
+"lucas": "res://Dialogo/lucas.dch",
+"narrador": "res://Dialogo/narrador.dch"
 }
 directories/dtl_directory={
 "tutorial": "res://Dialogo/tutorial.dtl"
 }
 layout/style_directory={
 "": "res://Dialogo/balao.tres",
-"balao": "res://Dialogo/balao.tres"
+"balao": "res://Dialogo/balao.tres",
+"narrador": "res://Dialogo/narrador.tres"
 }
-layout/style_list=["res://Dialogo/balao.tres"]
+layout/style_list=["res://Dialogo/balao.tres", "res://Dialogo/narrador.tres"]
 layout/default_style="res://Dialogo/balao.tres"
 glossary/default_case_sensitive=true
 variables={}
@@ -83,6 +85,8 @@ audio/channel_defaults={
 }
 }
 text/input_action="dialogic_default_action"
+audio/type_sound_bus="Efeitos"
+text/autocolor_names=false
 
 [display]
 
@@ -126,6 +130,7 @@ prato_pronto=""
 prato_entregue=""
 ponto_entrega=""
 menu_geladeira=""
+personagem=""
 
 [gui]
 

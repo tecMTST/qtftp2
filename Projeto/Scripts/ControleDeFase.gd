@@ -23,8 +23,11 @@ var _tempo_checagem: Timer
 var _indice_receita_atual: int = 0
 var _indice_passo_atual: int = 0
 
+var travar_dialogos := false
+var esta_dialogando := false
 
 func _ready() -> void:
+	Dialogic.timeline_ended.connect(_on_dialogo_finalizado)
 	get_tree().paused = false
 	_tempo_checagem = Timer.new()
 	_tempo_checagem.wait_time = 0.1
@@ -131,7 +134,6 @@ func iniciar_nivel():
 	nivel_iniciado.emit(nivel_atual, estado_nivel)
 	print_debug("Nível ", nivel_atual.id, " iniciado")
 
-
 func _atualizar_bagunca() -> void:
 	estado_nivel.bagunca = get_tree().get_node_count_in_group('bagunca')
 
@@ -199,10 +201,26 @@ func _reset_timers() -> void:
 func congelar_tempo() -> void:
 	jogador.process_mode = Node.PROCESS_MODE_DISABLED
 	tempo_jogo.paused = true
+	travar_dialogos = true
 
 func descongelar_tempo() -> void:
 	jogador.process_mode = Node.PROCESS_MODE_INHERIT
 	tempo_jogo.paused = false
+	travar_dialogos = false
 
 func fase_atual() -> int:
 	return EstadoDeJogo.nivel_atual
+
+func abrir_dialogo(fase: String, linha_dialogo: String) -> void:
+	if travar_dialogos:
+		return
+	var layout = Dialogic.start(fase, linha_dialogo)
+
+	if layout.has_method("register_character"):
+		var personagens := get_tree().get_nodes_in_group("personagem")
+		for personagem in personagens as Array[Personagem]:
+			layout.register_character(personagem.id, personagem)
+	esta_dialogando = true
+
+func _on_dialogo_finalizado() -> void:
+	esta_dialogando = false

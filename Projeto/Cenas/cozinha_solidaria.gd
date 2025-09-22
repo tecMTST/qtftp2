@@ -1,7 +1,5 @@
 class_name CozinhaSolidaria extends Node2D
 
-var travar_dialogos = true
-
 @onready var botao_acao: TouchScreenButton = $Molduras/BotaoAcao
 @onready var botao_pausa: TouchScreenButton = $Molduras/BotaoPausa
 @onready var pausar: MenuPausa = $CanvasLayer/pausar
@@ -31,17 +29,17 @@ func _on_player_acao_desativada() -> void:
 func _on_botao_pausa_pressed() -> void:
 	get_tree().paused = true
 	botao_pausa.visible = false
-	travar_dialogos = true
+	ControleDeFase.travar_dialogos = true
 	pausar.show()
 
 func _on_pausar_continuar() -> void:
 	botao_pausa.visible = true
-	travar_dialogos = false
+	ControleDeFase.travar_dialogos = false
 
 func abrir_dialogo(fase: String, estado_fase: int, linha_dialogo: String) -> int:
-	if travar_dialogos:
+	if ControleDeFase.travar_dialogos:
 		return estado_fase
-	ControleDeFase.jogador.iniciar_dialogo(load("res://Dialogo/"+ fase +".dialogue"), linha_dialogo)
+	ControleDeFase.abrir_dialogo(fase, linha_dialogo)
 	return estado_fase + 1
 
 
@@ -67,7 +65,6 @@ func _finalizar_nivel():
 
 func _on_briefing_iniciado() -> void:
 	ControleDeFase.congelar_tempo()
-	travar_dialogos = true
 
 func _on_briefing_finalizado() -> void:
 	ControleDeFase.descongelar_tempo()
@@ -75,7 +72,6 @@ func _on_briefing_finalizado() -> void:
 		"casa_intro", "casa_loop",
 		ControleDeFase.nivel_atual.tempo != ControleDeFase.TEMPO_INFINITO
 	)
-	travar_dialogos = false
 
 func _mostrar_botao_fim():
 	botao_fim.visible = true

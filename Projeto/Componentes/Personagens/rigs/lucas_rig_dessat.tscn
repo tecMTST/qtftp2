@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://x3x4hdetf5a8"]
+[gd_scene load_steps=14 format=3 uid="uid://x3x4hdetf5a8"]
 
 [ext_resource type="Texture2D" uid="uid://de7m4n4afowt2" path="res://Componentes/Personagens/rigs/vetores_spritesheets/nenê1_dessat.svg" id="1_7vs35"]
 [ext_resource type="Script" uid="uid://cy2ei2xo5xmqw" path="res://Componentes/Personagens/rigs/lucas_rig_dessat.gd" id="1_ml0f2"]
 [ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://Componentes/Personagens/rigs/vetores_spritesheets/qtftdanims.res" id="2_wx2i2"]
+[ext_resource type="Script" uid="uid://bqyphsb3rnr2x" path="res://Componentes/Personagens/personagem.gd" id="4_ea3el"]
 
 [sub_resource type="Animation" id="Animation_wx2i2"]
 length = 0.001
@@ -74,6 +75,10 @@ nodes/Chorando/node = SubResource("AnimationNodeBlend2_quv0o")
 nodes/Chorando/position = Vector2(220, 240)
 nodes/output/position = Vector2(520, 160)
 node_connections = [&"Choramingando", 0, &"Animation", &"Choramingando", 1, &"Animation 2", &"Chorando", 0, &"Choramingando", &"Chorando", 1, &"Animation 3", &"output", 0, &"Chorando"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7hrgj"]
+radius = 49.0
+height = 296.0
 
 [node name="lucas_rig_dessat" type="Node2D"]
 script = ExtResource("1_ml0f2")
@@ -149,7 +154,7 @@ position = Vector2(0, 161)
 rest = Transform2D(1, 0, 0, 1, 0, 161)
 
 [node name="pescoco" type="Bone2D" parent="Skeleton2D/tronco"]
-position = Vector2(0, -167.899)
+position = Vector2(0, -167.008)
 rest = Transform2D(1, 0, 0, 1, 0, -161)
 
 [node name="rosto" type="Bone2D" parent="Skeleton2D/tronco/pescoco"]
@@ -160,7 +165,8 @@ bone_angle = 0.0
 
 [node name="babador" type="Bone2D" parent="Skeleton2D/tronco/pescoco"]
 position = Vector2(-10, 0)
-rotation = 0.170554
+rotation = 0.148522
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -10, -161)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -188,3 +194,12 @@ tree_root = SubResource("AnimationNodeBlendTree_ml0f2")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Choramingando/blend_amount = 0.0
 parameters/Chorando/blend_amount = 0.0
+
+[node name="Lucas" type="CharacterBody2D" parent="." groups=["personagem"]]
+script = ExtResource("4_ea3el")
+id = "lucas"
+nome = "Lucas"
+metadata/_custom_type_script = "uid://bqyphsb3rnr2x"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lucas"]
+shape = SubResource("CapsuleShape2D_7hrgj")

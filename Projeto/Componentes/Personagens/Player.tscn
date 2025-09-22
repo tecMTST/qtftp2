@@ -80,7 +80,7 @@ nodes/VelocidadeSegurando/position = Vector2(-220, 280)
 nodes/output/position = Vector2(640, 140)
 node_connections = [&"Segurando", 0, &"Velocidade", &"Segurando", 1, &"VelocidadeSegurando", &"output", 0, &"Segurando"]
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["personagem", "player"]]
 script = ExtResource("1_c2vf6")
 id = "elza"
 nome = "Elza"

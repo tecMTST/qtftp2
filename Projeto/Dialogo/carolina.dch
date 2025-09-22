@@ -2,12 +2,12 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(1, 0, 0, 1),
+&"color": Color(0.435294, 0.466667, 0.85098, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "",
+"style": "balao",
 "suffix": ""
 },
 &"default_portrait": "",
