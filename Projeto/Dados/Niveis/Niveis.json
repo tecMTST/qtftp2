@@ -4,6 +4,13 @@
 		"nome" : "É Hora de Preparar o Café",
 		"descricao" : "Tutorial",
 		"textos" : [],
+		"dialogos": "tutorial",
+		"condicoes_dialogo": [
+			{"linha_dialogo":"inicio", "tempo_espera": 2},
+			{"linha_dialogo":"abriu_geladeira", "agarrou": 1, "tempo_espera": 1},
+			{"linha_dialogo":"tutorial_choro", "prato_entregue": 2, "tempo_espera": 1},
+			{"linha_dialogo":"fim", "signal_nivel": "concluido", "tempo_espera": 1}
+		],
 		"imagem" : "",
 		"local" : "res://Cenas/cutscene_quadrinhos_tutorial.tscn",
 		"id_receitas" : [1,2,1,2],

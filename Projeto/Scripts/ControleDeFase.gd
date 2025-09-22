@@ -132,6 +132,7 @@ func iniciar_nivel():
 	tempo_jogo.start()
 	_tempo_checagem.start()
 	nivel_iniciado.emit(nivel_atual, estado_nivel)
+	_controle_dialogos()
 	print_debug("Nível ", nivel_atual.id, " iniciado")
 
 func _atualizar_bagunca() -> void:
@@ -224,3 +225,18 @@ func abrir_dialogo(fase: String, linha_dialogo: String) -> void:
 
 func _on_dialogo_finalizado() -> void:
 	esta_dialogando = false
+	
+func _controle_dialogos() -> void:
+	if(!nivel_atual.dialogos):
+		return
+	if(nivel_atual.condicoes_dialogo):
+		for condicao in nivel_atual.condicoes_dialogo:
+			condicao.condicao_satisfeita.connect(_executa_condicao_dialogo)
+
+func _executa_condicao_dialogo(condicao: CondicaoDialogo) -> void:
+	if condicao.condicao.tempo_espera:
+		await get_tree().create_timer(condicao.tempo_espera).timeout
+
+	abrir_dialogo(nivel_atual.dialogos, condicao.linha_dialogo)
+	nivel_atual.condicoes_dialogo.erase(condicao)
+	await Dialogic.timeline_ended
