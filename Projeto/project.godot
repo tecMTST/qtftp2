@@ -19,6 +19,11 @@ run/main_scene="uid://bsi1hrb4is74n"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://5s5873fvwc5y"
+general/default_playback_type.web=0
+
 [autoload]
 
 EstadoDeJogo="*res://Scripts/EstadoDeJogo.gd"
@@ -93,7 +98,6 @@ text/autocolor_names=false
 window/size/viewport_width=720
 window/size/viewport_height=1280
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [editor_plugins]
