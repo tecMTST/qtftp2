@@ -9,8 +9,7 @@ extends Control
 func _ready() -> void:
 	receita.text="Nome Receita"
 	if(is_instance_valid(ControleDeFase.receita_selecionada)):
-		receita.text="
-		" + ControleDeFase.receita_selecionada.nome
+		receita.text=ControleDeFase.receita_selecionada.nome
 	var receita_match: String= "Picar a salsicha"
 	if(is_instance_valid(ControleDeFase.passo_atual)):
 		receita_match = ControleDeFase.passo_atual.descricao
