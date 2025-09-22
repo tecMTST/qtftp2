@@ -10,9 +10,9 @@ var biblioteca_de_audio := {
 	"musica": {
 		"casa_intro": preload("res://Recursos/Audio/Musica/casa_intro.ogg"),
 		"casa_loop": preload("res://Recursos/Audio/Musica/casa_loop.ogg"),
-		"menu": preload("res://Recursos/Audio/Musica/musica_menu.ogg"),
-		"quadrinhos": preload("res://Recursos/Audio/Musica/cena_introducao.ogg"),
-		"briefing": preload("res://Recursos/Audio/Musica/briefing.ogg")
+		"menu": "res://Recursos/Audio/Musica/musica_menu.ogg",
+		"quadrinhos": "res://Recursos/Audio/Musica/cena_introducao.ogg",
+		"briefing": "res://Recursos/Audio/Musica/briefing.ogg"
 	},
 	"efeitos": {
 		"vitoria": preload("res://Recursos/Audio/Efeitos/jingle_vitoria.ogg"),
@@ -87,27 +87,48 @@ func _ready() -> void:
 
 func toca_musica(nome_da_faixa: String, acelera: bool = true) -> void:
 	musica_acelera = acelera
-	var stream = biblioteca_de_audio["musica"].get(nome_da_faixa)
-	if !stream: return
-	if nome_da_faixa_atual == nome_da_faixa: return
+	if nome_da_faixa_atual == nome_da_faixa:
+		print_debug("[ControleDeAudio] musica ", nome_da_faixa, " já está tocando, ignorando.")
+		return
+	var faixa = biblioteca_de_audio["musica"].get(nome_da_faixa)
+	if !faixa:
+		print_debug("[ControleDeAudio] caminho para " + nome_da_faixa + " não encontrado.")
+		return
+	var stream = faixa if faixa is Resource else load(faixa)
+	if !stream:
+		print_debug("[ControleDeAudio] impossível carregar faixa " + nome_da_faixa)
+		return
 	para_musica()
 	_prepara_musica_ciclo(stream)
+	print_debug("[ControleDeAudio] tocando música " + nome_da_faixa)
 	toca_musica_ciclo.play()
 	nome_da_faixa_atual = nome_da_faixa
 
 
 func toca_musica_com_intro(nome_intro: String, nome_ciclo: String, acelera: bool = true) -> void:
 	musica_acelera = acelera
-	var intro = biblioteca_de_audio["musica"].get(nome_intro)
-	var ciclo = biblioteca_de_audio["musica"].get(nome_ciclo)
-	if !intro || !ciclo: return
+	var faixa_intro = biblioteca_de_audio["musica"].get(nome_intro)
+	var faixa_ciclo = biblioteca_de_audio["musica"].get(nome_ciclo)
+	if !faixa_intro || !faixa_ciclo:
+		print_debug("[ControleDeAudio] faixas não encontradas: ", nome_intro, ", ", nome_ciclo)
+		return
+	var intro = faixa_intro if faixa_intro is Resource else load(faixa_intro)
+	if !intro:
+		print_debug("[ControleDeAudio] impossível carregar faixa intro " + nome_intro)
+		return
+	var ciclo = faixa_ciclo if faixa_ciclo is Resource else load(faixa_ciclo)
+	if !ciclo:
+		print_debug("[ControleDeAudio] impossível carregar faixa ciclo " + nome_ciclo)
+		return
 	para_musica()
 	_prepara_musica_ciclo(ciclo)
 	toca_musica_intro.stream = intro
+	print_debug("[ControleDeAudio] tocando música " + nome_intro + "/" + nome_ciclo)
 	toca_musica_intro.play()
 
 
 func para_musica() -> void:
+	print_debug("[ControleDeAudio] parando musica")
 	toca_musica_intro.stop()
 	toca_musica_ciclo.stop()
 
