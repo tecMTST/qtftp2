@@ -71,11 +71,18 @@ func _ready() -> void:
 	add_child(toca_musica_ciclo)
 	toca_musica_ciclo.finished.connect(_on_musica_ciclo_completo)
 
-	for i in TAMANHO_DO_GRUPO_DE_EFEITOS:
+	for i in range(TAMANHO_DO_GRUPO_DE_EFEITOS):
 		var tocador = AudioStreamPlayer.new()
 		tocador.bus = "Efeitos"
 		add_child(tocador)
 		toca_efeitos.append(tocador)
+
+	for efeito in biblioteca_de_audio["efeitos"].keys():
+		var origem = biblioteca_de_audio["efeitos"][efeito]
+		if origem is Array:
+			for s in origem: AudioServer.register_stream_as_sample(s)
+		else:
+			AudioServer.register_stream_as_sample(origem)
 
 
 func toca_musica(nome_da_faixa: String, acelera: bool = true) -> void:
@@ -173,7 +180,7 @@ func _on_intro_finalizada() -> void:
 
 
 func _encontra_tocador_disponivel() -> int:
-	for i in TAMANHO_DO_GRUPO_DE_EFEITOS:
+	for i in range(TAMANHO_DO_GRUPO_DE_EFEITOS):
 		if !toca_efeitos[i].playing: return i
 	push_warning("Impossível tocar efeito sonoro. Grupo pequeno demais.")
 	return -1
