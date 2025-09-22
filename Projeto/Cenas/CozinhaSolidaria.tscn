@@ -48,7 +48,7 @@ size = Vector2(548, 1161)
 size = Vector2(378, 1164)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5m24"]
-size = Vector2(120, 268)
+size = Vector2(120, 282.17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eds2h"]
 size = Vector2(154, 142)
@@ -150,7 +150,7 @@ shape = SubResource("RectangleShape2D_gm3vv")
 position = Vector2(43, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limites/LimiteParedeBancada"]
-position = Vector2(40, 729)
+position = Vector2(40, 721.875)
 scale = Vector2(1.00452, 1.0056)
 shape = SubResource("RectangleShape2D_k5m24")
 

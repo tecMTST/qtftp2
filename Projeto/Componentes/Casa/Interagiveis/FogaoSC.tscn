@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dinjrxb4hojxc" path="res://Recursos/Graficos/Cenas/Cenario_2/Fogao.svg" id="2_wtnlt"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_wyfj2"]
 [ext_resource type="Texture2D" uid="uid://c3iyhekfm06dt" path="res://Recursos/Graficos/Cenas/Fire+Sparks-Sheet.png" id="4_2xtak"]
-[ext_resource type="Texture2D" uid="uid://p44b1nwn8o23" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="5_wyfj2"]
+[ext_resource type="Texture2D" uid="uid://cfp770tffb0ns" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="5_wyfj2"]
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="6_2xtak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvsi0"]

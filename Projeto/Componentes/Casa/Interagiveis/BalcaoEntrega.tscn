@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqcepha3vdbs2"]
 
 [ext_resource type="Texture2D" uid="uid://d072jky2wp25v" path="res://Recursos/Graficos/Cenas/Cenario_2/Bancada.svg" id="2_4qfp4"]
-[ext_resource type="Texture2D" uid="uid://p44b1nwn8o23" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="3_l71n5"]
+[ext_resource type="Texture2D" uid="uid://cfp770tffb0ns" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="3_l71n5"]
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="5_77h05"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="5_e0ko4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1ls"]
-size = Vector2(559, 252.24)
+size = Vector2(559, 323.016)
 
 [node name="BalcaoEntrega" type="StaticBody2D" groups=["filha", "interagivel", "ponto_entrega"]]
 
@@ -14,7 +14,7 @@ size = Vector2(559, 252.24)
 texture = ExtResource("2_4qfp4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 3.87134)
+position = Vector2(-1.5, -13)
 scale = Vector2(1, 0.476757)
 shape = SubResource("RectangleShape2D_eo1ls")
 
