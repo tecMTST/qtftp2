@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cr74l6j0jbkx5"]
+[gd_scene load_steps=22 format=3 uid="uid://cr74l6j0jbkx5"]
 
 [ext_resource type="Script" uid="uid://u155yd1j8w7y" path="res://UI/Menus/menu_pausa.gd" id="1_xqg3s"]
 [ext_resource type="Texture2D" uid="uid://dvc8fbsaf1o6g" path="res://Recursos/Graficos/UI/Componentes/menu_tutorialPause/menu_tutorialPause_base_opcoes.svg" id="2_im0bb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://cgh8y8776n7oo" path="res://UI/botaoAbaPause.tres" id="4_paes4"]
 [ext_resource type="Texture2D" uid="uid://c7duewe4oe42b" path="res://Recursos/Graficos/UI/Componentes/slider/slider_base.svg" id="5_w833q"]
 [ext_resource type="Texture2D" uid="uid://dx3mg7d53285n" path="res://Recursos/Graficos/UI/Ingredientes/controles.svg" id="6_coa44"]
+[ext_resource type="Theme" uid="uid://egdtqbppy6xr" path="res://UI/MenuAbaPause_naoselecionado.tres" id="6_dtud5"]
 [ext_resource type="Texture2D" uid="uid://islp56puf408" path="res://Recursos/Graficos/UI/Ingredientes/miojex_pronto.svg" id="7_etmqt"]
 [ext_resource type="Texture2D" uid="uid://btkfmdva6rg47" path="res://Recursos/Graficos/UI/Ingredientes/configuracoes.svg" id="7_r5mwj"]
 [ext_resource type="Theme" uid="uid://dehhxr018a0b0" path="res://UI/botaoPause.tres" id="7_w833q"]
@@ -108,7 +109,7 @@ offset_left = 148.0
 offset_top = 11.0
 offset_right = 236.0
 offset_bottom = 81.0
-theme = ExtResource("4_paes4")
+theme = ExtResource("6_dtud5")
 theme_override_colors/font_outline_color = Color(1, 1, 1, 0.670588)
 theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
 theme_override_constants/outline_size = 10
@@ -124,6 +125,10 @@ offset_top = 11.0
 offset_right = 352.0
 offset_bottom = 81.0
 theme = ExtResource("4_paes4")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.670588)
+theme_override_colors/font_color = Color(0, 0, 0, 0.796078)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
 icon = ExtResource("7_r5mwj")
 icon_alignment = 1
 

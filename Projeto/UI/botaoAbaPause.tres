@@ -1,13 +1,18 @@
 [gd_resource type="Theme" load_steps=9 format=3 uid="uid://cgh8y8776n7oo"]
 
 [ext_resource type="Texture2D" uid="uid://gtn7jhnhevjd" path="res://Recursos/Graficos/UI/Componentes/tab_select/button_tab_select_selected.svg" id="1_gioro"]
-[ext_resource type="Texture2D" uid="uid://bx04b52dcbpxr" path="res://Recursos/Graficos/UI/Componentes/button_large/botao.svg" id="1_lriti"]
 [ext_resource type="Texture2D" uid="uid://vmx7b6hvx2hk" path="res://Recursos/Graficos/UI/Componentes/tab_select/button_tab_select_pressed.svg" id="2_lriti"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gioro"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gioro"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lriti"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i8bvw"]
-texture = ExtResource("1_lriti")
+texture = ExtResource("1_gioro")
 expand_margin_top = 10.0
 expand_margin_bottom = 14.0
 
@@ -27,11 +32,12 @@ expand_margin_top = 10.0
 expand_margin_bottom = 14.0
 
 [resource]
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0.172832, 0.172833, 0.172833, 1)
-Button/colors/font_outline_color = Color(1, 1, 1, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-Button/styles/disabled = SubResource("StyleBoxTexture_gioro")
+Button/colors/font_color = Color(0, 0, 0, 0)
+Button/colors/font_hover_color = Color(0.172549, 0.172549, 0.172549, 0.2)
+Button/colors/font_outline_color = Color(1, 1, 1, 0)
+Button/colors/font_pressed_color = Color(0, 0, 0, 0)
+Button/styles/disabled = SubResource("StyleBoxFlat_gioro")
+Button/styles/focus = SubResource("StyleBoxFlat_lriti")
 Button/styles/hover = SubResource("StyleBoxTexture_i8bvw")
 Button/styles/hover_pressed = SubResource("StyleBoxTexture_cvjei")
 Button/styles/normal = SubResource("StyleBoxTexture_f235h")
