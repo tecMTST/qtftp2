@@ -4,6 +4,7 @@
 		"nome" : "Cuscuz",
 		"descricao" : "Prato de cuscuz com manteiga",
 		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/cuscuz.svg",
+		"resultado": "cuscuz_pronto",
 		"passos" : [
 			{
 				"descricao" : "Pegar Cuscuz na geladeira",
@@ -37,6 +38,7 @@
 		"nome" : "Café Coado",
 		"descricao" : "Xícara de café coado",
 		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/copo_americano_cafe.svg",
+		"resultado": "cafe_coado",
 		"passos" : [
 			{
 				"descricao" : "Pegar pó de café na geladeira",
@@ -74,6 +76,7 @@
 		"nome" : "Arroz Cozido",
 		"descricao" : "Porção de arroz cozido",
 		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/arroz.svg",
+		"resultado": "arroz_pronto",
 		"passos" : [
 			{
 				"descricao": "Pegar cebola e alho na geladeira",
@@ -116,6 +119,7 @@
 		"nome" : "Ovo frito",
 		"descricao" : "Ovo de galinha frito",
 		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/ovo_frito.svg",
+		"resultado": "ovo_frito",
 		"passos" : [
 			{
 				"descricao" : "Pegar ovo na geladeira",
@@ -141,6 +145,7 @@
 		"nome" : "Macarrão Instantâneo",
 		"descricao" : "Aquele miojex pronto em 3 minutos",
 		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/miojex_pronto.svg",
+		"resultado": "miojex_pronto",
 		"passos" : [
 			{
 				"descricao" : "Pegar macarrão na geladeira",
@@ -170,6 +175,7 @@
 		"nome" : "Salsicha",
 		"descricao" : "Salsicha picadinha pra incrementar o prato",
 		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/salsicha_fatiada.svg",
+		"resultado": "salsicha_fatiada",
 		"passos" : [
 			{
 				"descricao": "Pegar salsicha congelada na geladeira",
@@ -207,6 +213,7 @@
 		"nome" : "Feijão",
 		"descricao" : "Feijão de molho pronto pra fazer",
 		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/feijao.svg",
+		"resultado": "feijao_pronto",
 		"passos" : [
 			{
 				"descricao": "Pegar feijão de molho na geladeira",
@@ -232,6 +239,7 @@
 		"nome" : "Mistura",
 		"descricao" : "Carne Moída com Temperos e Salada",
 		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/marmita_carne_salada.svg",
+		"resultado": "marmita_carne_salada",
 		"passos" : [
 			{
 				"descricao": "Pegar cebola e alho na geladeira",
@@ -278,6 +286,7 @@
 		"nome" : "Frutas",
 		"descricao" : "Frutas frescas prontas para servir",
 		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/laranja_banana.svg",
+		"resultado": "frutas_frescas",
 		"passos" : [
 			{
 				"descricao": "Pegar frutas na bancada",
@@ -295,6 +304,7 @@
 		"nome" : "Farofa com Couve",
 		"descricao" : "Prato de farofa com couve mineira",
 		"caminho_sprite": "res://Recursos/Graficos/UI/Ingredientes/marmita_farofa_couve.svg",
+		"resultado": "marmita_couve",
 		"passos" : [
 			{
 				"descricao": "Pegar cebola e alho na geladeira",
