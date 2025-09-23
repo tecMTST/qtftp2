@@ -11,7 +11,7 @@ func _on_anim_1_animation_finished(_anim_name: StringName) -> void:
 	$LogoTpt.hide()
 	$anim_2.play("fade_alianca")
 	$LogoAaas.show()
-	
+
 
 
 func _on_anim_2_animation_finished(_anim_name: StringName) -> void:

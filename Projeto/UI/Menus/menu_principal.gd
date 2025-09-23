@@ -1,11 +1,11 @@
 extends Node2D
 
 var jogo_salvo : SaveFile
+var fundo = self_modulate
 
 @onready var continuar: Button = $CenterContainer/BotoesPrincipais/continuar
 @onready var transicao_cena: TransicaoCena = $TransicaoCena
 
-var fundo = self_modulate
 
 func _ready() -> void:
 	get_tree().paused = false
