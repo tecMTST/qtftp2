@@ -10,6 +10,8 @@ var travar_dialogos = true
 @onready var botao_fim: TouchScreenButton = $Molduras/BotaoFim
 @onready var briefing: Briefing = $Briefing
 @onready var transicao_cena: TransicaoCena = $TransicaoCena
+@onready var player: Player = $Personagens/Player
+@onready var touch_analog: TouchAnalog = $Molduras/TouchAnalog
 
 func _ready() -> void:
 	ControleDeFase.carregar_nivel()
@@ -22,6 +24,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	botao_pausa.visible = not ControleDeFase.jogador.esta_dialogando
+	touch_analog.Enabled = player.ativo
 
 func _on_player_acao_ativada() -> void:
 	botao_acao.visible = true

@@ -14,6 +14,7 @@ var objeto_agarrado: IngredienteBase:
 	set(valor):
 		objeto_agarrado = valor
 var ajuntando : bool = false
+var ativo : bool = true
 
 @onready var visualizador_temporal_lucas: VisualizadorTemporal = $VisualizadorTemporalLucas
 @onready var timer_amamentacao: Timer = $TimerAmamentacao
@@ -110,6 +111,8 @@ func on_interagivel_entered(body : Node2D) -> void:
 			ControleDeFase.passo_atual.alvo, "berço", "":
 				interagivel_ativo = body
 				acao_ativada.emit()
+			"bagunca":
+				body._on_componente_interagivel_interagir(self)
 
 
 func on_interagivel_exited() -> void:
@@ -147,10 +150,12 @@ func ajuntar():
 		ajuntando = false
 
 func ativar():
+	ativo = true
 	top_down_controler_2d.Active = true
 	elza_rig.ativo = true
 
 func desativar():
+	ativo = false
 	top_down_controler_2d.Active = false
 	elza_rig.ativo = false
 

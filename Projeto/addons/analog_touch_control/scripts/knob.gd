@@ -8,7 +8,7 @@ var maxLength = 50
 var deadzone = 15
 
 func _process(delta):
-	if pressing:
+	if pressing and get_parent().Enabled and not get_tree().paused: 
 		if get_global_mouse_position().distance_to(parent.global_position) <= maxLength:
 			global_position = get_global_mouse_position()
 		else:
@@ -17,6 +17,7 @@ func _process(delta):
 			global_position.y = parent.global_position.y + sin(angle)*maxLength
 		calculateVector()
 	else:
+		pressing = false
 		global_position = lerp(global_position, parent.global_position, delta*50)
 		parent.posVector = Vector2(0,0)
 		

@@ -33,6 +33,11 @@ var knob: AnalogKnob
 var button: Button
 
 func _input(event: InputEvent) -> void:
+	if get_tree().paused or !Enabled:
+		if RestPosition:
+			visible = true
+			position = RestPosition.global_position
+		return
 	if PositionType == ControlPosition.OnTouch:
 		if event is InputEventScreenTouch:
 			if event.is_pressed():			
@@ -84,7 +89,7 @@ func _ready() -> void:
 		position = RestPosition.global_position
 		
 func _process(delta: float) -> void:
-	if get_tree().paused:
+	if get_tree().paused or !Enabled:
 		if PositionType == ControlPosition.OnTouch:
 			visible = false
 		if RestPosition:
