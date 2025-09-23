@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfny062sbusd2"]
 
 [ext_resource type="Shader" uid="uid://c8n67plhx3jll" path="res://Recursos/Graficos/Efeitos/grafico_erro.gdshader" id="1_2ky1h"]
-[ext_resource type="Script" uid="uid://de87hoqy3i7m7" path="res://Recursos/Graficos/Efeitos/grafico_erro.gd" id="2_sc7vb"]
+[ext_resource type="Script" uid="uid://de87hoqy3i7m7" path="res://UI/Interfaces/grafico_erro.gd" id="2_sc7vb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fd50a"]
 shader = ExtResource("1_2ky1h")

@@ -25,7 +25,6 @@ StartVisible = true
 metadata/_custom_type_script = "uid://cpesqq3ctb78o"
 
 [node name="Fundo" type="ColorRect" parent="TransicaoCena"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
