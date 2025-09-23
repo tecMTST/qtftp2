@@ -2,12 +2,12 @@ class_name GraficoDerrota extends CanvasLayer
 
 signal finalizado
 
+var timer : float = 4.0
+
 @onready var derrota_vazado: CPUParticles2D = $Control/Derrota/DerrotaVazado
 @onready var derrota_cheio: CPUParticles2D = $Control/Derrota/DerrotaCheio
 @onready var fader: Fader = $Control/FaderBase
 @onready var fader_preto: Fader = $Control/ColorRect/FaderPreto
-
-var timer : float = 4.0
 
 func _ready() -> void:
 	get_tree().paused = true
