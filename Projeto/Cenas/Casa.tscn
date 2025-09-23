@@ -98,7 +98,7 @@ z_index = 10
 position = Vector2(109, 850)
 
 [node name="MesaFilha" parent="Distracoes" instance=ExtResource("9_4bf15")]
-z_index = 5
+z_index = 6
 position = Vector2(573, 880)
 
 [node name="Tv" parent="Distracoes" instance=ExtResource("10_cpm0k")]
@@ -163,7 +163,7 @@ position = Vector2(314, 809)
 [node name="Personagens" type="Node2D" parent="."]
 z_index = 5
 
-[node name="Filha" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("15_gklaa")]
+[node name="Filha" parent="Personagens" node_paths=PackedStringArray("waypoints") groups=["filha_sprite"] instance=ExtResource("15_gklaa")]
 z_index = 5
 position = Vector2(504, 860)
 bagunca_scene = ExtResource("17_utqv5")

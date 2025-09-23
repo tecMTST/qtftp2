@@ -1,12 +1,12 @@
 class_name Berco extends BaseInteragivel
 
+@export var tempo_amamentar = 1.0
+
 var timer_choro: float = 0
 var iniciado: bool = false
 var choro_ativo: bool = false
 var player : Player
 var amamentando : bool = false
-
-@export var tempo_amamentar = 1.0
 
 @onready var timer: Timer = $Timer
 @onready var visualizador_temporal: VisualizadorTemporal = $VisualizadorTemporal
@@ -73,7 +73,7 @@ func _on_timer_timeout() -> void:
 	ControleDeFase.estado_nivel.limite_choro_atingido = true
 
 func _on_componente_interagivel_interagir(_jogador: Player) -> void:
-	if ativo and not player.esta_agarrando: 
+	if ativo and not player.esta_agarrando:
 		player.inicia_amamentacao(self, tempo_amamentar)
 		finalizar_choro()
 

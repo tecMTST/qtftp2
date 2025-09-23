@@ -26,6 +26,8 @@ var _indice_passo_atual: int = 0
 var travar_dialogos := false
 var esta_dialogando := false
 
+@onready var filha: Filha = get_tree().get_first_node_in_group("filha_sprite")
+
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_event)
 	Dialogic.timeline_ended.connect(_on_dialogo_finalizado)
@@ -48,6 +50,10 @@ func carregar_nivel():
 	if id_nivel == 0:
 		EstadoDeJogo.nivel_atual = 1
 		id_nivel = 1
+		if(is_instance_valid(EstadoDeJogo.nivel_atual==1)):
+			filha.set_z_index(6)
+		elif(is_instance_valid(EstadoDeJogo.nivel_atual==2)):
+			filha.set_z_index(5)
 	var niveis = Globais.niveis.filter(func(item : Nivel) : return item.id == id_nivel)
 	if len(niveis) > 0:
 		nivel_atual = niveis[0]

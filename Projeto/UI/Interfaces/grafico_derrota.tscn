@@ -1,0 +1,152 @@
+[gd_scene load_steps=8 format=3 uid="uid://cixyw1xhqkyn0"]
+
+[ext_resource type="Script" uid="uid://u6nmi31gy4gw" path="res://Recursos/Graficos/Efeitos/grafico_derrota.gd" id="1_l1idg"]
+[ext_resource type="Script" uid="uid://cpesqq3ctb78o" path="res://addons/uiJuicer/Fader.gd" id="2_h7c25"]
+[ext_resource type="Texture2D" uid="uid://baxi1gsqorwl5" path="res://Recursos/Graficos/Efeitos/derrota1.svg" id="3_1761x"]
+[ext_resource type="Texture2D" uid="uid://dxexapmfmeecn" path="res://Recursos/Graficos/Efeitos/derrota2.svg" id="4_tlhos"]
+[ext_resource type="Texture2D" uid="uid://cipuynid2quki" path="res://Recursos/Graficos/UI/Componentes/tela_vitoria_derrota/titulo_derrota.svg" id="5_e0mi6"]
+[ext_resource type="Theme" uid="uid://dehhxr018a0b0" path="res://UI/botaoPause.tres" id="6_rav14"]
+
+[sub_resource type="Curve" id="Curve_gdw80"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.744745, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="GraficoDerrota" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_l1idg")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FaderBase" type="Node" parent="Control"]
+script = ExtResource("2_h7c25")
+metadata/_custom_type_script = "uid://cpesqq3ctb78o"
+
+[node name="Background" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="Derrota" type="Node2D" parent="Control"]
+position = Vector2(358, 686)
+
+[node name="DerrotaVazado" type="CPUParticles2D" parent="Control/Derrota"]
+amount = 10
+texture = ExtResource("3_1761x")
+lifetime = 2.0
+explosiveness = 0.6
+randomness = 0.6
+emission_shape = 3
+emission_rect_extents = Vector2(300, 200)
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 5)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_gdw80")
+
+[node name="DerrotaCheio" type="CPUParticles2D" parent="Control/Derrota"]
+emitting = false
+amount = 10
+texture = ExtResource("4_tlhos")
+lifetime = 2.0
+explosiveness = 0.6
+randomness = 0.6
+emission_shape = 3
+emission_rect_extents = Vector2(300, 200)
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 5)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+angle_min = -45.0
+angle_max = 45.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_gdw80")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.5
+offset_top = -177.0
+offset_right = 266.5
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_e0mi6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -199.0
+offset_top = -174.0
+offset_right = 201.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TentarNovamente" type="Button" parent="Control/VBoxContainer"]
+z_index = 16
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_rav14")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "TENTAR NOVAMENTE"
+
+[node name="TelaInicial" type="Button" parent="Control/VBoxContainer"]
+z_index = 16
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_rav14")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "VOLTAR À TELA INICIAL"
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
+z_index = 200
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="FaderPreto" type="Node" parent="Control/ColorRect"]
+script = ExtResource("2_h7c25")
+AutoFadeIn = false
+metadata/_custom_type_script = "uid://cpesqq3ctb78o"
+
+[connection signal="pressed" from="Control/VBoxContainer/TentarNovamente" to="." method="_on_tentar_novamente_pressed"]
+[connection signal="toggled" from="Control/VBoxContainer/TentarNovamente" to="." method="_on_tentar_novamente_toggled"]
+[connection signal="pressed" from="Control/VBoxContainer/TelaInicial" to="." method="_on_tela_inicial_pressed"]

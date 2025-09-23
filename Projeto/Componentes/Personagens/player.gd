@@ -14,6 +14,7 @@ var objeto_agarrado: IngredienteBase:
 	set(valor):
 		objeto_agarrado = valor
 var ajuntando : bool = false
+var ativo : bool = true
 
 @onready var visualizador_temporal_lucas: VisualizadorTemporal = $VisualizadorTemporalLucas
 @onready var timer_amamentacao: Timer = $TimerAmamentacao
@@ -66,6 +67,8 @@ func _trapaceia(evento: InputEvent) -> void:
 			ControleDeFase.trapaca_muda_receita()
 		KEY_J:
 			ControleDeFase._encerrar_nivel()
+		KEY_L:
+			_trapaca_obtem_prato_magicamente()
 		KEY_1:
 			var fila = get_node("/root/CozinhaSolidaria/EntregaNaFila1/Fila")
 			if is_instance_valid(fila): fila.adiciona_pessoa_na_fila()
@@ -79,6 +82,25 @@ func _trapaceia(evento: InputEvent) -> void:
 			var fila = get_node("/root/CozinhaSolidaria/EntregaNaFila1/Fila")
 			if is_instance_valid(fila): fila.remove_pessoa_da_fila()
 
+
+func _trapaca_obtem_prato_magicamente() -> void:
+	# tira todos os ingredientes da cena:
+	for interagivel in get_tree().get_nodes_in_group("interagivel"):
+		if interagivel.has_method("eliminar_ingrediente"):
+			print_debug("  [-] eliminando ingrediente de ", interagivel.name)
+			interagivel.eliminar_ingrediente()
+			interagivel.eliminar_ingrediente()
+	eliminar_ingrediente()
+	# adiciona o ingrediente final na mão do jogador:
+	var dados_ingrediente = Globais.obtem_ingrediente(ControleDeFase.receita_selecionada.resultado)
+	var novo_ingrediente: IngredienteBase = load(
+		"res://Componentes/Ingredientes/IngredienteBase.tscn"
+	).instantiate()
+	novo_ingrediente.iniciar(dados_ingrediente)
+	agarrar(novo_ingrediente)
+	# pula pro passo final (mesa!)
+	while ControleDeFase.passo_atual.alvo != "mesa":
+		ControleDeFase.proximo_passo()
 
 func eliminar_ingrediente() -> void:
 	esta_agarrando = false
@@ -110,6 +132,8 @@ func on_interagivel_entered(body : Node2D) -> void:
 			ControleDeFase.passo_atual.alvo, "berço", "":
 				interagivel_ativo = body
 				acao_ativada.emit()
+			"bagunca":
+				body._on_componente_interagivel_interagir(self)
 
 
 func on_interagivel_exited() -> void:
@@ -147,10 +171,12 @@ func ajuntar():
 		ajuntando = false
 
 func ativar():
+	ativo = true
 	top_down_controler_2d.Active = true
 	elza_rig.ativo = true
 
 func desativar():
+	ativo = false
 	top_down_controler_2d.Active = false
 	elza_rig.ativo = false
 

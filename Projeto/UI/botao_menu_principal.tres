@@ -1,0 +1,45 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://lw7x37namdhi"]
+
+[ext_resource type="Texture2D" uid="uid://bx04b52dcbpxr" path="res://Recursos/Graficos/UI/Componentes/button_large/botao.svg" id="1_1wh48"]
+[ext_resource type="Texture2D" uid="uid://tkomymopsggq" path="res://Recursos/Graficos/UI/Componentes/button_large/botao_pressionado.svg" id="2_62p50"]
+[ext_resource type="FontFile" uid="uid://dgsx8f04jvfhg" path="res://Recursos/Fontes/SourGummy-Regular.ttf" id="3_iooh8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_530kk"]
+texture = ExtResource("1_1wh48")
+texture_margin_left = 125.0
+texture_margin_top = 25.0
+texture_margin_right = 125.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1wh48"]
+texture = ExtResource("1_1wh48")
+texture_margin_left = 125.0
+texture_margin_top = 25.0
+texture_margin_right = 125.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chk6y"]
+texture = ExtResource("1_1wh48")
+texture_margin_left = 125.0
+texture_margin_top = 25.0
+texture_margin_right = 125.0
+texture_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sxhew"]
+texture = ExtResource("2_62p50")
+texture_margin_left = 125.0
+texture_margin_top = 25.0
+texture_margin_right = 125.0
+texture_margin_bottom = 25.0
+
+[resource]
+default_font = ExtResource("3_iooh8")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 0.5)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("3_iooh8")
+Button/styles/disabled = SubResource("StyleBoxTexture_530kk")
+Button/styles/hover = SubResource("StyleBoxTexture_1wh48")
+Button/styles/normal = SubResource("StyleBoxTexture_chk6y")
+Button/styles/pressed = SubResource("StyleBoxTexture_sxhew")

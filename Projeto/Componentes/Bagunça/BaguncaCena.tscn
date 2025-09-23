@@ -37,6 +37,7 @@ shape = SubResource("RectangleShape2D_kvyup")
 script = ExtResource("3_h13so")
 nome = "Bagunça"
 descricao = "Papel velho bagunçando a casa"
+possui_contorno = false
 cor_do_contorno = Color(0.184314, 0.764706, 0.168627, 1)
 metadata/_custom_type_script = "uid://ddwsslb5nraqq"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjqpfs867y0in"]
+[gd_scene load_steps=10 format=3 uid="uid://cjqpfs867y0in"]
 
 [ext_resource type="Script" uid="uid://cc1rqfgoty0vw" path="res://Componentes/Casa/Interagiveis/berco.gd" id="1_408qi"]
 [ext_resource type="Texture2D" uid="uid://687eow50aj7w" path="res://Recursos/Graficos/Interagiveis/Berço.svg" id="2_tnk6n"]
@@ -13,6 +13,9 @@ size = Vector2(144, 258)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrlxa"]
 size = Vector2(182, 303)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jejg1"]
+radius = 47.0956
+
 [node name="Berco" type="StaticBody2D" groups=["berco", "interagivel"]]
 script = ExtResource("1_408qi")
 
@@ -20,6 +23,7 @@ script = ExtResource("1_408qi")
 texture = ExtResource("2_tnk6n")
 
 [node name="MobileArte" type="Sprite2D" parent="BercoArte"]
+z_index = 7
 position = Vector2(-8, -118)
 texture = ExtResource("3_r71e4")
 
@@ -56,6 +60,10 @@ metadata/_custom_type_script = "uid://ddwsslb5nraqq"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteracao"]
 position = Vector2(-4, 0.5)
 shape = SubResource("RectangleShape2D_nrlxa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-19, -126)
+shape = SubResource("CircleShape2D_jejg1")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="interagir" from="ComponenteInteragivel" to="." method="_on_componente_interagivel_interagir"]
