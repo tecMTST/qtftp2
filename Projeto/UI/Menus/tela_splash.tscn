@@ -1,0 +1,125 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2tdr58yk8m23"]
+
+[ext_resource type="Script" uid="uid://bx21p5ti5jmcv" path="res://UI/Menus/tela_splash.gd" id="1_286d4"]
+[ext_resource type="Texture2D" uid="uid://ks5rwoicdvvc" path="res://Recursos/Graficos/UI/Componentes/logos/logo_tpt.svg" id="2_f2keg"]
+[ext_resource type="Texture2D" uid="uid://cpr6gw2f8x5r4" path="res://Recursos/Graficos/UI/Componentes/logos/logo_aaas.svg" id="3_po15b"]
+
+[sub_resource type="Animation" id="Animation_0mp76"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_286d4"]
+resource_name = "fade_splash"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.23333, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f2keg"]
+_data = {
+&"RESET": SubResource("Animation_0mp76"),
+&"fade_splash": SubResource("Animation_286d4")
+}
+
+[sub_resource type="Animation" id="Animation_f2keg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yddlb"]
+resource_name = "fade_alianca"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334, 1.73333, 3.46667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xd8yv"]
+_data = {
+&"RESET": SubResource("Animation_f2keg"),
+&"fade_alianca": SubResource("Animation_yddlb")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_286d4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 720.0
+offset_bottom = 1280.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LogoTpt" type="Sprite2D" parent="."]
+position = Vector2(360, 640)
+texture = ExtResource("2_f2keg")
+
+[node name="LogoAaas" type="Sprite2D" parent="."]
+position = Vector2(360, 640)
+texture = ExtResource("3_po15b")
+
+[node name="anim_1" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect2")
+libraries = {
+&"": SubResource("AnimationLibrary_f2keg")
+}
+
+[node name="anim_2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../anim_1")
+libraries = {
+&"": SubResource("AnimationLibrary_xd8yv")
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 720.0
+offset_bottom = 1280.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="som_splash" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="animation_finished" from="anim_1" to="." method="_on_anim_1_animation_finished"]
+[connection signal="animation_finished" from="anim_2" to="." method="_on_anim_2_animation_finished"]
