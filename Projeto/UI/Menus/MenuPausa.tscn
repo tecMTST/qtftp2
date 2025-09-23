@@ -15,7 +15,7 @@
 [ext_resource type="Theme" uid="uid://cmmbeb1vnduka" path="res://Recursos/Fontes/Label_SourGummy_Regular.tres" id="9_jttf2"]
 [ext_resource type="Script" uid="uid://bfah6lu1pheaj" path="res://Scripts/ControleDeAudio.gd" id="11_7cjwt"]
 [ext_resource type="Theme" uid="uid://manffmwy5jfe" path="res://UI/botaoFechar.tres" id="15_jttf2"]
-[ext_resource type="Texture2D" uid="uid://q5rk10nnr308" path="res://Recursos/Graficos/UI/Briefing/pause-tutorial-cafe.svg" id="15_r5mwj"]
+[ext_resource type="Texture2D" uid="uid://rlbtxubsbsm4" path="res://Recursos/Graficos/UI/Briefing/pause-tutorial-cafe.svg" id="15_r5mwj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo2rv"]
 bg_color = Color(0.631373, 0.192157, 0.403922, 1)
