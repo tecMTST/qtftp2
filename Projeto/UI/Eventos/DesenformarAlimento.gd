@@ -31,19 +31,9 @@ func _on_cortou_alimento() -> void:
 
 func _on_failed():
 	Eventos.evento_falhou.emit()
-	var tween = create_tween()
-	tween.tween_property(self,"modulate", Color.INDIAN_RED, 2)
-	tween.set_trans(Tween.TRANS_ELASTIC)
-	tween.play()
-	await tween.finished
 	close()
 
 
 func _on_completed():
 	Eventos.evento_realizado.emit()
-	var tween = create_tween()
-	tween.tween_property(self,"modulate", Color.LIME_GREEN, 2)
-	tween.set_trans(Tween.TRANS_ELASTIC)
-	tween.play()
-	await tween.finished
 	close()
