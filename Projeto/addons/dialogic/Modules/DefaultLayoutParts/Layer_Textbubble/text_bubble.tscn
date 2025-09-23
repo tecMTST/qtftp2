@@ -86,6 +86,7 @@ script = ExtResource("3_syv35")
 textbox_root = NodePath("..")
 
 [node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="DialogText"]
+bus = &"Efeitos"
 script = ExtResource("4_7bm4b")
 
 [node name="NameLabelPositioner" type="HBoxContainer" parent="DialogText"]

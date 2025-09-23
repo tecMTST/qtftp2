@@ -27,6 +27,7 @@ var travar_dialogos := false
 var esta_dialogando := false
 
 func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_event)
 	Dialogic.timeline_ended.connect(_on_dialogo_finalizado)
 	get_tree().paused = false
 	_tempo_checagem = Timer.new()
@@ -131,8 +132,10 @@ func iniciar_nivel():
 	estado_nivel = EstadoDoNivel.new(nivel_atual)
 	tempo_jogo.start()
 	_tempo_checagem.start()
+	var briefing = get_tree().current_scene.find_child("Briefing") as Briefing
+	if briefing && is_instance_valid(briefing):
+		briefing.finalizado.connect(_controle_dialogos)
 	nivel_iniciado.emit(nivel_atual, estado_nivel)
-	_controle_dialogos()
 	print_debug("Nível ", nivel_atual.id, " iniciado")
 
 func _atualizar_bagunca() -> void:
@@ -235,11 +238,16 @@ func _controle_dialogos() -> void:
 	if(nivel_atual.condicoes_dialogo):
 		for condicao in nivel_atual.condicoes_dialogo:
 			condicao.condicao_satisfeita.connect(_executa_condicao_dialogo)
+			condicao.init()
 
 func _executa_condicao_dialogo(condicao: CondicaoDialogo) -> void:
-	if condicao.condicao.tempo_espera:
+	if condicao.tempo_espera:
 		await get_tree().create_timer(condicao.tempo_espera).timeout
-
 	abrir_dialogo(nivel_atual.dialogos, condicao.linha_dialogo)
 	nivel_atual.condicoes_dialogo.erase(condicao)
 	await Dialogic.timeline_ended
+
+func _on_dialogic_event(event_data) -> void:
+	var objeto := get_tree().current_scene.get_node(event_data.objeto)
+	if objeto.has_method(event_data.acao):
+		objeto.call_deferred(event_data.acao)

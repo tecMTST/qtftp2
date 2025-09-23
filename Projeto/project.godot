@@ -35,6 +35,7 @@ ControleDeFase="*res://Scripts/ControleDeFase.gd"
 ControleDeAudio="*res://Scripts/ControleDeAudio.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SaveService="*res://addons/saveEngine/scripts/SaveService.gd"
+Cutscene="*res://Scripts/cutscene.gd"
 
 [dialogic]
 
