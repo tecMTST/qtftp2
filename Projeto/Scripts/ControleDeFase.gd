@@ -9,8 +9,6 @@ signal nova_receita(receita)
 
 const TEMPO_INFINITO = -1
 
-@onready var filha: Filha = get_tree().get_first_node_in_group("filha_sprite")
-
 @export var nivel_atual: Nivel
 @export var jogador: Player
 @export var receitas_disponiveis: Array[Receita] = []
@@ -25,6 +23,7 @@ var _tempo_checagem: Timer
 var _indice_receita_atual: int = 0
 var _indice_passo_atual: int = 0
 
+@onready var filha: Filha = get_tree().get_first_node_in_group("filha_sprite")
 
 func _ready() -> void:
 	get_tree().paused = false
