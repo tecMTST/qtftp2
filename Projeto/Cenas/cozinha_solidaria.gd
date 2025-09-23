@@ -22,8 +22,8 @@ func _ready() -> void:
 	SaveService.SaveGame()
 	pausar.hide()
 	briefing.iniciar()
-	
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	botao_pausa.visible = not ControleDeFase.jogador.esta_dialogando
 	touch_analog.Enabled = player.ativo
 

@@ -30,8 +30,6 @@ func ao_transformar_objeto_agarrado(novo_objeto: IngredienteBase):
 	agarrar(novo_objeto)
 
 func _physics_process(delta: float) -> void:
-	
-	
 	if (Input.is_action_pressed("up")   or
 		Input.is_action_pressed("down") or
 		Input.is_action_pressed("left") or
