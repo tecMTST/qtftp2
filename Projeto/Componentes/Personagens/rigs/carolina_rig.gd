@@ -5,12 +5,16 @@ class_name CarolinaRig extends Node2D
 @export var inverter_sentada: bool = true
 
 var parent: CharacterBody2D
+var rostos : Array[Node] = []
 
 @onready var rig_1: Node2D = $rig1
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var cabeca: Polygon2D = $rig1/sprites/cabeca
+
 
 func _ready() -> void:
+	rostos = cabeca.get_children()
 	parent = get_parent()
 
 func _process(_delta: float) -> void:
@@ -40,3 +44,19 @@ func _process(_delta: float) -> void:
 	elif celular and not sentada:
 		animation_tree.set("parameters/Velocidade/blend_position", 0)
 		animation_tree.set("parameters/Sentada/blend_amount", 0)
+
+func mudar_rosto(nome : String):
+	for rosto in rostos:
+		rosto.visible = rosto.name == nome
+		
+func olhar_para(direcao : String):
+	if "direita":
+		rig_1.scale.x = -abs(rig_1.scale.x)
+	else:
+		rig_1.scale.x = abs(rig_1.scale.x)
+
+func animacao_direta(nome : String):
+	animation_tree.active = false
+	animation_player.play(nome)
+	await animation_player.animation_finished
+	animation_tree.active = true

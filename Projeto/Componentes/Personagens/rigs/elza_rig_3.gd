@@ -4,8 +4,13 @@ var segurando : bool = false
 var segurando_lucas : bool = false
 var amamentando : bool = false
 var ativo : bool = true
+var rostos : Array[Node] = []
 
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var cabeca: Polygon2D = $rig1/sprites/cabeca
+
+func _ready() -> void:
+	rostos = cabeca.get_children()
 
 func _process(_delta: float) -> void:
 	if ativo:
@@ -46,3 +51,7 @@ func largar_lucas():
 	animation_tree.set("parameters/SegurarLucas/blend_amount", 0)
 	segurando_lucas = false
 	amamentando = false
+	
+func mudar_rosto(nome : String):
+	for rosto in rostos:
+		rosto.visible = rosto.name == nome

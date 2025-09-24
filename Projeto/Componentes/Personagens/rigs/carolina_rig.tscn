@@ -14,8 +14,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"points": PackedFloat32Array(69, -0.25, 0, 0.333333, 1),
+"times": PackedFloat32Array(0.1)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -182,13 +182,14 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_v02eu")
 blend_point_1/pos = 0.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_et0jp"]
-graph_offset = Vector2(-874.94, -58.9386)
+graph_offset = Vector2(-630.864, -135.343)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ir1in")
-nodes/Animation/position = Vector2(-1000, 280)
+nodes/Animation/position = Vector2(-1000, 260)
 nodes/Sentada/node = SubResource("AnimationNodeBlend2_04gav")
 nodes/Sentada/position = Vector2(-300, 20)
 nodes/Velocidade/node = SubResource("AnimationNodeBlendSpace1D_h13ea")
-nodes/Velocidade/position = Vector2(-940, -40)
+nodes/Velocidade/position = Vector2(-960, -100)
+nodes/output/position = Vector2(600, 100)
 node_connections = [&"Sentada", 0, &"Velocidade", &"Sentada", 1, &"Animation", &"output", 0, &"Sentada"]
 
 [node name="carolina_rig" type="Node2D"]
@@ -411,7 +412,6 @@ bone_angle = 0.0
 
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(99, -384)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 99, -384)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -419,6 +419,7 @@ bone_angle = 0.0
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-84, -379)
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -84, -379)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -441,5 +442,5 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_et0jp")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Sentada/blend_amount = 0.0
-parameters/Velocidade/blend_position = -0.00298506
+parameters/Sentada/blend_amount = 1.0
+parameters/Velocidade/blend_position = 0.0
