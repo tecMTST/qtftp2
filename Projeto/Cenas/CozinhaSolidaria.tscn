@@ -261,6 +261,7 @@ position = Vector2(208, 731)
 position = Vector2(529, 733)
 
 [node name="TransicaoCena" parent="." instance=ExtResource("32_7pup0")]
+visible = false
 
 [node name="Molduras" type="CanvasLayer" parent="."]
 layer = 0

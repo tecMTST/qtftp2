@@ -329,6 +329,7 @@ briefing = NodePath("../../Briefing")
 visible = false
 
 [node name="TransicaoCena" parent="." instance=ExtResource("32_2tmn8")]
+visible = false
 
 [node name="SaveAgent" type="Node" parent="."]
 script = ExtResource("25_d1xgi")
