@@ -179,6 +179,10 @@ func _encerrar_nivel():
 	indicador_proximo = ""
 
 func _encerrar_nivel_falha():
+	if nivel_atual.id == 4:
+		print_debug("fim do arco da casa")
+		_encerrar_nivel()
+		return
 	_reset_timers()
 	get_tree().paused = true
 	ControleDeAudio.para_musica()
