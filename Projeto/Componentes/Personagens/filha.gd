@@ -29,7 +29,7 @@ func _ready():
 
 func _process(delta):
 	if not CutScene:
-		if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bsagunca:
+		if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
 			return
 	if not (target and global_position.distance_to(target.global_position) \
 	< agent.target_desired_distance):
