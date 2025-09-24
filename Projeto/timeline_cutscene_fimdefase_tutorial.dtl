@@ -1,0 +1,15 @@
+join carolina center
+join elza center
+do Cutscene.executar_animacao_elza("qtftd anims/idle")
+do Cutscene.executar_animacao_carolina("qtftd anims/sentar_carolina_celular")
+[wait time="2.0"]
+do Cutscene.executar_animacao("tutorial_carolina_desloc_1")
+[wait time="0.7"]
+do Cutscene.executar_animacao_carolina("qtftd anims/andar_carol_celular")
+[wait time="1.5"]
+do Cutscene.executar_animacao_carolina("qtftd anims/idle_carol_celular")
+[wait time="0.5"]
+carolina: Tava muito bom, mãe! Beijo!
+[wait time="0.3"]
+do Cutscene.executar_animacao_carolina("qtftd anims/andar_carol_celular")
+do Cutscene.executar_animacao("tutorial_carolina_desloc_2")
