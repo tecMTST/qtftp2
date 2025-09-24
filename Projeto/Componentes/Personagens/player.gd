@@ -59,6 +59,8 @@ func _input(event: InputEvent) -> void:
 		acao_executando = false
 	_trapaceia(event)
 
+func mudar_rosto(rosto : String):
+	elza_rig.mudar_rosto(rosto)
 
 func _trapaceia(evento: InputEvent) -> void:
 	if !(evento is InputEventKey and evento.is_pressed() and not evento.is_echo()): return

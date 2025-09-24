@@ -50,8 +50,9 @@ script = ExtResource("1_jdhpk")
 
 [node name="Tail" type="Line2D" parent="Group"]
 unique_name_in_owner = true
+position = Vector2(30, -30)
 points = PackedVector2Array(-9, 7, -29, 118, -95, 174, -193, 195)
-width = 96.0
+width = 30.0
 width_curve = SubResource("Curve_0j8nu")
 
 [node name="Background" type="ColorRect" parent="Group"]

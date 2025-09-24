@@ -15,10 +15,20 @@ func _process(_delta: float) -> void:
 	if posicao_alvo:
 		_processa_movimento()
 
-
-func mover_para(_posicao_alvo: Vector2, _lerp_speed: float = 0.01) -> void:
-	posicao_alvo = _posicao_alvo
-	lerp_speed = _lerp_speed
+func mover_para(waypoint : String) -> void:
+	pass
+	
+func mudar_rosto(rosto : String):
+	pass
+	
+func olhar_para(direcao : String):
+	pass
+	
+func ordem(index : int):
+	pass
+	
+func animacao(nome : String):
+	pass
 
 func _processa_movimento() -> void:
 	position = position.lerp(posicao_alvo, lerp_speed)
