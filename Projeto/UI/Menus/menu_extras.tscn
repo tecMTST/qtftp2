@@ -1,24 +1,27 @@
-[gd_scene load_steps=29 format=3 uid="uid://b2uanplavulb4"]
+[gd_scene load_steps=37 format=3 uid="uid://b2uanplavulb4"]
 
 [ext_resource type="Texture2D" uid="uid://bmihn7u5mpqmi" path="res://Recursos/Graficos/Cenas/telaInicialQTFTD.png" id="1_h4eay"]
 [ext_resource type="Script" uid="uid://b20ll7gquuaik" path="res://UI/Menus/menu_extras.gd" id="1_mscwh"]
-[ext_resource type="Texture2D" uid="uid://c6hn1bdbueq6t" path="res://Recursos/Graficos/UI/Componentes/logos/logo_qtftd.svg" id="2_vwjvg"]
-[ext_resource type="Texture2D" uid="uid://d2v16kpn2mkxk" path="res://Recursos/Graficos/UI/Componentes/menu_telaInicial/menu_telaInicial_base_extras.svg" id="3_xcdby"]
+[ext_resource type="Texture2D" uid="uid://28d80widfiba" path="res://Recursos/Graficos/UI/Componentes/logos/logo_qtftd.svg" id="2_vwjvg"]
+[ext_resource type="Texture2D" uid="uid://ceqna4dr0aexd" path="res://Recursos/Graficos/UI/Componentes/menu_telaInicial/menu_telaInicial_base_extras.svg" id="3_xcdby"]
 [ext_resource type="FontFile" uid="uid://dh6sc33fercr7" path="res://Recursos/Fontes/SourGummy-BoldItalic.ttf" id="4_p7c65"]
 [ext_resource type="FontFile" uid="uid://ck6c6ppwbb03j" path="res://Recursos/Fontes/SourGummy-Bold.ttf" id="6_cwhcj"]
 [ext_resource type="FontFile" uid="uid://dgsx8f04jvfhg" path="res://Recursos/Fontes/SourGummy-Regular.ttf" id="7_b0wcp"]
 [ext_resource type="Theme" uid="uid://d0bhol3tm4h44" path="res://UI/botao_extras.tres" id="8_l68n3"]
-[ext_resource type="Texture2D" uid="uid://dgqcklm182h6y" path="res://Recursos/Graficos/UI/Componentes/button_medium/icone_external.svg" id="9_oxror"]
-[ext_resource type="Texture2D" uid="uid://cm2671rc0yk67" path="res://Recursos/Graficos/UI/Componentes/menu_telaInicial/sprite_telaInicial_cartilha.svg" id="10_8wjof"]
-[ext_resource type="Texture2D" uid="uid://brxi1yywdoj8q" path="res://Recursos/Graficos/UI/Componentes/menu_telaInicial/sprite_telaInicial_estrela.svg" id="11_43m8k"]
+[ext_resource type="Texture2D" uid="uid://dbgrtqieey8t5" path="res://Recursos/Graficos/UI/Componentes/button_medium/icone_external.svg" id="9_oxror"]
+[ext_resource type="Texture2D" uid="uid://cmivhg50t21ei" path="res://Recursos/Graficos/UI/Componentes/menu_telaInicial/sprite_telaInicial_cartilha.svg" id="10_8wjof"]
+[ext_resource type="Texture2D" uid="uid://dxomhcqyav3kh" path="res://Recursos/Graficos/UI/Componentes/menu_telaInicial/sprite_telaInicial_estrela.svg" id="11_43m8k"]
 [ext_resource type="Theme" uid="uid://bo2w24mldptkr" path="res://UI/estrela_extra.tres" id="12_mscwh"]
-[ext_resource type="Theme" uid="uid://daph4p86il52n" path="res://UI/botaoFechar.tres" id="12_rfldu"]
+[ext_resource type="Theme" uid="uid://manffmwy5jfe" path="res://UI/botaoFechar.tres" id="12_rfldu"]
 [ext_resource type="Texture2D" uid="uid://b6aei4egadr1w" path="res://Recursos/Graficos/UI/Componentes/tab_select/tab_select_base_2abas.svg" id="13_ke6tl"]
 [ext_resource type="Texture2D" uid="uid://gtn7jhnhevjd" path="res://Recursos/Graficos/UI/Componentes/tab_select/button_tab_select_selected.svg" id="14_7366t"]
 [ext_resource type="Texture2D" uid="uid://btkfmdva6rg47" path="res://Recursos/Graficos/UI/Ingredientes/configuracoes.svg" id="16_0gfo8"]
-[ext_resource type="Theme" uid="uid://dfn0rvtndrvds" path="res://UI/controle_audio.tres" id="17_b0wcp"]
+[ext_resource type="Texture2D" uid="uid://ddslhel4hq4ja" path="res://Recursos/Graficos/UI/Componentes/slider/button_slider_default.svg" id="17_43m8k"]
 [ext_resource type="Theme" uid="uid://dfkingc0vubmx" path="res://UI/texto_opcoes.tres" id="17_cwhcj"]
-[ext_resource type="Texture2D" uid="uid://dnbce4p3ldavq" path="res://Recursos/Graficos/UI/Componentes/logos/simbolo_tpt.svg" id="19_l68n3"]
+[ext_resource type="Script" uid="uid://bfah6lu1pheaj" path="res://Scripts/ControleDeAudio.gd" id="18_oxror"]
+[ext_resource type="Texture2D" uid="uid://blae51ijpjbkn" path="res://Recursos/Graficos/UI/Componentes/slider/button_slider_pressed.svg" id="18_rfldu"]
+[ext_resource type="Texture2D" uid="uid://c7duewe4oe42b" path="res://Recursos/Graficos/UI/Componentes/slider/slider_base.svg" id="19_ke6tl"]
+[ext_resource type="Texture2D" uid="uid://cjqu54u6f50c8" path="res://Recursos/Graficos/UI/Componentes/logos/simbolo_tpt.svg" id="19_l68n3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mscwh"]
 texture = ExtResource("16_0gfo8")
@@ -104,6 +107,49 @@ _data = {
 &"movimento_direita": SubResource("Animation_mscwh")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo2rv"]
+bg_color = Color(0.631373, 0.192157, 0.403922, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w833q"]
+bg_color = Color(0.631373, 0.192157, 0.403922, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nqldo"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("19_ke6tl")
+
+[sub_resource type="Theme" id="Theme_7366t"]
+HSlider/icons/grabber = ExtResource("17_43m8k")
+HSlider/icons/grabber_highlight = ExtResource("18_rfldu")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_vo2rv")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w833q")
+HSlider/styles/slider = SubResource("StyleBoxTexture_nqldo")
+
+[sub_resource type="Theme" id="Theme_vbhev"]
+HSlider/icons/grabber = ExtResource("17_43m8k")
+HSlider/icons/grabber_highlight = ExtResource("18_rfldu")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_vo2rv")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_w833q")
+HSlider/styles/slider = SubResource("StyleBoxTexture_nqldo")
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_mscwh")
 
@@ -166,6 +212,7 @@ libraries = {
 }
 
 [node name="menu_extra" type="Node2D" parent="."]
+visible = false
 
 [node name="titulo_extras" type="Label" parent="menu_extra"]
 offset_left = 316.0
@@ -287,17 +334,36 @@ theme_override_fonts/font = ExtResource("4_p7c65")
 theme_override_font_sizes/font_size = 35
 text = "Opções"
 
+[node name="vol_efeitos" type="Label" parent="menu_opcoes"]
+offset_left = 233.0
+offset_top = 664.0
+offset_right = 508.0
+offset_bottom = 714.0
+theme = ExtResource("17_cwhcj")
+text = "Efeitos sonoros"
+horizontal_alignment = 1
+
 [node name="control_efeitos" type="HSlider" parent="menu_opcoes"]
 offset_left = 210.0
 offset_top = 704.0
 offset_right = 536.0
 offset_bottom = 794.0
 tooltip_text = "Volume de efeitos"
-theme = ExtResource("17_b0wcp")
+theme = SubResource("Theme_7366t")
 theme_override_constants/center_grabber = 1
 max_value = 1.0
 step = 0.05
 value = 1.0
+script = ExtResource("18_oxror")
+
+[node name="volume" type="Label" parent="menu_opcoes"]
+offset_left = 233.0
+offset_top = 470.0
+offset_right = 508.0
+offset_bottom = 520.0
+theme = ExtResource("17_cwhcj")
+text = "Música"
+horizontal_alignment = 1
 
 [node name="control_musica" type="HSlider" parent="menu_opcoes"]
 offset_left = 210.0
@@ -305,30 +371,12 @@ offset_top = 504.0
 offset_right = 536.0
 offset_bottom = 520.0
 tooltip_text = "Volume principal"
-theme = ExtResource("17_b0wcp")
+theme = SubResource("Theme_vbhev")
+theme_override_constants/center_grabber = 1
 max_value = 1.0
 step = 0.05
 value = 1.0
-
-[node name="musica" type="VBoxContainer" parent="menu_opcoes"]
-offset_left = 235.0
-offset_top = 450.0
-offset_right = 510.0
-offset_bottom = 554.0
-theme_override_constants/separation = 150
-alignment = 1
-
-[node name="volume" type="Label" parent="menu_opcoes/musica"]
-layout_mode = 2
-theme = ExtResource("17_cwhcj")
-text = "Música"
-horizontal_alignment = 1
-
-[node name="vol_efeitos" type="Label" parent="menu_opcoes/musica"]
-layout_mode = 2
-theme = ExtResource("17_cwhcj")
-text = "Efeitos sonoros"
-horizontal_alignment = 1
+script = ExtResource("18_oxror")
 
 [node name="SimboloTpt" type="Sprite2D" parent="."]
 position = Vector2(677, 1247)
@@ -339,3 +387,5 @@ texture = ExtResource("19_l68n3")
 [connection signal="pressed" from="opcoes" to="." method="_on_opcoes_pressed"]
 [connection signal="pressed" from="menu_extra/botao_cartilha" to="." method="_on_botao_cartilha_pressed"]
 [connection signal="pressed" from="menu_extra/botao_alianca" to="." method="_on_botao_alianca_pressed"]
+[connection signal="value_changed" from="menu_opcoes/control_efeitos" to="menu_opcoes/control_efeitos" method="_on_value_changed_sfx"]
+[connection signal="value_changed" from="menu_opcoes/control_musica" to="menu_opcoes/control_musica" method="_on_value_changed"]

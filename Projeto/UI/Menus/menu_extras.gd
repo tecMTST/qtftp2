@@ -1,8 +1,11 @@
 extends Node2D
 
+
 @onready var botao = $tap/esquerda
 @onready var estado_botao = true #true esquerda e false direita
 @onready var opcoes = get_node("menu_opcoes")
+
+
 
 
 func _on_botao_cartilha_pressed() -> void:

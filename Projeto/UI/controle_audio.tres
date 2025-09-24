@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://blae51ijpjbkn" path="res://Recursos/Graficos/UI/Componentes/slider/button_slider_pressed.svg" id="2_3jqtg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el2wj"]
-bg_color = Color(0.603666, 0.103442, 0.477344, 1)
+bg_color = Color(0.655855, 0.122425, 0.520011, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -32,7 +32,7 @@ expand_margin_top = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stm83"]
-bg_color = Color(0.209623, 0.00197426, 0.160249, 1)
+bg_color = Color(0.333577, 0.00497424, 0.261076, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1

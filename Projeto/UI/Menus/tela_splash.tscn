@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://b2tdr58yk8m23"]
 
 [ext_resource type="Script" uid="uid://bx21p5ti5jmcv" path="res://UI/Menus/tela_splash.gd" id="1_286d4"]
-[ext_resource type="Texture2D" uid="uid://dtohi5qh8mdqa" path="res://Recursos/Graficos/UI/Componentes/logos/logo_tpt.svg" id="2_f2keg"]
-[ext_resource type="Texture2D" uid="uid://i262to0kiuej" path="res://Recursos/Graficos/UI/Componentes/logos/logo_aaas.svg" id="3_po15b"]
+[ext_resource type="Texture2D" uid="uid://ks5rwoicdvvc" path="res://Recursos/Graficos/UI/Componentes/logos/logo_tpt.svg" id="2_f2keg"]
+[ext_resource type="Texture2D" uid="uid://cpr6gw2f8x5r4" path="res://Recursos/Graficos/UI/Componentes/logos/logo_aaas.svg" id="3_po15b"]
 
 [sub_resource type="Animation" id="Animation_0mp76"]
 length = 0.001
