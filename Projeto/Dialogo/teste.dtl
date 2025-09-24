@@ -1,0 +1,10 @@
+carolina: To testando
+do Cutscene.ordem("carolina", 0)
+do Cutscene.mover_para("carolina", "Waypoint1")
+[wait time="4.0" hide_text="false"]
+do Cutscene.trocar_rosto("carolina", "rostoIdleFeliz")
+do Cutscene.executar_animacao("carolina", "qtftd anims/ajuntar_carol")
+carolina: Xau
+do Cutscene.mover_para("carolina", "Waypoint2")
+do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
+[wait time="2.0"]

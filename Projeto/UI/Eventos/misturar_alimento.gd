@@ -54,5 +54,5 @@ func _on_completed():
 	close()
 
 
-func _on_spin_button_giro_completo(contador: int) -> void:
+func _on_spin_button_giro_completo(_contador: int) -> void:
 	%ProgressoEvento.do_act()

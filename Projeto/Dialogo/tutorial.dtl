@@ -1,0 +1,44 @@
+label inicio
+carolina: Que fome…
+[end_timeline]
+label abriu_geladeira
+carolina: [speed=0.6]Tem o que pra comer?[aa=3]
+[end_timeline]
+
+# #Assim que o jogador (Elza) entrega o segundo prato na mesa,
+# #Lucas, bebê no berço, começa a  se mexe no berço
+# #(se possível mesma movimentação do choro mas sem lágrimas)
+# #Carolina olha para Lucas no berço (animação sutil, para não dar trabalho) e fala (balãozinho)
+
+label tutorial_choro
+do ControleDeFase.congelar_tempo()
+carolina: Mãe! O Lucas quer mamar![aa=2]
+elza: Fala baixo, filha.[aa=2]
+# #Lúcas começa a se mexer
+[signal arg_type="dict" arg="{"acao":"iniciar_mexer","objeto":"Distracoes/Berco"}"]
+# #uma caixa de tutorial surge na tela,
+narrador: Seu bebê vai chorar quando estiver com fome.[aa=3]
+narrador: Amamente Lucas antes que a barra fique vazia.[aa=3]
+narrador: E não esqueça da comida![aa=3]
+# #o ícone de choro de Lucas surge perto dele e começa a se encher.
+[signal arg_type="dict" arg="{"acao":"iniciar_choro","objeto":"Distracoes/Berco"}"]
+do ControleDeFase.descongelar_tempo()
+[end_timeline]
+label fim
+
+# #Assim que o jogador (Elza) entregar o útlimo prato, gameplay PAUSA
+# #Carolina se levanta da mesa
+carolina: Tava muito bom, mãe! Beijo![aa=3]
+# #Carolina vai em direção da porta e sai da casa 
+do Cutscene.executar_animacao("carolina_sai")
+# #Elza vai até Lucas e pega ele no colo
+do Cutscene.executar_animacao("elza_pega_lucas")
+elza: Vem, filho. Mamãe precisa trabalhar.[aa=3]
+elza: Vou te deixar na Luisa mas volto logo, tá?[aa=3]
+
+# #Um emoji de coração surge em cima de Lucas.
+lucas: ❤️
+# #Elza vai em direção da porta com Lucas no colo. Eles saem de casa 
+do Cutscene.executar_animacao("elza_sai")
+[end_timeline]
+# #Fade out

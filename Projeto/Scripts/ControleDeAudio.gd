@@ -26,6 +26,7 @@ var biblioteca_de_audio := {
 		"hidratar": preload("res://Recursos/Audio/Efeitos/hidratar.ogg"),
 		"pegar_item": preload("res://Recursos/Audio/Efeitos/pegar_item.ogg"),
 		"alimento_servido": preload("res://Recursos/Audio/Efeitos/alimento_servido.ogg"),
+		"splash_screen": preload("res://Recursos/Audio/Efeitos/splash.ogg"),
 		"passos": [
 			preload("res://Recursos/Audio/Efeitos/passo1.ogg"),
 			preload("res://Recursos/Audio/Efeitos/passo2.ogg"),

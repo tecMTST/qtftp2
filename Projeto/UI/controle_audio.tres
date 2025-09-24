@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dfn0rvtndrvds"]
+
+[ext_resource type="Texture2D" uid="uid://ddslhel4hq4ja" path="res://Recursos/Graficos/UI/Componentes/slider/button_slider_default.svg" id="1_el2wj"]
+[ext_resource type="Texture2D" uid="uid://blae51ijpjbkn" path="res://Recursos/Graficos/UI/Componentes/slider/button_slider_pressed.svg" id="2_3jqtg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el2wj"]
+bg_color = Color(0.603666, 0.103442, 0.477344, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3jqtg"]
+bg_color = Color(0.603666, 0.103442, 0.477344, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stm83"]
+bg_color = Color(0.209623, 0.00197426, 0.160249, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[resource]
+HSlider/constants/center_grabber = 1
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = ExtResource("1_el2wj")
+HSlider/icons/grabber_highlight = ExtResource("2_3jqtg")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_el2wj")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_3jqtg")
+HSlider/styles/slider = SubResource("StyleBoxFlat_stm83")

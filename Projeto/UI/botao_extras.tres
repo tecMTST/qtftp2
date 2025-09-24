@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d0bhol3tm4h44"]
+
+[ext_resource type="FontFile" uid="uid://bs0kc3ghs0jgm" path="res://Recursos/Fontes/SourGummy-Italic.ttf" id="1_2riax"]
+[ext_resource type="Texture2D" uid="uid://h3okqgikmsva" path="res://Recursos/Graficos/UI/Componentes/button_medium/button_medium_default.svg" id="2_tyyvy"]
+[ext_resource type="Texture2D" uid="uid://dj6tdwgelsej6" path="res://Recursos/Graficos/UI/Componentes/button_medium/button_medium_pressed.svg" id="3_v073k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2riax"]
+texture = ExtResource("3_v073k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5h4ar"]
+texture = ExtResource("2_tyyvy")
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/fonts/font = ExtResource("1_2riax")
+Button/styles/hover = SubResource("StyleBoxTexture_2riax")
+Button/styles/normal = SubResource("StyleBoxTexture_5h4ar")

@@ -10,7 +10,7 @@ radius = 23.0
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_s06ml"]
 
-[node name="Filha" type="CharacterBody2D"]
+[node name="Filha" type="CharacterBody2D" groups=["personagem"]]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_suqhv")

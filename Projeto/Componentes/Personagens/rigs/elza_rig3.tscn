@@ -776,6 +776,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_x465c")
 blend_point_1/pos = 0.5
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ghekw"]
+graph_offset = Vector2(-532.359, -62.9157)
 nodes/AmamentarLucas/node = SubResource("AnimationNodeBlend2_njihp")
 nodes/AmamentarLucas/position = Vector2(521.195, 225.284)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_cw56l")
@@ -785,7 +786,7 @@ nodes/Animation/position = Vector2(-740, 320)
 "nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_ghekw")
 "nodes/Animation 3/position" = Vector2(-100, 560)
 "nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_2qtra")
-"nodes/Animation 4/position" = Vector2(500, 540)
+"nodes/Animation 4/position" = Vector2(460, 520)
 "nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_j7oms")
 "nodes/Animation 5/position" = Vector2(560, 740)
 "nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_ys12b")
@@ -1031,7 +1032,6 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 [node name="Skeleton2D" type="Skeleton2D" parent="rig1"]
 
 [node name="tronco" type="Bone2D" parent="rig1/Skeleton2D"]
-position = Vector2(35, 0)
 rest = Transform2D(1, 0, 0, 1, 35, 429)
 
 [node name="pescoco" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
