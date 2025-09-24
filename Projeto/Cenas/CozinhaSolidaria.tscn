@@ -281,9 +281,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -95.0
+offset_left = -105.0
 offset_top = -224.0
-offset_right = 93.0
+offset_right = 83.0
 offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -324,9 +324,8 @@ texture = ExtResource("34_5hxbm")
 position = Vector2(121, 120)
 
 [node name="BotaoAcao" type="TouchScreenButton" parent="Molduras"]
-visible = false
 z_index = 99
-position = Vector2(274, 1064)
+position = Vector2(265, 1064)
 texture_normal = ExtResource("21_syhsj")
 texture_pressed = ExtResource("22_xaado")
 action = "action"
