@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://82iaul8d3yya" path="res://UI/Menus/menu_principal.gd" id="1_07iuf"]
 [ext_resource type="Theme" uid="uid://lw7x37namdhi" path="res://UI/botao_menu_principal.tres" id="2_v6y4k"]
+[ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="4_26fyp"]
 [ext_resource type="Texture2D" uid="uid://bmihn7u5mpqmi" path="res://Recursos/Graficos/Cenas/telaInicialQTFTD.png" id="3_v6y4k"]
-[ext_resource type="Texture2D" uid="uid://c6hn1bdbueq6t" path="res://Recursos/Graficos/UI/Componentes/logos/logo_qtftd.svg" id="4_ritq6"]
-[ext_resource type="Texture2D" uid="uid://dnbce4p3ldavq" path="res://Recursos/Graficos/UI/Componentes/logos/simbolo_tpt.svg" id="5_v6y4k"]
+[ext_resource type="Texture2D" uid="uid://28d80widfiba" path="res://Recursos/Graficos/UI/Componentes/logos/logo_qtftd.svg" id="4_ritq6"]
+[ext_resource type="Texture2D" uid="uid://cjqu54u6f50c8" path="res://Recursos/Graficos/UI/Componentes/logos/simbolo_tpt.svg" id="5_v6y4k"]
 
 [sub_resource type="Theme" id="Theme_b6rvj"]
 
@@ -62,6 +63,8 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_v6y4k")
 
-[connection signal="pressed" from="CenterContainer/BotoesPrincipais/jogar" to="." method="_on_jogar_pressed"]
+[node name="TransicaoCena" parent="." instance=ExtResource("4_26fyp")]
+
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="CenterContainer/BotoesPrincipais/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/extras" to="." method="_on_extras_pressed"]

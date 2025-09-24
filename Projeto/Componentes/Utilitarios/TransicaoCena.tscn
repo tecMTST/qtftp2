@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://ofpflnpic4l5"]
+
+[ext_resource type="Script" uid="uid://cct5qw36w0uqb" path="res://Componentes/Utilitarios/transicao_cena.gd" id="1_pvr7l"]
+[ext_resource type="Script" uid="uid://cpesqq3ctb78o" path="res://addons/uiJuicer/Fader.gd" id="2_ruo3r"]
+
+[node name="TransicaoCena" type="CanvasLayer"]
+script = ExtResource("1_pvr7l")
+
+[node name="TransicaoCena" type="Control" parent="."]
+process_mode = 3
+top_level = true
+z_index = 999
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Fader" type="Node" parent="TransicaoCena"]
+script = ExtResource("2_ruo3r")
+AutoFadeIn = false
+StartVisible = true
+metadata/_custom_type_script = "uid://cpesqq3ctb78o"
+
+[node name="Fundo" type="ColorRect" parent="TransicaoCena"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

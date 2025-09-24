@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://tap31ifdmu6f"]
+[gd_scene load_steps=12 format=3 uid="uid://tap31ifdmu6f"]
 
 [ext_resource type="Script" uid="uid://cpi6tydbas0r3" path="res://Componentes/Casa/Interagiveis/mesa_filha.gd" id="1_eo1ls"]
 [ext_resource type="Texture2D" uid="uid://351ntpmnbl0a" path="res://Recursos/Graficos/Interagiveis/Mesa.svg" id="2_imm24"]
 [ext_resource type="Texture2D" uid="uid://bqbbdsv41kc8l" path="res://Recursos/Graficos/Interagiveis/Cadeira lateral.svg" id="2_j3b4e"]
 [ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="2_oawju"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_paw2f"]
-[ext_resource type="Texture2D" uid="uid://cveybcnysc1p4" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="6_0id5j"]
+[ext_resource type="Texture2D" uid="uid://cfp770tffb0ns" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="6_0id5j"]
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="7_ogud8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1ls"]
@@ -14,14 +14,21 @@ size = Vector2(240, 236)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imm24"]
 size = Vector2(312, 312)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0id5j"]
+size = Vector2(77, 146)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0id5j"]
+radius = 25.0
+height = 146.0
+
 [node name="MesaFilha" type="StaticBody2D" groups=["filha", "interagivel", "ponto_entrega"]]
 script = ExtResource("1_eo1ls")
 
 [node name="CadeiraFrente" type="TextureRect" parent="."]
 offset_left = -6.0
-offset_top = -126.0
+offset_top = -127.0
 offset_right = 70.0
-offset_bottom = 51.0
+offset_bottom = 50.0
 texture = ExtResource("2_oawju")
 
 [node name="CadeiraLateral" type="TextureRect" parent="."]
@@ -67,5 +74,13 @@ texture = ExtResource("6_0id5j")
 [node name="Bouncer" type="Node" parent="Indicador"]
 script = ExtResource("7_ogud8")
 metadata/_custom_type_script = "uid://d1lhbtx247tsg"
+
+[node name="collisionCadeira" type="CollisionShape2D" parent="."]
+position = Vector2(31.5, -63)
+shape = SubResource("RectangleShape2D_0id5j")
+
+[node name="collisionCadeira2" type="CollisionShape2D" parent="."]
+position = Vector2(-113, -31)
+shape = SubResource("CapsuleShape2D_0id5j")
 
 [connection signal="interagir" from="ComponenteInteragivel" to="." method="_interagir"]

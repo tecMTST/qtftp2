@@ -3,6 +3,7 @@ extends Control
 signal escolheu_ingrediente
 
 var acao_executada = false
+var player : Player
 
 @onready var prateleira_1 = $VBoxContainer/Prateleira
 @onready var prateleira_2 = $VBoxContainer/Prateleira2
@@ -11,6 +12,7 @@ var acao_executada = false
 
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
 	acao_executada = false
 
 
@@ -42,8 +44,9 @@ func preencher_geladeira(posicao_do_ingrediente):
 
 
 func close() -> void:
+	player.ativar()
 	GuiTransitions.hide("Geladeira")
-	await GuiTransitions.hide_completed
+	await get_tree().create_timer(1).timeout
 	get_parent().queue_free()
 	if ControleDeFase.nivel_atual.id == 3:
 		var fase03 = "res://Dialogo/Fase03.dialogue"
@@ -51,16 +54,14 @@ func close() -> void:
 
 
 func escolhe_ingrediente(ingrediente_escolhido: Ingrediente) -> void:
-	var player = get_tree().get_nodes_in_group("player")
 	if player and not acao_executada:
 		acao_executada = true
-
 		var ingrediente: IngredienteBase = load(
 			"res://Componentes/Ingredientes/IngredienteBase.tscn"
 		).instantiate()
 		ingrediente.iniciar(ingrediente_escolhido)
-
-		player[0].agarrar(ingrediente)
+		player.agarrar(ingrediente)
+		ControleDeAudio.toca_efeito("pegar_item")
 		ControleDeFase.proximo_passo()
 		ingrediente_escolhido = null
 		escolheu_ingrediente.emit()

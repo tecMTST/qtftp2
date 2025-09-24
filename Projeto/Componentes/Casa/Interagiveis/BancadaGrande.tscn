@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://78y5jrqf3oo4" path="res://Componentes/Base/Interagiveis/bancada.gd" id="1_nf28l"]
 [ext_resource type="Texture2D" uid="uid://chslfcxhyt7hi" path="res://Recursos/Graficos/Cenas/Cenario_2/Mesa.svg" id="2_nf28l"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_nrg2e"]
-[ext_resource type="Texture2D" uid="uid://dmxtex2h0cm00" path="res://Recursos/Graficos/UI/indicador.svg" id="4_lqlm5"]
+[ext_resource type="Texture2D" uid="uid://cfp770tffb0ns" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="4_nrg2e"]
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="5_nrg2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xld1x"]
-size = Vector2(197, 116)
+size = Vector2(214, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dyue"]
-size = Vector2(244, 140)
+size = Vector2(278, 114)
 
 [node name="Bancada" type="StaticBody2D" groups=["bancada", "interagivel"]]
 script = ExtResource("1_nf28l")
@@ -24,7 +24,7 @@ scale = Vector2(0.4, 0.42)
 texture = ExtResource("2_nf28l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bancada", "interagivel"]]
-position = Vector2(36.5, -8)
+position = Vector2(38, -16)
 shape = SubResource("RectangleShape2D_xld1x")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
@@ -38,7 +38,7 @@ color = Color(1, 1, 1, 0)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(39, -20)
+position = Vector2(40, -7)
 shape = SubResource("RectangleShape2D_0dyue")
 
 [node name="ComponenteInteragível" type="Node2D" parent="."]
@@ -50,9 +50,9 @@ metadata/_custom_type_script = "uid://ddwsslb5nraqq"
 
 [node name="Indicador" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(36, -56)
-scale = Vector2(0.307, 0.307)
-texture = ExtResource("4_lqlm5")
+position = Vector2(37, -91)
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("4_nrg2e")
 
 [node name="Bouncer" type="Node" parent="Indicador"]
 script = ExtResource("5_nrg2e")

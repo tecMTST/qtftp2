@@ -10,7 +10,7 @@ radius = 23.0
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_s06ml"]
 
-[node name="Filha" type="CharacterBody2D"]
+[node name="Filha" type="CharacterBody2D" groups=["personagem"]]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_suqhv")
@@ -18,7 +18,6 @@ id = "carolina"
 nome = "Carolina"
 
 [node name="carolina_rig" parent="." instance=ExtResource("3_b34n8")]
-position = Vector2(-3, 41)
 scale = Vector2(0.12, 0.12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

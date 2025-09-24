@@ -17,14 +17,19 @@ const TEMPO_INFINITO = -1
 @export var passo_atual: PassoReceita
 @export var indicador_proximo : String = ""
 
+var travar_dialogos := false
+var esta_dialogando := false
 var tempo_jogo: Timer
 var estado_nivel: EstadoDoNivel
 var _tempo_checagem: Timer
 var _indice_receita_atual: int = 0
 var _indice_passo_atual: int = 0
 
+@onready var filha: Filha = get_tree().get_first_node_in_group("filha_sprite")
 
 func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_event)
+	Dialogic.timeline_ended.connect(_on_dialogo_finalizado)
 	get_tree().paused = false
 	_tempo_checagem = Timer.new()
 	_tempo_checagem.wait_time = 0.1
@@ -44,6 +49,10 @@ func carregar_nivel():
 	if id_nivel == 0:
 		EstadoDeJogo.nivel_atual = 1
 		id_nivel = 1
+		if(is_instance_valid(EstadoDeJogo.nivel_atual==1)):
+			filha.set_z_index(6)
+		elif(is_instance_valid(EstadoDeJogo.nivel_atual==2)):
+			filha.set_z_index(5)
 	var niveis = Globais.niveis.filter(func(item : Nivel) : return item.id == id_nivel)
 	if len(niveis) > 0:
 		nivel_atual = niveis[0]
@@ -62,6 +71,7 @@ func carregar_nivel():
 	)
 
 func trapaca_muda_receita() -> void:
+	get_node("/root/Casa/Cozinha/Fogao").ao_tempo_queimado_atingido(null)
 	receitas_disponiveis = Globais.receitas
 	selecionar_receita_especifica((_indice_receita_atual + 1) % receitas_disponiveis.size())
 
@@ -75,10 +85,13 @@ func selecionar_proxima_receita() -> bool:
 	)
 	return selecionar_receita_especifica(_indice_receita_atual + 1)
 
+
 func selecionar_receita_aleatoria() -> bool:
 	if(len(receitas_disponiveis)>0):
 		return selecionar_receita_especifica(randi() % receitas_disponiveis.size())
 	return false
+
+
 func selecionar_receita_especifica(indice_receita) -> bool:
 	if not nivel_atual:
 		return false
@@ -124,9 +137,11 @@ func iniciar_nivel():
 	estado_nivel = EstadoDoNivel.new(nivel_atual)
 	tempo_jogo.start()
 	_tempo_checagem.start()
+	var briefing = get_tree().current_scene.find_child("Briefing") as Briefing
+	if briefing && is_instance_valid(briefing):
+		briefing.finalizado.connect(_controle_dialogos)
 	nivel_iniciado.emit(nivel_atual, estado_nivel)
 	print_debug("Nível ", nivel_atual.id, " iniciado")
-
 
 func _atualizar_bagunca() -> void:
 	estado_nivel.bagunca = get_tree().get_node_count_in_group('bagunca')
@@ -141,7 +156,7 @@ func _verificar_condicoes():
 	elif tempo_jogo.is_stopped() and nivel_atual.tempo != TEMPO_INFINITO:
 		_encerrar_nivel_falha()
 		print_debug("Nível falhou")
-	elif estado_nivel.choro_limite():
+	elif estado_nivel.choro_limite() or estado_nivel.fila_limite():
 		_encerrar_nivel_falha()
 		print_debug("Nível falhou")
 	elif estado_nivel.completo():
@@ -155,6 +170,7 @@ func _verificar_condicoes():
 func entregar_prato(prato: Ingrediente) -> void:
 	estado_nivel.entregar_prato(prato)
 	prato_entregue.emit(prato)
+	ControleDeAudio.toca_efeito("alimento_servido")
 
 func _cena_final():
 	cena_final.emit(nivel_atual, estado_nivel)
@@ -169,6 +185,10 @@ func _encerrar_nivel():
 	indicador_proximo = ""
 
 func _encerrar_nivel_falha():
+	if nivel_atual.id == 4:
+		print_debug("fim do arco da casa")
+		_encerrar_nivel()
+		return
 	_reset_timers()
 	get_tree().paused = true
 	ControleDeAudio.para_musica()
@@ -180,9 +200,12 @@ func _abrir_proximo_nivel():
 	var niveis = Globais.niveis.filter(
 		func(item : Nivel) : return item.id == EstadoDeJogo.nivel_atual
 	)
-	if len(niveis) > 0: nivel_atual = niveis[0]
+	if len(niveis) == 0:
+		EstadoDeJogo.cena_atual = "res://Cenas/cutscene_quadrinhos_epilogo.tscn"
+	else:
+		nivel_atual = niveis[0]
+		EstadoDeJogo.cena_atual = nivel_atual.local
 	get_tree().paused = false
-	EstadoDeJogo.cena_atual = nivel_atual.local
 	get_tree().change_scene_to_file(EstadoDeJogo.cena_atual)
 
 func _reset_timers() -> void:
@@ -194,10 +217,46 @@ func _reset_timers() -> void:
 func congelar_tempo() -> void:
 	jogador.process_mode = Node.PROCESS_MODE_DISABLED
 	tempo_jogo.paused = true
+	travar_dialogos = true
 
 func descongelar_tempo() -> void:
 	jogador.process_mode = Node.PROCESS_MODE_INHERIT
 	tempo_jogo.paused = false
+	travar_dialogos = false
 
 func fase_atual() -> int:
 	return EstadoDeJogo.nivel_atual
+
+func abrir_dialogo(fase: String, linha_dialogo: String) -> void:
+	if travar_dialogos:
+		return
+	var layout = Dialogic.start(fase, linha_dialogo)
+
+	if layout.has_method("register_character"):
+		var personagens := get_tree().get_nodes_in_group("personagem")
+		for personagem in personagens as Array[Personagem]:
+			layout.register_character(personagem.id, personagem)
+	esta_dialogando = true
+
+func _on_dialogo_finalizado() -> void:
+	esta_dialogando = false
+
+func _controle_dialogos() -> void:
+	if(!nivel_atual.dialogos):
+		return
+	if(nivel_atual.condicoes_dialogo):
+		for condicao in nivel_atual.condicoes_dialogo:
+			condicao.condicao_satisfeita.connect(_executa_condicao_dialogo)
+			condicao.init()
+
+func _executa_condicao_dialogo(condicao: CondicaoDialogo) -> void:
+	if condicao.tempo_espera:
+		await get_tree().create_timer(condicao.tempo_espera).timeout
+	abrir_dialogo(nivel_atual.dialogos, condicao.linha_dialogo)
+	nivel_atual.condicoes_dialogo.erase(condicao)
+	await Dialogic.timeline_ended
+
+func _on_dialogic_event(event_data) -> void:
+	var objeto := get_tree().current_scene.get_node(event_data.objeto)
+	if objeto.has_method(event_data.acao):
+		objeto.call_deferred(event_data.acao)

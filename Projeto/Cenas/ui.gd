@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var modal_nivel_concluido := preload("res://UI/Interfaces/FimNivel.tscn")
+@onready var modal_nivel_concluido := preload("res://UI/Interfaces/grafico_derrota.tscn")
 
 func _ready() -> void:
 	Eventos.evento_iniciado.connect(self._on_evento_iniciado)

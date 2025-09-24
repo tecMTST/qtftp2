@@ -1,64 +1,113 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6o4dd3tu2g00"]
+[gd_scene load_steps=12 format=3 uid="uid://c6o4dd3tu2g00"]
 
 [ext_resource type="PackedScene" uid="uid://dsnts70s2x6ks" path="res://UI/Interfaces/Modal.tscn" id="1_s7xxv"]
-[ext_resource type="Texture2D" uid="uid://7k78sq356604" path="res://Recursos/Graficos/UI/botao_acao.svg" id="2_bsy65"]
-[ext_resource type="Texture2D" uid="uid://bmnbok0gn2itx" path="res://icon.svg" id="2_imsks"]
 [ext_resource type="Script" uid="uid://dfrvqfogmjhje" path="res://UI/Eventos/CortarAlimento.gd" id="2_w4mwm"]
+[ext_resource type="Texture2D" uid="uid://c2hpypvmk83dx" path="res://Recursos/Graficos/UI/Ingredientes/cortar.svg" id="3_boqlv"]
 [ext_resource type="Script" uid="uid://b0tgsnmsppesf" path="res://addons/events/quick_timer_progress_bar.gd" id="3_imsks"]
+[ext_resource type="Texture2D" uid="uid://dthvcmgkvbpqs" path="res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida.svg" id="4_mct0n"]
 [ext_resource type="Script" uid="uid://44oftg34g52d" path="res://addons/events/behavior/smash_button.gd" id="4_w4mwm"]
+[ext_resource type="Theme" uid="uid://cmmbeb1vnduka" path="res://Recursos/Fontes/Label_SourGummy_Regular.tres" id="5_63mf6"]
+[ext_resource type="Texture2D" uid="uid://mg6315joxyya" path="res://Recursos/Graficos/UI/Componentes/popup_minigames/popup_minigame_barra_base.svg" id="6_ehikr"]
+[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="9_bb65w"]
+[ext_resource type="Theme" uid="uid://manffmwy5jfe" path="res://UI/botaoFechar.tres" id="9_mct0n"]
+[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="10_ykpfq"]
 
 [node name="CortarAlimento" instance=ExtResource("1_s7xxv")]
 script = ExtResource("2_w4mwm")
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="1"]
+[node name="Receita" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(0, 135)
+layout_mode = 2
+theme = ExtResource("5_63mf6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 30
+text = "Nome Receita"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icone Minigame" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Receita" index="0"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 27.0
+offset_right = 146.0
+offset_bottom = 97.0
+texture = ExtResource("3_boqlv")
+
+[node name="LabelTempo" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="1"]
 layout_mode = 2
 theme_type_variation = &"ModalTitle"
-text = "Pressione o botão para cortar o alimento"
 horizontal_alignment = 1
 
-[node name="LabelTempo" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="2"]
-layout_mode = 2
-theme_type_variation = &"ModalTitle"
-horizontal_alignment = 1
-
-[node name="ImagemEvento" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer" index="3"]
+[node name="ImagemEvento" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer" index="2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("2_imsks")
+texture = ExtResource("4_mct0n")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="ProgressoEvento" type="TextureProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer" index="4" node_paths=PackedStringArray("event_timer", "behavior")]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme = ExtResource("5_63mf6")
+theme_override_font_sizes/font_size = 40
+text = "Pressione o BOTÃO RAPIDAMENTE
+e preencha a barra!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" index="4"]
+layout_mode = 2
+theme = ExtResource("5_63mf6")
+theme_override_font_sizes/font_size = 28
+text = "Pressione o BOTÃO RAPIDAMENTE
+e preencha a barra!"
+horizontal_alignment = 1
+
+[node name="ProgressoEvento" type="TextureProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer/Label2" index="0" node_paths=PackedStringArray("event_timer", "behavior")]
 unique_name_in_owner = true
 z_index = 1
 layout_mode = 2
+offset_left = 86.0
+offset_top = -132.0
+offset_right = 508.0
+offset_bottom = 50.0
 size_flags_horizontal = 4
 step = 20.0
-fill_mode = 4
-texture_under = ExtResource("2_bsy65")
-texture_progress = ExtResource("2_bsy65")
-tint_under = Color(0, 1, 1, 0.647059)
-tint_progress = Color(0.384314, 0.960784, 0, 0.698039)
+texture_under = ExtResource("6_ehikr")
+texture_progress = ExtResource("6_ehikr")
+tint_under = Color(1, 1, 1, 0.878431)
+tint_progress = Color(0.588235, 0.643137, 0.0980392, 1)
 script = ExtResource("3_imsks")
 event_timer = NodePath("Timer")
 behavior = NodePath("SmashButton")
 metadata/_custom_type_script = "uid://b0tgsnmsppesf"
 
-[node name="Timer" type="Timer" parent="MarginContainer/PanelContainer/VBoxContainer/ProgressoEvento" index="0"]
+[node name="Timer" type="Timer" parent="MarginContainer/PanelContainer/VBoxContainer/Label2/ProgressoEvento" index="0"]
 wait_time = 10.0
 one_shot = true
 
-[node name="SmashButton" type="Node" parent="MarginContainer/PanelContainer/VBoxContainer/ProgressoEvento" index="1"]
+[node name="SmashButton" type="Node" parent="MarginContainer/PanelContainer/VBoxContainer/Label2/ProgressoEvento" index="1"]
 script = ExtResource("4_w4mwm")
 miss_time = 0.3
 metadata/_custom_type_script = "uid://44oftg34g52d"
 
-[node name="BotaoAcao" type="TextureButton" parent="MarginContainer/PanelContainer" index="1"]
+[node name="BotaoAcao" type="TextureButton" parent="MarginContainer/PanelContainer/VBoxContainer/Label2/ProgressoEvento" index="2"]
+z_index = -1
 layout_mode = 2
+offset_left = 114.0
+offset_top = 333.0
+offset_right = 296.0
+offset_bottom = 515.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture_normal = ExtResource("2_bsy65")
+texture_normal = ExtResource("9_bb65w")
+texture_pressed = ExtResource("10_ykpfq")
 stretch_mode = 5
 
-[connection signal="pressed" from="MarginContainer/PanelContainer/BotaoAcao" to="MarginContainer/PanelContainer/VBoxContainer/ProgressoEvento/SmashButton" method="press"]
+[node name="CloseButton" parent="MarginContainer/PanelContainer/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(100, 100)
+theme = ExtResource("9_mct0n")
+text = ""
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Label2/ProgressoEvento/BotaoAcao" to="." method="_on_cortou_alimento"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/Label2/ProgressoEvento/BotaoAcao" to="MarginContainer/PanelContainer/VBoxContainer/Label2/ProgressoEvento/SmashButton" method="press"]

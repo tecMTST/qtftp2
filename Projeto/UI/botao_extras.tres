@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://d0bhol3tm4h44"]
 
 [ext_resource type="FontFile" uid="uid://bs0kc3ghs0jgm" path="res://Recursos/Fontes/SourGummy-Italic.ttf" id="1_2riax"]
-[ext_resource type="Texture2D" uid="uid://b0sdi7ilt5sgf" path="res://Recursos/Graficos/UI/Componentes/button_medium/button_medium_default.svg" id="2_tyyvy"]
-[ext_resource type="Texture2D" uid="uid://crtjh81j3m1jd" path="res://Recursos/Graficos/UI/Componentes/button_medium/button_medium_pressed.svg" id="3_v073k"]
+[ext_resource type="Texture2D" uid="uid://h3okqgikmsva" path="res://Recursos/Graficos/UI/Componentes/button_medium/button_medium_default.svg" id="2_tyyvy"]
+[ext_resource type="Texture2D" uid="uid://dj6tdwgelsej6" path="res://Recursos/Graficos/UI/Componentes/button_medium/button_medium_pressed.svg" id="3_v073k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2riax"]
 texture = ExtResource("3_v073k")

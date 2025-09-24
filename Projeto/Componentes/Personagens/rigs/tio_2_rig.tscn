@@ -127,24 +127,39 @@ rest = Transform2D(1, 0, 0, 1, 0, -410)
 
 [node name="rosto" type="Bone2D" parent="rig1/Skeleton2D/tronco/pescoco"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="pernaDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(95, -125)
 rest = Transform2D(1, 0, 0, 1, 95, -125)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="pernaEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-101, -126)
 rest = Transform2D(1, 0, 0, 1, -101, -126)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(99, -384)
 rotation = -0.179245
 scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 99, -384)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = -10.27
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-84, -379)
 rest = Transform2D(1, 0, 0, 1, -84, -379)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="Tio21" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.32549)

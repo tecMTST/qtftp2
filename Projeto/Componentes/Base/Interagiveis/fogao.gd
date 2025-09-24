@@ -8,7 +8,7 @@ var _jogador: Player
 @onready var fogo_animado: AnimatedSprite2D = $AnimatedFire
 
 func _ready() -> void:
-	nome = "Fogão"
+	nome = "Fogao"
 
 
 func _process(_delta: float) -> void:
@@ -19,13 +19,17 @@ func eliminar_ingrediente() -> void:
 	fogo_animado.hide()
 	ControleDeAudio.para_efeito_ciclo("fogao_alarme")
 	ControleDeAudio.para_efeito_ciclo("fogao_cozinhando")
-	if objeto_no_fogao != null: objeto_no_fogao.queue_free()
+	if objeto_no_fogao != null: objeto_no_fogao.destruir()
 	objeto_no_fogao = null
 	_jogador = null
 
 
 func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	print_debug("[fogao]")
+	if ControleDeFase.passo_atual.alvo != "fogao":
+		print_debug("  [-] não é hora de usar o fogao")
+		return
+
 	if (_jogador != null):
 		print_debug("  [-] ação em andamento, não posso seguir")
 		return
@@ -73,7 +77,7 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 			_cozinhar_objeto(objeto_na_mao)
 		else:
 			print_debug("  [-] ", objeto_na_mao.id, " não interage com fogão")
-			return
+
 
 func _misturar_ingredientes_na_panela(indice_acao: int) -> void:
 	objeto_no_fogao.ao_transformar_sucesso.connect(_on_misturar_itens)
@@ -82,13 +86,8 @@ func _misturar_ingredientes_na_panela(indice_acao: int) -> void:
 
 func _on_misturar_itens(novo_item: IngredienteBase) -> void:
 	var objeto_antigo = _jogador.objeto_agarrado
-	_jogador.soltar()
+	_coloca_objeto_no_fogao(novo_item)
 	objeto_antigo.queue_free()
-
-	# agarrar() faz add_sibling(), que só funciona em nós órfãos.
-	#novo_item.get_parent().remove_child(novo_item)
-	objeto_no_fogao = novo_item
-	_jogador = null
 
 
 func _recolher_objeto() -> void:
@@ -126,6 +125,12 @@ func _on_falhou_transformacao(objeto: IngredienteBase) -> void:
 	_jogador = null
 
 func _on_posicionar_objeto_no_fogao(novo_objeto) -> void:
+	_coloca_objeto_no_fogao(novo_objeto)
+	fogo_animado.show()
+	ControleDeAudio.toca_efeito("fogao_ligar")
+	ControleDeAudio.toca_efeito_ciclo("fogao_cozinhando", "fogao_cozinhando")
+
+func _coloca_objeto_no_fogao(novo_objeto) -> void:
 	print_debug("  [-] colocando ", novo_objeto.id, " no fogão")
 	_jogador.soltar()
 	_jogador = null
@@ -134,9 +139,6 @@ func _on_posicionar_objeto_no_fogao(novo_objeto) -> void:
 	objeto_no_fogao.ao_tempo_limite_atingido.connect(ao_tempo_cozimento_atingido)
 	objeto_no_fogao.reparent(pivot_objeto)
 	objeto_no_fogao.global_position = pivot_objeto.global_position
-	fogo_animado.show()
-	ControleDeAudio.toca_efeito("fogao_ligar")
-	ControleDeAudio.toca_efeito_ciclo("fogao_cozinhando", "fogao_cozinhando")
 
 
 func ao_tempo_cozimento_atingido(_objeto: IngredienteBase):
@@ -148,7 +150,7 @@ func ao_tempo_cozimento_atingido(_objeto: IngredienteBase):
 
 
 func ao_tempo_queimado_atingido(_objeto: IngredienteBase):
-	print_debug("  [-] ", _objeto.descricao, " queimou no fogão! Recomeçando receita...")
+	print_debug("  [-] ingrediente queimou no fogão! Recomeçando receita...")
 	for interagivel in get_tree().get_nodes_in_group("interagivel"):
 		if interagivel.has_method("eliminar_ingrediente"):
 			print_debug("  [-] eliminando ingrediente de ", interagivel.name)

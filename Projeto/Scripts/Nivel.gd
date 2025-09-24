@@ -4,6 +4,8 @@ var id : int
 var nome : String
 var descricao : String
 var textos : Array[String]
+var dialogos: String
+var condicoes_dialogo: Array[CondicaoDialogo]
 var imagem : String
 var local : String
 var caminhos_briefing: Array[CaminhoBriefing]

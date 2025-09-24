@@ -1,8 +1,31 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://egdtqbppy6xr"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://egdtqbppy6xr"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djaxy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8ttv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihsko"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ifw8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tbum"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvvnt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sf8mx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [resource]
-Button/styles/hover = null
-Button/styles/normal = SubResource("StyleBoxTexture_djaxy")
-Button/styles/pressed = null
+Button/colors/font_color = Color(0.87451, 0.87451, 0.87451, 0)
+Button/colors/font_hover_color = Color(0.94902, 0.94902, 0.94902, 0)
+Button/colors/font_outline_color = Color(0, 0, 0, 0)
+Button/colors/font_pressed_color = Color(1, 1, 1, 0)
+Button/styles/disabled = SubResource("StyleBoxFlat_g8ttv")
+Button/styles/focus = SubResource("StyleBoxFlat_ihsko")
+Button/styles/hover = SubResource("StyleBoxFlat_8ifw8")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_5tbum")
+Button/styles/normal = SubResource("StyleBoxFlat_gvvnt")
+Button/styles/pressed = SubResource("StyleBoxFlat_sf8mx")

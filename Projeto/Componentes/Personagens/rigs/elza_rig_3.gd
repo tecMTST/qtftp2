@@ -3,20 +3,29 @@ class_name ElzaRig extends Node2D
 var segurando : bool = false
 var segurando_lucas : bool = false
 var amamentando : bool = false
+var ativo : bool = true
+var rostos : Array[Node] = []
 
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var cabeca: Polygon2D = $rig1/sprites/cabeca
+
+func _ready() -> void:
+	rostos = cabeca.get_children()
 
 func _process(_delta: float) -> void:
-	var velocidade_animacao = remap(abs(get_parent().velocity.length()),0.0, 600.0, 0.0, 1.0)
-	animation_tree.set("parameters/Velocidade/blend_position", velocidade_animacao)
-	if segurando:
-		animation_tree.set("parameters/Segurar/blend_amount", 1)
+	if ativo:
+		var velocidade_animacao = remap(abs(get_parent().velocity.length()),0.0, 600.0, 0.0, 1.0)
+		animation_tree.set("parameters/Velocidade/blend_position", velocidade_animacao)
+		if segurando:
+			animation_tree.set("parameters/Segurar/blend_amount", 1)
+		else:
+			animation_tree.set("parameters/Segurar/blend_amount", 0)
+		if not amamentando:
+			animation_tree.set("parameters/AmamentarLucas/blend_amount", 0)
+		if not segurando_lucas:
+			animation_tree.set("parameters/SegurarLucas/blend_amount", 0)
 	else:
-		animation_tree.set("parameters/Segurar/blend_amount", 0)
-	if not amamentando:
-		animation_tree.set("parameters/AmamentarLucas/blend_amount", 0)
-	if not segurando_lucas:
-		animation_tree.set("parameters/SegurarLucas/blend_amount", 0)
+		animation_tree.set("parameters/Velocidade/blend_position", 0)
 
 func ajuntar():
 	animation_tree.set("parameters/Velocidade/blend_position", 0.0)
@@ -42,3 +51,7 @@ func largar_lucas():
 	animation_tree.set("parameters/SegurarLucas/blend_amount", 0)
 	segurando_lucas = false
 	amamentando = false
+
+func mudar_rosto(nome : String):
+	for rosto in rostos:
+		rosto.visible = rosto.name == nome

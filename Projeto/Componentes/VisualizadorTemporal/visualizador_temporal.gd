@@ -13,6 +13,7 @@ const QUANTIDADE_DE_PONTOS_NO_CIRCULO := 32
 @export var radius := 20.0
 @export var angulo_inicial := -90
 @export var cor := Color("478cbf") # azul
+@export var invertido : bool = false
 
 @export_tool_button("Iniciar/Parar timer no editor")
 var botao = func():
@@ -30,11 +31,16 @@ var porcentagem := 0.0:
 		queue_redraw()
 
 
+
 func _process(_delta):
 	if temporizador == null:
 		return
 
-	porcentagem = temporizador.time_left / temporizador.wait_time
+	if temporizador.time_left > 0:
+		if not invertido:
+			porcentagem = temporizador.time_left / temporizador.wait_time
+		else:
+			porcentagem = 1 - (temporizador.time_left / temporizador.wait_time)
 
 func desenhar_circulo_de_visualizacao():
 	var de_angulo = angulo_inicial
@@ -43,11 +49,18 @@ func desenhar_circulo_de_visualizacao():
 	var pontos_no_arco = PackedVector2Array()
 	pontos_no_arco.push_back(Vector2.ZERO)
 
-	for i in range(QUANTIDADE_DE_PONTOS_NO_CIRCULO + 1):
-		var angulo_do_ponto = deg_to_rad(
-			de_angulo - i * (ate_angulo - de_angulo) / QUANTIDADE_DE_PONTOS_NO_CIRCULO)
-		var ponto = Vector2(cos(angulo_do_ponto), sin(angulo_do_ponto)) * radius
-		pontos_no_arco.push_back(ponto)
+	if not invertido:
+		for i in range(QUANTIDADE_DE_PONTOS_NO_CIRCULO + 1):
+			var angulo_do_ponto = deg_to_rad(
+				de_angulo - i * (ate_angulo - de_angulo) / QUANTIDADE_DE_PONTOS_NO_CIRCULO)
+			var ponto = Vector2(cos(angulo_do_ponto), sin(angulo_do_ponto)) * radius
+			pontos_no_arco.push_back(ponto)
+	else:
+		for i in range(QUANTIDADE_DE_PONTOS_NO_CIRCULO + 1, -1, -1):
+			var angulo_do_ponto = deg_to_rad(
+				de_angulo - i * (ate_angulo - de_angulo) / QUANTIDADE_DE_PONTOS_NO_CIRCULO)
+			var ponto = Vector2(cos(angulo_do_ponto), sin(angulo_do_ponto)) * radius
+			pontos_no_arco.push_back(ponto)
 
 	cor.a = 0.80
 	draw_colored_polygon(pontos_no_arco, cor)

@@ -7,6 +7,8 @@ extends Node
 var index_quadrinho_atual : int
 var quadrinhos_terminados : bool = false
 
+@onready var transicao_cena: TransicaoCena = $TransicaoCena
+
 func _ready() -> void:
 	var ultimo_quadrinho = lista_quadrinhos.size()-1
 	lista_quadrinhos[ultimo_quadrinho].on_quadrinho_finalizado.connect(_quadrinhos_finalizados)
@@ -28,6 +30,8 @@ func _carregar_proxima_cena() -> void:
 	if(!quadrinhos_terminados): return
 
 	if(!modo_loop):
+		transicao_cena.escurecer()
+		await transicao_cena.finalizou
 		get_tree().change_scene_to_file(caminho_proxima_cena)
 	else:
 		_reiniciar_quadrinhos()

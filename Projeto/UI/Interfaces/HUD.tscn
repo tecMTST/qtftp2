@@ -31,11 +31,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -161.0
-offset_top = 15.0
-offset_right = -20.0
-offset_bottom = 81.0
+offset_left = -212.0
+offset_top = 22.0
+offset_right = -71.0
+offset_bottom = 88.0
 grow_horizontal = 0
+scale = Vector2(1.2, 1.2)
 theme_override_styles/panel = SubResource("StyleBoxFlat_p5xxs")
 
 [node name="TextureRect" type="TextureRect" parent="Tempo"]
@@ -45,6 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_pbqt0")
 
 [node name="TempoLabel" type="Label" parent="Tempo"]
@@ -61,6 +63,7 @@ offset_right = 60.5
 offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.2, 1.2)
 size_flags_vertical = 1
 text = "--:--"
 label_settings = SubResource("LabelSettings_tehyh")
@@ -75,6 +78,7 @@ offset_left = 21.0
 offset_top = 21.0
 offset_right = 192.0
 offset_bottom = 121.0
+scale = Vector2(1.2, 1.2)
 
 [node name="TextureRect" type="TextureRect" parent="ReceitaAtual"]
 layout_mode = 1
@@ -83,6 +87,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_tehyh")
 
 [node name="TexturaReceita" type="TextureRect" parent="ReceitaAtual"]
@@ -92,12 +97,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -22.1667
+offset_top = -31.6667
+offset_right = 17.8333
+offset_bottom = 8.33334
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 expand_mode = 3
 stretch_mode = 5
 
@@ -107,6 +113,7 @@ offset_left = 8.0
 offset_top = 7.0
 offset_right = 98.0
 offset_bottom = 47.0
+scale = Vector2(1.2, 1.2)
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
@@ -114,6 +121,7 @@ size_flags_vertical = 0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_5nhkk")
 
 [node name="PratosEntreguesLabel" type="Label" parent="Panel"]
@@ -124,6 +132,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.2, 1.2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "-/-"
 horizontal_alignment = 1

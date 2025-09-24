@@ -776,7 +776,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_x465c")
 blend_point_1/pos = 0.5
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ghekw"]
-graph_offset = Vector2(-309.105, 63.6824)
+graph_offset = Vector2(-532.359, -62.9157)
 nodes/AmamentarLucas/node = SubResource("AnimationNodeBlend2_njihp")
 nodes/AmamentarLucas/position = Vector2(521.195, 225.284)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_cw56l")
@@ -786,7 +786,7 @@ nodes/Animation/position = Vector2(-740, 320)
 "nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_ghekw")
 "nodes/Animation 3/position" = Vector2(-100, 560)
 "nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_2qtra")
-"nodes/Animation 4/position" = Vector2(500, 540)
+"nodes/Animation 4/position" = Vector2(460, 520)
 "nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_j7oms")
 "nodes/Animation 5/position" = Vector2(560, 740)
 "nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_ys12b")
@@ -812,6 +812,7 @@ script = ExtResource("1_njihp")
 metadata/_edit_lock_ = true
 
 [node name="rig1" type="Node2D" parent="."]
+position = Vector2(-3, 405)
 
 [node name="sprites" type="Node2D" parent="rig1"]
 
@@ -1039,23 +1040,38 @@ rest = Transform2D(1, 0, 0, 1, 0, -410)
 
 [node name="rosto" type="Bone2D" parent="rig1/Skeleton2D/tronco/pescoco"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="pernaDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(95, -125)
 rest = Transform2D(1, 0, 0, 1, 95, -125)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="pernaEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-101, -126)
 rest = Transform2D(1, 0, 0, 1, -101, -126)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 visible = false
 position = Vector2(99, -384)
 rest = Transform2D(1, 0, 0, 1, 99, -384)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-84, -379)
 rest = Transform2D(1, 0, 0, 1, -84, -379)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="ConceptsMae" type="Sprite2D" parent="rig1"]
 visible = false

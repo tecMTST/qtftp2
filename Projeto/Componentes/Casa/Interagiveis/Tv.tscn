@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cwi34cgi7lhqc" path="res://Recursos/Graficos/Interagiveis/Rack.svg" id="2_k5cfj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1ls"]
-size = Vector2(140, 124)
+size = Vector2(140, 119)
 
 [node name="Tv" type="StaticBody2D" groups=["filha", "interagivel"]]
 script = ExtResource("1_qu4wu")
@@ -17,4 +17,5 @@ offset_bottom = 66.0
 texture = ExtResource("2_k5cfj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21.5)
 shape = SubResource("RectangleShape2D_eo1ls")

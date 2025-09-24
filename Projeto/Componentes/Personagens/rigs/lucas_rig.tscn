@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://x3x4hdetf5a8"]
+[gd_scene load_steps=13 format=3 uid="uid://x3x4hdetf5ba"]
 
 [ext_resource type="Texture2D" uid="uid://de7m4n4afowt2" path="res://Componentes/Personagens/rigs/vetores_spritesheets/nenê1_dessat.svg" id="1_enbtl"]
 [ext_resource type="Texture2D" uid="uid://c2y7yp6sucboc" path="res://Componentes/Personagens/rigs/vetores_spritesheets/nenê1.svg" id="1_owljr"]
@@ -131,7 +131,7 @@ script = ExtResource("1_x4cvg")
 [node name="sprites" type="Node2D" parent="."]
 
 [node name="tronco" type="Polygon2D" parent="sprites"]
-position = Vector2(15.3412, 66.6605)
+position = Vector2(0, 161)
 offset = Vector2(-269, -375)
 texture = ExtResource("1_owljr")
 skeleton = NodePath("../../Skeleton2D")
@@ -205,10 +205,16 @@ rest = Transform2D(1, 0, 0, 1, 0, -161)
 
 [node name="rosto" type="Bone2D" parent="Skeleton2D/tronco/pescoco"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="babador" type="Bone2D" parent="Skeleton2D/tronco/pescoco"]
 position = Vector2(-10, 0)
 rest = Transform2D(1, 0, 0, 1, -10, -161)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../sprites/tronco")

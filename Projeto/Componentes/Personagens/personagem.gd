@@ -3,22 +3,35 @@ extends CharacterBody2D
 
 @export var id: String
 @export var nome: String
-@export var referencia_de_colisao_para_dialogo: CollisionShape2D
+@export var referencia_de_colisao_para_dialogo: Node
 
-var esta_dialogando := false
+var posicao_alvo
+var lerp_speed = 0.01
 
-func encerrar_dialogo():
-	esta_dialogando = false
+func _ready() -> void:
+	add_to_group("personagem", true)
 
-func iniciar_dialogo(dialogo: DialogueResource, titulo: String, duracao := -1.0):
-	esta_dialogando = true
-	var balao: DialogueBalloon = preload("res://Dialogo/balloon.tscn").instantiate()
-	get_tree().current_scene.add_child(balao)
-	balao.start(dialogo, titulo)
-	balao.tree_exited.connect(encerrar_dialogo)
+func _process(_delta: float) -> void:
+	if posicao_alvo:
+		_processa_movimento()
 
-	if duracao > 0:
-		await get_tree().create_timer(duracao).timeout
+func mover_para(_waypoint : String) -> void:
+	pass
 
-		if balao != null and is_instance_valid(balao):
-			balao.remove()
+func mudar_rosto(_rosto : String):
+	pass
+
+func olhar_para(_direcao : String):
+	pass
+
+func ordem(_index : int):
+	pass
+
+func animacao(_nome : String):
+	pass
+
+func _processa_movimento() -> void:
+	position = position.lerp(posicao_alvo, lerp_speed)
+	if position.distance_to(posicao_alvo) < 1.0:
+		position = posicao_alvo
+		posicao_alvo = null

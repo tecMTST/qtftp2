@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://up0d06o57e2x"]
+[gd_scene load_steps=15 format=3 uid="uid://up0d06o57e2x"]
 
 [ext_resource type="Script" uid="uid://bfvf214mhvl7c" path="res://Scripts/Cutscenes/CutsceneQuadrinhos.gd" id="1_0rtw6"]
 [ext_resource type="Script" uid="uid://dxcd21ohsu4ga" path="res://Scripts/Cutscenes/Quadrinho.gd" id="2_s8js8"]
@@ -13,6 +13,7 @@
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="9_hhts3"]
 [ext_resource type="Texture2D" uid="uid://dm70n2yjn5v8e" path="res://Recursos/Graficos/Quadrinhos/hqTutorialQuadro4.png" id="9_rb2qm"]
 [ext_resource type="Texture2D" uid="uid://cklq1f3di5bq1" path="res://Recursos/Graficos/Quadrinhos/hqTutorialQuadro4Balao.png" id="10_7h7s8"]
+[ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="14_axmuo"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("lista_quadrinhos")]
 layout_mode = 3
@@ -131,5 +132,7 @@ theme = ExtResource("9_hhts3")
 text = "Avançar"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TransicaoCena" parent="." instance=ExtResource("14_axmuo")]
 
 [connection signal="pressed" from="Avancar" to="." method="_on_input_action_pressed"]

@@ -32,8 +32,8 @@ value = SubResource("BBVariant_4f2oh")
 
 [sub_resource type="BBVariant" id="BBVariant_ouhrc"]
 type = 4
-saved_value = "Fase00"
-resource_name = "Fase00"
+saved_value = "tutorial"
+resource_name = "tutorial"
 
 [sub_resource type="BBVariant" id="BBVariant_b0q6c"]
 type = 4
@@ -75,8 +75,8 @@ value = SubResource("BBVariant_c0kla")
 
 [sub_resource type="BBVariant" id="BBVariant_b6asn"]
 type = 4
-saved_value = "Fase00"
-resource_name = "Fase00"
+saved_value = "tutorial"
+resource_name = "tutorial"
 
 [sub_resource type="BBVariant" id="BBVariant_gvyd4"]
 type = 4
@@ -136,8 +136,8 @@ method = &"desativar"
 
 [sub_resource type="BBVariant" id="BBVariant_jg5m0"]
 type = 4
-saved_value = "Fase00"
-resource_name = "Fase00"
+saved_value = "tutorial"
+resource_name = "tutorial"
 
 [sub_resource type="BBVariant" id="BBVariant_1xnby"]
 type = 4
@@ -166,8 +166,8 @@ children = [SubResource("BTCallMethod_qyjmb")]
 
 [sub_resource type="BBVariant" id="BBVariant_thbgv"]
 type = 4
-saved_value = "Fase00"
-resource_name = "Fase00"
+saved_value = "tutorial"
+resource_name = "tutorial"
 
 [sub_resource type="BBVariant" id="BBVariant_6fvxv"]
 type = 4
@@ -262,8 +262,8 @@ method = &"_mostrar_botao_fim"
 
 [sub_resource type="BBVariant" id="BBVariant_yejgu"]
 type = 4
-saved_value = "Fase00"
-resource_name = "Fase00"
+saved_value = "tutorial"
+resource_name = "tutorial"
 
 [sub_resource type="BBVariant" id="BBVariant_4sjly"]
 type = 4
@@ -292,8 +292,8 @@ children = [SubResource("BTCallMethod_n4kyt")]
 
 [sub_resource type="BBVariant" id="BBVariant_qpodu"]
 type = 4
-saved_value = "Fase00"
-resource_name = "Fase00"
+saved_value = "tutorial"
+resource_name = "tutorial"
 
 [sub_resource type="BBVariant" id="BBVariant_ja5rr"]
 type = 4
@@ -322,8 +322,8 @@ children = [SubResource("BTCallMethod_4i7da")]
 
 [sub_resource type="BBVariant" id="BBVariant_8cl6y"]
 type = 4
-saved_value = "Fase00"
-resource_name = "Fase00"
+saved_value = "tutorial"
+resource_name = "tutorial"
 
 [sub_resource type="BBVariant" id="BBVariant_j58ul"]
 type = 4

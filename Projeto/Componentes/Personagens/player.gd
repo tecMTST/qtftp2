@@ -13,7 +13,11 @@ var esta_agarrando: bool = false
 var objeto_agarrado: IngredienteBase:
 	set(valor):
 		objeto_agarrado = valor
+var ajuntando : bool = false
+var ativo : bool = true
 
+@onready var visualizador_temporal_lucas: VisualizadorTemporal = $VisualizadorTemporalLucas
+@onready var timer_amamentacao: Timer = $TimerAmamentacao
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var top_down_controler_2d: TopDownControler2D = $TopDownControler2D
 @onready var pivo_acao: Node2D = $PivoAcao
@@ -53,16 +57,57 @@ func _input(event: InputEvent) -> void:
 		acao_executando = true
 	elif Input.is_action_just_released("action") and acao_executando:
 		acao_executando = false
+	_trapaceia(event)
 
-	# FIXME: remover (cheat para trocar de receita)
-	if event is InputEventKey and event.is_pressed() \
-	and not event.is_echo() and event.keycode == KEY_K:
-		ControleDeFase.trapaca_muda_receita()
+func mudar_rosto(rosto : String):
+	elza_rig.mudar_rosto(rosto)
+
+func _trapaceia(evento: InputEvent) -> void:
+	if !(evento is InputEventKey and evento.is_pressed() and not evento.is_echo()): return
+	match evento.keycode:
+		KEY_K:
+			ControleDeFase.trapaca_muda_receita()
+		KEY_J:
+			ControleDeFase._encerrar_nivel()
+		KEY_L:
+			_trapaca_obtem_prato_magicamente()
+		KEY_1:
+			var fila = get_node("/root/CozinhaSolidaria/EntregaNaFila1/Fila")
+			if is_instance_valid(fila): fila.adiciona_pessoa_na_fila()
+		KEY_2:
+			var fila = get_node("/root/CozinhaSolidaria/EntregaNaFila1/Fila")
+			if is_instance_valid(fila): fila.remove_pessoa_da_fila()
+		KEY_3:
+			var fila = get_node("/root/CozinhaSolidaria/EntregaNaFila2/Fila")
+			if is_instance_valid(fila): fila.adiciona_pessoa_na_fila()
+		KEY_4:
+			var fila = get_node("/root/CozinhaSolidaria/EntregaNaFila1/Fila")
+			if is_instance_valid(fila): fila.remove_pessoa_da_fila()
+
+
+func _trapaca_obtem_prato_magicamente() -> void:
+	# tira todos os ingredientes da cena:
+	for interagivel in get_tree().get_nodes_in_group("interagivel"):
+		if interagivel.has_method("eliminar_ingrediente"):
+			print_debug("  [-] eliminando ingrediente de ", interagivel.name)
+			interagivel.eliminar_ingrediente()
+			interagivel.eliminar_ingrediente()
+	eliminar_ingrediente()
+	# adiciona o ingrediente final na mão do jogador:
+	var dados_ingrediente = Globais.obtem_ingrediente(ControleDeFase.receita_selecionada.resultado)
+	var novo_ingrediente: IngredienteBase = load(
+		"res://Componentes/Ingredientes/IngredienteBase.tscn"
+	).instantiate()
+	novo_ingrediente.iniciar(dados_ingrediente)
+	agarrar(novo_ingrediente)
+	# pula pro passo final (mesa!)
+	while ControleDeFase.passo_atual.alvo != "mesa":
+		ControleDeFase.proximo_passo()
 
 func eliminar_ingrediente() -> void:
 	esta_agarrando = false
 	if objeto_agarrado != null:
-		objeto_agarrado.queue_free()
+		objeto_agarrado.destruir()
 		objeto_agarrado = null
 
 
@@ -84,13 +129,19 @@ func _on_area_acao_body_exited(body: Node2D) -> void:
 
 
 func on_interagivel_entered(body : Node2D) -> void:
-	interagivel_ativo = body
-	acao_ativada.emit()
+	if (body as BaseInteragivel).ativo:
+		match (body as BaseInteragivel).nome.to_lower():
+			ControleDeFase.passo_atual.alvo, "berço", "":
+				interagivel_ativo = body
+				acao_ativada.emit()
+			"bagunca":
+				body._on_componente_interagivel_interagir(self)
 
 
 func on_interagivel_exited() -> void:
-	interagivel_ativo = null
-	acao_desativada.emit()
+	if interagivel_ativo != null:
+		interagivel_ativo = null
+		acao_desativada.emit()
 
 
 func _agarrar():
@@ -113,11 +164,42 @@ func soltar():
 	esta_agarrando = false
 
 func ajuntar():
-	elza_rig.ajuntar()
+	if not ajuntando:
+		ajuntando = true
+		elza_rig.ajuntar()
+		desativar()
+		await get_tree().create_timer(1).timeout
+		ativar()
+		ajuntando = false
 
 func ativar():
+	ativo = true
 	top_down_controler_2d.Active = true
-
+	elza_rig.ativo = true
 
 func desativar():
+	ativo = false
 	top_down_controler_2d.Active = false
+	elza_rig.ativo = false
+
+func inicia_amamentacao(berco : Berco, total : float):
+	berco.amamentando = true
+	desativar()
+	elza_rig.pegar_lucas()
+	berco.ocultar_lucas()
+	await get_tree().create_timer(0.5).timeout
+	elza_rig.amamentar()
+	await get_tree().create_timer(0.5).timeout
+	elza_rig.amamentando = true
+	timer_amamentacao.wait_time = total
+	timer_amamentacao.start()
+	visualizador_temporal_lucas.visible = true
+	await timer_amamentacao.timeout
+	elza_rig.largar_lucas()
+	visualizador_temporal_lucas.visible = false
+	timer_amamentacao.stop()
+	await get_tree().create_timer(0.5).timeout
+	berco.mostrar_lucas()
+	berco.resetar_timer()
+	berco.amamentando = false
+	ativar()

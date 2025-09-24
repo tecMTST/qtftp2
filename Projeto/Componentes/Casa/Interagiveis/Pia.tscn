@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c54ra8i7yu3lf" path="res://Componentes/Base/Interagiveis/pia.gd" id="1_aya1q"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_2tpct"]
 [ext_resource type="Texture2D" uid="uid://b82r7gdnw86r2" path="res://Recursos/Graficos/Interagiveis/Pia.svg" id="2_oc46i"]
-[ext_resource type="Texture2D" uid="uid://cveybcnysc1p4" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="4_hbqeo"]
+[ext_resource type="Texture2D" uid="uid://cfp770tffb0ns" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="4_hbqeo"]
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="5_pqxkq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tpct"]
