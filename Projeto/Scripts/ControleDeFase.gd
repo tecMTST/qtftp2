@@ -17,14 +17,13 @@ const TEMPO_INFINITO = -1
 @export var passo_atual: PassoReceita
 @export var indicador_proximo : String = ""
 
+var travar_dialogos := false
+var esta_dialogando := false
 var tempo_jogo: Timer
 var estado_nivel: EstadoDoNivel
 var _tempo_checagem: Timer
 var _indice_receita_atual: int = 0
 var _indice_passo_atual: int = 0
-
-var travar_dialogos := false
-var esta_dialogando := false
 
 @onready var filha: Filha = get_tree().get_first_node_in_group("filha_sprite")
 
@@ -241,7 +240,7 @@ func abrir_dialogo(fase: String, linha_dialogo: String) -> void:
 
 func _on_dialogo_finalizado() -> void:
 	esta_dialogando = false
-	
+
 func _controle_dialogos() -> void:
 	if(!nivel_atual.dialogos):
 		return

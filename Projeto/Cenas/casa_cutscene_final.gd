@@ -9,7 +9,7 @@ func _ready() -> void:
 		var personagens := get_tree().get_nodes_in_group("personagem")
 		for personagem in personagens as Array[Personagem]:
 			layout.register_character(personagem.id, personagem)
-	Dialogic.signal_event.connect(evento_dialogic)	
+	Dialogic.signal_event.connect(evento_dialogic)
 
 func evento_dialogic(acao : String):
 	var quem = acao.split(":")[0]

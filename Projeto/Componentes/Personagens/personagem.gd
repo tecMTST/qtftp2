@@ -15,19 +15,19 @@ func _process(_delta: float) -> void:
 	if posicao_alvo:
 		_processa_movimento()
 
-func mover_para(waypoint : String) -> void:
+func mover_para(_waypoint : String) -> void:
 	pass
-	
-func mudar_rosto(rosto : String):
+
+func mudar_rosto(_rosto : String):
 	pass
-	
-func olhar_para(direcao : String):
+
+func olhar_para(_direcao : String):
 	pass
-	
-func ordem(index : int):
+
+func ordem(_index : int):
 	pass
-	
-func animacao(nome : String):
+
+func animacao(_nome : String):
 	pass
 
 func _processa_movimento() -> void:

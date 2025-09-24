@@ -48,9 +48,9 @@ func _process(_delta: float) -> void:
 func mudar_rosto(nome : String):
 	for rosto in rostos:
 		rosto.visible = rosto.name == nome
-		
+
 func olhar_para(direcao : String):
-	if "direita":
+	if direcao == "direita":
 		rig_1.scale.x = -abs(rig_1.scale.x)
 	else:
 		rig_1.scale.x = abs(rig_1.scale.x)

@@ -51,7 +51,7 @@ func largar_lucas():
 	animation_tree.set("parameters/SegurarLucas/blend_amount", 0)
 	segurando_lucas = false
 	amamentando = false
-	
+
 func mudar_rosto(nome : String):
 	for rosto in rostos:
 		rosto.visible = rosto.name == nome

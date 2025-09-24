@@ -3,7 +3,7 @@ extends Personagem
 
 @export var bagunca_scene: PackedScene
 @export var waypoints : Node2D
-@export var CutScene : bool = false
+@export var cutscene : bool = false
 
 var target: Marker2D = null
 var speed: float = 100.0
@@ -28,7 +28,7 @@ func _ready():
 	visualizador_percentual.valor = 0
 
 func _process(delta):
-	if not CutScene:
+	if not cutscene:
 		if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
 			return
 	if not (target and global_position.distance_to(target.global_position) \
@@ -36,7 +36,7 @@ func _process(delta):
 		move_along_path(delta)
 	else:
 		velocity = Vector2.ZERO
-	if not CutScene:
+	if not cutscene:
 		visualizador_percentual.valor_maximo = ControleDeFase.estado_nivel.limite_bagunca
 		visualizador_percentual.valor = ControleDeFase.estado_nivel.bagunca
 	rotation = 0
@@ -52,23 +52,23 @@ func mover_para(waypoint : String):
 
 func mudar_rosto(rosto : String):
 	sprite.mudar_rosto(rosto)
-	
+
 func olhar_para(direcao : String):
 	sprite.olhar_para(direcao)
-	
+
 func animacao(nome : String):
 	sprite.animacao_direta(nome)
-	
+
 func ordem(index : int):
 	z_index = index
-	
+
 func mover():
 	target = null
 	sprite.celular = false
 	sprite.sentada = false
 	await get_tree().create_timer(1.0).timeout
 	select_new_waypoint()
-	
+
 func parar():
 	target = null
 
