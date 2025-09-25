@@ -45,6 +45,7 @@ shape = SubResource("RectangleShape2D_pleqy")
 script = ExtResource("2_au0yj")
 nome = "Geladeira"
 area_de_interacao = NodePath("../Area2D")
+possui_contorno = false
 metadata/_custom_type_script = "uid://ddwsslb5nraqq"
 
 [node name="Indicador" type="Sprite2D" parent="."]
