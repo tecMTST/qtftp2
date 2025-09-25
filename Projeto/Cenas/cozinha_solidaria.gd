@@ -20,7 +20,7 @@ func _ready() -> void:
 	briefing.iniciar()
 
 func _process(_delta: float) -> void:
-	botao_pausa.visible = not ControleDeFase.jogador.esta_dialogando
+	botao_pausa.visible = not ControleDeFase.esta_dialogando
 	touch_analog.Enabled = player.ativo
 
 func _on_player_acao_ativada() -> void:
