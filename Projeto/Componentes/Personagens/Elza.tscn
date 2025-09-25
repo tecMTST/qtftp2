@@ -1,0 +1,101 @@
+[gd_scene load_steps=18 format=3 uid="uid://ra7kq174mnxo"]
+
+[ext_resource type="Script" uid="uid://fhc7musjapc1" path="res://Componentes/Personagens/elza.gd" id="1_aas8e"]
+[ext_resource type="PackedScene" uid="uid://daxpprdmxope6" path="res://Componentes/Personagens/rigs/elza_rig3.tscn" id="2_2p2om"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ucjf"]
+radius = 29.0
+height = 76.0
+
+[sub_resource type="Animation" id="Animation_4ucjf"]
+resource_name = "Andar"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_da2mp"]
+resource_name = "Andar_Segurando"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_1xksx"]
+resource_name = "Parado"
+length = 4.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_dgr1c"]
+resource_name = "Parado_Segurando"
+length = 4.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_3qh2r"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oyw57"]
+_data = {
+&"Andar": SubResource("Animation_4ucjf"),
+&"Andar_Segurando": SubResource("Animation_da2mp"),
+&"Parado": SubResource("Animation_1xksx"),
+&"Parado_Segurando": SubResource("Animation_dgr1c"),
+&"RESET": SubResource("Animation_3qh2r")
+}
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_4ucjf"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c2vf6"]
+animation = &"Parado"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ucjf"]
+animation = &"Andar"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_da2mp"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_c2vf6")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_4ucjf")
+blend_point_1/pos = 0.5
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_da2mp"]
+animation = &"Parado_Segurando"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dgr1c"]
+animation = &"Andar_Segurando"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_f4bm0"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_da2mp")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_dgr1c")
+blend_point_1/pos = 0.5
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dgr1c"]
+graph_offset = Vector2(-444.773, -16.7364)
+nodes/Segurando/node = SubResource("AnimationNodeBlend2_4ucjf")
+nodes/Segurando/position = Vector2(280, 80)
+nodes/Velocidade/node = SubResource("AnimationNodeBlendSpace1D_da2mp")
+nodes/Velocidade/position = Vector2(-220, 60)
+nodes/VelocidadeSegurando/node = SubResource("AnimationNodeBlendSpace1D_f4bm0")
+nodes/VelocidadeSegurando/position = Vector2(-220, 280)
+nodes/output/position = Vector2(640, 140)
+node_connections = [&"Segurando", 0, &"Velocidade", &"Segurando", 1, &"VelocidadeSegurando", &"output", 0, &"Segurando"]
+
+[node name="Elza" type="CharacterBody2D" groups=["personagem"]]
+script = ExtResource("1_aas8e")
+id = "elza"
+nome = "elza"
+
+[node name="elza rig" parent="." instance=ExtResource("2_2p2om")]
+scale = Vector2(0.13, 0.13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+shape = SubResource("CapsuleShape2D_4ucjf")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oyw57")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_dgr1c")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Segurando/blend_amount = 0
+parameters/Velocidade/blend_position = 0.0
+parameters/VelocidadeSegurando/blend_position = 0.0
