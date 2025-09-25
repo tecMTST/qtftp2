@@ -36,8 +36,11 @@ overrides = {
 "name_label_box_modulate_use_character_color": "true",
 "name_label_color": "Color(1, 1, 1, 1)",
 "name_label_font": "\"res://Recursos/Fontes/SourGummy-Bold.ttf\"",
+"name_label_font_size": "20.0",
 "name_label_use_character_color": "false",
-"normal_font": "\"res://Recursos/Fontes/SourGummy-Regular.ttf\""
+"normal_font": "\"res://Recursos/Fontes/SourGummy-Regular.ttf\"",
+"text_max_width": "250.0",
+"text_size": "20.0"
 }
 
 [resource]
