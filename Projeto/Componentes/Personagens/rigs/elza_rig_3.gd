@@ -8,6 +8,8 @@ var rostos : Array[Node] = []
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var cabeca: Polygon2D = $rig1/sprites/cabeca
+@onready var rig_1: Node2D = $rig1
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	rostos = cabeca.get_children()
@@ -55,3 +57,15 @@ func largar_lucas():
 func mudar_rosto(nome : String):
 	for rosto in rostos:
 		rosto.visible = rosto.name == nome
+		
+func olhar_para(direcao : String):
+	if direcao == "direita":
+		rig_1.scale.x = -abs(rig_1.scale.x)
+	else:
+		rig_1.scale.x = abs(rig_1.scale.x)
+
+func animacao_direta(nome : String):
+	animation_tree.active = false
+	animation_player.play(nome)
+	await animation_player.animation_finished
+	animation_tree.active = true
