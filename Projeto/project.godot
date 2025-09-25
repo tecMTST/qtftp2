@@ -46,7 +46,7 @@ directories/dch_directory={
 "narrador": "res://Dialogo/narrador.dch"
 }
 directories/dtl_directory={
-"teste": "res://Dialogo/teste.dtl",
+"teste": "res://Dialogo/cutscene_fimdefase_tutorial.dtl",
 "tutorial": "res://Dialogo/tutorial.dtl"
 }
 layout/style_directory={

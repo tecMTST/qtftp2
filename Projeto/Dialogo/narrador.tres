@@ -29,8 +29,11 @@ overrides = {
 "italics_font": "\"res://Recursos/Fontes/SourGummy-Italic.ttf\"",
 "normal_font": "\"res://Recursos/Fontes/SourGummy-Regular.ttf\"",
 "text_custom_color": "Color(0, 0, 0, 1)",
+"text_size": "22.0",
 "text_use_global_color": "false",
-"text_use_global_font": "false"
+"text_use_global_font": "false",
+"text_use_global_size": "false",
+"typing_sounds_enabled": "false"
 }
 
 [resource]
@@ -44,4 +47,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("2_vc6qt")]([])
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "12"

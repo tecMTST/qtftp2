@@ -2,9 +2,10 @@ extends Node2D
 
 @onready var player: Player = $Personagens/Player
 @onready var filha: Filha = $Personagens/Filha
+@export var timeline : DialogicTimeline
 
 func _ready() -> void:
-	var layout = Dialogic.start("res://Dialogo/teste.dtl")
+	var layout = Dialogic.start(timeline)
 	if layout.has_method("register_character"):
 		var personagens := get_tree().get_nodes_in_group("personagem")
 		for personagem in personagens as Array[Personagem]:
