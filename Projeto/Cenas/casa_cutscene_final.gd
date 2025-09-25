@@ -1,8 +1,9 @@
 extends Node2D
 
+@export var timeline : DialogicTimeline
+
 @onready var player: Player = $Personagens/Player
 @onready var filha: Filha = $Personagens/Filha
-@export var timeline : DialogicTimeline
 
 func _ready() -> void:
 	var layout = Dialogic.start(timeline)

@@ -32,16 +32,16 @@ func mover_para(waypoint : String):
 
 func mudar_rosto(rosto : String):
 	elza_rig.mudar_rosto(rosto)
-	
+
 func olhar_para(direcao : String):
 	elza_rig.olhar_para(direcao)
-	
+
 func animacao(nome : String):
 	elza_rig.animacao_direta(nome)
-	
+
 func ordem(index : int):
 	z_index = index
-	
+
 func mover():
 	target = null
 	elza_rig.segurando = false
@@ -49,18 +49,18 @@ func mover():
 	elza_rig.amamentando = false
 	await get_tree().create_timer(1.0).timeout
 	select_new_waypoint()
-	
+
 func parar():
 	target = null
 
 func segurando():
 	target = null
 	elza_rig.segurando = true
-	
+
 func segurando_lucas():
 	target = null
 	elza_rig.segurando_lucas = true
-	
+
 func amamentando():
 	target = null
 	elza_rig.amamentando = true
