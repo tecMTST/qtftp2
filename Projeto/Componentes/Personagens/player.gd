@@ -5,6 +5,8 @@ signal acao_ativada
 signal acao_desativada
 signal acao_agarrou(objeto)
 
+const EFEITO_SUCESSO = preload("res://Recursos/Graficos/Efeitos/grafico_check.tscn")
+
 var sfx_intervalo_passada: float = 0.35
 var sfx_timer: float = 0.0
 var interagivel_ativo: Node2D
@@ -28,6 +30,14 @@ var ativo : bool = true
 func ao_transformar_objeto_agarrado(novo_objeto: IngredienteBase):
 	soltar()
 	agarrar(novo_objeto)
+	_exibe_efeito_de_sucesso()
+
+func _exibe_efeito_de_sucesso() -> void:
+	var efeito_sucesso = EFEITO_SUCESSO.instantiate()
+	get_tree().root.add_child(efeito_sucesso)
+	efeito_sucesso.reparent(posicao_objeto)
+	efeito_sucesso.global_position = posicao_objeto.global_position
+	efeito_sucesso.global_position.y -= 180
 
 func _physics_process(delta: float) -> void:
 	if (Input.is_action_pressed("up")   or
