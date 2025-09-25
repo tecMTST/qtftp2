@@ -1,7 +1,5 @@
 class_name GraficoDerrota extends CanvasLayer
 
-signal finalizado
-
 var timer : float = 4.0
 
 @onready var derrota_vazado: CPUParticles2D = $Control/Derrota/DerrotaVazado
