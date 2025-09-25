@@ -4,7 +4,6 @@ extends Node2D
 @onready var estado_botao = true #true esquerda e false direita
 @onready var opcoes = get_node("menu_opcoes")
 
-
 func _on_botao_cartilha_pressed() -> void:
 	OS.shell_open("https://alimentacaosaudavel.org.br/wp-content/uploads/2024/08/cartilha-exigibilidade-do-direito-a-estar-livre-da-fome.pdf") # gdlint:ignore=max-line-length
 
@@ -14,6 +13,10 @@ func _on_fechar_extras_pressed() -> void:
 
 func _ready() -> void:
 	opcoes.visible = false
+	var controle_musica: HSlider = opcoes.get_node("control_musica")
+	controle_musica.value_changed.connect(Callable(ControleDeAudio, "_on_value_changed"))
+	var controle_efeitos: HSlider = opcoes.get_node("control_efeitos")
+	controle_efeitos.value_changed.connect(Callable(ControleDeAudio, "_on_value_changed_sfx"))
 
 
 func _on_opcoes_pressed() -> void:
