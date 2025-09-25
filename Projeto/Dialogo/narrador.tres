@@ -27,6 +27,8 @@ overrides = {
 "box_color_custom": "Color(1, 1, 1, 1)",
 "box_color_use_global": "false",
 "italics_font": "\"res://Recursos/Fontes/SourGummy-Italic.ttf\"",
+"next_indicator_enabled": "false",
+"next_indicator_show_on_questions": "false",
 "normal_font": "\"res://Recursos/Fontes/SourGummy-Regular.ttf\"",
 "text_custom_color": "Color(0, 0, 0, 1)",
 "text_size": "22.0",
@@ -47,4 +49,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("2_vc6qt")]([])
-metadata/_latest_layer = "12"
+metadata/_latest_layer = "13"

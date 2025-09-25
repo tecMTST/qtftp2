@@ -1,3 +1,4 @@
+do ControleDeAudio.toca_musica("quadrinhos")
 do Cutscene.trocar_rosto("carolina", "rostoIdleFeliz")
 [wait time="2.0"]
 do Cutscene.mover_para("carolina", "Waypoint1")
@@ -30,4 +31,3 @@ do Cutscene.mover_para("elza", "Waypoint4")
 [wait time="2.0"]
 do Cutscene.mover_para("elza", "Waypoint2")
 [wait time="2.0"]
-[signal]

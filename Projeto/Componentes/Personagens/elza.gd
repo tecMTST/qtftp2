@@ -36,8 +36,8 @@ func mudar_rosto(rosto : String):
 func olhar_para(direcao : String):
 	elza_rig.olhar_para(direcao)
 
-func animacao(nome : String):
-	elza_rig.animacao_direta(nome)
+func animacao(nome_anim : String):
+	elza_rig.animacao_direta(nome_anim)
 
 func ordem(index : int):
 	z_index = index

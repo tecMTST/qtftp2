@@ -1,0 +1,30 @@
+do ControleDeAudio.toca_musica("quadrinhos")
+do Cutscene.trocar_rosto("carolina", "rostoIdle")
+do Cutscene.olhar_para("elza", "direita")
+[wait time="2.0"]
+elza: !!
+narrador: Luisa diz\: Tive notícias do Felix hoje, Elza!
+narrador: Luisa diz\: Parece que viram ele na rua.
+do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
+elza:   [shake rate=20.0 level=5 connected=1]...[/shake]  
+[wait time="0.2"]
+do Cutscene.mover_para("carolina", "Waypoint1")
+[wait time="5.0"]
+carolina: O que que aconteceu, mãe?
+do Cutscene.mover_para("elza", "Waypoint5")
+[wait time="0.1"]
+do Cutscene.olhar_para("elza", "esquerda")
+[wait time="0.1"]
+do Cutscene.mover_para("elza", "Waypoint4")
+[wait time="4.0"]
+do Cutscene.trocar_rosto("elza", "rostoFalando")
+elza: Nada, filha.
+elza: Congela a comida pra mim, tá?
+elza: E fica de olho no seu irmão, hein!
+do Cutscene.trocar_rosto("elza", "rostoIdle")
+do Cutscene.trocar_rosto("carolina", "rostoFalando")
+carolina: Pode deixar , mãe.
+do Cutscene.trocar_rosto("carolina", "rostoIdle")
+[wait time="0.5"]
+do Cutscene.mover_para("elza", "Waypoint2")
+[wait time="2.0"]
