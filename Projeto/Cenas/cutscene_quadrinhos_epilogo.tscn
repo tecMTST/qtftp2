@@ -119,5 +119,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TransicaoCena" parent="." instance=ExtResource("14_270lj")]
+visible = false
 
 [connection signal="pressed" from="Avancar" to="." method="_on_input_action_pressed"]
