@@ -36,6 +36,7 @@ shape = SubResource("RectangleShape2D_pleqy")
 script = ExtResource("2_olqph")
 nome = "Geladeira"
 area_de_interacao = NodePath("../Area2D")
+possui_contorno = false
 metadata/_custom_type_script = "uid://ddwsslb5nraqq"
 
 [node name="TextureRect" type="TextureRect" parent="."]
