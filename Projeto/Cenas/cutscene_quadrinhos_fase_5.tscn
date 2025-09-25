@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bfvf214mhvl7c" path="res://Scripts/Cutscenes/CutsceneQuadrinhos.gd" id="1_ptk3v"]
 [ext_resource type="Script" uid="uid://dxcd21ohsu4ga" path="res://Scripts/Cutscenes/Quadrinho.gd" id="2_1h7a7"]
-[ext_resource type="Texture2D" uid="uid://dwk2co0akmvu4" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro1.png" id="3_qjgh8"]
-[ext_resource type="Texture2D" uid="uid://bsc1yc8t5uc3b" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro1Balao.png" id="4_3vk8y"]
-[ext_resource type="Texture2D" uid="uid://dl6k3v7tp6fng" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro2.png" id="5_le510"]
-[ext_resource type="Texture2D" uid="uid://d3i4qo04l7e8" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro2Balao.png" id="6_1rs5g"]
-[ext_resource type="Texture2D" uid="uid://b4kucjcf1lyf4" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro3.png" id="7_opg53"]
-[ext_resource type="Texture2D" uid="uid://bira86t21iems" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro3Balao.png" id="8_ven3c"]
-[ext_resource type="Texture2D" uid="uid://c2c4kvlswj6py" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro4.png" id="9_x1vg2"]
-[ext_resource type="Texture2D" uid="uid://dfvwgk7fmrxr6" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro4Balao.png" id="10_ixt2i"]
+[ext_resource type="Texture2D" uid="uid://con3flmnpdmy1" path="res://Recursos/Graficos/Quadrinhos/hqFase5Quadro1Balao.png" id="3_ptk3v"]
+[ext_resource type="Texture2D" uid="uid://ciwd4xqqdkneg" path="res://Recursos/Graficos/Quadrinhos/hqFase5Quadro1.png" id="4_1h7a7"]
+[ext_resource type="Texture2D" uid="uid://nnbrx2kjj051" path="res://Recursos/Graficos/Quadrinhos/hqFase5Quadro2.png" id="5_qjgh8"]
+[ext_resource type="Texture2D" uid="uid://ccfjoewrq67d0" path="res://Recursos/Graficos/Quadrinhos/hqFase5Quadro2Balao.png" id="6_3vk8y"]
+[ext_resource type="Texture2D" uid="uid://cbvbddmvqite5" path="res://Recursos/Graficos/Quadrinhos/hqFase5Quadro3.png" id="7_le510"]
+[ext_resource type="Texture2D" uid="uid://bdgf6jrvqfry8" path="res://Recursos/Graficos/Quadrinhos/hqFase5Quadro3Balao.png" id="8_1rs5g"]
+[ext_resource type="Texture2D" uid="uid://csau408fgjwv1" path="res://Recursos/Graficos/Quadrinhos/hqFase5Quadro4.png" id="9_opg53"]
+[ext_resource type="Texture2D" uid="uid://dydipo6387elv" path="res://Recursos/Graficos/Quadrinhos/hqFase5Quadro4Balao.png" id="10_ven3c"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="11_4pkvp"]
 [ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="12_7gwur"]
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="13_m65om"]
@@ -41,10 +41,10 @@ duracao_fade_alfa = 1.5
 [node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_1"]
 position = Vector2(365, 143)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("3_qjgh8")
+texture = ExtResource("3_ptk3v")
 
 [node name="Balao" type="Sprite2D" parent="Quadrinho_1/QuadrinhoSprite"]
-texture = ExtResource("4_3vk8y")
+texture = ExtResource("4_1h7a7")
 
 [node name="posicaoInicial" type="Node2D" parent="Quadrinho_1"]
 position = Vector2(-365, 198)
@@ -57,10 +57,10 @@ duracao_fade_alfa = 1.0
 [node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_2"]
 position = Vector2(364.8, 408)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("5_le510")
+texture = ExtResource("5_qjgh8")
 
 [node name="Balao" type="Sprite2D" parent="Quadrinho_2/QuadrinhoSprite"]
-texture = ExtResource("6_1rs5g")
+texture = ExtResource("6_3vk8y")
 
 [node name="posicaoInicial" type="Node2D" parent="Quadrinho_2"]
 position = Vector2(-365, 489)
@@ -74,10 +74,10 @@ duracao_fade_alfa = 0.5
 [node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_3"]
 position = Vector2(365, 674)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("7_opg53")
+texture = ExtResource("7_le510")
 
 [node name="Balao" type="Sprite2D" parent="Quadrinho_3/QuadrinhoSprite"]
-texture = ExtResource("8_ven3c")
+texture = ExtResource("8_1rs5g")
 
 [node name="posicaoInicial" type="Node2D" parent="Quadrinho_3"]
 position = Vector2(1093, 599)
@@ -89,10 +89,10 @@ duracao_fade_alfa = 3.0
 [node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_4"]
 position = Vector2(357, 940)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("9_x1vg2")
+texture = ExtResource("9_opg53")
 
 [node name="Balao" type="Sprite2D" parent="Quadrinho_4/QuadrinhoSprite"]
-texture = ExtResource("10_ixt2i")
+texture = ExtResource("10_ven3c")
 
 [node name="posicaoInicial" type="Node2D" parent="Quadrinho_4"]
 visible = false
@@ -134,5 +134,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TransicaoCena" parent="." instance=ExtResource("14_afr0t")]
+visible = false
 
 [connection signal="pressed" from="Avancar" to="." method="_on_input_action_pressed"]
