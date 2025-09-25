@@ -13,6 +13,17 @@ signal continuar
 @onready var botao_configuracoes: Button = $"TextureRect/Menu Abas/botao_configuracoes"
 @onready var botaoaba: Theme = preload("res://UI/botaoAbaPause.tres")
 @onready var botaoaba_naoselecionado: Theme = preload("res://UI/MenuAbaPause_naoselecionado.tres")
+@onready var controle_musica: HSlider = $controle_audio_musica
+@onready var controle_efeitos: HSlider = $controle_audio_efeita_sonoro
+
+
+func _ready() -> void:
+	controle_musica.value_changed.connect(
+		Callable(ControleDeAudio, "_on_value_changed")
+	)
+	controle_efeitos.value_changed.connect(
+		Callable(ControleDeAudio, "_on_value_changed_sfx")
+	)
 
 
 func atualizar() -> void:

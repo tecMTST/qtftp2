@@ -27,12 +27,6 @@ func _on_jogar_pressed() -> void:
 	EstadoDeJogo.nivel_atual = 1
 	get_tree().change_scene_to_file(Globais.niveis[0].local)
 
-#ao clicar vai para a tela de opções do jogo
-func _on_opcoes_pressed() -> void:
-	transicao_cena.escurecer()
-	await transicao_cena.finalizou
-	get_tree().change_scene_to_file("res://UI/Menus/tela_opcoes.tscn")
-
 #ao clicar vai para a tela com a imagem da cartilha e informações para baixá-la
 func _on_cartilha_pressed() -> void:
 	transicao_cena.escurecer()

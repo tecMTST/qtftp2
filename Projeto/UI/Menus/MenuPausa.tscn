@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cr74l6j0jbkx5"]
+[gd_scene load_steps=21 format=3 uid="uid://cr74l6j0jbkx5"]
 
 [ext_resource type="Script" uid="uid://u155yd1j8w7y" path="res://UI/Menus/menu_pausa.gd" id="1_xqg3s"]
 [ext_resource type="Texture2D" uid="uid://dvc8fbsaf1o6g" path="res://Recursos/Graficos/UI/Componentes/menu_tutorialPause/menu_tutorialPause_base_opcoes.svg" id="2_im0bb"]
@@ -14,7 +14,6 @@
 [ext_resource type="Theme" uid="uid://dehhxr018a0b0" path="res://UI/botaoPause.tres" id="7_w833q"]
 [ext_resource type="FontFile" uid="uid://dgsx8f04jvfhg" path="res://Recursos/Fontes/SourGummy-Regular.ttf" id="8_r5mwj"]
 [ext_resource type="Theme" uid="uid://cmmbeb1vnduka" path="res://Recursos/Fontes/Label_SourGummy_Regular.tres" id="9_jttf2"]
-[ext_resource type="Script" uid="uid://bfah6lu1pheaj" path="res://Scripts/ControleDeAudio.gd" id="11_7cjwt"]
 [ext_resource type="Theme" uid="uid://manffmwy5jfe" path="res://UI/botaoFechar.tres" id="15_jttf2"]
 [ext_resource type="Texture2D" uid="uid://rlbtxubsbsm4" path="res://Recursos/Graficos/UI/Briefing/pause-tutorial-cafe.svg" id="15_r5mwj"]
 
@@ -192,7 +191,6 @@ theme = SubResource("Theme_r5rmd")
 max_value = 1.0
 step = 0.05
 value = 0.5
-script = ExtResource("11_7cjwt")
 
 [node name="Efeitos Sonoros" type="Label" parent="."]
 layout_mode = 2
@@ -221,7 +219,6 @@ theme = SubResource("Theme_r5rmd")
 max_value = 1.0
 step = 0.05
 value = 0.5
-script = ExtResource("11_7cjwt")
 
 [node name="retornar para tela inicial" type="Button" parent="."]
 z_index = 16
@@ -271,7 +268,5 @@ texture = ExtResource("15_r5mwj")
 [connection signal="pressed" from="TextureRect/Menu Abas/botao_briefing" to="." method="_on_receita_pressed"]
 [connection signal="pressed" from="TextureRect/Menu Abas/botao_controles" to="." method="_on_control_pressed"]
 [connection signal="pressed" from="TextureRect/Menu Abas/botao_configuracoes" to="." method="_on_config_pressed"]
-[connection signal="value_changed" from="controle_audio_musica" to="controle_audio_musica" method="_on_value_changed"]
-[connection signal="value_changed" from="controle_audio_efeita_sonoro" to="controle_audio_efeita_sonoro" method="_on_value_changed_sfx"]
 [connection signal="pressed" from="retornar para tela inicial" to="." method="_on_retornar_para_tela_inicial_pressed"]
 [connection signal="pressed" from="continuar" to="." method="_on_continuar_pressed"]
