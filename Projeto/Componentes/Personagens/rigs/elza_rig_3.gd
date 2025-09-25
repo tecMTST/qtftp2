@@ -57,7 +57,7 @@ func largar_lucas():
 func mudar_rosto(nome : String):
 	for rosto in rostos:
 		rosto.visible = rosto.name == nome
-		
+
 func olhar_para(direcao : String):
 	if direcao == "direita":
 		rig_1.scale.x = -abs(rig_1.scale.x)
