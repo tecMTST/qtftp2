@@ -8,8 +8,8 @@ var tocadores_em_ciclo := {}
 var toca_efeitos := []
 var biblioteca_de_audio := {
 	"musica": {
-		"casa_intro": preload("res://Recursos/Audio/Musica/casa_intro.ogg"),
-		"casa_loop": preload("res://Recursos/Audio/Musica/casa_loop.ogg"),
+		"casa_intro": "res://Recursos/Audio/Musica/casa_intro.ogg",
+		"casa_loop": "res://Recursos/Audio/Musica/casa_loop.ogg",
 		"menu": "res://Recursos/Audio/Musica/musica_menu.ogg",
 		"quadrinhos": "res://Recursos/Audio/Musica/cena_introducao.ogg",
 		"briefing": "res://Recursos/Audio/Musica/briefing.ogg"
