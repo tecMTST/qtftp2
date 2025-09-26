@@ -179,8 +179,6 @@ func _encerrar_nivel():
 	nivel_concluido.emit(nivel_atual, estado_nivel)
 	_reset_timers()
 	get_tree().paused = true
-	ControleDeAudio.para_musica()
-	ControleDeAudio.toca_efeito("vitoria")
 	_abrir_proximo_nivel()
 	indicador_proximo = ""
 

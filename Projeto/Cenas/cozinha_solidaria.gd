@@ -43,7 +43,15 @@ func _on_pausar_continuar() -> void:
 
 func _fim_cena(_nivel, _estado_nivel):
 	ControleDeFase.congelar_tempo()
+	ControleDeAudio.para_musica()
+	ControleDeAudio.toca_efeito("vitoria")
+	print_debug("<<PENDÊNCIA>> exibir 'parabéns, vc venceu' por 3 segundos")
 	ControleDeFase.estado_nivel.cena_final_iniciada = true
+	var tempo_ate_fade_out = Timer.new()
+	add_child(tempo_ate_fade_out)
+	tempo_ate_fade_out.wait_time = 3.0
+	tempo_ate_fade_out.timeout.connect(_finalizar_nivel)
+	tempo_ate_fade_out.start()
 
 func _finalizar_nivel():
 	transicao_cena.escurecer()
