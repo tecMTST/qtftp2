@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dxisooqckxyia"]
 
-[ext_resource type="Script" uid="uid://devfsntvvhdkr" path="res://Componentes/Bagunça/bagunca_cena.gd" id="1_jqi74"]
+[ext_resource type="Script" uid="uid://devfsntvvhdkr" path="res://Componentes/Bagunca/bagunca_cena.gd" id="1_jqi74"]
 [ext_resource type="Texture2D" uid="uid://cm1aeymk1r000" path="res://Recursos/Graficos/Bagunca/lixo1.svg" id="2_36i6j"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="3_h13so"]
 [ext_resource type="Texture2D" uid="uid://0x2l5f6yj6a2" path="res://Recursos/Graficos/Bagunca/lixo2.svg" id="3_mavke"]

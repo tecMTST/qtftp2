@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ck8wg57jy340e"]
+[gd_scene load_steps=14 format=3 uid="uid://ck8wg57jy340e"]
 
 [ext_resource type="Script" uid="uid://cd2jogo7kya5n" path="res://Componentes/Ingredientes/ingrediente.gd" id="1_hkx6c"]
+[ext_resource type="Texture2D" uid="uid://dmiisuha0f8wb" path="res://Recursos/Graficos/UI/Ingredientes/ovo_frigideira.svg" id="2_wue5i"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkx6c"]
 
@@ -31,10 +32,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = -65.0
-offset_right = 65.0
-offset_bottom = 65.0
+offset_left = -360.0
+offset_top = -640.0
+offset_right = -230.0
+offset_bottom = -510.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -48,12 +49,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.5
-offset_top = -85.5
-offset_right = 85.5
-offset_bottom = 85.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 106.0
+offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_wue5i")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="."]
@@ -63,10 +65,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.5
-offset_top = -85.5
-offset_right = 85.5
-offset_bottom = 85.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 106.0
+offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hkx6c")

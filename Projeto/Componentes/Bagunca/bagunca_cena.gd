@@ -9,7 +9,7 @@ func  _ready() -> void:
 	sprite_2d.texture = baguncas.pick_random()
 
 func _on_componente_interagivel_interagir(_jogador):
-	if(!_jogador.objeto_agarrado):
+	if(!_jogador.esta_agarrando):
 		_jogador.ajuntar()
 		await get_tree().create_timer(0.5).timeout
 		queue_free()

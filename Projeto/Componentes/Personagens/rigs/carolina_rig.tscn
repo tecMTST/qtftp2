@@ -502,7 +502,6 @@ bone_angle = 0.0
 
 [node name="pernaDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(146, -83)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 146, -83)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -524,7 +523,6 @@ bone_angle = 0.0
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-84, -379)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -84, -379)
 auto_calculate_length_and_angle = false
 length = 16.0

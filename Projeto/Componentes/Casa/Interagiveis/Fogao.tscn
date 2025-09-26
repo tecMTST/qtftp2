@@ -190,7 +190,7 @@ area_de_interacao = NodePath("../Area2D")
 possui_contorno = false
 
 [node name="Pivot" type="Node2D" parent="."]
-position = Vector2(26, -39)
+position = Vector2(26, -54)
 
 [node name="AnimatedFire" type="AnimatedSprite2D" parent="."]
 visible = false

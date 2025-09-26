@@ -212,19 +212,23 @@ func _encontra_tocador_disponivel() -> int:
 	return -1
 
 
-func volume_da_musica(volume: float) -> void:
-	_ajusta_volume_do_barramento("Musica", volume)
+func volume_da_musica(volume: float = -1) -> float:
+	return _ajusta_volume_do_barramento("Musica", volume)
 
 
-func volume_de_efeitos(volume: float) -> void:
-	_ajusta_volume_do_barramento("Efeitos", volume)
+func volume_de_efeitos(volume: float = -1) -> float:
+	return _ajusta_volume_do_barramento("Efeitos", volume)
 
 
-func _ajusta_volume_do_barramento(nome_do_barramento: String, volume: float) -> void:
+func _ajusta_volume_do_barramento(nome_do_barramento: String, volume: float) -> float:
 	var indice_do_barramento = AudioServer.get_bus_index(nome_do_barramento)
-	print_debug("Ajustando ", nome_do_barramento, " para ", volume)
-	if indice_do_barramento >= 0:
+	if indice_do_barramento < 0:
+		print_debug("[ControleDeAudio] barramento " + nome_do_barramento + " não encontrado")
+		return -1
+	if volume >= 0:
+		print_debug("[ControleDeAudio] ajustando ", nome_do_barramento, " para ", volume)
 		AudioServer.set_bus_volume_db(indice_do_barramento, linear_to_db(volume))
+	return db_to_linear(AudioServer.get_bus_volume_db(indice_do_barramento))
 
 
 func _on_value_changed(new_value: float) -> void:

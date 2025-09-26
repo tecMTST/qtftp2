@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://bks75iki1a6dw" path="res://Cenas/ui.gd" id="14_d2j33"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="15_gklaa"]
 [ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="16_utqv5"]
-[ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunça/BaguncaCena.tscn" id="17_utqv5"]
+[ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunca/BaguncaCena.tscn" id="17_utqv5"]
 [ext_resource type="Texture2D" uid="uid://bfjh0swdtn76j" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_default.svg" id="19_tjjme"]
 [ext_resource type="Texture2D" uid="uid://dlg3aobixykl7" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_disabled.svg" id="19_xanav"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="19_xhdpr"]
@@ -163,24 +163,30 @@ position = Vector2(314, 809)
 [node name="Personagens" type="Node2D" parent="."]
 z_index = 5
 
+[node name="Player" parent="Personagens" instance=ExtResource("2_kc3ot")]
+z_index = 20
+z_as_relative = false
+position = Vector2(347, 584)
+
 [node name="Filha" parent="Personagens" node_paths=PackedStringArray("waypoints") groups=["filha_sprite"] instance=ExtResource("15_gklaa")]
-z_index = 5
+z_index = 10
+z_as_relative = false
 position = Vector2(504, 860)
 bagunca_scene = ExtResource("17_utqv5")
 waypoints = NodePath("../../Waypoints")
-
-[node name="Player" parent="Personagens" instance=ExtResource("2_kc3ot")]
-z_index = 5
-position = Vector2(355, 606)
 
 [node name="CenarioiFront" type="Node2D" parent="."]
 z_index = 15
 
 [node name="Cama" type="Sprite2D" parent="CenarioiFront"]
+z_index = 40
+z_as_relative = false
 position = Vector2(184, 950)
 texture = ExtResource("23_tqe3g")
 
 [node name="CasaFront" type="Sprite2D" parent="CenarioiFront"]
+z_index = 40
+z_as_relative = false
 position = Vector2(357.5, 1144.5)
 scale = Vector2(1.007, 1.1)
 texture = ExtResource("11_utqv5")

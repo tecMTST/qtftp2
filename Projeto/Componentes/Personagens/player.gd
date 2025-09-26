@@ -6,6 +6,7 @@ signal acao_desativada
 signal acao_agarrou(objeto)
 
 const EFEITO_SUCESSO = preload("res://Recursos/Graficos/Efeitos/grafico_check.tscn")
+const EFEITO_FALHA = preload("res://Recursos/Graficos/Efeitos/grafico_erro.tscn")
 
 var sfx_intervalo_passada: float = 0.35
 var sfx_timer: float = 0.0
@@ -30,14 +31,17 @@ var ativo : bool = true
 func ao_transformar_objeto_agarrado(novo_objeto: IngredienteBase):
 	soltar()
 	agarrar(novo_objeto)
-	_exibe_efeito_de_sucesso()
+	_exibe_efeito(EFEITO_SUCESSO)
 
-func _exibe_efeito_de_sucesso() -> void:
-	var efeito_sucesso = EFEITO_SUCESSO.instantiate()
-	get_tree().root.add_child(efeito_sucesso)
-	efeito_sucesso.reparent(posicao_objeto)
-	efeito_sucesso.global_position = posicao_objeto.global_position
-	efeito_sucesso.global_position.y -= 180
+func ao_transformar_objeto_agarrado_falha(_objeto: IngredienteBase):
+	_exibe_efeito(EFEITO_FALHA)
+
+func _exibe_efeito(recurso_de_efeito: Resource) -> void:
+	var efeito = recurso_de_efeito.instantiate()
+	get_tree().root.add_child(efeito)
+	efeito.reparent(posicao_objeto)
+	efeito.global_position = posicao_objeto.global_position
+	efeito.global_position.y -= 180
 
 func _physics_process(delta: float) -> void:
 	if (Input.is_action_pressed("up")   or
@@ -157,6 +161,7 @@ func on_interagivel_exited() -> void:
 func _agarrar():
 	objeto_agarrado.reparent(posicao_objeto)
 	objeto_agarrado.ao_transformar_sucesso.connect(ao_transformar_objeto_agarrado)
+	objeto_agarrado.ao_transformar_falha.connect(ao_transformar_objeto_agarrado_falha)
 	objeto_agarrado.get_node("CollisionShape2D").disabled = true
 	objeto_agarrado.global_position = posicao_objeto.global_position
 	esta_agarrando = true
@@ -169,8 +174,10 @@ func rotacao(_delta : float):
 
 func soltar():
 	objeto_agarrado.ao_transformar_sucesso.disconnect(ao_transformar_objeto_agarrado)
+	objeto_agarrado.ao_transformar_falha.disconnect(ao_transformar_objeto_agarrado_falha)
 	objeto_agarrado.reparent(get_parent())
 	objeto_agarrado.get_node("CollisionShape2D").disabled = false
+	objeto_agarrado = null
 	esta_agarrando = false
 
 func ajuntar():
