@@ -120,3 +120,13 @@ func spawn_bagunca():
 
 func _ir_comer(_prato) -> void:
 	print_debug('Ir comer')
+
+
+func _on_topo_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		z_index = 30
+
+
+func _on_base_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		z_index = 10

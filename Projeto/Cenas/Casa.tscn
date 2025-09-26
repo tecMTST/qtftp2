@@ -166,7 +166,7 @@ z_index = 5
 [node name="Player" parent="Personagens" instance=ExtResource("2_kc3ot")]
 z_index = 20
 z_as_relative = false
-position = Vector2(515, 766)
+position = Vector2(347, 584)
 
 [node name="Filha" parent="Personagens" node_paths=PackedStringArray("waypoints") groups=["filha_sprite"] instance=ExtResource("15_gklaa")]
 z_index = 10
@@ -179,10 +179,14 @@ waypoints = NodePath("../../Waypoints")
 z_index = 15
 
 [node name="Cama" type="Sprite2D" parent="CenarioiFront"]
+z_index = 40
+z_as_relative = false
 position = Vector2(184, 950)
 texture = ExtResource("23_tqe3g")
 
 [node name="CasaFront" type="Sprite2D" parent="CenarioiFront"]
+z_index = 40
+z_as_relative = false
 position = Vector2(357.5, 1144.5)
 scale = Vector2(1.007, 1.1)
 texture = ExtResource("11_utqv5")
