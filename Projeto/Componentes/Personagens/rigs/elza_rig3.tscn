@@ -502,7 +502,6 @@ uv = PackedVector2Array(414.5, 3.5, 394.5, 23.5, 394.5, 51.5, 347.5, 87.5, 345.5
 bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="maomadeira" type="Polygon2D" parent="rig1/sprites"]
-visible = false
 position = Vector2(168, 354)
 rotation = -1.15486
 scale = Vector2(0.801393, 0.801393)
@@ -556,6 +555,7 @@ bone_angle = 0.0
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 visible = false
 position = Vector2(99, -384)
+rotation = 1.88233
 rest = Transform2D(1, 0, 0, 1, 99, -384)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -563,6 +563,7 @@ bone_angle = 0.0
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-84, -379)
+rotation = 0.501302
 rest = Transform2D(1, 0, 0, 1, -84, -379)
 auto_calculate_length_and_angle = false
 length = 16.0
