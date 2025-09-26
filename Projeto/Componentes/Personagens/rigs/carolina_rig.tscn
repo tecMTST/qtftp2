@@ -15,8 +15,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(69, -0.25, 0, 0.333333, 1),
-"times": PackedFloat32Array(0.1)
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -157,7 +157,7 @@ tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
@@ -169,7 +169,7 @@ tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -294,7 +294,6 @@ uv = PackedVector2Array(3165.48, 2135.5, 3441.31, 2095.46, 4166.49, 2126.6, 4273
 bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)]
 
 [node name="bracoEsqCel" type="Polygon2D" parent="rig1/sprites"]
-visible = false
 position = Vector2(-85, 45)
 rotation = -0.516594
 scale = Vector2(0.729661, 0.729661)
@@ -403,7 +402,6 @@ uv = PackedVector2Array(1501.51, 653.295, 1809.71, 657.861, 1942.13, 555.126, 20
 bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="rostoIdle" type="Polygon2D" parent="rig1/sprites/cabeca"]
-visible = false
 position = Vector2(-943.114, 318.861)
 scale = Vector2(1.01384, 1.01384)
 texture = ExtResource("1_uxxl6")
