@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="12_soo8a"]
 [ext_resource type="PackedScene" uid="uid://cjdso8f820o6i" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="13_ig24r"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="14_sx0ql"]
-[ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunça/BaguncaCena.tscn" id="15_qgnc8"]
+[ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunca/BaguncaCena.tscn" id="15_qgnc8"]
 [ext_resource type="Script" uid="uid://fhc7musjapc1" path="res://Componentes/Personagens/elza.gd" id="16_15yf7"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="17_583kr"]
 [ext_resource type="PackedScene" uid="uid://daxpprdmxope6" path="res://Componentes/Personagens/rigs/elza_rig3.tscn" id="17_sm064"]

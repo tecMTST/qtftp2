@@ -171,6 +171,7 @@ func soltar():
 	objeto_agarrado.ao_transformar_sucesso.disconnect(ao_transformar_objeto_agarrado)
 	objeto_agarrado.reparent(get_parent())
 	objeto_agarrado.get_node("CollisionShape2D").disabled = false
+	objeto_agarrado = null
 	esta_agarrando = false
 
 func ajuntar():
