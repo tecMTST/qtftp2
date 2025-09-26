@@ -46,8 +46,9 @@ directories/dch_directory={
 "narrador": "res://Dialogo/narrador.dch"
 }
 directories/dtl_directory={
-"fase1": "res://Dialogo/cutscene_fimdefase_fase1.dtl",
-"teste": "res://Dialogo/cutscene_fimdefase_tutorial.dtl",
+"cutscene_fimdefase_fase1": "res://Dialogo/cutscene_fimdefase_fase1.dtl",
+"cutscene_fimdefase_tutorial": "res://Dialogo/cutscene_fimdefase_tutorial.dtl",
+"teste": "res://Dialogo/teste.dtl",
 "tutorial": "res://Dialogo/tutorial.dtl"
 }
 layout/style_directory={
