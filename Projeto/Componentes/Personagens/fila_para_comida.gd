@@ -16,6 +16,7 @@ const TEXTURAS = [
 @export var distancia_entre_pessoas: int
 @export var variacao_maxima_horizontal: int
 @export var maximo_na_fila: int
+@export var pessoas_iniciais_na_fila: int
 @export var tempo_minimo_proxima_pessoa: float
 @export var tempo_maximo_proxima_pessoa: float
 
@@ -24,6 +25,8 @@ var fila = []
 @onready var timer: Timer = $Timer
 
 func _ready():
+	for n in range(pessoas_iniciais_na_fila):
+		adiciona_pessoa_na_fila()
 	ativa_fila_aleatoriamente()
 
 
