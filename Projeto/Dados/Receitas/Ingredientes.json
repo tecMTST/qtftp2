@@ -408,6 +408,8 @@
 	{
 		"id" : "carne_moida_cozinhando",
 		"descricao" : "Carne moída cozinhando no fogão",
+		"tempo": 3,
+		"tempo_queima": 5,
 		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
 		"acoes" : [
 			{
