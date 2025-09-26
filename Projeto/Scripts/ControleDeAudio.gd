@@ -129,9 +129,10 @@ func toca_musica_com_intro(nome_intro: String, nome_ciclo: String, acelera: bool
 
 
 func para_musica() -> void:
-	print_debug("[ControleDeAudio] parando musica")
+	print_debug("[ControleDeAudio] parando musica e efeitos em ciclo")
 	toca_musica_intro.stop()
 	toca_musica_ciclo.stop()
+	para_efeitos_em_ciclo()
 
 
 func toca_efeito(nome_do_efeito: String) -> int:
@@ -163,6 +164,9 @@ func toca_efeito_ciclo(nome_do_efeito: String, nome_ciclo: String) -> void:
 	tocador.stream.loop = true
 	tocadores_em_ciclo[nome_ciclo] = indice
 
+func para_efeitos_em_ciclo() -> void:
+	for nome_ciclo in tocadores_em_ciclo.keys():
+		para_efeito_ciclo(nome_ciclo)
 
 func para_efeito_ciclo(nome_ciclo: String) -> void:
 	if not tocadores_em_ciclo.has(nome_ciclo): return
