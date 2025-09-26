@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2fdciig7einf"]
+[gd_scene load_steps=9 format=3 uid="uid://d2fdciig7einf"]
 
 [ext_resource type="Script" uid="uid://dnibm5siaj76a" path="res://Componentes/Personagens/filha.gd" id="2_suqhv"]
 [ext_resource type="PackedScene" uid="uid://b4reg6fm7xkhh" path="res://Componentes/Personagens/rigs/carolina_rig.tscn" id="3_b34n8"]
@@ -9,6 +9,12 @@
 radius = 23.0
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_s06ml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jt3xk"]
+size = Vector2(128, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s06ml"]
+size = Vector2(127, 56)
 
 [node name="Filha" type="CharacterBody2D" groups=["personagem"]]
 collision_layer = 0
@@ -35,3 +41,20 @@ cor = Color(1, 0, 0, 1)
 behavior_tree = ExtResource("4_jt3xk")
 active = false
 blackboard_plan = SubResource("BlackboardPlan_s06ml")
+
+[node name="Topo" type="Area2D" parent="."]
+position = Vector2(0, -42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Topo"]
+position = Vector2(-2, 20)
+shape = SubResource("RectangleShape2D_jt3xk")
+
+[node name="Base" type="Area2D" parent="."]
+position = Vector2(0, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
+position = Vector2(-2.5, 3)
+shape = SubResource("RectangleShape2D_s06ml")
+
+[connection signal="body_entered" from="Topo" to="." method="_on_topo_body_entered"]
+[connection signal="body_entered" from="Base" to="." method="_on_base_body_entered"]
