@@ -48,7 +48,7 @@ distancia_entre_pessoas = 50
 variacao_maxima_horizontal = 10
 maximo_na_fila = 5
 tempo_minimo_proxima_pessoa = 20.0
-tempo_maximo_proxima_pessoa = 60.0
+tempo_maximo_proxima_pessoa = 30.0
 
 [node name="Timer" type="Timer" parent="Fila"]
 one_shot = true
