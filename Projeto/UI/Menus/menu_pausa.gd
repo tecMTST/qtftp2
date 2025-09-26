@@ -21,9 +21,11 @@ func _ready() -> void:
 	controle_musica.value_changed.connect(
 		Callable(ControleDeAudio, "_on_value_changed")
 	)
+	controle_musica.value = ControleDeAudio.volume_da_musica()
 	controle_efeitos.value_changed.connect(
 		Callable(ControleDeAudio, "_on_value_changed_sfx")
 	)
+	controle_efeitos.value = ControleDeAudio.volume_de_efeitos()
 
 
 func atualizar() -> void:

@@ -14,8 +14,10 @@ func _on_fechar_extras_pressed() -> void:
 func _ready() -> void:
 	opcoes.visible = false
 	var controle_musica: HSlider = opcoes.get_node("control_musica")
+	controle_musica.value = ControleDeAudio.volume_da_musica()
 	controle_musica.value_changed.connect(Callable(ControleDeAudio, "_on_value_changed"))
 	var controle_efeitos: HSlider = opcoes.get_node("control_efeitos")
+	controle_efeitos.value = ControleDeAudio.volume_de_efeitos()
 	controle_efeitos.value_changed.connect(Callable(ControleDeAudio, "_on_value_changed_sfx"))
 
 
