@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4reg6fm7xkhh"]
+[gd_scene load_steps=13 format=3 uid="uid://b4reg6fm7xkhh"]
 
 [ext_resource type="Texture2D" uid="uid://0khtdrc0ija5" path="res://Componentes/Personagens/rigs/vetores_spritesheets/carolinaVetorCores1.svg" id="1_uxxl6"]
 [ext_resource type="Script" uid="uid://cedhey5pej703" path="res://Componentes/Personagens/rigs/carolina_rig.gd" id="1_v02eu"]
 [ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://Componentes/Personagens/rigs/vetores_spritesheets/qtftdanims.res" id="2_v00ph"]
+[ext_resource type="AnimationLibrary" uid="uid://d0wgm6j27bn0a" path="res://anim_carol.res" id="3_ir1in"]
 
 [sub_resource type="Animation" id="Animation_hnpr2"]
 length = 0.001
@@ -14,8 +15,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(69, -0.25, 0, 0.333333, 1),
-"times": PackedFloat32Array(0.1)
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -156,7 +157,113 @@ tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("rig1/sprites/bracoEsqCel:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("rig1/Skeleton2D/tronco:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("rig1/Skeleton2D/tronco/pescoco/rosto:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("rig1/Skeleton2D/tronco/pescoco/rosto:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("rig1/Skeleton2D/tronco/bracoEsq:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-84, -379)]
+}
+tracks/18/type = "bezier"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("rig1/Skeleton2D/tronco:position:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(35, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/19/type = "bezier"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("rig1/Skeleton2D/tronco:position:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("rig1/sprites/cabeca:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("rig1/sprites/pernaDir:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v02eu"]
@@ -165,15 +272,15 @@ _data = {
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ir1in"]
-animation = &"qtftd anims/sentar_carolina_celular"
+animation = &"anim_carol/sentar_carolina"
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_04gav"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_04gav"]
-animation = &"qtftd anims/andar_carol_celular"
+animation = &"anim_carol/andar_carol_celular"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v02eu"]
-animation = &"qtftd anims/idle_carol_celular"
+animation = &"anim_carol/idle_carol_celular"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_h13ea"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_04gav")
@@ -182,7 +289,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_v02eu")
 blend_point_1/pos = 0.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_et0jp"]
-graph_offset = Vector2(-630.864, -135.343)
+graph_offset = Vector2(-1170.97, 11.0257)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ir1in")
 nodes/Animation/position = Vector2(-1000, 260)
 nodes/Sentada/node = SubResource("AnimationNodeBlend2_04gav")
@@ -232,7 +339,6 @@ uv = PackedVector2Array(2161.76, 2477.26, 2292.12, 2476.11, 2293.27, 2721.83, 21
 bones = ["tronco", PackedFloat32Array(0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(1, 1, 1, 1)]
 
 [node name="bracoEsq" type="Polygon2D" parent="rig1/sprites"]
-visible = false
 position = Vector2(-35, 24)
 rotation = 0.832667
 scale = Vector2(0.729661, 0.729661)
@@ -319,7 +425,6 @@ uv = PackedVector2Array(1501.51, 653.295, 1809.71, 657.861, 1942.13, 555.126, 20
 bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="rostoIdle" type="Polygon2D" parent="rig1/sprites/cabeca"]
-visible = false
 position = Vector2(-943.114, 318.861)
 scale = Vector2(1.01384, 1.01384)
 texture = ExtResource("1_uxxl6")
@@ -382,6 +487,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tron
 position = Vector2(-35.615, -18.8194)
 
 [node name="tronco" type="Bone2D" parent="rig1/Skeleton2D"]
+position = Vector2(35, 0)
 rest = Transform2D(1, 0, 0, 1, 35, 429)
 
 [node name="pescoco" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
@@ -433,6 +539,7 @@ metadata/_edit_lock_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_v02eu"),
+&"anim_carol": ExtResource("3_ir1in"),
 &"qtftd anims": ExtResource("2_v00ph")
 }
 

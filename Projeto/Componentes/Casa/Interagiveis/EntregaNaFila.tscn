@@ -47,6 +47,7 @@ posicao_inicial = Vector2(-50, 0)
 distancia_entre_pessoas = 50
 variacao_maxima_horizontal = 10
 maximo_na_fila = 5
+pessoas_iniciais_na_fila = 2
 tempo_minimo_proxima_pessoa = 20.0
 tempo_maximo_proxima_pessoa = 30.0
 
