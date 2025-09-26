@@ -68,10 +68,10 @@
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase1-ovofrito.svg"
 			}
 			],
-		"tempo": 300,
+		"tempo": 180,
 		"limite_bagunca": 5,
-		"quantidade_pratos_real" : 10,
-		"quantidade_pratos_exibido" : 10,
+		"quantidade_pratos_real" : 5,
+		"quantidade_pratos_exibido" : 5,
 		"valor_nutricional_minimo" : 7,
 		"valor_sabor_minimo" : 4,
 		"pontos_recompensa" : 5,
@@ -80,9 +80,9 @@
 		"intervalo_bagunca" : 30.0,
  		"variacao_bagunca" : 5.0,
 		"choro" : true,
-		"intervalo_choro" : 20.0,
+		"intervalo_choro" : 25.0,
  		"variacao_choro" :  5.0,
-		"tempo_limite_choro" :  20.0
+		"tempo_limite_choro" :  25.0
 	},
 	{
 		"id" : 3,
@@ -103,21 +103,21 @@
 				"caminho":"res://Recursos/Graficos/UI/Briefing/briefing-fase2-salsicha.svg"
 			}
 			],
-		"tempo": 300,
+		"tempo": 210,
 		"limite_bagunca": 5,
-		"quantidade_pratos_real" : 3,
-		"quantidade_pratos_exibido" : 0,
+		"quantidade_pratos_real" : 6,
+		"quantidade_pratos_exibido" : 6,
 		"valor_nutricional_minimo" : 5,
 		"valor_sabor_minimo" : 2,
 		"pontos_recompensa" : 3,
 		"receita_recompensa" : 0,
 		"bagunca" : true,
-		"intervalo_bagunca" : 4.0,
+		"intervalo_bagunca" : 25.0,
  		"variacao_bagunca" : 5.0,
 		"choro" : true,
- 		"intervalo_choro" : 4.0,
+ 		"intervalo_choro" : 22.0,
  		"variacao_choro" :  0.0,
-		"tempo_limite_choro" :  400.0
+		"tempo_limite_choro" :  22.0
 	},
 	{
 		"id" : 4,
@@ -143,12 +143,12 @@
 		"pontos_recompensa" : 3,
 		"receita_recompensa" : 0,
 		"bagunca" : true,
-		"intervalo_bagunca" : 4.0,
+		"intervalo_bagunca" : 20.0,
 		"variacao_bagunca" : 5.0,
 		"choro" : true,
-		"intervalo_choro" : 4.0,
+		"intervalo_choro" : 20.0,
 		"variacao_choro" :  0.0,
-		"tempo_limite_choro" :  400.0
+		"tempo_limite_choro" :  20.0
 	},
 	{
 		"id" : 5,
@@ -157,7 +157,7 @@
 		"textos" : [],
 		"imagem" : "",
 		"local" : "res://Cenas/cutscene_quadrinhos_fase_4.tscn",
-		"id_receitas" : [5,7,8,9],
+		"id_receitas" : [3,7,8,9],
 		"ordem_aleatoria": true,
 		"caminhos_briefing": [
 			{
@@ -183,8 +183,8 @@
 			],
 		"tempo": 300,
 		"limite_bagunca": 5,
-		"quantidade_pratos_real" : 3,
-		"quantidade_pratos_exibido" : 0,
+		"quantidade_pratos_real" : 7,
+		"quantidade_pratos_exibido" : 7,
 		"valor_nutricional_minimo" : 5,
 		"valor_sabor_minimo" : 2,
 		"pontos_recompensa" : 3,
@@ -226,8 +226,8 @@
 		],
 		"tempo": 300,
 		"limite_bagunca": 5,
-		"quantidade_pratos_real" : 25,
-		"quantidade_pratos_exibido" : 25,
+		"quantidade_pratos_real" : 7,
+		"quantidade_pratos_exibido" : 7,
 		"valor_nutricional_minimo" : 5,
 		"valor_sabor_minimo" : 2,
 		"pontos_recompensa" : 3,

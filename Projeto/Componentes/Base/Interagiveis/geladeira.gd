@@ -10,8 +10,6 @@ var _posicao_geladeira: int = 0
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	nome = "Geladeira"
-	ControleDeFase.nova_receita.connect(_prepara_geladeira_para_proxima_receita)
-
 
 func _prepara_geladeira_para_proxima_receita(_nova_receita):
 	_posicao_geladeira = 0
