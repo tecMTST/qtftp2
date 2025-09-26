@@ -68,7 +68,6 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 	else:
 		if ControleDeFase.nivel_atual.id == 3:
 			var fase03 = "res://Dialogo/Fase03.dialogue"
-			ControleDeFase.jogador.iniciar_dialogo(load(fase03), "semgas", 3.0)
 		if(!objeto_na_mao):
 			print_debug("  [-] jogador sem nada, fogão sem nada... nada pra fazer")
 			return

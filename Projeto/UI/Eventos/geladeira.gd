@@ -50,8 +50,6 @@ func close() -> void:
 	get_parent().queue_free()
 	if ControleDeFase.nivel_atual.id == 3:
 		var fase03 = "res://Dialogo/Fase03.dialogue"
-		ControleDeFase.jogador.iniciar_dialogo(load(fase03),"geladeiravazia", 3.0)
-
 
 func escolhe_ingrediente(ingrediente_escolhido: Ingrediente) -> void:
 	if player and not acao_executada:
