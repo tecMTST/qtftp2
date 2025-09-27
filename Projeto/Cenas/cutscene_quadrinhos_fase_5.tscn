@@ -136,4 +136,42 @@ vertical_alignment = 1
 [node name="TransicaoCena" parent="." instance=ExtResource("14_afr0t")]
 visible = false
 
+[node name="Pular" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -319.0
+offset_top = -132.0
+offset_right = -67.0
+offset_bottom = 35.9999
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.56, 0.56)
+toggle_mode = true
+texture_normal = ExtResource("11_4pkvp")
+texture_pressed = ExtResource("12_7gwur")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Pular"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -23.0
+offset_right = 67.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("13_m65om")
+text = "Pular"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Avancar" to="." method="_on_input_action_pressed"]
+[connection signal="toggled" from="Pular" to="." method="_on_pular_toggled"]
