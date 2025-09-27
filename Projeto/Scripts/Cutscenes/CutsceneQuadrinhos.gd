@@ -49,7 +49,7 @@ func _quadrinhos_finalizados() -> void:
 	quadrinhos_terminados = true
 
 
-func _on_pular_toggled(toggled_on: bool) -> void:
+func _on_pular_toggled(_toggled_on: bool) -> void:
 	while !quadrinhos_terminados:
 		index_quadrinho_atual += 1
 		_ativar_quadrinho(index_quadrinho_atual)
