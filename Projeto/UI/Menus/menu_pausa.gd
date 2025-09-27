@@ -30,7 +30,7 @@ func _ready() -> void:
 
 func atualizar() -> void:
 	fase.text=ControleDeFase.nivel_atual.nome
-	if(ControleDeFase.receita_selecionada):
+	if(ControleDeFase.receitas_disponiveis):
 		botao_briefing.icon=load(ControleDeFase.receita_selecionada.caminho_sprite)
 		_on_receita_pressed()
 	else:
