@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=42 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -30,7 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://dytixyovx6d7d" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/thumb_stick_base.svg" id="24_7k32u"]
 [ext_resource type="Script" uid="uid://balal13nfhegi" path="res://addons/saveEngine/scripts/SaveAgent.gd" id="25_d1xgi"]
 [ext_resource type="Texture2D" uid="uid://7oe7qju28gml" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_pressed_pause.svg" id="25_dfuu3"]
+[ext_resource type="Texture2D" uid="uid://c6y62cg4fj4hs" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_default_right.svg" id="28_2tmn8"]
+[ext_resource type="Texture2D" uid="uid://c4xa0lkf3ns1s" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_pressed_right.svg" id="29_rmuin"]
 [ext_resource type="PackedScene" uid="uid://n5v3ssyg823a" path="res://UI/Briefing/Briefing.tscn" id="29_tqe3g"]
+[ext_resource type="Script" uid="uid://bx0d7k2wf56au" path="res://Scripts/Cutscenes/botao_skip.gd" id="30_rmuin"]
 [ext_resource type="PackedScene" uid="uid://cr74l6j0jbkx5" path="res://UI/Menus/MenuPausa.tscn" id="31_tqe3g"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="32_2tmn8"]
 
@@ -287,6 +290,16 @@ scale = Vector2(1.12222, 1.12222)
 texture_normal = ExtResource("20_xhdpr")
 texture_pressed = ExtResource("25_dfuu3")
 
+[node name="BotaoSkip" type="TouchScreenButton" parent="Molduras"]
+process_mode = 3
+visible = false
+z_index = 300
+position = Vector2(2, 1111)
+scale = Vector2(1.12222, 1.12222)
+texture_normal = ExtResource("28_2tmn8")
+texture_pressed = ExtResource("29_rmuin")
+script = ExtResource("30_rmuin")
+
 [node name="BotaoFim" type="TouchScreenButton" parent="Molduras"]
 visible = false
 z_index = 200
@@ -346,6 +359,8 @@ metadata/_custom_type_script = "uid://balal13nfhegi"
 [connection signal="acao_ativada" from="Personagens/Player" to="." method="_on_player_acao_ativada"]
 [connection signal="acao_desativada" from="Personagens/Player" to="." method="_on_player_acao_desativada"]
 [connection signal="pressed" from="Molduras/BotaoPausa" to="." method="_on_botao_pausa_pressed"]
+[connection signal="pressed" from="Molduras/BotaoSkip" to="Molduras/BotaoSkip" method="_on_pressed"]
+[connection signal="released" from="Molduras/BotaoSkip" to="Molduras/BotaoSkip" method="_on_released"]
 [connection signal="pressed" from="Molduras/BotaoFim" to="." method="_on_botao_fim_pressed"]
 [connection signal="continuar" from="CanvasLayer/pausar" to="." method="_on_pausar_continuar"]
 [connection signal="finalizado" from="Briefing" to="." method="_on_briefing_finalizado"]

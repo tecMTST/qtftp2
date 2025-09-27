@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://toyuyf660lm7"]
+[gd_scene load_steps=43 format=3 uid="uid://toyuyf660lm7"]
 
 [ext_resource type="Script" uid="uid://fmdhy8p6vnli" path="res://Cenas/cozinha_solidaria.gd" id="1_bhph4"]
 [ext_resource type="Texture2D" uid="uid://dmon3wtcmi48s" path="res://Recursos/Graficos/Cenas/Cenario_2/Piso.svg" id="5_pdorv"]
@@ -33,6 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://bu37qio7g3ob4" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_disabled_base.svg" id="33_4fql6"]
 [ext_resource type="PackedScene" uid="uid://n52w7lk2j46x" path="res://Componentes/Casa/Interagiveis/EntregaNaFila.tscn" id="33_vqmvo"]
 [ext_resource type="Texture2D" uid="uid://dytixyovx6d7d" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/thumb_stick_base.svg" id="34_5hxbm"]
+[ext_resource type="Texture2D" uid="uid://c6y62cg4fj4hs" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_default_right.svg" id="34_i5q6u"]
+[ext_resource type="Texture2D" uid="uid://c4xa0lkf3ns1s" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_pressed_right.svg" id="35_eia0s"]
+[ext_resource type="Script" uid="uid://bx0d7k2wf56au" path="res://Scripts/Cutscenes/botao_skip.gd" id="36_pytrp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p822v"]
 size = Vector2(259, 1546)
@@ -353,6 +356,16 @@ scale = Vector2(1.12222, 1.12222)
 texture_normal = ExtResource("24_ps5ac")
 texture_pressed = ExtResource("25_swgi1")
 
+[node name="BotaoSkip" type="TouchScreenButton" parent="Molduras"]
+process_mode = 3
+visible = false
+z_index = 300
+position = Vector2(2, 1111)
+scale = Vector2(1.12222, 1.12222)
+texture_normal = ExtResource("34_i5q6u")
+texture_pressed = ExtResource("35_eia0s")
+script = ExtResource("36_pytrp")
+
 [node name="BotaoFim" type="TouchScreenButton" parent="Molduras"]
 visible = false
 z_index = 200
@@ -395,3 +408,5 @@ metadata/_custom_type_script = "uid://dku77viqwklks"
 [connection signal="finalizado" from="Briefing" to="." method="_on_briefing_finalizado"]
 [connection signal="iniciado" from="Briefing" to="." method="_on_briefing_iniciado"]
 [connection signal="pressed" from="Molduras/BotaoPausa" to="." method="_on_botao_pausa_pressed"]
+[connection signal="pressed" from="Molduras/BotaoSkip" to="Molduras/BotaoSkip" method="_on_pressed"]
+[connection signal="released" from="Molduras/BotaoSkip" to="Molduras/BotaoSkip" method="_on_released"]
