@@ -1,10 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://b2uanplavulb4"]
+[gd_scene load_steps=36 format=3 uid="uid://b2uanplavulb4"]
 
 [ext_resource type="Texture2D" uid="uid://bmihn7u5mpqmi" path="res://Recursos/Graficos/Cenas/telaInicialQTFTD.png" id="1_h4eay"]
 [ext_resource type="Script" uid="uid://b20ll7gquuaik" path="res://UI/Menus/menu_extras.gd" id="1_mscwh"]
 [ext_resource type="Texture2D" uid="uid://28d80widfiba" path="res://Recursos/Graficos/UI/Componentes/logos/logo_qtftd.svg" id="2_vwjvg"]
 [ext_resource type="Texture2D" uid="uid://ceqna4dr0aexd" path="res://Recursos/Graficos/UI/Componentes/menu_telaInicial/menu_telaInicial_base_extras.svg" id="3_xcdby"]
-[ext_resource type="FontFile" uid="uid://dh6sc33fercr7" path="res://Recursos/Fontes/SourGummy-BoldItalic.ttf" id="4_p7c65"]
 [ext_resource type="FontFile" uid="uid://ck6c6ppwbb03j" path="res://Recursos/Fontes/SourGummy-Bold.ttf" id="6_cwhcj"]
 [ext_resource type="FontFile" uid="uid://dgsx8f04jvfhg" path="res://Recursos/Fontes/SourGummy-Regular.ttf" id="7_b0wcp"]
 [ext_resource type="Theme" uid="uid://d0bhol3tm4h44" path="res://UI/botao_extras.tres" id="8_l68n3"]
@@ -23,89 +22,29 @@
 [ext_resource type="Texture2D" uid="uid://c7duewe4oe42b" path="res://Recursos/Graficos/UI/Componentes/slider/slider_base.svg" id="19_ke6tl"]
 [ext_resource type="Texture2D" uid="uid://cjqu54u6f50c8" path="res://Recursos/Graficos/UI/Componentes/logos/simbolo_tpt.svg" id="19_l68n3"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43m8k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfldu"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mscwh"]
 texture = ExtResource("16_0gfo8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwhcj"]
 texture = ExtResource("16_0gfo8")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43m8k"]
+texture = ExtResource("16_0gfo8")
+
 [sub_resource type="Theme" id="Theme_b0wcp"]
 Button/styles/hover = SubResource("StyleBoxTexture_mscwh")
 Button/styles/normal = SubResource("StyleBoxTexture_cwhcj")
+Button/styles/pressed = SubResource("StyleBoxTexture_43m8k")
 
-[sub_resource type="Animation" id="Animation_l68n3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(127, 0)]
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ke6tl"]
 
-[sub_resource type="Animation" id="Animation_b0wcp"]
-resource_name = "movimento_esquerda"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(127, 0), Vector2(0, 0)]
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7366t"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oxror"]
-_data = {
-&"RESET": SubResource("Animation_l68n3"),
-&"movimento_esquerda": SubResource("Animation_b0wcp")
-}
-
-[sub_resource type="Animation" id="Animation_cwhcj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_mscwh"]
-resource_name = "movimento_direita"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(127, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b0wcp"]
-_data = {
-&"RESET": SubResource("Animation_cwhcj"),
-&"movimento_direita": SubResource("Animation_mscwh")
-}
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vbhev"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo2rv"]
 bg_color = Color(0.631373, 0.192157, 0.403922, 1)
@@ -174,6 +113,7 @@ offset_right = 115.0
 offset_bottom = 1203.0
 tooltip_text = "Fechar"
 theme = ExtResource("12_rfldu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_43m8k")
 
 [node name="estrela" type="Button" parent="."]
 z_index = 2
@@ -183,6 +123,7 @@ offset_right = 333.0
 offset_bottom = 1149.5
 tooltip_text = "Extras"
 theme = ExtResource("12_mscwh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rfldu")
 
 [node name="opcoes" type="Button" parent="."]
 z_index = 1
@@ -192,43 +133,38 @@ offset_right = 473.0
 offset_bottom = 1152.5
 tooltip_text = "Opções"
 theme = SubResource("Theme_b0wcp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ke6tl")
 
 [node name="TabSelectBase2Abas" type="Sprite2D" parent="."]
 position = Vector2(363, 1112.5)
 texture = ExtResource("13_ke6tl")
 
-[node name="tap" type="Sprite2D" parent="."]
+[node name="tap1" type="Sprite2D" parent="."]
 position = Vector2(300, 1112.5)
 texture = ExtResource("14_7366t")
 
-[node name="esquerda" type="AnimationPlayer" parent="tap"]
-libraries = {
-&"": SubResource("AnimationLibrary_oxror")
-}
-
-[node name="direita" type="AnimationPlayer" parent="tap"]
-libraries = {
-&"": SubResource("AnimationLibrary_b0wcp")
-}
+[node name="tap2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(427, 1113)
+texture = ExtResource("14_7366t")
 
 [node name="menu_extra" type="Node2D" parent="."]
-visible = false
 
 [node name="titulo_extras" type="Label" parent="menu_extra"]
-offset_left = 316.0
-offset_top = 331.5
-offset_right = 425.0
+offset_left = 300.0
+offset_top = 325.5
+offset_right = 424.0
 offset_bottom = 377.5
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_p7c65")
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("6_cwhcj")
+theme_override_font_sizes/font_size = 40
 text = "Extras"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="menu_extra"]
 offset_left = 245.0
-offset_top = 560.0
-offset_right = 464.0
-offset_bottom = 660.0
+offset_top = 530.0
+offset_right = 546.0
+offset_bottom = 642.0
 
 [node name="titulo_cartilha" type="Label" parent="menu_extra/VBoxContainer2"]
 layout_mode = 2
@@ -236,7 +172,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.999736, 0.993861, 0.996208, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("6_cwhcj")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 30
 text = "CARTILHA DA ALIANÇA"
 
 [node name="texto_cartilha" type="Label" parent="menu_extra/VBoxContainer2"]
@@ -245,22 +181,23 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("7_b0wcp")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 25
 text = "Conheça seu direito a uma
 alimentação saudável."
 
 [node name="botao_cartilha" type="Button" parent="menu_extra"]
 offset_left = 242.0
 offset_top = 652.0
-offset_right = 374.0
-offset_bottom = 683.0
+offset_right = 387.0
+offset_bottom = 692.0
 theme = ExtResource("8_l68n3")
 theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7366t")
 text = "BAIXAR"
 
 [node name="IconeExternal" type="Sprite2D" parent="menu_extra"]
-position = Vector2(270, 668)
-scale = Vector2(0.875, 0.916667)
+position = Vector2(266, 672)
 texture = ExtResource("9_oxror")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="menu_extra"]
@@ -275,7 +212,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("6_cwhcj")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 30
 text = "ALIANÇA PELA ALIMENTAÇÃO 
 ADEQUADA E SAUDÁVEL"
 
@@ -285,22 +222,24 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("7_b0wcp")
-theme_override_font_sizes/font_size = 18
-text = "Acesse o site da Aliança pela Alimentação 
-Adequada e Saudável para mais informação."
+theme_override_font_sizes/font_size = 25
+text = "Acesse o site da Aliança pela 
+Alimentação Adequada e 
+Saudável para mais informação."
 
 [node name="botao_alianca" type="Button" parent="menu_extra"]
 offset_left = 241.0
-offset_top = 874.0
-offset_right = 373.0
-offset_bottom = 905.0
+offset_top = 950.0
+offset_right = 386.0
+offset_bottom = 990.0
 theme = ExtResource("8_l68n3")
 theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vbhev")
 text = "SITE"
 
 [node name="IconeExternal2" type="Sprite2D" parent="menu_extra"]
-position = Vector2(274, 889)
-scale = Vector2(0.765625, 0.840278)
+position = Vector2(277, 970)
 texture = ExtResource("9_oxror")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="menu_extra"]
@@ -309,7 +248,7 @@ offset_top = 442.5
 offset_right = 270.0
 offset_bottom = 992.5
 size_flags_vertical = 4
-theme_override_constants/separation = 90
+theme_override_constants/separation = 120
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="menu_extra/VBoxContainer"]
@@ -323,15 +262,16 @@ texture = ExtResource("11_43m8k")
 stretch_mode = 2
 
 [node name="menu_opcoes" type="Node2D" parent="."]
+visible = false
 
 [node name="titulo_opcoes" type="Label" parent="menu_opcoes"]
-offset_left = 312.0
-offset_top = 330.0
-offset_right = 433.0
-offset_bottom = 376.0
+offset_left = 297.0
+offset_top = 325.0
+offset_right = 435.0
+offset_bottom = 377.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_p7c65")
-theme_override_font_sizes/font_size = 35
+theme_override_fonts/font = ExtResource("6_cwhcj")
+theme_override_font_sizes/font_size = 40
 text = "Opções"
 
 [node name="vol_efeitos" type="Label" parent="menu_opcoes"]

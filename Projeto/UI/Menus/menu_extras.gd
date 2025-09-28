@@ -1,11 +1,6 @@
 extends Node2D
 
-
-@onready var botao = $tap/esquerda
-@onready var estado_botao = true #true esquerda e false direita
 @onready var opcoes = get_node("menu_opcoes")
-
-
 
 
 func _on_botao_cartilha_pressed() -> void:
@@ -17,22 +12,18 @@ func _on_fechar_extras_pressed() -> void:
 	
 func _ready() -> void:
 	opcoes.visible = false
-		
+	$tap2.visible = false
 	
 	
 func _on_opcoes_pressed() -> void:
-	if estado_botao:
-		$tap/direita.play("movimento_direita")
-		estado_botao = false
-	await get_tree().create_timer(0.15).timeout
+	$tap1.visible = false
+	$tap2.visible = true
 	$menu_extra.visible = false
 	opcoes.visible = true
 	
 func _on_estrela_pressed() -> void:
-	if !estado_botao: 
-		$tap/esquerda.play("movimento_esquerda")
-		estado_botao = true
-	await get_tree().create_timer(0.15).timeout
+	$tap1.visible = true
+	$tap2.visible = false
 	opcoes.visible = false
 	$menu_extra.visible = true
 	
