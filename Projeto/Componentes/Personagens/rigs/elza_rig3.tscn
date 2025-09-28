@@ -313,6 +313,7 @@ filter_enabled = true
 filters = ["rig1/Skeleton2D/tronco/bracoDir:position", "rig1/Skeleton2D/tronco/bracoDir:rotation", "rig1/Skeleton2D/tronco/bracoDir:visible", "rig1/Skeleton2D/tronco/bracoEsq:position", "rig1/Skeleton2D/tronco/bracoEsq:rotation"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_8vajq"]
+filter_enabled = true
 filters = ["rig1/Skeleton2D/tronco/bracoDir:position", "rig1/Skeleton2D/tronco/bracoDir:rotation", "rig1/Skeleton2D/tronco/bracoDir:visible", "rig1/Skeleton2D/tronco/bracoEsq:position", "rig1/Skeleton2D/tronco/bracoEsq:rotation", "rig1/sprites/Lucas:visible", "rig1/sprites/cabeca/rostoIdleTriste:visible"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4g3gf"]
