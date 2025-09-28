@@ -50,6 +50,7 @@ func _quadrinhos_finalizados() -> void:
 
 
 func _on_pular_toggled(_toggled_on: bool) -> void:
+	$Pular.disabled = true
 	while !quadrinhos_terminados:
 		index_quadrinho_atual += 1
 		_ativar_quadrinho(index_quadrinho_atual)

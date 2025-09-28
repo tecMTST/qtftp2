@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=7 format=3 uid="uid://yqa74t7m06im"]
+
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_qo6xv"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_n5xdn"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_ne4ih"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="5_bjkpt"]
+
+[sub_resource type="Resource" id="Resource_uupu3"]
+script = ExtResource("2_n5xdn")
+scene = ExtResource("1_qo6xv")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_7m2wp"]
+script = ExtResource("2_n5xdn")
+scene = ExtResource("3_ne4ih")
+overrides = {
+"disabled": "true"
+}
+
+[resource]
+script = ExtResource("5_bjkpt")
+name = "celular"
+layer_list = Array[String](["10"])
+layer_info = {
+"": SubResource("Resource_uupu3"),
+"10": SubResource("Resource_7m2wp")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_n5xdn")]([])
+metadata/_latest_layer = ""
