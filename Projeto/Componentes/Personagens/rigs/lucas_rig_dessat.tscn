@@ -88,6 +88,7 @@ script = ExtResource("1_ml0f2")
 [node name="tronco" type="Polygon2D" parent="sprites"]
 position = Vector2(15.3412, 66.6605)
 offset = Vector2(-269, -375)
+antialiased = true
 texture = ExtResource("1_7vs35")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(263.789, 291.592, 223.573, 298.844, 205.772, 338.401, 196.542, 373.343, 193.245, 416.856, 205.113, 446.524, 236.099, 466.302, 278.293, 468.94, 315.213, 456.413, 337.629, 426.086, 342.244, 383.892, 333.014, 330.49, 315.213, 284.339)
@@ -97,6 +98,7 @@ bones = ["tronco", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "t
 [node name="babador" type="Polygon2D" parent="sprites"]
 position = Vector2(-18, -108)
 offset = Vector2(-419.659, -357.339)
+antialiased = true
 texture = ExtResource("1_7vs35")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(429.071, 293.618, 393.902, 296.59, 382.509, 334.235, 367.154, 379.31, 366.659, 409.526, 385.481, 430.825, 418.669, 434.292, 445.912, 421.909, 461.762, 393.18, 468.202, 349.59, 465.23, 310.955, 459.781, 292.132)
@@ -105,6 +107,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tron
 
 [node name="cabeca" type="Polygon2D" parent="sprites"]
 position = Vector2(-289, -273)
+antialiased = true
 texture = ExtResource("1_7vs35")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(249.515, 114.748, 216.16, 148.103, 211.541, 185.564, 196.147, 216.866, 200.765, 255.867, 233.607, 274.34, 285.949, 285.117, 334.699, 275.88, 358.818, 255.353, 383.449, 250.222, 392.173, 223.024, 384.989, 197.88, 376.265, 193.261, 369.081, 143.485, 344.449, 117.314, 292.107, 111.669)
@@ -114,6 +117,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 [node name="rostoIdle" type="Polygon2D" parent="sprites/cabeca"]
 position = Vector2(255, 217)
 offset = Vector2(-529, -149)
+antialiased = true
 texture = ExtResource("1_7vs35")
 skeleton = NodePath("../../../Skeleton2D")
 polygon = PackedVector2Array(535.786, 130.511, 503.184, 113.595, 494.572, 142.813, 511.796, 150.195, 514.872, 184.949, 531.787, 192.331, 546.243, 183.719, 550.856, 150.502, 576.692, 139.738, 564.697, 108.059)
@@ -123,6 +127,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pes
 [node name="rostoQuaseChorando" type="Polygon2D" parent="sprites/cabeca"]
 position = Vector2(255, 217)
 offset = Vector2(-529, -62)
+antialiased = true
 texture = ExtResource("1_7vs35")
 skeleton = NodePath("../../../Skeleton2D")
 polygon = PackedVector2Array(531.188, 44.8461, 504.49, 25.7758, 492.503, 55.7434, 508.304, 59.0126, 501.766, 91.1596, 527.374, 110.775, 559.521, 93.3391, 550.803, 60.1023, 579.136, 53.5639, 567.149, 21.9618)
@@ -133,6 +138,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pes
 visible = false
 position = Vector2(255, 217)
 offset = Vector2(-637, -59)
+antialiased = true
 texture = ExtResource("1_7vs35")
 skeleton = NodePath("../../../Skeleton2D")
 polygon = PackedVector2Array(610.458, 61.8389, 602.353, 47.4293, 618.113, 24.4639, 638.827, 46.5287, 681.606, 24.9142, 682.957, 46.5287, 664.044, 60.9383, 683.857, 99.2139, 653.687, 119.477, 620.815, 119.027, 610.008, 98.7636)
@@ -141,6 +147,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/
 
 [node name="cabelo" type="Polygon2D" parent="sprites"]
 position = Vector2(-359, -204)
+antialiased = true
 texture = ExtResource("1_7vs35")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(338.623, 22.9482, 289.513, 52.3008, 286.126, 84.4758, 293.465, 98.0232, 316.044, 83.3469, 362.895, 86.1692, 389.425, 113.828, 399.021, 145.439, 415.956, 158.986, 436.841, 144.875, 457.727, 151.648, 471.274, 127.94, 466.194, 78.8311, 435.148, 37.6245, 374.184, 22.3837)
