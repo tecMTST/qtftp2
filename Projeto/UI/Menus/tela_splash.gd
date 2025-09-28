@@ -11,8 +11,8 @@ func _on_anim_1_animation_finished(_anim_name: StringName) -> void:
 	$LogoTpt.hide()
 	$anim_2.play("fade_alianca")
 	$LogoAaas.show()
+	
 
 
-
-func _on_anim_2_animation_finished(_anim_name: StringName) -> void:
+func _on_anim_2_animation_finished(anim_name: StringName) -> void:
 	get_tree().change_scene_to_file("res://UI/Menus/menu_principal.tscn")
