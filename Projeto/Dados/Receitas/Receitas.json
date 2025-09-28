@@ -225,10 +225,6 @@
 				"alvo": "fogao"
 			},
 			{
-				"descricao" : "Tirar feijão do fogo",
-				"alvo" : "fogao"
-			},
-			{
 				"descricao" : "Servir o feijão",
 				"alvo" : "mesa"
 			}

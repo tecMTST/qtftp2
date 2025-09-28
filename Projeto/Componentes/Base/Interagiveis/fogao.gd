@@ -72,8 +72,7 @@ func _on_componente_interagivel_interagir(jogador: Player) -> void:
 			print_debug("  [-] jogador sem nada, fogão sem nada... nada pra fazer")
 			return
 		if objeto_na_mao.ingrediente.acoes[0].alvo == "fogao":
-			_jogador = jogador
-			_cozinhar_objeto(objeto_na_mao)
+			_cozinhar_objeto(jogador, objeto_na_mao)
 		else:
 			print_debug("  [-] ", objeto_na_mao.id, " não interage com fogão")
 
@@ -99,9 +98,11 @@ func _recolher_objeto() -> void:
 	objeto_no_fogao.transformar()
 
 
-func _cozinhar_objeto(objeto : IngredienteBase) -> void:
+func _cozinhar_objeto(jogador: Player, objeto : IngredienteBase) -> void:
 	print_debug("  [-] se preparando para cozinhar objeto")
-	objeto.ao_transformar_sucesso.connect(_on_posicionar_objeto_no_fogao)
+	if !objeto.ingrediente.acoes[0].evento:
+		_jogador = jogador
+		objeto.ao_transformar_sucesso.connect(_on_posicionar_objeto_no_fogao)
 	objeto.ao_transformar_falha.is_connected(_on_falhou_transformacao)
 	objeto.transformar()
 
