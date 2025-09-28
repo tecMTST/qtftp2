@@ -9,7 +9,7 @@ do Cutscene.olhar_para("elza", "direita")
 do Cutscene.trocar_rosto("carolina", "rostoFalandoFeliz")
 do Cutscene.trocar_rosto("elza", "rostoIdleFeliz")
 do Cutscene.trocar_rosto("elza", "rostoIdleFeliz")
-carolina: Tava[pause=0.4] [lspeed=0.35][wave amp=50.0 freq=5.0 connected=0]muito[/wave][lspeed] bom, mãe! Beijo!
+carolina: Tava[pause=0.4] [lspeed=0.35][wave amp=50.0 freq=5.0 connected=0]muito[/wave][lspeed] bom, mãe! Beijo![aa=3]
 [wait time="0.2"]
 do Cutscene.trocar_rosto("carolina", "rostoIdleFeliz")
 do Cutscene.mover_para("carolina", "Waypoint2")
@@ -18,14 +18,14 @@ do Cutscene.olhar_para("elza", "esquerda")
 do Cutscene.mover_para("elza", "Waypoint3")
 [wait time="3.0"]
 do Cutscene.trocar_rosto("elza", "rostoFalandoFeliz")
-elza: Vem, filho. Mamãe precisa trabalhar.
-elza: Vou te deixar na Luisa mas volto logo, tá?
+elza: Vem, filho. Mamãe precisa trabalhar.[aa=3]
+elza: Vou te deixar na Luisa mas volto logo, tá?[aa=3]
 do Cutscene.trocar_rosto("elza", "rostoIdleFeliz")
 audio "res://Recursos/Audio/Efeitos/bebe_feliz.ogg"
-lucas: ❤
-do Cutscene.executar_animacao("elza", "qtftd anims/pegar_Lucas_colo")
-[wait time="0.5"]
-do Cutscene.executar_animacao("elza", "qtftd anims/idle_segurando_Lucas")
+lucas: ❤[aa=3]
+do Cutscene.executar_funcao("elza", "pegar_lucas")
+[wait time="1.0"]
+do Cutscene.olhar_para("elza", "direita")
 [wait time="0.5"]
 do Cutscene.mover_para("elza", "Waypoint4")
 [wait time="2.0"]

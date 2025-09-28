@@ -138,6 +138,7 @@ prato_entregue=""
 ponto_entrega=""
 menu_geladeira=""
 personagem=""
+cutscene=""
 
 [gui]
 

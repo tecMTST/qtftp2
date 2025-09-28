@@ -29,3 +29,12 @@ func executar_animacao(id : String, animacao : String):
 		func(p : Personagem): return p.id == id
 	)[0] as Personagem
 	personagem.animacao(animacao)
+	
+func executar_funcao(id : String, funcao : String):
+	var personagem = get_tree().get_nodes_in_group("personagem").filter(
+		func(p : Personagem): return p.id == id
+	)[0] as Personagem
+	personagem.call(funcao)
+
+func finalizar_cena(proxima : String):
+	pass

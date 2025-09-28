@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://cqthgs7avlwee"]
 
-[ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_wc6yt"]
-[ext_resource type="Resource" uid="uid://d0pl0jmxpqahh" path="res://Dialogo/cutscene_fimdefase_fase1.dtl" id="2_wc6yt"]
+[ext_resource type="Script" path="res://Cenas/cutscene_fimdefase.gd" id="1_wc6yt"]
+[ext_resource type="Resource" path="res://Dialogo/cutscene_fimdefase_fase1.dtl" id="2_wc6yt"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="3_er45k"]
 [ext_resource type="Texture2D" uid="uid://cxb6qp0b7h80t" path="res://Recursos/Graficos/Cenas/Piso.svg" id="4_ggmc3"]
 [ext_resource type="Texture2D" uid="uid://b0wevbyj2yhx2" path="res://Recursos/Graficos/Cenas/Parede traseira.svg" id="5_p7m27"]

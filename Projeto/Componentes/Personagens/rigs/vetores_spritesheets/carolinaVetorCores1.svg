@@ -5,7 +5,7 @@
    viewBox="0 0 4191.06 2744.69"
    version="1.1"
    sodipodi:docname="carolinaVetorCores1.svg"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -19,13 +19,13 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="0.1767767"
-     inkscape:cx="2016.6685"
-     inkscape:cy="741.04791"
+     inkscape:zoom="0.50000001"
+     inkscape:cx="2818.9999"
+     inkscape:cy="515.99999"
      inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="Camada_1" />
   <defs
@@ -33,6 +33,13 @@
     <style
        id="style1">.cls-1{fill-rule:evenodd;}.cls-2{fill:#1d1e1c;}.cls-3{fill:#1d1d1b;}.cls-4{fill:#bebebe;}.cls-5{fill:none;stroke:#1d1d1b;stroke-miterlimit:10;}.cls-6{fill:#8e5344;}.cls-7{fill:#4b486b;}.cls-8{fill:#2a180e;}.cls-9{fill:#d7dee3;}</style>
   </defs>
+  <rect
+     style="fill:#8e5344;fill-opacity:1"
+     id="rect1"
+     width="873.38086"
+     height="1101.3119"
+     x="2290.1143"
+     y="-4" />
   <g
      id="g66"
      inkscape:label="baguncinha"
