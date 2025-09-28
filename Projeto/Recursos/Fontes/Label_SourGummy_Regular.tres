@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cmmbeb1vnduka"]
+
+[ext_resource type="FontFile" uid="uid://dgsx8f04jvfhg" path="res://Recursos/Fontes/SourGummy-Regular.ttf" id="1_uikd4"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/constants/outline_size = 10
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("1_uikd4")
