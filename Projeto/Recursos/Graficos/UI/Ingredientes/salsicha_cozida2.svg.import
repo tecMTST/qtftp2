@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clhfxslo2es38"
-path="res://.godot/imported/macoCouve2.svg-13ae7bafadac31cde0fda9d0fcd4f061.ctex"
+uid="uid://0pretkrmrr"
+path="res://.godot/imported/salsicha_cozida2.svg-920c74296e7387caa56c6ef45fd9fd4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Recursos/Graficos/UI/Ingredientes/macoCouve2.svg"
-dest_files=["res://.godot/imported/macoCouve2.svg-13ae7bafadac31cde0fda9d0fcd4f061.ctex"]
+source_file="res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida2.svg"
+dest_files=["res://.godot/imported/salsicha_cozida2.svg-920c74296e7387caa56c6ef45fd9fd4e.ctex"]
 
 [params]
 

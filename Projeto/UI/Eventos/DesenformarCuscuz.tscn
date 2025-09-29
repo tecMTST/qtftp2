@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dsnts70s2x6ks" path="res://UI/Interfaces/Modal.tscn" id="1_0k68q"]
 [ext_resource type="Script" uid="uid://d2cvdw1p8kcum" path="res://UI/Eventos/DesenformarAlimento.gd" id="2_rl88k"]
 [ext_resource type="Theme" uid="uid://cmmbeb1vnduka" path="res://Recursos/Fontes/Label_SourGummy_Regular.tres" id="3_rl88k"]
-[ext_resource type="Texture2D" uid="uid://ehydmw0tbg8c" path="res://Recursos/Graficos/UI/Ingredientes/cuscuzeira_fumaca.svg" id="3_skdxr"]
 [ext_resource type="Texture2D" uid="uid://crlfe4ulxss7i" path="res://Recursos/Graficos/UI/Ingredientes/presicao.svg" id="4_l2rbf"]
+[ext_resource type="Texture2D" uid="uid://c8w284annwrev" path="res://Recursos/Graficos/UI/Ingredientes/cuscuzeiraFumaca2.svg" id="5_c5aef"]
 [ext_resource type="Script" uid="uid://b0tgsnmsppesf" path="res://addons/events/quick_timer_progress_bar.gd" id="5_m7v2p"]
 [ext_resource type="Texture2D" uid="uid://rw1posujwrm6" path="res://Recursos/Graficos/UI/Componentes/popup_minigames/popup_minigame_barra_base_preenchimento.svg" id="6_l2rbf"]
 [ext_resource type="Script" uid="uid://cltnj5ehqln43" path="res://Scripts/UI/MovimentoPendulo.gd" id="6_skdxr"]
@@ -151,13 +151,12 @@ horizontal_alignment = 1
 [node name="ImagemEvento" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Instrucao" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 127.0
+offset_left = 188.0
 offset_top = -470.0
-offset_right = 212.0
-offset_bottom = -400.0
-scale = Vector2(4, 4)
+offset_right = 410.0
+offset_bottom = -192.0
 size_flags_vertical = 3
-texture = ExtResource("3_skdxr")
+texture = ExtResource("5_c5aef")
 stretch_mode = 5
 
 [node name="ImagemPendulo_barra" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/Instrucao" index="1"]

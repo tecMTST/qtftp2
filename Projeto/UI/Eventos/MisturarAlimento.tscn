@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dvk7wig5rrkp6" path="res://UI/Eventos/misturar_alimento.gd" id="2_ykf32"]
 [ext_resource type="Theme" uid="uid://cmmbeb1vnduka" path="res://Recursos/Fontes/Label_SourGummy_Regular.tres" id="3_nwqhu"]
 [ext_resource type="Texture2D" uid="uid://dihrvb0xvuihw" path="res://Recursos/Graficos/UI/Ingredientes/misturar.svg" id="4_ykf32"]
-[ext_resource type="Texture2D" uid="uid://dthvcmgkvbpqs" path="res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida.svg" id="5_g6d6e"]
+[ext_resource type="Texture2D" uid="uid://0pretkrmrr" path="res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida2.svg" id="5_ykf32"]
 [ext_resource type="Texture2D" uid="uid://mg6315joxyya" path="res://Recursos/Graficos/UI/Componentes/popup_minigames/popup_minigame_barra_base.svg" id="6_ykf32"]
 [ext_resource type="Script" uid="uid://b0tgsnmsppesf" path="res://addons/events/quick_timer_progress_bar.gd" id="7_yaxbm"]
 [ext_resource type="PackedScene" uid="uid://8fsmm7ipcxin" path="res://Componentes/Utilitarios/SpinButton.tscn" id="8_ykf32"]
@@ -39,9 +39,9 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("5_g6d6e")
+texture = ExtResource("5_ykf32")
 expand_mode = 2
-stretch_mode = 5
+stretch_mode = 3
 
 [node name="ProgressoEvento" type="TextureProgressBar" parent="MarginContainer/PanelContainer/VBoxContainer/ImagemEvento" index="0" node_paths=PackedStringArray("event_timer")]
 unique_name_in_owner = true
