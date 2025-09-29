@@ -13,17 +13,16 @@ var waypoint_index := 0
 var moving_forward := true
 
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
-@onready var sprite: CarolinaRig = $carolina_rig
+@onready var carolina_rig: CarolinaRig = $carolina_rig
 @onready var visualizador_percentual: VisualizadorPercentual = $VisualizadorPercentual
 @onready var bt_player: BTPlayer = $BTPlayer
 
-
 func _ready():
 	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
-		sprite.sentada = true
+		carolina_rig.sentada = true
 		return
 	bt_player.active = true
-	sprite.sentada = false
+	carolina_rig.sentada = false
 	ControleDeFase.prato_entregue.connect(_ir_comer)
 	visualizador_percentual.valor = 0
 
@@ -43,38 +42,50 @@ func _process(delta):
 
 func mover_para(waypoint : String):
 	target = null
-	sprite.celular = false
-	sprite.sentada = false
+	carolina_rig.celular = false
+	carolina_rig.sentada = false
 	await get_tree().create_timer(1.0).timeout
 	var markers := waypoints.get_children()
 	waypoint_index = markers.find_custom(func(f:Node2D): return f.name == waypoint)
 	select_new_waypoint()
 
 func mudar_rosto(rosto : String):
-	sprite.mudar_rosto(rosto)
+	carolina_rig.mudar_rosto(rosto)
 
 func olhar_para(direcao : String):
-	sprite.olhar_para(direcao)
+	carolina_rig.olhar_para(direcao)
 
 func animacao(nome_anim : String):
-	sprite.animacao_direta(nome_anim)
+	carolina_rig.animacao_direta(nome_anim)
 
 func ordem(index : int):
 	z_index = index
 
 func mover():
 	target = null
-	sprite.celular = false
-	sprite.sentada = false
+	carolina_rig.celular = false
+	carolina_rig.sentada = false
 	await get_tree().create_timer(1.0).timeout
 	select_new_waypoint()
 
 func parar():
 	target = null
+	
+func ajuntar():
+	target = null
+	carolina_rig.ajuntar()
 
 func celular():
 	target = null
-	sprite.celular = true
+	carolina_rig.celular = true
+	
+func sentar():
+	target = null
+	carolina_rig.sentar(true)
+	
+func levantar():
+	target = null
+	carolina_rig.levantar(false)
 
 func move_along_path(delta):
 	if agent.is_navigation_finished():

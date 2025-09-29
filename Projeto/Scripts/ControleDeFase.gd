@@ -49,9 +49,9 @@ func carregar_nivel():
 	if id_nivel == 0:
 		EstadoDeJogo.nivel_atual = 1
 		id_nivel = 1
-		if(EstadoDeJogo.nivel_atual==1):
+		if(EstadoDeJogo.nivel_atual==1) and filha:
 			filha.set_z_index(30)
-		elif(EstadoDeJogo.nivel_atual==2):
+		elif(EstadoDeJogo.nivel_atual==2) and filha:
 			filha.set_z_index(10)
 	var niveis = Globais.niveis.filter(func(item : Nivel) : return item.id == id_nivel)
 	if len(niveis) > 0:
