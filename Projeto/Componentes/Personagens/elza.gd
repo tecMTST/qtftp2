@@ -23,6 +23,7 @@ func _process(delta):
 func mover_para(waypoint : String):
 	target = null
 	elza_rig.amamentando = false
+	elza_rig.sentada = false
 	await get_tree().create_timer(1.0).timeout
 	var markers := waypoints.get_children()
 	waypoint_index = markers.find_custom(func(f:Node2D): return f.name == waypoint)
@@ -43,6 +44,7 @@ func ordem(index : int):
 func mover():
 	target = null
 	elza_rig.amamentando = false
+	elza_rig.sentada = false
 	await get_tree().create_timer(1.0).timeout
 	select_new_waypoint()
 
@@ -52,6 +54,10 @@ func parar():
 func segurando():
 	target = null
 	elza_rig.segurando = true
+	
+func ajuntar():
+	target = null
+	elza_rig.ajuntar()
 
 func pegar_lucas():
 	target = null
@@ -62,6 +68,14 @@ func pegar_lucas():
 func amamentando():
 	target = null
 	elza_rig.amamentando = true
+	
+func sentar():
+	target = null
+	elza_rig.sentar(true)
+	
+func levantar():
+	target = null
+	elza_rig.levantar(false)
 
 func move_along_path(delta):
 	if agent.is_navigation_finished():

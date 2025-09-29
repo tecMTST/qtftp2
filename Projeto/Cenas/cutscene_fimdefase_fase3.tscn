@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://745rr8g6h4n1"]
+[gd_scene load_steps=28 format=3 uid="uid://745rr8g6h4n1"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_xgtsr"]
 [ext_resource type="Resource" uid="uid://bakf4e0et2udx" path="res://Dialogo/fase3_fdf.dtl" id="2_b5aa4"]
@@ -16,83 +16,16 @@
 [ext_resource type="Texture2D" uid="uid://dqlbugdpq0qcd" path="res://Recursos/Graficos/Personagens/celular.svg" id="14_mux21"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="15_vc7u1"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunca/BaguncaCena.tscn" id="16_mj6ai"]
-[ext_resource type="Script" uid="uid://fhc7musjapc1" path="res://Componentes/Personagens/elza.gd" id="17_3ylqh"]
-[ext_resource type="PackedScene" uid="uid://daxpprdmxope6" path="res://Componentes/Personagens/rigs/elza_rig3.tscn" id="18_76dw7"]
+[ext_resource type="PackedScene" uid="uid://ra7kq174mnxo" path="res://Componentes/Personagens/Elza.tscn" id="18_pgaff"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="19_4ev03"]
 [ext_resource type="PackedScene" uid="uid://33ix112wt1og" path="res://Componentes/Personagens/luiza.tscn" id="19_b5aa4"]
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="20_nvv42"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="21_seoac"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ucjf"]
-radius = 29.0
-height = 76.0
-
-[sub_resource type="Animation" id="Animation_4ucjf"]
-resource_name = "Andar"
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_da2mp"]
-resource_name = "Andar_Segurando"
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_1xksx"]
-resource_name = "Parado"
-length = 4.0
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_dgr1c"]
-resource_name = "Parado_Segurando"
-length = 4.0
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_3qh2r"]
-length = 0.001
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oyw57"]
-_data = {
-&"Andar": SubResource("Animation_4ucjf"),
-&"Andar_Segurando": SubResource("Animation_da2mp"),
-&"Parado": SubResource("Animation_1xksx"),
-&"Parado_Segurando": SubResource("Animation_dgr1c"),
-&"RESET": SubResource("Animation_3qh2r")
-}
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_4ucjf"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c2vf6"]
-animation = &"Parado"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ucjf"]
-animation = &"Andar"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_da2mp"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_c2vf6")
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_4ucjf")
-blend_point_1/pos = 0.5
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_da2mp"]
-animation = &"Parado_Segurando"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dgr1c"]
-animation = &"Andar_Segurando"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_f4bm0"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_da2mp")
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_dgr1c")
-blend_point_1/pos = 0.5
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dgr1c"]
-graph_offset = Vector2(-444.773, -16.7364)
-nodes/Segurando/node = SubResource("AnimationNodeBlend2_4ucjf")
-nodes/Segurando/position = Vector2(280, 80)
-nodes/Velocidade/node = SubResource("AnimationNodeBlendSpace1D_da2mp")
-nodes/Velocidade/position = Vector2(-220, 60)
-nodes/VelocidadeSegurando/node = SubResource("AnimationNodeBlendSpace1D_f4bm0")
-nodes/VelocidadeSegurando/position = Vector2(-220, 280)
-nodes/output/position = Vector2(640, 140)
-node_connections = [&"Segurando", 0, &"Velocidade", &"Segurando", 1, &"VelocidadeSegurando", &"output", 0, &"Segurando"]
+[ext_resource type="PackedScene" uid="uid://b3duag0q0ek4e" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="23_pgaff"]
+[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="24_5r21c"]
+[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="25_vu776"]
+[ext_resource type="Script" uid="uid://12v2jbt778af" path="res://Scripts/Cutscenes/botao_avancar.gd" id="26_jy6ii"]
+[ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="27_us1ww"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
 vertices = PackedVector2Array(428.898, 572.188, 683.773, 1080.93, 7.79688, 1078.05, 189.82, 525, 678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 50.8984, 525, 551.242, 503.078, 682.406, 569.117, 678.562, 502.07)
@@ -101,6 +34,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690,
 
 [node name="CutsceneFimdeFaseTutorial" type="Node2D"]
 script = ExtResource("1_xgtsr")
+proxima_fase = "res://Cenas/cutscene_quadrinhos_fase_4.tscn"
 timeline = ExtResource("2_b5aa4")
 
 [node name="CenarioFundo" type="Node2D" parent="."]
@@ -192,34 +126,9 @@ bagunca_scene = ExtResource("16_mj6ai")
 waypoints = NodePath("../../Waypoints")
 cutscene = true
 
-[node name="Elza" type="CharacterBody2D" parent="Personagens" node_paths=PackedStringArray("waypoints") groups=["personagem"]]
-z_index = 1
-position = Vector2(461, 570)
-script = ExtResource("17_3ylqh")
+[node name="Elza" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("18_pgaff")]
+position = Vector2(465, 609)
 waypoints = NodePath("../../Waypoints")
-id = "elza"
-nome = "elza"
-
-[node name="elza rig" parent="Personagens/Elza" instance=ExtResource("18_76dw7")]
-scale = Vector2(0.13, 0.13)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/Elza"]
-position = Vector2(0, 24)
-shape = SubResource("CapsuleShape2D_4ucjf")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Personagens/Elza"]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagens/Elza"]
-libraries = {
-&"": SubResource("AnimationLibrary_oyw57")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="Personagens/Elza"]
-tree_root = SubResource("AnimationNodeBlendTree_dgr1c")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Segurando/blend_amount = 0
-parameters/Velocidade/blend_position = 0.0
-parameters/VelocidadeSegurando/blend_position = 0.0
 
 [node name="Luisa" parent="." instance=ExtResource("19_b5aa4")]
 position = Vector2(311, 819)
@@ -243,3 +152,50 @@ navigation_polygon = SubResource("NavigationPolygon_4xt8v")
 
 [node name="TransicaoCena" parent="." instance=ExtResource("21_seoac")]
 visible = false
+
+[node name="InteracoesDialogo" type="Node2D" parent="."]
+
+[node name="BotaoTemporizado" parent="InteracoesDialogo" instance=ExtResource("23_pgaff")]
+z_index = 300
+position = Vector2(82, 1171)
+radius = 50.0
+tempo = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="InteracoesDialogo"]
+
+[node name="Avancar" type="TextureButton" parent="InteracoesDialogo/CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -193.0
+offset_right = 126.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("24_5r21c")
+texture_pressed = ExtResource("25_vu776")
+stretch_mode = 5
+script = ExtResource("26_jy6ii")
+
+[node name="Label" type="Label" parent="InteracoesDialogo/CanvasLayer/Avancar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -23.0
+offset_right = 67.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("27_us1ww")
+text = "Avançar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="Acionado" from="InteracoesDialogo/BotaoTemporizado" to="." method="_on_botao_temporizado_acionado"]

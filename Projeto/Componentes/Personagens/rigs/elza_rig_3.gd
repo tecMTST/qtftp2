@@ -3,6 +3,7 @@ class_name ElzaRig extends Node2D
 var segurando : bool = false
 var segurando_lucas : bool = false
 var amamentando : bool = false
+var sentada : bool = false
 var ativo : bool = true
 var rostos : Array[Node] = []
 
@@ -26,6 +27,8 @@ func _process(_delta: float) -> void:
 			animation_tree.set("parameters/AmamentarLucas/blend_amount", 0)
 		if not segurando_lucas:
 			animation_tree.set("parameters/SegurarLucas/blend_amount", 0)
+		if not sentada:
+			animation_tree.set("parameters/Sentar/blend_amount", 0)
 	else:
 		animation_tree.set("parameters/Velocidade/blend_position", 0)
 
@@ -63,6 +66,23 @@ func olhar_para(direcao : String):
 		rig_1.scale.x = -abs(rig_1.scale.x)
 	else:
 		rig_1.scale.x = abs(rig_1.scale.x)
+		
+func sentar(instantaneo : bool = true):
+	if instantaneo:
+		animation_tree.set("parameters/Sentar/blend_amount", 1)
+	else:
+		var tween = create_tween()
+		tween.tween_property(animation_tree,"parameters/Sentar/blend_amount", 1, 0.3)
+	sentada = true
+	
+func levantar(instantaneo : bool = true):
+	if instantaneo:
+		animation_tree.set("parameters/Sentar/blend_amount", 0)
+	else:
+		var tween = create_tween()
+		tween.tween_property(animation_tree,"parameters/Sentar/blend_amount", 0, 0.3)
+	sentada = false
+
 
 func animacao_direta(nome : String):
 	animation_tree.active = false

@@ -36,5 +36,7 @@ func executar_funcao(id : String, funcao : String):
 	)[0] as Personagem
 	personagem.call(funcao)
 
-func finalizar_cena(proxima : String):
-	pass
+func finalizar_cena(cena : String):
+	var cena_atual = get_tree().current_scene	
+	if cena_atual.is_in_group("cutscene") :
+		cena_atual.proxima_cena(cena)

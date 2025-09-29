@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://daxpprdmxope6"]
+[gd_scene load_steps=30 format=3 uid="uid://daxpprdmxope6"]
 
 [ext_resource type="Script" uid="uid://cb5yn4hiefldh" path="res://Componentes/Personagens/rigs/elza_rig_3.gd" id="1_njihp"]
 [ext_resource type="Texture2D" uid="uid://p358035i513m" path="res://Componentes/Personagens/rigs/vetores_spritesheets/elzaVetorCores2.2.1.svg" id="1_tc3qu"]
@@ -291,7 +291,7 @@ animation = &"qtftd anims/idle_segurando_Lucas"
 animation = &"qtftd anims/luquinhas_mamando"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2qtra"]
-animation = &"qtftd anims/ajuntar"
+animation = &"anim_elza/ajuntar"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j7oms"]
 animation = &"qtftd anims/pegar_Lucas_colo"
@@ -299,14 +299,17 @@ animation = &"qtftd anims/pegar_Lucas_colo"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ys12b"]
 animation = &"anim_elza/luquinhas_mama_inicio"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qkmrg"]
+animation = &"anim_elza/Sentada"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cw56l"]
 animation = &"qtftd anims/pegar_segurar"
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_qkmrg"]
 
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_vrb7t"]
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_ghekw"]
 
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_10i5m"]
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_2qtra"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_jpkgy"]
 filter_enabled = true
@@ -315,6 +318,8 @@ filters = ["rig1/Skeleton2D/tronco/bracoDir:position", "rig1/Skeleton2D/tronco/b
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_8vajq"]
 filter_enabled = true
 filters = ["rig1/Skeleton2D/tronco/bracoDir:position", "rig1/Skeleton2D/tronco/bracoDir:rotation", "rig1/Skeleton2D/tronco/bracoDir:visible", "rig1/Skeleton2D/tronco/bracoEsq:position", "rig1/Skeleton2D/tronco/bracoEsq:rotation", "rig1/sprites/Lucas:visible", "rig1/sprites/cabeca/rostoIdleTriste:visible"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_vrb7t"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4g3gf"]
 animation = &"qtftd anims/idle"
@@ -329,7 +334,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_x465c")
 blend_point_1/pos = 0.5
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ghekw"]
-graph_offset = Vector2(-115.893, 188.869)
+graph_offset = Vector2(-170.208, 64.4919)
 nodes/AmamentarLucas/node = SubResource("AnimationNodeBlend2_njihp")
 nodes/AmamentarLucas/position = Vector2(521.195, 225.284)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_cw56l")
@@ -344,20 +349,24 @@ nodes/Animation/position = Vector2(-740, 320)
 "nodes/Animation 5/position" = Vector2(560, 740)
 "nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_ys12b")
 "nodes/Animation 6/position" = Vector2(1000, 720)
+"nodes/Animation 7/node" = SubResource("AnimationNodeAnimation_qkmrg")
+"nodes/Animation 7/position" = Vector2(1400, 820)
 nodes/InicioMamar/node = SubResource("AnimationNodeOneShot_qkmrg")
 nodes/InicioMamar/position = Vector2(1500, 360)
-nodes/Pegar/node = SubResource("AnimationNodeOneShot_vrb7t")
-nodes/Pegar/position = Vector2(880, 240)
-nodes/PegarLucas/node = SubResource("AnimationNodeOneShot_10i5m")
-nodes/PegarLucas/position = Vector2(1182.54, 269.01)
+nodes/Pegar/node = SubResource("AnimationNodeOneShot_ghekw")
+nodes/Pegar/position = Vector2(860, 200)
+nodes/PegarLucas/node = SubResource("AnimationNodeOneShot_2qtra")
+nodes/PegarLucas/position = Vector2(1160, 240)
 nodes/Segurar/node = SubResource("AnimationNodeBlend2_jpkgy")
 nodes/Segurar/position = Vector2(-160, 120)
 nodes/SegurarLucas/node = SubResource("AnimationNodeBlend2_8vajq")
 nodes/SegurarLucas/position = Vector2(200, 200)
+nodes/Sentar/node = SubResource("AnimationNodeBlend2_vrb7t")
+nodes/Sentar/position = Vector2(1840, 460)
 nodes/Velocidade/node = SubResource("AnimationNodeBlendSpace1D_t4n2k")
 nodes/Velocidade/position = Vector2(-680, 60)
-nodes/output/position = Vector2(1860, 320)
-node_connections = [&"AmamentarLucas", 0, &"SegurarLucas", &"AmamentarLucas", 1, &"Animation 3", &"InicioMamar", 0, &"PegarLucas", &"InicioMamar", 1, &"Animation 6", &"Pegar", 0, &"AmamentarLucas", &"Pegar", 1, &"Animation 4", &"PegarLucas", 0, &"Pegar", &"PegarLucas", 1, &"Animation 5", &"Segurar", 0, &"Velocidade", &"Segurar", 1, &"Animation", &"SegurarLucas", 0, &"Segurar", &"SegurarLucas", 1, &"Animation 2", &"output", 0, &"InicioMamar"]
+nodes/output/position = Vector2(2240, 360)
+node_connections = [&"AmamentarLucas", 0, &"SegurarLucas", &"AmamentarLucas", 1, &"Animation 3", &"InicioMamar", 0, &"PegarLucas", &"InicioMamar", 1, &"Animation 6", &"Pegar", 0, &"AmamentarLucas", &"Pegar", 1, &"Animation 4", &"PegarLucas", 0, &"Pegar", &"PegarLucas", 1, &"Animation 5", &"Segurar", 0, &"Velocidade", &"Segurar", 1, &"Animation", &"SegurarLucas", 0, &"Segurar", &"SegurarLucas", 1, &"Animation 2", &"Sentar", 0, &"InicioMamar", &"Sentar", 1, &"Animation 7", &"output", 0, &"Sentar"]
 
 [node name="elza rig" type="Node2D"]
 process_mode = 3
@@ -553,7 +562,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco",
 
 [node name="rostoChorando" type="Polygon2D" parent="rig1/sprites/cabeca"]
 visible = false
-position = Vector2(-413.453, 636.904)
+position = Vector2(-409.537, 613.412)
 scale = Vector2(2.62736, 2.62736)
 antialiased = true
 texture = ExtResource("4_x465c")
@@ -587,7 +596,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/
 
 [node name="rostoIdleFeliz" type="Polygon2D" parent="rig1/sprites/cabeca"]
 visible = false
-position = Vector2(1826.15, 125.293)
+position = Vector2(1833.98, 109.631)
 scale = Vector2(1.00836, 1.00836)
 offset = Vector2(-2793.12, -245.918)
 antialiased = true
@@ -599,7 +608,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pes
 
 [node name="rostoFalando" type="Polygon2D" parent="rig1/sprites/cabeca"]
 visible = false
-position = Vector2(1318.46, 882.269)
+position = Vector2(1327.59, 853.556)
 scale = Vector2(1.00836, 1.00836)
 offset = Vector2(-2793.12, -245.918)
 antialiased = true
@@ -611,7 +620,7 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco",
 
 [node name="rostoFalandoTriste" type="Polygon2D" parent="rig1/sprites/cabeca"]
 visible = false
-position = Vector2(1322.37, 502.476)
+position = Vector2(1319.76, 490.73)
 scale = Vector2(1.00836, 1.00836)
 offset = Vector2(-2793.12, -245.918)
 antialiased = true
@@ -622,7 +631,8 @@ uv = PackedVector2Array(2766.15, 466.89, 2667.09, 515.03, 2731.89, 618.718, 2736
 bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1), "tronco/pernaDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/pernaEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoDir", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "tronco/bracoEsq", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="rostoFalandoFeliz" type="Polygon2D" parent="rig1/sprites/cabeca"]
-position = Vector2(1328.9, 105.716)
+visible = false
+position = Vector2(1336.73, 100.495)
 scale = Vector2(1.00836, 1.00836)
 offset = Vector2(-2793.12, -245.918)
 antialiased = true
@@ -692,6 +702,7 @@ bone_angle = 0.0
 
 [node name="pernaEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-101, -126)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, -101, -126)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -742,4 +753,5 @@ parameters/PegarLucas/internal_active = false
 parameters/PegarLucas/request = 0
 parameters/Segurar/blend_amount = 0.0
 parameters/SegurarLucas/blend_amount = 0.0
+parameters/Sentar/blend_amount = 0.0
 parameters/Velocidade/blend_position = 0.0

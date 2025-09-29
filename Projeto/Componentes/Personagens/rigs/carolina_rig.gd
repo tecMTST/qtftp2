@@ -12,7 +12,6 @@ var rostos : Array[Node] = []
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var cabeca: Polygon2D = $rig1/sprites/cabeca
 
-
 func _ready() -> void:
 	rostos = cabeca.get_children()
 	parent = get_parent()
@@ -22,6 +21,7 @@ func _process(_delta: float) -> void:
 		var velocidade_animacao = remap(abs(parent.velocity.length()),0.0, 600.0, 0.0, 1.0)
 		animation_tree.set("parameters/Velocidade/blend_position", velocidade_animacao)
 		animation_tree.set("parameters/Sentada/blend_amount", 0)
+		animation_tree.set("parameters/Celular/blend_amount", 0)
 		var velocidade = parent.velocity.x
 		if velocidade > 0:
 			rig_1.scale.x = -abs(rig_1.scale.x)
@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 	elif not celular and sentada:
 		animation_tree.set("parameters/Velocidade/blend_position", 0)
 		animation_tree.set("parameters/Sentada/blend_amount", 1)
+		animation_tree.set("parameters/Celular/blend_amount", 0)
 		if inverter_sentada:
 			rig_1.scale.x = -abs(rig_1.scale.x)
 		else:
@@ -37,6 +38,7 @@ func _process(_delta: float) -> void:
 	elif celular and sentada:
 		animation_tree.set("parameters/Velocidade/blend_position", 0)
 		animation_tree.set("parameters/Sentada/blend_amount", 1)
+		animation_tree.set("parameters/Celular/blend_amount", 1)
 		if inverter_sentada:
 			rig_1.scale.x = -abs(rig_1.scale.x)
 		else:
@@ -44,6 +46,7 @@ func _process(_delta: float) -> void:
 	elif celular and not sentada:
 		animation_tree.set("parameters/Velocidade/blend_position", 0)
 		animation_tree.set("parameters/Sentada/blend_amount", 0)
+		animation_tree.set("parameters/Celular/blend_amount", 1)
 
 func mudar_rosto(nome : String):
 	for rosto in rostos:
@@ -60,3 +63,23 @@ func animacao_direta(nome : String):
 	animation_player.play(nome)
 	await animation_player.animation_finished
 	animation_tree.active = true
+	
+func sentar(instantaneo : bool = true):
+	if instantaneo:
+		animation_tree.set("parameters/Sentada/blend_amount", 1)
+	else:
+		var tween = create_tween()
+		tween.tween_property(animation_tree,"parameters/Sentada/blend_amount", 1, 0.3)
+	sentada = true
+	
+func levantar(instantaneo : bool = true):
+	if instantaneo:
+		animation_tree.set("parameters/Sentada/blend_amount", 0)
+	else:
+		var tween = create_tween()
+		tween.tween_property(animation_tree,"parameters/Sentada/blend_amount", 0, 0.3)
+	sentada = false
+	
+func ajuntar():
+	animation_tree.set("parameters/Velocidade/blend_position", 0.0)
+	animation_tree.set("parameters/Ajuntar/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
