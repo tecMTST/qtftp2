@@ -15,6 +15,7 @@ signal evento_finalizado(evento)
 const CENAS := {
 	"geladeira": preload("res://UI/Eventos/Geladeira.tscn"),
 	"cortar_alimento": preload("res://UI/Eventos/CortarAlimento.tscn"),
+	"misturar_alimento": preload("res://UI/Eventos/MisturarAlimento.tscn"),
 	"desenformar_cuscuz": preload("res://UI/Eventos/DesenformarCuscuz.tscn"),
 	"finalizar_fase": preload("res://UI/Menus/MenuFimDeJogo.tscn")
 }

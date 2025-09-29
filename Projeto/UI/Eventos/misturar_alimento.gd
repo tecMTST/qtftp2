@@ -12,7 +12,7 @@ func _ready() -> void:
 		receita_match = ControleDeFase.passo_atual.descricao
 	match receita_match:
 		"Colocar feijão no fogo":
-			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/cebola_alho.svg")
+			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/feijao.svg")
 	if %ProgressoEvento.running: return
 	%ProgressoEvento.failed.connect(_on_failed)
 	%ProgressoEvento.completed.connect(_on_completed)
@@ -36,21 +36,11 @@ func _on_cortou_alimento() -> void:
 
 func _on_failed():
 	Eventos.evento_falhou.emit()
-	var tween = create_tween()
-	tween.tween_property(self,"modulate", Color.INDIAN_RED, 2)
-	tween.set_trans(Tween.TRANS_ELASTIC)
-	tween.play()
-	await tween.finished
 	close()
 
 
 func _on_completed():
 	Eventos.evento_realizado.emit()
-	var tween = create_tween()
-	tween.tween_property(self,"modulate", Color.LIME_GREEN, 2)
-	tween.set_trans(Tween.TRANS_ELASTIC)
-	tween.play()
-	await tween.finished
 	close()
 
 

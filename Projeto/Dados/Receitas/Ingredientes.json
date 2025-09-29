@@ -6,18 +6,7 @@
 		"acoes" : [
 			{
 				"alvo" : "fogao",
-				"resultado" : "feijao_fervendo",
-			}
-		]
-	},
-	{
-		"id" : "feijao_fervendo",
-		"descricao" : "Feijão carioca fervendo no fogão",
-		"tempo": 5,
-		"caminho_sprite" : "res://Recursos/Graficos/UI/Ingredientes/panela.svg",
-		"acoes" : [
-			{
-				"alvo" : "fogao",
+				"evento": "misturar_alimento",
 				"resultado" : "feijao_pronto",
 			}
 		]
