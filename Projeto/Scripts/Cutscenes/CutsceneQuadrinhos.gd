@@ -50,8 +50,6 @@ func _quadrinhos_finalizados() -> void:
 
 
 func _on_pular_toggled(_toggled_on: bool) -> void:
-	while !quadrinhos_terminados:
-		index_quadrinho_atual += 1
-		_ativar_quadrinho(index_quadrinho_atual)
-		await lista_quadrinhos[index_quadrinho_atual].on_quadrinho_finalizado
+	$Pular.disabled = true
+	_quadrinhos_finalizados()
 	_carregar_proxima_cena()

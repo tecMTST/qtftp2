@@ -41,6 +41,7 @@ Cutscene="*res://Scripts/cutscene.gd"
 
 directories/dch_directory={
 "carolina": "res://Dialogo/carolina.dch",
+"celular": "res://Dialogo/celular.dch",
 "elza": "res://Dialogo/elza.dch",
 "lucas": "res://Dialogo/lucas.dch",
 "narrador": "res://Dialogo/narrador.dch"
@@ -53,9 +54,10 @@ directories/dtl_directory={
 layout/style_directory={
 "": "res://Dialogo/balao.tres",
 "balao": "res://Dialogo/balao.tres",
+"celular": "res://Dialogo/celular.tres",
 "narrador": "res://Dialogo/narrador.tres"
 }
-layout/style_list=["res://Dialogo/balao.tres", "res://Dialogo/narrador.tres"]
+layout/style_list=["res://Dialogo/balao.tres", "res://Dialogo/narrador.tres", "res://Dialogo/celular.tres"]
 layout/default_style="res://Dialogo/balao.tres"
 glossary/default_case_sensitive=true
 variables={}

@@ -359,8 +359,6 @@ metadata/_custom_type_script = "uid://balal13nfhegi"
 [connection signal="acao_ativada" from="Personagens/Player" to="." method="_on_player_acao_ativada"]
 [connection signal="acao_desativada" from="Personagens/Player" to="." method="_on_player_acao_desativada"]
 [connection signal="pressed" from="Molduras/BotaoPausa" to="." method="_on_botao_pausa_pressed"]
-[connection signal="pressed" from="Molduras/BotaoSkip" to="Molduras/BotaoSkip" method="_on_pressed"]
-[connection signal="released" from="Molduras/BotaoSkip" to="Molduras/BotaoSkip" method="_on_released"]
 [connection signal="pressed" from="Molduras/BotaoFim" to="." method="_on_botao_fim_pressed"]
 [connection signal="continuar" from="CanvasLayer/pausar" to="." method="_on_pausar_continuar"]
 [connection signal="finalizado" from="Briefing" to="." method="_on_briefing_finalizado"]

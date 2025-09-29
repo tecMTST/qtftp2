@@ -1,12 +1,14 @@
 do ControleDeAudio.toca_musica("quadrinhos")
-do Cutscene.trocar_rosto("carolina", "rostoIdle")
+carolina: Que fome…
 do Cutscene.olhar_para("elza", "direita")
 [wait time="2.0"]
 elza: !!
-narrador: Luisa diz\: Tive notícias do Felix hoje, Elza!
-narrador: Luisa diz\: Parece que viram ele na rua.
+[style name="celular"]
+elza: [b]Luisa diz\:[/b] Tive notícias do Felix hoje, Elza!
+elza: [b]Luisa diz\:[/b] Parece que viram ele na rua.
+[style]
 do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
-elza:   [shake rate=20.0 level=5 connected=1]...[/shake]  
+elza: [shake rate=20.0 level=5 connected=1]...[/shake]
 [wait time="0.2"]
 do Cutscene.mover_para("carolina", "Waypoint1")
 [wait time="5.0"]

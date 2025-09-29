@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=9 format=3 uid="uid://4wke6l24pl3f"]
+
+[ext_resource type="PackedScene" uid="uid://syki6k0e6aac" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn" id="1_g755g"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_jchcn"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_m4k5w"]
+[ext_resource type="PackedScene" uid="uid://d2it0xiap3gnt" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn" id="4_3o7ae"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="5_h5qbo"]
+
+[sub_resource type="Resource" id="Resource_d07ue"]
+script = ExtResource("2_jchcn")
+scene = ExtResource("1_g755g")
+overrides = {
+"bubble_count": "5.0"
+}
+
+[sub_resource type="Resource" id="Resource_0c1js"]
+script = ExtResource("2_jchcn")
+scene = ExtResource("3_m4k5w")
+overrides = {
+"disabled": "true"
+}
+
+[sub_resource type="Resource" id="Resource_wrcfo"]
+script = ExtResource("2_jchcn")
+scene = ExtResource("4_3o7ae")
+overrides = {
+"behaviour_distance": "70.0",
+"bold_font": "\"Inter-VariableFont_opsz,wght.ttf\"",
+"bold_italic_font": "\"Inter-VariableFont_opsz,wght.ttf\"",
+"box_modulate": "Color(0.0705882, 0.54902, 0.494118, 1)",
+"box_wobble_amount": "0.0",
+"box_wobble_detail": "0.0",
+"box_wobble_speed": "0.1",
+"choices_text_font": "\"res://Recursos/Fontes/SourGummy-Medium.ttf\"",
+"italic_font": "\"Inter-VariableFont_opsz,wght.ttf\"",
+"name_label_alignment": "1",
+"name_label_color": "Color(1, 1, 1, 1)",
+"name_label_enabled": "false",
+"name_label_font": "\"res://Recursos/Fontes/SourGummy-Bold.ttf\"",
+"name_label_font_size": "20.0",
+"name_label_use_character_color": "false",
+"normal_font": "\"res://Recursos/Fontes/Inter-VariableFont_opsz,wght.ttf\"",
+"text_color": "Color(1, 1, 1, 1)",
+"text_max_width": "250.0",
+"text_size": "20.0"
+}
+
+[resource]
+script = ExtResource("5_h5qbo")
+name = "celular"
+layer_list = Array[String](["10", "11"])
+layer_info = {
+"": SubResource("Resource_d07ue"),
+"10": SubResource("Resource_0c1js"),
+"11": SubResource("Resource_wrcfo")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_jchcn")]([])
+metadata/_latest_layer = "10"

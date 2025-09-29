@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqbg3mylmsc6b"]
+[gd_scene load_steps=28 format=3 uid="uid://bqbg3mylmsc6b"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_jqomp"]
 [ext_resource type="Resource" uid="uid://fe65svnrbnm1" path="res://Dialogo/cutscene_fimdefase_tutorial.dtl" id="2_15yf7"]
@@ -19,6 +19,13 @@
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="17_583kr"]
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="18_mgjum"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="19_lmnw7"]
+[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="21_e1xh3"]
+[ext_resource type="Texture2D" uid="uid://c6y62cg4fj4hs" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_default_right.svg" id="21_x8eg4"]
+[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="22_tnome"]
+[ext_resource type="Texture2D" uid="uid://c4xa0lkf3ns1s" path="res://Recursos/Graficos/UI/Componentes/button_small/button_small_pressed_right.svg" id="22_ypn35"]
+[ext_resource type="Script" uid="uid://12v2jbt778af" path="res://Scripts/Cutscenes/botao_avancar.gd" id="23_phwxl"]
+[ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="24_tpbj3"]
+[ext_resource type="Script" uid="uid://bx0d7k2wf56au" path="res://Scripts/Cutscenes/botao_skip.gd" id="25_bworu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
 vertices = PackedVector2Array(428.898, 572.188, 683.773, 1080.93, 7.79688, 1078.05, 189.82, 525, 678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 50.8984, 525, 551.242, 503.078, 682.406, 569.117, 678.562, 502.07)
@@ -134,3 +141,51 @@ navigation_polygon = SubResource("NavigationPolygon_4xt8v")
 
 [node name="TransicaoCena" parent="." instance=ExtResource("19_lmnw7")]
 visible = false
+
+[node name="InteracoesDialogo" type="Node2D" parent="."]
+
+[node name="BotaoSkip" type="TouchScreenButton" parent="InteracoesDialogo"]
+process_mode = 3
+z_index = 300
+position = Vector2(43, 1111)
+scale = Vector2(1.12222, 1.12222)
+texture_normal = ExtResource("21_x8eg4")
+texture_pressed = ExtResource("22_ypn35")
+script = ExtResource("25_bworu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="InteracoesDialogo"]
+
+[node name="Avancar" type="TextureButton" parent="InteracoesDialogo/CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -193.0
+offset_right = 126.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("21_e1xh3")
+texture_pressed = ExtResource("22_tnome")
+stretch_mode = 5
+script = ExtResource("23_phwxl")
+
+[node name="Label" type="Label" parent="InteracoesDialogo/CanvasLayer/Avancar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -23.0
+offset_right = 67.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("24_tpbj3")
+text = "Avançar"
+horizontal_alignment = 1
+vertical_alignment = 1
