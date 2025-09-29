@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bqbg3mylmsc6b"]
+[gd_scene load_steps=28 format=3 uid="uid://bqbg3mylmsc6b"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_jqomp"]
 [ext_resource type="Resource" uid="uid://fe65svnrbnm1" path="res://Dialogo/cutscene_fimdefase_tutorial.dtl" id="2_15yf7"]
@@ -15,9 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cjdso8f820o6i" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="13_ig24r"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="14_sx0ql"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunca/BaguncaCena.tscn" id="15_qgnc8"]
-[ext_resource type="Script" uid="uid://fhc7musjapc1" path="res://Componentes/Personagens/elza.gd" id="16_15yf7"]
+[ext_resource type="PackedScene" uid="uid://ra7kq174mnxo" path="res://Componentes/Personagens/Elza.tscn" id="16_jqomp"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="17_583kr"]
-[ext_resource type="PackedScene" uid="uid://daxpprdmxope6" path="res://Componentes/Personagens/rigs/elza_rig3.tscn" id="17_sm064"]
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="18_mgjum"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="19_lmnw7"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="21_e1xh3"]
@@ -28,83 +27,12 @@
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="24_tpbj3"]
 [ext_resource type="Script" uid="uid://bx0d7k2wf56au" path="res://Scripts/Cutscenes/botao_skip.gd" id="25_bworu"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ucjf"]
-radius = 29.0
-height = 76.0
-
-[sub_resource type="Animation" id="Animation_4ucjf"]
-resource_name = "Andar"
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_da2mp"]
-resource_name = "Andar_Segurando"
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_1xksx"]
-resource_name = "Parado"
-length = 4.0
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_dgr1c"]
-resource_name = "Parado_Segurando"
-length = 4.0
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_3qh2r"]
-length = 0.001
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oyw57"]
-_data = {
-&"Andar": SubResource("Animation_4ucjf"),
-&"Andar_Segurando": SubResource("Animation_da2mp"),
-&"Parado": SubResource("Animation_1xksx"),
-&"Parado_Segurando": SubResource("Animation_dgr1c"),
-&"RESET": SubResource("Animation_3qh2r")
-}
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_4ucjf"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c2vf6"]
-animation = &"Parado"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ucjf"]
-animation = &"Andar"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_da2mp"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_c2vf6")
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_4ucjf")
-blend_point_1/pos = 0.5
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_da2mp"]
-animation = &"Parado_Segurando"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dgr1c"]
-animation = &"Andar_Segurando"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_f4bm0"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_da2mp")
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_dgr1c")
-blend_point_1/pos = 0.5
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dgr1c"]
-graph_offset = Vector2(-444.773, -16.7364)
-nodes/Segurando/node = SubResource("AnimationNodeBlend2_4ucjf")
-nodes/Segurando/position = Vector2(280, 80)
-nodes/Velocidade/node = SubResource("AnimationNodeBlendSpace1D_da2mp")
-nodes/Velocidade/position = Vector2(-220, 60)
-nodes/VelocidadeSegurando/node = SubResource("AnimationNodeBlendSpace1D_f4bm0")
-nodes/VelocidadeSegurando/position = Vector2(-220, 280)
-nodes/output/position = Vector2(640, 140)
-node_connections = [&"Segurando", 0, &"Velocidade", &"Segurando", 1, &"VelocidadeSegurando", &"output", 0, &"Segurando"]
-
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
 vertices = PackedVector2Array(428.898, 572.188, 683.773, 1080.93, 7.79688, 1078.05, 189.82, 525, 678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 50.8984, 525, 551.242, 503.078, 682.406, 569.117, 678.562, 502.07)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 7, 6, 3), PackedInt32Array(0, 3, 6, 9), PackedInt32Array(10, 0, 9, 11)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 445, 582, 700, 1091, -6, 1088, 176, 535, 41, 535)])
 
-[node name="CutsceneFimdeFaseTutorial" type="Node2D"]
+[node name="CutsceneFimdeFaseTutorial" type="Node2D" groups=["cutscene"]]
 script = ExtResource("1_jqomp")
 timeline = ExtResource("2_15yf7")
 
@@ -191,33 +119,9 @@ bagunca_scene = ExtResource("15_qgnc8")
 waypoints = NodePath("../../Waypoints")
 cutscene = true
 
-[node name="Elza" type="CharacterBody2D" parent="Personagens" node_paths=PackedStringArray("waypoints") groups=["personagem"]]
-position = Vector2(255, 606)
-script = ExtResource("16_15yf7")
+[node name="Elza" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("16_jqomp")]
+position = Vector2(248, 559)
 waypoints = NodePath("../../Waypoints")
-id = "elza"
-nome = "elza"
-
-[node name="elza rig" parent="Personagens/Elza" instance=ExtResource("17_sm064")]
-scale = Vector2(0.13, 0.13)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/Elza"]
-position = Vector2(0, 24)
-shape = SubResource("CapsuleShape2D_4ucjf")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Personagens/Elza"]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagens/Elza"]
-libraries = {
-&"": SubResource("AnimationLibrary_oyw57")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="Personagens/Elza"]
-tree_root = SubResource("AnimationNodeBlendTree_dgr1c")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Segurando/blend_amount = 0
-parameters/Velocidade/blend_position = 0.0
-parameters/VelocidadeSegurando/blend_position = 0.0
 
 [node name="CenarioiFront" type="Node2D" parent="."]
 z_index = 15

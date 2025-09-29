@@ -1,11 +1,13 @@
 extends TouchScreenButton
 
+@onready var _is_cutscene := get_tree().current_scene.name.to_lower().begins_with('cutscene')
+
 func _ready() -> void:
 	pressed.connect(_on_pressed)
 	released.connect(_on_released)
 
 func _process(_delta: float) -> void:
-	if (get_tree().current_scene.name.begins_with('cutscene')):
+	if (_is_cutscene):
 		visible = true
 		return
 	visible = ControleDeFase.travar_dialogos && ControleDeFase.esta_dialogando && !get_tree().paused

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsi1hrb4is74n"]
+[gd_scene load_steps=11 format=3 uid="uid://bsi1hrb4is74n"]
 
 [ext_resource type="Script" uid="uid://82iaul8d3yya" path="res://UI/Menus/menu_principal.gd" id="1_07iuf"]
 [ext_resource type="Theme" uid="uid://lw7x37namdhi" path="res://UI/botao_menu_principal.tres" id="2_v6y4k"]
@@ -8,6 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cjqu54u6f50c8" path="res://Recursos/Graficos/UI/Componentes/logos/simbolo_tpt.svg" id="5_v6y4k"]
 
 [sub_resource type="Theme" id="Theme_b6rvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22q4l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2aayc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjsyy"]
 
 [node name="MenuPrincipal" type="Node2D"]
 process_mode = 3
@@ -27,6 +33,7 @@ theme_override_constants/separation = 9
 layout_mode = 2
 theme = ExtResource("2_v6y4k")
 theme_override_constants/outline_size = 11
+theme_override_styles/focus = SubResource("StyleBoxEmpty_22q4l")
 text = "NOVO JOGO
 "
 
@@ -36,6 +43,7 @@ layout_mode = 2
 theme = ExtResource("2_v6y4k")
 theme_override_constants/outline_size = 11
 theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2aayc")
 disabled = true
 text = "CONTINUAR"
 
@@ -43,6 +51,7 @@ text = "CONTINUAR"
 layout_mode = 2
 theme = ExtResource("2_v6y4k")
 theme_override_constants/outline_size = 11
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vjsyy")
 text = "EXTRAS"
 
 [node name="LogoQtftd" type="Sprite2D" parent="CenterContainer"]
@@ -64,6 +73,7 @@ mouse_filter = 2
 texture = ExtResource("3_v6y4k")
 
 [node name="TransicaoCena" parent="." instance=ExtResource("4_26fyp")]
+visible = false
 
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="CenterContainer/BotoesPrincipais/continuar" to="." method="_on_continuar_pressed"]

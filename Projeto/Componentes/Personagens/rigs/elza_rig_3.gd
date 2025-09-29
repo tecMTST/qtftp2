@@ -34,10 +34,10 @@ func ajuntar():
 	animation_tree.set("parameters/Pegar/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
 func pegar_lucas():
+	segurando_lucas = true
 	animation_tree.set("parameters/PegarLucas/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 	await get_tree().create_timer(0.5).timeout
 	animation_tree.set("parameters/SegurarLucas/blend_amount", 1)
-	segurando_lucas = true
 
 func amamentar():
 	if not segurando_lucas:

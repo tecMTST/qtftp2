@@ -22,8 +22,6 @@ func _process(delta):
 
 func mover_para(waypoint : String):
 	target = null
-	elza_rig.segurando = false
-	elza_rig.segurando_lucas = false
 	elza_rig.amamentando = false
 	await get_tree().create_timer(1.0).timeout
 	var markers := waypoints.get_children()
@@ -44,8 +42,6 @@ func ordem(index : int):
 
 func mover():
 	target = null
-	elza_rig.segurando = false
-	elza_rig.segurando_lucas = false
 	elza_rig.amamentando = false
 	await get_tree().create_timer(1.0).timeout
 	select_new_waypoint()
@@ -57,9 +53,11 @@ func segurando():
 	target = null
 	elza_rig.segurando = true
 
-func segurando_lucas():
+func pegar_lucas():
 	target = null
-	elza_rig.segurando_lucas = true
+	var berco = get_tree().get_first_node_in_group("berco") as Berco
+	berco.ocultar_lucas()
+	elza_rig.pegar_lucas()
 
 func amamentando():
 	target = null
