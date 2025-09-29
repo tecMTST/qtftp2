@@ -1,18 +1,17 @@
 do ControleDeAudio.toca_musica("quadrinhos")
-carolina: Que fome…
 do Cutscene.olhar_para("elza", "direita")
 [wait time="2.0"]
-elza: !!
+elza: !![aa=3]
 [style name="celular"]
-elza: [b]Luisa diz\:[/b] Tive notícias do Felix hoje, Elza!
-elza: [b]Luisa diz\:[/b] Parece que viram ele na rua.
+elza: Luisa diz\: Tive notícias do Felix hoje, Elza![aa=3]
+elza: Luisa diz\: Parece que viram ele na rua.[aa=3]
 [style]
 do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
-elza: [shake rate=20.0 level=5 connected=1]...[/shake]
+elza: [shake rate=20.0 level=5 connected=1][lspeed=0.4][wave amp=50.0 freq=5.0 connected=0]. . .[/wave][lspeed][/shake][aa=3]
 [wait time="0.2"]
 do Cutscene.mover_para("carolina", "Waypoint1")
 [wait time="5.0"]
-carolina: O que que aconteceu, mãe?
+carolina: O que que aconteceu, mãe?[aa=3]
 do Cutscene.mover_para("elza", "Waypoint5")
 [wait time="0.1"]
 do Cutscene.olhar_para("elza", "esquerda")
@@ -20,12 +19,12 @@ do Cutscene.olhar_para("elza", "esquerda")
 do Cutscene.mover_para("elza", "Waypoint4")
 [wait time="4.0"]
 do Cutscene.trocar_rosto("elza", "rostoFalando")
-elza: Nada, filha.
-elza: Congela a comida pra mim, tá?
-elza: E fica de olho no seu irmão, hein!
+elza: Nada, filha.[aa=3]
+elza: Congela a comida pra mim, tá?[aa=3]
+elza: E fica de olho no seu irmão, hein![aa=3]
 do Cutscene.trocar_rosto("elza", "rostoIdle")
 do Cutscene.trocar_rosto("carolina", "rostoFalando")
-carolina: Pode deixar , mãe.
+carolina: Pode deixar , mãe.[aa=3]
 do Cutscene.trocar_rosto("carolina", "rostoIdle")
 [wait time="0.5"]
 do Cutscene.mover_para("elza", "Waypoint2")
