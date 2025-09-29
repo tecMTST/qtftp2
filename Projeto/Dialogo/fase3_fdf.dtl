@@ -7,22 +7,51 @@ do Cutscene.mover_para("carolina", "Waypoint1")
 do Cutscene.trocar_rosto("carolina", "rostoFalandoTriste")
 carolina: Mãe, [pause=1]a gente não tem o que comer?[aa=3]
 do Cutscene.trocar_rosto("carolina", "rostoIdleTriste")
-elza: [shake rate=20.0 level=5 connected=1][lspeed=0.5][wave amp=50.0 freq=5.0 connected=0]Filha...[/wave][lspeed][/shake][aa=3]
+elza: [shake rate=20.0 level=5 connected=1][lspeed=0.5]Filha...[lspeed][/shake][aa=3]
 [wait time="2.0"]
 do Cutscene.mover_para("carolina", "Waypoint5")
 [wait time="2.0"]
 do Cutscene.olhar_para("carolina", "direita")
-Elza! Carol!
-do Cutscene.trocar_rosto("elza", "rostoDormindo")
-[wait time="1.0"]
-[wait time="1.0"]
-do Cutscene.trocar_rosto("carolina", "rostoIdleTriste")
-[wait time="5.0"]
-do Cutscene.trocar_rosto("carolina", "rostoFalandoTriste")
-carolina: Mãe, a Luisa tá te ligando.[aa=3]
-do Cutscene.trocar_rosto("carolina", "rostoIdleTriste")
+Elza! Carol![aa=3]
+Sabia que tinha algo errado![aa=3]
 [wait time="2.0"]
-do Cutscene.trocar_rosto("carolina", "rostoFalandoTriste")
-carolina: É… Deixa ela dormir.[aa=3]
-do Cutscene.trocar_rosto("carolina", "rostoIdleTriste")
+do Cutscene.trocar_rosto("elza", "rostoFalandoTriste")
+elza: [shake rate=20.0 level=5 connected=1]Lu...[/shake][aa=3]
+elza: Não sei o que fazer.[aa=3]
+elza: Se pago as contas, não compro comida.[aa=3]
+elza: Se compro comida, não pago as contas.[aa=3]
+elza: Tudo que eu quero é criar meus filhos bem.[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
+[wait time="1.0"]
+Isso não é sua culpa, Elza![aa=3]
+Já estive nesse lugar também.[aa=3]
+E ninguém tem que passar fome.[aa=3]
+Isso é muito grave, gravíssimo![aa=3]
+Você tem o direito a se alimentar![aa=3]
+do Cutscene.trocar_rosto("elza", "rostoFalandoTriste")
+elza: O direito?[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
+Isso, olha esta cartilha aqui.[aa=3]
+[wait time="1.0"]
+do Cutscene.executar_animacao("elza", "anim_elza/receber_cartilha")
+[wait time="2.0"]
+narrador: Você ganhou a Cartilha![aa=3]
+narrador: O título é um pouco longo…[aa=3]
+narrador: “Exigibilidade do Direito a Estar Livre da Fome”.[aa=3]
+narrador: Mas a leitura era bem fácil![aa=3]
+[wait time="1.0"]
+do Cutscene.trocar_rosto("carolina", "rostoIdle")
+do Cutscene.trocar_rosto("elza", "rostoFalando")
+elza: Mas como a gente tira isso do papel?[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoIdle")
+Vem comigo![aa=3]
+do Cutscene.mover_para("carolina", "Waypoint2")
+do Cutscene.mover_para("elza", "Waypoint3")
+do Cutscene.executar_funcao("elza", "pegar_lucas")
+[wait time="1.0"]
+do Cutscene.olhar_para("elza", "direita")
+[wait time="0.5"]
+do Cutscene.mover_para("elza", "Waypoint4")
+[wait time="2.0"]
+do Cutscene.mover_para("elza", "Waypoint2")
 [wait time="2.0"]
