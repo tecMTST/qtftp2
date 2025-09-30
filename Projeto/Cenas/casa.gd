@@ -18,7 +18,7 @@ func _ready() -> void:
 	SaveService.SaveGame()
 	pausar.hide()
 	briefing.iniciar()
-	if EstadoDeJogo.nivel_atual==3 or EstadoDeJogo.nivel_atual==4 : 
+	if EstadoDeJogo.nivel_atual==3 or EstadoDeJogo.nivel_atual==4 :
 		filtro_dessaturar.show()
 	else :
 		filtro_dessaturar.hide()
