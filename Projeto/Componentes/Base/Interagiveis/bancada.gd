@@ -7,13 +7,14 @@ var objeto_na_bancada: IngredienteBase = null
 var _jogador: Player
 
 @onready var indicador: Sprite2D = $Indicador
+@onready var indicador_2: Sprite2D = $Indicador2
 
 func _ready() -> void:
 	nome = "Bancada"
 
 func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("bancada")
-
+	indicador_2.visible = ControleDeFase.verifica_proximo_ponto("bancada")
 
 func eliminar_ingrediente() -> void:
 	if objeto_na_bancada != null: objeto_na_bancada.destruir()
