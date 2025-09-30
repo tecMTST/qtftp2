@@ -114,7 +114,7 @@ position = Vector2(197, 583)
 position = Vector2(507, 716)
 
 [node name="Waypoint7" type="Marker2D" parent="Waypoints"]
-position = Vector2(314, 809)
+position = Vector2(311, 817)
 
 [node name="Personagens" type="Node2D" parent="."]
 z_index = 5
@@ -130,9 +130,10 @@ cutscene = true
 position = Vector2(465, 609)
 waypoints = NodePath("../../Waypoints")
 
-[node name="Luisa" parent="." instance=ExtResource("19_b5aa4")]
-position = Vector2(311, 819)
+[node name="Luisa" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("19_b5aa4")]
+position = Vector2(475, 1156)
 scale = Vector2(0.29, 0.29)
+waypoints = NodePath("../../Waypoints")
 
 [node name="CenarioiFront" type="Node2D" parent="."]
 z_index = 15

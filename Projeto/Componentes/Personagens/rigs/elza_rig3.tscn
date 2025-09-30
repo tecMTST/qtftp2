@@ -334,7 +334,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_x465c")
 blend_point_1/pos = 0.5
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ghekw"]
-graph_offset = Vector2(-170.208, 64.4919)
+graph_offset = Vector2(-179.712, 105.442)
 nodes/AmamentarLucas/node = SubResource("AnimationNodeBlend2_njihp")
 nodes/AmamentarLucas/position = Vector2(521.195, 225.284)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_cw56l")
@@ -365,7 +365,7 @@ nodes/Sentar/node = SubResource("AnimationNodeBlend2_vrb7t")
 nodes/Sentar/position = Vector2(1840, 460)
 nodes/Velocidade/node = SubResource("AnimationNodeBlendSpace1D_t4n2k")
 nodes/Velocidade/position = Vector2(-680, 60)
-nodes/output/position = Vector2(2240, 360)
+nodes/output/position = Vector2(2460, 360)
 node_connections = [&"AmamentarLucas", 0, &"SegurarLucas", &"AmamentarLucas", 1, &"Animation 3", &"InicioMamar", 0, &"PegarLucas", &"InicioMamar", 1, &"Animation 6", &"Pegar", 0, &"AmamentarLucas", &"Pegar", 1, &"Animation 4", &"PegarLucas", 0, &"Pegar", &"PegarLucas", 1, &"Animation 5", &"Segurar", 0, &"Velocidade", &"Segurar", 1, &"Animation", &"SegurarLucas", 0, &"Segurar", &"SegurarLucas", 1, &"Animation 2", &"Sentar", 0, &"InicioMamar", &"Sentar", 1, &"Animation 7", &"output", 0, &"Sentar"]
 
 [node name="elza rig" type="Node2D"]

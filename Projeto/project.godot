@@ -43,7 +43,9 @@ directories/dch_directory={
 "carolina": "res://Dialogo/carolina.dch",
 "celular": "res://Dialogo/celular.dch",
 "elza": "res://Dialogo/elza.dch",
+"felix": "res://Dialogo/felix.dch",
 "lucas": "res://Dialogo/lucas.dch",
+"luisa": "res://Dialogo/luisa.dch",
 "narrador": "res://Dialogo/narrador.dch"
 }
 directories/dtl_directory={
