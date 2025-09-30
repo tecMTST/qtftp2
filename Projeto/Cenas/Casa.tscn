@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=43 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="15_gklaa"]
 [ext_resource type="PackedScene" uid="uid://objc5v4kvd50" path="res://UI/Interfaces/HUD.tscn" id="16_utqv5"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunca/BaguncaCena.tscn" id="17_utqv5"]
+[ext_resource type="PackedScene" uid="uid://coxf2q1kw800c" path="res://Recursos/Graficos/Efeitos/grafico_filtrodessaturar.tscn" id="18_n2j22"]
 [ext_resource type="Texture2D" uid="uid://bfjh0swdtn76j" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_default.svg" id="19_tjjme"]
 [ext_resource type="Texture2D" uid="uid://dlg3aobixykl7" path="res://Recursos/Graficos/UI/Componentes/button_thumb_stick/button_thumb_stick_disabled.svg" id="19_xanav"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="19_xhdpr"]
@@ -193,6 +194,9 @@ z_as_relative = false
 position = Vector2(357.5, 1144.5)
 scale = Vector2(1.007, 1.1)
 texture = ExtResource("11_utqv5")
+
+[node name="FiltroDessaturar" parent="." instance=ExtResource("18_n2j22")]
+visible = false
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("14_d2j33")

@@ -9,6 +9,7 @@ class_name Casa extends Node2D
 @onready var transicao_cena: TransicaoCena = $TransicaoCena
 @onready var player: Player = $Personagens/Player
 @onready var touch_analog: TouchAnalog = $Molduras/TouchAnalog
+@onready var filtro_dessaturar: CanvasLayer = $FiltroDessaturar
 
 func _ready() -> void:
 	ControleDeFase.carregar_nivel()
@@ -17,6 +18,10 @@ func _ready() -> void:
 	SaveService.SaveGame()
 	pausar.hide()
 	briefing.iniciar()
+	if EstadoDeJogo.nivel_atual==3 or EstadoDeJogo.nivel_atual==4 : 
+		filtro_dessaturar.show()
+	else :
+		filtro_dessaturar.hide()
 
 func _process(_delta: float) -> void:
 	touch_analog.Enabled = player.ativo
