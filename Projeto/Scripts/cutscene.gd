@@ -1,5 +1,14 @@
 extends Node
 
+func spawnar_particulas(nome_efeito: String, pos_x: float, pos_y: float):
+	var spawners = get_tree().get_nodes_in_group("spawner_particulas").filter(
+		func(s): return s.has_method("spawn_particle")
+	)
+	if spawners.size() > 0:
+		spawners[0].spawn_particle(nome_efeito, Vector2(pos_x, pos_y))
+	else:
+		push_error("No particle spawner found in group 'spawner_particulas'!")
+
 func trocar_rosto(id : String, rosto : String):
 	var personagem = get_tree().get_nodes_in_group("personagem").filter(
 		func(p : Personagem): return p.id == id

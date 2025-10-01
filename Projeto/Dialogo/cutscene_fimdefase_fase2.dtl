@@ -1,4 +1,5 @@
 do ControleDeAudio.toca_musica("quadrinhos")
+do Cutscene.executar_funcao("elza", "sentar")
 do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
 do Cutscene.olhar_para("elza", "direita")
 [wait time="2.0"]
@@ -9,7 +10,7 @@ do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
 [wait time="2.0"]
 do Cutscene.trocar_rosto("elza", "rostoDormindo")
 [wait time="1.0"]
-!![aa=3]
+celular: !![aa=3]
 [wait time="1.0"]
 do Cutscene.mover_para("carolina", "Waypoint1")
 do Cutscene.trocar_rosto("carolina", "rostoIdleTriste")

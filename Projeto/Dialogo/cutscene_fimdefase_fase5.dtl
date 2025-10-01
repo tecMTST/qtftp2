@@ -1,0 +1,51 @@
+do ControleDeAudio.toca_musica("quadrinhos")
+do Cutscene.ordem("elza", "0")
+[wait time="2.0"]
+do Cutscene.mover_para("elza", "Waypoint1")
+[wait time="7.0"]
+do Cutscene.olhar_para("elza", "direita")
+[wait time="1.0"]
+do Cutscene.mover_para("elza", "Waypoint2")
+[wait time="7.0"]
+do Cutscene.olhar_para("elza", "esquerda")
+[wait time="1.0"]
+do Cutscene.trocar_rosto("elza", "rostoFalando")
+elza: !![aa=3]
+elza: Tio Felix?[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoIdle")
+Elza?[aa=3]
+[wait time="5.0"]
+do Cutscene.trocar_rosto("elza", "rostoFalando")
+elza: Tio Felix! Por que você não me procurou?[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoIdle")
+Eu tava com tanta vergonha…[aa=3]
+Perdi minha casa… Passei fome…[aa=3]
+A Cozinha aqui acaba me ajudando a segurar as pontas.[aa=3]
+A Cozinha aqui acaba me ajudando a segurar as pontas.[aa=3]
+[wait time="1.0"]
+do Cutscene.trocar_rosto("elza", "rostoFalandoTriste")
+do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
+[wait time="1.0"]
+do Cutscene.executar_animacao("elza", "anim_elza/receber_cartilha")
+[wait time="2.0"]
+narrador: Você ganhou a Cartilha![aa=3]
+narrador: O título é um pouco longo…[aa=3]
+narrador: “Exigibilidade do Direito a Estar Livre da Fome”.[aa=3]
+narrador: Mas a leitura era bem fácil![aa=3]
+[wait time="1.0"]
+do Cutscene.trocar_rosto("carolina", "rostoIdle")
+do Cutscene.trocar_rosto("elza", "rostoFalando")
+elza: Mas como a gente tira isso do papel?[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoIdle")
+Vem comigo![aa=3]
+do Cutscene.mover_para("carolina", "Waypoint2")
+do Cutscene.mover_para("elza", "Waypoint3")
+[wait time="4.0"]
+do Cutscene.executar_funcao("elza", "pegar_lucas")
+[wait time="1.0"]
+do Cutscene.olhar_para("elza", "direita")
+[wait time="0.5"]
+do Cutscene.mover_para("elza", "Waypoint4")
+[wait time="2.0"]
+do Cutscene.mover_para("elza", "Waypoint2")
+[wait time="2.0"]
