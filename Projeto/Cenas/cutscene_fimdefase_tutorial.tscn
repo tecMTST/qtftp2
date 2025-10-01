@@ -44,7 +44,7 @@ vertices = PackedVector2Array(428.898, 572.188, 683.773, 1080.93, 7.79688, 1078.
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 7, 6, 3), PackedInt32Array(0, 3, 6, 9), PackedInt32Array(10, 0, 9, 11)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 445, 582, 700, 1091, -6, 1088, 176, 535, 41, 535)])
 
-[node name="CutsceneFimdeFaseTutorial2" type="Node2D" groups=["cutscene"]]
+[node name="CutsceneFimdeFaseTutorial" type="Node2D" groups=["cutscene"]]
 script = ExtResource("1_jqomp")
 proxima_fase = "res://Cenas/cutscene_quadrinhos_fase_1.tscn"
 timeline = ExtResource("2_15yf7")

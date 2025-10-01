@@ -53,6 +53,7 @@ directories/dtl_directory={
 "fase1_fdf": "res://Dialogo/cutscene_fimdefase_fase1.dtl",
 "fase2_fdf": "res://Dialogo/cutscene_fimdefase_fase2.dtl",
 "fase3_fdf": "res://Dialogo/cutscene_fimdefase_fase3.dtl",
+"fase4_fdf": "res://Dialogo/cutscene_fimdefase_fase4.dtl",
 "fase5_fdf": "res://Dialogo/cutscene_fimdefase_fase5.dtl",
 "tutorial_fdf": "res://Dialogo/cutscene_fimdefase_tutorial.dtl",
 "tutorial_ingame": "res://Dialogo/tutorial.dtl"
@@ -61,9 +62,10 @@ layout/style_directory={
 "": "res://Dialogo/balao.tres",
 "balao": "res://Dialogo/balao.tres",
 "celular": "res://Dialogo/celular.tres",
-"narrador": "res://Dialogo/narrador.tres"
+"narrador": "res://Dialogo/narrador.tres",
+"narrador_cartilha": "res://Dialogo/narrador_cartilha.tres"
 }
-layout/style_list=["res://Dialogo/balao.tres", "res://Dialogo/narrador.tres", "res://Dialogo/celular.tres"]
+layout/style_list=["res://Dialogo/balao.tres", "res://Dialogo/narrador.tres", "res://Dialogo/celular.tres", "res://Dialogo/narrador_cartilha.tres"]
 layout/default_style="res://Dialogo/balao.tres"
 glossary/default_case_sensitive=true
 variables={}

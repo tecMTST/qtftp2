@@ -13,6 +13,7 @@ offsets = PackedFloat32Array(0.00485437, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Lágrimas" type="Node2D" node_paths=PackedStringArray("particle_nodes")]
+z_index = 7
 script = ExtResource("1_3ed8q")
 particle_nodes = [NodePath("L1"), NodePath("L2")]
 self_destruct_time = 5.0

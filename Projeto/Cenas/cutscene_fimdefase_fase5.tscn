@@ -31,7 +31,7 @@ vertices = PackedVector2Array(20.9609, 501.711, 20.0313, 243.18, 670.93, 254.82,
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(10, 233, 681, 245, 675, 1197, 6, 1195, 12, 783, 117, 783, 119, 519, 11, 511)])
 
-[node name="CutsceneFimdeFaseTutorial" type="Node2D"]
+[node name="CutsceneFimdeFase5" type="Node2D" groups=["cutscene"]]
 script = ExtResource("1_5psp3")
 proxima_fase = "res://Cenas/cutscene_quadrinhos_fase_4.tscn"
 timeline = ExtResource("2_5psp3")
