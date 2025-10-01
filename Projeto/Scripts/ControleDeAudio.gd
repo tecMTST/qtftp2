@@ -15,31 +15,31 @@ var biblioteca_de_audio := {
 		"briefing": "res://Recursos/Audio/Musica/briefing.ogg"
 	},
 	"efeitos": {
-		"vitoria": preload("res://Recursos/Audio/Efeitos/jingle_vitoria.ogg"),
-		"derrota": preload("res://Recursos/Audio/Efeitos/jingle_derrota.ogg"),
-		"bebe_chorando": preload("res://Recursos/Audio/Efeitos/bebe_chorando.ogg"),
-		"bebe_feliz": preload("res://Recursos/Audio/Efeitos/bebe_feliz.ogg"),
-		"fogao_ligar": preload("res://Recursos/Audio/Efeitos/fogao_ligar.ogg"),
-		"fogao_cozinhando": preload("res://Recursos/Audio/Efeitos/fogao_cozinhando_loop.ogg"),
-		"fogao_alarme": preload("res://Recursos/Audio/Efeitos/fogao_alarme.ogg"),
-		"clique": preload("res://Recursos/Audio/Efeitos/click.ogg"),
-		"hidratar": preload("res://Recursos/Audio/Efeitos/hidratar.ogg"),
-		"pegar_item": preload("res://Recursos/Audio/Efeitos/pegar_item.ogg"),
-		"alimento_servido": preload("res://Recursos/Audio/Efeitos/alimento_servido.ogg"),
-		"splash_screen": preload("res://Recursos/Audio/Efeitos/splash.ogg"),
+		"vitoria": "res://Recursos/Audio/Efeitos/jingle_vitoria.ogg",
+		"derrota": "res://Recursos/Audio/Efeitos/jingle_derrota.ogg",
+		"bebe_chorando": "res://Recursos/Audio/Efeitos/bebe_chorando.ogg",
+		"bebe_feliz": "res://Recursos/Audio/Efeitos/bebe_feliz.ogg",
+		"fogao_ligar": "res://Recursos/Audio/Efeitos/fogao_ligar.ogg",
+		"fogao_cozinhando": "res://Recursos/Audio/Efeitos/fogao_cozinhando_loop.ogg",
+		"fogao_alarme": "res://Recursos/Audio/Efeitos/fogao_alarme.ogg",
+		"clique": "res://Recursos/Audio/Efeitos/click.ogg",
+		"hidratar": "res://Recursos/Audio/Efeitos/hidratar.ogg",
+		"pegar_item": "res://Recursos/Audio/Efeitos/pegar_item.ogg",
+		"alimento_servido": "res://Recursos/Audio/Efeitos/alimento_servido.ogg",
+		"splash_screen": "res://Recursos/Audio/Efeitos/splash.ogg",
 		"passos": [
-			preload("res://Recursos/Audio/Efeitos/passo1.ogg"),
-			preload("res://Recursos/Audio/Efeitos/passo2.ogg"),
-			preload("res://Recursos/Audio/Efeitos/passo3.ogg"),
-			preload("res://Recursos/Audio/Efeitos/passo4.ogg"),
-			preload("res://Recursos/Audio/Efeitos/passo5.ogg"),
-			preload("res://Recursos/Audio/Efeitos/passo6.ogg"),
+			"res://Recursos/Audio/Efeitos/passo1.ogg",
+			"res://Recursos/Audio/Efeitos/passo2.ogg",
+			"res://Recursos/Audio/Efeitos/passo3.ogg",
+			"res://Recursos/Audio/Efeitos/passo4.ogg",
+			"res://Recursos/Audio/Efeitos/passo5.ogg",
+			"res://Recursos/Audio/Efeitos/passo6.ogg",
 		],
 		"cortar": [
-			preload("res://Recursos/Audio/Efeitos/cut1.ogg"),
-			preload("res://Recursos/Audio/Efeitos/cut2.ogg"),
-			preload("res://Recursos/Audio/Efeitos/cut3.ogg"),
-			preload("res://Recursos/Audio/Efeitos/cut4.ogg"),
+			"res://Recursos/Audio/Efeitos/cut1.ogg",
+			"res://Recursos/Audio/Efeitos/cut2.ogg",
+			"res://Recursos/Audio/Efeitos/cut3.ogg",
+			"res://Recursos/Audio/Efeitos/cut4.ogg",
 		],
 	}
 }
@@ -78,12 +78,26 @@ func _ready() -> void:
 		add_child(tocador)
 		toca_efeitos.append(tocador)
 
+	# preload de recursos de audio não está funcionando corretamente no mobile,
+	# então fazemos "na marra" durante o _ready:
+	_carrega_efeitos_sonoros()
+
+
+func _carrega_efeitos_sonoros() -> void:
 	for efeito in biblioteca_de_audio["efeitos"].keys():
 		var origem = biblioteca_de_audio["efeitos"][efeito]
 		if origem is Array:
-			for s in origem: AudioServer.register_stream_as_sample(s)
+			var nova_origem = origem.map(_carrega_efeito)
+			origem = nova_origem
 		else:
-			AudioServer.register_stream_as_sample(origem)
+			origem = _carrega_efeito(origem)
+		biblioteca_de_audio["efeitos"][efeito] = origem
+
+
+func _carrega_efeito(item) -> AudioStream:
+	var carregado = item if item is Resource else load(item)
+	AudioServer.register_stream_as_sample(carregado)
+	return carregado
 
 
 func toca_musica(nome_da_faixa: String, acelera: bool = true) -> void:
