@@ -18,7 +18,11 @@ var moving_forward := true
 @onready var bt_player: BTPlayer = $BTPlayer
 
 func _ready():
-	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
+	if (
+		cutscene
+		or not ControleDeFase.nivel_atual
+		or not ControleDeFase.nivel_atual.bagunca
+	):
 		carolina_rig.sentada = true
 		return
 	bt_player.active = true
