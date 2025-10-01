@@ -38,7 +38,7 @@ func executar_animacao(id : String, animacao : String):
 		func(p : Personagem): return p.id == id
 	)[0] as Personagem
 	personagem.animacao(animacao)
-	
+
 func executar_funcao(id : String, funcao : String):
 	var personagem = get_tree().get_nodes_in_group("personagem").filter(
 		func(p : Personagem): return p.id == id
@@ -46,6 +46,6 @@ func executar_funcao(id : String, funcao : String):
 	personagem.call(funcao)
 
 func finalizar_cena(cena : String):
-	var cena_atual = get_tree().current_scene	
+	var cena_atual = get_tree().current_scene
 	if cena_atual.is_in_group("cutscene") :
 		cena_atual.proxima_cena(cena)
