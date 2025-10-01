@@ -16,6 +16,7 @@ func _ready() -> void:
 	if len(arquivos_salvamento) > 0:
 		jogo_salvo = arquivos_salvamento[0]
 		continuar.disabled = false
+		continuar.modulate = Color(1.0, 1.0, 1.0, 1.0)
 
 #ao clicar em jogar deveria ir direto para a tela de cenas iniciais do jogo.
 func _on_jogar_pressed() -> void:
