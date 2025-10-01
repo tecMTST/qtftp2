@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://caqmwi57djkmi"]
+[gd_scene load_steps=25 format=3 uid="uid://caqmwi57djkmi"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_5psp3"]
 [ext_resource type="Resource" uid="uid://dmnmevvcnpr6q" path="res://Dialogo/cutscene_fimdefase_fase5.dtl" id="2_5psp3"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://n52w7lk2j46x" path="res://Componentes/Casa/Interagiveis/EntregaNaFila.tscn" id="13_bi7gm"]
 [ext_resource type="PackedScene" uid="uid://ra7kq174mnxo" path="res://Componentes/Personagens/Elza.tscn" id="14_6s1xb"]
 [ext_resource type="PackedScene" uid="uid://33ix112wt1og" path="res://Componentes/Personagens/luiza.tscn" id="15_ml4f3"]
+[ext_resource type="PackedScene" uid="uid://csgs6ijgjju21" path="res://Componentes/Personagens/Tio.tscn" id="16_h4bie"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="16_mv7s5"]
 [ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="17_fek73"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="18_okt71"]
@@ -134,9 +135,13 @@ z_index = 5
 position = Vector2(589, 408)
 waypoints = NodePath("../../Waypoints")
 
-[node name="Luisa" parent="." instance=ExtResource("15_ml4f3")]
-position = Vector2(311, 819)
+[node name="Luisa" parent="Personagens" instance=ExtResource("15_ml4f3")]
+position = Vector2(136, 1143)
 scale = Vector2(0.29, 0.29)
+
+[node name="Tio" parent="Personagens" instance=ExtResource("16_h4bie")]
+position = Vector2(395, 872)
+scale = Vector2(0.3, 0.3)
 
 [node name="TransicaoCena" parent="." instance=ExtResource("16_mv7s5")]
 visible = false

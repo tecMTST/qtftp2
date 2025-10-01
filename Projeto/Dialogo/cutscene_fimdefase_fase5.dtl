@@ -13,15 +13,15 @@ do Cutscene.trocar_rosto("elza", "rostoFalando")
 elza: !![aa=3]
 elza: Tio Felix?[aa=3]
 do Cutscene.trocar_rosto("elza", "rostoIdle")
-Elza?[aa=3]
+felix: Elza?[aa=3]
 [wait time="5.0"]
 do Cutscene.trocar_rosto("elza", "rostoFalando")
 elza: Tio Felix! Por que você não me procurou?[aa=3]
 do Cutscene.trocar_rosto("elza", "rostoIdle")
-Eu tava com tanta vergonha…[aa=3]
-Perdi minha casa… Passei fome…[aa=3]
-A Cozinha aqui acaba me ajudando a segurar as pontas.[aa=3]
-A Cozinha aqui acaba me ajudando a segurar as pontas.[aa=3]
+felix: Eu tava com tanta vergonha…[aa=3]
+felix: Perdi minha casa… Passei fome…[aa=3]
+felix: A Cozinha aqui acaba me ajudando a segurar as pontas.[aa=3]
+felix: A Cozinha aqui acaba me ajudando a segurar as pontas.[aa=3]
 [wait time="1.0"]
 do Cutscene.trocar_rosto("elza", "rostoFalandoTriste")
 do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
