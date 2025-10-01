@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://phqyckw1rqyl"]
+
+[ext_resource type="Script" uid="uid://cui74y06toat7" path="res://Recursos/Graficos/Efeitos/particulas_cenas.gd" id="1_mna4i"]
+[ext_resource type="Texture2D" uid="uid://d1kpegpi416is" path="res://Recursos/Graficos/Efeitos/exclamacao.svg" id="1_ygaqf"]
+
+[sub_resource type="Curve" id="Curve_5sjle"]
+_limits = [1.0, 5.24719, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 5.24719), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_gdw80"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.744745, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_atjyw"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Exclamacao" type="Node2D" node_paths=PackedStringArray("particle_nodes")]
+script = ExtResource("1_mna4i")
+particle_nodes = [NodePath("Exc")]
+self_destruct_time = 4.0
+
+[node name="Exc" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+texture = ExtResource("1_ygaqf")
+lifetime = 2.0
+one_shot = true
+direction = Vector2(1, -1)
+spread = 0.0
+gravity = Vector2(0, -75)
+damping_min = 30.0
+damping_max = 30.0
+angle_curve = SubResource("Curve_5sjle")
+scale_amount_curve = SubResource("Curve_gdw80")
+color_ramp = SubResource("Gradient_atjyw")

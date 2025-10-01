@@ -10,14 +10,14 @@ do Cutscene.olhar_para("elza", "direita")
 do Cutscene.trocar_rosto("carolina", "rostoFalandoFeliz")
 do Cutscene.trocar_rosto("elza", "rostoIdleFeliz")
 do Cutscene.trocar_rosto("elza", "rostoIdleFeliz")
-carolina: Tava[pause=1] [lspeed=0.5][wave amp=50.0 freq=5.0 connected=0]muito[/wave][lspeed] bom, mãe! Beijo![aa=3]
+carolina: Tava[pause=1] [lspeed=0.2][wave amp=50.0 freq=5.0 connected=0]muito[/wave][lspeed] bom, mãe! Beijo![aa=3]
 [wait time="0.2"]
 do Cutscene.trocar_rosto("carolina", "rostoIdleFeliz")
 do Cutscene.mover_para("carolina", "Waypoint2")
 [wait time="4.0"]
 do Cutscene.olhar_para("elza", "esquerda")
 do Cutscene.mover_para("elza", "Waypoint3")
-[wait time="3.0"]
+[wait time="4.0"]
 do Cutscene.trocar_rosto("elza", "rostoFalandoFeliz")
 elza: Vem, filho. Mamãe precisa trabalhar.[aa=3]
 elza: Vou te deixar na Luisa mas volto logo, tá?[aa=3]

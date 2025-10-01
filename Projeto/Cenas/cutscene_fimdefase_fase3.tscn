@@ -1,7 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://745rr8g6h4n1"]
+[gd_scene load_steps=32 format=3 uid="uid://745rr8g6h4n1"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_xgtsr"]
-[ext_resource type="Resource" uid="uid://bakf4e0et2udx" path="res://Dialogo/fase3_fdf.dtl" id="2_b5aa4"]
+[ext_resource type="Resource" uid="uid://bakf4e0et2udx" path="res://Dialogo/cutscene_fimdefase_fase3.dtl" id="2_b5aa4"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="3_n6bey"]
 [ext_resource type="Texture2D" uid="uid://cxb6qp0b7h80t" path="res://Recursos/Graficos/Cenas/Piso.svg" id="4_chrtt"]
 [ext_resource type="Texture2D" uid="uid://b0wevbyj2yhx2" path="res://Recursos/Graficos/Cenas/Parede traseira.svg" id="5_ebabx"]
@@ -13,26 +13,30 @@
 [ext_resource type="PackedScene" uid="uid://cjqpfs867y0in" path="res://Componentes/Casa/Interagiveis/Berco.tscn" id="11_us1ww"]
 [ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="12_iytwc"]
 [ext_resource type="PackedScene" uid="uid://cjdso8f820o6i" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="13_pjhof"]
-[ext_resource type="Texture2D" uid="uid://dqlbugdpq0qcd" path="res://Recursos/Graficos/Personagens/celular.svg" id="14_mux21"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="15_vc7u1"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunca/BaguncaCena.tscn" id="16_mj6ai"]
 [ext_resource type="PackedScene" uid="uid://ra7kq174mnxo" path="res://Componentes/Personagens/Elza.tscn" id="18_pgaff"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="19_4ev03"]
 [ext_resource type="PackedScene" uid="uid://33ix112wt1og" path="res://Componentes/Personagens/luiza.tscn" id="19_b5aa4"]
+[ext_resource type="PackedScene" uid="uid://coxf2q1kw800c" path="res://Recursos/Graficos/Efeitos/grafico_filtrodessaturar.tscn" id="20_jy6ii"]
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="20_nvv42"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="21_seoac"]
-[ext_resource type="PackedScene" uid="uid://b3duag0q0ek4e" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="23_pgaff"]
+[ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="23_pgaff"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="24_5r21c"]
 [ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="25_vu776"]
-[ext_resource type="Script" uid="uid://12v2jbt778af" path="res://Scripts/Cutscenes/botao_avancar.gd" id="26_jy6ii"]
+[ext_resource type="Script" uid="uid://dhc22d7vyha5t" path="res://Cenas/particle_spawner.gd" id="26_e1jhb"]
+[ext_resource type="Script" path="res://Scripts/Cutscenes/botao_avancar.gd" id="26_jy6ii"]
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="27_us1ww"]
+[ext_resource type="PackedScene" uid="uid://phqyckw1rqyl" path="res://Recursos/Graficos/Efeitos/grafico_exclamacao.tscn" id="27_vu776"]
+[ext_resource type="PackedScene" uid="uid://byrpvc0v78cct" path="res://Recursos/Graficos/Efeitos/grafico_pipipi.tscn" id="28_jy6ii"]
+[ext_resource type="PackedScene" uid="uid://cs1q0yifhy8oy" path="res://Recursos/Graficos/Efeitos/grafico_lagrimas.tscn" id="29_us1ww"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
 vertices = PackedVector2Array(428.898, 572.188, 683.773, 1080.93, 7.79688, 1078.05, 189.82, 525, 678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 50.8984, 525, 551.242, 503.078, 682.406, 569.117, 678.562, 502.07)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 7, 6, 3), PackedInt32Array(0, 3, 6, 9), PackedInt32Array(10, 0, 9, 11)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 445, 582, 700, 1091, -6, 1088, 176, 535, 41, 535)])
 
-[node name="CutsceneFimdeFaseTutorial" type="Node2D"]
+[node name="CutsceneFimdeFase3" type="Node2D"]
 script = ExtResource("1_xgtsr")
 proxima_fase = "res://Cenas/cutscene_quadrinhos_fase_4.tscn"
 timeline = ExtResource("2_b5aa4")
@@ -86,12 +90,6 @@ position = Vector2(573, 880)
 
 [node name="Tv" parent="Distracoes" instance=ExtResource("13_pjhof")]
 position = Vector2(627, 613)
-
-[node name="Celular" type="Sprite2D" parent="Distracoes"]
-z_index = 6
-position = Vector2(574.75, 897.113)
-scale = Vector2(0.135246, 0.135246)
-texture = ExtResource("14_mux21")
 
 [node name="Waypoints" type="Node2D" parent="."]
 
@@ -151,6 +149,8 @@ texture = ExtResource("20_nvv42")
 position = Vector2(5, 181)
 navigation_polygon = SubResource("NavigationPolygon_4xt8v")
 
+[node name="FiltroDessaturar" parent="." instance=ExtResource("20_jy6ii")]
+
 [node name="TransicaoCena" parent="." instance=ExtResource("21_seoac")]
 visible = false
 
@@ -198,5 +198,10 @@ theme = ExtResource("27_us1ww")
 text = "Avançar"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ParticleSpawner" type="Node" parent="."]
+script = ExtResource("26_e1jhb")
+particle_effects = Array[PackedScene]([ExtResource("27_vu776"), ExtResource("28_jy6ii"), ExtResource("29_us1ww")])
+particle_names = Array[String](["exclamacao", "pipipi", "lagrimas"])
 
 [connection signal="Acionado" from="InteracoesDialogo/BotaoTemporizado" to="." method="_on_botao_temporizado_acionado"]
