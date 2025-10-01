@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://caqmwi57djkmi"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_5psp3"]
-[ext_resource type="Resource" uid="uid://dmnmevvcnpr6q" path="res://Dialogo/cutscene_fimdefase_fase5.dtl" id="2_h4bie"]
+[ext_resource type="Resource" uid="uid://dmnmevvcnpr6q" path="res://Dialogo/cutscene_fimdefase_fase5.dtl" id="2_5psp3"]
 [ext_resource type="Texture2D" uid="uid://dmon3wtcmi48s" path="res://Recursos/Graficos/Cenas/Cenario_2/Piso.svg" id="3_m67kx"]
 [ext_resource type="Texture2D" uid="uid://c7crxt6cjssfn" path="res://Recursos/Graficos/Cenas/Parede lateral.svg" id="4_6du42"]
 [ext_resource type="Texture2D" uid="uid://bj6aj585thqpt" path="res://Recursos/Graficos/Cenas/Cenario_2/Parede traseira.svg" id="5_qcpts"]
@@ -33,7 +33,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(10, 233, 681, 245, 675,
 [node name="CutsceneFimdeFaseTutorial" type="Node2D"]
 script = ExtResource("1_5psp3")
 proxima_fase = "res://Cenas/cutscene_quadrinhos_fase_4.tscn"
-timeline = ExtResource("2_h4bie")
+timeline = ExtResource("2_5psp3")
 
 [node name="CenarioFundo" type="Node2D" parent="."]
 
