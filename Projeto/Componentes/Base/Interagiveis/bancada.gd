@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	indicador.visible = ControleDeFase.verifica_proximo_ponto("bancada")
-	indicador_2.visible = ControleDeFase.verifica_proximo_ponto("bancada")
+	if indicador_2: indicador_2.visible = ControleDeFase.verifica_proximo_ponto("bancada")
 
 func eliminar_ingrediente() -> void:
 	if objeto_na_bancada != null: objeto_na_bancada.destruir()
