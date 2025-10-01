@@ -147,6 +147,7 @@ ponto_entrega=""
 menu_geladeira=""
 personagem=""
 cutscene=""
+grafico_derrota=""
 
 [gui]
 

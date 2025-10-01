@@ -8,6 +8,8 @@ var timer : float = 4.0
 @onready var fader_preto: Fader = $Control/ColorRect/FaderPreto
 
 func _ready() -> void:
+	if len(get_tree().get_nodes_in_group("grafico_derrota")) > 1:
+		queue_free()
 	get_tree().paused = true
 	derrota_vazado.emitting = true
 	derrota_cheio.emitting = true
