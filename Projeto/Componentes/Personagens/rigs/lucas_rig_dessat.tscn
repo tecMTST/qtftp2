@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://x3x4hdetf5a8"]
+[gd_scene load_steps=15 format=3 uid="uid://x3x4hdetf5a8"]
 
 [ext_resource type="Texture2D" uid="uid://de7m4n4afowt2" path="res://Componentes/Personagens/rigs/vetores_spritesheets/nenê1_dessat.svg" id="1_7vs35"]
 [ext_resource type="Script" uid="uid://cy2ei2xo5xmqw" path="res://Componentes/Personagens/rigs/lucas_rig_dessat.gd" id="1_ml0f2"]
 [ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://Componentes/Personagens/rigs/vetores_spritesheets/qtftdanims.res" id="2_wx2i2"]
+[ext_resource type="AnimationLibrary" uid="uid://did164vxkw5vw" path="res://anim_lucas.res" id="3_7hrgj"]
 [ext_resource type="Script" uid="uid://bqyphsb3rnr2x" path="res://Componentes/Personagens/personagem.gd" id="4_ea3el"]
 
 [sub_resource type="Animation" id="Animation_wx2i2"]
@@ -146,13 +147,13 @@ uv = PackedVector2Array(610.458, 61.8389, 602.353, 47.4293, 618.113, 24.4639, 63
 bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/pescoco/babador", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="cabelo" type="Polygon2D" parent="sprites"]
-position = Vector2(-359, -204)
+position = Vector2(-319, -236)
 antialiased = true
 texture = ExtResource("1_7vs35")
 skeleton = NodePath("../../Skeleton2D")
-polygon = PackedVector2Array(338.623, 22.9482, 289.513, 52.3008, 286.126, 84.4758, 293.465, 98.0232, 316.044, 83.3469, 362.895, 86.1692, 389.425, 113.828, 399.021, 145.439, 415.956, 158.986, 436.841, 144.875, 457.727, 151.648, 471.274, 127.94, 466.194, 78.8311, 435.148, 37.6245, 374.184, 22.3837)
-uv = PackedVector2Array(338.623, 22.9482, 289.513, 52.3008, 286.126, 84.4758, 293.465, 98.0232, 316.044, 83.3469, 362.895, 86.1692, 389.425, 113.828, 399.021, 145.439, 415.956, 158.986, 436.841, 144.875, 457.727, 151.648, 471.274, 127.94, 466.194, 78.8311, 435.148, 37.6245, 374.184, 22.3837)
-bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "tronco/pescoco/rosto", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "tronco/babador", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+polygon = PackedVector2Array(304, 96, 344, 96, 352, 24, 296, 24)
+uv = PackedVector2Array(304, 96, 344, 96, 352, 24, 296, 24)
+bones = ["tronco", PackedFloat32Array(0, 0, 0, 0), "tronco/pescoco", PackedFloat32Array(0, 0, 0, 0), "tronco/pescoco/rosto", PackedFloat32Array(1, 1, 1, 1), "tronco/pescoco/babador", PackedFloat32Array(0, 0, 0, 0)]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 
@@ -161,7 +162,7 @@ position = Vector2(0, 161)
 rest = Transform2D(1, 0, 0, 1, 0, 161)
 
 [node name="pescoco" type="Bone2D" parent="Skeleton2D/tronco"]
-position = Vector2(0, -167.008)
+position = Vector2(0, -162.478)
 rest = Transform2D(1, 0, 0, 1, 0, -161)
 
 [node name="rosto" type="Bone2D" parent="Skeleton2D/tronco/pescoco"]
@@ -172,7 +173,7 @@ bone_angle = 0.0
 
 [node name="babador" type="Bone2D" parent="Skeleton2D/tronco/pescoco"]
 position = Vector2(-10, 0)
-rotation = 0.148522
+rotation = 0.0365309
 scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -10, -161)
 auto_calculate_length_and_angle = false
@@ -191,6 +192,7 @@ metadata/_edit_lock_ = true
 root_node = NodePath("../Skeleton2D/tronco")
 libraries = {
 &"": SubResource("AnimationLibrary_ml0f2"),
+&"anim_lucas": ExtResource("3_7hrgj"),
 &"qtftdanims": ExtResource("2_wx2i2")
 }
 autoplay = "qtftdanims/lucas_idle"
