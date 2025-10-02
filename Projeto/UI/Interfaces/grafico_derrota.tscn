@@ -11,7 +11,7 @@
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.744745, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[node name="GraficoDerrota" type="CanvasLayer"]
+[node name="GraficoDerrota" type="CanvasLayer" groups=["grafico_derrota"]]
 process_mode = 3
 script = ExtResource("1_l1idg")
 

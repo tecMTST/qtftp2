@@ -12,7 +12,7 @@ func _ready() -> void:
 		receita_match = ControleDeFase.passo_atual.descricao
 	match receita_match:
 		"Colocar feijão no fogo":
-			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/feijao.svg")
+			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/feijao2.svg")
 	if %ProgressoEvento.running: return
 	%ProgressoEvento.failed.connect(_on_failed)
 	%ProgressoEvento.completed.connect(_on_completed)
