@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cqthgs7avlwee"]
+[gd_scene load_steps=32 format=3 uid="uid://cqthgs7avlwee"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_wc6yt"]
 [ext_resource type="Resource" uid="uid://d0pl0jmxpqahh" path="res://Dialogo/cutscene_fimdefase_fase1.dtl" id="2_wc6yt"]
@@ -11,26 +11,32 @@
 [ext_resource type="PackedScene" uid="uid://dpkfr6t86l4j" path="res://Componentes/Casa/Interagiveis/Geladeira.tscn" id="9_pnjx8"]
 [ext_resource type="PackedScene" uid="uid://b636g7sui3m6c" path="res://Componentes/Casa/Interagiveis/Fogao.tscn" id="10_ey6ah"]
 [ext_resource type="PackedScene" uid="uid://cjqpfs867y0in" path="res://Componentes/Casa/Interagiveis/Berco.tscn" id="11_iwwt8"]
-[ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="12_eajx6"]
+[ext_resource type="Script" uid="uid://cpi6tydbas0r3" path="res://Componentes/Casa/Interagiveis/mesa_filha.gd" id="12_iwwt8"]
 [ext_resource type="PackedScene" uid="uid://cjdso8f820o6i" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="13_4rd4f"]
+[ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="13_eajx6"]
+[ext_resource type="Texture2D" uid="uid://bqbbdsv41kc8l" path="res://Recursos/Graficos/Interagiveis/Cadeira lateral.svg" id="14_4rd4f"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="14_iuynf"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunca/BaguncaCena.tscn" id="15_ehhn2"]
+[ext_resource type="Texture2D" uid="uid://351ntpmnbl0a" path="res://Recursos/Graficos/Interagiveis/Mesa.svg" id="15_iuynf"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="16_ehhn2"]
 [ext_resource type="PackedScene" uid="uid://ra7kq174mnxo" path="res://Componentes/Personagens/Elza.tscn" id="16_p7m27"]
+[ext_resource type="Texture2D" uid="uid://cfp770tffb0ns" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="17_1gx1o"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="18_s73r5"]
+[ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="18_vinpq"]
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="19_oas7f"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="20_vojac"]
-[ext_resource type="PackedScene" uid="uid://b3duag0q0ek4e" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="21_wexy4"]
+[ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="21_wexy4"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="22_wexy4"]
 [ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="23_do6fd"]
-[ext_resource type="Script" uid="uid://12v2jbt778af" path="res://Scripts/Cutscenes/botao_avancar.gd" id="23_wexy4"]
+[ext_resource type="Script" path="res://Scripts/Cutscenes/botao_avancar.gd" id="23_wexy4"]
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="24_bfuv3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
-vertices = PackedVector2Array(428.898, 572.188, 683.773, 1080.93, 7.79688, 1078.05, 189.82, 525, 678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 50.8984, 525, 551.242, 503.078, 682.406, 569.117, 678.562, 502.07)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 7, 6, 3), PackedInt32Array(0, 3, 6, 9), PackedInt32Array(10, 0, 9, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 445, 582, 700, 1091, -6, 1088, 176, 535, 41, 535)])
+vertices = PackedVector2Array(689.75, 1080.95, 7.79688, 1078.05, 189.82, 525, 678.992, 636.781, 678.563, 502.07, 682.977, 578.883, 551.242, 503.078, 678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 50.8984, 525)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(2, 11, 10, 9, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(38, 236, 688, 238, 690, 377, 558, 370, 561, 493, 688, 492, 693, 579, 689, 637, 700, 1091, -6, 1088, 176, 535, 41, 535)])
 
-[node name="CutsceneFimdeFaseTutorial2" type="Node2D" groups=["cutscene"]]
+[node name="CutsceneFimdeFase1" type="Node2D" groups=["cutscene"]]
 script = ExtResource("1_wc6yt")
 proxima_fase = "res://Cenas/cutscene_quadrinhos_fase_2.tscn"
 timeline = ExtResource("2_wc6yt")
@@ -78,9 +84,50 @@ position = Vector2(104, 333)
 z_index = 10
 position = Vector2(109, 850)
 
-[node name="MesaFilha" parent="Distracoes" instance=ExtResource("12_eajx6")]
+[node name="MesaFilha" type="StaticBody2D" parent="Distracoes" groups=["filha", "interagivel", "ponto_entrega"]]
 z_index = 6
 position = Vector2(573, 880)
+script = ExtResource("12_iwwt8")
+
+[node name="CadeiraFrente" type="TextureRect" parent="Distracoes/MesaFilha"]
+offset_left = -6.0
+offset_top = -127.0
+offset_right = 70.0
+offset_bottom = 50.0
+texture = ExtResource("13_eajx6")
+
+[node name="CadeiraLateral" type="TextureRect" parent="Distracoes/MesaFilha"]
+offset_left = -122.0
+offset_top = -86.0
+offset_right = -36.0
+offset_bottom = 101.0
+texture = ExtResource("14_4rd4f")
+
+[node name="Arte" type="TextureRect" parent="Distracoes/MesaFilha"]
+offset_left = -34.0
+offset_top = -27.0
+offset_right = 120.0
+offset_bottom = 121.0
+texture = ExtResource("15_iuynf")
+
+[node name="ComponenteInteragivel" type="Node2D" parent="Distracoes/MesaFilha"]
+script = ExtResource("16_ehhn2")
+nome = "Mesa"
+descricao = "Uma mesa"
+possui_contorno = false
+
+[node name="Pivot" type="Node2D" parent="Distracoes/MesaFilha"]
+position = Vector2(-26, 0)
+
+[node name="Indicador" type="Sprite2D" parent="Distracoes/MesaFilha"]
+visible = false
+position = Vector2(-1.90735e-06, -116)
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("17_1gx1o")
+
+[node name="Bouncer" type="Node" parent="Distracoes/MesaFilha/Indicador"]
+script = ExtResource("18_vinpq")
+metadata/_custom_type_script = "uid://d1lhbtx247tsg"
 
 [node name="Tv" parent="Distracoes" instance=ExtResource("13_4rd4f")]
 position = Vector2(627, 613)
@@ -97,16 +144,16 @@ position = Vector2(417, 1182)
 position = Vector2(216, 798)
 
 [node name="Waypoint4" type="Marker2D" parent="Waypoints"]
-position = Vector2(374, 828.675)
+position = Vector2(374, 674)
 
 [node name="Waypoint5" type="Marker2D" parent="Waypoints"]
-position = Vector2(500, 1050)
+position = Vector2(505, 672)
 
 [node name="Waypoint6" type="Marker2D" parent="Waypoints"]
-position = Vector2(507, 716)
+position = Vector2(135, 515)
 
 [node name="Waypoint7" type="Marker2D" parent="Waypoints"]
-position = Vector2(314, 809)
+position = Vector2(364, 847.1)
 
 [node name="Personagens" type="Node2D" parent="."]
 z_index = 5
@@ -119,7 +166,8 @@ waypoints = NodePath("../../Waypoints")
 cutscene = true
 
 [node name="Elza" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("16_p7m27")]
-z_index = 20
+z_index = 6
+z_as_relative = false
 position = Vector2(503, 869)
 waypoints = NodePath("../../Waypoints")
 
@@ -187,4 +235,5 @@ text = "Avançar"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="interagir" from="Distracoes/MesaFilha/ComponenteInteragivel" to="Distracoes/MesaFilha" method="_interagir"]
 [connection signal="Acionado" from="InteracoesDialogo/BotaoTemporizado" to="." method="_on_botao_temporizado_acionado"]

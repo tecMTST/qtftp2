@@ -44,7 +44,6 @@ theme = ExtResource("2_v6y4k")
 theme_override_constants/outline_size = 11
 theme_override_font_sizes/font_size = 45
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2aayc")
-disabled = true
 text = "CONTINUAR"
 
 [node name="extras" type="Button" parent="CenterContainer/BotoesPrincipais"]

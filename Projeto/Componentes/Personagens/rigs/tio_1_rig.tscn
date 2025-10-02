@@ -1,11 +1,64 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvfdorkninsg1"]
+[gd_scene load_steps=10 format=3 uid="uid://cvfdorkninsg1"]
 
+[ext_resource type="Script" uid="uid://dt3mb8oo5h7gf" path="res://Componentes/Personagens/rigs/tio_1_rig.gd" id="1_833fx"]
 [ext_resource type="Texture2D" uid="uid://cc3mu1abyi3pd" path="res://Componentes/Personagens/rigs/vetores_spritesheets/tio2.svg" id="1_bxfg3"]
 [ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://Componentes/Personagens/rigs/vetores_spritesheets/qtftdanims.res" id="3_214gm"]
 
+[sub_resource type="Animation" id="Animation_8k5sj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rig1/sprites/cabeca:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rig1/sprites/pernaDir:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_833fx"]
+_data = {
+&"RESET": SubResource("Animation_8k5sj")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8sbwy"]
+animation = &"qtftd anims/Tio_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5qmni"]
+animation = &"qtftd anims/andar"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_2207g"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_8sbwy")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_5qmni")
+blend_point_1/pos = 0.5
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_awv2r"]
+graph_offset = Vector2(-598.363, -21.6405)
+nodes/Velocidade/node = SubResource("AnimationNodeBlendSpace1D_2207g")
+nodes/Velocidade/position = Vector2(-550.989, 102.075)
+node_connections = [&"output", 0, &"Velocidade"]
+
 [node name="tio_1_rig" type="Node2D"]
+script = ExtResource("1_833fx")
 
 [node name="rig1" type="Node2D" parent="."]
+scale = Vector2(-1, 1)
 
 [node name="sprites" type="Node2D" parent="rig1"]
 
@@ -117,11 +170,11 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 [node name="Skeleton2D" type="Skeleton2D" parent="rig1"]
 
 [node name="tronco" type="Bone2D" parent="rig1/Skeleton2D"]
-position = Vector2(35, 400)
+position = Vector2(0.0552499, 0.00299745)
 rest = Transform2D(1, 0, 0, 1, 35, 429)
 
 [node name="pescoco" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
-position = Vector2(0, -414.185)
+position = Vector2(0, -412.84)
 rest = Transform2D(1, 0, 0, 1, 0, -410)
 
 [node name="rosto" type="Bone2D" parent="rig1/Skeleton2D/tronco/pescoco"]
@@ -132,7 +185,7 @@ bone_angle = 0.0
 
 [node name="pernaDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(95, -125)
-rotation = -0.551339
+rotation = 0.0009514
 scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 95, -125)
 auto_calculate_length_and_angle = false
@@ -141,35 +194,37 @@ bone_angle = -31.5894
 
 [node name="pernaEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-101, -126)
-rotation = 0.617994
+rotation = -0.000785818
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -101, -126)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 35.4084
 
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
-position = Vector2(99, -384)
-rotation = 0.884439
-scale = Vector2(1, 1)
+position = Vector2(109.414, -385.893)
+rotation = -0.000310806
 rest = Transform2D(1, 0, 0, 1, 99, -384)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 50.6746
 
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
-position = Vector2(-84, -379)
-rotation = -0.505287
+position = Vector2(-96.3076, -387.521)
+rotation = 0.000532435
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -84, -379)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = -28.9508
 
-[node name="Tio1" type="Sprite2D" parent="."]
-position = Vector2(264, 421)
-scale = Vector2(1.61166, 1.61166)
-metadata/_edit_lock_ = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
+&"": SubResource("AnimationLibrary_833fx"),
 &"qtftd anims": ExtResource("3_214gm")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_awv2r")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Velocidade/blend_position = 0.000789285

@@ -29,8 +29,8 @@ script = ExtResource("1_b7hqd")
 [node name="GuiTransition" type="Node" parent="Geladeira"]
 script = ExtResource("1_uiwjp")
 fade_layout = 0
-animation_enter = 3
-animation_leave = 2
+animation_enter = 4
+animation_leave = 4
 duration = 1.5
 transition_type = "ELASTIC"
 ease_type = "IN_OUT"
