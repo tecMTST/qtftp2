@@ -246,6 +246,7 @@ texture = ExtResource("19_xanav")
 expand_mode = 3
 
 [node name="BaseThumb" type="TextureRect" parent="Molduras/Moldura"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -333,7 +334,7 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("3_x64wv")
 PositionType = 1
 ControlsColor = Color(1, 1, 1, 1)
-CircleTexture = ExtResource("19_xanav")
+CircleTexture = ExtResource("24_7k32u")
 KnobTexture = ExtResource("19_tjjme")
 RestPosition = NodePath("../Moldura/BaseThumb/Marker2D")
 metadata/_custom_type_script = "uid://dku77viqwklks"

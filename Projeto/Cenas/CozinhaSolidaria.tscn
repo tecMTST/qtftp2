@@ -66,11 +66,13 @@ scale = Vector2(1.00591, 1.00992)
 texture = ExtResource("5_pdorv")
 
 [node name="ParedeEsquerda" type="Sprite2D" parent="CenarioFundo"]
-position = Vector2(13, 672)
+position = Vector2(11.5, 670)
+scale = Vector2(1, 1.01187)
 texture = ExtResource("5_vb5b3")
 
 [node name="ParedeDireita" type="Sprite2D" parent="CenarioFundo"]
-position = Vector2(708, 672)
+position = Vector2(706.5, 670)
+scale = Vector2(1, 1.01187)
 texture = ExtResource("5_vb5b3")
 
 [node name="ParedeFundoCS" type="Sprite2D" parent="CenarioFundo"]
@@ -202,7 +204,7 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("18_k21wa")
 PositionType = 1
 ControlsColor = Color(1, 1, 1, 1)
-CircleTexture = ExtResource("19_vd0u2")
+CircleTexture = ExtResource("34_5hxbm")
 KnobTexture = ExtResource("20_01qrq")
 metadata/_custom_type_script = "uid://dku77viqwklks"
 
@@ -309,6 +311,7 @@ texture = ExtResource("19_vd0u2")
 expand_mode = 3
 
 [node name="BaseThumb" type="TextureRect" parent="Molduras/Moldura"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -327,6 +330,7 @@ texture = ExtResource("34_5hxbm")
 position = Vector2(121, 120)
 
 [node name="BotaoAcao" type="TouchScreenButton" parent="Molduras"]
+visible = false
 z_index = 99
 position = Vector2(265, 1064)
 texture_normal = ExtResource("21_syhsj")
@@ -391,6 +395,7 @@ text = "Avançar"
 [node name="TouchAnalog" type="Node2D" parent="Molduras" node_paths=PackedStringArray("RestPosition")]
 process_mode = 3
 z_index = 200
+position = Vector2(582, 1145)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("18_k21wa")
 PositionType = 1

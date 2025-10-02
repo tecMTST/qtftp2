@@ -46,7 +46,8 @@ func _input(event: InputEvent) -> void:
 				knob.pressing = true
 			if event.is_released():
 				if not RestPosition:
-					visible = false
+					#visible = false
+					pass
 				else:
 					position = RestPosition.global_position
 				knob.pressing = false
@@ -83,7 +84,8 @@ func _ready() -> void:
 	circle.modulate = ControlsColor
 	knob.modulate = ControlsColor
 	if PositionType == ControlPosition.OnTouch:
-		visible = false
+		#visible = false
+		pass
 	if RestPosition:
 		visible = true
 		position = RestPosition.global_position
@@ -91,7 +93,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if get_tree().paused or !Enabled:
 		if PositionType == ControlPosition.OnTouch:
-			visible = false
+			#visible = false
+			pass
 		if RestPosition:
 			visible = true
 			position = RestPosition.global_position
