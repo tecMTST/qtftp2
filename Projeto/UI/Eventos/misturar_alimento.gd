@@ -1,5 +1,7 @@
 extends Control
 
+var player: Player
+
 @onready var receita: Label = $MarginContainer/PanelContainer/VBoxContainer/Receita
 @onready var imagem_evento: TextureRect = %ImagemEvento
 
@@ -17,6 +19,8 @@ func _ready() -> void:
 	%ProgressoEvento.failed.connect(_on_failed)
 	%ProgressoEvento.completed.connect(_on_completed)
 	%ProgressoEvento.start()
+	player=get_tree().get_first_node_in_group("player")
+	player.desativar()
 
 
 func close() -> void:
@@ -46,3 +50,7 @@ func _on_completed():
 
 func _on_spin_button_giro_completo(_contador: int) -> void:
 	%ProgressoEvento.do_act()
+
+
+func _exit_tree() -> void:
+	player.ativar()

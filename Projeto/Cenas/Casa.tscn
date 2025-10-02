@@ -286,6 +286,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("21_tjjme")
 text = "Ação"
+uppercase = true
 
 [node name="BotaoPausa" type="TouchScreenButton" parent="Molduras"]
 process_mode = 3

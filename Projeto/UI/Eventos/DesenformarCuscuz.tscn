@@ -222,6 +222,21 @@ texture_normal = ExtResource("9_c5aef")
 texture_pressed = ExtResource("12_mf8c0")
 stretch_mode = 5
 
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/Instrucao/ProgressoEvento/BotaoAcao" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -18.0
+offset_right = 18.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DESENFORMAR"
+
 [node name="CloseButton" parent="MarginContainer/PanelContainer/VBoxContainer" index="7"]
 custom_minimum_size = Vector2(100, 100)
 theme = ExtResource("12_l2rbf")
