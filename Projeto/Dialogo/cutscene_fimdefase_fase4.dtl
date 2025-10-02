@@ -1,0 +1,16 @@
+do ControleDeAudio.toca_musica("quadrinhos")
+[wait time="2.0"]
+do Cutscene.trocar_rosto("elza", "RostoFalando")
+elza: Nossa, Lu![aa=3]
+elza: Que trabalheira![aa=3]
+do Cutscene.trocar_rosto("elza", "RostoIdle")
+luisa: Sim, mas vale a pena.[aa=3]
+do Cutscene.trocar_rosto("elza", "RostoFalando")
+elza: Pena que não resolve a fome de todo mundo.[aa=3]
+do Cutscene.trocar_rosto("elza", "RostoIdle")
+luisa: Por isso a importância de fazer a denúncia na Defensoria Pública.[aa=3]
+do Cutscene.trocar_rosto("elza", "RostoFalando")
+elza: A gente ajuda aqui, mas tem que mudar as coisas lá![aa=3]
+do Cutscene.trocar_rosto("elza", "RostoIdle")
+[wait time="2.0"]
+do Cutscene.finalizar_cena("res://Cenas/cutscene_quadrinhos_fase_5.tscn")

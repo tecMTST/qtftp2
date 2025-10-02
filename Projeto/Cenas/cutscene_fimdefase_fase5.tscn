@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://caqmwi57djkmi"]
+[gd_scene load_steps=37 format=3 uid="uid://caqmwi57djkmi"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_5psp3"]
 [ext_resource type="Resource" uid="uid://dmnmevvcnpr6q" path="res://Dialogo/cutscene_fimdefase_fase5.dtl" id="2_5psp3"]
@@ -12,16 +12,28 @@
 [ext_resource type="PackedScene" uid="uid://g3f8sup6huqo" path="res://Componentes/Casa/Interagiveis/FogaoSC.tscn" id="10_y44v8"]
 [ext_resource type="PackedScene" uid="uid://cqcepha3vdbs2" path="res://Componentes/Casa/Interagiveis/BalcaoEntrega.tscn" id="11_djcw4"]
 [ext_resource type="Texture2D" uid="uid://c4itpvbt4he0k" path="res://Recursos/Graficos/Cenas/Cenario_2/Parede frontal.svg" id="12_8xt0q"]
-[ext_resource type="PackedScene" uid="uid://n52w7lk2j46x" path="res://Componentes/Casa/Interagiveis/EntregaNaFila.tscn" id="13_bi7gm"]
+[ext_resource type="Texture2D" uid="uid://brxb7vwwjidl2" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-01.svg" id="13_f6bxl"]
 [ext_resource type="PackedScene" uid="uid://ra7kq174mnxo" path="res://Componentes/Personagens/Elza.tscn" id="14_6s1xb"]
+[ext_resource type="Texture2D" uid="uid://c3o4gkd0wvbt" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-02.svg" id="14_aefgc"]
+[ext_resource type="Texture2D" uid="uid://bcvewwa1lyxbb" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-05.svg" id="15_2tfo0"]
 [ext_resource type="PackedScene" uid="uid://33ix112wt1og" path="res://Componentes/Personagens/luiza.tscn" id="15_ml4f3"]
 [ext_resource type="PackedScene" uid="uid://csgs6ijgjju21" path="res://Componentes/Personagens/Tio.tscn" id="16_h4bie"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="16_mv7s5"]
+[ext_resource type="Texture2D" uid="uid://bflc43v2yqqkv" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-06.svg" id="16_y44v8"]
+[ext_resource type="Texture2D" uid="uid://drft23y0mm6nb" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-07.svg" id="17_djcw4"]
 [ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="17_fek73"]
+[ext_resource type="Texture2D" uid="uid://3bmbjavjfs4q" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-08.svg" id="18_8xt0q"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="18_okt71"]
+[ext_resource type="Texture2D" uid="uid://di1ap2sm0aamp" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-03.svg" id="19_2tfo0"]
 [ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="19_qyqet"]
 [ext_resource type="Script" path="res://Scripts/Cutscenes/botao_avancar.gd" id="20_qg60u"]
+[ext_resource type="Texture2D" uid="uid://d305c0quycu8l" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-04.svg" id="20_y44v8"]
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="21_edtl7"]
+[ext_resource type="Script" uid="uid://dhc22d7vyha5t" path="res://Cenas/particle_spawner.gd" id="30_bi7gm"]
+[ext_resource type="PackedScene" uid="uid://phqyckw1rqyl" path="res://Recursos/Graficos/Efeitos/grafico_exclamacao.tscn" id="31_6s1xb"]
+[ext_resource type="PackedScene" uid="uid://byrpvc0v78cct" path="res://Recursos/Graficos/Efeitos/grafico_pipipi.tscn" id="32_ml4f3"]
+[ext_resource type="PackedScene" uid="uid://cs1q0yifhy8oy" path="res://Recursos/Graficos/Efeitos/grafico_lagrimas.tscn" id="33_mv7s5"]
+[ext_resource type="PackedScene" uid="uid://by2mwucu2i3wo" path="res://Recursos/Graficos/Efeitos/grafico_sono.tscn" id="34_6s1xb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xld1x"]
 size = Vector2(214, 132)
@@ -31,7 +43,7 @@ vertices = PackedVector2Array(20.9609, 501.711, 20.0313, 243.18, 670.93, 254.82,
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(10, 233, 681, 245, 675, 1197, 6, 1195, 12, 783, 117, 783, 119, 519, 11, 511)])
 
-[node name="CutsceneFimdeFaseTutorial" type="Node2D"]
+[node name="CutsceneFimdeFase5" type="Node2D" groups=["cutscene"]]
 script = ExtResource("1_5psp3")
 proxima_fase = "res://Cenas/cutscene_quadrinhos_fase_4.tscn"
 timeline = ExtResource("2_5psp3")
@@ -106,7 +118,7 @@ position = Vector2(582, 659)
 position = Vector2(495, 1149)
 
 [node name="Waypoint5" type="Marker2D" parent="Waypoints"]
-position = Vector2(368, 916)
+position = Vector2(425, 884)
 
 [node name="Waypoint6" type="Marker2D" parent="Waypoints"]
 position = Vector2(507, 716)
@@ -121,15 +133,60 @@ z_index = 15
 position = Vector2(359, 1141)
 texture = ExtResource("12_8xt0q")
 
+[node name="PessoaFila1" type="Sprite2D" parent="CenarioiFront"]
+z_as_relative = false
+position = Vector2(573.75, 863.5)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("13_f6bxl")
+
+[node name="PessoaFila2" type="Sprite2D" parent="CenarioiFront"]
+z_as_relative = false
+position = Vector2(542.75, 924.5)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("14_aefgc")
+
+[node name="PessoaFila3" type="Sprite2D" parent="CenarioiFront"]
+z_as_relative = false
+position = Vector2(262.75, 856.5)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("15_2tfo0")
+
+[node name="PessoaFila4" type="Sprite2D" parent="CenarioiFront"]
+z_as_relative = false
+position = Vector2(207.75, 935.5)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("16_y44v8")
+
+[node name="PessoaFila5" type="Sprite2D" parent="CenarioiFront"]
+z_as_relative = false
+position = Vector2(278, 976)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("17_djcw4")
+
+[node name="PessoaFila6" type="Sprite2D" parent="CenarioiFront"]
+z_as_relative = false
+position = Vector2(589, 989)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("18_8xt0q")
+
+[node name="PessoaFila7" type="Sprite2D" parent="CenarioiFront"]
+z_as_relative = false
+position = Vector2(564, 1147)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("19_2tfo0")
+
+[node name="PessoaFila8" type="Sprite2D" parent="CenarioiFront"]
+z_as_relative = false
+position = Vector2(596, 1221)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("20_y44v8")
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(15, 84)
 navigation_polygon = SubResource("NavigationPolygon_tbxhh")
 
-[node name="EntregaNaFila2" parent="." instance=ExtResource("13_bi7gm")]
-position = Vector2(544, 817)
-
 [node name="Personagens" type="Node2D" parent="."]
-z_index = 5
+z_as_relative = false
 
 [node name="Elza" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("14_6s1xb")]
 position = Vector2(589, 408)
@@ -139,9 +196,10 @@ waypoints = NodePath("../../Waypoints")
 position = Vector2(136, 1143)
 scale = Vector2(0.29, 0.29)
 
-[node name="Tio" parent="Personagens" instance=ExtResource("16_h4bie")]
-position = Vector2(395, 872)
+[node name="Tio" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("16_h4bie")]
+position = Vector2(438, 1353)
 scale = Vector2(0.3, 0.3)
+waypoints = NodePath("../../Waypoints")
 
 [node name="TransicaoCena" parent="." instance=ExtResource("16_mv7s5")]
 visible = false
@@ -190,5 +248,10 @@ theme = ExtResource("21_edtl7")
 text = "Avançar"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ParticleSpawner" type="Node" parent="."]
+script = ExtResource("30_bi7gm")
+particle_effects = Array[PackedScene]([ExtResource("32_ml4f3"), ExtResource("33_mv7s5"), ExtResource("31_6s1xb"), ExtResource("34_6s1xb")])
+particle_names = Array[String](["pipipi", "lagrimas", "exclamacao", "sono"])
 
 [connection signal="Acionado" from="InteracoesDialogo/BotaoTemporizado" to="." method="_on_botao_temporizado_acionado"]

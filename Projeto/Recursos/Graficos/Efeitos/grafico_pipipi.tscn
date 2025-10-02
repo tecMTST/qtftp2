@@ -1,44 +1,53 @@
-[gd_scene load_steps=6 format=3 uid="uid://byrpvc0v78cct"]
+[gd_scene load_steps=8 format=3 uid="uid://byrpvc0v78cct"]
 
 [ext_resource type="Script" uid="uid://cui74y06toat7" path="res://Recursos/Graficos/Efeitos/particulas_cenas.gd" id="1_5sjle"]
 [ext_resource type="Texture2D" uid="uid://bpc674hekes07" path="res://Recursos/Graficos/Efeitos/pipipi.svg" id="1_34gr4"]
 
-[sub_resource type="Curve" id="Curve_5sjle"]
-_limits = [1.0, 5.24719, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 5.24719), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="Gradient" id="Gradient_5sjle"]
+offsets = PackedFloat32Array(0, 0.50974, 0.996753)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="Curve" id="Curve_gdw80"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.744745, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_atjyw"]
+gradient = SubResource("Gradient_5sjle")
+
+[sub_resource type="Curve" id="Curve_1l6w8"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.497006, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_atjyw"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+[sub_resource type="CurveTexture" id="CurveTexture_a1sjx"]
+curve = SubResource("Curve_1l6w8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ituq8"]
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 1.00001
+direction = Vector3(1, -2, 0)
+spread = 0.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+angular_velocity_min = 20.0
+angular_velocity_max = 20.0
+gravity = Vector3(0, 200, 0)
+linear_accel_min = 20.0
+linear_accel_max = 20.0
+radial_accel_min = 20.0
+radial_accel_max = 20.0
+tangential_accel_min = 6.0
+tangential_accel_max = 6.0
+damping_min = 20.0
+damping_max = 20.0
+scale_curve = SubResource("CurveTexture_a1sjx")
+color_ramp = SubResource("GradientTexture1D_atjyw")
 
 [node name="Pipipi" type="Node2D" node_paths=PackedStringArray("particle_nodes")]
 script = ExtResource("1_5sjle")
 particle_nodes = [NodePath("Pi")]
 self_destruct_time = 5.0
 
-[node name="Pi" type="CPUParticles2D" parent="."]
+[node name="Pi" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 5
 texture = ExtResource("1_34gr4")
 lifetime = 2.0
 one_shot = true
-direction = Vector2(1, -1)
-spread = 0.0
-gravity = Vector2(0, 40)
-initial_velocity_min = 150.0
-initial_velocity_max = 150.0
-angular_velocity_min = 2.0
-angular_velocity_max = 2.0
-linear_accel_min = 1.0
-linear_accel_max = 1.0
-radial_accel_min = 4.0
-radial_accel_max = 4.0
-damping_min = 30.0
-damping_max = 30.0
-angle_curve = SubResource("Curve_5sjle")
-scale_amount_curve = SubResource("Curve_gdw80")
-color_ramp = SubResource("Gradient_atjyw")
+process_material = SubResource("ParticleProcessMaterial_ituq8")

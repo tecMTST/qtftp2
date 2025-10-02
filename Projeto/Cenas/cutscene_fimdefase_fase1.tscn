@@ -158,7 +158,7 @@ position = Vector2(364, 847.1)
 [node name="Personagens" type="Node2D" parent="."]
 z_index = 5
 
-[node name="Filha" parent="Personagens" node_paths=PackedStringArray("waypoints") groups=["filha_sprite"] instance=ExtResource("14_iuynf")]
+[node name="Filha" parent="Personagens" node_paths=PackedStringArray("waypoints") groups=["cutscene", "filha_sprite"] instance=ExtResource("14_iuynf")]
 z_index = 5
 position = Vector2(135, 515)
 bagunca_scene = ExtResource("15_ehhn2")

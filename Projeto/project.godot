@@ -46,13 +46,13 @@ directories/dch_directory={
 "felix": "res://Dialogo/felix.dch",
 "lucas": "res://Dialogo/lucas.dch",
 "luisa": "res://Dialogo/luisa.dch",
-"narrador": "res://Dialogo/narrador.dch",
-"narrador_cartilha": "res://Dialogo/narrador_cartilha.dch"
+"narrador": "res://Dialogo/narrador.dch"
 }
 directories/dtl_directory={
 "fase1_fdf": "res://Dialogo/cutscene_fimdefase_fase1.dtl",
 "fase2_fdf": "res://Dialogo/cutscene_fimdefase_fase2.dtl",
 "fase3_fdf": "res://Dialogo/cutscene_fimdefase_fase3.dtl",
+"fase4_fdf": "res://Dialogo/cutscene_fimdefase_fase4.dtl",
 "fase5_fdf": "res://Dialogo/cutscene_fimdefase_fase5.dtl",
 "tutorial_fdf": "res://Dialogo/cutscene_fimdefase_tutorial.dtl",
 "tutorial_ingame": "res://Dialogo/tutorial.dtl"
