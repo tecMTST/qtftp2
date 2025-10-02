@@ -141,7 +141,6 @@ position = Vector2(163, -41.4998)
 shape = SubResource("RectangleShape2D_7lwul")
 
 [node name="Limite4" type="StaticBody2D" parent="Limites"]
-visible = false
 position = Vector2(404, 1391)
 rotation = 1.57079
 
@@ -205,7 +204,7 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("18_k21wa")
 PositionType = 1
 ControlsColor = Color(1, 1, 1, 1)
-CircleTexture = ExtResource("19_vd0u2")
+CircleTexture = ExtResource("34_5hxbm")
 KnobTexture = ExtResource("20_01qrq")
 metadata/_custom_type_script = "uid://dku77viqwklks"
 
@@ -232,14 +231,11 @@ theme = ExtResource("23_q432q")
 text = "Avançar"
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("26_u2tsi")
 
 [node name="Hud" parent="UI" instance=ExtResource("27_00r2q")]
-visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="pausar" parent="CanvasLayer" node_paths=PackedStringArray("briefing") instance=ExtResource("28_lx3st")]
 visible = false
@@ -274,7 +270,6 @@ visible = false
 
 [node name="Molduras" type="CanvasLayer" parent="."]
 layer = 0
-visible = false
 
 [node name="Moldura" type="Control" parent="Molduras"]
 layout_mode = 3
@@ -316,6 +311,7 @@ texture = ExtResource("19_vd0u2")
 expand_mode = 3
 
 [node name="BaseThumb" type="TextureRect" parent="Molduras/Moldura"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -334,6 +330,7 @@ texture = ExtResource("34_5hxbm")
 position = Vector2(121, 120)
 
 [node name="BotaoAcao" type="TouchScreenButton" parent="Molduras"]
+visible = false
 z_index = 99
 position = Vector2(265, 1064)
 texture_normal = ExtResource("21_syhsj")
@@ -398,6 +395,7 @@ text = "Avançar"
 [node name="TouchAnalog" type="Node2D" parent="Molduras" node_paths=PackedStringArray("RestPosition")]
 process_mode = 3
 z_index = 200
+position = Vector2(582, 1145)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("18_k21wa")
 PositionType = 1
