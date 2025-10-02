@@ -1,6 +1,6 @@
 extends Control
 
-var player: Player 
+var player: Player
 
 @onready var receita: Label = $MarginContainer/PanelContainer/VBoxContainer/Receita
 

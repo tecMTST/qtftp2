@@ -351,6 +351,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("23_q432q")
 text = "Ação"
+uppercase = true
 
 [node name="BotaoPausa" type="TouchScreenButton" parent="Molduras"]
 process_mode = 3
