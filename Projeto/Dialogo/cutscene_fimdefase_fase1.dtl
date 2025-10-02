@@ -3,11 +3,12 @@ do Cutscene.mover_para("carolina", "Waypoint6")
 do Cutscene.olhar_para("elza", "direita")
 do Cutscene.executar_funcao("elza", "sentar")
 [wait time="2.0"]
-elza: !![aa=3]
-[style name="celular"]
-elza: [b]Luisa diz\:[/b] Tive notícias do Felix hoje, Elza![aa=3]
-elza: [b]Luisa diz\:[/b] Parece que viram ele na rua.[aa=3]
-[style]
+do Cutscene.spawnar_particulas("pipipi", 574, 897)
+[wait time="3.0"]
+do Cutscene.spawnar_particulas("exclamacao", 503, 810)
+[wait time="3.0"]
+celular: [b]Luisa diz\:[/b] Tive notícias do Felix hoje, Elza![aa=3]
+celular: [b]Luisa diz\:[/b] Parece que viram ele na rua.[aa=3]
 do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
 elza: [shake rate=20.0 level=5 connected=1][lspeed=0.4][wave amp=50.0 freq=5.0 connected=0]. . .[/wave][lspeed][/shake][aa=3]
 [wait time="0.2"]
@@ -23,7 +24,7 @@ do Cutscene.olhar_para("elza", "esquerda")
 do Cutscene.mover_para("elza", "Waypoint4")
 [wait time="2.0"]
 do Cutscene.mover_para("elza", "Waypoint7")
-[wait time="2.0"]
+[wait time="3.0"]
 do Cutscene.trocar_rosto("elza", "rostoFalando")
 elza: Nada, filha.[aa=3]
 elza: Congela a comida pra mim, tá?[aa=3]
@@ -35,3 +36,4 @@ do Cutscene.trocar_rosto("carolina", "rostoIdle")
 [wait time="0.5"]
 do Cutscene.mover_para("elza", "Waypoint2")
 [wait time="2.0"]
+do Cutscene.finalizar_cena("res://Cenas/cutscene_quadrinhos_fase_2.tscn")

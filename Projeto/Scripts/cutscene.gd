@@ -9,6 +9,33 @@ func spawnar_particulas(nome_efeito: String, pos_x: float, pos_y: float):
 	else:
 		push_error("No particle spawner found in group 'spawner_particulas'!")
 
+func deletar_sprites():
+	var cutscenes = get_tree().get_nodes_in_group("cutscene").filter(
+		func(c): return c.has_method("deletar_sprites")
+	)
+	if cutscenes.size() > 0:
+		cutscenes[0].deletar_sprites()
+	else:
+		push_error("No cutscene found with deletar_sprites method!")
+
+func escurecer_tela():
+	var transicoes = get_tree().get_nodes_in_group("transicao").filter(
+		func(t): return t.has_method("escurecer")
+	)
+	if transicoes.size() > 0:
+		await transicoes[0].escurecer()
+	else:
+		push_error("No transition found with escurecer method!")
+
+func clarear_tela():
+	var transicoes = get_tree().get_nodes_in_group("transicao").filter(
+		func(t): return t.has_method("clarear")
+	)
+	if transicoes.size() > 0:
+		await transicoes[0].clarear()
+	else:
+		push_error("No transition found with clarear method!")
+
 func trocar_rosto(id : String, rosto : String):
 	var personagem = get_tree().get_nodes_in_group("personagem").filter(
 		func(p : Personagem): return p.id == id

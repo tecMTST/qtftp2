@@ -1,6 +1,5 @@
 do ControleDeAudio.toca_musica("quadrinhos")
 do Cutscene.ordem("elza", "0")
-[wait time="2.0"]
 do Cutscene.mover_para("elza", "Waypoint1")
 [wait time="7.0"]
 do Cutscene.olhar_para("elza", "direita")
@@ -15,24 +14,40 @@ do Cutscene.spawnar_particulas("exclamacao", 588, 350)
 elza: Tio Felix?[aa=3]
 do Cutscene.trocar_rosto("elza", "rostoIdle")
 felix: Elza?[aa=3]
+[wait time="1.0"]
+do Cutscene.escurecer_tela()
+do Cutscene.mover_para("felix", "Waypoint3")
+do Cutscene.mover_para("elza", "Waypoint4")
 [wait time="5.0"]
+do Cutscene.olhar_para("felix", "direita")
+[wait time="1.0"]
+do Cutscene.deletar_sprites()
+do Cutscene.clarear_tela()
 do Cutscene.trocar_rosto("elza", "rostoFalando")
 elza: Tio Felix! Por que você não me procurou?[aa=3]
 do Cutscene.trocar_rosto("elza", "rostoIdle")
 felix: Eu tava com tanta vergonha…[aa=3]
 felix: Perdi minha casa… Passei fome…[aa=3]
 felix: A Cozinha aqui acaba me ajudando a segurar as pontas.[aa=3]
-felix: Mas ainda é muito difícil garantir comida todos os dias…
-elza: Ô, tio… Eu também passei por uns maus bocados.
-elza: Você não tem que ter vergonha nenhuma.
-luisa: E não tem que ter mesmo.
-luisa: O que aconteceu com vocês foi uma quebra de direitos básicos.
-elza: E é tanta gente passando por isso…
-felix: Muita mesmo.
-felix: Na praça do bairro conheci muitos que estão piores que eu.
-elza: …
-elza: Luisa, eu acho que podemos fazer algo.
-elza: Porque a cartilha me ensinou que posso mudar esta situação.
-luisa: Eu te apoio até o fim, amiga!
+felix: Mas ainda é muito difícil garantir comida todos os dias…[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoFalando")
+elza: Ô, tio… Eu também passei por uns maus bocados.[aa=3]
+elza: Você não tem que ter vergonha nenhuma.[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoIdle")
+do Cutscene.mover_para("luisa", "Waypoint6")
+[wait time="4.0"]
+luisa: E não tem que ter mesmo.[aa=3]
+luisa: O que aconteceu com vocês foi uma quebra de direitos básicos.[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoFalando")
+elza: E é tanta gente passando por isso…[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoIdle")
+felix: Muita mesmo.[aa=3]
+felix: Na praça do bairro conheci muitos que estão piores que eu.[aa=3]
+elza: …[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoFalando")
+elza: Luisa, eu acho que podemos fazer algo.[aa=3]
+elza: Porque a cartilha me ensinou que posso mudar esta situação.[aa=3]
+do Cutscene.trocar_rosto("elza", "rostoIdle")
+luisa: Eu te apoio até o fim, amiga![aa=3]
 [wait time="2.0"]
 do Cutscene.finalizar_cena("res://Cenas/cutscene_quadrinhos_epilogo.tscn")

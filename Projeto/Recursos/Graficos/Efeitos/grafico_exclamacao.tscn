@@ -39,6 +39,8 @@ scale_curve = SubResource("CurveTexture_53nkf")
 color_ramp = SubResource("GradientTexture1D_olsl8")
 
 [node name="Exclamacao" type="Node2D" node_paths=PackedStringArray("particle_nodes")]
+z_index = 20
+z_as_relative = false
 script = ExtResource("1_mna4i")
 particle_nodes = [NodePath("Exc")]
 self_destruct_time = 4.0

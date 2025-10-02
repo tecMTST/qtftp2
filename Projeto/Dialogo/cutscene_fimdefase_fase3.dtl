@@ -15,10 +15,12 @@ do Cutscene.spawnar_particulas("lagrimas", 465, 590)
 do Cutscene.mover_para("carolina", "Waypoint5")
 [wait time="2.0"]
 do Cutscene.olhar_para("carolina", "direita")
+[wait time="0.5"]
 do Cutscene.olhar_para("luisa", "esquerda")
 do Cutscene.mover_para("luisa", "Waypoint7")
-[wait time="4.5"]
+[wait time="5.0"]
 do Cutscene.olhar_para("luisa", "direita")
+[wait time="0.5"]
 luisa: Elza! Carol![aa=3]
 luisa: Sabia que tinha algo errado![aa=3]
 [wait time="0.5"]
@@ -44,10 +46,10 @@ luisa: Isso, olha esta cartilha aqui.[aa=3]
 do Cutscene.mover_para("luisa", "Waypoint10")
 [wait time="3.0"]
 do Cutscene.mover_para("luisa", "Waypoint9")
-narrador_cartilha: Você ganhou a Cartilha![aa=3]
-narrador_cartilha: O título é um pouco longo…[aa=3]
-narrador_cartilha: “Exigibilidade do Direito a Estar Livre da Fome”.[aa=3]
-narrador_cartilha: Mas a leitura era bem fácil![aa=3]
+narrador: Você ganhou a Cartilha![aa=3]
+narrador: O título é um pouco longo…[aa=3]
+narrador: “Exigibilidade do Direito a Estar Livre da Fome”.[aa=3]
+narrador: Mas a leitura é bem fácil![aa=3]
 [wait time="1.0"]
 do Cutscene.trocar_rosto("carolina", "rostoIdle")
 do Cutscene.trocar_rosto("elza", "rostoFalando")
@@ -56,7 +58,12 @@ do Cutscene.trocar_rosto("elza", "rostoIdle")
 luisa: Vem comigo![aa=3]
 do Cutscene.mover_para("luisa", "Waypoint2")
 [wait time="5.0"]
+do Cutscene.mover_para("luisa", "Waypoint11")
+do Cutscene.mover_para("carolina", "Waypoint4")
+[wait time="3.0"]
 do Cutscene.mover_para("carolina", "Waypoint2")
+[wait time="2.0"]
+do Cutscene.mover_para("carolina", "Waypoint11")
 [wait time="2.0"]
 do Cutscene.mover_para("elza", "Waypoint3")
 [wait time="7.0"]

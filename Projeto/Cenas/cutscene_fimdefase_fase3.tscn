@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://745rr8g6h4n1"]
+[gd_scene load_steps=37 format=3 uid="uid://745rr8g6h4n1"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_xgtsr"]
 [ext_resource type="Resource" uid="uid://bakf4e0et2udx" path="res://Dialogo/cutscene_fimdefase_fase3.dtl" id="2_b5aa4"]
@@ -10,10 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://c6n7piqbsbwoq" path="res://Componentes/Casa/Interagiveis/Pia.tscn" id="8_5r21c"]
 [ext_resource type="PackedScene" uid="uid://dpkfr6t86l4j" path="res://Componentes/Casa/Interagiveis/Geladeira.tscn" id="9_vu776"]
 [ext_resource type="PackedScene" uid="uid://b636g7sui3m6c" path="res://Componentes/Casa/Interagiveis/Fogao.tscn" id="10_jy6ii"]
-[ext_resource type="PackedScene" uid="uid://cjqpfs867y0in" path="res://Componentes/Casa/Interagiveis/Berco.tscn" id="11_us1ww"]
+[ext_resource type="Script" uid="uid://cc1rqfgoty0vw" path="res://Componentes/Casa/Interagiveis/berco.gd" id="11_iytwc"]
 [ext_resource type="PackedScene" uid="uid://tap31ifdmu6f" path="res://Componentes/Casa/Interagiveis/MesaFilha.tscn" id="12_iytwc"]
+[ext_resource type="Texture2D" uid="uid://687eow50aj7w" path="res://Recursos/Graficos/Interagiveis/Berço.svg" id="12_pjhof"]
+[ext_resource type="Texture2D" uid="uid://dwhconcu8ehsu" path="res://Recursos/Graficos/Interagiveis/Mobile.svg" id="13_mux21"]
 [ext_resource type="PackedScene" uid="uid://cjdso8f820o6i" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="13_pjhof"]
+[ext_resource type="PackedScene" uid="uid://x3x4hdetf5a8" path="res://Componentes/Personagens/rigs/lucas_rig_dessat.tscn" id="14_vc7u1"]
+[ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="15_mj6ai"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="15_vc7u1"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="16_3ylqh"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunca/BaguncaCena.tscn" id="16_mj6ai"]
 [ext_resource type="PackedScene" uid="uid://ra7kq174mnxo" path="res://Componentes/Personagens/Elza.tscn" id="18_pgaff"]
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="19_4ev03"]
@@ -22,15 +27,20 @@
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="20_nvv42"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="21_seoac"]
 [ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="23_pgaff"]
-[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="24_5r21c"]
-[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="25_vu776"]
 [ext_resource type="Script" uid="uid://dhc22d7vyha5t" path="res://Cenas/particle_spawner.gd" id="26_e1jhb"]
-[ext_resource type="Script" path="res://Scripts/Cutscenes/botao_avancar.gd" id="26_jy6ii"]
-[ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="27_us1ww"]
 [ext_resource type="PackedScene" uid="uid://phqyckw1rqyl" path="res://Recursos/Graficos/Efeitos/grafico_exclamacao.tscn" id="27_vu776"]
 [ext_resource type="PackedScene" uid="uid://byrpvc0v78cct" path="res://Recursos/Graficos/Efeitos/grafico_pipipi.tscn" id="28_jy6ii"]
 [ext_resource type="PackedScene" uid="uid://cs1q0yifhy8oy" path="res://Recursos/Graficos/Efeitos/grafico_lagrimas.tscn" id="29_us1ww"]
 [ext_resource type="PackedScene" uid="uid://by2mwucu2i3wo" path="res://Recursos/Graficos/Efeitos/grafico_sono.tscn" id="31_us1ww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82xuh"]
+size = Vector2(144, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrlxa"]
+size = Vector2(182, 303)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jejg1"]
+radius = 47.0956
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
 vertices = PackedVector2Array(428.898, 572.188, 683.773, 1080.93, 7.79688, 1078.05, 189.82, 525, 678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 50.8984, 525, 551.242, 503.078, 682.406, 569.117, 678.562, 502.07)
@@ -81,9 +91,56 @@ position = Vector2(104, 333)
 
 [node name="Distracoes" type="Node2D" parent="."]
 
-[node name="Berco" parent="Distracoes" instance=ExtResource("11_us1ww")]
+[node name="Berco" type="StaticBody2D" parent="Distracoes" groups=["berco", "interagivel"]]
 z_index = 10
 position = Vector2(109, 850)
+script = ExtResource("11_iytwc")
+
+[node name="BercoArte" type="Sprite2D" parent="Distracoes/Berco"]
+texture = ExtResource("12_pjhof")
+
+[node name="MobileArte" type="Sprite2D" parent="Distracoes/Berco/BercoArte"]
+z_index = 7
+position = Vector2(-8, -118)
+texture = ExtResource("13_mux21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Distracoes/Berco"]
+shape = SubResource("RectangleShape2D_82xuh")
+
+[node name="lucas_rig_dessat" parent="Distracoes/Berco" instance=ExtResource("14_vc7u1")]
+position = Vector2(-2, -14)
+scale = Vector2(-0.255, 0.255)
+
+[node name="VisualizadorTemporal" type="Node2D" parent="Distracoes/Berco" node_paths=PackedStringArray("temporizador")]
+visible = false
+z_index = 99
+position = Vector2(0, -171)
+script = ExtResource("15_mj6ai")
+temporizador = NodePath("../Timer")
+radius = 30.0
+cor = Color(1, 0, 0, 0.8)
+metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
+
+[node name="Timer" type="Timer" parent="Distracoes/Berco"]
+
+[node name="ComponenteInteragivel" type="Node2D" parent="Distracoes/Berco" node_paths=PackedStringArray("area_de_interacao")]
+visible = false
+script = ExtResource("16_3ylqh")
+nome = "berco"
+descricao = "interação berço"
+area_de_interacao = NodePath("../AreaInteracao")
+possui_contorno = false
+metadata/_custom_type_script = "uid://ddwsslb5nraqq"
+
+[node name="AreaInteracao" type="Area2D" parent="Distracoes/Berco"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Distracoes/Berco/AreaInteracao"]
+position = Vector2(-4, 0.5)
+shape = SubResource("RectangleShape2D_nrlxa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Distracoes/Berco"]
+position = Vector2(-19, -126)
+shape = SubResource("CircleShape2D_jejg1")
 
 [node name="MesaFilha" parent="Distracoes" instance=ExtResource("12_iytwc")]
 z_index = 6
@@ -113,7 +170,7 @@ position = Vector2(197, 583)
 position = Vector2(507, 716)
 
 [node name="Waypoint7" type="Marker2D" parent="Waypoints"]
-position = Vector2(311, 817)
+position = Vector2(313, 790)
 
 [node name="Waypoint8" type="Marker2D" parent="Waypoints"]
 position = Vector2(131, 437)
@@ -123,6 +180,9 @@ position = Vector2(318, 609)
 
 [node name="Waypoint10" type="Marker2D" parent="Waypoints"]
 position = Vector2(387, 609)
+
+[node name="Waypoint11" type="Marker2D" parent="Waypoints"]
+position = Vector2(627, 1207)
 
 [node name="Personagens" type="Node2D" parent="."]
 
@@ -173,44 +233,11 @@ tempo = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="InteracoesDialogo"]
 
-[node name="Avancar" type="TextureButton" parent="InteracoesDialogo/CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -126.0
-offset_top = -193.0
-offset_right = 126.0
-offset_bottom = -25.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("24_5r21c")
-texture_pressed = ExtResource("25_vu776")
-stretch_mode = 5
-script = ExtResource("26_jy6ii")
-
-[node name="Label" type="Label" parent="InteracoesDialogo/CanvasLayer/Avancar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -67.5
-offset_top = -23.0
-offset_right = 67.5
-offset_bottom = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("27_us1ww")
-text = "Avançar"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="ParticleSpawner" type="Node" parent="."]
 script = ExtResource("26_e1jhb")
 particle_effects = Array[PackedScene]([ExtResource("28_jy6ii"), ExtResource("29_us1ww"), ExtResource("27_vu776"), ExtResource("31_us1ww")])
 particle_names = Array[String](["pipipi", "lagrimas", "exclamacao", "sono"])
 
+[connection signal="timeout" from="Distracoes/Berco/Timer" to="Distracoes/Berco" method="_on_timer_timeout"]
+[connection signal="interagir" from="Distracoes/Berco/ComponenteInteragivel" to="Distracoes/Berco" method="_on_componente_interagivel_interagir"]
 [connection signal="Acionado" from="InteracoesDialogo/BotaoTemporizado" to="." method="_on_botao_temporizado_acionado"]
