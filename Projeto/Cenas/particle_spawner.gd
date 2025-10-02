@@ -18,3 +18,5 @@ func spawn_particle(effect_name: String, spawn_position: Vector2):
 	var particle_instance = particle_effects[effect_index].instantiate()
 	get_tree().current_scene.add_child(particle_instance)
 	particle_instance.global_position = spawn_position
+	particle_instance.disparar()
+	

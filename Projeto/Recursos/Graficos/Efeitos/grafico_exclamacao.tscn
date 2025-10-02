@@ -1,36 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://phqyckw1rqyl"]
+[gd_scene load_steps=10 format=3 uid="uid://phqyckw1rqyl"]
 
 [ext_resource type="Script" uid="uid://cui74y06toat7" path="res://Recursos/Graficos/Efeitos/particulas_cenas.gd" id="1_mna4i"]
 [ext_resource type="Texture2D" uid="uid://d1kpegpi416is" path="res://Recursos/Graficos/Efeitos/exclamacao.svg" id="1_ygaqf"]
 
-[sub_resource type="Curve" id="Curve_5sjle"]
-_limits = [1.0, 5.24719, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 5.24719), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_mna4i"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 12.4231), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_gdw80"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.744745, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="CurveTexture" id="CurveTexture_olsl8"]
+curve = SubResource("Curve_mna4i")
+
+[sub_resource type="Gradient" id="Gradient_mna4i"]
+offsets = PackedFloat32Array(0, 0.525424, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_olsl8"]
+gradient = SubResource("Gradient_mna4i")
+
+[sub_resource type="Curve" id="Curve_nikel"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.495984, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_atjyw"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+[sub_resource type="CurveTexture" id="CurveTexture_53nkf"]
+curve = SubResource("Curve_nikel")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mn2wa"]
+particle_flag_disable_z = true
+angle_min = 1.00001
+angle_max = 1.00001
+angle_curve = SubResource("CurveTexture_olsl8")
+direction = Vector3(0, -1, 0)
+spread = 0.0
+gravity = Vector3(0, -75, 0)
+damping_min = 30.0
+damping_max = 30.0
+scale_curve = SubResource("CurveTexture_53nkf")
+color_ramp = SubResource("GradientTexture1D_olsl8")
 
 [node name="Exclamacao" type="Node2D" node_paths=PackedStringArray("particle_nodes")]
 script = ExtResource("1_mna4i")
 particle_nodes = [NodePath("Exc")]
 self_destruct_time = 4.0
 
-[node name="Exc" type="CPUParticles2D" parent="."]
+[node name="Exc" type="GPUParticles2D" parent="."]
 emitting = false
 amount = 1
 texture = ExtResource("1_ygaqf")
 lifetime = 2.0
 one_shot = true
-direction = Vector2(1, -1)
-spread = 0.0
-gravity = Vector2(0, -75)
-damping_min = 30.0
-damping_max = 30.0
-angle_curve = SubResource("Curve_5sjle")
-scale_amount_curve = SubResource("Curve_gdw80")
-color_ramp = SubResource("Gradient_atjyw")
+process_material = SubResource("ParticleProcessMaterial_mn2wa")

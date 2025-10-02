@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://by2mwucu2i3wo"]
+
+[ext_resource type="Script" uid="uid://cui74y06toat7" path="res://Recursos/Graficos/Efeitos/particulas_cenas.gd" id="1_xmwec"]
+[ext_resource type="Texture2D" uid="uid://birkvftr37pt" path="res://Recursos/Graficos/Efeitos/sono.svg" id="2_xmwec"]
+
+[sub_resource type="Gradient" id="Gradient_xmwec"]
+offsets = PackedFloat32Array(0, 0.49026, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8aic6"]
+gradient = SubResource("Gradient_xmwec")
+
+[sub_resource type="Curve" id="Curve_wl4um"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.505988, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0l2ni"]
+curve = SubResource("Curve_wl4um")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1bs3p"]
+particle_flag_disable_z = true
+direction = Vector3(1, -0.5, 0)
+spread = 0.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+orbit_velocity_min = 0.2
+orbit_velocity_max = 0.2
+radial_velocity_min = 20.0
+radial_velocity_max = 20.0
+gravity = Vector3(0, -100, 0)
+linear_accel_min = 6.0
+linear_accel_max = 6.0
+damping_min = 20.0
+damping_max = 20.0
+scale_curve = SubResource("CurveTexture_0l2ni")
+color_ramp = SubResource("GradientTexture1D_8aic6")
+
+[node name="Sono" type="Node2D" node_paths=PackedStringArray("particle_nodes")]
+script = ExtResource("1_xmwec")
+particle_nodes = [NodePath("Z")]
+self_destruct_time = 5.0
+
+[node name="Z" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 5
+texture = ExtResource("2_xmwec")
+lifetime = 2.0
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_1bs3p")

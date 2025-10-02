@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://745rr8g6h4n1"]
+[gd_scene load_steps=33 format=3 uid="uid://745rr8g6h4n1"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_xgtsr"]
-[ext_resource type="Resource" path="res://Dialogo/cutscene_fimdefase_fase3.dtl" id="2_b5aa4"]
+[ext_resource type="Resource" uid="uid://bakf4e0et2udx" path="res://Dialogo/cutscene_fimdefase_fase3.dtl" id="2_b5aa4"]
 [ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="3_n6bey"]
 [ext_resource type="Texture2D" uid="uid://cxb6qp0b7h80t" path="res://Recursos/Graficos/Cenas/Piso.svg" id="4_chrtt"]
 [ext_resource type="Texture2D" uid="uid://b0wevbyj2yhx2" path="res://Recursos/Graficos/Cenas/Parede traseira.svg" id="5_ebabx"]
@@ -21,15 +21,16 @@
 [ext_resource type="PackedScene" uid="uid://coxf2q1kw800c" path="res://Recursos/Graficos/Efeitos/grafico_filtrodessaturar.tscn" id="20_jy6ii"]
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="20_nvv42"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="21_seoac"]
-[ext_resource type="PackedScene" uid="uid://b3duag0q0ek4e" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="23_pgaff"]
+[ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="23_pgaff"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="24_5r21c"]
 [ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="25_vu776"]
-[ext_resource type="Script" path="res://Cenas/particle_spawner.gd" id="26_e1jhb"]
-[ext_resource type="Script" uid="uid://12v2jbt778af" path="res://Scripts/Cutscenes/botao_avancar.gd" id="26_jy6ii"]
+[ext_resource type="Script" uid="uid://dhc22d7vyha5t" path="res://Cenas/particle_spawner.gd" id="26_e1jhb"]
+[ext_resource type="Script" path="res://Scripts/Cutscenes/botao_avancar.gd" id="26_jy6ii"]
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="27_us1ww"]
 [ext_resource type="PackedScene" uid="uid://phqyckw1rqyl" path="res://Recursos/Graficos/Efeitos/grafico_exclamacao.tscn" id="27_vu776"]
 [ext_resource type="PackedScene" uid="uid://byrpvc0v78cct" path="res://Recursos/Graficos/Efeitos/grafico_pipipi.tscn" id="28_jy6ii"]
 [ext_resource type="PackedScene" uid="uid://cs1q0yifhy8oy" path="res://Recursos/Graficos/Efeitos/grafico_lagrimas.tscn" id="29_us1ww"]
+[ext_resource type="PackedScene" uid="uid://by2mwucu2i3wo" path="res://Recursos/Graficos/Efeitos/grafico_sono.tscn" id="31_us1ww"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
 vertices = PackedVector2Array(428.898, 572.188, 683.773, 1080.93, 7.79688, 1078.05, 189.82, 525, 678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 50.8984, 525, 551.242, 503.078, 682.406, 569.117, 678.562, 502.07)
@@ -209,7 +210,7 @@ vertical_alignment = 1
 
 [node name="ParticleSpawner" type="Node" parent="."]
 script = ExtResource("26_e1jhb")
-particle_effects = Array[PackedScene]([ExtResource("27_vu776"), ExtResource("28_jy6ii"), ExtResource("29_us1ww")])
-particle_names = Array[String](["exclamacao", "pipipi", "lagrimas"])
+particle_effects = Array[PackedScene]([ExtResource("28_jy6ii"), ExtResource("29_us1ww"), ExtResource("27_vu776"), ExtResource("31_us1ww")])
+particle_names = Array[String](["pipipi", "lagrimas", "exclamacao", "sono"])
 
 [connection signal="Acionado" from="InteracoesDialogo/BotaoTemporizado" to="." method="_on_botao_temporizado_acionado"]
