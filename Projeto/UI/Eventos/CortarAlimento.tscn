@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://dfrvqfogmjhje" path="res://UI/Eventos/CortarAlimento.gd" id="2_w4mwm"]
 [ext_resource type="Texture2D" uid="uid://c2hpypvmk83dx" path="res://Recursos/Graficos/UI/Ingredientes/cortar.svg" id="3_boqlv"]
 [ext_resource type="Script" uid="uid://b0tgsnmsppesf" path="res://addons/events/quick_timer_progress_bar.gd" id="3_imsks"]
-[ext_resource type="Texture2D" uid="uid://dthvcmgkvbpqs" path="res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida.svg" id="4_mct0n"]
 [ext_resource type="Script" uid="uid://44oftg34g52d" path="res://addons/events/behavior/smash_button.gd" id="4_w4mwm"]
 [ext_resource type="Theme" uid="uid://cmmbeb1vnduka" path="res://Recursos/Fontes/Label_SourGummy_Regular.tres" id="5_63mf6"]
+[ext_resource type="Texture2D" uid="uid://0pretkrmrr" path="res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida2.svg" id="5_ehikr"]
 [ext_resource type="Texture2D" uid="uid://mg6315joxyya" path="res://Recursos/Graficos/UI/Componentes/popup_minigames/popup_minigame_barra_base.svg" id="6_ehikr"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="9_bb65w"]
 [ext_resource type="Theme" uid="uid://manffmwy5jfe" path="res://UI/botaoFechar.tres" id="9_mct0n"]
@@ -42,7 +42,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("4_mct0n")
+texture = ExtResource("5_ehikr")
 expand_mode = 2
 stretch_mode = 5
 

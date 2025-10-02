@@ -15,13 +15,13 @@ func _ready() -> void:
 		receita_match = ControleDeFase.passo_atual.descricao
 	match receita_match:
 		"Picar cebola e alho na bancada":
-			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/cebola_alho.svg")
+			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/cebola_alho2.svg")
 		"Picar a salsicha":
-			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida.svg")
+			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/salsicha_cozida2.svg")
 		"Picar a carne":
-			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/acem.svg")
+			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/acem2.svg")
 		"Picar a couve na bancada":
-			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/maco_couve.svg")
+			imagem_evento.texture=load("res://Recursos/Graficos/UI/Ingredientes/maco_couve2.svg")
 	if %ProgressoEvento.running: return
 	%ProgressoEvento.failed.connect(_on_failed)
 	%ProgressoEvento.completed.connect(_on_completed)
