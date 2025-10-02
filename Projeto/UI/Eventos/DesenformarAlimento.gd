@@ -1,5 +1,7 @@
 extends Control
 
+var player: Player 
+
 @onready var receita: Label = $MarginContainer/PanelContainer/VBoxContainer/Receita
 
 
@@ -12,7 +14,8 @@ func _ready() -> void:
 	%ProgressoEvento.failed.connect(_on_failed)
 	%ProgressoEvento.completed.connect(_on_completed)
 	%ProgressoEvento.start()
-
+	player=get_tree().get_first_node_in_group("player")
+	player.desativar()
 
 func close() -> void:
 	GuiTransitions.hide("Modal")
@@ -37,3 +40,6 @@ func _on_failed():
 func _on_completed():
 	Eventos.evento_realizado.emit()
 	close()
+
+func _exit_tree() -> void:
+	player.ativar()
