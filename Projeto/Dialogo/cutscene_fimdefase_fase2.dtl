@@ -1,4 +1,5 @@
 do ControleDeAudio.toca_musica("quadrinhos")
+do Cutscene.mover_para("carolina", "Waypoint8")
 do Cutscene.executar_funcao("elza", "sentar")
 do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
 do Cutscene.olhar_para("elza", "direita")
@@ -10,8 +11,10 @@ do Cutscene.trocar_rosto("elza", "rostoIdleTriste")
 [wait time="2.0"]
 do Cutscene.trocar_rosto("elza", "rostoDormindo")
 [wait time="1.0"]
-celular: !![aa=3]
-[wait time="1.0"]
+do Cutscene.spawnar_particulas("sono", 503, 810)
+[wait time="3.0"]
+do Cutscene.spawnar_particulas("pipipi", 574, 897)
+[wait time="3.0"]
 do Cutscene.mover_para("carolina", "Waypoint1")
 do Cutscene.trocar_rosto("carolina", "rostoIdleTriste")
 [wait time="5.0"]
@@ -19,7 +22,10 @@ do Cutscene.trocar_rosto("carolina", "rostoFalandoTriste")
 carolina: Mãe, a Luisa tá te ligando.[aa=3]
 do Cutscene.trocar_rosto("carolina", "rostoIdleTriste")
 [wait time="2.0"]
+do Cutscene.spawnar_particulas("sono", 503, 810)
+[wait time="3.0"]
 do Cutscene.trocar_rosto("carolina", "rostoFalandoTriste")
 carolina: É… Deixa ela dormir.[aa=3]
 do Cutscene.trocar_rosto("carolina", "rostoIdleTriste")
 [wait time="2.0"]
+do Cutscene.finalizar_cena("res://Cenas/cutscene_quadrinhos_fase_3.tscn")
