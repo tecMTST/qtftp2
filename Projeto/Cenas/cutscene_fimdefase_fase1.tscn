@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cqthgs7avlwee"]
+[gd_scene load_steps=43 format=3 uid="uid://cqthgs7avlwee"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_wc6yt"]
 [ext_resource type="Resource" uid="uid://d0pl0jmxpqahh" path="res://Dialogo/cutscene_fimdefase_fase1.dtl" id="2_wc6yt"]
@@ -10,12 +10,16 @@
 [ext_resource type="PackedScene" uid="uid://c6n7piqbsbwoq" path="res://Componentes/Casa/Interagiveis/Pia.tscn" id="8_bfuv3"]
 [ext_resource type="PackedScene" uid="uid://dpkfr6t86l4j" path="res://Componentes/Casa/Interagiveis/Geladeira.tscn" id="9_pnjx8"]
 [ext_resource type="PackedScene" uid="uid://b636g7sui3m6c" path="res://Componentes/Casa/Interagiveis/Fogao.tscn" id="10_ey6ah"]
-[ext_resource type="PackedScene" uid="uid://cjqpfs867y0in" path="res://Componentes/Casa/Interagiveis/Berco.tscn" id="11_iwwt8"]
+[ext_resource type="Script" uid="uid://cc1rqfgoty0vw" path="res://Componentes/Casa/Interagiveis/berco.gd" id="11_hjyrl"]
 [ext_resource type="Script" uid="uid://cpi6tydbas0r3" path="res://Componentes/Casa/Interagiveis/mesa_filha.gd" id="12_iwwt8"]
+[ext_resource type="Texture2D" uid="uid://687eow50aj7w" path="res://Recursos/Graficos/Interagiveis/Berço.svg" id="12_y4nys"]
 [ext_resource type="PackedScene" uid="uid://cjdso8f820o6i" path="res://Componentes/Casa/Interagiveis/Tv.tscn" id="13_4rd4f"]
+[ext_resource type="Texture2D" uid="uid://dwhconcu8ehsu" path="res://Recursos/Graficos/Interagiveis/Mobile.svg" id="13_a3p8p"]
 [ext_resource type="Texture2D" uid="uid://bq27vpfagkao6" path="res://Recursos/Graficos/Interagiveis/Cadeira frente.svg" id="13_eajx6"]
+[ext_resource type="PackedScene" uid="uid://x3x4hdetf5a8" path="res://Componentes/Personagens/rigs/lucas_rig_dessat.tscn" id="14_3wsjn"]
 [ext_resource type="Texture2D" uid="uid://bqbbdsv41kc8l" path="res://Recursos/Graficos/Interagiveis/Cadeira lateral.svg" id="14_4rd4f"]
 [ext_resource type="PackedScene" uid="uid://d2fdciig7einf" path="res://Componentes/Personagens/Filha.tscn" id="14_iuynf"]
+[ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="15_cjhr0"]
 [ext_resource type="PackedScene" uid="uid://dxisooqckxyia" path="res://Componentes/Bagunca/BaguncaCena.tscn" id="15_ehhn2"]
 [ext_resource type="Texture2D" uid="uid://351ntpmnbl0a" path="res://Recursos/Graficos/Interagiveis/Mesa.svg" id="15_iuynf"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="16_ehhn2"]
@@ -25,11 +29,25 @@
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="18_vinpq"]
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="19_oas7f"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="20_vojac"]
-[ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="21_wexy4"]
-[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="22_wexy4"]
-[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="23_do6fd"]
-[ext_resource type="Script" path="res://Scripts/Cutscenes/botao_avancar.gd" id="23_wexy4"]
-[ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="24_bfuv3"]
+[ext_resource type="PackedScene" uid="uid://b3duag0q0ek4e" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="21_wexy4"]
+[ext_resource type="Script" uid="uid://bqyphsb3rnr2x" path="res://Componentes/Personagens/personagem.gd" id="23_4rd4f"]
+[ext_resource type="Texture2D" uid="uid://dqlbugdpq0qcd" path="res://Recursos/Graficos/Personagens/celular.svg" id="24_iuynf"]
+[ext_resource type="Script" uid="uid://dhc22d7vyha5t" path="res://Cenas/particle_spawner.gd" id="33_s73r5"]
+[ext_resource type="PackedScene" uid="uid://byrpvc0v78cct" path="res://Recursos/Graficos/Efeitos/grafico_pipipi.tscn" id="34_oas7f"]
+[ext_resource type="PackedScene" uid="uid://cs1q0yifhy8oy" path="res://Recursos/Graficos/Efeitos/grafico_lagrimas.tscn" id="35_vojac"]
+[ext_resource type="PackedScene" uid="uid://phqyckw1rqyl" path="res://Recursos/Graficos/Efeitos/grafico_exclamacao.tscn" id="36_lb8ug"]
+[ext_resource type="PackedScene" uid="uid://by2mwucu2i3wo" path="res://Recursos/Graficos/Efeitos/grafico_sono.tscn" id="37_hjyrl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82xuh"]
+size = Vector2(144, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrlxa"]
+size = Vector2(182, 303)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jejg1"]
+radius = 47.0956
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ehhn2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4xt8v"]
 vertices = PackedVector2Array(689.75, 1080.95, 7.79688, 1078.05, 189.82, 525, 678.992, 636.781, 678.563, 502.07, 682.977, 578.883, 551.242, 503.078, 678.141, 247.961, 679.844, 366.438, 547.742, 359.438, 48.1016, 246.031, 50.8984, 525)
@@ -80,9 +98,56 @@ position = Vector2(104, 333)
 
 [node name="Distracoes" type="Node2D" parent="."]
 
-[node name="Berco" parent="Distracoes" instance=ExtResource("11_iwwt8")]
+[node name="Berco" type="StaticBody2D" parent="Distracoes" groups=["berco", "interagivel"]]
 z_index = 10
 position = Vector2(109, 850)
+script = ExtResource("11_hjyrl")
+
+[node name="BercoArte" type="Sprite2D" parent="Distracoes/Berco"]
+texture = ExtResource("12_y4nys")
+
+[node name="MobileArte" type="Sprite2D" parent="Distracoes/Berco/BercoArte"]
+z_index = 7
+position = Vector2(-8, -118)
+texture = ExtResource("13_a3p8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Distracoes/Berco"]
+shape = SubResource("RectangleShape2D_82xuh")
+
+[node name="lucas_rig_dessat" parent="Distracoes/Berco" instance=ExtResource("14_3wsjn")]
+position = Vector2(-2, -14)
+scale = Vector2(-0.255, 0.255)
+
+[node name="VisualizadorTemporal" type="Node2D" parent="Distracoes/Berco" node_paths=PackedStringArray("temporizador")]
+visible = false
+z_index = 99
+position = Vector2(0, -171)
+script = ExtResource("15_cjhr0")
+temporizador = NodePath("../Timer")
+radius = 30.0
+cor = Color(1, 0, 0, 0.8)
+metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
+
+[node name="Timer" type="Timer" parent="Distracoes/Berco"]
+
+[node name="ComponenteInteragivel" type="Node2D" parent="Distracoes/Berco" node_paths=PackedStringArray("area_de_interacao")]
+visible = false
+script = ExtResource("16_ehhn2")
+nome = "berco"
+descricao = "interação berço"
+area_de_interacao = NodePath("../AreaInteracao")
+possui_contorno = false
+metadata/_custom_type_script = "uid://ddwsslb5nraqq"
+
+[node name="AreaInteracao" type="Area2D" parent="Distracoes/Berco"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Distracoes/Berco/AreaInteracao"]
+position = Vector2(-4, 0.5)
+shape = SubResource("RectangleShape2D_nrlxa")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Distracoes/Berco"]
+position = Vector2(-19, -126)
+shape = SubResource("CircleShape2D_jejg1")
 
 [node name="MesaFilha" type="StaticBody2D" parent="Distracoes" groups=["filha", "interagivel", "ponto_entrega"]]
 z_index = 6
@@ -168,8 +233,26 @@ cutscene = true
 [node name="Elza" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("16_p7m27")]
 z_index = 6
 z_as_relative = false
-position = Vector2(503, 869)
+position = Vector2(506, 814)
 waypoints = NodePath("../../Waypoints")
+
+[node name="Celular" type="CharacterBody2D" parent="Personagens" node_paths=PackedStringArray("referencia_de_colisao_para_dialogo")]
+z_index = 6
+z_as_relative = false
+position = Vector2(540, 897.113)
+scale = Vector2(0.135246, 0.135246)
+script = ExtResource("23_4rd4f")
+id = "celular"
+nome = "Celular"
+referencia_de_colisao_para_dialogo = NodePath("CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Personagens/Celular"]
+position = Vector2(244, 0)
+texture = ExtResource("24_iuynf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagens/Celular"]
+shape = SubResource("CircleShape2D_ehhn2")
+disabled = true
 
 [node name="CenarioiFront" type="Node2D" parent="."]
 z_index = 15
@@ -200,40 +283,12 @@ tempo = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="InteracoesDialogo"]
 
-[node name="Avancar" type="TextureButton" parent="InteracoesDialogo/CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -126.0
-offset_top = -193.0
-offset_right = 126.0
-offset_bottom = -25.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("22_wexy4")
-texture_pressed = ExtResource("23_do6fd")
-stretch_mode = 5
-script = ExtResource("23_wexy4")
+[node name="ParticleSpawner" type="Node" parent="."]
+script = ExtResource("33_s73r5")
+particle_effects = Array[PackedScene]([ExtResource("34_oas7f"), ExtResource("35_vojac"), ExtResource("36_lb8ug"), ExtResource("37_hjyrl")])
+particle_names = Array[String](["pipipi", "lagrimas", "exclamacao", "sono"])
 
-[node name="Label" type="Label" parent="InteracoesDialogo/CanvasLayer/Avancar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -67.5
-offset_top = -23.0
-offset_right = 67.5
-offset_bottom = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("24_bfuv3")
-text = "Avançar"
-horizontal_alignment = 1
-vertical_alignment = 1
-
+[connection signal="timeout" from="Distracoes/Berco/Timer" to="Distracoes/Berco" method="_on_timer_timeout"]
+[connection signal="interagir" from="Distracoes/Berco/ComponenteInteragivel" to="Distracoes/Berco" method="_on_componente_interagivel_interagir"]
 [connection signal="interagir" from="Distracoes/MesaFilha/ComponenteInteragivel" to="Distracoes/MesaFilha" method="_interagir"]
 [connection signal="Acionado" from="InteracoesDialogo/BotaoTemporizado" to="." method="_on_botao_temporizado_acionado"]

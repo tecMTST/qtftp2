@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://lstyfjoko2bk"]
+[gd_scene load_steps=19 format=3 uid="uid://lstyfjoko2bk"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_tbxhh"]
 [ext_resource type="Resource" uid="uid://37cb56rck7pp" path="res://Dialogo/cutscene_fimdefase_fase4.dtl" id="2_pk3ox"]
@@ -15,11 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ra7kq174mnxo" path="res://Componentes/Personagens/Elza.tscn" id="14_n4pt3"]
 [ext_resource type="PackedScene" uid="uid://33ix112wt1og" path="res://Componentes/Personagens/luiza.tscn" id="15_u5ucc"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="17_4y3kf"]
-[ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="18_7m1k2"]
-[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="19_t6grf"]
-[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="20_xa2j6"]
-[ext_resource type="Script" path="res://Scripts/Cutscenes/botao_avancar.gd" id="21_a4iaf"]
-[ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="22_r41uy"]
+[ext_resource type="PackedScene" uid="uid://b3duag0q0ek4e" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="18_7m1k2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xld1x"]
 size = Vector2(214, 132)
@@ -127,12 +123,12 @@ navigation_polygon = SubResource("NavigationPolygon_tbxhh")
 [node name="Personagens" type="Node2D" parent="."]
 
 [node name="Elza" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("14_n4pt3")]
-position = Vector2(530, 713)
+position = Vector2(536, 535)
 waypoints = NodePath("../../Waypoints")
 
 [node name="Luisa" parent="Personagens" instance=ExtResource("15_u5ucc")]
 z_index = 5
-position = Vector2(231, 821)
+position = Vector2(186, 536)
 scale = Vector2(0.29, 0.29)
 
 [node name="TransicaoCena" parent="." instance=ExtResource("17_4y3kf")]
@@ -147,40 +143,5 @@ radius = 50.0
 tempo = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="InteracoesDialogo"]
-
-[node name="Avancar" type="TextureButton" parent="InteracoesDialogo/CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -126.0
-offset_top = -193.0
-offset_right = 126.0
-offset_bottom = -25.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("19_t6grf")
-texture_pressed = ExtResource("20_xa2j6")
-stretch_mode = 5
-script = ExtResource("21_a4iaf")
-
-[node name="Label" type="Label" parent="InteracoesDialogo/CanvasLayer/Avancar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -67.5
-offset_top = -23.0
-offset_right = 67.5
-offset_bottom = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("22_r41uy")
-text = "Avançar"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="Acionado" from="InteracoesDialogo/BotaoTemporizado" to="." method="_on_botao_temporizado_acionado"]

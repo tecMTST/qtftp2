@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bqbg3mylmsc6b"]
+[gd_scene load_steps=30 format=3 uid="uid://bqbg3mylmsc6b"]
 
 [ext_resource type="Script" uid="uid://bxw7syu37dgmt" path="res://Cenas/cutscene_fimdefase.gd" id="1_jqomp"]
 [ext_resource type="Resource" uid="uid://fe65svnrbnm1" path="res://Dialogo/cutscene_fimdefase_tutorial.dtl" id="2_15yf7"]
@@ -24,11 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://pu34pa2auov5" path="res://Recursos/Graficos/Interagiveis/Cama.svg" id="17_583kr"]
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="18_mgjum"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="19_lmnw7"]
-[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="21_e1xh3"]
-[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="22_tnome"]
-[ext_resource type="Script" path="res://Scripts/Cutscenes/botao_avancar.gd" id="23_phwxl"]
-[ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="24_bworu"]
-[ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="24_tpbj3"]
+[ext_resource type="PackedScene" uid="uid://b3duag0q0ek4e" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="24_bworu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82xuh"]
 size = Vector2(144, 258)
@@ -211,41 +207,6 @@ radius = 50.0
 tempo = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="InteracoesDialogo"]
-
-[node name="Avancar" type="TextureButton" parent="InteracoesDialogo/CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -126.0
-offset_top = -193.0
-offset_right = 126.0
-offset_bottom = -25.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("21_e1xh3")
-texture_pressed = ExtResource("22_tnome")
-stretch_mode = 5
-script = ExtResource("23_phwxl")
-
-[node name="Label" type="Label" parent="InteracoesDialogo/CanvasLayer/Avancar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -67.5
-offset_top = -23.0
-offset_right = 67.5
-offset_bottom = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("24_tpbj3")
-text = "Avançar"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="timeout" from="Distracoes/Berco/Timer" to="Distracoes/Berco" method="_on_timer_timeout"]
 [connection signal="interagir" from="Distracoes/Berco/ComponenteInteragivel" to="Distracoes/Berco" method="_on_componente_interagivel_interagir"]

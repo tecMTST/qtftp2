@@ -16,6 +16,8 @@ func _ready() -> void:
 	ativo = false
 	player = get_tree().get_first_node_in_group("player")
 	nome = "Berço"
+	if get_tree().current_scene.is_in_group("cutscene"):
+		return
 	if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.choro:
 		return
 	resetar_timer()
