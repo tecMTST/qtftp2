@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="16_mv7s5"]
 [ext_resource type="Texture2D" uid="uid://bflc43v2yqqkv" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-06.svg" id="16_y44v8"]
 [ext_resource type="Texture2D" uid="uid://drft23y0mm6nb" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-07.svg" id="17_djcw4"]
-[ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="17_fek73"]
+[ext_resource type="PackedScene" uid="uid://b3duag0q0ek4e" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="17_fek73"]
 [ext_resource type="Texture2D" uid="uid://3bmbjavjfs4q" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-08.svg" id="18_8xt0q"]
 [ext_resource type="Texture2D" uid="uid://di1ap2sm0aamp" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-03.svg" id="19_2tfo0"]
 [ext_resource type="Texture2D" uid="uid://d305c0quycu8l" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-04.svg" id="20_y44v8"]

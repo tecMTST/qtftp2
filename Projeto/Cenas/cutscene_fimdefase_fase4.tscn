@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ra7kq174mnxo" path="res://Componentes/Personagens/Elza.tscn" id="14_n4pt3"]
 [ext_resource type="PackedScene" uid="uid://33ix112wt1og" path="res://Componentes/Personagens/luiza.tscn" id="15_u5ucc"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="17_4y3kf"]
-[ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="18_7m1k2"]
+[ext_resource type="PackedScene" uid="uid://b3duag0q0ek4e" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="18_7m1k2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xld1x"]
 size = Vector2(214, 132)
