@@ -10,6 +10,7 @@ signal finalizou
 @onready var fader: Fader = $TransicaoCena/Fader
 
 func _ready() -> void:
+	add_to_group("transicao")
 	fundo.color = cor_fundo
 	fader.StartVisible = iniciar_visivel
 	fundo.visible = true

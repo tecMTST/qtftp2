@@ -10,11 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://b74qrakxakkhv" path="res://Componentes/Casa/Interagiveis/PiaCS.tscn" id="8_aefgc"]
 [ext_resource type="PackedScene" uid="uid://cvv18olqll13f" path="res://Componentes/Casa/Interagiveis/GeladeiraCS.tscn" id="9_2tfo0"]
 [ext_resource type="PackedScene" uid="uid://g3f8sup6huqo" path="res://Componentes/Casa/Interagiveis/FogaoSC.tscn" id="10_y44v8"]
-[ext_resource type="PackedScene" uid="uid://cqcepha3vdbs2" path="res://Componentes/Casa/Interagiveis/BalcaoEntrega.tscn" id="11_djcw4"]
+[ext_resource type="Texture2D" uid="uid://d072jky2wp25v" path="res://Recursos/Graficos/Cenas/Cenario_2/Bancada.svg" id="11_bi7gm"]
+[ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="12_6s1xb"]
 [ext_resource type="Texture2D" uid="uid://c4itpvbt4he0k" path="res://Recursos/Graficos/Cenas/Cenario_2/Parede frontal.svg" id="12_8xt0q"]
 [ext_resource type="Texture2D" uid="uid://brxb7vwwjidl2" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-01.svg" id="13_f6bxl"]
+[ext_resource type="Texture2D" uid="uid://cfp770tffb0ns" path="res://Recursos/Graficos/UI/Componentes/display_proximo_passo/display_proximo_passo.svg" id="13_ml4f3"]
 [ext_resource type="PackedScene" uid="uid://ra7kq174mnxo" path="res://Componentes/Personagens/Elza.tscn" id="14_6s1xb"]
 [ext_resource type="Texture2D" uid="uid://c3o4gkd0wvbt" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-02.svg" id="14_aefgc"]
+[ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="14_mv7s5"]
 [ext_resource type="Texture2D" uid="uid://bcvewwa1lyxbb" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-05.svg" id="15_2tfo0"]
 [ext_resource type="PackedScene" uid="uid://33ix112wt1og" path="res://Componentes/Personagens/luiza.tscn" id="15_ml4f3"]
 [ext_resource type="PackedScene" uid="uid://csgs6ijgjju21" path="res://Componentes/Personagens/Tio.tscn" id="16_h4bie"]
@@ -23,12 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://drft23y0mm6nb" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-07.svg" id="17_djcw4"]
 [ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="17_fek73"]
 [ext_resource type="Texture2D" uid="uid://3bmbjavjfs4q" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-08.svg" id="18_8xt0q"]
-[ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="18_okt71"]
 [ext_resource type="Texture2D" uid="uid://di1ap2sm0aamp" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-03.svg" id="19_2tfo0"]
-[ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="19_qyqet"]
-[ext_resource type="Script" path="res://Scripts/Cutscenes/botao_avancar.gd" id="20_qg60u"]
 [ext_resource type="Texture2D" uid="uid://d305c0quycu8l" path="res://Recursos/Graficos/Personagens/NPC/filaNPCs-04.svg" id="20_y44v8"]
-[ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="21_edtl7"]
 [ext_resource type="Script" uid="uid://dhc22d7vyha5t" path="res://Cenas/particle_spawner.gd" id="30_bi7gm"]
 [ext_resource type="PackedScene" uid="uid://phqyckw1rqyl" path="res://Recursos/Graficos/Efeitos/grafico_exclamacao.tscn" id="31_6s1xb"]
 [ext_resource type="PackedScene" uid="uid://byrpvc0v78cct" path="res://Recursos/Graficos/Efeitos/grafico_pipipi.tscn" id="32_ml4f3"]
@@ -38,15 +37,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xld1x"]
 size = Vector2(214, 132)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1ls"]
+size = Vector2(559, 323.016)
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tbxhh"]
 vertices = PackedVector2Array(20.9609, 501.711, 20.0313, 243.18, 670.93, 254.82, 129.07, 509.719, 665.063, 1186.97, 126.922, 793, 16.1406, 1185.03, 21.8594, 793)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(10, 233, 681, 245, 675, 1197, 6, 1195, 12, 783, 117, 783, 119, 519, 11, 511)])
 
-[node name="CutsceneFimdeFase5" type="Node2D" groups=["cutscene"]]
+[node name="CutsceneFimdeFase5" type="Node2D" node_paths=PackedStringArray("sprites_para_deletar") groups=["cutscene"]]
 script = ExtResource("1_5psp3")
 proxima_fase = "res://Cenas/cutscene_quadrinhos_fase_4.tscn"
 timeline = ExtResource("2_5psp3")
+sprites_para_deletar = [NodePath("CenarioiFront/PessoaFila1"), NodePath("CenarioiFront/PessoaFila2"), NodePath("CenarioiFront/PessoaFila3"), NodePath("CenarioiFront/PessoaFila4"), NodePath("CenarioiFront/PessoaFila5"), NodePath("CenarioiFront/PessoaFila6"), NodePath("CenarioiFront/PessoaFila7"), NodePath("CenarioiFront/PessoaFila8")]
 
 [node name="CenarioFundo" type="Node2D" parent="."]
 
@@ -100,8 +103,36 @@ position = Vector2(619, 313)
 [node name="FogaoCS" parent="Cozinha" instance=ExtResource("10_y44v8")]
 position = Vector2(301, 330)
 
-[node name="BalcaoEntrega" parent="Cozinha" instance=ExtResource("11_djcw4")]
+[node name="BalcaoEntrega" type="StaticBody2D" parent="Cozinha" groups=["filha", "interagivel", "ponto_entrega"]]
 position = Vector2(412, 805)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cozinha/BalcaoEntrega"]
+texture = ExtResource("11_bi7gm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cozinha/BalcaoEntrega"]
+position = Vector2(-1.5, -13)
+scale = Vector2(1, 0.476757)
+shape = SubResource("RectangleShape2D_eo1ls")
+disabled = true
+
+[node name="ComponenteInteragivel" type="Node2D" parent="Cozinha/BalcaoEntrega"]
+script = ExtResource("12_6s1xb")
+nome = "Mesa"
+descricao = "Uma mesa"
+possui_contorno = false
+
+[node name="Pivot" type="Node2D" parent="Cozinha/BalcaoEntrega"]
+position = Vector2(-26, 0)
+
+[node name="Indicador" type="Sprite2D" parent="Cozinha/BalcaoEntrega"]
+visible = false
+position = Vector2(139, -115)
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("13_ml4f3")
+
+[node name="Bouncer" type="Node" parent="Cozinha/BalcaoEntrega/Indicador"]
+script = ExtResource("14_mv7s5")
+metadata/_custom_type_script = "uid://d1lhbtx247tsg"
 
 [node name="Waypoints" type="Node2D" parent="."]
 
@@ -112,16 +143,16 @@ position = Vector2(88, 427)
 position = Vector2(588, 451)
 
 [node name="Waypoint3" type="Marker2D" parent="Waypoints"]
-position = Vector2(582, 659)
+position = Vector2(271, 900)
 
 [node name="Waypoint4" type="Marker2D" parent="Waypoints"]
-position = Vector2(495, 1149)
+position = Vector2(494, 900)
 
 [node name="Waypoint5" type="Marker2D" parent="Waypoints"]
 position = Vector2(425, 884)
 
 [node name="Waypoint6" type="Marker2D" parent="Waypoints"]
-position = Vector2(507, 716)
+position = Vector2(160, 907)
 
 [node name="Waypoint7" type="Marker2D" parent="Waypoints"]
 position = Vector2(314, 809)
@@ -153,7 +184,7 @@ texture = ExtResource("15_2tfo0")
 
 [node name="PessoaFila4" type="Sprite2D" parent="CenarioiFront"]
 z_as_relative = false
-position = Vector2(207.75, 935.5)
+position = Vector2(219, 920)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("16_y44v8")
 
@@ -192,9 +223,12 @@ z_as_relative = false
 position = Vector2(589, 408)
 waypoints = NodePath("../../Waypoints")
 
-[node name="Luisa" parent="Personagens" instance=ExtResource("15_ml4f3")]
+[node name="Luisa" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("15_ml4f3")]
+z_index = 1
+z_as_relative = false
 position = Vector2(136, 1143)
 scale = Vector2(0.29, 0.29)
+waypoints = NodePath("../../Waypoints")
 
 [node name="Tio" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("16_h4bie")]
 position = Vector2(438, 1353)
@@ -214,44 +248,10 @@ tempo = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="InteracoesDialogo"]
 
-[node name="Avancar" type="TextureButton" parent="InteracoesDialogo/CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -126.0
-offset_top = -193.0
-offset_right = 126.0
-offset_bottom = -25.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("18_okt71")
-texture_pressed = ExtResource("19_qyqet")
-stretch_mode = 5
-script = ExtResource("20_qg60u")
-
-[node name="Label" type="Label" parent="InteracoesDialogo/CanvasLayer/Avancar"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -67.5
-offset_top = -23.0
-offset_right = 67.5
-offset_bottom = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("21_edtl7")
-text = "Avançar"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="ParticleSpawner" type="Node" parent="."]
 script = ExtResource("30_bi7gm")
 particle_effects = Array[PackedScene]([ExtResource("32_ml4f3"), ExtResource("33_mv7s5"), ExtResource("31_6s1xb"), ExtResource("34_6s1xb")])
 particle_names = Array[String](["pipipi", "lagrimas", "exclamacao", "sono"])
 
+[connection signal="interagir" from="Cozinha/BalcaoEntrega/ComponenteInteragivel" to="Cozinha/BalcaoEntrega" method="_interagir"]
 [connection signal="Acionado" from="InteracoesDialogo/BotaoTemporizado" to="." method="_on_botao_temporizado_acionado"]

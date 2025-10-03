@@ -40,6 +40,8 @@ scale_curve = SubResource("CurveTexture_a1sjx")
 color_ramp = SubResource("GradientTexture1D_atjyw")
 
 [node name="Pipipi" type="Node2D" node_paths=PackedStringArray("particle_nodes")]
+z_index = 20
+z_as_relative = false
 script = ExtResource("1_5sjle")
 particle_nodes = [NodePath("Pi")]
 self_destruct_time = 5.0

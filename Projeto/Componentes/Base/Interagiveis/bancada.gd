@@ -7,7 +7,7 @@ var objeto_na_bancada: IngredienteBase = null
 var _jogador: Player
 
 @onready var indicador: Sprite2D = $Indicador
-@onready var indicador_2: Sprite2D = $Indicador2
+@onready var indicador_2: Sprite2D = $Indicador2 if has_node("Indicador2") else null
 
 func _ready() -> void:
 	nome = "Bancada"
