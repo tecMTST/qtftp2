@@ -29,7 +29,7 @@
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="18_vinpq"]
 [ext_resource type="Texture2D" uid="uid://q5kyfygfy0ru" path="res://Recursos/Graficos/Cenas/Parede frontal.svg" id="19_oas7f"]
 [ext_resource type="PackedScene" uid="uid://ofpflnpic4l5" path="res://Componentes/Utilitarios/TransicaoCena.tscn" id="20_vojac"]
-[ext_resource type="PackedScene" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="21_wexy4"]
+[ext_resource type="PackedScene" uid="uid://b3duag0q0ek4e" path="res://Componentes/Utilitarios/BotaoTemporizado.tscn" id="21_wexy4"]
 [ext_resource type="Script" uid="uid://bqyphsb3rnr2x" path="res://Componentes/Personagens/personagem.gd" id="23_4rd4f"]
 [ext_resource type="Texture2D" uid="uid://dqlbugdpq0qcd" path="res://Recursos/Graficos/Personagens/celular.svg" id="24_iuynf"]
 [ext_resource type="Script" uid="uid://dhc22d7vyha5t" path="res://Cenas/particle_spawner.gd" id="33_s73r5"]
@@ -233,7 +233,7 @@ cutscene = true
 [node name="Elza" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("16_p7m27")]
 z_index = 6
 z_as_relative = false
-position = Vector2(503, 869)
+position = Vector2(506, 814)
 waypoints = NodePath("../../Waypoints")
 
 [node name="Celular" type="CharacterBody2D" parent="Personagens" node_paths=PackedStringArray("referencia_de_colisao_para_dialogo")]
