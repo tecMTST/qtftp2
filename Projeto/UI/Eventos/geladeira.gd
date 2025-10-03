@@ -48,8 +48,7 @@ func close() -> void:
 	GuiTransitions.hide("Geladeira")
 	await get_tree().create_timer(1).timeout
 	get_parent().queue_free()
-	if ControleDeFase.nivel_atual.id == 3:
-		var fase03 = "res://Dialogo/Fase03.dialogue"
+
 
 func escolhe_ingrediente(ingrediente_escolhido: Ingrediente) -> void:
 	if player and not acao_executada:
