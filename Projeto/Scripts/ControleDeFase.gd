@@ -201,7 +201,7 @@ func _abrir_proximo_nivel():
 		func(item : Nivel) : return item.id == EstadoDeJogo.nivel_atual
 	)
 	if len(niveis) == 0:
-		EstadoDeJogo.cena_atual = "res://Cenas/cutscene_quadrinhos_epilogo.tscn"
+		EstadoDeJogo.cena_atual = "res://Cenas/cutscene_fimdefase_fase5.tscn"
 	else:
 		nivel_atual = niveis[0]
 		EstadoDeJogo.cena_atual = nivel_atual.local
