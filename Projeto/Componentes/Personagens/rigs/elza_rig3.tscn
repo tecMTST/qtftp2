@@ -322,7 +322,7 @@ tracks/25/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.26426]
+"values": [0.0]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
@@ -775,13 +775,11 @@ uv = PackedVector2Array(224, 480, 280, 480, 352, 520, 384, 600, 384, 848, 112, 8
 
 [node name="tronco" type="Bone2D" parent="rig1/Skeleton2D"]
 position = Vector2(35, 0)
-rotation = -0.26426
 rest = Transform2D(1, 0, 0, 1, 35, 429)
 
 [node name="pescoco" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(0, -410)
 rotation = -0.207821
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, -410)
 
 [node name="rosto" type="Bone2D" parent="rig1/Skeleton2D/tronco/pescoco"]
@@ -807,7 +805,6 @@ bone_angle = 0.0
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(99, -384)
 rotation = 1.97828
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 99, -384)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -816,6 +813,7 @@ bone_angle = 0.0
 [node name="bracoEsq" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(-84, -379)
 rotation = 1.13263
+scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -84, -379)
 auto_calculate_length_and_angle = false
 length = 16.0
