@@ -296,7 +296,7 @@ animation = &"anim_carol/sentada_carolina"
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_et0jp"]
 filter_enabled = true
-filters = ["rig1/Skeleton2D/tronco/bracoDir:position", "rig1/Skeleton2D/tronco/bracoDir:rotation", "rig1/Skeleton2D/tronco/bracoDir:visible", "rig1/Skeleton2D/tronco/bracoEsq:position", "rig1/Skeleton2D/tronco/bracoEsq:rotation", "rig1/sprites/bracoDir:visible", "rig1/sprites/bracoEsqCel:visible"]
+filters = ["rig1/Skeleton2D/tronco/bracoDir:position", "rig1/Skeleton2D/tronco/bracoDir:rotation", "rig1/Skeleton2D/tronco/bracoDir:visible", "rig1/Skeleton2D/tronco/bracoEsq:position", "rig1/Skeleton2D/tronco/bracoEsq:rotation", "rig1/sprites/bracoDir:visible", "rig1/sprites/bracoEsq:visible", "rig1/sprites/bracoEsqCel/celular:visible", "rig1/sprites/bracoEsqCel:visible"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_04gav"]
 
@@ -313,7 +313,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_v02eu")
 blend_point_1/pos = 0.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_et0jp"]
-graph_offset = Vector2(-513.938, 10.2847)
+graph_offset = Vector2(-437.487, -54.1387)
 nodes/Ajuntar/node = SubResource("AnimationNodeOneShot_ir1in")
 nodes/Ajuntar/position = Vector2(480, 140)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_ir1in")
@@ -558,7 +558,6 @@ bone_angle = 0.0
 
 [node name="pernaDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(145.615, -52.1806)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 145.615, -52.1806)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -606,6 +605,6 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Ajuntar/active = 0.0
 parameters/Ajuntar/internal_active = 0.0
 parameters/Ajuntar/request = 0
-parameters/Celular/blend_amount = 0.0166667
+parameters/Celular/blend_amount = 0.0
 parameters/Sentada/blend_amount = 0.0
 parameters/Velocidade/blend_position = 0.0
