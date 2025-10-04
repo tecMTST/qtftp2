@@ -233,7 +233,7 @@ cutscene = true
 [node name="Elza" parent="Personagens" node_paths=PackedStringArray("waypoints") instance=ExtResource("16_p7m27")]
 z_index = 6
 z_as_relative = false
-position = Vector2(506, 814)
+position = Vector2(506, 856)
 waypoints = NodePath("../../Waypoints")
 
 [node name="Celular" type="CharacterBody2D" parent="Personagens" node_paths=PackedStringArray("referencia_de_colisao_para_dialogo")]
