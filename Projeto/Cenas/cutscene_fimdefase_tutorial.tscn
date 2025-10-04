@@ -88,6 +88,7 @@ position = Vector2(104, 333)
 z_index = 10
 position = Vector2(109, 850)
 script = ExtResource("11_soo8a")
+tempo_amamentar = null
 
 [node name="BercoArte" type="Sprite2D" parent="Distracoes/Berco"]
 texture = ExtResource("12_ig24r")

@@ -396,12 +396,12 @@ text = "Avançar"
 [node name="TouchAnalog" type="Node2D" parent="Molduras" node_paths=PackedStringArray("RestPosition")]
 process_mode = 3
 z_index = 200
-position = Vector2(582, 1145)
+position = Vector2(573, 1146)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("18_k21wa")
 PositionType = 1
 ControlsColor = Color(1, 1, 1, 1)
-CircleTexture = ExtResource("19_vd0u2")
+CircleTexture = ExtResource("34_5hxbm")
 KnobTexture = ExtResource("20_01qrq")
 RestPosition = NodePath("../Moldura/BaseThumb/Marker2D")
 metadata/_custom_type_script = "uid://dku77viqwklks"

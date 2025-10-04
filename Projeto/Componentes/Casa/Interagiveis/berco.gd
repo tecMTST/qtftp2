@@ -30,6 +30,8 @@ func _process(delta: float) -> void:
 	if not amamentando:
 		if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.choro:
 			return
+		if get_tree().current_scene.is_in_group("cutscene"):
+			return
 		if not iniciado:
 			iniciado = true
 			resetar_timer()
