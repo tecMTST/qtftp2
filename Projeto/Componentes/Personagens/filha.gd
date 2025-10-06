@@ -4,6 +4,8 @@ extends Personagem
 @export var bagunca_scene: PackedScene
 @export var waypoints : Node2D
 @export var cutscene : bool = false
+@export var chance_bagunca : float = 30
+@export var chance_andar : float = 30
 
 var target: Marker2D = null
 var speed: float = 100.0
@@ -11,11 +13,14 @@ var speed: float = 100.0
 # Controle de índice e direção
 var waypoint_index := 0
 var moving_forward := true
+var wait_timer : float = 0
+var ativa  : bool = false
 
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
 @onready var carolina_rig: CarolinaRig = $carolina_rig
 @onready var visualizador_percentual: VisualizadorPercentual = $VisualizadorPercentual
-@onready var bt_player: BTPlayer = $BTPlayer
+
+
 
 func _ready():
 	if (
@@ -25,7 +30,7 @@ func _ready():
 	):
 		carolina_rig.sentada = true
 		return
-	bt_player.active = true
+	ativa = true
 	carolina_rig.sentada = false
 	ControleDeFase.prato_entregue.connect(_ir_comer)
 	visualizador_percentual.valor = 0
@@ -34,6 +39,7 @@ func _process(delta):
 	if not cutscene:
 		if not ControleDeFase.nivel_atual or not ControleDeFase.nivel_atual.bagunca:
 			return
+	acao_automatica(delta)
 	if not (
 		target and global_position.distance_to(
 			target.global_position
@@ -135,6 +141,30 @@ func spawn_bagunca():
 		bagunca.global_position = global_position
 		bagunca.z_index = 4
 		get_tree().current_scene.add_child(bagunca)
+		
+func acao_automatica(delta : float):
+	if not ativa:
+		return
+		
+	if wait_timer > 0:
+		wait_timer -= delta
+		return
+	
+	var chance = randf() * 100
+ 	
+	if chance <= chance_bagunca:
+		mover()
+		get_tree().create_timer(2).timeout.connect(func() : 
+			spawn_bagunca()
+			mover()	
+			)
+		wait_timer = 5.0
+	elif chance <= chance_bagunca + chance_andar:
+		mover()
+		wait_timer = 5.0
+	else:
+		celular()
+		wait_timer = randf_range(3.0, 7.0)
 
 func _ir_comer(_prato) -> void:
 	print_debug('Ir comer')

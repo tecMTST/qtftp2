@@ -361,7 +361,7 @@ filters = ["", ".:position", ".:rotation", "rig1/Skeleton2D/tronco/bracoDir:posi
 animation = &"qtftd anims/idle_segurando_Lucas"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ghekw"]
-animation = &"qtftd anims/luquinhas_mamando"
+animation = &"anim_elza/luquinhas_mamando"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2qtra"]
 animation = &"anim_elza/ajuntar"
@@ -407,7 +407,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_x465c")
 blend_point_1/pos = 0.5
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ghekw"]
-graph_offset = Vector2(337.988, 136.787)
+graph_offset = Vector2(-161.346, 94.8683)
 nodes/AmamentarLucas/node = SubResource("AnimationNodeBlend2_njihp")
 nodes/AmamentarLucas/position = Vector2(521.195, 225.284)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_cw56l")
@@ -760,7 +760,6 @@ rest = Transform2D(1, 0, 0, 1, 35, 429)
 [node name="pescoco" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(0, -410)
 rotation = -0.207821
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 0, -410)
 
 [node name="rosto" type="Bone2D" parent="rig1/Skeleton2D/tronco/pescoco"]
@@ -786,7 +785,6 @@ bone_angle = 0.0
 [node name="bracoDir" type="Bone2D" parent="rig1/Skeleton2D/tronco"]
 position = Vector2(99, -384)
 rotation = 1.97828
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 99, -384)
 auto_calculate_length_and_angle = false
 length = 16.0
