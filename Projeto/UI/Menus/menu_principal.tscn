@@ -58,7 +58,7 @@ position = Vector2(360, -737)
 texture = ExtResource("4_ritq6")
 
 [node name="SimboloTpt" type="Sprite2D" parent="CenterContainer"]
-position = Vector2(677, 378)
+position = Vector2(40, 378)
 texture = ExtResource("5_v6y4k")
 
 [node name="fundo" type="TextureRect" parent="."]

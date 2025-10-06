@@ -326,7 +326,7 @@ value = 1.0
 script = ExtResource("18_oxror")
 
 [node name="SimboloTpt" type="Sprite2D" parent="."]
-position = Vector2(677, 1247)
+position = Vector2(40, 1246.91)
 texture = ExtResource("19_l68n3")
 
 [connection signal="pressed" from="fechar_extras" to="." method="_on_fechar_extras_pressed"]
