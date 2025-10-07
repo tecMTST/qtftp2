@@ -54,6 +54,4 @@ layer_info = {
 "10": SubResource("Resource_0c1js"),
 "11": SubResource("Resource_wrcfo")
 }
-base_overrides = {}
-layers = Array[ExtResource("2_jchcn")]([])
 metadata/_latest_layer = "10"

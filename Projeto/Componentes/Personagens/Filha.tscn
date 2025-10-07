@@ -1,14 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2fdciig7einf"]
+[gd_scene load_steps=7 format=3 uid="uid://d2fdciig7einf"]
 
 [ext_resource type="Script" uid="uid://dnibm5siaj76a" path="res://Componentes/Personagens/filha.gd" id="2_suqhv"]
 [ext_resource type="PackedScene" uid="uid://b4reg6fm7xkhh" path="res://Componentes/Personagens/rigs/carolina_rig.tscn" id="3_b34n8"]
 [ext_resource type="PackedScene" uid="uid://d2q0862qh20rg" path="res://Componentes/VisualizadorTemporal/visualizador_percentual.tscn" id="3_jt3xk"]
-[ext_resource type="BehaviorTree" uid="uid://dg4au85ocqv7c" path="res://ai/filha.tres" id="4_jt3xk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_suqhv"]
 radius = 23.0
-
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_s06ml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt3xk"]
 size = Vector2(128, 80)
@@ -36,11 +33,6 @@ position = Vector2(-1, -134)
 scale = Vector2(0.12, 0.12)
 radius = 300.0
 cor = Color(1, 0, 0, 1)
-
-[node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = ExtResource("4_jt3xk")
-active = false
-blackboard_plan = SubResource("BlackboardPlan_s06ml")
 
 [node name="Topo" type="Area2D" parent="."]
 position = Vector2(0, -42)
