@@ -68,6 +68,7 @@ texture = ExtResource("3_l87sh")
 offset = Vector2(360, 670)
 
 [node name="ParedeTraseira" type="Sprite2D" parent="CenarioFundo"]
+texture_filter = 5
 position = Vector2(360, 168)
 texture = ExtResource("3_0gd5h")
 
