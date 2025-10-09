@@ -1,7 +1,6 @@
-[gd_scene load_steps=43 format=3 uid="uid://gkvdwj2c5ern"]
+[gd_scene load_steps=42 format=3 uid="uid://gkvdwj2c5ern"]
 
 [ext_resource type="Script" uid="uid://b07htmtlceb" path="res://Cenas/casa.gd" id="1_6yvxp"]
-[ext_resource type="Texture2D" uid="uid://b5qhuevow275w" path="res://Recursos/Graficos/Cenas/casa.png" id="2_4xt8v"]
 [ext_resource type="PackedScene" uid="uid://dy4r4c8l5fuxr" path="res://Componentes/Personagens/Player.tscn" id="2_kc3ot"]
 [ext_resource type="Texture2D" uid="uid://b0wevbyj2yhx2" path="res://Recursos/Graficos/Cenas/Parede traseira.svg" id="3_0gd5h"]
 [ext_resource type="Texture2D" uid="uid://cxb6qp0b7h80t" path="res://Recursos/Graficos/Cenas/Piso.svg" id="3_l87sh"]
@@ -63,7 +62,6 @@ script = ExtResource("1_6yvxp")
 [node name="Background" type="Sprite2D" parent="CenarioFundo"]
 position = Vector2(358.789, 637.563)
 scale = Vector2(0.997807, 1.00068)
-texture = ExtResource("2_4xt8v")
 
 [node name="Piso" type="Sprite2D" parent="CenarioFundo"]
 texture = ExtResource("3_l87sh")
