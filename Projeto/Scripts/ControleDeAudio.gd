@@ -2,7 +2,7 @@ extends Node
 
 const TOM_MAXIMO := 2.4
 const INCREMENTO_DE_TOM := 1.2
-const TAMANHO_DO_GRUPO_DE_EFEITOS := 5
+const TAMANHO_DO_GRUPO_DE_EFEITOS := 4
 
 var tocadores_em_ciclo := {}
 var toca_efeitos := []
@@ -15,38 +15,37 @@ var biblioteca_de_audio := {
 		"briefing": "res://Recursos/Audio/Musica/briefing.ogg"
 	},
 	"efeitos": {
-		"vitoria": "res://Recursos/Audio/Efeitos/jingle_vitoria.ogg",
-		"derrota": "res://Recursos/Audio/Efeitos/jingle_derrota.ogg",
-		"bebe_chorando": "res://Recursos/Audio/Efeitos/bebe_chorando.ogg",
-		"bebe_feliz": "res://Recursos/Audio/Efeitos/bebe_feliz.ogg",
-		"fogao_ligar": "res://Recursos/Audio/Efeitos/fogao_ligar.ogg",
-		"fogao_cozinhando": "res://Recursos/Audio/Efeitos/fogao_cozinhando_loop.ogg",
-		"fogao_alarme": "res://Recursos/Audio/Efeitos/fogao_alarme.ogg",
-		"clique": "res://Recursos/Audio/Efeitos/click.ogg",
-		"hidratar": "res://Recursos/Audio/Efeitos/hidratar.ogg",
-		"pegar_item": "res://Recursos/Audio/Efeitos/pegar_item.ogg",
-		"alimento_servido": "res://Recursos/Audio/Efeitos/alimento_servido.ogg",
-		"splash_screen": "res://Recursos/Audio/Efeitos/splash.ogg",
+		"vitoria": preload("res://Recursos/Audio/Efeitos/jingle_vitoria.wav") as AudioStream,
+		"derrota": preload("res://Recursos/Audio/Efeitos/jingle_derrota.wav") as AudioStream,
+		"bebe_chorando": preload("res://Recursos/Audio/Efeitos/bebe_chorando.wav") as AudioStream,
+		"bebe_feliz": preload("res://Recursos/Audio/Efeitos/bebe_feliz.wav") as AudioStream,
+		"fogao_ligar": preload("res://Recursos/Audio/Efeitos/fogao_ligar.wav") as AudioStream,
+		"fogao_cozinhando": preload("res://Recursos/Audio/Efeitos/fogao_cozinhando_loop.wav") as AudioStream,
+		"fogao_alarme": preload("res://Recursos/Audio/Efeitos/fogao_alarme.wav") as AudioStream,
+		"clique": preload("res://Recursos/Audio/Efeitos/click.wav") as AudioStream,
+		"hidratar": preload("res://Recursos/Audio/Efeitos/hidratar.wav") as AudioStream,
+		"pegar_item": preload("res://Recursos/Audio/Efeitos/pegar_item.wav") as AudioStream,
+		"alimento_servido": preload("res://Recursos/Audio/Efeitos/alimento_servido.wav") as AudioStream,
+		"splash_screen": preload("res://Recursos/Audio/Efeitos/splash.wav") as AudioStream,
 		"passos": [
-			"res://Recursos/Audio/Efeitos/passo1.ogg",
-			"res://Recursos/Audio/Efeitos/passo2.ogg",
-			"res://Recursos/Audio/Efeitos/passo3.ogg",
-			"res://Recursos/Audio/Efeitos/passo4.ogg",
-			"res://Recursos/Audio/Efeitos/passo5.ogg",
-			"res://Recursos/Audio/Efeitos/passo6.ogg",
+			preload("res://Recursos/Audio/Efeitos/passo1.wav") as AudioStream,
+			preload("res://Recursos/Audio/Efeitos/passo2.wav") as AudioStream,
+			preload("res://Recursos/Audio/Efeitos/passo3.wav") as AudioStream,
+			preload("res://Recursos/Audio/Efeitos/passo4.wav") as AudioStream,
+			preload("res://Recursos/Audio/Efeitos/passo5.wav") as AudioStream,
+			preload("res://Recursos/Audio/Efeitos/passo6.wav") as AudioStream,
 		],
 		"cortar": [
-			"res://Recursos/Audio/Efeitos/cut1.ogg",
-			"res://Recursos/Audio/Efeitos/cut2.ogg",
-			"res://Recursos/Audio/Efeitos/cut3.ogg",
-			"res://Recursos/Audio/Efeitos/cut4.ogg",
+			preload("res://Recursos/Audio/Efeitos/cut1.wav") as AudioStream,
+			preload("res://Recursos/Audio/Efeitos/cut2.wav") as AudioStream,
+			preload("res://Recursos/Audio/Efeitos/cut3.wav") as AudioStream,
+			preload("res://Recursos/Audio/Efeitos/cut4.wav") as AudioStream,
 		],
 	}
 }
 
 var nome_da_faixa_atual: String
 var musica_acelera: bool
-var efeito_de_pitch: AudioEffectPitchShift
 var toca_musica_intro: AudioStreamPlayer
 var toca_musica_ciclo: AudioStreamPlayer
 
@@ -58,14 +57,6 @@ func _ready() -> void:
 	add_child(toca_musica_intro)
 	toca_musica_intro.finished.connect(_on_intro_finalizada)
 
-	efeito_de_pitch = AudioEffectPitchShift.new()
-	efeito_de_pitch.pitch_scale = 1.0
-	efeito_de_pitch.fft_size =AudioEffectPitchShift.FFT_SIZE_2048
-	efeito_de_pitch.oversampling = 4
-	var indice_do_barramento = AudioServer.get_bus_index("Musica")
-	AudioServer.add_bus_effect(indice_do_barramento, efeito_de_pitch, 0)
-	AudioServer.set_bus_effect_enabled(indice_do_barramento, 0, true)
-
 	toca_musica_ciclo = AudioStreamPlayer.new()
 	toca_musica_ciclo.bus = "Musica"
 	toca_musica_ciclo.pitch_scale = 1.0
@@ -74,7 +65,7 @@ func _ready() -> void:
 
 	for i in range(TAMANHO_DO_GRUPO_DE_EFEITOS):
 		var tocador = AudioStreamPlayer.new()
-		tocador.bus = "Efeitos"
+		tocador.bus = "Musica"
 		add_child(tocador)
 		toca_efeitos.append(tocador)
 
@@ -195,7 +186,6 @@ func _prepara_musica_ciclo(stream: AudioStream) -> void:
 	# nosso loop é manual para podermos ajustar a velocidade da música.
 	toca_musica_ciclo.stream.loop = false
 	toca_musica_ciclo.pitch_scale = 1.0
-	efeito_de_pitch.pitch_scale = 1.0
 	toca_musica_ciclo.process_mode = Node.PROCESS_MODE_ALWAYS
 
 
@@ -211,7 +201,6 @@ func _aumenta_velocidade_da_musica() -> void:
 	if tom_atual > TOM_MAXIMO:
 		tom_atual = TOM_MAXIMO
 		return
-	efeito_de_pitch.pitch_scale /= INCREMENTO_DE_TOM
 	toca_musica_ciclo.pitch_scale = tom_atual
 
 
@@ -231,7 +220,7 @@ func volume_da_musica(volume: float = -1) -> float:
 
 
 func volume_de_efeitos(volume: float = -1) -> float:
-	return _ajusta_volume_do_barramento("Efeitos", volume)
+	return _ajusta_volume_do_barramento("Musica", volume)
 
 
 func _ajusta_volume_do_barramento(nome_do_barramento: String, volume: float) -> float:
