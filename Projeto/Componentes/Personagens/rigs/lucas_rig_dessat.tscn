@@ -1,11 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://x3x4hdetf5a8"]
+[gd_scene load_steps=16 format=3 uid="uid://x3x4hdetf5a8"]
 
 [ext_resource type="Texture2D" uid="uid://de7m4n4afowt2" path="res://Componentes/Personagens/rigs/vetores_spritesheets/nenê1_dessat.svg" id="1_7vs35"]
 [ext_resource type="Script" uid="uid://cy2ei2xo5xmqw" path="res://Componentes/Personagens/rigs/lucas_rig_dessat.gd" id="1_ml0f2"]
 [ext_resource type="AnimationLibrary" uid="uid://cxh3707wklavm" path="res://Componentes/Personagens/rigs/vetores_spritesheets/qtftdanims.res" id="2_wx2i2"]
 [ext_resource type="AnimationLibrary" uid="uid://did164vxkw5vw" path="res://anim_lucas.res" id="3_7hrgj"]
 [ext_resource type="Script" uid="uid://bqyphsb3rnr2x" path="res://Componentes/Personagens/personagem.gd" id="4_ea3el"]
-[ext_resource type="Texture2D" uid="uid://ij80kydum86p" path="res://Recursos/Graficos/Efeitos/lagrima.svg" id="6_se8xw"]
+[ext_resource type="PackedScene" uid="uid://cs1q0yifhy8oy" path="res://Recursos/Graficos/Efeitos/grafico_lagrimas.tscn" id="6_se8xw"]
 
 [sub_resource type="Animation" id="Animation_wx2i2"]
 length = 0.001
@@ -45,30 +45,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../Choro:emitting")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../Choro:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(12.999999, -52)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ml0f2"]
 _data = {
@@ -76,19 +52,20 @@ _data = {
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qipe2"]
-animation = &"qtftdanims/lucas_choramingando"
+animation = &"anim_lucas/lucas_choramingando"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x4cvg"]
-animation = &"qtftdanims/lucas_chorando"
+animation = &"anim_lucas/lucas_chorando"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lgpga"]
-animation = &"qtftdanims/lucas_idle"
+animation = &"anim_lucas/lucas_idle"
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_edu8c"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_quv0o"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ml0f2"]
+graph_offset = Vector2(-494.83508, 221.12552)
 nodes/output/position = Vector2(520, 160)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_lgpga")
 nodes/Animation/position = Vector2(-460, 40)
@@ -105,11 +82,6 @@ node_connections = [&"output", 0, &"Chorando", &"Choramingando", 0, &"Animation"
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7hrgj"]
 radius = 49.0
 height = 296.0
-
-[sub_resource type="Curve" id="Curve_hxoi8"]
-_limits = [-500.0, 500.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.36923078, 12.899292), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 3
 
 [node name="lucas_rig_dessat" type="Node2D"]
 script = ExtResource("1_ml0f2")
@@ -189,10 +161,11 @@ bones = ["tronco", PackedFloat32Array(0, 0, 0, 0), "tronco/pescoco", PackedFloat
 
 [node name="tronco" type="Bone2D" parent="Skeleton2D"]
 position = Vector2(0, 161)
+scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(1, 0, 0, 1, 0, 161)
 
 [node name="pescoco" type="Bone2D" parent="Skeleton2D/tronco"]
-position = Vector2(0, -167.664)
+position = Vector2(0, -163.96042)
 rest = Transform2D(1, 0, 0, 1, 0, -161)
 
 [node name="rosto" type="Bone2D" parent="Skeleton2D/tronco/pescoco"]
@@ -203,12 +176,12 @@ bone_angle = 0.0
 
 [node name="babador" type="Bone2D" parent="Skeleton2D/tronco/pescoco"]
 position = Vector2(-10, 0)
-rotation = 0.16475
-scale = Vector2(0.99999994, 0.99999994)
+rotation = 0.07318661
+scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(1, 0, 0, 1, -10, -161)
 auto_calculate_length_and_angle = false
 length = 16.0
-bone_angle = 0.07574039
+bone_angle = 0.075740375
 
 [node name="Nenê1" type="Sprite2D" parent="."]
 visible = false
@@ -243,23 +216,5 @@ metadata/_custom_type_script = "uid://bqyphsb3rnr2x"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lucas"]
 shape = SubResource("CapsuleShape2D_7hrgj")
 
-[node name="Choro" type="CPUParticles2D" parent="."]
-position = Vector2(12.999999, -52)
-rotation = -0.035104644
-emitting = false
-amount = 3
-texture = ExtResource("6_se8xw")
-lifetime = 0.49
-speed_scale = 0.3
-explosiveness = 0.5
-randomness = 0.2
-direction = Vector2(50, 50)
-spread = 97.02
-gravity = Vector2(200, 980)
-orbit_velocity_max = 0.5
-orbit_velocity_curve = SubResource("Curve_hxoi8")
-linear_accel_max = 10.0
-angle_min = -95.0
-angle_max = -80.0
-scale_amount_min = 0.3
-scale_amount_max = 0.5
+[node name="Lágrimas" parent="." instance=ExtResource("6_se8xw")]
+position = Vector2(-26, -75)

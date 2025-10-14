@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cophscugi07v6" path="res://Componentes/Utilitarios/z_area.gd" id="1_ijb6p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5avqd"]
-size = Vector2(59, 22)
+size = Vector2(233, 11)
 
 [node name="ZArea" type="Area2D"]
 script = ExtResource("1_ijb6p")
