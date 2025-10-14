@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://dy4r4c8l5fuxr"]
+[gd_scene load_steps=23 format=3 uid="uid://dy4r4c8l5fuxr"]
 
 [ext_resource type="Script" uid="uid://cv0ya3xdt4bn" path="res://Componentes/Personagens/player.gd" id="1_c2vf6"]
 [ext_resource type="PackedScene" uid="uid://daxpprdmxope6" path="res://Componentes/Personagens/rigs/elza_rig3.tscn" id="2_4ucjf"]
 [ext_resource type="Script" uid="uid://cjm7t170vvwf" path="res://addons/2d_controls_toolkit/TopDownControler2D.gd" id="2_fo1re"]
 [ext_resource type="Texture2D" uid="uid://cx2l2edobw7dh" path="res://Recursos/Graficos/Personagens/elzaVetorCores2.png" id="3_4ucjf"]
 [ext_resource type="Script" uid="uid://bqcr2mhaxtp70" path="res://Componentes/VisualizadorTemporal/visualizador_temporal.gd" id="5_da2mp"]
+[ext_resource type="PackedScene" uid="uid://db5gqkcfgr1ar" path="res://Componentes/Utilitarios/ZArea.tscn" id="6_dgr1c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c2vf6"]
 radius = 46.0109
@@ -71,16 +72,17 @@ blend_point_1/pos = 0.5
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dgr1c"]
 graph_offset = Vector2(-444.773, -16.7364)
+nodes/output/position = Vector2(640, 140)
 nodes/Segurando/node = SubResource("AnimationNodeBlend2_4ucjf")
 nodes/Segurando/position = Vector2(280, 80)
 nodes/Velocidade/node = SubResource("AnimationNodeBlendSpace1D_da2mp")
 nodes/Velocidade/position = Vector2(-220, 60)
 nodes/VelocidadeSegurando/node = SubResource("AnimationNodeBlendSpace1D_f4bm0")
 nodes/VelocidadeSegurando/position = Vector2(-220, 280)
-nodes/output/position = Vector2(640, 140)
-node_connections = [&"Segurando", 0, &"Velocidade", &"Segurando", 1, &"VelocidadeSegurando", &"output", 0, &"Segurando"]
+node_connections = [&"output", 0, &"Segurando", &"Segurando", 0, &"Velocidade", &"Segurando", 1, &"VelocidadeSegurando"]
 
 [node name="Player" type="CharacterBody2D" groups=["personagem", "player"]]
+z_index = 1
 script = ExtResource("1_c2vf6")
 id = "elza"
 nome = "Elza"
@@ -129,7 +131,7 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_dgr1c")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Segurando/blend_amount = 0
+parameters/Segurando/blend_amount = 0.0
 parameters/Velocidade/blend_position = 0.0
 parameters/VelocidadeSegurando/blend_position = 0.0
 
@@ -143,6 +145,12 @@ script = ExtResource("5_da2mp")
 temporizador = NodePath("../TimerAmamentacao")
 cor = Color(0.278431, 0.54902, 0.74902, 0.8)
 metadata/_custom_type_script = "uid://bqcr2mhaxtp70"
+
+[node name="PosicaoEfeito" type="Marker2D" parent="."]
+position = Vector2(0, -140)
+
+[node name="ZArea" parent="." instance=ExtResource("6_dgr1c")]
+position = Vector2(-1, 61)
 
 [connection signal="area_entered" from="PivoAcao/AreaAcao" to="." method="_on_area_acao_area_entered"]
 [connection signal="area_exited" from="PivoAcao/AreaAcao" to="." method="_on_area_acao_area_exited"]

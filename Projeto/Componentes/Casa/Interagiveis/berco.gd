@@ -11,6 +11,7 @@ var amamentando : bool = false
 @onready var timer: Timer = $Timer
 @onready var visualizador_temporal: VisualizadorTemporal = $VisualizadorTemporal
 @onready var lucas_rig: LucasRigDessat = $lucas_rig_dessat
+@onready var berco = $BercoArte
 
 func _ready() -> void:
 	ativo = false
@@ -52,6 +53,7 @@ func iniciar_choro():
 	choro_ativo = true
 	visualizador_temporal.visible = true
 	timer.start(ControleDeFase.nivel_atual.tempo_limite_choro)
+	_estado_berco("play_rot_anim")
 	ControleDeAudio.toca_efeito_ciclo("bebe_chorando", "bebe_chorando")
 
 func finalizar_choro():
@@ -61,6 +63,7 @@ func finalizar_choro():
 	visualizador_temporal.visible = false
 	choro_ativo = false
 	timer.stop()
+	_estado_berco("stop_rot_anim")
 	ControleDeAudio.para_efeito_ciclo("bebe_chorando")
 	ControleDeAudio.toca_efeito("bebe_feliz")
 
@@ -72,6 +75,19 @@ func resetar_timer():
 				-ControleDeFase.nivel_atual.variacao_choro, ControleDeFase.nivel_atual.variacao_choro
 			)
 		)
+
+func _estado_berco(estado: String):
+	var berco_tween: Tween = create_tween()
+	if estado == "play_rot_anim":
+		berco_tween.tween_property(berco, "rotation", berco.rotation - 0.1, 0.8)
+		berco_tween.tween_property(berco, "rotation", 0, 1.0)
+		berco_tween.tween_property(berco, "rotation", berco.rotation + 0.1, 0.8)
+		berco_tween.tween_property(berco, "rotation", 0, 1.0)
+		berco_tween.set_loops(2)
+		berco_tween.play()
+	elif estado == "stop_rot_anim":
+		berco.rotation = 0
+		berco_tween.kill()
 
 func _on_timer_timeout() -> void:
 	ControleDeFase.estado_nivel.limite_choro_atingido = true

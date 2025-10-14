@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://db5gqkcfgr1ar"]
+
+[ext_resource type="Script" uid="uid://cophscugi07v6" path="res://Componentes/Utilitarios/z_area.gd" id="1_ijb6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5avqd"]
+size = Vector2(59, 22)
+
+[node name="ZArea" type="Area2D"]
+script = ExtResource("1_ijb6p")
+
+[node name="ZCollisionBox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5avqd")
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
