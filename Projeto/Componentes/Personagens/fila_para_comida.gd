@@ -27,8 +27,11 @@ var fila = []
 func _ready():
 	for n in range(pessoas_iniciais_na_fila):
 		adiciona_pessoa_na_fila()
+		_mudar_contador_pessoa()
 	ativa_fila_aleatoriamente()
 
+func _mudar_contador_pessoa():
+	get_parent().get_node("Counter/TextCounter").text = str(fila.size())
 
 func ativa_fila_aleatoriamente() -> void:
 	var tempo_variavel = randf_range(tempo_minimo_proxima_pessoa, tempo_maximo_proxima_pessoa)
@@ -52,6 +55,7 @@ func adiciona_pessoa_na_fila() -> void:
 #	pessoa_nova.position = posicao_inicial + Vector2(0, fila.size() * distancia_entre_pessoas)
 	add_child(pessoa_nova)
 	fila.append(pessoa_nova)
+	_mudar_contador_pessoa()
 	pessoa_nova.position = get_parent().position + posicao_inicial + Vector2(
 		randi_range(-variacao_maxima_horizontal, +variacao_maxima_horizontal),
 		(fila.size() - 1) * distancia_entre_pessoas
@@ -60,8 +64,14 @@ func adiciona_pessoa_na_fila() -> void:
 func remove_pessoa_da_fila() -> bool:
 	if fila.is_empty(): return false
 	var pessoa_atendida = fila.pop_front()
+	var tween = create_tween()
+	tween.tween_property(pessoa_atendida, "modulate", Color(1,1,1,1), 0.2)
+	tween.tween_property(pessoa_atendida, "modulate", Color(1,1,1,0), 0.5)
+	tween.play()
+	await tween.finished
 	pessoa_atendida.queue_free()
 	atualiza_posicoes_na_fila()
+	_mudar_contador_pessoa()
 	return true
 
 

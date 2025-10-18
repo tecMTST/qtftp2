@@ -17,7 +17,7 @@ func _interagir(jogador: Player) -> void:
 		jogador.objeto_agarrado != null
 		and jogador.objeto_agarrado is IngredienteBase
 		and jogador.objeto_agarrado.ingrediente.acoes[0].alvo == "mesa"
-		and (!is_instance_valid(fila) or fila.remove_pessoa_da_fila())
+		and (!is_instance_valid(fila) or await fila.remove_pessoa_da_fila())
 	):
 		var objeto_atual = jogador.objeto_agarrado
 		jogador.soltar()
