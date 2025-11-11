@@ -1,15 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://kmitecqt0a2c"]
+[gd_scene load_steps=12 format=3 uid="uid://kmitecqt0a2c"]
 
 [ext_resource type="Script" uid="uid://bfvf214mhvl7c" path="res://Scripts/Cutscenes/CutsceneQuadrinhos.gd" id="1_407oy"]
 [ext_resource type="Script" uid="uid://dxcd21ohsu4ga" path="res://Scripts/Cutscenes/Quadrinho.gd" id="2_stkc4"]
 [ext_resource type="Texture2D" uid="uid://dwk2co0akmvu4" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro1.png" id="3_407oy"]
-[ext_resource type="Texture2D" uid="uid://bsc1yc8t5uc3b" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro1Balao.png" id="4_stkc4"]
 [ext_resource type="Texture2D" uid="uid://dl6k3v7tp6fng" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro2.png" id="5_ghvk5"]
 [ext_resource type="Texture2D" uid="uid://d3i4qo04l7e8" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro2Balao.png" id="6_m7wcg"]
 [ext_resource type="Texture2D" uid="uid://b4kucjcf1lyf4" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro3.png" id="7_3mnih"]
 [ext_resource type="Texture2D" uid="uid://bira86t21iems" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro3Balao.png" id="8_e37gs"]
-[ext_resource type="Texture2D" uid="uid://c2c4kvlswj6py" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro4.png" id="9_364w1"]
-[ext_resource type="Texture2D" uid="uid://dfvwgk7fmrxr6" path="res://Recursos/Graficos/Quadrinhos/hqFase4Quadro4Balao.png" id="10_ebw6r"]
 [ext_resource type="Texture2D" uid="uid://dgl7feovfqnct" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_default_base.svg" id="11_ovoec"]
 [ext_resource type="Texture2D" uid="uid://b5xaxdpfkjjg6" path="res://Recursos/Graficos/UI/Componentes/button_action/button_action_pressed_base.svg" id="12_k06xs"]
 [ext_resource type="Theme" uid="uid://cxq6lm4ve0eqq" path="res://UI/TextoBotaoTheme.tres" id="13_j6xn2"]
@@ -23,8 +20,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_407oy")
-lista_quadrinhos = [NodePath("Quadrinho_1"), NodePath("Quadrinho_2"), NodePath("Quadrinho_3"), NodePath("Quadrinho_4")]
-caminho_proxima_cena = "res://Cenas/CozinhaSolidaria.tscn"
+lista_quadrinhos = [NodePath("Quadrinho_1"), NodePath("Quadrinho_2"), NodePath("Quadrinho_3")]
+caminho_proxima_cena = "res://Cenas/cutscene_quadrinhos_fase_4_2.tscn"
 
 [node name="PlanoDeFundoRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -43,9 +40,6 @@ position = Vector2(365, 143)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("3_407oy")
 
-[node name="Balao" type="Sprite2D" parent="Quadrinho_1/QuadrinhoSprite"]
-texture = ExtResource("4_stkc4")
-
 [node name="posicaoInicial" type="Node2D" parent="Quadrinho_1"]
 position = Vector2(-365, 198)
 
@@ -55,7 +49,7 @@ posicao_bounce_inicial = NodePath("posicaoInicial")
 duracao_fade_alfa = 1.0
 
 [node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_2"]
-position = Vector2(364.8, 408)
+position = Vector2(364.8, 501.00003)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("5_ghvk5")
 
@@ -72,7 +66,7 @@ velocidade_bounce = 1.5
 duracao_fade_alfa = 0.5
 
 [node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_3"]
-position = Vector2(365, 674)
+position = Vector2(365, 867.00006)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("7_3mnih")
 
@@ -81,22 +75,6 @@ texture = ExtResource("8_e37gs")
 
 [node name="posicaoInicial" type="Node2D" parent="Quadrinho_3"]
 position = Vector2(1093, 599)
-
-[node name="Quadrinho_4" type="Node2D" parent="."]
-script = ExtResource("2_stkc4")
-duracao_fade_alfa = 3.0
-
-[node name="QuadrinhoSprite" type="Sprite2D" parent="Quadrinho_4"]
-position = Vector2(357, 940)
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("9_364w1")
-
-[node name="Balao" type="Sprite2D" parent="Quadrinho_4/QuadrinhoSprite"]
-texture = ExtResource("10_ebw6r")
-
-[node name="posicaoInicial" type="Node2D" parent="Quadrinho_4"]
-visible = false
-position = Vector2(1090.5, 888.5)
 
 [node name="Avancar" type="TextureButton" parent="."]
 layout_mode = 1
