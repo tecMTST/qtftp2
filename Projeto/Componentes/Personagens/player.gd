@@ -24,9 +24,9 @@ var ativo : bool = true
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var top_down_controler_2d: TopDownControler2D = $TopDownControler2D
 @onready var pivo_acao: Node2D = $PivoAcao
-@onready var posicao_objeto = $PosicaoObjeto
+@onready var posicao_objeto: Marker2D = $PosicaoObjeto
+@onready var posicao_efeito: Marker2D = $PosicaoEfeito
 @onready var elza_rig: ElzaRig = $"elza rig"
-
 
 func ao_transformar_objeto_agarrado(novo_objeto: IngredienteBase):
 	soltar()
@@ -39,9 +39,8 @@ func ao_transformar_objeto_agarrado_falha(_objeto: IngredienteBase):
 func _exibe_efeito(recurso_de_efeito: Resource) -> void:
 	var efeito = recurso_de_efeito.instantiate()
 	get_tree().root.add_child(efeito)
-	efeito.reparent(posicao_objeto)
-	efeito.global_position = posicao_objeto.global_position
-	efeito.global_position.y -= 180
+	efeito.reparent(posicao_efeito)
+	efeito.global_position = posicao_efeito.global_position - (efeito.size/2)
 
 func _physics_process(delta: float) -> void:
 	if (Input.is_action_pressed("up")   or

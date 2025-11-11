@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://n52w7lk2j46x"]
+[gd_scene load_steps=10 format=3 uid="uid://n52w7lk2j46x"]
 
 [ext_resource type="Script" uid="uid://cpi6tydbas0r3" path="res://Componentes/Casa/Interagiveis/mesa_filha.gd" id="1_7fq27"]
 [ext_resource type="Script" uid="uid://ddwsslb5nraqq" path="res://Componentes/Base/Interagiveis/componente_interagivel.gd" id="2_7fq27"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://d1lhbtx247tsg" path="res://addons/uiJuicer/Bouncer.gd" id="4_0holi"]
 [ext_resource type="Script" uid="uid://mkb6qqi4x84c" path="res://Componentes/Personagens/fila_para_comida.gd" id="5_7gv1b"]
 [ext_resource type="PackedScene" uid="uid://c3rsirptmnfb1" path="res://Componentes/Personagens/pessoa_na_fila.tscn" id="6_7gv1b"]
+[ext_resource type="Texture2D" uid="uid://lqcqston0ich" path="res://Recursos/Graficos/UI/Componentes/display_prato/display_prato_pill_1_digito.svg" id="7_clgs1"]
+[ext_resource type="Texture2D" uid="uid://cgmb5en4i7hr7" path="res://Recursos/Graficos/UI/Ingredientes/pessoas.svg" id="8_2jnta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1ls"]
 size = Vector2(163, 254.338)
@@ -17,7 +19,6 @@ fila = NodePath("Fila")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2.5, 4.37137)
 scale = Vector2(1, 0.476757)
 shape = SubResource("RectangleShape2D_eo1ls")
 
@@ -53,6 +54,55 @@ tempo_maximo_proxima_pessoa = 30.0
 
 [node name="Timer" type="Timer" parent="Fila"]
 one_shot = true
+
+[node name="Counter" type="TextureRect" parent="."]
+offset_left = 80.0
+offset_top = 135.0
+offset_right = 145.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.79, 0.79)
+pivot_offset = Vector2(32, 16)
+texture = ExtResource("7_clgs1")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextCounter" type="Label" parent="Counter"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.68700004
+anchor_top = 0.46400002
+anchor_right = 0.68700004
+anchor_bottom = 0.46400002
+offset_left = -15.186653
+offset_top = -11.5062275
+offset_right = 15.193092
+offset_bottom = 11.493773
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="PessoaIcon" type="TextureRect" parent="Counter"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.319
+anchor_top = 0.467
+anchor_right = 0.319
+anchor_bottom = 0.467
+offset_left = -6.456521
+offset_top = -12.868052
+offset_right = 6.199621
+offset_bottom = 12.78072
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.79, 0.79)
+pivot_offset = Vector2(7, 13)
+texture = ExtResource("8_2jnta")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [connection signal="interagir" from="ComponenteInteragivel" to="." method="_interagir"]
 [connection signal="timeout" from="Fila/Timer" to="Fila" method="_on_hora_de_entrar_na_fila"]
