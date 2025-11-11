@@ -1,6 +1,5 @@
 extends ColorRect
 
-
 @export var move_speed := 20.0
 
 @export_range(0, 1) var anim_progress: float = 0.0:

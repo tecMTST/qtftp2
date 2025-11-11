@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2fdciig7einf"]
+[gd_scene load_steps=8 format=3 uid="uid://d2fdciig7einf"]
 
 [ext_resource type="Script" uid="uid://dnibm5siaj76a" path="res://Componentes/Personagens/filha.gd" id="2_suqhv"]
 [ext_resource type="PackedScene" uid="uid://b4reg6fm7xkhh" path="res://Componentes/Personagens/rigs/carolina_rig.tscn" id="3_b34n8"]
 [ext_resource type="PackedScene" uid="uid://d2q0862qh20rg" path="res://Componentes/VisualizadorTemporal/visualizador_percentual.tscn" id="3_jt3xk"]
+[ext_resource type="PackedScene" uid="uid://db5gqkcfgr1ar" path="res://Componentes/Utilitarios/ZArea.tscn" id="4_jt3xk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_suqhv"]
 radius = 23.0
@@ -14,6 +15,7 @@ size = Vector2(128, 80)
 size = Vector2(127, 56)
 
 [node name="Filha" type="CharacterBody2D" groups=["personagem"]]
+z_index = 1
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_suqhv")
@@ -47,6 +49,9 @@ position = Vector2(0, 48)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
 position = Vector2(-2.5, 3)
 shape = SubResource("RectangleShape2D_s06ml")
+
+[node name="ZArea" parent="." instance=ExtResource("4_jt3xk")]
+position = Vector2(-2, 60)
 
 [connection signal="body_entered" from="Topo" to="." method="_on_topo_body_entered"]
 [connection signal="body_entered" from="Base" to="." method="_on_base_body_entered"]

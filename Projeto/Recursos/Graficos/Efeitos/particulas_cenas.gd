@@ -11,4 +11,6 @@ func disparar():
 			particles.emitting = true
 
 	await get_tree().create_timer(self_destruct_time).timeout
-	queue_free()
+	for particles in particle_nodes:
+		if particles is GPUParticles2D:
+			particles.emitting = false

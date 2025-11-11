@@ -169,13 +169,10 @@ z_index = 5
 
 [node name="Player" parent="Personagens" instance=ExtResource("2_kc3ot")]
 z_index = 20
-z_as_relative = false
 position = Vector2(347, 584)
 
 [node name="Filha" parent="Personagens" node_paths=PackedStringArray("waypoints") groups=["filha_sprite"] instance=ExtResource("15_gklaa")]
-z_index = 10
-z_as_relative = false
-position = Vector2(504, 860)
+position = Vector2(509, 853)
 bagunca_scene = ExtResource("17_utqv5")
 waypoints = NodePath("../../Waypoints")
 

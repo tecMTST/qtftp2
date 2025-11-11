@@ -49,13 +49,13 @@ directories/dch_directory={
 "narrador": "res://Dialogo/narrador.dch"
 }
 directories/dtl_directory={
-"fase1_fdf": "res://Dialogo/cutscene_fimdefase_fase1.dtl",
-"fase2_fdf": "res://Dialogo/cutscene_fimdefase_fase2.dtl",
-"fase3_fdf": "res://Dialogo/cutscene_fimdefase_fase3.dtl",
-"fase4_fdf": "res://Dialogo/cutscene_fimdefase_fase4.dtl",
-"fase5_fdf": "res://Dialogo/cutscene_fimdefase_fase5.dtl",
-"tutorial_fdf": "res://Dialogo/cutscene_fimdefase_tutorial.dtl",
-"tutorial_ingame": "res://Dialogo/tutorial.dtl"
+"cutscene_fimdefase_fase1": "res://Dialogo/cutscene_fimdefase_fase1.dtl",
+"cutscene_fimdefase_fase2": "res://Dialogo/cutscene_fimdefase_fase2.dtl",
+"cutscene_fimdefase_fase3": "res://Dialogo/cutscene_fimdefase_fase3.dtl",
+"cutscene_fimdefase_fase4": "res://Dialogo/cutscene_fimdefase_fase4.dtl",
+"cutscene_fimdefase_fase5": "res://Dialogo/cutscene_fimdefase_fase5.dtl",
+"cutscene_fimdefase_tutorial": "res://Dialogo/cutscene_fimdefase_tutorial.dtl",
+"tutorial": "res://Dialogo/tutorial.dtl"
 }
 layout/style_directory={
 "": "res://Dialogo/balao.tres",
