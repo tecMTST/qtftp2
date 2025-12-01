@@ -23,7 +23,7 @@ elza: Fala baixo, filha.[next=2]
 
 ~ tutorial_choro
 Seu bebê vai chorar quando estiver com fome.[next=3]
-Amamente Lucas antes que a barra fique vazia.[next=3]
+Dê a mamadeira para Lucas antes que a barra fique vazia.[next=3]
 E não esqueça da comida![next=3]
 #o ícone de choro de Lucas surge perto dele e começa a se encher.
 => END!
